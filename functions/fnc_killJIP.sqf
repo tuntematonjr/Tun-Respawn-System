@@ -20,17 +20,18 @@
  */
 #include "script_component.hpp"
 if (!hasInterface) exitWith { };
+[{!isNull player}, {
+	if (time > (GVAR(killJIP_time) * 60) && GVAR(killJIP)) then {
+		[{
+			[player, "Respawn", {
+				params ["_newObject","_oldObject"];
+				deleteVehicle _oldObject;
+				player removeEventHandler ["Respawn", _thisID];
+			}] call CBA_fnc_addBISEventHandler;
 
-if (time > (GVAR(killJIP_time) * 60) && GVAR(killJIP)) then {
 
-	[player, "Respawn", {
-		params ["_newObject","_oldObject"];
-		deleteVehicle _oldObject;
-		player removeEventHandler ["Respawn", _thisID];
-	}] call CBA_fnc_addBISEventHandler;
-
-
-	player allowDamage true;
-	player setDammage 1;
-};
-
+			player allowDamage true;
+			player setDammage 1;
+		}, [], 1] call CBA_fnc_waitAndExecute;
+	};
+}] call CBA_fnc_waitUntilAndExecute;

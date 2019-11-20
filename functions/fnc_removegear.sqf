@@ -23,5 +23,5 @@ removeVest player;
 removeBackpack player;
 player linkItem "itemMap";
 player linkitem "itemWatch";
-player linkitem "itemCompas";
+player linkitem "ItemCompass";
 
