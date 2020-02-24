@@ -45,7 +45,7 @@ switch (toLower str playerSide) do {
 	if !( player getvariable QGVAR(waiting_respawn) ) exitWith { [_handle] call CBA_fnc_removePerFrameHandler; };
 
 	//Show remaining time
-	_wait_time = ((missionNamespace getVariable format ["%1_%2", QGVAR(wait_time), playerSide]) - time);
+	_wait_time = ((missionNamespace getVariable format ["%1_%2", QGVAR(wait_time), playerSide]) - cba_missiontime);
 
 	if (_wait_time >= 0) then {
 		[format ["<t color='#0800ff' size = '.8'> Remaining time until respawn<br />%1</t>", [_wait_time] call CBA_fnc_formatElapsedTime],0,0,1,0] spawn BIS_fnc_dynamicText;

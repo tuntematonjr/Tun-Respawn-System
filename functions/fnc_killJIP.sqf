@@ -21,7 +21,7 @@
 #include "script_component.hpp"
 if (!hasInterface) exitWith { };
 [{!isNull player}, {
-	if (time > (GVAR(killJIP_time) * 60) && GVAR(killJIP)) then {
+	if (cba_missiontime > (GVAR(killJIP_time) * 60) && GVAR(killJIP)) then {
 		[{
 			[player, "Respawn", {
 				params ["_newObject","_oldObject"];

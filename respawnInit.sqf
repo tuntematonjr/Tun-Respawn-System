@@ -80,7 +80,7 @@ addMissionEventHandler ["PlayerDisconnected", {
 	if (GVAR(respawn_type) == "default") exitWith { };
 	params ["_id", "_uid", "_name", "_jip", "_owner"];
 
-	if (time > (GVAR(killJIP_time) * 60) && GVAR(killJIP)) then {
+	if (cba_missiontime > (GVAR(killJIP_time) * 60) && GVAR(killJIP)) then {
 		GVAR(disconnected_players) pushBackUnique _uid;
 	};
 }];
