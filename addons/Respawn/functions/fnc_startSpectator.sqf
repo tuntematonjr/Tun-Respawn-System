@@ -2,16 +2,15 @@
  * Author: [Tuntematon]
  * [Description]
  * Start spectator
+ *
  * Arguments:
  * None
  *
  * Return Value:
- * The return value <BOOL>
+ * None
  *
  * Example:
  * [] call TUN_Respawn_fnc_startSpectator
- *
- * Public: [Yes/No]
  */
 #include "script_component.hpp"
 

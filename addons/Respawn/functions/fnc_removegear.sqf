@@ -2,16 +2,15 @@
  * Author: [Tuntematon]
  * [Description]
  * Remove gear
+ *
  * Arguments:
  * none
  *
  * Return Value:
- * The return value <BOOL>
+ * none
  *
  * Example:
  * [] call TUN_Respawn_fnc_removegear
- *
- * Public: [Yes]
  */
 #include "script_component.hpp"
 

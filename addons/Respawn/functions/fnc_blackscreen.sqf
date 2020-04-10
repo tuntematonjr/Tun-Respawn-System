@@ -1,22 +1,18 @@
 ﻿/*
  * Author: [Tuntematon]
  * [Description]
+ * Create black screen and text. Disables player moving during that time.
+ *
  *
  * Arguments:
- * 0: The first argument <STRING>
- * 1: The second argument <OBJECT>
- * 2: Multiple input types <STRING|ARRAY|CODE>
- * 3: Optional input <BOOL> (default: true)
- * 4: Optional input with multiple types <CODE|STRING> (default: {true})
- * 5: Not mandatory input <STRING> (default: nil)
+ * 0: Text <STRING>
+ * 1: Duration <NUMBER>
  *
  * Return Value:
- * The return value <BOOL>
+ * None
  *
  * Example:
- * ["something", player] call TUN_Respawn_fnc_imanexample
- *
- * Public: [Yes/No]
+ * ["Hi World", 15] call TUN_Respawn_fnc_blackscreen
  */
 #include "script_component.hpp"
 params [["_text",""],["_duration", 10]];
@@ -37,7 +33,6 @@ _camera camCommit 0;
 
 	playSound "scoreAdded";
 	cutText["", "BLACK FADED", 999];
-	//["<t color='#0800ff' size = '2'>"+ _text +"</t>",-1, -1, _duration] spawn BIS_fnc_dynamicText;
 
 	[{
 		player cameraEffect ["terminate","back"];

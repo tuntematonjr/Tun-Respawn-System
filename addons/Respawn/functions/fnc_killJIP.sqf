@@ -1,22 +1,16 @@
 ﻿/*
  * Author: [Tuntematon]
  * [Description]
+ * Kill jip after time. Set in CBA settings
  *
  * Arguments:
- * 0: The first argument <STRING>
- * 1: The second argument <OBJECT>
- * 2: Multiple input types <STRING|ARRAY|CODE>
- * 3: Optional input <BOOL> (default: true)
- * 4: Optional input with multiple types <CODE|STRING> (default: {true})
- * 5: Not mandatory input <STRING> (default: nil)
+ * Nones
  *
  * Return Value:
- * The return value <BOOL>
+ * Nones
  *
  * Example:
- * ["something", player] call TUN_Respawn_fnc_killJIP
- *
- * Public: [Yes/No]
+ * [] call TUN_Respawn_fnc_killJIP
  */
 #include "script_component.hpp"
 if (!hasInterface) exitWith { };

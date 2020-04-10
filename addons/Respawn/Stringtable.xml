@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="Tun Respawn">
+  <Package name="Tun Respawn">
+    <Container name="CBA Settings">
+      <Key ID="STR_Tun_Respawn_CBA_tooltip_time">
+        <Original>Time between respawn waves (minutes)</Original>
+        <English>Time between respawn waves (minutes)</English>
+        <Czech>Time between respawn waves (minutes)</Czech>
+        <French>Time between respawn waves (minutes)</French>
+        <Spanish>Time between respawn waves (minutes)</Spanish>
+        <Italian>Time between respawn waves (minutes)</Italian>
+        <Polish>Time between respawn waves (minutes)</Polish>
+        <Portuguese>Time between respawn waves (minutes)</Portuguese>
+        <Russian>Time between respawn waves (minutes)</Russian>
+        <German>Time between respawn waves (minutes)</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_tooltip_killjip_time">
+        <Original>Time after JIP are killed and moved to respawn (minutes)</Original>
+        <English>Time after JIP are killed and moved to respawn (minutes)</English>
+        <Czech>Time after JIP are killed and moved to respawn (minutes)</Czech>
+        <French>Time after JIP are killed and moved to respawn (minutes)</French>
+        <Spanish>Time after JIP are killed and moved to respawn (minutes)</Spanish>
+        <Italian>Time after JIP are killed and moved to respawn (minutes)</Italian>
+        <Polish>Time after JIP are killed and moved to respawn (minutes)</Polish>
+        <Portuguese>Time after JIP are killed and moved to respawn (minutes)</Portuguese>
+        <Russian>Time after JIP are killed and moved to respawn (minutes)</Russian>
+        <German>Time after JIP are killed and moved to respawn (minutes)</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_tooltip_killjip">
+        <Original>Enable kill JIP system</Original>
+        <English>Enable kill JIP system</English>
+        <Czech>Enable kill JIP system</Czech>
+        <French>Enable kill JIP system</French>
+        <Spanish>Enable kill JIP system</Spanish>
+        <Italian>Enable kill JIP system</Italian>
+        <Polish>Enable kill JIP system</Polish>
+        <Portuguese>Enable kill JIP system</Portuguese>
+        <Russian>Enable kill JIP system</Russian>
+        <German>Enable kill JIP system</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_tooltip_ticket">
+        <Original>Ticket count for side</Original>
+        <English>Ticket count for side</English>
+        <Czech>Ticket count for side</Czech>
+        <French>Ticket count for side</French>
+        <Spanish>Ticket count for side</Spanish>
+        <Italian>Ticket count for side</Italian>
+        <Polish>Ticket count for side</Polish>
+        <Portuguese>Ticket count for side</Portuguese>
+        <Russian>Ticket count for side</Russian>
+        <German>Ticket count for side</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_tooltip_gearscript">
+        <Original>well the cover says it all</Original>
+        <English>well the cover says it all</English>
+        <Czech>well the cover says it all</Czech>
+        <French>well the cover says it all</French>
+        <Spanish>well the cover says it all</Spanish>
+        <Italian>well the cover says it all</Italian>
+        <Polish>well the cover says it all</Polish>
+        <Portuguese>well the cover says it all</Portuguese>
+        <Russian>well the cover says it all</Russian>
+        <German>well the cover says it all</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_tooltip_respawntypes">
+        <Original>"default" : Endless waves. "Sidetickets": Side tickets</Original>
+        <English>"default" : Endless waves. "Sidetickets": Side tickets</English>
+        <Czech>"default" : Endless waves. "Sidetickets": Side tickets</Czech>
+        <French>"default" : Endless waves. "Sidetickets": Side tickets</French>
+        <Spanish>"default" : Endless waves. "Sidetickets": Side tickets</Spanish>
+        <Italian>"default" : Endless waves. "Sidetickets": Side tickets</Italian>
+        <Polish>"default" : Endless waves. "Sidetickets": Side tickets</Polish>
+        <Portuguese>"default" : Endless waves. "Sidetickets": Side tickets</Portuguese>
+        <Russian>"default" : Endless waves. "Sidetickets": Side tickets</Russian>
+        <German>"default" : Endless waves. "Sidetickets": Side tickets</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_tooltip_specta_modes">
+        <Original>Enable this cameramode for spectators</Original>
+        <English>Enable this cameramode for spectators</English>
+        <Czech>Enable this cameramode for spectators</Czech>
+        <French>Enable this cameramode for spectators</French>
+        <Spanish>Enable this cameramode for spectators</Spanish>
+        <Italian>Enable this cameramode for spectators</Italian>
+        <Polish>Enable this cameramode for spectators</Polish>
+        <Portuguese>Enable this cameramode for spectators</Portuguese>
+        <Russian>Enable this cameramode for spectators</Russian>
+        <German>Enable this cameramode for spectators</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_Category_main">
+        <Original>TUN - Respawn System</Original>
+        <English>TUN - Respawn System</English>
+        <Czech>TUN - Respawn System</Czech>
+        <French>TUN - Respawn System</French>
+        <Spanish>TUN - Respawn System</Spanish>
+        <Italian>TUN - Respawn System</Italian>
+        <Polish>TUN - Respawn System</Polish>
+        <Portuguese>TUN - Respawn System</Portuguese>
+        <Russian>TUN - Respawn System</Russian>
+        <German>TUN - Respawn System</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_Category_time">
+        <Original>Wave times</Original>
+        <English>Wave times</English>
+        <Czech>Wave times</Czech>
+        <French>Wave times</French>
+        <Spanish>Wave times</Spanish>
+        <Italian>Wave times</Italian>
+        <Polish>Wave times</Polish>
+        <Portuguese>Wave times</Portuguese>
+        <Russian>Wave times</Russian>
+        <German>Wave times</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_Category_spectate_cameramode">
+        <Original>Spectator camera modes</Original>
+        <English>Spectator camera modes</English>
+        <Czech>Spectator camera modes</Czech>
+        <French>Spectator camera modes</French>
+        <Spanish>Spectator camera modes</Spanish>
+        <Italian>Spectator camera modes</Italian>
+        <Polish>Spectator camera modes</Polish>
+        <Portuguese>Spectator camera modes</Portuguese>
+        <Russian>Spectator camera modes</Russian>
+        <German>Spectator camera modes</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_Category_ticketcount">
+        <Original>Tickets</Original>
+        <English>Tickets</English>
+        <Czech>Tickets</Czech>
+        <French>Tickets</French>
+        <Spanish>Tickets</Spanish>
+        <Italian>Tickets</Italian>
+        <Polish>Tickets</Polish>
+        <Portuguese>Tickets</Portuguese>
+        <Russian>Tickets</Russian>
+        <German>Tickets</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_Category_generic">
+        <Original>Main Settings</Original>
+        <English>Main Settings</English>
+        <Czech>Main Settings</Czech>
+        <French>Main Settings</French>
+        <Spanish>Main Settings</Spanish>
+        <Italian>Main Settings</Italian>
+        <Polish>Main Settings</Polish>
+        <Portuguese>Main Settings</Portuguese>
+        <Russian>Main Settings</Russian>
+        <German>Main Settings</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_Enable">
+        <Original>Enable Respawn System</Original>
+        <English>Enable Respawn System</English>
+        <Czech>Enable Respawn System</Czech>
+        <French>Enable Respawn System</French>
+        <Spanish>Enable Respawn System</Spanish>
+        <Italian>Enable Respawn System</Italian>
+        <Polish>Enable Respawn System</Polish>
+        <Portuguese>Enable Respawn System</Portuguese>
+        <Russian>Enable Respawn System</Russian>
+        <German>Enable Respawn System</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_tooltip_Enable">
+        <Original>Enable Respawn System for mission.</Original>
+        <English>Enable Respawn System for mission.</English>
+        <Czech>Enable Respawn System for mission.</Czech>
+        <French>Enable Respawn System for mission.</French>
+        <Spanish>Enable Respawn System for mission.</Spanish>
+        <Italian>Enable Respawn System for mission.</Italian>
+        <Polish>Enable Respawn System for mission.</Polish>
+        <Portuguese>Enable Respawn System for mission.</Portuguese>
+        <Russian>Enable Respawn System for mission.</Russian>
+        <German>Enable Respawn System for mission.</German>
+      </Key>
+    </Container>
+    <Container name="FNC">
+      <Key ID="STR_Tun_Respawn_FNC_moveRespawns">
+        <Original>You are prepared to respawn!</Original>
+        <English>You are prepared to respawn!</English>
+        <Czech>You are prepared to respawn!</Czech>
+        <French>You are prepared to respawn!</French>
+        <Spanish>You are prepared to respawn!</Spanish>
+        <Italian>You are prepared to respawn!</Italian>
+        <Polish>You are prepared to respawn!</Polish>
+        <Portuguese>You are prepared to respawn!</Portuguese>
+        <Russian>You are prepared to respawn!</Russian>
+        <German>You are prepared to respawn!</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_FNC_remaining_time">
+        <Original>Remaining time until respawn</Original>
+        <English>Remaining time until respawn</English>
+        <Czech>Remaining time until respawn</Czech>
+        <French>Remaining time until respawn</French>
+        <Spanish>Remaining time until respawn</Spanish>
+        <Italian>Remaining time until respawn</Italian>
+        <Polish>Remaining time until respawn</Polish>
+        <Portuguese>Remaining time until respawn</Portuguese>
+        <Russian>Remaining time until respawn</Russian>
+        <German>Remaining time until respawn</German>
+      </Key>
+    </Container>
+    <Container name="Modules">
+      <Key ID="STR_Tun_Respawn_Module_Description_Waitingarea">
+        <Original>Put this module where you want respawn waiting area to be for this side.</Original>
+        <English>Put this module where you want respawn waiting area to be for this side.</English>
+        <Czech>Put this module where you want respawn waiting area to be for this side.</Czech>
+        <French>Put this module where you want respawn waiting area to be for this side.</French>
+        <Spanish>Put this module where you want respawn waiting area to be for this side.</Spanish>
+        <Italian>Put this module where you want respawn waiting area to be for this side.</Italian>
+        <Polish>Put this module where you want respawn waiting area to be for this side.</Polish>
+        <Portuguese>Put this module where you want respawn waiting area to be for this side.</Portuguese>
+        <Russian>Put this module where you want respawn waiting area to be for this side.</Russian>
+        <German>Put this module where you want respawn waiting area to be for this side.</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Module_Description_Spawn_Point">
+        <Original>Put this module where you want respawn point to be for this side.</Original>
+        <English>Put this module where you want respawn point to be for this side.</English>
+        <Czech>Put this module where you want respawn point to be for this side.</Czech>
+        <French>Put this module where you want respawn point to be for this side.</French>
+        <Spanish>Put this module where you want respawn point to be for this side.</Spanish>
+        <Italian>Put this module where you want respawn point to be for this side.</Italian>
+        <Polish>Put this module where you want respawn point to be for this side.</Polish>
+        <Portuguese>Put this module where you want respawn point to be for this side.</Portuguese>
+        <Russian>Put this module where you want respawn point to be for this side.</Russian>
+        <German>Put this module where you want respawn point to be for this side.</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Module_DisplayName_WaitingArea">
+        <Original>Respawn Waiting Area</Original>
+        <English>Respawn Waiting Area</English>
+        <Czech>Respawn Waiting Area</Czech>
+        <French>Respawn Waiting Area</French>
+        <Spanish>Respawn Waiting Area</Spanish>
+        <Italian>Respawn Waiting Area</Italian>
+        <Polish>Respawn Waiting Area</Polish>
+        <Portuguese>Respawn Waiting Area</Portuguese>
+        <Russian>Respawn Waiting Area</Russian>
+        <German>Respawn Waiting Area</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Module_DisplayName_SpawnPoint">
+        <Original>Spawn Point</Original>
+        <English>Spawn Point</English>
+        <Czech>Spawn Point</Czech>
+        <French>Spawn Point</French>
+        <Spanish>Spawn Point</Spanish>
+        <Italian>Spawn Point</Italian>
+        <Polish>Spawn Point</Polish>
+        <Portuguese>Spawn Point</Portuguese>
+        <Russian>Spawn Point</Russian>
+        <German>Spawn Point</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Module_tooltip_WaitingArea">
+        <Original>Chose side for this waiting area</Original>
+        <English>Chose side for this waiting area</English>
+        <Czech>Chose side for this waiting area</Czech>
+        <French>Chose side for this waiting area</French>
+        <Spanish>Chose side for this waiting area</Spanish>
+        <Italian>Chose side for this waiting area</Italian>
+        <Polish>Chose side for this waiting area</Polish>
+        <Portuguese>Chose side for this waiting area</Portuguese>
+        <Russian>Chose side for this waiting area</Russian>
+        <German>Chose side for this waiting area</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Module_tooltip_SpawnPoint">
+        <Original>Chose side for this spawn point</Original>
+        <English>Chose side for this spawn point</English>
+        <Czech>Chose side for this spawn point</Czech>
+        <French>Chose side for this spawn point</French>
+        <Spanish>Chose side for this spawn point</Spanish>
+        <Italian>Chose side for this spawn point</Italian>
+        <Polish>Chose side for this spawn point</Polish>
+        <Portuguese>Chose side for this spawn point</Portuguese>
+        <Russian>Chose side for this spawn point</Russian>
+        <German>Chose side for this spawn point</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Module_category">
+        <Original>Tun Respawn</Original>
+        <English>Tun Respawn</English>
+        <Czech>Tun Respawn</Czech>
+        <French>Tun Respawn</French>
+        <Spanish>Tun Respawn</Spanish>
+        <Italian>Tun Respawn</Italian>
+        <Polish>Tun Respawn</Polish>
+        <Portuguese>Tun Respawn</Portuguese>
+        <Russian>Tun Respawn</Russian>
+        <German>Tun Respawn</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Module_WaitingArea_novalue">
+        <Original>Waiting area module do not have side set</Original>
+        <English>Waiting area module do not have side set</English>
+        <Czech>Waiting area module do not have side set</Czech>
+        <French>Waiting area module do not have side set</French>
+        <Spanish>Waiting area module do not have side set</Spanish>
+        <Italian>Waiting area module do not have side set</Italian>
+        <Polish>Waiting area module do not have side set</Polish>
+        <Portuguese>Waiting area module do not have side set</Portuguese>
+        <Russian>Waiting area module do not have side set</Russian>
+        <German>Waiting area module do not have side set</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Module_RespanPos_novalue">
+        <Original>Respawn Position module do not have side set</Original>
+        <English>Respawn Position module do not have side set</English>
+        <Czech>Respawn Position module do not have side set</Czech>
+        <French>Respawn Position module do not have side set</French>
+        <Spanish>Respawn Position module do not have side set</Spanish>
+        <Italian>Respawn Position module do not have side set</Italian>
+        <Polish>Respawn Position module do not have side set</Polish>
+        <Portuguese>Respawn Position module do not have side set</Portuguese>
+        <Russian>Respawn Position module do not have side set</Russian>
+        <German>Respawn Position module do not have side set</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Module_RespanPos_MultipleMarkers">
+        <Original>There is already "%1" marker. You either have multiple respawn point modules with same settings or marker named that. Either way, remove it.</Original>
+        <English>There is already "%1" marker. You either have multiple respawn point modules with same settings or marker named that. Either way, remove it.</English>
+        <Czech>There is already "%1" marker. You either have multiple respawn point modules with same settings or marker named that. Either way, remove it.</Czech>
+        <French>There is already "%1" marker. You either have multiple respawn point modules with same settings or marker named that. Either way, remove it.</French>
+        <Spanish>There is already "%1" marker. You either have multiple respawn point modules with same settings or marker named that. Either way, remove it.</Spanish>
+        <Italian>There is already "%1" marker. You either have multiple respawn point modules with same settings or marker named that. Either way, remove it.</Italian>
+        <Polish>There is already "%1" marker. You either have multiple respawn point modules with same settings or marker named that. Either way, remove it.</Polish>
+        <Portuguese>There is already "%1" marker. You either have multiple respawn point modules with same settings or marker named that. Either way, remove it.</Portuguese>
+        <Russian>There is already "%1" marker. You either have multiple respawn point modules with same settings or marker named that. Either way, remove it.</Russian>
+        <German>There is already "%1" marker. You either have multiple respawn point modules with same settings or marker named that. Either way, remove it.</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Module_WaitingArea_MultipleMarkers">
+        <Original>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</Original>
+        <English>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</English>
+        <Czech>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</Czech>
+        <French>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</French>
+        <Spanish>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</Spanish>
+        <Italian>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</Italian>
+        <Polish>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</Polish>
+        <Portuguese>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</Portuguese>
+        <Russian>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</Russian>
+        <German>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</German>
+      </Key>
+    </Container>
+  </Package>
+</Project>

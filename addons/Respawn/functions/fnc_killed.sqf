@@ -1,22 +1,17 @@
 ﻿/*
  * Author: [Tuntematon]
  * [Description]
+ * Depending what respawn style is chosen. Chose fnc acording that.
  *
  * Arguments:
- * 0: The first argument <STRING>
- * 1: The second argument <OBJECT>
- * 2: Multiple input types <STRING|ARRAY|CODE>
- * 3: Optional input <BOOL> (default: true)
- * 4: Optional input with multiple types <CODE|STRING> (default: {true})
- * 5: Not mandatory input <STRING> (default: nil)
+ * None
  *
  * Return Value:
- * The return value <BOOL>
+ * None
  *
  * Example:
- * ["something", player] call TUN_Respawn_fnc_imanexample
- *
- * Public: [Yes/No]
+ * [] call TUN_Respawn_fnc_killed
+
  */
 #include "script_component.hpp"
 
@@ -26,7 +21,6 @@ setPlayerRespawnTime 99999;
 
 missionNamespace getVariable format ["%1_%2", QGVAR(tickets), playerSide];
 
-//GVAR(respawn_type) = "Sidetickets";
 
 switch (GVAR(respawn_type)) do {
 	case "Sidetickets": {

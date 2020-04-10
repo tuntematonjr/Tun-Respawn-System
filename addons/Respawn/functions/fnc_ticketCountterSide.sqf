@@ -1,18 +1,17 @@
 ﻿/*
  * Author: [Tuntematon]
  * [Description]
+ * Count side tickest
  *
  * Arguments:
  * 0: Playerside <side>
  * 1: player <OBJECT>
  *
  * Return Value:
- *
+ * None
  *
  * Example:
  * [side, player] call TUN_Respawn_fnc_ticketCounterSide
- *
- * Public: [Yes/No]
  */
 #include "script_component.hpp"
 params ["_side","_player"];
@@ -69,6 +68,8 @@ switch (toLower str _side) do {
 			//if player disconnected and came back. So no ticket wasted.
 			if (getPlayerUID _player in GVAR(disconnected_players)) then {
 				REM(GVAR(disconnected_players), (getPlayerUID _player));
+				_text = format ["Ticket not used, %1 disconnected and came back", _player];
+				INFO(_text);
 			} else {
 				DEC(GVAR(tickets_civ));
 			};

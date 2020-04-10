@@ -14,7 +14,7 @@
  * The return value <BOOL>
  *
  * Example:
- * ["something", player] call Afi_Respawn_fnc_imanexample
+ * ["something", player] call Tun_MSP_fnc_imanexample
  *
  * Public: [Yes/No]
  */

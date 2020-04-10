@@ -1,42 +1,37 @@
 ﻿/*
  * Author: [Tuntematon]
  * [Description]
+ * Initate waiting area loop
  *
  * Arguments:
- * 0: The first argument <STRING>
- * 1: The second argument <OBJECT>
- * 2: Multiple input types <STRING|ARRAY|CODE>
- * 3: Optional input <BOOL> (default: true)
- * 4: Optional input with multiple types <CODE|STRING> (default: {true})
- * 5: Not mandatory input <STRING> (default: nil)
+ * NONE
  *
  * Return Value:
  * The return value <BOOL>
  *
  * Example:
- * ["something", player] call TUN_Respawn_fnc_waitingArea
- *
- * Public: [Yes/No]
+ * [] call TUN_Respawn_fnc_waitingArea
  */
 #include "script_component.hpp"
 private ["_respawn_waitingarea"];
 
 
 switch (toLower str playerSide) do {
+
 	case "west": {
-		_respawn_waitingarea = getMarkerPos "respawn_west";
+		_respawn_waitingarea = getpos (GVAR(waitingarea_west) select 1);
 	};
 
 	case "east": {
-		_respawn_waitingarea = getMarkerPos "respawn_east";
+		_respawn_waitingarea = getpos (GVAR(waitingarea_east) select 1);
 	};
 
 	case "guer": {
-		_respawn_waitingarea = getMarkerPos "respawn_guerrila";
+		_respawn_waitingarea = getpos (GVAR(waitingarea_guer) select 1);
 	};
 
 	case "civ": {
-		_respawn_waitingarea = getMarkerPos "respawn_civilian";
+		_respawn_waitingarea = getpos (GVAR(waitingarea_civ) select 1);
 	};
 };
 
@@ -48,15 +43,13 @@ switch (toLower str playerSide) do {
 	_wait_time = ((missionNamespace getVariable format ["%1_%2", QGVAR(wait_time), playerSide]) - cba_missiontime);
 
 	if (_wait_time >= 0) then {
-		[format ["<t color='#0800ff' size = '.8'> Remaining time until respawn<br />%1</t>", [_wait_time] call CBA_fnc_formatElapsedTime],0,0,1,0] spawn BIS_fnc_dynamicText;
+		[format ["<t color='#0800ff' size = '.8'>%2<br />%1</t>", ([_wait_time] call CBA_fnc_formatElapsedTime), localize "STR_Tun_Respawn_FNC_remaining_time"],0,0,1,0] spawn BIS_fnc_dynamicText;
 	};
 
 	//make sure that player is still in area
 	if !(player inArea [_respawn_waitingarea, 35, 35, 0, false]) then {
 		player setPos ([_respawn_waitingarea, 5] call CBA_fnc_randPos);
+		hint "Get over here!";
 	};
 
 }, 1, _respawn_waitingarea] call CBA_fnc_addPerFrameHandler;
-
-
-

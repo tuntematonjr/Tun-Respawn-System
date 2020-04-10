@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="Tun MSP">
+  <Package name="MSP">
+    <Container name="CBA">
+      <Key ID="STR_Tun_MSP_CBA_Category_main">
+        <Original>TUN - Mobile Spawn Point</Original>
+        <English>TUN - Mobile Spawn Point</English>
+        <Czech>TUN - Mobile Spawn Point</Czech>
+        <French>TUN - Mobile Spawn Point</French>
+        <Spanish>TUN - Mobile Spawn Point</Spanish>
+        <Italian>TUN - Mobile Spawn Point</Italian>
+        <Polish>TUN - Mobile Spawn Point</Polish>
+        <Portuguese>TUN - Mobile Spawn Point</Portuguese>
+        <Russian>TUN - Mobile Spawn Point</Russian>
+        <German>TUN - Mobile Spawn Point</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_Category_progres">
+        <Original>Progress Bar</Original>
+        <English>Progress Bar</English>
+        <Czech>Progress Bar</Czech>
+        <French>Progress Bar</French>
+        <Spanish>Progress Bar</Spanish>
+        <Italian>Progress Bar</Italian>
+        <Polish>Progress Bar</Polish>
+        <Portuguese>Progress Bar</Portuguese>
+        <Russian>Progress Bar</Russian>
+        <German>Progress Bar</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_tooltip_setup_progresbar">
+        <Original>Time that it takes to setup MSP (seconds)</Original>
+        <English>Setup Time</English>
+        <Czech>Setup Time</Czech>
+        <French>Setup Time</French>
+        <Spanish>Setup Time</Spanish>
+        <Italian>Setup Time</Italian>
+        <Polish>Setup Time</Polish>
+        <Portuguese>Setup Time</Portuguese>
+        <Russian>Setup Time</Russian>
+        <German>Setup Time</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_pack_progresbar">
+        <Original>Packing Time</Original>
+        <English>Packing Time</English>
+        <Czech>Packing Time</Czech>
+        <French>Packing Time</French>
+        <Spanish>Packing Time</Spanish>
+        <Italian>Packing Time</Italian>
+        <Polish>Packing Time</Polish>
+        <Portuguese>Packing Time</Portuguese>
+        <Russian>Packing Time</Russian>
+        <German>Packing Time</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_setup_progresbar">
+        <Original>Setup Time</Original>
+        <English>Setup Time</English>
+        <Czech>Setup Time</Czech>
+        <French>Setup Time</French>
+        <Spanish>Setup Time</Spanish>
+        <Italian>Setup Time</Italian>
+        <Polish>Setup Time</Polish>
+        <Portuguese>Setup Time</Portuguese>
+        <Russian>Setup Time</Russian>
+        <German>Setup Time</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_tooltip_setup_ProgressBar">
+        <Original>Time that it takes to deploy MSP (seconds)</Original>
+        <English>Time that it takes to deploy MSP (seconds)</English>
+        <Czech>Time that it takes to deploy MSP (seconds)</Czech>
+        <French>Time that it takes to deploy MSP (seconds)</French>
+        <Spanish>Time that it takes to deploy MSP (seconds)</Spanish>
+        <Italian>Time that it takes to deploy MSP (seconds)</Italian>
+        <Polish>Time that it takes to deploy MSP (seconds)</Polish>
+        <Portuguese>Time that it takes to deploy MSP (seconds)</Portuguese>
+        <Russian>Time that it takes to deploy MSP (seconds)</Russian>
+        <German>Time that it takes to deploy MSP (seconds)</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_tooltip_pack_progresbar">
+        <Original>Time that it takes to pack MSP (seconds)</Original>
+        <English>Time that it takes to pack MSP (seconds)</English>
+        <Czech>Time that it takes to pack MSP (seconds)</Czech>
+        <French>Time that it takes to pack MSP (seconds)</French>
+        <Spanish>Time that it takes to pack MSP (seconds)</Spanish>
+        <Italian>Time that it takes to pack MSP (seconds)</Italian>
+        <Polish>Time that it takes to pack MSP (seconds)</Polish>
+        <Portuguese>Time that it takes to pack MSP (seconds)</Portuguese>
+        <Russian>Time that it takes to pack MSP (seconds)</Russian>
+        <German>Time that it takes to pack MSP (seconds)</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_Enable">
+        <Original>Enable MSP</Original>
+        <English>Enable MSP</English>
+        <Czech>Enable MSP</Czech>
+        <French>Enable MSP</French>
+        <Spanish>Enable MSP</Spanish>
+        <Italian>Enable MSP</Italian>
+        <Polish>Enable MSP</Polish>
+        <Portuguese>Enable MSP</Portuguese>
+        <Russian>Enable MSP</Russian>
+        <German>Enable MSP</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_tooltip_Enable">
+        <Original>Enable MSP system</Original>
+        <English>Enable MSP system</English>
+        <Czech>Enable MSP system</Czech>
+        <French>Enable MSP system</French>
+        <Spanish>Enable MSP system</Spanish>
+        <Italian>Enable MSP system</Italian>
+        <Polish>Enable MSP system</Polish>
+        <Portuguese>Enable MSP system</Portuguese>
+        <Russian>Enable MSP system</Russian>
+        <German>Enable MSP system</German>
+      </Key>
+    </Container>
+    <Container name="fnc_initate_msp_action">
+      <Key ID="STR_Tun_MSP_fnc_initate_msp_action_setting">
+        <Original>Setting up MSP</Original>
+        <English>Setting up MSP</English>
+        <Czech>Setting up MSP</Czech>
+        <French>Setting up MSP</French>
+        <Spanish>Setting up MSP</Spanish>
+        <Italian>Setting up MSP</Italian>
+        <Polish>Setting up MSP</Polish>
+        <Portuguese>Setting up MSP</Portuguese>
+        <Russian>Setting up MSP</Russian>
+        <German>Setting up MSP</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_fnc_initate_msp_action_packing">
+        <Original>Packing MSP</Original>
+        <English>Packing MSP</English>
+        <Czech>Packing MSP</Czech>
+        <French>Packing MSP</French>
+        <Spanish>Packing MSP</Spanish>
+        <Italian>Packing MSP</Italian>
+        <Polish>Packing MSP</Polish>
+        <Portuguese>Packing MSP</Portuguese>
+        <Russian>Packing MSP</Russian>
+        <German>Packing MSP</German>
+      </Key>
+    </Container>
+    <Container name="fnc_contested">
+      <Key ID="STR_Tun_MSP_FNC_Contested_hint">
+        <Original>MSP has been contested! \nRespawn position has been updated.</Original>
+        <English>MSP has been contested! \nRespawn position has been updated.</English>
+        <Czech>MSP has been contested! \nRespawn position has been updated.</Czech>
+        <French>MSP has been contested! \nRespawn position has been updated.</French>
+        <Spanish>MSP has been contested! \nRespawn position has been updated.</Spanish>
+        <Italian>MSP has been contested! \nRespawn position has been updated.</Italian>
+        <Polish>MSP has been contested! \nRespawn position has been updated.</Polish>
+        <Portuguese>MSP has been contested! \nRespawn position has been updated.</Portuguese>
+        <Russian>MSP has been contested! \nRespawn position has been updated.</Russian>
+        <German>MSP has been contested! \nRespawn position has been updated.</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_FNC_secured_hint">
+        <Original>MSP has been secured! \nRespawn position has been updated.</Original>
+        <English>MSP has been secured! \nRespawn position has been updated.</English>
+        <Czech>MSP has been secured! \nRespawn position has been updated.</Czech>
+        <French>MSP has been secured! \nRespawn position has been updated.</French>
+        <Spanish>MSP has been secured! \nRespawn position has been updated.</Spanish>
+        <Italian>MSP has been secured! \nRespawn position has been updated.</Italian>
+        <Polish>MSP has been secured! \nRespawn position has been updated.</Polish>
+        <Portuguese>MSP has been secured! \nRespawn position has been updated.</Portuguese>
+        <Russian>MSP has been secured! \nRespawn position has been updated.</Russian>
+        <German>MSP has been secured! \nRespawn position has been updated.</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_FNC_enemies_near">
+        <Original>Enemies spotted near MSP!</Original>
+        <English>Enemies spotted near MSP!</English>
+        <Czech>Enemies spotted near MSP!</Czech>
+        <French>Enemies spotted near MSP!</French>
+        <Spanish>Enemies spotted near MSP!</Spanish>
+        <Italian>Enemies spotted near MSP!</Italian>
+        <Polish>Enemies spotted near MSP!</Polish>
+        <Portuguese>Enemies spotted near MSP!</Portuguese>
+        <Russian>Enemies spotted near MSP!</Russian>
+        <German>Enemies spotted near MSP!</German>
+      </Key>
+    </Container>
+    <Container name="fnc_setup/pack_msp">
+      <Key ID="STR_Tun_MSP_FNC_setup_notification">
+        <Original>MSP has been deployed! \nRespawn position has been updated.</Original>
+        <English>MSP has been deployed! \nRespawn position has been updated.</English>
+        <Czech>MSP has been deployed! \nRespawn position has been updated.</Czech>
+        <French>MSP has been deployed! \nRespawn position has been updated.</French>
+        <Spanish>MSP has been deployed! \nRespawn position has been updated.</Spanish>
+        <Italian>MSP has been deployed! \nRespawn position has been updated.</Italian>
+        <Polish>MSP has been deployed! \nRespawn position has been updated.</Polish>
+        <Portuguese>MSP has been deployed! \nRespawn position has been updated.</Portuguese>
+        <Russian>MSP has been deployed! \nRespawn position has been updated.</Russian>
+        <German>MSP has been deployed! \nRespawn position has been updated.</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_FNC_pack_notification">
+        <Original>MSP has been packed! \nRespawn position has been updated.</Original>
+        <English>MSP has been packed! \nRespawn position has been updated.</English>
+        <Czech>MSP has been packed! \nRespawn position has been updated.</Czech>
+        <French>MSP has been packed! \nRespawn position has been updated.</French>
+        <Spanish>MSP has been packed! \nRespawn position has been updated.</Spanish>
+        <Italian>MSP has been packed! \nRespawn position has been updated.</Italian>
+        <Polish>MSP has been packed! \nRespawn position has been updated.</Polish>
+        <Portuguese>MSP has been packed! \nRespawn position has been updated.</Portuguese>
+        <Russian>MSP has been packed! \nRespawn position has been updated.</Russian>
+        <German>MSP has been packed! \nRespawn position has been updated.</German>
+      </Key>
+    </Container>
+    <Container name="Classname">
+      <Key ID="STR_Tun_MSP_CBA_classname">
+        <Original>MSP Classname</Original>
+        <English>MSP Classname</English>
+        <Czech>MSP Classname</Czech>
+        <French>MSP Classname</French>
+        <Spanish>MSP Classname</Spanish>
+        <Italian>MSP Classname</Italian>
+        <Polish>MSP Classname</Polish>
+        <Portuguese>MSP Classname</Portuguese>
+        <Russian>MSP Classname</Russian>
+        <German>MSP Classname</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_classname_west">
+        <Original>West MSP Classname</Original>
+        <English>West MSP Classname</English>
+        <Czech>West MSP Classname</Czech>
+        <French>West MSP Classname</French>
+        <Spanish>West MSP Classname</Spanish>
+        <Italian>West MSP Classname</Italian>
+        <Polish>West MSP Classname</Polish>
+        <Portuguese>West MSP Classname</Portuguese>
+        <Russian>West MSP Classname</Russian>
+        <German>West MSP Classname</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_Classname_east">
+        <Original>East MSP Classname</Original>
+        <English>East MSP Classname</English>
+        <Czech>East MSP Classname</Czech>
+        <French>East MSP Classname</French>
+        <Spanish>East MSP Classname</Spanish>
+        <Italian>East MSP Classname</Italian>
+        <Polish>East MSP Classname</Polish>
+        <Portuguese>East MSP Classname</Portuguese>
+        <Russian>East MSP Classname</Russian>
+        <German>East MSP Classname</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_classname_resistance">
+        <Original>Resistance MSP Classname</Original>
+        <English>Resistance MSP Classname</English>
+        <Czech>Resistance MSP Classname</Czech>
+        <French>Resistance MSP Classname</French>
+        <Spanish>Resistance MSP Classname</Spanish>
+        <Italian>Resistance MSP Classname</Italian>
+        <Polish>Resistance MSP Classname</Polish>
+        <Portuguese>Resistance MSP Classname</Portuguese>
+        <Russian>Resistance MSP Classname</Russian>
+        <German>Resistance MSP Classname</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_classname_civilian">
+        <Original>Civilian MSP Classname</Original>
+        <English>Civilian MSP Classname</English>
+        <Czech>Civilian MSP Classname</Czech>
+        <French>Civilian MSP Classname</French>
+        <Spanish>Civilian MSP Classname</Spanish>
+        <Italian>Civilian MSP Classname</Italian>
+        <Polish>Civilian MSP Classname</Polish>
+        <Portuguese>Civilian MSP Classname</Portuguese>
+        <Russian>Civilian MSP Classname</Russian>
+        <German>Civilian MSP Classname</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_tooltip_classname">
+        <Original>Put vehicle classname which will be used as MSP. All vehicles of that type can be used as MSP. Use non-string version of classname like: B_MRAP_01_F. Only one type of vehicle is supported currently</Original>
+        <English>Put vehicle classname which will be used as MSP. All vehicles of that type can be used as MSP. Use non-string version of classname like: B_MRAP_01_F. Only one type of vehicle is supported currently</English>
+        <Czech>Put vehicle classname which will be used as MSP. All vehicles of that type can be used as MSP. Use non-string version of classname like: B_MRAP_01_F. Only one type of vehicle is supported currently</Czech>
+        <French>Put vehicle classname which will be used as MSP. All vehicles of that type can be used as MSP. Use non-string version of classname like: B_MRAP_01_F. Only one type of vehicle is supported currently</French>
+        <Spanish>Put vehicle classname which will be used as MSP. All vehicles of that type can be used as MSP. Use non-string version of classname like: B_MRAP_01_F. Only one type of vehicle is supported currently</Spanish>
+        <Italian>Put vehicle classname which will be used as MSP. All vehicles of that type can be used as MSP. Use non-string version of classname like: B_MRAP_01_F. Only one type of vehicle is supported currently</Italian>
+        <Polish>Put vehicle classname which will be used as MSP. All vehicles of that type can be used as MSP. Use non-string version of classname like: B_MRAP_01_F. Only one type of vehicle is supported currently</Polish>
+        <Portuguese>Put vehicle classname which will be used as MSP. All vehicles of that type can be used as MSP. Use non-string version of classname like: B_MRAP_01_F. Only one type of vehicle is supported currently</Portuguese>
+        <Russian>Put vehicle classname which will be used as MSP. All vehicles of that type can be used as MSP. Use non-string version of classname like: B_MRAP_01_F. Only one type of vehicle is supported currently</Russian>
+        <German>Put vehicle classname which will be used as MSP. All vehicles of that type can be used as MSP. Use non-string version of classname like: B_MRAP_01_F. Only one type of vehicle is supported currently</German>
+      </Key>
+    </Container>
+    <Container name="CBA Contested">
+      <Key ID="STR_Tun_MSP_CBA_tooltip_contested_min">
+        <Original>When there are enemies inside this radius, MSP are always disabled, even if there are more friendlies in max range (meters)</Original>
+        <English>When there are enemies inside this radius, MSP are always disabled, even if there are more friendlies in max range (meters)</English>
+        <Czech>When there are enemies inside this radius, MSP are always disabled, even if there are more friendlies in max range (meters)</Czech>
+        <French>When there are enemies inside this radius, MSP are always disabled, even if there are more friendlies in max range (meters)</French>
+        <Spanish>When there are enemies inside this radius, MSP are always disabled, even if there are more friendlies in max range (meters)</Spanish>
+        <Italian>When there are enemies inside this radius, MSP are always disabled, even if there are more friendlies in max range (meters)</Italian>
+        <Polish>When there are enemies inside this radius, MSP are always disabled, even if there are more friendlies in max range (meters)</Polish>
+        <Portuguese>When there are enemies inside this radius, MSP are always disabled, even if there are more friendlies in max range (meters)</Portuguese>
+        <Russian>When there are enemies inside this radius, MSP are always disabled, even if there are more friendlies in max range (meters)</Russian>
+        <German>When there are enemies inside this radius, MSP are always disabled, even if there are more friendlies in max range (meters)</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_tooltip_contested_check_interval">
+        <Original>Interval for when server updates the contested status for MSP</Original>
+        <English>Interval for when server updates the contested status for MSP</English>
+        <Czech>Interval for when server updates the contested status for MSP</Czech>
+        <French>Interval for when server updates the contested status for MSP</French>
+        <Spanish>Interval for when server updates the contested status for MSP</Spanish>
+        <Italian>Interval for when server updates the contested status for MSP</Italian>
+        <Polish>Interval for when server updates the contested status for MSP</Polish>
+        <Portuguese>Interval for when server updates the contested status for MSP</Portuguese>
+        <Russian>Interval for when server updates the contested status for MSP</Russian>
+        <German>Interval for when server updates the contested status for MSP</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_tooltip_contested_max">
+        <Original>Radius where there needs to be more enemies than allies to disable MSP (meters)</Original>
+        <English>Radius where there needs to be more enemies than allies to disable MSP (meters)</English>
+        <Czech>Radius where there needs to be more enemies than allies to disable MSP (meters)</Czech>
+        <French>Radius where there needs to be more enemies than allies to disable MSP (meters)</French>
+        <Spanish>Radius where there needs to be more enemies than allies to disable MSP (meters)</Spanish>
+        <Italian>Radius where there needs to be more enemies than allies to disable MSP (meters)</Italian>
+        <Polish>Radius where there needs to be more enemies than allies to disable MSP (meters)</Polish>
+        <Portuguese>Radius where there needs to be more enemies than allies to disable MSP (meters)</Portuguese>
+        <Russian>Radius where there needs to be more enemies than allies to disable MSP (meters)</Russian>
+        <German>Radius where there needs to be more enemies than allies to disable MSP (meters)</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_contested_radius_min">
+        <Original>Min Contested Radius</Original>
+        <English>Min Contested Radius</English>
+        <Czech>Min Contested Radius</Czech>
+        <French>Min Contested Radius</French>
+        <Spanish>Min Contested Radius</Spanish>
+        <Italian>Min Contested Radius</Italian>
+        <Polish>Min Contested Radius</Polish>
+        <Portuguese>Min Contested Radius</Portuguese>
+        <Russian>Min Contested Radius</Russian>
+        <German>Min Contested Radius</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_contested_radius_max">
+        <Original>Max Contested Radius</Original>
+        <English>Max Contested Radius</English>
+        <Czech>Max Contested Radius</Czech>
+        <French>Max Contested Radius</French>
+        <Spanish>Max Contested Radius</Spanish>
+        <Italian>Max Contested Radius</Italian>
+        <Polish>Max Contested Radius</Polish>
+        <Portuguese>Max Contested Radius</Portuguese>
+        <Russian>Max Contested Radius</Russian>
+        <German>Max Contested Radius</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_contested_check_interval">
+        <Original>Contested Check Interval</Original>
+        <English>Contested Check Interval</English>
+        <Czech>Contested Check Interval</Czech>
+        <French>Contested Check Interval</French>
+        <Spanish>Contested Check Interval</Spanish>
+        <Italian>Contested Check Interval</Italian>
+        <Polish>Contested Check Interval</Polish>
+        <Portuguese>Contested Check Interval</Portuguese>
+        <Russian>Contested Check Interval</Russian>
+        <German>Contested Check Interval</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_Category_contested">
+        <Original>Contested</Original>
+        <English>Contested</English>
+        <Czech>Contested</Czech>
+        <French>Contested</French>
+        <Spanish>Contested</Spanish>
+        <Italian>Contested</Italian>
+        <Polish>Contested</Polish>
+        <Portuguese>Contested</Portuguese>
+        <Russian>Contested</Russian>
+        <German>Contested</German>
+      </Key>
+    </Container>
+    <Container name="CBA Report">
+      <Key ID="STR_Tun_MSP_CBA_tooltip_report_enemies_range">
+        <Original>Range from MSP where enemies are reported (meters)</Original>
+        <English>Range from MSP where enemies are reported (meters)</English>
+        <Czech>Range from MSP where enemies are reported (meters)</Czech>
+        <French>Range from MSP where enemies are reported (meters)</French>
+        <Spanish>Range from MSP where enemies are reported (meters)</Spanish>
+        <Italian>Range from MSP where enemies are reported (meters)</Italian>
+        <Polish>Range from MSP where enemies are reported (meters)</Polish>
+        <Portuguese>Range from MSP where enemies are reported (meters)</Portuguese>
+        <Russian>Range from MSP where enemies are reported (meters)</Russian>
+        <German>Range from MSP where enemies are reported (meters)</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_tooltip_report_enemies_interval">
+        <Original>Interval when server check if there is enemies near MSP</Original>
+        <English>Interval when server check if there is enemies near MSP</English>
+        <Czech>Interval when server check if there is enemies near MSP</Czech>
+        <French>Interval when server check if there is enemies near MSP</French>
+        <Spanish>Interval when server check if there is enemies near MSP</Spanish>
+        <Italian>Interval when server check if there is enemies near MSP</Italian>
+        <Polish>Interval when server check if there is enemies near MSP</Polish>
+        <Portuguese>Interval when server check if there is enemies near MSP</Portuguese>
+        <Russian>Interval when server check if there is enemies near MSP</Russian>
+        <German>Interval when server check if there is enemies near MSP</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_tooltip_report_enemies">
+        <Original>Enable Report Enemies near MSP</Original>
+        <English>Enable Report Enemies near MSP</English>
+        <Czech>Enable Report Enemies near MSP</Czech>
+        <French>Enable Report Enemies near MSP</French>
+        <Spanish>Enable Report Enemies near MSP</Spanish>
+        <Italian>Enable Report Enemies near MSP</Italian>
+        <Polish>Enable Report Enemies near MSP</Polish>
+        <Portuguese>Enable Report Enemies near MSP</Portuguese>
+        <Russian>Enable Report Enemies near MSP</Russian>
+        <German>Enable Report Enemies near MSP</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_report_enemies_intervala">
+        <Original>Report Enemies Interval</Original>
+        <English>Report Enemies Interval</English>
+        <Czech>Report Enemies Interval</Czech>
+        <French>Report Enemies Interval</French>
+        <Spanish>Report Enemies Interval</Spanish>
+        <Italian>Report Enemies Interval</Italian>
+        <Polish>Report Enemies Interval</Polish>
+        <Portuguese>Report Enemies Interval</Portuguese>
+        <Russian>Report Enemies Interval</Russian>
+        <German>Report Enemies Interval</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_report_enemies_range">
+        <Original>Report Enemies Range</Original>
+        <English>Report Enemies Range</English>
+        <Czech>Report Enemies Range</Czech>
+        <French>Report Enemies Range</French>
+        <Spanish>Report Enemies Range</Spanish>
+        <Italian>Report Enemies Range</Italian>
+        <Polish>Report Enemies Range</Polish>
+        <Portuguese>Report Enemies Range</Portuguese>
+        <Russian>Report Enemies Range</Russian>
+        <German>Report Enemies Range</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_report_enemies">
+        <Original>Report Enemies</Original>
+        <English>Report Enemies</English>
+        <Czech>Report Enemies</Czech>
+        <French>Report Enemies</French>
+        <Spanish>Report Enemies</Spanish>
+        <Italian>Report Enemies</Italian>
+        <Polish>Report Enemies</Polish>
+        <Portuguese>Report Enemies</Portuguese>
+        <Russian>Report Enemies</Russian>
+        <German>Report Enemies</German>
+      </Key>
+    </Container>
+    <Container name="move">
+      <Key ID="STR_Tun_MSP_Move_To_MSP_Text">
+        <Original>You are being moved to Mobile Spawn Point</Original>
+        <English>You are being moved to Mobile Spawn Point</English>
+        <Czech>You are being moved to Mobile Spawn Point</Czech>
+        <French>You are being moved to Mobile Spawn Point</French>
+        <Spanish>You are being moved to Mobile Spawn Point</Spanish>
+        <Italian>You are being moved to Mobile Spawn Point</Italian>
+        <Polish>You are being moved to Mobile Spawn Point</Polish>
+        <Portuguese>You are being moved to Mobile Spawn Point</Portuguese>
+        <Russian>You are being moved to Mobile Spawn Point</Russian>
+        <German>You are being moved to Mobile Spawn Point</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_Move_To_BASE_Text">
+        <Original>You are being moved to base</Original>
+        <English>You are being moved to base</English>
+        <Czech>You are being moved to base</Czech>
+        <French>You are being moved to base</French>
+        <Spanish>You are being moved to base</Spanish>
+        <Italian>You are being moved to base</Italian>
+        <Polish>You are being moved to base</Polish>
+        <Portuguese>You are being moved to base</Portuguese>
+        <Russian>You are being moved to base</Russian>
+        <German>You are being moved to base</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_Move_To_MSP_Action">
+        <Original>&lt;t color='#FF0000'&gt;Move to MSP&lt;/t&gt;</Original>
+        <English>&lt;t color='#FF0000'&gt;Move to MSP&lt;/t&gt;</English>
+        <Czech>&lt;t color='#FF0000'&gt;Move to MSP&lt;/t&gt;</Czech>
+        <French>&lt;t color='#FF0000'&gt;Move to MSP&lt;/t&gt;</French>
+        <Spanish>&lt;t color='#FF0000'&gt;Move to MSP&lt;/t&gt;</Spanish>
+        <Italian>&lt;t color='#FF0000'&gt;Move to MSP&lt;/t&gt;</Italian>
+        <Polish>&lt;t color='#FF0000'&gt;Move to MSP&lt;/t&gt;</Polish>
+        <Portuguese>&lt;t color='#FF0000'&gt;Move to MSP&lt;/t&gt;</Portuguese>
+        <Russian>&lt;t color='#FF0000'&gt;Move to MSP&lt;/t&gt;</Russian>
+        <German>&lt;t color='#FF0000'&gt;Move to MSP&lt;/t&gt;</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_Move_To_BASE_Action">
+        <Original>Move to Base</Original>
+        <English>Move to Base</English>
+        <Czech>Move to Base</Czech>
+        <French>Move to Base</French>
+        <Spanish>Move to Base</Spanish>
+        <Italian>Move to Base</Italian>
+        <Polish>Move to Base</Polish>
+        <Portuguese>Move to Base</Portuguese>
+        <Russian>Move to Base</Russian>
+        <German>Move to Base</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_Move_Base">
+        <Original>You are being moved to base</Original>
+        <English>Move to Base</English>
+        <Czech>Move to Base</Czech>
+        <French>Move to Base</French>
+        <Spanish>Move to Base</Spanish>
+        <Italian>Move to Base</Italian>
+        <Polish>Move to Base</Polish>
+        <Portuguese>Move to Base</Portuguese>
+        <Russian>Move to Base</Russian>
+        <German>Move to Base</German>
+      </Key>
+    </Container>
+    <Container name="ace">
+      <Key ID="STR_Tun_MSP_remaining_time">
+        <Original>"Remaining time until respawn: %1"</Original>
+        <English>"Remaining time until respawn: %1"</English>
+        <Czech>"Remaining time until respawn: %1"</Czech>
+        <French>"Remaining time until respawn: %1"</French>
+        <Spanish>"Remaining time until respawn: %1"</Spanish>
+        <Italian>"Remaining time until respawn: %1"</Italian>
+        <Polish>"Remaining time until respawn: %1"</Polish>
+        <Portuguese>"Remaining time until respawn: %1"</Portuguese>
+        <Russian>"Remaining time until respawn: %1"</Russian>
+        <German>"Remaining time until respawn: %1"</German>
+      </Key>
+    </Container>
+  </Package>
+</Project>

@@ -2,6 +2,7 @@
  * Author: [Tuntematon]
  * [Description]
  * Give player its original gear.
+ *
  * Arguments:
  * none
  *
@@ -9,9 +10,7 @@
  * none
  *
  * Example:
- * ["something", player] call TUN_Respawn_addGear
- *
- * Public: [Yes/No]
+ * [] call TUN_Respawn_addGear
  */
 #include "script_component.hpp"
 if (isDedicated) exitWith { };

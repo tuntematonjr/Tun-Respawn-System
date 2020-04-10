@@ -1,22 +1,16 @@
 ﻿/*
  * Author: [Tuntematon]
  * [Description]
+ * Timer
  *
  * Arguments:
- * 0: The first argument <STRING>
- * 1: The second argument <OBJECT>
- * 2: Multiple input types <STRING|ARRAY|CODE>
- * 3: Optional input <BOOL> (default: true)
- * 4: Optional input with multiple types <CODE|STRING> (default: {true})
- * 5: Not mandatory input <STRING> (default: nil)
+ * 0: side <STRING>
  *
  * Return Value:
- * The return value <BOOL>
+ * None
  *
  * Example:
- * ["something", player] call TUN_Respawn_fnc_timer
- *
- * Public: [Yes/No]
+ * ["west"] call TUN_Respawn_fnc_timer
  */
 #include "script_component.hpp"
 params ["_side"];
@@ -47,6 +41,7 @@ switch (_side) do {
 		GVAR(wait_time_civ) = GVAR(wait_time_civ) + GVAR(times_civ) * 60;
 		_wait_time = GVAR(times_civ) * 60;
 		publicVariable QGVAR(wait_time_civ);
+		ok1 = _wait_time;
 	};
 
 	default {
