@@ -17,8 +17,6 @@
 
 - [Installation](#installation)
 - [Features](#features)
-- [Contributing](#contributing)
-- [Team](#team)
 - [FAQ](#faq)
 - [Support](#support)
 - [License](#license)
@@ -39,19 +37,14 @@
 ---
 
 ## Features
-## Usage (Optional)
-## Documentation (Optional)
-## Tests (Optional)
 
-- Going into more detail on code and technologies used
-- I utilized this nifty <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Markdown Cheatsheet</a> for this sample `README`.
 
 ---
 
 ## FAQ
 
 - **How do I do *specifically* so and so?**
-    - No problem! Just do this.
+    - Just do this.
 
 ---
 
