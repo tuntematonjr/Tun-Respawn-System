@@ -18,7 +18,6 @@
 - [Installation](#installation)
 - [Features](#features)
 - [FAQ](#faq)
-- [Support](#support)
 - [License](#license)
 
 
