@@ -2,7 +2,7 @@
 
 # TUN Respawn System
 ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/tuntematonjr/Tun-Respawn-System?include_prereleases) 
-> Wave Respawn system with customization for every mission needs. 
+> Wave Respawn system with customization for many mission needs. 
 > Additionaly there is Mobile Respawn Point vehicle which allow moving respawn poin around map
 
 **Required Mods**
