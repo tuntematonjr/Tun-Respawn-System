@@ -1,8 +1,8 @@
 #include "script_component.hpp"
-if (GVAR(enable)) exitWith { LOG("TUN Respawn Disabled"); };
-LOG("TUN Respawn Enabled");
+if !(GVAR(enable)) exitWith { INFO("TUN Respawn Disabled"); };
+INFO("TUN Respawn Enabled");
 
-GVAR(respawn_type) = ["default", "Sidetickets"] select GVAR(respawn_type_cba);
+//GVAR(respawn_type) = ["default", "Sidetickets"] select GVAR(respawn_type_cba);
 
 
 if (hasInterface) then {

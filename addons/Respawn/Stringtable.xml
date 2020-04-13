@@ -247,28 +247,28 @@
         <German>Spawn Point</German>
       </Key>
       <Key ID="STR_Tun_Respawn_Module_tooltip_WaitingArea">
-        <Original>Chose side for this waiting area</Original>
-        <English>Chose side for this waiting area</English>
-        <Czech>Chose side for this waiting area</Czech>
-        <French>Chose side for this waiting area</French>
-        <Spanish>Chose side for this waiting area</Spanish>
-        <Italian>Chose side for this waiting area</Italian>
-        <Polish>Chose side for this waiting area</Polish>
-        <Portuguese>Chose side for this waiting area</Portuguese>
-        <Russian>Chose side for this waiting area</Russian>
-        <German>Chose side for this waiting area</German>
+        <Original>Choose side for this waiting area</Original>
+        <English>Choose side for this waiting area</English>
+        <Czech>Choose side for this waiting area</Czech>
+        <French>Choose side for this waiting area</French>
+        <Spanish>Choose side for this waiting area</Spanish>
+        <Italian>Choose side for this waiting area</Italian>
+        <Polish>Choose side for this waiting area</Polish>
+        <Portuguese>Choose side for this waiting area</Portuguese>
+        <Russian>Choose side for this waiting area</Russian>
+        <German>Choose side for this waiting area</German>
       </Key>
       <Key ID="STR_Tun_Respawn_Module_tooltip_SpawnPoint">
-        <Original>Chose side for this spawn point</Original>
-        <English>Chose side for this spawn point</English>
-        <Czech>Chose side for this spawn point</Czech>
-        <French>Chose side for this spawn point</French>
-        <Spanish>Chose side for this spawn point</Spanish>
-        <Italian>Chose side for this spawn point</Italian>
-        <Polish>Chose side for this spawn point</Polish>
-        <Portuguese>Chose side for this spawn point</Portuguese>
-        <Russian>Chose side for this spawn point</Russian>
-        <German>Chose side for this spawn point</German>
+        <Original>Choose side for this spawn point</Original>
+        <English>Choose side for this spawn point</English>
+        <Czech>Choose side for this spawn point</Czech>
+        <French>Choose side for this spawn point</French>
+        <Spanish>Choose side for this spawn point</Spanish>
+        <Italian>Choose side for this spawn point</Italian>
+        <Polish>Choose side for this spawn point</Polish>
+        <Portuguese>Choose side for this spawn point</Portuguese>
+        <Russian>Choose side for this spawn point</Russian>
+        <German>Choose side for this spawn point</German>
       </Key>
       <Key ID="STR_Tun_Respawn_Module_category">
         <Original>Tun Respawn</Original>
