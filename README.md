@@ -13,43 +13,8 @@
 
 ---
 
-## Table of Contents (Optional)
-
-- [Installation](#installation)
-- [Features](#features)
-- [FAQ](#faq)
-- [License](#license)
-
-
----
-
-## Example (Optional)
-
-
-
----
-
-## Installation
-
-
-
----
-
-## Features
-
-
----
-
-## FAQ
-
-- **How do I do *specifically* so and so?**
-    - Just do this.
-
----
-
 ## License
 
 [![License](https://www.bohemia.net/assets/img/licenses/APL-SA.png)](https://www.bohemia.net/community/licenses/arma-public-license-share-alike)
 
 - **[APL-SA](https://www.bohemia.net/community/licenses/arma-public-license-share-alike)**
-- Copyright 2015 © <a href="http://fvcproductions.com" target="_blank">FVCproductions</a>.
