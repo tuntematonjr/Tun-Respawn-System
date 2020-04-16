@@ -25,7 +25,7 @@ if (tun_respawn_enabled_west) then {
 
 if (tun_respawn_enabled_east) then {
     _condition = format ["%1 && !%2", QGVAR(status_east), QGVAR(contested_east)];
-    [_pole, [localize "STR_Tun_MSP_Move_To_MSP_Action", _action, [], 10, true, true, "", _condition]] remoteExecCall ["addAction", east, true];
+    [tun_respawn_flag_east_spawn, [localize "STR_Tun_MSP_Move_To_MSP_Action", _action, [], 10, true, true, "", _condition]] remoteExecCall ["addAction", east, true];
 };
 
 if (tun_respawn_enabled_guer) then {
