@@ -1,22 +1,16 @@
 ﻿/*
  * Author: [Tuntematon]
  * [Description]
+ * Add init EH and killed EH to MSP
  *
  * Arguments:
- * 0: The first argument <STRING>
- * 1: The second argument <OBJECT>
- * 2: Multiple input types <STRING|ARRAY|CODE>
- * 3: Optional input <BOOL> (default: true)
- * 4: Optional input with multiple types <CODE|STRING> (default: {true})
- * 5: Not mandatory input <STRING> (default: nil)
+ * None
  *
  * Return Value:
- * The return value <BOOL>
+ * None
  *
  * Example:
- * ["something", player] call Tun_MSP_fnc_add_eh
- *
- * Public: [Yes/No]
+ * [] call Tun_MSP_fnc_add_eh
  */
 #include "script_component.hpp"
 
@@ -27,6 +21,14 @@
     if (isServer) then {
         [_vehicle, "init", {
             params ["_entity"];
+
+            AAR_UPDATE(_entity,"Is active MSP", false);
+            AAR_UPDATE(_entity,"Is contested", false);
+            AAR_UPDATE(_entity,"Enemies near", false);
+            AAR_UPDATE(_entity,"Report enemies radius", GVAR(report_enemies_range));
+            AAR_UPDATE(_entity,"Contested radius max", GVAR(contested_radius_max));
+            AAR_UPDATE(_entity,"Contested radius min", GVAR(contested_radius_min));
+
             _entity setVariable [QGVAR(side), _side, true];
             }, true, [], true] call CBA_fnc_addClassEventHandler;
     };
@@ -35,6 +37,10 @@
 
     [_vehicle, "killed", {
         params ["_unit", "_killer", "_instigator", "_useEffects"];
+
+        AAR_UPDATE(_unit,"Is active MSP", "RIP");
+        AAR_UPDATE(_unit,"Is contested", "RIP");
+        AAR_UPDATE(_unit,"Enemies near", "RIP");
 
         if ( local _unit && { _unit getVariable [QGVAR(isMSP), false] } ) then {
             private ["_markername", "_originalpos", "_status"];

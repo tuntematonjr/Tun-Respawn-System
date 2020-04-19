@@ -35,4 +35,17 @@ _enemycount_max = {[_side, side _x] call BIS_fnc_sideIsEnemy} count _areaunits_m
 //Notify if enemies near
 if (!(_contested_status) && {_enemycount_max > 0}) then {
     localize "STR_Tun_MSP_FNC_enemies_near" remoteExecCall ["hint", _side];
+
+    if !(GVAR(enemies_near)) then {
+    	AAR_UPDATE(_msp,"Enemies near", true);
+    	GVAR(enemies_near) = true;
+    };
+} else {
+	if (GVAR(enemies_near)) then {
+		AAR_UPDATE(_msp,"Enemies near", true);
+		GVAR(enemies_near) = false;
+	};
 };
+
+
+

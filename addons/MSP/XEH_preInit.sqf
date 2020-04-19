@@ -18,6 +18,8 @@ if (isServer) then {
     missionNamespace setVariable [QGVAR(vehicle_west), objNull, true];
     missionNamespace setVariable [QGVAR(vehicle_guer), objNull, true];
     missionNamespace setVariable [QGVAR(vehicle_civ), objNull, true];
+
+    missionNamespace setVariable [QGVAR(enemies_near), false, true];
 };
 
 [

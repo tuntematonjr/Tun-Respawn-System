@@ -41,7 +41,6 @@ switch (_side) do {
 		GVAR(wait_time_civ) = GVAR(wait_time_civ) + GVAR(times_civ) * 60;
 		_wait_time = GVAR(times_civ) * 60;
 		publicVariable QGVAR(wait_time_civ);
-		ok1 = _wait_time;
 	};
 
 	default {

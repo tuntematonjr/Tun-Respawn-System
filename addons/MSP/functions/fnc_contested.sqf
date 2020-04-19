@@ -44,6 +44,8 @@ if ( _friendlycount < _enemycount_max || _enemycount_min > 0) then {
         localize "STR_Tun_MSP_FNC_Contested_hint" remoteExecCall ["hint", _side];
 
         [_side, false] call FUNC(update_respawn_point);
+
+        AAR_UPDATE(_msp,"Is contested", true);
     };
 } else {
     if ( _contested_status ) then {
@@ -51,5 +53,7 @@ if ( _friendlycount < _enemycount_max || _enemycount_min > 0) then {
        localize "STR_Tun_MSP_FNC_secured_hint" remoteExecCall ["hint", _side];
 
        [_side, true, _msp_pos] call FUNC(update_respawn_point);
+
+       AAR_UPDATE(_msp,"Is contested", false);
     };
 };

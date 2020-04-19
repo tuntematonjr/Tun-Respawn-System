@@ -20,6 +20,8 @@ params ["_msp", "_setup"];
 _side = _msp getVariable QGVAR(side);
 _msp_var = objNull;
 
+AAR_UPDATE(_msp,"Is active MSP", _setup);
+
 if (_setup) then {
 	localize "STR_Tun_MSP_FNC_setup_notification" remoteExecCall ["hint", _side];
 

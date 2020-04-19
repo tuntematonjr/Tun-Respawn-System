@@ -25,12 +25,15 @@ switch (toLower str _side) do {
 				REM(GVAR(disconnected_players), (getPlayerUID _player));
 			} else {
 				DEC(GVAR(tickets_west));
+				AAR_UPDATE(west,"Side tickets", GVAR(tickets_west));
 			};
 
 			[5] remoteExecCall ["setPlayerRespawnTime", _player];
 		} else {
 			remoteExecCall [QFUNC(startSpectator), _player];
 		};
+
+
 	};
 
 	case "east": {
@@ -40,6 +43,7 @@ switch (toLower str _side) do {
 				REM(GVAR(disconnected_players), (getPlayerUID _player));
 			} else {
 				DEC(GVAR(tickets_east));
+				AAR_UPDATE(east,"Side tickets", GVAR(tickets_east));
 			};
 
 			[5] remoteExecCall ["setPlayerRespawnTime", _player];
@@ -55,6 +59,7 @@ switch (toLower str _side) do {
 				REM(GVAR(disconnected_players), (getPlayerUID _player));
 			} else {
 				DEC(GVAR(tickets_guer));
+				AAR_UPDATE(guer,"Side tickets", GVAR(tickets_guer));
 			};
 
 			[5] remoteExecCall ["setPlayerRespawnTime", _player];
@@ -68,10 +73,9 @@ switch (toLower str _side) do {
 			//if player disconnected and came back. So no ticket wasted.
 			if (getPlayerUID _player in GVAR(disconnected_players)) then {
 				REM(GVAR(disconnected_players), (getPlayerUID _player));
-				_text = format ["Ticket not used, %1 disconnected and came back", _player];
-				INFO(_text);
 			} else {
 				DEC(GVAR(tickets_civ));
+				AAR_UPDATE(civ,"Side tickets", GVAR(tickets_civ));
 			};
 
 			[5] remoteExecCall ["setPlayerRespawnTime", _player];
