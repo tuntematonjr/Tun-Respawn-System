@@ -26,6 +26,7 @@ switch (GVAR(respawn_type)) do {
 	case "Sidetickets": {
 		[playerSide, player] remoteExecCall [QFUNC(ticketCountterSide),2];
 	};
+
 	case "Playertickets": {
 		//WIP
 	};

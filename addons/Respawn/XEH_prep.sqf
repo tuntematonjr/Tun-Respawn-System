@@ -14,6 +14,7 @@ PREP(module_respawnpos);
 PREP(module_waitingarea);
 PREP(moveRespawns);
 PREP(removegear);
+PREP(savegear);
 PREP(startSpectator);
 PREP(ticketCountterPlayer);
 PREP(ticketCountterSide);

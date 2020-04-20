@@ -8,6 +8,10 @@ INFO("TUN Respawn Enabled");
 if (hasInterface) then {
 	[{!isNull player}, {
 
+		if !(GVAR(use_gearscript)) then {
+			[] call FUNC(savegear);
+		};
+
 		//Add respawn eh
 		[player, "Respawn", {
 			[] call FUNC(removegear);
@@ -29,6 +33,7 @@ if (hasInterface) then {
 
 	[] call FUNC(killJIP);
 	[] call FUNC(marker_update);
+
 };
 
 if (isServer) then {
