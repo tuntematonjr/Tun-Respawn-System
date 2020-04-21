@@ -20,26 +20,26 @@ private _wait_time = 0;
 
 switch (_side) do {
 	case "west": {
-		GVAR(wait_time_west) = GVAR(wait_time_west) + GVAR(times_west) * 60;
-		_wait_time = GVAR(times_west) * 60;
+		GVAR(wait_time_west) = GVAR(wait_time_west) + GVAR(time_west) * 60;
+		_wait_time = GVAR(time_west) * 60;
 		publicVariable QGVAR(wait_time_west);
 	};
 
 	case "east": {
-		GVAR(wait_time_east) = GVAR(wait_time_east) + GVAR(times_east) * 60;
-		_wait_time = GVAR(times_east) * 60;
+		GVAR(wait_time_east) = GVAR(wait_time_east) + GVAR(time_east) * 60;
+		_wait_time = GVAR(time_east) * 60;
 		publicVariable QGVAR(wait_time_east);
 	};
 
 	case "guer": {
-		GVAR(wait_time_guer) = GVAR(wait_time_guer) + GVAR(times_guer) * 60;
-		_wait_time = GVAR(times_guer) * 60;
+		GVAR(wait_time_guer) = GVAR(wait_time_guer) + GVAR(time_guer) * 60;
+		_wait_time = GVAR(time_guer) * 60;
 		publicVariable QGVAR(wait_time_guer);
 	};
 
 	case "civ": {
-		GVAR(wait_time_civ) = GVAR(wait_time_civ) + GVAR(times_civ) * 60;
-		_wait_time = GVAR(times_civ) * 60;
+		GVAR(wait_time_civ) = GVAR(wait_time_civ) + GVAR(time_civ) * 60;
+		_wait_time = GVAR(time_civ) * 60;
 		publicVariable QGVAR(wait_time_civ);
 	};
 

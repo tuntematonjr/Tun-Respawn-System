@@ -77,7 +77,7 @@ ISNILS(GVAR(spectate_civilian),true);*/
 
 //Wave times
 [
-    QGVAR(times_west), // Unique setting name. Matches resulting variable name <STRING>
+    QGVAR(time_west), // Unique setting name. Matches resulting variable name <STRING>
     "SLIDER", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
     ["West", localize "STR_Tun_Respawn_CBA_tooltip_time"], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
     [localize "STR_Tun_Respawn_CBA_Category_main", localize "STR_Tun_Respawn_CBA_Category_time"], // Category for the settings menu + optional sub-category <STRING, ARRAY>
@@ -88,7 +88,7 @@ ISNILS(GVAR(spectate_civilian),true);*/
 ] call CBA_Settings_fnc_init;
 
 [
-    QGVAR(times_east), // Unique setting name. Matches resulting variable name <STRING>
+    QGVAR(time_east), // Unique setting name. Matches resulting variable name <STRING>
     "SLIDER", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
     ["East", localize "STR_Tun_Respawn_CBA_tooltip_time"], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
     [localize "STR_Tun_Respawn_CBA_Category_main", localize "STR_Tun_Respawn_CBA_Category_time"], // Category for the settings menu + optional sub-category <STRING, ARRAY>
@@ -99,7 +99,7 @@ ISNILS(GVAR(spectate_civilian),true);*/
 ] call CBA_Settings_fnc_init;
 
 [
-    QGVAR(times_guer), // Unique setting name. Matches resulting variable name <STRING>
+    QGVAR(time_guer), // Unique setting name. Matches resulting variable name <STRING>
     "SLIDER", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
     ["Resistance", localize "STR_Tun_Respawn_CBA_tooltip_time"], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
     [localize "STR_Tun_Respawn_CBA_Category_main", localize "STR_Tun_Respawn_CBA_Category_time"], // Category for the settings menu + optional sub-category <STRING, ARRAY>
@@ -110,7 +110,7 @@ ISNILS(GVAR(spectate_civilian),true);*/
 ] call CBA_Settings_fnc_init;
 
 [
-    QGVAR(times_civ), // Unique setting name. Matches resulting variable name <STRING>
+    QGVAR(time_civ), // Unique setting name. Matches resulting variable name <STRING>
     "SLIDER", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
     ["Civilian", localize "STR_Tun_Respawn_CBA_tooltip_time"], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
     [localize "STR_Tun_Respawn_CBA_Category_main", localize "STR_Tun_Respawn_CBA_Category_time"], // Category for the settings menu + optional sub-category <STRING, ARRAY>
