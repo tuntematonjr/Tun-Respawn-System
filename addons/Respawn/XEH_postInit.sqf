@@ -62,22 +62,22 @@ if (isServer) then {
 
 				if (GVAR(enabled_west)) then {
 					_time = round (GVAR(wait_time_west) - cba_missiontime);
-					AAR_UPDATE(west,"Next respawn wave", _time);
+					AAR_UPDATE("west","Next respawn wave", _time);
 				};
 
 				if (GVAR(enabled_east)) then {
 					_time = round (GVAR(wait_time_east) - cba_missiontime);
-					AAR_UPDATE(east,"Next respawn wave", _time);
+					AAR_UPDATE("east","Next respawn wave", _time);
 				};
 
 				if (GVAR(enabled_guer)) then {
 					_time = round (GVAR(wait_time_guer) - cba_missiontime);
-					AAR_UPDATE(guer,"Next respawn wave", _time);
+					AAR_UPDATE("guer","Next respawn wave", _time);
 				};
 
 				if (GVAR(enabled_civ)) then {
 					_time = round (GVAR(wait_time_civ) - cba_missiontime);
-					AAR_UPDATE(civ,"Next respawn wave", _time);
+					AAR_UPDATE("civ","Next respawn wave", _time);
 				};
 
 			}, 10] call CBA_fnc_addPerFrameHandler;

@@ -3,8 +3,8 @@
 
 #define MAJOR 1
 #define MINOR 1
-#define PATCHLVL 1
-#define BUILD 21042020
+#define PATCHLVL 2
+#define BUILD 22042020
 
 #define VERSION MAJOR.MINOR.PATCHLVL.BUILD
 #define VERSION_AR MAJOR,MINOR,PATCHLVL,BUILD
@@ -30,4 +30,4 @@
 
 
 
-#define AAR_UPDATE(OBJ,VARNAME,VALUE) if (missionNamespace getVariable ["afi_aar2 ", false]) then { [OBJ, VARNAME, VALUE] call afi_aar2_fnc_addcustomdata; };
+#define AAR_UPDATE(OBJ,VARNAME,VALUE) if ( !isnil "afi_aar2" ) then { [OBJ, VARNAME, VALUE] call afi_aar2_fnc_addcustomdata; };

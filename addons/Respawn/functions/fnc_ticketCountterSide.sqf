@@ -25,7 +25,7 @@ switch (toLower str _side) do {
 				REM(GVAR(disconnected_players), (getPlayerUID _player));
 			} else {
 				DEC(GVAR(tickets_west));
-				AAR_UPDATE(west,"Side tickets", GVAR(tickets_west));
+				AAR_UPDATE("west","Side tickets", GVAR(tickets_west));
 			};
 
 			[5] remoteExecCall ["setPlayerRespawnTime", _player];
@@ -43,7 +43,7 @@ switch (toLower str _side) do {
 				REM(GVAR(disconnected_players), (getPlayerUID _player));
 			} else {
 				DEC(GVAR(tickets_east));
-				AAR_UPDATE(east,"Side tickets", GVAR(tickets_east));
+				AAR_UPDATE("east","Side tickets", GVAR(tickets_east));
 			};
 
 			[5] remoteExecCall ["setPlayerRespawnTime", _player];
@@ -59,7 +59,7 @@ switch (toLower str _side) do {
 				REM(GVAR(disconnected_players), (getPlayerUID _player));
 			} else {
 				DEC(GVAR(tickets_guer));
-				AAR_UPDATE(guer,"Side tickets", GVAR(tickets_guer));
+				AAR_UPDATE("guer","Side tickets", GVAR(tickets_guer));
 			};
 
 			[5] remoteExecCall ["setPlayerRespawnTime", _player];
@@ -75,7 +75,7 @@ switch (toLower str _side) do {
 				REM(GVAR(disconnected_players), (getPlayerUID _player));
 			} else {
 				DEC(GVAR(tickets_civ));
-				AAR_UPDATE(civ,"Side tickets", GVAR(tickets_civ));
+				AAR_UPDATE("civ","Side tickets", GVAR(tickets_civ));
 			};
 
 			[5] remoteExecCall ["setPlayerRespawnTime", _player];
