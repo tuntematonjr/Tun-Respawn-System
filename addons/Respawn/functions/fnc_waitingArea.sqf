@@ -47,7 +47,7 @@ switch (toLower str playerSide) do {
 	};
 
 	//make sure that player is still in area
-	if !(player inArea [_respawn_waitingarea, 35, 35, 0, false]) then {
+	if !(player inArea [_respawn_waitingarea, 100, 100, 0, false]) then {
 		player setPos ([_respawn_waitingarea, 5] call CBA_fnc_randPos);
 		hint "Get over here!";
 	};

@@ -1,4 +1,4 @@
-name = "TUN Respawn System v1.1.1";
+name = "TUN Respawn System v1.1.2";
 picture = "Data\afilogo.paa";
 actionName = "Community Website";
 action = "https://armafinland.fi/";
@@ -8,8 +8,8 @@ logoOver = "Data\afilogo.paa";
 logoSmall = "Data\afilogo.paa";
 tooltip = "Customisable wave based respawn system";
 tooltipOwned = "TUN Respawn System";
-overview = "Customisable wave based respawn system";
+overview = "TUN Respawn System v1.1.2";
 author = "Tuntematon";
 //overviewPicture = "";
-overviewText = "TUN Respawn System v1.1.1";
+overviewText = "TUN Respawn System v1.1.2";
 //overviewFootnote = "<br /><br /><t color='#999999'>Teksti<t />";
