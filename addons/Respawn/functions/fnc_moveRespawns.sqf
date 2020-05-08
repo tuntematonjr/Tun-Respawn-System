@@ -16,7 +16,6 @@
 params ["_side"];
 private ["_respawn_position", "_respawn_waitingarea", "_respawn_gearPath"];
 
-
 switch toLower(_side) do {
 	case "west": {
 		_respawn_position = getpos (GVAR(respawnpos_west) select 1);
@@ -39,7 +38,7 @@ switch toLower(_side) do {
 	};
 
 	default {
-		hint "Move respawn FNC missing side param!";
+		ERROR_MSG("Move respawn FNC missing side param!");
 	};
 };
 
@@ -49,13 +48,10 @@ _count = count _players;
 _text = format ["Respawn count: %1, %2", _count, _side];
 INFO(_text);
 
-
 //move
 [{
 	_args params ["_respawn_waitingarea", "_respawn_position", "_side"];
 	private _players = allPlayers inAreaArray [_respawn_waitingarea, 50, 50, 0, false];
-
-
 
 	if (count _players > 0) then {
 		_player = _players select 0;
@@ -66,12 +62,8 @@ INFO(_text);
 		_player setPos ([_respawn_position, 10] call CBA_fnc_randPos);
 		remoteExecCall [QFUNC(addGear), _player];
 
-
 	} else {
 		INFO(format ["Side %1 all respawn units moved", _side]);
 		[_handle] call CBA_fnc_removePerFrameHandler;
 	};
 }, 0.1, [_respawn_waitingarea, _respawn_position, _side]] call CBA_fnc_addPerFrameHandler;
-
-
-

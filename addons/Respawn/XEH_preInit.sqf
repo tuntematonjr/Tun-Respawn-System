@@ -7,15 +7,20 @@ ISNILS(GVAR(wait_time_east),0);
 ISNILS(GVAR(wait_time_guer),0);
 ISNILS(GVAR(wait_time_civ),0);
 
+ISNILS(GVAR(allow_respawn_west),true);
+ISNILS(GVAR(allow_respawn_east),true);
+ISNILS(GVAR(allow_respawn_guer),true);
+ISNILS(GVAR(allow_respawn_civ),true);
+
 ISNILS(GVAR(disconnected_players),[]);
+
+ISNILS(GVAR(timer_running),[]);
 
 //allowed sides to spectate !WIP!
 /*ISNILS(GVAR(spectate_west),true);
 ISNILS(GVAR(spectate_east),true);
 ISNILS(GVAR(spectate_independent),true);
 ISNILS(GVAR(spectate_civilian),true);*/
-
-
 
 
 //Main settings
@@ -74,6 +79,17 @@ ISNILS(GVAR(spectate_civilian),true);*/
     true //Setting will be marked as needing mission restart after being changed. (optional, default false) <BOOL>
 ] call CBA_Settings_fnc_init;
 
+[
+    QGVAR(forced_respawn), // Unique setting name. Matches resulting variable name <STRING>
+    "CHECKBOX", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
+    ["Only Forced Waves", localize "STR_Tun_Respawn_CBA_tooltip_forceRespawn"], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    [localize "STR_Tun_Respawn_CBA_Category_main", localize "STR_Tun_Respawn_CBA_Category_generic"], // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    true, // Extra properties of the setting depending of _settingType.
+    1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
+    {}, // Script to execute when setting is changed. (optional) <CODE>
+    true //Setting will be marked as needing mission restart after being changed. (optional, default false) <BOOL>
+] call CBA_Settings_fnc_init;
+
 
 //Wave times
 [
@@ -120,7 +136,6 @@ ISNILS(GVAR(spectate_civilian),true);*/
     true //Setting will be marked as needing mission restart after being changed. (optional, default false) <BOOL>
 ] call CBA_Settings_fnc_init;
 
-
 //Spectator camera modes
 [
     QGVAR(spectate_Cameramode_1st), // Unique setting name. Matches resulting variable name <STRING>
@@ -154,7 +169,6 @@ ISNILS(GVAR(spectate_civilian),true);*/
     {}, // Script to execute when setting is changed. (optional) <CODE>
     true //Setting will be marked as needing mission restart after being changed. (optional, default false) <BOOL>
 ] call CBA_Settings_fnc_init;
-
 
 
 //Ticket count

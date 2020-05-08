@@ -15,7 +15,6 @@
 #include "script_component.hpp"
 private ["_respawn_waitingarea"];
 
-
 switch (toLower str playerSide) do {
 
 	case "west": {
@@ -44,6 +43,10 @@ switch (toLower str playerSide) do {
 
 	if (_wait_time >= 0) then {
 		[format ["<t color='#0800ff' size = '.8'>%2<br />%1</t>", ([_wait_time] call CBA_fnc_formatElapsedTime), localize "STR_Tun_Respawn_FNC_remaining_time"],0,0,1,0] spawn BIS_fnc_dynamicText;
+	} else {
+		if (player getvariable [QGVAR(waiting_respawn), true] && { (missionNamespace getVariable format ["%1_%2", QGVAR(allow_respawn), playerSide]) } ) then {
+			[format ["<t color='#0800ff' size = '.8'>%1</t>", localize "STR_Tun_Respawn_FNC_RespawnDisabled"],0,0,1,0] spawn BIS_fnc_dynamicText;
+		};
 	};
 
 	//make sure that player is still in area
