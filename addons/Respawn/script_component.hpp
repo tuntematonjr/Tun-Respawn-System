@@ -2,9 +2,9 @@
 #define PREFIX tun
 
 #define MAJOR 1
-#define MINOR 1
-#define PATCHLVL 2
-#define BUILD 22042020
+#define MINOR 2
+#define PATCHLVL 0
+#define BUILD 09052020
 
 #define VERSION MAJOR.MINOR.PATCHLVL.BUILD
 #define VERSION_AR MAJOR,MINOR,PATCHLVL,BUILD
@@ -27,7 +27,5 @@
 // Default versioning level
 #define DEFAULT_VERSIONING_LEVEL 2
 
-
-
-
+//AAR update macro
 #define AAR_UPDATE(OBJ,VARNAME,VALUE) if ( !isnil "afi_aar2" ) then { [OBJ, VARNAME, VALUE] call afi_aar2_fnc_addcustomdata; };
