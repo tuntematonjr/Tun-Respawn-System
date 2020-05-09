@@ -170,6 +170,30 @@
         <Russian>Enable Respawn System for mission.</Russian>
         <German>Enable Respawn System for mission.</German>
       </Key>
+      <Key ID="STR_Tun_Respawn_CBA_tooltip_forceRespawn">
+        <Original>Only forced respawn waves. No timer!</Original>
+        <English>Only forced respawn waves. No timer!</English>
+        <Czech>Only forced respawn waves. No timer!</Czech>
+        <French>Only forced respawn waves. No timer!</French>
+        <Spanish>Only forced respawn waves. No timer!</Spanish>
+        <Italian>Only forced respawn waves. No timer!</Italian>
+        <Polish>Only forced respawn waves. No timer!</Polish>
+        <Portuguese>Only forced respawn waves. No timer!</Portuguese>
+        <Russian>Only forced respawn waves. No timer!</Russian>
+        <German>Only forced respawn waves. No timer!</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_tooltip_delayed_respawn">
+        <Original>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20 (min) and this is set to 50 (%) and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</Original>
+        <English>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20 (min) and this is set to 50 (%) and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</English>
+        <Czech>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20 (min) and this is set to 50 (%) and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</Czech>
+        <French>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20 (min) and this is set to 50 (%) and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</French>
+        <Spanish>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20 (min) and this is set to 50 (%) and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</Spanish>
+        <Italian>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20 (min) and this is set to 50 (%) and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</Italian>
+        <Polish>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20 (min) and this is set to 50 (%) and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</Polish>
+        <Portuguese>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20 (min) and this is set to 50 (%) and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</Portuguese>
+        <Russian>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20 (min) and this is set to 50 (%) and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</Russian>
+        <German>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20 (min) and this is set to 50 (%) and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</German>
+      </Key>
     </Container>
     <Container name="FNC">
       <Key ID="STR_Tun_Respawn_FNC_moveRespawns">
@@ -196,7 +220,7 @@
         <Russian>Remaining time until respawn</Russian>
         <German>Remaining time until respawn</German>
       </Key>
-      <Key ID="STR_Tun_Respawn_FNC_allowRespawn">
+      <Key ID="STR_Tun_Respawn_FNC_RespawnDisabled">
         <Original>Respawn is currently disabled.</Original>
         <English>Respawn is currently disabled.</English>
         <Czech>Respawn is currently disabled.</Czech>

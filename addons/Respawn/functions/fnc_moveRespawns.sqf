@@ -56,12 +56,17 @@ INFO(_text);
 	if (count _players > 0) then {
 		_player = _players select 0;
 
-		[localize "STR_Tun_Respawn_FNC_moveRespawns",15] remoteExecCall [QFUNC(blackscreen), _player]; // make player screen black and prevent them moving right away so server can keep up.
+		if !(_player getVariable QGVAR(skip_next_wave)) then {
+			/* code */
 
-		_player setVariable [QGVAR(waiting_respawn), false, true];
-		_player setPos ([_respawn_position, 10] call CBA_fnc_randPos);
-		remoteExecCall [QFUNC(addGear), _player];
+			[localize "STR_Tun_Respawn_FNC_moveRespawns",15] remoteExecCall [QFUNC(blackscreen), _player]; // make player screen black and prevent them moving right away so server can keep up.
 
+			_player setVariable [QGVAR(waiting_respawn), false, true];
+			_player setPos ([_respawn_position, 10] call CBA_fnc_randPos);
+			remoteExecCall [QFUNC(addGear), _player];
+		} else {
+			_player setVariable [QGVAR(skip_next_wave), false];
+		};
 	} else {
 		INFO(format ["Side %1 all respawn units moved", _side]);
 		[_handle] call CBA_fnc_removePerFrameHandler;

@@ -14,6 +14,16 @@ if (hasInterface) then {
 
 		//Add respawn eh
 		[player, "Respawn", {
+
+			//
+			_skip = false;
+			if (GVAR(delayed_respawn) > 0) then {
+				_time = missionNamespace getVariable format (["%1_%2", QGVAR(wait_time), playerSide]);
+				_waittime = missionNamespace getVariable format (["%1_time_%2", QGVAR(), playerSide]);
+				_skip = (_time > (_waittime * (GVAR(delayed_respawn) / 100)));
+			};
+			player setVariable [QGVAR(skip_next_wave), _skip, true];
+
 			[] call FUNC(removegear);
 			player setVariable [QGVAR(waiting_respawn), true, true];
 			[] call FUNC(waitingArea);

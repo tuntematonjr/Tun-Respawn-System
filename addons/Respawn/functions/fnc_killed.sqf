@@ -19,9 +19,6 @@
 setPlayerRespawnTime 99999;
 ( "BIS_fnc_respawnSpectator" call BIS_fnc_rscLayer ) cutText [ "", "PLAIN" ];
 
-missionNamespace getVariable format ["%1_%2", QGVAR(tickets), playerSide];
-
-
 switch (GVAR(respawn_type)) do {
 	case "Sidetickets": {
 		[playerSide, player] remoteExecCall [QFUNC(ticketCountterSide),2];
