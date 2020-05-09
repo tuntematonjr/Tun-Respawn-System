@@ -5,6 +5,7 @@
 
 PREP(addGear);
 PREP(blackscreen);
+PREP(delayed_respawn);
 PREP(force_Respawn);
 PREP(killed);
 PREP(killJIP);

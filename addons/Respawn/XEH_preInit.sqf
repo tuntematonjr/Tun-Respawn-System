@@ -84,7 +84,7 @@ ISNILS(GVAR(spectate_civilian),true);*/
     "CHECKBOX", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
     ["Only Forced Waves", localize "STR_Tun_Respawn_CBA_tooltip_forceRespawn"], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
     [localize "STR_Tun_Respawn_CBA_Category_main", localize "STR_Tun_Respawn_CBA_Category_generic"], // Category for the settings menu + optional sub-category <STRING, ARRAY>
-    true, // Extra properties of the setting depending of _settingType.
+    false, // Extra properties of the setting depending of _settingType.
     1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
     {}, // Script to execute when setting is changed. (optional) <CODE>
     true //Setting will be marked as needing mission restart after being changed. (optional, default false) <BOOL>
@@ -96,6 +96,17 @@ ISNILS(GVAR(spectate_civilian),true);*/
     ["Delayed respawn", localize "STR_Tun_Respawn_CBA_tooltip_delayed_respawn"], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
     [localize "STR_Tun_Respawn_CBA_Category_main", localize "STR_Tun_Respawn_CBA_Category_generic"], // Category for the settings menu + optional sub-category <STRING, ARRAY>
     [0, 100, 0, 0], // Extra properties of the setting depending of _settingType.
+    1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
+    {}, // Script to execute when setting is changed. (optional) <CODE>
+    true //Setting will be marked as needing mission restart after being changed. (optional, default false) <BOOL>
+] call CBA_Settings_fnc_init;
+
+[
+    QGVAR(waiting_area_range), // Unique setting name. Matches resulting variable name <STRING>
+    "SLIDER", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
+    ["Waiting Area Range", localize "STR_Tun_Respawn_CBA_tooltip_waiting_area_range"], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    [localize "STR_Tun_Respawn_CBA_Category_main", localize "STR_Tun_Respawn_CBA_Category_generic"], // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    [30, 300, 100, 0], // Extra properties of the setting depending of _settingType.
     1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
     {}, // Script to execute when setting is changed. (optional) <CODE>
     true //Setting will be marked as needing mission restart after being changed. (optional, default false) <BOOL>

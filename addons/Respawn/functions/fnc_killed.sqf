@@ -15,7 +15,6 @@
  */
 #include "script_component.hpp"
 
-
 setPlayerRespawnTime 99999;
 ( "BIS_fnc_respawnSpectator" call BIS_fnc_rscLayer ) cutText [ "", "PLAIN" ];
 
@@ -24,9 +23,9 @@ switch (GVAR(respawn_type)) do {
 		[playerSide, player] remoteExecCall [QFUNC(ticketCountterSide),2];
 	};
 
-	case "Playertickets": {
+	/*case "Playertickets": {
 		//WIP
-	};
+	};*/
 
 	default {
 		setPlayerRespawnTime 5;

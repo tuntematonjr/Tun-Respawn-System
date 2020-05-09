@@ -16,7 +16,7 @@
 params ["_side"];
 
 if (GVAR(forced_respawn)) exitWith { INFO("No timer, Only forced waves"); };
-
+private ["_wait_time_var", "_allow_respawn_var"];
 
 switch (_side) do {
 	case "west": {
@@ -53,9 +53,12 @@ switch (_side) do {
 };
 
 if !( _side in GVAR(timer_running) ) then {
-	GVAR(timer_running) = GVAR(timer_running) pushBack _side;
+	GVAR(timer_running) pushBack _side;
 	[{ missionNamespace getVariable (_this select 2) && { cba_missiontime >= missionNamespace getVariable (_this select 1) } }, {
-		[_this select 0] call FUNC(moveRespawns);
-		[_this select 0] call FUNC(timer);
+
+		private _side = _this select 0;
+		REM(GVAR(timer_running), _side);
+		[_side] call FUNC(moveRespawns);
+		[_side] call FUNC(timer);
 	}, [_side, _wait_time_var, _allow_respawn_var]] call CBA_fnc_waitUntilAndExecute;
 };

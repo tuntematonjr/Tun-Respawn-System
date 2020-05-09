@@ -194,6 +194,18 @@
         <Russian>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20 (min) and this is set to 50 (%) and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</Russian>
         <German>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20 (min) and this is set to 50 (%) and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</German>
       </Key>
+      <Key ID="STR_Tun_Respawn_CBA_tooltip_waiting_area_range">
+        <Original>Range for waitingarea. Default 100m</Original>
+        <English>Range for waitingarea. Default 100m</English>
+        <Czech>Range for waitingarea. Default 100m</Czech>
+        <French>Range for waitingarea. Default 100m</French>
+        <Spanish>Range for waitingarea. Default 100m</Spanish>
+        <Italian>Range for waitingarea. Default 100m</Italian>
+        <Polish>Range for waitingarea. Default 100m</Polish>
+        <Portuguese>Range for waitingarea. Default 100m</Portuguese>
+        <Russian>Range for waitingarea. Default 100m</Russian>
+        <German>Range for waitingarea. Default 100m</German>
+      </Key>
     </Container>
     <Container name="FNC">
       <Key ID="STR_Tun_Respawn_FNC_moveRespawns">
@@ -231,6 +243,18 @@
         <Portuguese>Respawn is currently disabled.</Portuguese>
         <Russian>Respawn is currently disabled.</Russian>
         <German>Respawn is currently disabled.</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_FNC_only_forced_waves">
+        <Original>Mission is using only forced waves.</Original>
+        <English>Mission is using only forced waves.</English>
+        <Czech>Mission is using only forced waves.</Czech>
+        <French>Mission is using only forced waves.</French>
+        <Spanish>Mission is using only forced waves.</Spanish>
+        <Italian>Mission is using only forced waves.</Italian>
+        <Polish>Mission is using only forced waves.</Polish>
+        <Portuguese>Mission is using only forced waves.</Portuguese>
+        <Russian>Mission is using only forced waves.</Russian>
+        <German>Mission is using only forced waves.</German>
       </Key>
     </Container>
     <Container name="Modules">
