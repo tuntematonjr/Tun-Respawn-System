@@ -80,7 +80,7 @@
             };
 
             //Do marker update
-            [_side, false] call FUNC(update_respawn_point);
+            [_side, false] call TUN_respawn_update_respawn_point;
 
             localize "STR_Tun_MSP_destroyed" remoteExecCall ["hint", _side];
 

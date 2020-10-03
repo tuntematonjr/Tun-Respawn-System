@@ -20,3 +20,4 @@ PREP(ticketCountterPlayer);
 PREP(ticketCountterSide);
 PREP(timer);
 PREP(waitingArea);
+PREP(update_respawn_point);

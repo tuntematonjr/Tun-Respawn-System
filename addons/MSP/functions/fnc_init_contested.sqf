@@ -2,7 +2,7 @@
  * Author: [Tuntematon]
  * [Description]
  * Notify if ther is enemies inside max radius
- * Disable MPS if there is more enemies than friendlies inside max range
+ * Disable msp if there is more enemies than friendlies inside max range
  * Disable MSP if there is even one enemy in min range
  *
  * Arguments:
@@ -28,7 +28,7 @@
     };
 
     if ( GVAR(status_west) ) then {
-        if (GVAR(vehicle_east) == objNull) then {
+        if (GVAR(vehicle_west) == objNull) then {
             GVAR(status_west) = false;
             ERROR("MSP Object Disapeared (WEST)");
         } else {

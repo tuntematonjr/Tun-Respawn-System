@@ -13,7 +13,6 @@ PREP(initate_msp_action);
 PREP(move_player);
 PREP(pole_actions);
 PREP(report_enemies);
-PREP(update_respawn_point);
 PREP(update_status);
 
 

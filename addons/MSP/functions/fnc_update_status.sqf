@@ -53,7 +53,7 @@ if (_setup) then {
 
 _pos = getpos _msp;
 
-[_side, _setup, _pos] remoteExecCall [QFUNC(update_respawn_point), 2];
+[_side, _setup, _pos] remoteExecCall ["TUN_respawn_update_respawn_point", 2];
 
 _msp setVariable [QGVAR(isMSP), _setup, true];
 
