@@ -24,26 +24,20 @@
 #include "script_component.hpp"
 
 
-params ["_side", "_msp", "_contested_variable_str"];
-_msp_pos = getpos _msp;
-
-_contested_status = missionNamespace getVariable _contested_variable_str;
-
-_areaunits_max = (allUnits inAreaArray [_msp_pos, GVAR(report_enemies_range), GVAR(report_enemies_range)]);
-_enemycount_max = {[_side, side _x] call BIS_fnc_sideIsEnemy} count _areaunits_max;
+params ["_count", "_msp", "_side"];
 
 //Notify if enemies near
-if (!(_contested_status) && {_enemycount_max > 0}) then {
+if ( _count > 0 ) then {
     localize "STR_Tun_MSP_FNC_enemies_near" remoteExecCall ["hint", _side];
 
-    if !(GVAR(enemies_near)) then {
-    	AAR_UPDATE(_msp,"Enemies near", true);
-    	GVAR(enemies_near) = true;
+    if (_msp getvariable [QGVAR(enemies_near), false]) then {
+    	_msp setVariable [QGVAR(enemies_near), true, true];
+		AAR_UPDATE(_msp,"Enemies near", true);
     };
 } else {
-	if (GVAR(enemies_near)) then {
-		AAR_UPDATE(_msp,"Enemies near", true);
-		GVAR(enemies_near) = false;
+	if (_msp getvariable [QGVAR(enemies_near), true]) then {
+		_msp setVariable [QGVAR(enemies_near), false, true];
+		AAR_UPDATE(_msp,"Enemies near", false);
 	};
 };
 

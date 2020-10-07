@@ -28,6 +28,9 @@
             AAR_UPDATE(_entity,"Report enemies radius", GVAR(report_enemies_range));
             AAR_UPDATE(_entity,"Contested radius max", GVAR(contested_radius_max));
             AAR_UPDATE(_entity,"Contested radius min", GVAR(contested_radius_min));
+            AAR_UPDATE(_entity,"Enemy Count", 0);
+		    AAR_UPDATE(_entity,"Enemy Count Min", 0);
+		    AAR_UPDATE(_entity,"Friendly Count", 0);
 
             _entity setVariable [QGVAR(side), _side, true];
             }, true, [], true] call CBA_fnc_addClassEventHandler;

@@ -19,8 +19,24 @@ if (isServer) then {
     missionNamespace setVariable [QGVAR(vehicle_guer), objNull, true];
     missionNamespace setVariable [QGVAR(vehicle_civ), objNull, true];
 
-    missionNamespace setVariable [QGVAR(enemies_near), false, true];
+    missionNamespace setVariable [QGVAR(eastFriendlyCount), 0, true];
+    missionNamespace setVariable [QGVAR(eastEnemyCount), 0, true];
+    missionNamespace setVariable [QGVAR(eastEnemyCountMin), 0, true];
+
+    missionNamespace setVariable [QGVAR(westFriendlyCount), 0, true];
+    missionNamespace setVariable [QGVAR(westEnemyCount), 0, true];
+    missionNamespace setVariable [QGVAR(westEnemyCountMin), 0, true];
+
+    missionNamespace setVariable [QGVAR(guerFriendlyCount), 0, true];
+    missionNamespace setVariable [QGVAR(guerEnemyCount), 0, true];
+    missionNamespace setVariable [QGVAR(guerEnemyCountMin), 0, true];
+
+    missionNamespace setVariable [QGVAR(civFriendlyCount), 0, true];
+    missionNamespace setVariable [QGVAR(civEnemyCount), 0, true];
+    missionNamespace setVariable [QGVAR(civEnemyCountMin), 0, true];
+
 };
+
 
 [
     QGVAR(enable), // Unique setting name. Matches resulting variable name <STRING>

@@ -80,5 +80,5 @@ switch (_side) do {
 };
 
 if (_setup) then {
-	[_side] call FUNC(force_contested_check);
+	[] call FUNC(force_contested_check);
 };

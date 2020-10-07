@@ -5,7 +5,8 @@
 
 PREP(ace_actions);
 PREP(add_EH);
-PREP(contested);
+PREP(contestedCheck);
+PREP(contestedSummary);
 PREP(create_msp_props);
 PREP(force_contested_check);
 PREP(init_contested);
@@ -14,5 +15,3 @@ PREP(move_player);
 PREP(pole_actions);
 PREP(report_enemies);
 PREP(update_status);
-
-
