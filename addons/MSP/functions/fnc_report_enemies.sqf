@@ -6,24 +6,17 @@
  * Disable MSP if there is even one enemy in min range
  *
  * Arguments:
- * 0: The first argument <STRING>
- * 1: The second argument <OBJECT>
- * 2: Multiple input types <STRING|ARRAY|CODE>
- * 3: Optional input <BOOL> (default: true)
- * 4: Optional input with multiple types <CODE|STRING> (default: {true})
- * 5: Not mandatory input <STRING> (default: nil)
+ * 0: Unit count <Number>
+ * 1: MSP <OBJECT>
+ * 2: side <SIDE>
  *
  * Return Value:
  * The return value <BOOL>
  *
  * Example:
- * ["something", player] call Tun_MSP_fnc_imanexample
- *
- * Public: [Yes/No]
+ * [unitcount, msp vehilce, side] call Tun_MSP_fnc_imanexample
  */
 #include "script_component.hpp"
-
-
 params ["_count", "_msp", "_side"];
 
 //Notify if enemies near
@@ -40,6 +33,3 @@ if ( _count > 0 ) then {
 		AAR_UPDATE(_msp,"Enemies near", false);
 	};
 };
-
-
-

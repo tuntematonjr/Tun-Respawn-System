@@ -3,20 +3,14 @@
  * [Description]
  *
  * Arguments:
- * 0: The first argument <STRING>
- * 1: The second argument <OBJECT>
- * 2: Multiple input types <STRING|ARRAY|CODE>
- * 3: Optional input <BOOL> (default: true)
- * 4: Optional input with multiple types <CODE|STRING> (default: {true})
- * 5: Not mandatory input <STRING> (default: nil)
+ * 0: Unit Array <ARRAY>
+ * 1: Delay between checks <OBJECT>
  *
  * Return Value:
- * The return value <BOOL>
+ * None
  *
  * Example:
- * ["something", player] call Tun_MSP_fnc_contestedCheck
- *
- * Public: [Yes/No]
+ * [allUnits, 5] call Tun_MSP_fnc_contestedCheck
  */
 #include "script_component.hpp"
 

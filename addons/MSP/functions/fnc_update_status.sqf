@@ -2,15 +2,16 @@
  * Author: [Tuntematon]
  * [Description]
  *
+ *
  * Arguments:
  * 0: MSP <OBJ>
  * 1: True: Setup MSP. False: Pack MSP <BOOL>
  *
  * Return Value:
- * The return value <BOOL>
+ * none
  *
  * Example:
- * ["something", player] call Tun_MSP_fnc_update_status
+ * [msp, true] call Tun_MSP_fnc_update_status
  */
 #include "script_component.hpp"
 
