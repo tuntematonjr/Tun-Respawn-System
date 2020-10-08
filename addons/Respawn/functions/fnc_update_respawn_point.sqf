@@ -11,11 +11,12 @@
  * None
  *
  * Example:
- * [west, true] call Tun_MSP_fnc_update_respawn_point
+ * [west, true] call Tun_respawn_fnc_update_respawn_point
  */
 #include "script_component.hpp"
 
 params [["_side", sideLogic, [west]], ["_update", true, [true]], ["_new_pos", [0,0,0], [[]]]];
+
 
 
 _value = switch (_side) do {
@@ -55,4 +56,4 @@ if (_update) then {
 };
 
 //Forsce players to update markers
-[] remoteExecCall ["Tun_Respawn_fnc_marker_update", [0, -2] select isServer, false];
+[] remoteExecCall [QGVAR(marker_update), [0, -2] select isServer, false];

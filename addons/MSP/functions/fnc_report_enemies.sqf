@@ -6,46 +6,30 @@
  * Disable MSP if there is even one enemy in min range
  *
  * Arguments:
- * 0: The first argument <STRING>
- * 1: The second argument <OBJECT>
- * 2: Multiple input types <STRING|ARRAY|CODE>
- * 3: Optional input <BOOL> (default: true)
- * 4: Optional input with multiple types <CODE|STRING> (default: {true})
- * 5: Not mandatory input <STRING> (default: nil)
+ * 0: Unit count <Number>
+ * 1: MSP <OBJECT>
+ * 2: side <SIDE>
  *
  * Return Value:
  * The return value <BOOL>
  *
  * Example:
- * ["something", player] call Tun_MSP_fnc_imanexample
- *
- * Public: [Yes/No]
+ * [unitcount, msp vehilce, side] call Tun_MSP_fnc_imanexample
  */
 #include "script_component.hpp"
-
-
-params ["_side", "_msp", "_contested_variable_str"];
-_msp_pos = getpos _msp;
-
-_contested_status = missionNamespace getVariable _contested_variable_str;
-
-_areaunits_max = (allUnits inAreaArray [_msp_pos, GVAR(report_enemies_range), GVAR(report_enemies_range)]);
-_enemycount_max = {[_side, side _x] call BIS_fnc_sideIsEnemy} count _areaunits_max;
+params ["_status", "_msp", "_side"];
 
 //Notify if enemies near
-if (!(_contested_status) && {_enemycount_max > 0}) then {
-    localize "STR_Tun_MSP_FNC_enemies_near" remoteExecCall ["hint", _side];
+if ( _status ) then {
+    localize "STR_Tun_MSP_FNC_enemies_near" remoteExecCall ["hintSilent", _side];
 
-    if !(GVAR(enemies_near)) then {
-    	AAR_UPDATE(_msp,"Enemies near", true);
-    	GVAR(enemies_near) = true;
+    if (_msp getvariable [QGVAR(enemies_near), false]) then {
+    	_msp setVariable [QGVAR(enemies_near), true, true];
+		AAR_UPDATE(_msp,"Enemies near", true);
     };
 } else {
-	if (GVAR(enemies_near)) then {
-		AAR_UPDATE(_msp,"Enemies near", true);
-		GVAR(enemies_near) = false;
+	if (_msp getvariable [QGVAR(enemies_near), true]) then {
+		_msp setVariable [QGVAR(enemies_near), false, true];
+		AAR_UPDATE(_msp,"Enemies near", false);
 	};
 };
-
-
-

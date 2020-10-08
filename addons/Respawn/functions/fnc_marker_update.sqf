@@ -14,6 +14,7 @@
  */
 #include "script_component.hpp"
 
+
 {
 	_x params ["_marker", "_side"];
 

@@ -30,8 +30,5 @@ if (_setup) then {
     _time = GVAR(progresbar_time_pack);
 };
 
-_code =  { INFO( str(_this select 0 select 0) ); (_this select 0 select 0) call FUNC(update_status); };
+_code = { INFO( str(_this select 0 select 0) ); (_this select 0 select 0) call FUNC(update_status); };
 [_text, _time, _conditio, _code, {hint "aborted"},[[_target, _setup], _statusvar]] call CBA_fnc_progressBar;
-
-
-
