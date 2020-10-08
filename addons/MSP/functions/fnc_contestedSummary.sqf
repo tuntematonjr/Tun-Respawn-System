@@ -14,37 +14,76 @@
  */
 #include "script_component.hpp"
 
+_countingUnits = {
+	params ["_msp", "_side", "_nearUnits", "_nearUnitsMin", "_status"];
+	private _newStatus = false;
+	private _enemyCount = 0;
+	private _enemyCountMin = 0;
+	private _FriendlyCount = 0;
+
+	{
+		private _testSide = _x;
+		if ( [_testSide, _side] call BIS_fnc_sideIsEnemy ) then {
+			private _count = _testSide countSide _nearUnits;
+			ADD(_enemyCount, _count);
+
+			private _count = _testSide countSide _nearUnitsMin;
+			ADD(_enemyCountMin, _count);
+		} else {
+			private _count = _testSide countSide _nearUnits;
+			ADD(_FriendlyCount, _count);
+		};
+	} forEach [west, east, resistance, civilian];
+
+
+	AAR_UPDATE(_msp, "Enemy Count", _enemyCount);
+	AAR_UPDATE(_msp, "Enemy Count Min", _enemyCountMin);
+	AAR_UPDATE(_msp, "Friendly Count", _FriendlyCount);
+
+	//if there is more enemis in max range or even one in min range. Disable MSP
+	if ( _enemyCount > _FriendlyCount || _enemyCountMin > 0 ) then {
+		_newStatus = true;
+
+		if !(_status) then {
+			localize "STR_Tun_MSP_FNC_Contested_hint" remoteExecCall ["hint", _side];
+			[_side, false] call TUN_respawn_fnc_update_respawn_point;
+			AAR_UPDATE(_msp,"Is contested", true);
+		};
+	} else {
+		if ( _status ) then {
+			localize "STR_Tun_MSP_FNC_secured_hint" remoteExecCall ["hint", _side];
+			[_side, true, (getPos _msp) ] call TUN_respawn_fnc_update_respawn_point;
+			AAR_UPDATE(_msp,"Is contested", false);
+		};
+	};
+	[_newStatus, _enemyCount, _enemyCountMin, _FriendlyCount]
+};
+
+//todo tee yhtenäinen functio ylös valmiiksi
+
 if ( GVAR(status_east) ) then {
 	if (GVAR(vehicle_east) == objNull) then {
 		GVAR(status_east) = false;
 		ERROR("MSP Object Disapeared (EAST)");
 	} else {
 
-		AAR_UPDATE(GVAR(vehicle_east),"Enemy Count", GVAR(eastEnemyCount));
-		AAR_UPDATE(GVAR(vehicle_east),"Enemy Count Min", GVAR(eastEnemyCountMin));
-		AAR_UPDATE(GVAR(vehicle_east),"Friendly Count", GVAR(eastFriendlyCount));
+		private _msp = GVAR(vehicle_east);
+		private _side = east;
+		private _nearUnits = GVAR(nearUnitsEast);
+		private _nearUnitsMin = GVAR(nearUnitsEastMin);
+		private _status = GVAR(contested_east);
 
-		//if there is more enemis in max range or even one in min range. Disable MSP
-		if ( GVAR(eastEnemyCount) > GVAR(eastFriendlyCount) || GVAR(eastEnemyCountMin) > 0 ) then {
+		private _returns = [_msp, _side, _nearUnits, _nearUnitsMin, _status] call _countingUnits;
+		private _newStatus = _returns select 0;
+		private _enemyCount = _returns select 1;
+		private _enemyCountMin = _returns select 2;
+		private _FriendlyCount = _returns select 3;
 
-			if (!GVAR(status_east)) then {
-				missionNamespace setVariable [QGVAR(status_east), true, true];
-				localize "STR_Tun_MSP_FNC_Contested_hint" remoteExecCall ["hint", east];
+		GVAR(enemyCountEast) = _enemyCount;
+		GVAR(enemyCountMinEast) = _enemyCountMin;
+		GVAR(friendlyCountEast) = _FriendlyCount;
 
-				[east, false] call TUN_respawn_update_respawn_point;
-
-				AAR_UPDATE(GVAR(vehicle_east),"Is contested", true);
-			};
-		} else {
-			if ( GVAR(status_east) ) then {
-				missionNamespace setVariable [QGVAR(status_east), false, true];
-				localize "STR_Tun_MSP_FNC_secured_hint" remoteExecCall ["hint", east];
-
-				[east, true, (getPos GVAR(vehicle_east)) ] call TUN_respawn_update_respawn_point;
-
-				AAR_UPDATE(GVAR(vehicle_east),"Is contested", false);
-			};
-		};
+		missionNamespace setVariable [QGVAR(contested_east), _newStatus, true];
 	};
 };
 
@@ -54,31 +93,23 @@ if ( GVAR(status_west) ) then {
 		ERROR("MSP Object Disapeared (WEST)");
 	} else {
 
-		AAR_UPDATE(GVAR(vehicle_east),"Enemy Count", GVAR(westEnemyCount));
-		AAR_UPDATE(GVAR(vehicle_east),"Enemy Count Min", GVAR(westEnemyCountMin));
-		AAR_UPDATE(GVAR(vehicle_east),"Friendly Count", GVAR(westFriendlyCount));
+		private _msp = GVAR(vehicle_west);
+		private _side = west;
+		private _nearUnits = GVAR(nearUnitsWest);
+		private _nearUnitsMin = GVAR(nearUnitsWestMin);
+		private _status = GVAR(contested_west);
+		
+		private _returns = [_msp, _side, _nearUnits, _nearUnitsMin, _status] call _countingUnits;
+		private _newStatus = _returns select 0;
+		private _enemyCount = _returns select 1;
+		private _enemyCountMin = _returns select 2;
+		private _FriendlyCount = _returns select 3;
 
-		//if there is more enemis in max range or even one in min range. Disable MSP
-		if ( GVAR(westEnemyCount) > GVAR(westFriendlyCount) || GVAR(westEnemyCountMin) > 0 ) then {
+		GVAR(enemyCountWest) = _enemyCount;
+		GVAR(enemyCountMinWest) = _enemyCountMin;
+		GVAR(friendlyCountWest) = _FriendlyCount;
 
-			if (!GVAR(status_west)) then {
-				missionNamespace setVariable [QGVAR(status_west), true, true];
-				localize "STR_Tun_MSP_FNC_Contested_hint" remoteExecCall ["hint", west];
-
-				[west, false] call TUN_respawn_update_respawn_point;
-
-				AAR_UPDATE(GVAR(vehicle_west),"Is contested", true);
-			};
-		} else {
-			if ( GVAR(status_west) ) then {
-				missionNamespace setVariable [QGVAR(status_west), false, true];
-				localize "STR_Tun_MSP_FNC_secured_hint" remoteExecCall ["hint", west];
-
-				[west, true, (getPos GVAR(vehicle_west)) ] call TUN_respawn_update_respawn_point;
-
-				AAR_UPDATE(GVAR(vehicle_west),"Is contested", false);
-			};
-		};
+		missionNamespace setVariable [QGVAR(contested_west), _newStatus, true];
 	};
 };
 
@@ -88,31 +119,23 @@ if ( GVAR(status_guer) ) then {
 		ERROR("MSP Object Disapeared (RESISTANCE)");
 	} else {
 
-		AAR_UPDATE(GVAR(vehicle_east),"Enemy Count", GVAR(guerEnemyCount));
-		AAR_UPDATE(GVAR(vehicle_east),"Enemy Count Min", GVAR(guerEnemyCountMin));
-		AAR_UPDATE(GVAR(vehicle_east),"Friendly Count", GVAR(guerFriendlyCount));
+		private _msp = GVAR(vehicle_guer);
+		private _side = resistance;
+		private _nearUnits = GVAR(nearUnitsGuer);
+		private _nearUnitsMin = GVAR(nearUnitsGuerMin);
+		private _status = GVAR(contested_guer);
+		
+		private _returns = [_msp, _side, _nearUnits, _nearUnitsMin, _status] call _countingUnits;
+		private _newStatus = _returns select 0;
+		private _enemyCount = _returns select 1;
+		private _enemyCountMin = _returns select 2;
+		private _FriendlyCount = _returns select 3;
 
-		//if there is more enemis in max range or even one in min range. Disable MSP
-		if ( GVAR(guerEnemyCount) > GVAR(guerFriendlyCount) || GVAR(guerEnemyCountMin) > 0 ) then {
+		GVAR(enemyCountGuer) = _enemyCount;
+		GVAR(enemyCountMinGuer) = _enemyCountMin;
+		GVAR(friendlyCountGuer) = _FriendlyCount;
 
-			if (!GVAR(status_guer)) then {
-				missionNamespace setVariable [QGVAR(status_guer), true, true];
-				localize "STR_Tun_MSP_FNC_Contested_hint" remoteExecCall ["hint", resistance];
-
-				[resistance, false] call TUN_respawn_update_respawn_point;
-
-				AAR_UPDATE(GVAR(vehicle_guer),"Is contested", true);
-			};
-		} else {
-			if ( GVAR(status_guer) ) then {
-				missionNamespace setVariable [QGVAR(status_guer), false, true];
-				localize "STR_Tun_MSP_FNC_secured_hint" remoteExecCall ["hint", resistance];
-
-				[resistance, true, (getPos GVAR(vehicle_guer)) ] call TUN_respawn_update_respawn_point;
-
-				AAR_UPDATE(GVAR(vehicle_guer),"Is contested", false);
-			};
-		};
+		missionNamespace setVariable [QGVAR(contested_guer), _newStatus, true];
 	};
 };
 
@@ -121,31 +144,22 @@ if ( GVAR(status_civ) ) then {
 		GVAR(status_civ) = false;
 		ERROR("MSP Object Disapeared (CIVILIAN)");
 	} else {
+		private _msp = GVAR(vehicle_civ);
+		private _side = civilian;
+		private _nearUnits = GVAR(nearUnitsCiv);
+		private _nearUnitsMin = GVAR(nearUnitsCivMin);
+		private _status = GVAR(contested_civ);
+		
+		private _returns = [_msp, _side, _nearUnits, _nearUnitsMin, _status] call _countingUnits;
+		private _newStatus = _returns select 0;
+		private _enemyCount = _returns select 1;
+		private _enemyCountMin = _returns select 2;
+		private _FriendlyCount = _returns select 3;
 
-		AAR_UPDATE(GVAR(vehicle_east),"Enemy Count", GVAR(civEnemyCount));
-		AAR_UPDATE(GVAR(vehicle_east),"Enemy Count Min", GVAR(civEnemyCountMin));
-		AAR_UPDATE(GVAR(vehicle_east),"Friendly Count", GVAR(civFriendlyCount));
+		GVAR(enemyCountCiv) = _enemyCount;
+		GVAR(enemyCountMinCiv) = _enemyCountMin;
+		GVAR(friendlyCountCiv) = _FriendlyCount;
 
-		//if there is more enemis in max range or even one in min range. Disable MSP
-		if ( GVAR(civEnemyCount) > GVAR(civFriendlyCount) || GVAR(civEnemyCountMin) > 0 ) then {
-
-			if (!GVAR(status_civ)) then {
-				missionNamespace setVariable [QGVAR(status_civ), true, true];
-				localize "STR_Tun_MSP_FNC_Contested_hint" remoteExecCall ["hint", civilian];
-
-				[civilian, false] call TUN_respawn_update_respawn_point;
-
-				AAR_UPDATE(GVAR(vehicle_civ),"Is contested", true);
-			};
-		} else {
-			if ( GVAR(status_civ) ) then {
-				missionNamespace setVariable [QGVAR(status_civ), false, true];
-				localize "STR_Tun_MSP_FNC_secured_hint" remoteExecCall ["hint", civilian];
-
-				[civilian, true, (getPos GVAR(vehicle_civ)) ] call TUN_respawn_update_respawn_point;
-
-				AAR_UPDATE(GVAR(vehicle_civ),"Is contested", false);
-			};
-		};
+		missionNamespace setVariable [QGVAR(contested_civ), _newStatus, true];
 	};
 };

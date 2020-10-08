@@ -14,5 +14,5 @@
  */
 #include "script_component.hpp"
 
-
-[allUnits, 0.05] call FUNC(contestedCheck);
+private _delay = 1 / count allUnits;
+[allUnits, _delay] call FUNC(contestedCheck);

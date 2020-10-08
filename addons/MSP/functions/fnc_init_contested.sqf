@@ -26,20 +26,23 @@
 if (GVAR(report_enemies)) then {
     [{
         if ( GVAR(status_east) ) then {
-            [GVAR(eastEnemyCount), GVAR(vehicle_east), east] call FUNC(report_enemies);
+             private _status = (GVAR(enemyCountEast) <= GVAR(friendlyCountEast) && GVAR(enemyCountEast) > 0 );
+            [_status, GVAR(vehicle_east), east] call FUNC(report_enemies);
         };
 
         if ( GVAR(status_west) ) then {
-            [GVAR(westEnemyCount), GVAR(vehicle_west), west] call FUNC(report_enemies);
+             private _status = (GVAR(enemyCountWest) <= GVAR(friendlyCountWest) && GVAR(enemyCountWest) > 0 );
+            [_status, GVAR(vehicle_west), west] call FUNC(report_enemies);
         };
 
         if ( GVAR(status_guer) ) then {
-            [GVAR(guerEnemyCount), GVAR(vehicle_guer), resistance] call FUNC(report_enemies);
+            private _status = (GVAR(enemyCountGuer) <= GVAR(friendlyCountGuer) && GVAR(enemyCountGuer) > 0 );
+            [_status, GVAR(vehicle_guer), resistance] call FUNC(report_enemies);
         };
 
         if ( GVAR(status_civ) ) then {
-            [GVAR(civEnemyCountMin), GVAR(vehicle_civ), civilian] call FUNC(report_enemies);
+             private _status = (GVAR(enemyCountCiv) <= GVAR(friendlyCountCiv) && GVAR(enemyCountCiv) > 0 );
+            [_status, GVAR(vehicle_civ), civilian] call FUNC(report_enemies);
         };
     }, GVAR(report_enemies_interval), []] call CBA_fnc_addPerFrameHandler;
 };
-

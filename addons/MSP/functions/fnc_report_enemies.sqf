@@ -17,11 +17,11 @@
  * [unitcount, msp vehilce, side] call Tun_MSP_fnc_imanexample
  */
 #include "script_component.hpp"
-params ["_count", "_msp", "_side"];
+params ["_status", "_msp", "_side"];
 
 //Notify if enemies near
-if ( _count > 0 ) then {
-    localize "STR_Tun_MSP_FNC_enemies_near" remoteExecCall ["hint", _side];
+if ( _status ) then {
+    localize "STR_Tun_MSP_FNC_enemies_near" remoteExecCall ["hintSilent", _side];
 
     if (_msp getvariable [QGVAR(enemies_near), false]) then {
     	_msp setVariable [QGVAR(enemies_near), true, true];

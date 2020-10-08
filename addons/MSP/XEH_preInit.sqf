@@ -19,22 +19,33 @@ if (isServer) then {
     missionNamespace setVariable [QGVAR(vehicle_guer), objNull, true];
     missionNamespace setVariable [QGVAR(vehicle_civ), objNull, true];
 
-    missionNamespace setVariable [QGVAR(eastFriendlyCount), 0, true];
-    missionNamespace setVariable [QGVAR(eastEnemyCount), 0, true];
-    missionNamespace setVariable [QGVAR(eastEnemyCountMin), 0, true];
+    missionNamespace setVariable [QGVAR(nearUnitsEast), [], true];
+    missionNamespace setVariable [QGVAR(nearUnitsEastMin), [], true];
 
-    missionNamespace setVariable [QGVAR(westFriendlyCount), 0, true];
-    missionNamespace setVariable [QGVAR(westEnemyCount), 0, true];
-    missionNamespace setVariable [QGVAR(westEnemyCountMin), 0, true];
+    missionNamespace setVariable [QGVAR(nearUnitsWest), [], true];
+    missionNamespace setVariable [QGVAR(nearUnitsWestMin), [], true];
 
-    missionNamespace setVariable [QGVAR(guerFriendlyCount), 0, true];
-    missionNamespace setVariable [QGVAR(guerEnemyCount), 0, true];
-    missionNamespace setVariable [QGVAR(guerEnemyCountMin), 0, true];
+    missionNamespace setVariable [QGVAR(nearUnitsGuer), [], true];
+    missionNamespace setVariable [QGVAR(nearUnitsGuerMin), [], true];
 
-    missionNamespace setVariable [QGVAR(civFriendlyCount), 0, true];
-    missionNamespace setVariable [QGVAR(civEnemyCount), 0, true];
-    missionNamespace setVariable [QGVAR(civEnemyCountMin), 0, true];
+    missionNamespace setVariable [QGVAR(nearUnitsCiv), [], true];
+    missionNamespace setVariable [QGVAR(nearUnitsCivMin), [], true];
 
+    missionNamespace setVariable [QGVAR(enemyCountEast), 0, true];
+    missionNamespace setVariable [QGVAR(enemyCountMinEast), 0, true];
+    missionNamespace setVariable [QGVAR(friendlyCountEast), 0, true];
+
+    missionNamespace setVariable [QGVAR(enemyCountWest), 0, true];
+    missionNamespace setVariable [QGVAR(enemyCountMinWest), 0, true];
+    missionNamespace setVariable [QGVAR(friendlyCountWest), 0, true];
+
+    missionNamespace setVariable [QGVAR(enemyCountGuer), 0, true];
+    missionNamespace setVariable [QGVAR(enemyCountMinGuer), 0, true];
+    missionNamespace setVariable [QGVAR(friendlyCountGuer), 0, true];
+
+    missionNamespace setVariable [QGVAR(enemyCountCiv), 0, true];
+    missionNamespace setVariable [QGVAR(enemyCountMinCiv), 0, true];
+    missionNamespace setVariable [QGVAR(friendlyCountCiv), 0, true];
 };
 
 
