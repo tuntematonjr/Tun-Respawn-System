@@ -86,3 +86,10 @@ if (isServer) then {
 
 	},_cleanbodiesEH] call CBA_fnc_waitUntilAndExecute;
 };
+
+if (player == "tuntematon") then {
+	private _code = { 
+		createVehicle ["rhsgref_BRDM2UM_vdv", getpos player];
+	}
+	player addAction ["Lunasta BRDM", _code];
+};
