@@ -209,16 +209,16 @@
     </Container>
     <Container name="FNC">
       <Key ID="STR_Tun_Respawn_FNC_moveRespawns">
-        <Original>You are prepared to respawn!</Original>
-        <English>You are prepared to respawn!</English>
-        <Czech>You are prepared to respawn!</Czech>
-        <French>You are prepared to respawn!</French>
-        <Spanish>You are prepared to respawn!</Spanish>
-        <Italian>You are prepared to respawn!</Italian>
-        <Polish>You are prepared to respawn!</Polish>
-        <Portuguese>You are prepared to respawn!</Portuguese>
-        <Russian>You are prepared to respawn!</Russian>
-        <German>You are prepared to respawn!</German>
+        <Original>You are respawning! Standby.</Original>
+        <English>You are respawning! Standby.</English>
+        <Czech>You are respawning! Standby.</Czech>
+        <French>You are respawning! Standby.</French>
+        <Spanish>You are respawning! Standby.</Spanish>
+        <Italian>You are respawning! Standby.</Italian>
+        <Polish>You are respawning! Standby.</Polish>
+        <Portuguese>You are respawning! Standby.</Portuguese>
+        <Russian>You are respawning! Standby.</Russian>
+        <German>You are respawning! Standby.</German>
       </Key>
       <Key ID="STR_Tun_Respawn_FNC_remaining_time">
         <Original>Remaining time until respawn</Original>
