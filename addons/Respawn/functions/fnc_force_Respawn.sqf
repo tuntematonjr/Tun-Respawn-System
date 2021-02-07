@@ -15,6 +15,8 @@
  */
 #include "script_component.hpp"
 
+if (!isServer) exitWith { };
+
 params [["_side", nil, [""]], ["_reset", false, [false]]];
 
 [_side] call FUNC(moveRespawns);

@@ -14,6 +14,8 @@
  */
 #include "script_component.hpp"
 
+if (!isServer) exitWith { };
+
 _logic = param [0,objNull,[objNull]];
 
 _markername = _logic getVariable ["respawn_side","none"];

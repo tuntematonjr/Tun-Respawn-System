@@ -14,6 +14,8 @@
  */
 #include "script_component.hpp"
 
+if (isDedicated) exitWith { };
+
 _uniform = uniform player;
 _vest = vest player;
 _headGear = headGear player;

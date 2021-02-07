@@ -17,7 +17,7 @@
 
 params [["_side", sideLogic, [west]], ["_update", true, [true]], ["_new_pos", [0,0,0], [[]]]];
 
-
+if (!isServer) exitWith { };
 
 _value = switch (_side) do {
 	case west: {

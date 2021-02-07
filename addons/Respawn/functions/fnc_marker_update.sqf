@@ -14,6 +14,7 @@
  */
 #include "script_component.hpp"
 
+if (isDedicated) exitWith { };
 
 {
 	_x params ["_marker", "_side"];

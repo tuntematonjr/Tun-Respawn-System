@@ -15,7 +15,7 @@
  */
 #include "script_component.hpp"
 params ["_side","_player"];
-
+if (!isServer) exitWith { };
 
 switch (toLower str _side) do {
 	case "west": {

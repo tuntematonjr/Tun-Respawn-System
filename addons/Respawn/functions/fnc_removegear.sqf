@@ -14,6 +14,8 @@
  */
 #include "script_component.hpp"
 
+if (isDedicated) exitWith { };
+
 removeAllWeapons player;
 removeAllAssignedItems player;
 removeHeadgear player;
@@ -23,4 +25,3 @@ removeBackpack player;
 player linkItem "itemMap";
 player linkitem "itemWatch";
 player linkitem "ItemCompass";
-

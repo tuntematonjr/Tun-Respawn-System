@@ -14,6 +14,7 @@
  */
 #include "script_component.hpp"
 params ["_side"];
+if (!isServer) exitWith { };
 
 if (GVAR(forced_respawn)) exitWith { INFO("No timer, Only forced waves"); };
 private ["_wait_time_var", "_allow_respawn_var"];

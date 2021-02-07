@@ -14,6 +14,7 @@
  */
 #include "script_component.hpp"
 if (!hasInterface) exitWith { };
+
 [{!isNull player}, {
 	if (cba_missiontime > (GVAR(killJIP_time) * 60) && GVAR(killJIP)) then {
 		[{

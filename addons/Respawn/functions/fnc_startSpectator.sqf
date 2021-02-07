@@ -14,6 +14,8 @@
  */
 #include "script_component.hpp"
 
+if (isDedicated) exitWith { };
+
 private _allowed_sides = [];
 if (GVAR(spectate_west)) then {
 	_allowed_sides pushBack west;
