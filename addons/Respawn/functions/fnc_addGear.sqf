@@ -15,20 +15,18 @@
 #include "script_component.hpp"
 if (isDedicated) exitWith { };
 
-
-
 if (GVAR(use_gearscript)) then {
 	//using gearscript
-	_gearScriptPath = player getVariable [QGVAR(GearPath), "Not set"];
+	private _gearScriptPath = player getVariable [QGVAR(GearPath), "Not set"];
 	if (_gearScriptPath == "Not set") exitWith { hint "this unit is missing its gearscript path!"};
 
-	_role = player getVariable [QGVAR(Role), "Not Set"];
+	private  _role = player getVariable [QGVAR(Role), "Not Set"];
 	if (_role == "Not set") exitWith { hint "Missing role variable !"};
 
 	[_role, player] call compile preprocessFileLineNumbers _gearScriptPath;
 } else {
 	//if not using gearscript
-	_var = player getVariable QGVAR(savedgear);
+	private  _var = player getVariable QGVAR(savedgear);
 
 	_var params ["_uniform", "_vest", "_headGear", "_backPack", "_googles", "_primaryWeapon", "_secondaryWeapon", "_handGunWeapon", "_uniformItems", "_vestItems", "_backPackItems", "_primaryWeaponItems", "_secondaryWeaponItems", "_handGunItems", "_assignedItems"];
 
@@ -39,7 +37,6 @@ if (GVAR(use_gearscript)) then {
 	removeGoggles player;
 	removeAllWeapons player;
 	removeAllAssignedItems player;
-
 
 	if (_primaryWeapon != "") then {
 	    player addWeapon _primaryWeapon;
@@ -154,4 +151,8 @@ if (GVAR(use_gearscript)) then {
 	if (_googles != "") then {
 	      player addGoggles _googles;
 	};
+};
+
+if (isClass(configFile >> "CfgPatches" >> "tfar_core")) then {
+	[QGVAR(setTfarLRsettings_EH), [player]] call CBA_fnc_localEvent;
 };

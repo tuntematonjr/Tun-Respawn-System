@@ -34,6 +34,7 @@ if (hasInterface) then {
 
 	[] call FUNC(killJIP);
 	[] call FUNC(marker_update);
+	[] call FUNC(radioSettings_tfar);
 
 };
 
