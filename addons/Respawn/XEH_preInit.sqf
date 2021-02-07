@@ -15,6 +15,7 @@ ISNILS(GVAR(allow_respawn_civ),true);
 ISNILS(GVAR(disconnected_players),[]);
 
 ISNILS(GVAR(timer_running),[]);
+ISNILS(GVAR(teleportPoints),[]);
 
 //allowed sides to spectate !WIP!
 /*ISNILS(GVAR(spectate_west),true);
