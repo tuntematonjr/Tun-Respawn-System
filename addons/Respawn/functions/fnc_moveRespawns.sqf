@@ -16,6 +16,8 @@
 params ["_side"];
 private ["_respawn_position", "_respawn_waitingarea", "_respawn_gearPath"];
 
+if (!isServer) exitWith { };
+
 private _players_in_respawn = [];
 
 switch toLower(_side) do {
@@ -44,7 +46,6 @@ switch toLower(_side) do {
 	};
 };
 
-
 //Sort out delayed respawn play
 {
 	_player = _x;
@@ -67,10 +68,9 @@ private _fnc_timeisUp = {
     params [["_player", objNull, [objnull]],"_respawn_waitingarea", "_respawn_position", "_side"];
     if (isnull _player || !(_player in allPlayers) ) exitWith {false};
 
-    [localize "STR_Tun_Respawn_FNC_moveRespawns",15] remoteExecCall [QFUNC(blackscreen), _player]; // make player screen black and prevent them moving right away so server can keep up.
-
     _player setVariable [QGVAR(waiting_respawn), false, true];
-    _player setPos ([_respawn_position, 10] call CBA_fnc_randPos);
+	private _text = localize "STR_Tun_Respawn_FNC_moveRespawns";
+	[_player, _respawn_position, _text, 20] call FUNC(teleport);
     remoteExecCall [QFUNC(addGear), _player];
 };
 
@@ -80,6 +80,5 @@ private _fnc_timeisUp = {
     private _execWaitTime = _timeChange * _forEachIndex;
     [_fnc_timeisUp, [_player, _respawn_waitingarea, _respawn_position, _side], _execWaitTime] call CBA_fnc_waitAndExecute;
 } forEach _players_in_respawn;
-
 
 INFO(format ["Side %1 all respawn units moved", _side]);
