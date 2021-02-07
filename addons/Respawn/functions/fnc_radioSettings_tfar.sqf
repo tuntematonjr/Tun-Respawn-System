@@ -14,7 +14,7 @@
  */
 #include "script_component.hpp"
 
-if (!hasInterface || !(isClass(configFile >> "CfgPatches" >> "tfar_core"))) exitWith { };
+if (!hasInterface || { !(isClass(configFile >> "CfgPatches" >> "tfar_core")) }) exitWith { };
 
 // save entire settings array once anything is changed basically
 private _fnc_saveSWSettings = {
