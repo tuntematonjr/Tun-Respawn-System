@@ -41,5 +41,3 @@ _camera camCommit 0;
 	}, [], _duration] call CBA_fnc_waitAndExecute;
 
 }, [_text, _duration, _camera]] call CBA_fnc_waitUntilAndExecute;
-
-

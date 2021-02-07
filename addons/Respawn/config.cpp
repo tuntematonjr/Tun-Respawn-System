@@ -1,4 +1,5 @@
 #include "script_component.hpp"
+#include "TP_dialog.hpp"
 
 class CfgPatches
 {
@@ -68,7 +69,7 @@ class CfgVehicles
         scope = 2; // Editor visibility; 2 will show it in the menu, 1 will hide it.
         scopeCurator = 1;
         displayName = $STR_Tun_Respawn_Module_DisplayName_WaitingArea; // Name displayed in the menu
-        //icon = "x\Bum\addons\BlindZeus\UI\Portraits\blindcurator.paa"; // Map icon. Delete this entry to use the default icon
+        //icon = ""; // Map icon. Delete this entry to use the default icon
         category = "Tun_Respawn";
 
         // Name of function triggered once conditions are met
@@ -143,6 +144,88 @@ class CfgVehicles
         {
             description = $STR_Tun_Respawn_Module_Description_Spawn_Point; // Short description, will be formatted as structured text
             sync[] = {}; // Array of synced entities (can contain base classes)
+        };
+    };
+
+    class Tun_Respawn_Module_teleportPoint: Tun_Respawn_Module_waitingarea
+    {
+        displayName = $STR_Tun_Respawn_Module_DisplayName_teleportPoint; // Name displayed in the menu
+        // 0 for server only execution, 1 for global execution, 2 for persistent global execution
+        isGlobal = 2;
+        // 1 for module waiting until all synced triggers are activated
+        //isTriggerActivated = 1;
+        // Name of function triggered once conditions are met
+        function = QFUNC(module_teleporter);
+
+        class Attributes: AttributesBase
+        {
+
+            class tun_respawn_teleportPointOBJ: Edit
+            {
+                property = "tun_respawn_teleportPointOBJ";
+				displayName = "Teleport point object";
+				tooltip = $STR_Tun_Respawn_Module_tooltip_teleportPoint;
+                typeName = "STRING";
+				// Default text filled in the input box
+				// Because it is an expression, to return a String one must have a string within a string
+				defaultValue = """Land_Sleeping_bag_blue_folded_F""";
+            };
+
+            class tun_respawn_teleportConditio: Edit
+            {
+                property = "tun_respawn_teleportConditio";
+				displayName = "Teleport conditio";
+				tooltip = $STR_Tun_Respawn_Module_tooltip_teleportConditio;
+                typeName = "STRING";
+				// Default text filled in the input box
+				// Because it is an expression, to return a String one must have a string within a string
+				defaultValue = "true";
+            };
+
+            class tun_respawn_teleportName: Edit
+            {
+                property = "tun_respawn_teleportName";
+				displayName = "Teleport name";
+				tooltip = $STR_Tun_Respawn_Module_tooltip_teleportName;
+                typeName = "STRING";
+				// Default text filled in the input box
+				// Because it is an expression, to return a String one must have a string within a string
+				defaultValue = """Name""";
+            };
+
+            class tun_respawn_teleportEnableWest: Checkbox
+            {
+                property = "tun_respawn_teleportEnableWest";
+				displayName = "Enable West";
+                typeName = "BOOL";
+				tooltip = $STR_Tun_Respawn_Module_tooltip_teleportEnable;
+				defaultValue = "false";
+            };
+
+            class tun_respawn_teleportEnableEast: GVAR(teleportEnableWest)
+            {
+                property = "tun_respawn_teleportEnableEast";
+				displayName = "Enable East";
+            };
+
+            class tun_respawn_teleportEnableResistance: GVAR(teleportEnableWest)
+            {
+                property = "tun_respawn_teleportEnableResistance";
+				displayName = "Enable Resistance";
+            };
+
+            class tun_respawn_teleportEnableCivilian: GVAR(teleportEnableWest)
+            {
+                property = "tun_respawn_teleportEnableCivilian";
+				displayName = "Enable Civilian";
+            };
+
+            class ModuleDescription: ModuleDescription{};
+        };
+        class ModuleDescription: ModuleDescription
+        {
+            description = $STR_Tun_Respawn_Module_DisplayName_teleportPoint; // Short description, will be formatted as structured text
+            sync[] = {Tun_Respawn_Module_teleportPoint}; // Array of synced entities (can contain base classes)
         };
     };
 };

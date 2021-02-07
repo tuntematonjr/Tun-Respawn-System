@@ -390,6 +390,44 @@
         <Russian>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</Russian>
         <German>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</German>
       </Key>
+      <Key ID="STR_Tun_Respawn_Module_DisplayName_teleportPoint">
+        <Original>Teleport point</Original>
+        <English>Teleport point</English>
+        <Czech>Teleport point</Czech>
+        <French>Teleport point</French>
+        <Spanish>Teleport point</Spanish>
+        <Italian>Teleport point</Italian>
+        <Polish>Teleport point</Polish>
+        <Portuguese>Teleport point</Portuguese>
+        <Russian>Teleport point</Russian>
+        <German>Teleport point</German>
+      </Key>
+    </Container>
+    <Container name="misc">
+      <Key ID="STR_Tun_Respawn_Teleporting">
+        <Original>You are being teleporter. Make woosh sound your self. Ty</Original>
+        <English>You are being teleporter. Make woosh sound your self. Ty</English>
+        <Czech>You are being teleporter. Make woosh sound your self. Ty</Czech>
+        <French>You are being teleporter. Make woosh sound your self. Ty</French>
+        <Spanish>You are being teleporter. Make woosh sound your self. Ty</Spanish>
+        <Italian>You are being teleporter. Make woosh sound your self. Ty</Italian>
+        <Polish>You are being teleporter. Make woosh sound your self. Ty</Polish>
+        <Portuguese>You are being teleporter. Make woosh sound your self. Ty</Portuguese>
+        <Russian>You are being teleporter. Make woosh sound your self. Ty</Russian>
+        <German>You are being teleporter. Make woosh sound your self. Ty</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Teleport_Disabled">
+        <Original>This telepoin point is disabled</Original>
+        <English>This telepoin point is disabled</English>
+        <Czech>This telepoin point is disabled</Czech>
+        <French>This telepoin point is disabled</French>
+        <Spanish>This telepoin point is disabled</Spanish>
+        <Italian>This telepoin point is disabled</Italian>
+        <Polish>This telepoin point is disabled</Polish>
+        <Portuguese>This telepoin point is disabled</Portuguese>
+        <Russian>This telepoin point is disabled</Russian>
+        <German>This telepoin point is disabled</German>
+      </Key>
     </Container>
   </Package>
 </Project>
