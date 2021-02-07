@@ -16,8 +16,13 @@ PREP(moveRespawns);
 PREP(removegear);
 PREP(savegear);
 PREP(startSpectator);
-PREP(ticketCountterPlayer);
 PREP(ticketCountterSide);
 PREP(timer);
 PREP(waitingArea);
 PREP(update_respawn_point);
+PREP(teleport);
+PREP(radioSettings_tfar);
+PREP(module_teleporter);
+PREP(openTeleportMenu);
+PREP(teleportButton);
+
