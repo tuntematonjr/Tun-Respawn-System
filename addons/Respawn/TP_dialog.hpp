@@ -47,21 +47,19 @@ class TP_Dialog
 			text = "TP";
 			action = "[] call Tun_Respawn_fnc_teleportButton";
 		};		
-		class tun_respawn_tp_header
+		class tun_respawn_tp_header : RscText
 		{
-			type = 0;
 			idc = -1;
 			x = safeZoneX + safeZoneW * 0.55520834;
 			y = safeZoneY + safeZoneH * 0.42592593;
 			w = safeZoneW * 0.0796875;
 			h = safeZoneH * 0.18611112;
-			style = 2+16;
+			style = ST_CENTER + ST_MULTI;
 			text = "TUN Respawn Teleport hub WIP";
 			colorBackground[] = {0.8,0.9647,0.1451,1};
 			colorText[] = {0.2,0.0353,0.8549,1};
 			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
-			
+			shadow = 0;
 		};
 		
 	};

@@ -3,20 +3,13 @@
  * [Description]
  *
  * Arguments:
- * 0: The first argument <STRING>
- * 1: The second argument <OBJECT>
- * 2: Multiple input types <STRING|ARRAY|CODE>
- * 3: Optional input <BOOL> (default: true)
- * 4: Optional input with multiple types <CODE|STRING> (default: {true})
- * 5: Not mandatory input <STRING> (default: nil)
+ * None
  *
  * Return Value:
  * The return value <BOOL>
  *
  * Example:
- * ["something", player] call Tun_Respawn_fnc_teleportButton
- *
- * Public: [Yes/No]
+ * [] call Tun_Respawn_fnc_teleportButton
  */
 #include "script_component.hpp"
 
@@ -24,6 +17,9 @@ private _listIDC = 300001;
 private _okButtonIDC = 300002;
 
 private _index = lbCurSel _listIDC;
+
+if (_index == -1) exitWith { };
+
 private _value = lbData [_listIDC, _index];
 private _obj = _value call BIS_fnc_objectFromNetId;
 

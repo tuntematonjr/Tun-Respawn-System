@@ -164,7 +164,7 @@ class CfgVehicles
             {
                 property = "tun_respawn_teleportPointOBJ";
 				displayName = "Teleport point object";
-				tooltip = $STR_Tun_Respawn_Module_tooltip_teleportPoint;
+				tooltip = $STR_Tun_Respawn_Module_tooltip_teleportPointOBJ;
                 typeName = "STRING";
 				// Default text filled in the input box
 				// Because it is an expression, to return a String one must have a string within a string
@@ -198,7 +198,7 @@ class CfgVehicles
                 property = "tun_respawn_teleportEnableWest";
 				displayName = "Enable West";
                 typeName = "BOOL";
-				tooltip = $STR_Tun_Respawn_Module_tooltip_teleportEnable;
+				tooltip = $STR_Tun_Respawn_Module_tooltip_teleportEnableSides;
 				defaultValue = "false";
             };
 
@@ -224,8 +224,11 @@ class CfgVehicles
         };
         class ModuleDescription: ModuleDescription
         {
-            description = $STR_Tun_Respawn_Module_DisplayName_teleportPoint; // Short description, will be formatted as structured text
-            sync[] = {Tun_Respawn_Module_teleportPoint}; // Array of synced entities (can contain base classes)
+            description = $STR_Tun_Respawn_Module_Description_Spawn_Point; // Short description, will be formatted as structured text
+            position = 1; // Position is taken into effect
+            direction = 0; // Direction is taken into effect
+            optional = 1; // Synced entity is optional
+            duplicate = 1; // Multiple entities of this type can be synced
         };
     };
 };

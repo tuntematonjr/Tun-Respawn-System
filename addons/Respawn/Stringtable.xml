@@ -282,6 +282,18 @@
         <Russian>Put this module where you want respawn point to be for this side.</Russian>
         <German>Put this module where you want respawn point to be for this side.</German>
       </Key>
+      <Key ID="STR_Tun_Respawn_Module_Description_teleportPoint">
+        <Original>Teleport network point.</Original>
+        <English>Teleport network point.</English>
+        <Czech>Teleport network point.</Czech>
+        <French>Teleport network point.</French>
+        <Spanish>Teleport network point.</Spanish>
+        <Italian>Teleport network point.</Italian>
+        <Polish>Teleport network point.</Polish>
+        <Portuguese>Teleport network point.</Portuguese>
+        <Russian>Teleport network point.</Russian>
+        <German>Teleport network point.</German>
+      </Key>
       <Key ID="STR_Tun_Respawn_Module_DisplayName_WaitingArea">
         <Original>Respawn Waiting Area</Original>
         <English>Respawn Waiting Area</English>
@@ -317,6 +329,54 @@
         <Portuguese>Choose side for this waiting area</Portuguese>
         <Russian>Choose side for this waiting area</Russian>
         <German>Choose side for this waiting area</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Module_tooltip_teleportPointOBJ">
+        <Original>Classname for object where action to teleport is. Non string format: Land_Sleeping_bag_blue_folded_F</Original>
+        <English>Classname for object where action to teleport is. Non string format: Land_Sleeping_bag_blue_folded_F</English>
+        <Czech>Classname for object where action to teleport is. Non string format: Land_Sleeping_bag_blue_folded_F</Czech>
+        <French>Classname for object where action to teleport is. Non string format: Land_Sleeping_bag_blue_folded_F</French>
+        <Spanish>Classname for object where action to teleport is. Non string format: Land_Sleeping_bag_blue_folded_F</Spanish>
+        <Italian>Classname for object where action to teleport is. Non string format: Land_Sleeping_bag_blue_folded_F</Italian>
+        <Polish>Classname for object where action to teleport is. Non string format: Land_Sleeping_bag_blue_folded_F</Polish>
+        <Portuguese>Classname for object where action to teleport is. Non string format: Land_Sleeping_bag_blue_folded_F</Portuguese>
+        <Russian>Classname for object where action to teleport is. Non string format: Land_Sleeping_bag_blue_folded_F</Russian>
+        <German>Classname for object where action to teleport is. Non string format: Land_Sleeping_bag_blue_folded_F</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Module_tooltip_teleportName">
+        <Original>Name for teleport location</Original>
+        <English>Name for teleport location</English>
+        <Czech>Name for teleport location</Czech>
+        <French>Name for teleport location</French>
+        <Spanish>Name for teleport location</Spanish>
+        <Italian>Name for teleport location</Italian>
+        <Polish>Name for teleport location</Polish>
+        <Portuguese>Name for teleport location</Portuguese>
+        <Russian>Name for teleport location</Russian>
+        <German>Name for teleport location</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Module_tooltip_teleportEnableSides">
+        <Original>Is this side allowed to use this teleportter.</Original>
+        <English>Is this side allowed to use this teleportter.</English>
+        <Czech>Is this side allowed to use this teleportter.</Czech>
+        <French>Is this side allowed to use this teleportter.</French>
+        <Spanish>Is this side allowed to use this teleportter.</Spanish>
+        <Italian>Is this side allowed to use this teleportter.</Italian>
+        <Polish>Is this side allowed to use this teleportter.</Polish>
+        <Portuguese>Is this side allowed to use this teleportter.</Portuguese>
+        <Russian>Is this side allowed to use this teleportter.</Russian>
+        <German>Is this side allowed to use this teleportter.</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Module_tooltip_teleportConditio">
+        <Original>Conditio to enable/disable TP location. (Code) Default: True</Original>
+        <English>Conditio to enable/disable TP location. (Code) Default: True</English>
+        <Czech>Conditio to enable/disable TP location. (Code) Default: True</Czech>
+        <French>Conditio to enable/disable TP location. (Code) Default: True</French>
+        <Spanish>Conditio to enable/disable TP location. (Code) Default: True</Spanish>
+        <Italian>Conditio to enable/disable TP location. (Code) Default: True</Italian>
+        <Polish>Conditio to enable/disable TP location. (Code) Default: True</Polish>
+        <Portuguese>Conditio to enable/disable TP location. (Code) Default: True</Portuguese>
+        <Russian>Conditio to enable/disable TP location. (Code) Default: True</Russian>
+        <German>Conditio to enable/disable TP location. (Code) Default: True</German>
       </Key>
       <Key ID="STR_Tun_Respawn_Module_tooltip_SpawnPoint">
         <Original>Choose side for this spawn point</Original>
