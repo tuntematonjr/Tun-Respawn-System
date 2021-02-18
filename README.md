@@ -7,7 +7,7 @@
 
 [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=2055674861)
 
-> Wave Respawn system with customization for many mission needs. 
+> Wave Respawn system with customizability for every mission needs. 
 > Additionaly there is Mobile Respawn Point vehicle which allow moving respawn poin around map
 
 **Required Mods**
