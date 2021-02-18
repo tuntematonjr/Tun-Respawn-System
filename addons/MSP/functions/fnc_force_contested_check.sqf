@@ -14,5 +14,6 @@
  */
 #include "script_component.hpp"
 
-private _delay = 1 / count allUnits;
-[allUnits, _delay] call FUNC(contestedCheck);
+private _FilteredUnits = allunits select { side _x in [west,east,resistance,civilian] };
+private _delay = 1 / count _FilteredUnits;
+[_FilteredUnits, _delay] call FUNC(contestedCheck);
