@@ -16,10 +16,11 @@
  */
 #include "script_component.hpp"
 
-
+private _FilteredUnits = [];
 [{
-    private _delay = GVAR(contested_check_interval) / (count allUnits + 1);
-    [FUNC(contestedCheck), [allunits, _delay], _delay] call CBA_fnc_waitAndExecute;
+    _FilteredUnits = allunits select { side _x in [west,east,resistance,civilian] };
+    private _delay = GVAR(contested_check_interval) / (count _FilteredUnits + 1);
+    [FUNC(contestedCheck), [_FilteredUnits, _delay], _delay] call CBA_fnc_waitAndExecute;
 }, GVAR(contested_check_interval), []] call CBA_fnc_addPerFrameHandler;
 
 

@@ -18,8 +18,8 @@
 
 params ["_msp", "_setup"];
 
-_side = _msp getVariable QGVAR(side);
-_msp_var = objNull;
+private _side = _msp getVariable QGVAR(side);
+private _msp_var = objNull;
 
 AAR_UPDATE(_msp,"Is active MSP", _setup);
 
@@ -52,8 +52,7 @@ if (_setup) then {
 
 };
 
-_pos = getpos _msp;
-
+private _pos = getpos _msp;
 
 [_side, _setup, _pos] remoteExecCall ["Tun_respawn_fnc_update_respawn_point", 2];
 
