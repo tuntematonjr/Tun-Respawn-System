@@ -1,4 +1,4 @@
-<a href="https://armafinland.fi/"><img src="https://armafinland.fi/logot/armafin-logo-200px.png" title="FVCproductions" alt="FVCproductions"></a>
+<a href="https://armafinland.fi/"><img src="https://armafinland.fi/logot/armafin-logo-200px.png" title="Armafinland" alt="Armafinland"></a>
 
 
 # TUN Respawn System
