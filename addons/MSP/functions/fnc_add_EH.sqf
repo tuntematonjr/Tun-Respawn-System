@@ -46,48 +46,42 @@
         AAR_UPDATE(_unit,"Enemies near", "RIP");
 
         if ( local _unit && { _unit getVariable [QGVAR(isMSP), false] } ) then {
-            private ["_markername", "_originalpos", "_status"];
-
             {
                  deleteVehicle _x;
             } forEach (_unit getVariable QGVAR(objects));
 
-            _side = _unit getVariable QGVAR(side);
+            
 
             switch (_side) do {
                 case east: {
-                    _status = QGVAR(status_east);
+                    missionNamespace setVariable [QGVAR(status_east), false, true];
                     GVAR(vehicle_east) = objNull;
-                    _module = tun_respawn_respawnpos_east;
                 };
 
                 case west: {
-                    _status = QGVAR(status_west);
+                    missionNamespace setVariable [QGVAR(status_west), false, true];
                     GVAR(vehicle_west) = objNull;
-                    _module = tun_respawn_respawnpos_west;
                 };
 
                 case resistance: {
-                    _status = QGVAR(status_guer);
+                    missionNamespace setVariable [QGVAR(status_guer), false, true];
                     GVAR(vehicle_guer) = objNull;
-                    _module = tun_respawn_respawnpos_guer;
                 };
 
                 case civilian: {
-                    _status = QGVAR(status_civ);
+                    missionNamespace setVariable [QGVAR(status_civ), false, true];
                     GVAR(vehicle_civ) = objNull;
-                    _module = tun_respawn_respawnpos_civ;
                 };
 
                 default { };
             };
 
+            
             //Do marker update
-            [_side, false] call TUN_respawn_update_respawn_point;
+            private _side = _unit getVariable QGVAR(side);
+            [_side, false] remoteExecCall ["Tun_respawn_fnc_update_respawn_point", 2];
 
-            localize "STR_Tun_MSP_destroyed" remoteExecCall ["hint", _side];
-
-            missionNamespace setVariable [_status, false, true];
+            ("STR_Tun_MSP_destroyed" call BIS_fnc_localize) remoteExecCall ["hint", _side];
         };
     }, true, [], true] call CBA_fnc_addClassEventHandler;
 } forEach [[GVAR(clasnames_west), west], [GVAR(clasnames_east), east], [GVAR(clasnames_resistance), resistance], [GVAR(clasnames_civilian), civilian]];
