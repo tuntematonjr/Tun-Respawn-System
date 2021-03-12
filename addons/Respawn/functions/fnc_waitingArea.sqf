@@ -50,13 +50,13 @@ switch (toLower str playerSide) do {
 	};
 
 
-	private _text = format ["<t color='#0800ff' size = '.8'>%1</t>", localize "STR_Tun_Respawn_FNC_only_forced_waves"];
+	private _text = format ["<t color='#0800ff' size = '.8'>%1</t>", "STR_Tun_Respawn_FNC_only_forced_waves" call BIS_fnc_localize];
 
 	if (_wait_time >= 0 && { (missionNamespace getVariable [format ["%1_%2", QGVAR(allow_respawn), playerSide], true]) }) then {
-		_text = format ["<t color='#0800ff' size = '.8'>%2<br />%1</t>", ([_wait_time] call CBA_fnc_formatElapsedTime), localize "STR_Tun_Respawn_FNC_remaining_time"];
+		_text = format ["<t color='#0800ff' size = '.8'>%2<br />%1</t>", ([_wait_time] call CBA_fnc_formatElapsedTime), "STR_Tun_Respawn_FNC_remaining_time" call BIS_fnc_localize];
 	} else {
 		if (player getvariable [QGVAR(waiting_respawn), true] && { !(GVAR(forced_respawn)) }) then {
-			_text = format ["<t color='#0800ff' size = '.8'>%1</t>", localize "STR_Tun_Respawn_FNC_RespawnDisabled"];
+			_text = format ["<t color='#0800ff' size = '.8'>%1</t>", "STR_Tun_Respawn_FNC_RespawnDisabled" call BIS_fnc_localize];
 		};
 	};
 

@@ -38,9 +38,9 @@ switch (playerSide) do {
 };
 
 if (_destination) then {
-	[localize "STR_Tun_MSP_Move_To_MSP_Text", 15] call Tun_Respawn_fnc_blackscreen;
+	[("STR_Tun_MSP_Move_To_MSP_Text" call BIS_fnc_localize), 15] call Tun_Respawn_fnc_blackscreen;
 	player setPos ([_currentpos, 10] call CBA_fnc_randPos);
 } else {
-	[localize "STR_Tun_MSP_Move_To_BASE_Text",15] call Tun_Respawn_fnc_blackscreen;
+	[("STR_Tun_MSP_Move_To_BASE_Text" call BIS_fnc_localize),15] call Tun_Respawn_fnc_blackscreen;
 	player setPos ([_originalpos, 10] call CBA_fnc_randPos);
 };

@@ -69,7 +69,7 @@ private _fnc_timeisUp = {
     if (isnull _player || !(_player in allPlayers) ) exitWith {false};
 
     _player setVariable [QGVAR(waiting_respawn), false, true];
-	private _text = localize "STR_Tun_Respawn_FNC_moveRespawns";
+	private _text = "STR_Tun_Respawn_FNC_moveRespawns" call BIS_fnc_localize;
 	[_player, _respawn_position, _text, 20] call FUNC(teleport);
     remoteExecCall [QFUNC(addGear), _player];
 };

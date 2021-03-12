@@ -17,19 +17,19 @@ ISNILS(GVAR(disconnected_players),[]);
 ISNILS(GVAR(timer_running),[]);
 ISNILS(GVAR(teleportPoints),[]);
 
-//allowed sides to spectate !WIP!
-/*ISNILS(GVAR(spectate_west),true);
+//allowed sides to spectate !WIP! Currentlu forced all
+ISNILS(GVAR(spectate_west),true);
 ISNILS(GVAR(spectate_east),true);
 ISNILS(GVAR(spectate_independent),true);
-ISNILS(GVAR(spectate_civilian),true);*/
+ISNILS(GVAR(spectate_civilian),true);
 
 
 //Main settings
 [
     QGVAR(enable), // Unique setting name. Matches resulting variable name <STRING>
     "CHECKBOX", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
-    [localize "STR_Tun_Respawn_CBA_Enable", localize "STR_Tun_Respawn_CBA_tooltip_Enable"], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
-   localize "STR_Tun_Respawn_CBA_Category_main", // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    ["STR_Tun_Respawn_CBA_Enable" call BIS_fnc_localize, "STR_Tun_Respawn_CBA_tooltip_Enable" call BIS_fnc_localize], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    "STR_Tun_Respawn_CBA_Category_main" call BIS_fnc_localize, // Category for the settings menu + optional sub-category <STRING, ARRAY>
     false, // Extra properties of the setting depending of _settingType.
     1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
     {}, // Script to execute when setting is changed. (optional) <CODE>
@@ -39,8 +39,8 @@ ISNILS(GVAR(spectate_civilian),true);*/
 [
     QGVAR(killJIP), // Unique setting name. Matches resulting variable name <STRING>
     "CHECKBOX", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
-    ["Kill JIP", localize "STR_Tun_Respawn_CBA_tooltip_killjip"], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
-    [localize "STR_Tun_Respawn_CBA_Category_main", localize "STR_Tun_Respawn_CBA_Category_generic"], // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    ["Kill JIP", "STR_Tun_Respawn_CBA_tooltip_killjip" call BIS_fnc_localize], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    ["STR_Tun_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_Tun_Respawn_CBA_Category_generic" call BIS_fnc_localize], // Category for the settings menu + optional sub-category <STRING, ARRAY>
     true, // Extra properties of the setting depending of _settingType.
     1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
     {}, // Script to execute when setting is changed. (optional) <CODE>
@@ -50,8 +50,8 @@ ISNILS(GVAR(spectate_civilian),true);*/
 [
     QGVAR(killJIP_time), // Unique setting name. Matches resulting variable name <STRING>
     "SLIDER", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
-    ["Kill JIP Time", localize "STR_Tun_Respawn_CBA_tooltip_killjip_time"], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
-    [localize "STR_Tun_Respawn_CBA_Category_main", localize "STR_Tun_Respawn_CBA_Category_generic"], // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    ["Kill JIP Time", "STR_Tun_Respawn_CBA_tooltip_killjip_time" call BIS_fnc_localize], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    ["STR_Tun_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_Tun_Respawn_CBA_Category_generic" call BIS_fnc_localize], // Category for the settings menu + optional sub-category <STRING, ARRAY>
     [1, 300, 20, 0], // Extra properties of the setting depending of _settingType.
     1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
     {}, // Script to execute when setting is changed. (optional) <CODE>
@@ -61,8 +61,8 @@ ISNILS(GVAR(spectate_civilian),true);*/
 [
     QGVAR(respawn_type), // Unique setting name. Matches resulting variable name <STRING>
     "LIST", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
-    ["Respawn Type", localize "STR_Tun_Respawn_CBA_tooltip_respawntypes"], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
-    [localize "STR_Tun_Respawn_CBA_Category_main", localize "STR_Tun_Respawn_CBA_Category_generic"], // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    ["Respawn Type", "STR_Tun_Respawn_CBA_tooltip_respawntypes" call BIS_fnc_localize], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    ["STR_Tun_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_Tun_Respawn_CBA_Category_generic" call BIS_fnc_localize], // Category for the settings menu + optional sub-category <STRING, ARRAY>
     [["default", "Sidetickets"], ["default", "Sidetickets"], 0], // Extra properties of the setting depending of _settingType.
     1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
     {}, // Script to execute when setting is changed. (optional) <CODE>
@@ -72,8 +72,8 @@ ISNILS(GVAR(spectate_civilian),true);*/
 [
     QGVAR(use_gearscript), // Unique setting name. Matches resulting variable name <STRING>
     "CHECKBOX", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
-    ["Use Gearscript", localize "STR_Tun_Respawn_CBA_tooltip_gearscript"], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
-    [localize "STR_Tun_Respawn_CBA_Category_main", localize "STR_Tun_Respawn_CBA_Category_generic"], // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    ["Use Gearscript", "STR_Tun_Respawn_CBA_tooltip_gearscript" call BIS_fnc_localize], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    ["STR_Tun_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_Tun_Respawn_CBA_Category_generic" call BIS_fnc_localize], // Category for the settings menu + optional sub-category <STRING, ARRAY>
     true, // Extra properties of the setting depending of _settingType.
     1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
     {}, // Script to execute when setting is changed. (optional) <CODE>
@@ -83,8 +83,8 @@ ISNILS(GVAR(spectate_civilian),true);*/
 [
     QGVAR(forced_respawn), // Unique setting name. Matches resulting variable name <STRING>
     "CHECKBOX", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
-    ["Only Forced Waves", localize "STR_Tun_Respawn_CBA_tooltip_forceRespawn"], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
-    [localize "STR_Tun_Respawn_CBA_Category_main", localize "STR_Tun_Respawn_CBA_Category_generic"], // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    ["Only Forced Waves", "STR_Tun_Respawn_CBA_tooltip_forceRespawn" call BIS_fnc_localize], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    ["STR_Tun_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_Tun_Respawn_CBA_Category_generic" call BIS_fnc_localize], // Category for the settings menu + optional sub-category <STRING, ARRAY>
     false, // Extra properties of the setting depending of _settingType.
     1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
     {}, // Script to execute when setting is changed. (optional) <CODE>
@@ -94,8 +94,8 @@ ISNILS(GVAR(spectate_civilian),true);*/
 [
     QGVAR(delayed_respawn), // Unique setting name. Matches resulting variable name <STRING>
     "SLIDER", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
-    ["Delayed respawn", localize "STR_Tun_Respawn_CBA_tooltip_delayed_respawn"], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
-    [localize "STR_Tun_Respawn_CBA_Category_main", localize "STR_Tun_Respawn_CBA_Category_generic"], // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    ["Delayed respawn", "STR_Tun_Respawn_CBA_tooltip_delayed_respawn" call BIS_fnc_localize], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    ["STR_Tun_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_Tun_Respawn_CBA_Category_generic" call BIS_fnc_localize], // Category for the settings menu + optional sub-category <STRING, ARRAY>
     [0, 100, 0, 0], // Extra properties of the setting depending of _settingType.
     1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
     {}, // Script to execute when setting is changed. (optional) <CODE>
@@ -105,8 +105,8 @@ ISNILS(GVAR(spectate_civilian),true);*/
 [
     QGVAR(waiting_area_range), // Unique setting name. Matches resulting variable name <STRING>
     "SLIDER", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
-    ["Waiting Area Range", localize "STR_Tun_Respawn_CBA_tooltip_waiting_area_range"], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
-    [localize "STR_Tun_Respawn_CBA_Category_main", localize "STR_Tun_Respawn_CBA_Category_generic"], // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    ["Waiting Area Range", "STR_Tun_Respawn_CBA_tooltip_waiting_area_range" call BIS_fnc_localize], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    ["STR_Tun_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_Tun_Respawn_CBA_Category_generic" call BIS_fnc_localize], // Category for the settings menu + optional sub-category <STRING, ARRAY>
     [30, 300, 100, 0], // Extra properties of the setting depending of _settingType.
     1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
     {}, // Script to execute when setting is changed. (optional) <CODE>
@@ -118,8 +118,8 @@ ISNILS(GVAR(spectate_civilian),true);*/
 [
     QGVAR(time_west), // Unique setting name. Matches resulting variable name <STRING>
     "SLIDER", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
-    ["West", localize "STR_Tun_Respawn_CBA_tooltip_time"], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
-    [localize "STR_Tun_Respawn_CBA_Category_main", localize "STR_Tun_Respawn_CBA_Category_time"], // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    ["West", "STR_Tun_Respawn_CBA_tooltip_time" call BIS_fnc_localize], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    ["STR_Tun_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_Tun_Respawn_CBA_Category_time" call BIS_fnc_localize], // Category for the settings menu + optional sub-category <STRING, ARRAY>
     [1, 60, 15, 0], // Extra properties of the setting depending of _settingType.
     1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
     {}, // Script to execute when setting is changed. (optional) <CODE>
@@ -129,8 +129,8 @@ ISNILS(GVAR(spectate_civilian),true);*/
 [
     QGVAR(time_east), // Unique setting name. Matches resulting variable name <STRING>
     "SLIDER", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
-    ["East", localize "STR_Tun_Respawn_CBA_tooltip_time"], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
-    [localize "STR_Tun_Respawn_CBA_Category_main", localize "STR_Tun_Respawn_CBA_Category_time"], // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    ["East", "STR_Tun_Respawn_CBA_tooltip_time" call BIS_fnc_localize], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    ["STR_Tun_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_Tun_Respawn_CBA_Category_time" call BIS_fnc_localize], // Category for the settings menu + optional sub-category <STRING, ARRAY>
     [1, 60, 15, 0], // Extra properties of the setting depending of _settingType.
     1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
     {}, // Script to execute when setting is changed. (optional) <CODE>
@@ -140,8 +140,8 @@ ISNILS(GVAR(spectate_civilian),true);*/
 [
     QGVAR(time_guer), // Unique setting name. Matches resulting variable name <STRING>
     "SLIDER", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
-    ["Resistance", localize "STR_Tun_Respawn_CBA_tooltip_time"], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
-    [localize "STR_Tun_Respawn_CBA_Category_main", localize "STR_Tun_Respawn_CBA_Category_time"], // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    ["Resistance", "STR_Tun_Respawn_CBA_tooltip_time" call BIS_fnc_localize], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    ["STR_Tun_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_Tun_Respawn_CBA_Category_time" call BIS_fnc_localize], // Category for the settings menu + optional sub-category <STRING, ARRAY>
     [1, 60, 15, 0], // Extra properties of the setting depending of _settingType.
     1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
     {}, // Script to execute when setting is changed. (optional) <CODE>
@@ -151,8 +151,8 @@ ISNILS(GVAR(spectate_civilian),true);*/
 [
     QGVAR(time_civ), // Unique setting name. Matches resulting variable name <STRING>
     "SLIDER", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
-    ["Civilian", localize "STR_Tun_Respawn_CBA_tooltip_time"], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
-    [localize "STR_Tun_Respawn_CBA_Category_main", localize "STR_Tun_Respawn_CBA_Category_time"], // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    ["Civilian", "STR_Tun_Respawn_CBA_tooltip_time" call BIS_fnc_localize], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    ["STR_Tun_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_Tun_Respawn_CBA_Category_time" call BIS_fnc_localize], // Category for the settings menu + optional sub-category <STRING, ARRAY>
     [1, 60, 15, 0], // Extra properties of the setting depending of _settingType.
     1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
     {}, // Script to execute when setting is changed. (optional) <CODE>
@@ -163,8 +163,8 @@ ISNILS(GVAR(spectate_civilian),true);*/
 [
     QGVAR(spectate_Cameramode_1st), // Unique setting name. Matches resulting variable name <STRING>
     "CHECKBOX", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
-    ["1st", localize "STR_Tun_Respawn_CBA_tooltip_specta_modes"], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
-    [localize "STR_Tun_Respawn_CBA_Category_main", localize "STR_Tun_Respawn_CBA_Category_spectate_cameramode"], // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    ["1st", "STR_Tun_Respawn_CBA_tooltip_specta_modes" call BIS_fnc_localize], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    ["STR_Tun_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_Tun_Respawn_CBA_Category_spectate_cameramode" call BIS_fnc_localize], // Category for the settings menu + optional sub-category <STRING, ARRAY>
     true, // Extra properties of the setting depending of _settingType.
     1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
     {}, // Script to execute when setting is changed. (optional) <CODE>
@@ -174,8 +174,8 @@ ISNILS(GVAR(spectate_civilian),true);*/
 [
     QGVAR(spectate_Cameramode_3th), // Unique setting name. Matches resulting variable name <STRING>
     "CHECKBOX", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
-    ["3th", localize "STR_Tun_Respawn_CBA_tooltip_specta_modes"], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
-    [localize "STR_Tun_Respawn_CBA_Category_main", localize "STR_Tun_Respawn_CBA_Category_spectate_cameramode"], // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    ["3th", "STR_Tun_Respawn_CBA_tooltip_specta_modes" call BIS_fnc_localize], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    ["STR_Tun_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_Tun_Respawn_CBA_Category_spectate_cameramode" call BIS_fnc_localize], // Category for the settings menu + optional sub-category <STRING, ARRAY>
     true, // Extra properties of the setting depending of _settingType.
     1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
     {}, // Script to execute when setting is changed. (optional) <CODE>
@@ -185,8 +185,8 @@ ISNILS(GVAR(spectate_civilian),true);*/
 [
     QGVAR(spectate_Cameramode_free), // Unique setting name. Matches resulting variable name <STRING>
     "CHECKBOX", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
-    ["Free", localize "STR_Tun_Respawn_CBA_tooltip_specta_modes"], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
-    [localize "STR_Tun_Respawn_CBA_Category_main", localize "STR_Tun_Respawn_CBA_Category_spectate_cameramode"], // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    ["Free", "STR_Tun_Respawn_CBA_tooltip_specta_modes" call BIS_fnc_localize], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    ["STR_Tun_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_Tun_Respawn_CBA_Category_spectate_cameramode" call BIS_fnc_localize], // Category for the settings menu + optional sub-category <STRING, ARRAY>
     true, // Extra properties of the setting depending of _settingType.
     1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
     {}, // Script to execute when setting is changed. (optional) <CODE>
@@ -198,8 +198,8 @@ ISNILS(GVAR(spectate_civilian),true);*/
 [
     QGVAR(tickets_west), // Unique setting name. Matches resulting variable name <STRING>
     "SLIDER", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
-    ["West", localize "STR_Tun_Respawn_CBA_tooltip_ticket"], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
-    [localize "STR_Tun_Respawn_CBA_Category_main", localize "STR_Tun_Respawn_CBA_Category_ticketcount"], // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    ["West", "STR_Tun_Respawn_CBA_tooltip_ticket" call BIS_fnc_localize], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    ["STR_Tun_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_Tun_Respawn_CBA_Category_ticketcount" call BIS_fnc_localize], // Category for the settings menu + optional sub-category <STRING, ARRAY>
     [0, 1000, 0, 0], // Extra properties of the setting depending of _settingType.
     1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
     {}, // Script to execute when setting is changed. (optional) <CODE>
@@ -209,8 +209,8 @@ ISNILS(GVAR(spectate_civilian),true);*/
 [
     QGVAR(tickets_east), // Unique setting name. Matches resulting variable name <STRING>
     "SLIDER", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
-    ["East", localize "STR_Tun_Respawn_CBA_tooltip_ticket"], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
-    [localize "STR_Tun_Respawn_CBA_Category_main", localize "STR_Tun_Respawn_CBA_Category_ticketcount"], // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    ["East", "STR_Tun_Respawn_CBA_tooltip_ticket" call BIS_fnc_localize], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    ["STR_Tun_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_Tun_Respawn_CBA_Category_ticketcount" call BIS_fnc_localize], // Category for the settings menu + optional sub-category <STRING, ARRAY>
     [0, 1000, 0, 0], // Extra properties of the setting depending of _settingType.
     1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
     {}, // Script to execute when setting is changed. (optional) <CODE>
@@ -220,8 +220,8 @@ ISNILS(GVAR(spectate_civilian),true);*/
 [
     QGVAR(tickets_guer), // Unique setting name. Matches resulting variable name <STRING>
     "SLIDER", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
-    ["Resistance", localize "STR_Tun_Respawn_CBA_tooltip_ticket"], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
-    [localize "STR_Tun_Respawn_CBA_Category_main", localize "STR_Tun_Respawn_CBA_Category_ticketcount"], // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    ["Resistance", "STR_Tun_Respawn_CBA_tooltip_ticket" call BIS_fnc_localize], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    ["STR_Tun_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_Tun_Respawn_CBA_Category_ticketcount" call BIS_fnc_localize], // Category for the settings menu + optional sub-category <STRING, ARRAY>
     [0, 1000, 0, 0], // Extra properties of the setting depending of _settingType.
     1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
     {}, // Script to execute when setting is changed. (optional) <CODE>
@@ -231,8 +231,8 @@ ISNILS(GVAR(spectate_civilian),true);*/
 [
     QGVAR(tickets_civ), // Unique setting name. Matches resulting variable name <STRING>
     "SLIDER", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
-    ["Civilian", localize "STR_Tun_Respawn_CBA_tooltip_ticket"], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
-    [localize "STR_Tun_Respawn_CBA_Category_main", localize "STR_Tun_Respawn_CBA_Category_ticketcount"], // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    ["Civilian", "STR_Tun_Respawn_CBA_tooltip_ticket" call BIS_fnc_localize], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    ["STR_Tun_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_Tun_Respawn_CBA_Category_ticketcount" call BIS_fnc_localize], // Category for the settings menu + optional sub-category <STRING, ARRAY>
     [0, 1000, 0, 0], // Extra properties of the setting depending of _settingType.
     1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
     {}, // Script to execute when setting is changed. (optional) <CODE>

@@ -52,8 +52,8 @@ if (isServer) then {
 [
     QGVAR(enable), // Unique setting name. Matches resulting variable name <STRING>
     "CHECKBOX", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
-    [localize "STR_Tun_MSP_CBA_Enable", localize "STR_Tun_MSP_CBA_tooltip_Enable"], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
-    localize "STR_Tun_MSP_CBA_Category_main", // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    ["STR_Tun_MSP_CBA_Enable" call BIS_fnc_localize, "STR_Tun_MSP_CBA_tooltip_Enable" call BIS_fnc_localize], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    "STR_Tun_MSP_CBA_Category_main" call BIS_fnc_localize, // Category for the settings menu + optional sub-category <STRING, ARRAY>
     false, // Extra properties of the setting depending of _settingType.
     1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
     {}, // Script to execute when setting is changed. (optional) <CODE>
@@ -64,8 +64,8 @@ if (isServer) then {
 [
     QGVAR(report_enemies), // Unique setting name. Matches resulting variable name <STRING>
     "CHECKBOX", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
-    [localize "STR_Tun_MSP_CBA_report_enemies", localize "STR_Tun_MSP_CBA_tooltip_report_enemies"], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
-    [localize "STR_Tun_MSP_CBA_Category_main", localize "STR_Tun_MSP_CBA_Category_contested"], // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    ["STR_Tun_MSP_CBA_report_enemies" call BIS_fnc_localize, "STR_Tun_MSP_CBA_tooltip_report_enemies" call BIS_fnc_localize], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    ["STR_Tun_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_Tun_MSP_CBA_Category_contested" call BIS_fnc_localize], // Category for the settings menu + optional sub-category <STRING, ARRAY>
     true, // Extra properties of the setting depending of _settingType.
     1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
     {}, // Script to execute when setting is changed. (optional) <CODE>
@@ -76,8 +76,8 @@ if (isServer) then {
 [
     QGVAR(report_enemies_interval), // Unique setting name. Matches resulting variable name <STRING>
     "SLIDER", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
-    [localize "STR_Tun_MSP_CBA_report_enemies_intervala", localize "STR_Tun_MSP_CBA_tooltip_report_enemies_interval"], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
-    [localize "STR_Tun_MSP_CBA_Category_main", localize "STR_Tun_MSP_CBA_Category_contested"], // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    ["STR_Tun_MSP_CBA_report_enemies_intervala" call BIS_fnc_localize, "STR_Tun_MSP_CBA_tooltip_report_enemies_interval" call BIS_fnc_localize], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    ["STR_Tun_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_Tun_MSP_CBA_Category_contested" call BIS_fnc_localize], // Category for the settings menu + optional sub-category <STRING, ARRAY>
     [1, 600, 30, 0], // Extra properties of the setting depending of _settingType.
     1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
     {}, // Script to execute when setting is changed. (optional) <CODE>
@@ -88,8 +88,8 @@ if (isServer) then {
 [
     QGVAR(report_enemies_range), // Unique setting name. Matches resulting variable name <STRING>
     "SLIDER", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
-    [localize "STR_Tun_MSP_CBA_report_enemies_range", localize "STR_Tun_MSP_CBA_tooltip_report_enemies_range"], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
-    [localize "STR_Tun_MSP_CBA_Category_main", localize "STR_Tun_MSP_CBA_Category_contested"], // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    ["STR_Tun_MSP_CBA_report_enemies_range" call BIS_fnc_localize, "STR_Tun_MSP_CBA_tooltip_report_enemies_range" call BIS_fnc_localize], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    ["STR_Tun_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_Tun_MSP_CBA_Category_contested" call BIS_fnc_localize], // Category for the settings menu + optional sub-category <STRING, ARRAY>
     [0, 5000, 500, 0], // Extra properties of the setting depending of _settingType.
     1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
     {}, // Script to execute when setting is changed. (optional) <CODE>
@@ -100,8 +100,8 @@ if (isServer) then {
 [
     QGVAR(contested_radius_max), // Unique setting name. Matches resulting variable name <STRING>
     "SLIDER", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
-    [localize "STR_Tun_MSP_CBA_contested_radius_max", localize "STR_Tun_MSP_CBA_tooltip_contested_max"], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
-    [localize "STR_Tun_MSP_CBA_Category_main", localize "STR_Tun_MSP_CBA_Category_contested"], // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    ["STR_Tun_MSP_CBA_contested_radius_max" call BIS_fnc_localize, "STR_Tun_MSP_CBA_tooltip_contested_max" call BIS_fnc_localize], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    ["STR_Tun_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_Tun_MSP_CBA_Category_contested" call BIS_fnc_localize], // Category for the settings menu + optional sub-category <STRING, ARRAY>
     [0, 5000, 500, 0], // Extra properties of the setting depending of _settingType.
     1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
     {}, // Script to execute when setting is changed. (optional) <CODE>
@@ -112,8 +112,8 @@ if (isServer) then {
 [
     QGVAR(contested_radius_min), // Unique setting name. Matches resulting variable name <STRING>
     "SLIDER", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
-    [localize "STR_Tun_MSP_CBA_contested_radius_min", localize "STR_Tun_MSP_CBA_tooltip_contested_min"], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
-    [localize "STR_Tun_MSP_CBA_Category_main", localize "STR_Tun_MSP_CBA_Category_contested"], // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    ["STR_Tun_MSP_CBA_contested_radius_min" call BIS_fnc_localize, "STR_Tun_MSP_CBA_tooltip_contested_min" call BIS_fnc_localize], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    ["STR_Tun_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_Tun_MSP_CBA_Category_contested" call BIS_fnc_localize], // Category for the settings menu + optional sub-category <STRING, ARRAY>
     [0, 5000, 200, 0], // Extra properties of the setting depending of _settingType.
     1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
     {}, // Script to execute when setting is changed. (optional) <CODE>
@@ -124,8 +124,8 @@ if (isServer) then {
 [
     QGVAR(contested_check_interval), // Unique setting name. Matches resulting variable name <STRING>
     "SLIDER", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
-    [localize "STR_Tun_MSP_CBA_contested_check_interval", localize "STR_Tun_MSP_CBA_tooltip_contested_check_interval"], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
-    [localize "STR_Tun_MSP_CBA_Category_main", localize "STR_Tun_MSP_CBA_Category_contested"], // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    ["STR_Tun_MSP_CBA_contested_check_interval" call BIS_fnc_localize, "STR_Tun_MSP_CBA_tooltip_contested_check_interval" call BIS_fnc_localize], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    ["STR_Tun_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_Tun_MSP_CBA_Category_contested" call BIS_fnc_localize], // Category for the settings menu + optional sub-category <STRING, ARRAY>
     [1, 600, 30, 0], // Extra properties of the setting depending of _settingType.
     1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
     {}, // Script to execute when setting is changed. (optional) <CODE>
@@ -136,8 +136,8 @@ if (isServer) then {
 [
     QGVAR(progresbar_time_setup), // Unique setting name. Matches resulting variable name <STRING>
     "SLIDER", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
-    [localize "STR_Tun_MSP_CBA_setup_progresbar", localize "STR_Tun_MSP_CBA_tooltip_setup_progresbar"], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
-    [localize "STR_Tun_MSP_CBA_Category_main", localize "STR_Tun_MSP_CBA_Category_progres"], // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    ["STR_Tun_MSP_CBA_setup_progresbar" call BIS_fnc_localize, "STR_Tun_MSP_CBA_tooltip_setup_progresbar" call BIS_fnc_localize], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    ["STR_Tun_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_Tun_MSP_CBA_Category_progres" call BIS_fnc_localize], // Category for the settings menu + optional sub-category <STRING, ARRAY>
     [0, 60, 5, 0], // Extra properties of the setting depending of _settingType.
     1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
     {}, // Script to execute when setting is changed. (optional) <CODE>
@@ -148,8 +148,8 @@ if (isServer) then {
 [
     QGVAR(progresbar_time_pack), // Unique setting name. Matches resulting variable name <STRING>
     "SLIDER", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
-    [localize "STR_Tun_MSP_CBA_pack_progresbar", localize "STR_Tun_MSP_CBA_tooltip_pack_progresbar"], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
-    [localize "STR_Tun_MSP_CBA_Category_main", localize "STR_Tun_MSP_CBA_Category_progres"], // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    ["STR_Tun_MSP_CBA_pack_progresbar" call BIS_fnc_localize, "STR_Tun_MSP_CBA_tooltip_pack_progresbar" call BIS_fnc_localize], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    ["STR_Tun_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_Tun_MSP_CBA_Category_progres" call BIS_fnc_localize], // Category for the settings menu + optional sub-category <STRING, ARRAY>
     [0, 60, 5, 0], // Extra properties of the setting depending of _settingType.
     1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
     {}, // Script to execute when setting is changed. (optional) <CODE>
@@ -160,8 +160,8 @@ if (isServer) then {
 [
     QGVAR(clasnames_east), // Unique setting name. Matches resulting variable name <STRING>
     "EDITBOX", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
-    [localize "STR_Tun_MSP_CBA_classname_east", localize "STR_Tun_MSP_CBA_tooltip_classname"], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
-    [localize "STR_Tun_MSP_CBA_Category_main", localize "STR_Tun_MSP_CBA_classname"], // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    ["STR_Tun_MSP_CBA_classname_east" call BIS_fnc_localize, "STR_Tun_MSP_CBA_tooltip_classname" call BIS_fnc_localize], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    ["STR_Tun_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_Tun_MSP_CBA_classname" call BIS_fnc_localize], // Category for the settings menu + optional sub-category <STRING, ARRAY>
     "O_Truck_03_transport_F", // Extra properties of the setting depending of _settingType.
     1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
     {}, // Script to execute when setting is changed. (optional) <CODE>
@@ -172,8 +172,8 @@ if (isServer) then {
 [
     QGVAR(clasnames_west), // Unique setting name. Matches resulting variable name <STRING>
     "EDITBOX", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
-    [localize "STR_Tun_MSP_CBA_classname_west", localize "STR_Tun_MSP_CBA_tooltip_classname"], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
-    [localize "STR_Tun_MSP_CBA_Category_main", localize "STR_Tun_MSP_CBA_classname"], // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    ["STR_Tun_MSP_CBA_classname_west" call BIS_fnc_localize, "STR_Tun_MSP_CBA_tooltip_classname" call BIS_fnc_localize], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    ["STR_Tun_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_Tun_MSP_CBA_classname" call BIS_fnc_localize], // Category for the settings menu + optional sub-category <STRING, ARRAY>
     "B_Truck_01_transport_F", // Extra properties of the setting depending of _settingType.
     1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
     {}, // Script to execute when setting is changed. (optional) <CODE>
@@ -184,8 +184,8 @@ if (isServer) then {
 [
     QGVAR(clasnames_resistance), // Unique setting name. Matches resulting variable name <STRING>
     "EDITBOX", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
-    [localize "STR_Tun_MSP_CBA_classname_resistance", localize "STR_Tun_MSP_CBA_tooltip_classname"], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
-    [localize "STR_Tun_MSP_CBA_Category_main", localize "STR_Tun_MSP_CBA_classname"], // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    ["STR_Tun_MSP_CBA_classname_resistance" call BIS_fnc_localize, "STR_Tun_MSP_CBA_tooltip_classname" call BIS_fnc_localize], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    ["STR_Tun_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_Tun_MSP_CBA_classname" call BIS_fnc_localize], // Category for the settings menu + optional sub-category <STRING, ARRAY>
     "I_Truck_02_transport_F", // Extra properties of the setting depending of _settingType.
     1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
     {}, // Script to execute when setting is changed. (optional) <CODE>
@@ -196,8 +196,8 @@ if (isServer) then {
 [
     QGVAR(clasnames_civilian), // Unique setting name. Matches resulting variable name <STRING>
     "EDITBOX", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
-    [localize "STR_Tun_MSP_CBA_classname_civilian", localize "STR_Tun_MSP_CBA_tooltip_classname"], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
-    [localize "STR_Tun_MSP_CBA_Category_main", localize "STR_Tun_MSP_CBA_classname"], // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    ["STR_Tun_MSP_CBA_classname_civilian" call BIS_fnc_localize, "STR_Tun_MSP_CBA_tooltip_classname" call BIS_fnc_localize], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    ["STR_Tun_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_Tun_MSP_CBA_classname" call BIS_fnc_localize], // Category for the settings menu + optional sub-category <STRING, ARRAY>
     "C_Truck_02_transport_F", // Extra properties of the setting depending of _settingType.
     1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
     {}, // Script to execute when setting is changed. (optional) <CODE>

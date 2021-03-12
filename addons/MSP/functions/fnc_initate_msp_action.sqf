@@ -18,17 +18,17 @@
 
 params ["_target", "_setup"];
 private ["_text", "_time", "_conditio"];
-_statusvar = format ["%1_%2", QGVAR(status), playerSide];
+private _statusvar = format ["%1_%2", QGVAR(status), playerSide];
 
 if (_setup) then {
-    _text = localize "STR_Tun_MSP_fnc_initate_msp_action_setting";
+    _text = "STR_Tun_MSP_fnc_initate_msp_action_setting" call BIS_fnc_localize;
     _conditio = { !(missionNamespace getVariable (_this select 0 select 1)) };
     _time = GVAR(progresbar_time_setup);
 } else {
-    _text = localize "STR_Tun_MSP_fnc_initate_msp_action_packing";
+    _text = "STR_Tun_MSP_fnc_initate_msp_action_packing" call BIS_fnc_localize;
     _conditio = { missionNamespace getVariable (_this select 0 select 1) };
     _time = GVAR(progresbar_time_pack);
 };
 
-_code = { INFO( str(_this select 0 select 0) ); (_this select 0 select 0) call FUNC(update_status); };
+_code = { (_this select 0 select 0) call FUNC(update_status); };
 [_text, _time, _conditio, _code, {hint "aborted"},[[_target, _setup], _statusvar]] call CBA_fnc_progressBar;

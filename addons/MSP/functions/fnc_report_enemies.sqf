@@ -21,7 +21,7 @@ params ["_status", "_msp", "_side"];
 
 //Notify if enemies near
 if ( _status ) then {
-    localize "STR_Tun_MSP_FNC_enemies_near" remoteExecCall ["hintSilent", _side];
+    ("STR_Tun_MSP_FNC_enemies_near" call BIS_fnc_localize) remoteExecCall ["hintSilent", _side];
 
     if (_msp getvariable [QGVAR(enemies_near), false]) then {
     	_msp setVariable [QGVAR(enemies_near), true, true];

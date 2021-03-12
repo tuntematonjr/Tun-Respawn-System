@@ -51,13 +51,13 @@ _countingUnits = {
 	if ( _enemyCount > _FriendlyCount || _enemyCountMin > 0 ) then {
 		_newStatus = true;
 		if !(_status) then {
-			localize "STR_Tun_MSP_FNC_Contested_hint" remoteExecCall ["hint", _units];
+			("STR_Tun_MSP_FNC_Contested_hint" call BIS_fnc_localize) remoteExecCall ["hint", _units];
 			[_side, false] call TUN_respawn_fnc_update_respawn_point;
 			AAR_UPDATE(_msp,"Is contested", true);
 		};
 	} else {
 		if ( _status ) then {
-			localize "STR_Tun_MSP_FNC_secured_hint" remoteExecCall ["hint", _units];
+			("STR_Tun_MSP_FNC_secured_hint" call BIS_fnc_localize) remoteExecCall ["hint", _units];
 			[_side, true, (getPos _msp) ] call TUN_respawn_fnc_update_respawn_point;
 			AAR_UPDATE(_msp,"Is contested", false);
 		};
