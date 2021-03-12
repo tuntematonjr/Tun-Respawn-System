@@ -4,7 +4,7 @@
  *
  * Arguments:
  * 0: Side <SIDE>
- * 1: True: Rertur to original pos. False: Update to module pos <BOOL> (default: true)
+ * 1: False: Rertur to original pos. True: Update to module pos <BOOL> (default: false)
  * 2: New position <ARRAY> (default: [0,0,0])
  *
  * Return Value:
@@ -15,7 +15,7 @@
  */
 #include "script_component.hpp"
 
-params [["_side", sideLogic, [west]], ["_update", true, [true]], ["_new_pos", [0,0,0], [[]]]];
+params [["_side", sideLogic, [west]], ["_update", false, [true]], ["_new_pos", [0,0,0], [[]]]];
 
 if (!isServer) exitWith { };
 
