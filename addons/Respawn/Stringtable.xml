@@ -257,19 +257,69 @@
         <German>Mission is using only forced waves.</German>
       </Key>
     </Container>
-    <Container name="Modules">
-      <Key ID="STR_Tun_Respawn_Module_Description_Waitingarea">
-        <Original>Put this module where you want respawn waiting area to be for this side.</Original>
-        <English>Put this module where you want respawn waiting area to be for this side.</English>
-        <Czech>Put this module where you want respawn waiting area to be for this side.</Czech>
-        <French>Put this module where you want respawn waiting area to be for this side.</French>
-        <Spanish>Put this module where you want respawn waiting area to be for this side.</Spanish>
-        <Italian>Put this module where you want respawn waiting area to be for this side.</Italian>
-        <Polish>Put this module where you want respawn waiting area to be for this side.</Polish>
-        <Portuguese>Put this module where you want respawn waiting area to be for this side.</Portuguese>
-        <Russian>Put this module where you want respawn waiting area to be for this side.</Russian>
-        <German>Put this module where you want respawn waiting area to be for this side.</German>
+    <Container name="Teleport">
+      <Key ID="STR_Tun_Respawn_Teleporting">
+        <Original>You are being teleported to:</Original>
+        <English>You are being teleported to:</English>
+        <Czech>You are being teleported to:</Czech>
+        <French>You are being teleported to:</French>
+        <Spanish>You are being teleported to:</Spanish>
+        <Italian>You are being teleported to:</Italian>
+        <Polish>You are being teleported to:</Polish>
+        <Portuguese>You are being teleported to:</Portuguese>
+        <Russian>You are being teleported to:</Russian>
+        <German>You are being teleported to:</German>
       </Key>
+      <Key ID="STR_Tun_Respawn_Teleport_Disabled">
+        <Original>This teleport point is disabled</Original>
+        <English>This teleport point is disabled</English>
+        <Czech>This teleport point is disabled</Czech>
+        <French>This teleport point is disabled</French>
+        <Spanish>This teleport point is disabled</Spanish>
+        <Italian>This teleport point is disabled</Italian>
+        <Polish>This teleport point is disabled</Polish>
+        <Portuguese>This teleport point is disabled</Portuguese>
+        <Russian>This teleport point is disabled</Russian>
+        <German>This teleport point is disabled</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_TeleportMenu">
+        <Original>Open teleportmenu</Original>
+        <English>Open teleportmenu</English>
+        <Czech>Open teleportmenu</Czech>
+        <French>Open teleportmenu</French>
+        <Spanish>Open teleportmenu</Spanish>
+        <Italian>Open teleportmenu</Italian>
+        <Polish>Open teleportmenu</Polish>
+        <Portuguese>Open teleportmenu</Portuguese>
+        <Russian>Open teleportmenu</Russian>
+        <German>Open teleportmenu</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_TeleportMenuVanilla">
+        <Original>&lt;t color='#FF0000'&gt;Open teleportmenu&lt;/t&gt;</Original>
+        <English>&lt;t color='#FF0000'&gt;Open teleportmenu&lt;/t&gt;</English>
+        <Czech>&lt;t color='#FF0000'&gt;Open teleportmenu&lt;/t&gt;</Czech>
+        <French>&lt;t color='#FF0000'&gt;Open teleportmenu&lt;/t&gt;</French>
+        <Spanish>&lt;t color='#FF0000'&gt;Open teleportmenu&lt;/t&gt;</Spanish>
+        <Italian>&lt;t color='#FF0000'&gt;Open teleportmenu&lt;/t&gt;</Italian>
+        <Polish>&lt;t color='#FF0000'&gt;Open teleportmenu&lt;/t&gt;</Polish>
+        <Portuguese>&lt;t color='#FF0000'&gt;Open teleportmenu&lt;/t&gt;</Portuguese>
+        <Russian>&lt;t color='#FF0000'&gt;Open teleportmenu&lt;/t&gt;</Russian>
+        <German>&lt;t color='#FF0000'&gt;Open teleportmenu&lt;/t&gt;</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_MainBaseText">
+        <Original>Main Base</Original>
+        <English>Main Base</English>
+        <Czech>Main Base</Czech>
+        <French>Main Base</French>
+        <Spanish>Main Base</Spanish>
+        <Italian>Main Base</Italian>
+        <Polish>Main Base</Polish>
+        <Portuguese>Main Base</Portuguese>
+        <Russian>Main Base</Russian>
+        <German>Main Base</German>
+      </Key>
+    </Container>
+    <Container name="Modules">
       <Key ID="STR_Tun_Respawn_Module_Description_Spawn_Point">
         <Original>Put this module where you want respawn point to be for this side.</Original>
         <English>Put this module where you want respawn point to be for this side.</English>
@@ -282,30 +332,6 @@
         <Russian>Put this module where you want respawn point to be for this side.</Russian>
         <German>Put this module where you want respawn point to be for this side.</German>
       </Key>
-      <Key ID="STR_Tun_Respawn_Module_Description_teleportPoint">
-        <Original>Teleport network point.</Original>
-        <English>Teleport network point.</English>
-        <Czech>Teleport network point.</Czech>
-        <French>Teleport network point.</French>
-        <Spanish>Teleport network point.</Spanish>
-        <Italian>Teleport network point.</Italian>
-        <Polish>Teleport network point.</Polish>
-        <Portuguese>Teleport network point.</Portuguese>
-        <Russian>Teleport network point.</Russian>
-        <German>Teleport network point.</German>
-      </Key>
-      <Key ID="STR_Tun_Respawn_Module_DisplayName_WaitingArea">
-        <Original>Respawn Waiting Area</Original>
-        <English>Respawn Waiting Area</English>
-        <Czech>Respawn Waiting Area</Czech>
-        <French>Respawn Waiting Area</French>
-        <Spanish>Respawn Waiting Area</Spanish>
-        <Italian>Respawn Waiting Area</Italian>
-        <Polish>Respawn Waiting Area</Polish>
-        <Portuguese>Respawn Waiting Area</Portuguese>
-        <Russian>Respawn Waiting Area</Russian>
-        <German>Respawn Waiting Area</German>
-      </Key>
       <Key ID="STR_Tun_Respawn_Module_DisplayName_SpawnPoint">
         <Original>Spawn Point</Original>
         <English>Spawn Point</English>
@@ -317,66 +343,6 @@
         <Portuguese>Spawn Point</Portuguese>
         <Russian>Spawn Point</Russian>
         <German>Spawn Point</German>
-      </Key>
-      <Key ID="STR_Tun_Respawn_Module_tooltip_WaitingArea">
-        <Original>Choose side for this waiting area</Original>
-        <English>Choose side for this waiting area</English>
-        <Czech>Choose side for this waiting area</Czech>
-        <French>Choose side for this waiting area</French>
-        <Spanish>Choose side for this waiting area</Spanish>
-        <Italian>Choose side for this waiting area</Italian>
-        <Polish>Choose side for this waiting area</Polish>
-        <Portuguese>Choose side for this waiting area</Portuguese>
-        <Russian>Choose side for this waiting area</Russian>
-        <German>Choose side for this waiting area</German>
-      </Key>
-      <Key ID="STR_Tun_Respawn_Module_tooltip_teleportPointOBJ">
-        <Original>Classname for object where action to teleport is. Non string format: Land_Sleeping_bag_blue_folded_F</Original>
-        <English>Classname for object where action to teleport is. Non string format: Land_Sleeping_bag_blue_folded_F</English>
-        <Czech>Classname for object where action to teleport is. Non string format: Land_Sleeping_bag_blue_folded_F</Czech>
-        <French>Classname for object where action to teleport is. Non string format: Land_Sleeping_bag_blue_folded_F</French>
-        <Spanish>Classname for object where action to teleport is. Non string format: Land_Sleeping_bag_blue_folded_F</Spanish>
-        <Italian>Classname for object where action to teleport is. Non string format: Land_Sleeping_bag_blue_folded_F</Italian>
-        <Polish>Classname for object where action to teleport is. Non string format: Land_Sleeping_bag_blue_folded_F</Polish>
-        <Portuguese>Classname for object where action to teleport is. Non string format: Land_Sleeping_bag_blue_folded_F</Portuguese>
-        <Russian>Classname for object where action to teleport is. Non string format: Land_Sleeping_bag_blue_folded_F</Russian>
-        <German>Classname for object where action to teleport is. Non string format: Land_Sleeping_bag_blue_folded_F</German>
-      </Key>
-      <Key ID="STR_Tun_Respawn_Module_tooltip_teleportName">
-        <Original>Name for teleport location</Original>
-        <English>Name for teleport location</English>
-        <Czech>Name for teleport location</Czech>
-        <French>Name for teleport location</French>
-        <Spanish>Name for teleport location</Spanish>
-        <Italian>Name for teleport location</Italian>
-        <Polish>Name for teleport location</Polish>
-        <Portuguese>Name for teleport location</Portuguese>
-        <Russian>Name for teleport location</Russian>
-        <German>Name for teleport location</German>
-      </Key>
-      <Key ID="STR_Tun_Respawn_Module_tooltip_teleportEnableSides">
-        <Original>Is this side allowed to use this teleportter.</Original>
-        <English>Is this side allowed to use this teleportter.</English>
-        <Czech>Is this side allowed to use this teleportter.</Czech>
-        <French>Is this side allowed to use this teleportter.</French>
-        <Spanish>Is this side allowed to use this teleportter.</Spanish>
-        <Italian>Is this side allowed to use this teleportter.</Italian>
-        <Polish>Is this side allowed to use this teleportter.</Polish>
-        <Portuguese>Is this side allowed to use this teleportter.</Portuguese>
-        <Russian>Is this side allowed to use this teleportter.</Russian>
-        <German>Is this side allowed to use this teleportter.</German>
-      </Key>
-      <Key ID="STR_Tun_Respawn_Module_tooltip_teleportConditio">
-        <Original>Conditio to enable/disable TP location. (Code) Default: True</Original>
-        <English>Conditio to enable/disable TP location. (Code) Default: True</English>
-        <Czech>Conditio to enable/disable TP location. (Code) Default: True</Czech>
-        <French>Conditio to enable/disable TP location. (Code) Default: True</French>
-        <Spanish>Conditio to enable/disable TP location. (Code) Default: True</Spanish>
-        <Italian>Conditio to enable/disable TP location. (Code) Default: True</Italian>
-        <Polish>Conditio to enable/disable TP location. (Code) Default: True</Polish>
-        <Portuguese>Conditio to enable/disable TP location. (Code) Default: True</Portuguese>
-        <Russian>Conditio to enable/disable TP location. (Code) Default: True</Russian>
-        <German>Conditio to enable/disable TP location. (Code) Default: True</German>
       </Key>
       <Key ID="STR_Tun_Respawn_Module_tooltip_SpawnPoint">
         <Original>Choose side for this spawn point</Original>
@@ -402,18 +368,6 @@
         <Russian>Tun Respawn</Russian>
         <German>Tun Respawn</German>
       </Key>
-      <Key ID="STR_Tun_Respawn_Module_WaitingArea_novalue">
-        <Original>Waiting area module do not have side set</Original>
-        <English>Waiting area module do not have side set</English>
-        <Czech>Waiting area module do not have side set</Czech>
-        <French>Waiting area module do not have side set</French>
-        <Spanish>Waiting area module do not have side set</Spanish>
-        <Italian>Waiting area module do not have side set</Italian>
-        <Polish>Waiting area module do not have side set</Polish>
-        <Portuguese>Waiting area module do not have side set</Portuguese>
-        <Russian>Waiting area module do not have side set</Russian>
-        <German>Waiting area module do not have side set</German>
-      </Key>
       <Key ID="STR_Tun_Respawn_Module_RespanPos_novalue">
         <Original>Respawn Position module do not have side set</Original>
         <English>Respawn Position module do not have side set</English>
@@ -438,18 +392,8 @@
         <Russian>There is already "%1" marker. You either have multiple respawn point modules with same settings or marker named that. Either way, remove it.</Russian>
         <German>There is already "%1" marker. You either have multiple respawn point modules with same settings or marker named that. Either way, remove it.</German>
       </Key>
-      <Key ID="STR_Tun_Respawn_Module_WaitingArea_MultipleMarkers">
-        <Original>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</Original>
-        <English>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</English>
-        <Czech>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</Czech>
-        <French>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</French>
-        <Spanish>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</Spanish>
-        <Italian>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</Italian>
-        <Polish>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</Polish>
-        <Portuguese>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</Portuguese>
-        <Russian>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</Russian>
-        <German>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</German>
-      </Key>
+    </Container>
+    <Container name="TP module">
       <Key ID="STR_Tun_Respawn_Module_DisplayName_teleportPoint">
         <Original>Teleport point</Original>
         <English>Teleport point</English>
@@ -462,31 +406,201 @@
         <Russian>Teleport point</Russian>
         <German>Teleport point</German>
       </Key>
-    </Container>
-    <Container name="misc">
-      <Key ID="STR_Tun_Respawn_Teleporting">
-        <Original>You are being teleporter. Make woosh sound your self. Ty</Original>
-        <English>You are being teleporter. Make woosh sound your self. Ty</English>
-        <Czech>You are being teleporter. Make woosh sound your self. Ty</Czech>
-        <French>You are being teleporter. Make woosh sound your self. Ty</French>
-        <Spanish>You are being teleporter. Make woosh sound your self. Ty</Spanish>
-        <Italian>You are being teleporter. Make woosh sound your self. Ty</Italian>
-        <Polish>You are being teleporter. Make woosh sound your self. Ty</Polish>
-        <Portuguese>You are being teleporter. Make woosh sound your self. Ty</Portuguese>
-        <Russian>You are being teleporter. Make woosh sound your self. Ty</Russian>
-        <German>You are being teleporter. Make woosh sound your self. Ty</German>
+      <Key ID="STR_Tun_Respawn_Module_Description_teleportPoint">
+        <Original>Teleport network point.</Original>
+        <English>Teleport network point.</English>
+        <Czech>Teleport network point.</Czech>
+        <French>Teleport network point.</French>
+        <Spanish>Teleport network point.</Spanish>
+        <Italian>Teleport network point.</Italian>
+        <Polish>Teleport network point.</Polish>
+        <Portuguese>Teleport network point.</Portuguese>
+        <Russian>Teleport network point.</Russian>
+        <German>Teleport network point.</German>
       </Key>
-      <Key ID="STR_Tun_Respawn_Teleport_Disabled">
-        <Original>This telepoin point is disabled</Original>
-        <English>This telepoin point is disabled</English>
-        <Czech>This telepoin point is disabled</Czech>
-        <French>This telepoin point is disabled</French>
-        <Spanish>This telepoin point is disabled</Spanish>
-        <Italian>This telepoin point is disabled</Italian>
-        <Polish>This telepoin point is disabled</Polish>
-        <Portuguese>This telepoin point is disabled</Portuguese>
-        <Russian>This telepoin point is disabled</Russian>
-        <German>This telepoin point is disabled</German>
+      <Key ID="STR_Tun_Respawn_Module_tooltip_teleportMarkerIcone">
+        <Original>Marker icon, must be in non string format. Default: hd_start</Original>
+        <English>Marker icon, must be in non string format. Default: hd_start</English>
+        <Czech>Marker icon, must be in non string format. Default: hd_start</Czech>
+        <French>Marker icon, must be in non string format. Default: hd_start</French>
+        <Spanish>Marker icon, must be in non string format. Default: hd_start</Spanish>
+        <Italian>Marker icon, must be in non string format. Default: hd_start</Italian>
+        <Polish>Marker icon, must be in non string format. Default: hd_start</Polish>
+        <Portuguese>Marker icon, must be in non string format. Default: hd_start</Portuguese>
+        <Russian>Marker icon, must be in non string format. Default: hd_start</Russian>
+        <German>Marker icon, must be in non string format. Default: hd_start</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Module_tooltip_teleportCreateMarker">
+        <Original>Create marker for this teleport, for enabled sides.</Original>
+        <English>Create marker for this teleport, for enabled sides.</English>
+        <Czech>Create marker for this teleport, for enabled sides.</Czech>
+        <French>Create marker for this teleport, for enabled sides.</French>
+        <Spanish>Create marker for this teleport, for enabled sides.</Spanish>
+        <Italian>Create marker for this teleport, for enabled sides.</Italian>
+        <Polish>Create marker for this teleport, for enabled sides.</Polish>
+        <Portuguese>Create marker for this teleport, for enabled sides.</Portuguese>
+        <Russian>Create marker for this teleport, for enabled sides.</Russian>
+        <German>Create marker for this teleport, for enabled sides.</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Module_tooltip_teleportUseAceAction">
+        <Original>When enabled, will use ace interaction. Otherwise will use addaction.</Original>
+        <English>When enabled, will use ace interaction. Otherwise will use addaction.</English>
+        <Czech>When enabled, will use ace interaction. Otherwise will use addaction.</Czech>
+        <French>When enabled, will use ace interaction. Otherwise will use addaction.</French>
+        <Spanish>When enabled, will use ace interaction. Otherwise will use addaction.</Spanish>
+        <Italian>When enabled, will use ace interaction. Otherwise will use addaction.</Italian>
+        <Polish>When enabled, will use ace interaction. Otherwise will use addaction.</Polish>
+        <Portuguese>When enabled, will use ace interaction. Otherwise will use addaction.</Portuguese>
+        <Russian>When enabled, will use ace interaction. Otherwise will use addaction.</Russian>
+        <German>When enabled, will use ace interaction. Otherwise will use addaction.</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Module_tooltip_teleportName">
+        <Original>Name for teleport location</Original>
+        <English>Name for teleport location</English>
+        <Czech>Name for teleport location</Czech>
+        <French>Name for teleport location</French>
+        <Spanish>Name for teleport location</Spanish>
+        <Italian>Name for teleport location</Italian>
+        <Polish>Name for teleport location</Polish>
+        <Portuguese>Name for teleport location</Portuguese>
+        <Russian>Name for teleport location</Russian>
+        <German>Name for teleport location</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Module_tooltip_teleportMenuOpenConditio">
+        <Original>Condition to enable/disable opening teleport menu. Must return true or flase. Default: true</Original>
+        <English>Condition to enable/disable opening teleport menu. Must return true or flase. Default: true</English>
+        <Czech>Condition to enable/disable opening teleport menu. Must return true or flase. Default: true</Czech>
+        <French>Condition to enable/disable opening teleport menu. Must return true or flase. Default: true</French>
+        <Spanish>Condition to enable/disable opening teleport menu. Must return true or flase. Default: true</Spanish>
+        <Italian>Condition to enable/disable opening teleport menu. Must return true or flase. Default: true</Italian>
+        <Polish>Condition to enable/disable opening teleport menu. Must return true or flase. Default: true</Polish>
+        <Portuguese>Condition to enable/disable opening teleport menu. Must return true or flase. Default: true</Portuguese>
+        <Russian>Condition to enable/disable opening teleport menu. Must return true or flase. Default: true</Russian>
+        <German>Condition to enable/disable opening teleport menu. Must return true or flase. Default: true</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Module_tooltip_teleportConditio">
+        <Original>Conditio to enable/disable TP location. (Code) Default: True</Original>
+        <English>Conditio to enable/disable TP location. (Code) Default: True</English>
+        <Czech>Conditio to enable/disable TP location. (Code) Default: True</Czech>
+        <French>Conditio to enable/disable TP location. (Code) Default: True</French>
+        <Spanish>Conditio to enable/disable TP location. (Code) Default: True</Spanish>
+        <Italian>Conditio to enable/disable TP location. (Code) Default: True</Italian>
+        <Polish>Conditio to enable/disable TP location. (Code) Default: True</Polish>
+        <Portuguese>Conditio to enable/disable TP location. (Code) Default: True</Portuguese>
+        <Russian>Conditio to enable/disable TP location. (Code) Default: True</Russian>
+        <German>Conditio to enable/disable TP location. (Code) Default: True</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Module_tooltip_teleportEnableSides">
+        <Original>Is this side allowed to use this teleportter.</Original>
+        <English>Is this side allowed to use this teleportter.</English>
+        <Czech>Is this side allowed to use this teleportter.</Czech>
+        <French>Is this side allowed to use this teleportter.</French>
+        <Spanish>Is this side allowed to use this teleportter.</Spanish>
+        <Italian>Is this side allowed to use this teleportter.</Italian>
+        <Polish>Is this side allowed to use this teleportter.</Polish>
+        <Portuguese>Is this side allowed to use this teleportter.</Portuguese>
+        <Russian>Is this side allowed to use this teleportter.</Russian>
+        <German>Is this side allowed to use this teleportter.</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Module_tooltip_teleportPointOBJ">
+        <Original>Classname for object where action to teleport is. Non string format: Land_Sleeping_bag_blue_folded_F</Original>
+        <English>Classname for object where action to teleport is. Non string format: Land_Sleeping_bag_blue_folded_F</English>
+        <Czech>Classname for object where action to teleport is. Non string format: Land_Sleeping_bag_blue_folded_F</Czech>
+        <French>Classname for object where action to teleport is. Non string format: Land_Sleeping_bag_blue_folded_F</French>
+        <Spanish>Classname for object where action to teleport is. Non string format: Land_Sleeping_bag_blue_folded_F</Spanish>
+        <Italian>Classname for object where action to teleport is. Non string format: Land_Sleeping_bag_blue_folded_F</Italian>
+        <Polish>Classname for object where action to teleport is. Non string format: Land_Sleeping_bag_blue_folded_F</Polish>
+        <Portuguese>Classname for object where action to teleport is. Non string format: Land_Sleeping_bag_blue_folded_F</Portuguese>
+        <Russian>Classname for object where action to teleport is. Non string format: Land_Sleeping_bag_blue_folded_F</Russian>
+        <German>Classname for object where action to teleport is. Non string format: Land_Sleeping_bag_blue_folded_F</German>
+      </Key>
+    </Container>
+    <Container name="WaitingArea module">
+      <Key ID="STR_Tun_Respawn_Module_WaitingArea_MultipleMarkers">
+        <Original>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</Original>
+        <English>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</English>
+        <Czech>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</Czech>
+        <French>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</French>
+        <Spanish>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</Spanish>
+        <Italian>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</Italian>
+        <Polish>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</Polish>
+        <Portuguese>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</Portuguese>
+        <Russian>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</Russian>
+        <German>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Module_WaitingArea_novalue">
+        <Original>Waiting area module do not have side set</Original>
+        <English>Waiting area module do not have side set</English>
+        <Czech>Waiting area module do not have side set</Czech>
+        <French>Waiting area module do not have side set</French>
+        <Spanish>Waiting area module do not have side set</Spanish>
+        <Italian>Waiting area module do not have side set</Italian>
+        <Polish>Waiting area module do not have side set</Polish>
+        <Portuguese>Waiting area module do not have side set</Portuguese>
+        <Russian>Waiting area module do not have side set</Russian>
+        <German>Waiting area module do not have side set</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Module_DisplayName_WaitingArea">
+        <Original>Respawn Waiting Area</Original>
+        <English>Respawn Waiting Area</English>
+        <Czech>Respawn Waiting Area</Czech>
+        <French>Respawn Waiting Area</French>
+        <Spanish>Respawn Waiting Area</Spanish>
+        <Italian>Respawn Waiting Area</Italian>
+        <Polish>Respawn Waiting Area</Polish>
+        <Portuguese>Respawn Waiting Area</Portuguese>
+        <Russian>Respawn Waiting Area</Russian>
+        <German>Respawn Waiting Area</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Module_Description_Waitingarea">
+        <Original>Put this module where you want respawn waiting area to be for this side.</Original>
+        <English>Put this module where you want respawn waiting area to be for this side.</English>
+        <Czech>Put this module where you want respawn waiting area to be for this side.</Czech>
+        <French>Put this module where you want respawn waiting area to be for this side.</French>
+        <Spanish>Put this module where you want respawn waiting area to be for this side.</Spanish>
+        <Italian>Put this module where you want respawn waiting area to be for this side.</Italian>
+        <Polish>Put this module where you want respawn waiting area to be for this side.</Polish>
+        <Portuguese>Put this module where you want respawn waiting area to be for this side.</Portuguese>
+        <Russian>Put this module where you want respawn waiting area to be for this side.</Russian>
+        <German>Put this module where you want respawn waiting area to be for this side.</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Module_tooltip_WaitingArea">
+        <Original>Choose side for this waiting area</Original>
+        <English>Choose side for this waiting area</English>
+        <Czech>Choose side for this waiting area</Czech>
+        <French>Choose side for this waiting area</French>
+        <Spanish>Choose side for this waiting area</Spanish>
+        <Italian>Choose side for this waiting area</Italian>
+        <Polish>Choose side for this waiting area</Polish>
+        <Portuguese>Choose side for this waiting area</Portuguese>
+        <Russian>Choose side for this waiting area</Russian>
+        <German>Choose side for this waiting area</German>
+      </Key>
+    </Container>
+    <Container name="TP Dialog">
+      <Key ID="STR_Tun_Respawn_tp_dialog_header">
+        <Original>Teleport network</Original>
+        <English>Teleport network</English>
+        <Czech>Teleport network</Czech>
+        <French>Teleport network</French>
+        <Spanish>Teleport network</Spanish>
+        <Italian>Teleport network</Italian>
+        <Polish>Teleport network</Polish>
+        <Portuguese>Teleport network</Portuguese>
+        <Russian>Teleport network</Russian>
+        <German>Teleport network</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_tp_dialog_button">
+        <Original>Teleport</Original>
+        <English>Teleport</English>
+        <Czech>Teleport</Czech>
+        <French>Teleport</French>
+        <Spanish>Teleport</Spanish>
+        <Italian>Teleport</Italian>
+        <Polish>Teleport</Polish>
+        <Portuguese>Teleport</Portuguese>
+        <Russian>Teleport</Russian>
+        <German>Teleport</German>
       </Key>
     </Container>
   </Package>

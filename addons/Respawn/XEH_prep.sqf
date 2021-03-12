@@ -25,4 +25,7 @@ PREP(radioSettings_tfar);
 PREP(module_teleporter);
 PREP(openTeleportMenu);
 PREP(teleportButton);
+PREP(teleportOnLBSelChanged);
+PREP(addCustomTeleporter);
+PREP(addTeleportAction);
 

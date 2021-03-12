@@ -435,66 +435,30 @@
         <German>Report Enemies</German>
       </Key>
     </Container>
-    <Container name="move">
-      <Key ID="STR_Tun_MSP_Move_To_MSP_Text">
-        <Original>You are being moved to Mobile Spawn Point</Original>
-        <English>You are being moved to Mobile Spawn Point</English>
-        <Czech>You are being moved to Mobile Spawn Point</Czech>
-        <French>You are being moved to Mobile Spawn Point</French>
-        <Spanish>You are being moved to Mobile Spawn Point</Spanish>
-        <Italian>You are being moved to Mobile Spawn Point</Italian>
-        <Polish>You are being moved to Mobile Spawn Point</Polish>
-        <Portuguese>You are being moved to Mobile Spawn Point</Portuguese>
-        <Russian>You are being moved to Mobile Spawn Point</Russian>
-        <German>You are being moved to Mobile Spawn Point</German>
+    <Container name="MSP">
+      <Key ID="STR_Tun_MSP_TpText">
+        <Original>Mobile spawn point</Original>
+        <English>Mobile spawn point</English>
+        <Czech>Mobile spawn point</Czech>
+        <French>Mobile spawn point</French>
+        <Spanish>Mobile spawn point</Spanish>
+        <Italian>Mobile spawn point</Italian>
+        <Polish>Mobile spawn point</Polish>
+        <Portuguese>Mobile spawn point</Portuguese>
+        <Russian>Mobile spawn point</Russian>
+        <German>Mobile spawn point</German>
       </Key>
-      <Key ID="STR_Tun_MSP_Move_To_BASE_Text">
-        <Original>You are being moved to base</Original>
-        <English>You are being moved to base</English>
-        <Czech>You are being moved to base</Czech>
-        <French>You are being moved to base</French>
-        <Spanish>You are being moved to base</Spanish>
-        <Italian>You are being moved to base</Italian>
-        <Polish>You are being moved to base</Polish>
-        <Portuguese>You are being moved to base</Portuguese>
-        <Russian>You are being moved to base</Russian>
-        <German>You are being moved to base</German>
-      </Key>
-      <Key ID="STR_Tun_MSP_Move_To_MSP_Action">
-        <Original>&lt;t color='#FF0000'&gt;Move to MSP&lt;/t&gt;</Original>
-        <English>&lt;t color='#FF0000'&gt;Move to MSP&lt;/t&gt;</English>
-        <Czech>&lt;t color='#FF0000'&gt;Move to MSP&lt;/t&gt;</Czech>
-        <French>&lt;t color='#FF0000'&gt;Move to MSP&lt;/t&gt;</French>
-        <Spanish>&lt;t color='#FF0000'&gt;Move to MSP&lt;/t&gt;</Spanish>
-        <Italian>&lt;t color='#FF0000'&gt;Move to MSP&lt;/t&gt;</Italian>
-        <Polish>&lt;t color='#FF0000'&gt;Move to MSP&lt;/t&gt;</Polish>
-        <Portuguese>&lt;t color='#FF0000'&gt;Move to MSP&lt;/t&gt;</Portuguese>
-        <Russian>&lt;t color='#FF0000'&gt;Move to MSP&lt;/t&gt;</Russian>
-        <German>&lt;t color='#FF0000'&gt;Move to MSP&lt;/t&gt;</German>
-      </Key>
-      <Key ID="STR_Tun_MSP_Move_To_BASE_Action">
-        <Original>Move to Base</Original>
-        <English>Move to Base</English>
-        <Czech>Move to Base</Czech>
-        <French>Move to Base</French>
-        <Spanish>Move to Base</Spanish>
-        <Italian>Move to Base</Italian>
-        <Polish>Move to Base</Polish>
-        <Portuguese>Move to Base</Portuguese>
-        <Russian>Move to Base</Russian>
-        <German>Move to Base</German>
-      </Key>
-      <Key ID="STR_Tun_MSP_Move_Base">
-        <Original>You are being moved to base</Original>
-        <English>Move to Base</English>
-        <Czech>Move to Base</Czech>
-        <French>Move to Base</French>
-        <Spanish>Move to Base</Spanish>
-        <Italian>Move to Base</Italian>
-        <Polish>Move to Base</Polish>
-        <Portuguese>Move to Base</Portuguese>
-        <Russian>Move to Base</Russian>
-        <German>Move to Base</German>
+      <Key ID="STR_Tun_MSP_destroyed">
+        <Original>MSP has been destroyed!</Original>
+        <English>MSP has been destroyed!</English>
+        <Czech>MSP has been destroyed!</Czech>
+        <French>MSP has been destroyed!</French>
+        <Spanish>MSP has been destroyed!</Spanish>
+        <Italian>MSP has been destroyed!</Italian>
+        <Polish>MSP has been destroyed!</Polish>
+        <Portuguese>MSP has been destroyed!</Portuguese>
+        <Russian>MSP has been destroyed!</Russian>
+        <German>MSP has been destroyed!</German>
       </Key>
     </Container>
     <Container name="ace">

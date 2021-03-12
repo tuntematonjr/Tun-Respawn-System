@@ -23,29 +23,20 @@ params ["_target"];
 createDialog "TP_Dialog";
 
 private _listIDC = 300001;
-private _okButtonIDC = 300002;
 
-
-//Add batteries
 {
 	private _obj = _x;
-	private _teleportConditio = _obj getVariable [QGVAR(teleportConditio), "true"];
+	private _teleportConditio = call compile (_obj getVariable [QGVAR(teleportConditio), "true"]);
 	private _teleportName = _obj getVariable [QGVAR(teleportName), "TP"];
 	private _targetObj = _obj getVariable [QGVAR(teleportObject), objNull];
-	private _notSame = (_target != _targetObj);
+	private _notSame = ( _target != _targetObj && _target != _obj );
 
-	private _enabledSide = switch (playerSide) do {
-		case west: { _obj getVariable [QGVAR(teleportEnableWest), false] };
-		case east: { _obj getVariable [QGVAR(teleportEnableEast), false] };
-		case resistance: { _obj getVariable [QGVAR(teleportEnableResistance), false] };
-		case civilian: { _obj getVariable [QGVAR(teleportEnableCivilian), false] };
-		default { false };
-	};
-
-	if (_enabledSide && _notSame) then {
-		_objNetId = _obj call BIS_fnc_netId; 
+	if ( _notSame && _teleportConditio) then {
+		private _objNetId = _obj call BIS_fnc_netId; 
 		private _index = lbAdd [_listIDC, _teleportName];
 		lbSetData [_listIDC, _index, _objNetId];
 	};
 } forEach GVAR(teleportPoints);
+
+
 

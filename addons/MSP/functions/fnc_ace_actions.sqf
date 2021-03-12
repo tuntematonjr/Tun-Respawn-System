@@ -52,22 +52,48 @@ _removeMSP = ["Pack MSP", "Pack MSP", "", {[_target, false] spawn FUNC(initate_m
 
 _timer_action = {
     _wait_time = ((missionNamespace getVariable format ["Tun_Respawn_wait_time_%1", playerSide]) - cba_missiontime);
-    hint format [localize "STR_Tun_MSP_remaining_time", [_wait_time] call CBA_fnc_formatElapsedTime];
+    hint format ["STR_Tun_MSP_remaining_time" call BIS_fnc_localize, [_wait_time] call CBA_fnc_formatElapsedTime];
 };
 _timer_condition = { alive _target && {_target getVariable QGVAR(side) == playerSide}};
 _chekTime = ["Check Respawn Time", "Check Respawn Time", "", _timer_action, _timer_condition] call ace_interact_menu_fnc_createAction;
-
-//Move to base
-_move_condition = { alive _target && {_target getVariable QGVAR(side) == playerSide } && {_target getVariable [QGVAR(isMSP), false]} };
-_movetobase_actio = {
-	[false] call FUNC(move_player);
-};
-
-_movetobase = ["Move to base", localize "STR_Tun_MSP_Move_To_BASE_Action", "", _movetobase_actio, _move_condition] call ace_interact_menu_fnc_createAction;
-
 
 //Ace inteaction
 [_vehicle, 1, ["ACE_SelfActions"], _createMSP] call ace_interact_menu_fnc_addActionToClass;
 [_vehicle, 0, ["ACE_MainActions"], _removeMSP] call ace_interact_menu_fnc_addActionToClass;
 [_vehicle, 0, ["ACE_MainActions"], _chekTime] call ace_interact_menu_fnc_addActionToClass;
-[_vehicle, 0, ["ACE_MainActions"], _movetobase] call ace_interact_menu_fnc_addActionToClass;
+
+//TP. I hate this system already.
+[_vehicle, "InitPost", {
+	params ["_targetobject"];
+
+	private _menu_condition =  "alive _target  && {_target getVariable ['tun_msp_isMSP', false]}";
+	private _tp_condition =  "
+		private _msp = objNull;
+		private _status = true; 
+		switch (playerSide) do {
+			case west: {
+				_msp = missionNamespace getVariable ['tun_msp_vehicle_west', objNull];
+				_status = missionNamespace getVariable ['tun_msp_contested_west', true];
+			};
+
+			case east: {
+				_msp = missionNamespace getVariable ['tun_msp_vehicle_east', objNull];
+				_status = missionNamespace getVariable ['tun_msp_contested_east', true];
+			};
+
+			case resistance: {
+				_msp = missionNamespace getVariable ['tun_msp_vehicle_guer', objNull];
+				_status = missionNamespace getVariable ['tun_msp_contested_guer', true];
+			};
+
+			case civilian: {
+				_msp = missionNamespace getVariable ['tun_msp_vehicle_civ', objNull];
+				_status = missionNamespace getVariable ['tun_msp_contested_civ', true];
+			};
+		};
+
+		(_msp getVariable ['tun_msp_isMSP', false] && !_status)
+	";
+	[_targetobject, _tp_condition, "STR_Tun_MSP_TpText" call BIS_fnc_localize, false, nil, [playerSide], true, _menu_condition] call Tun_Respawn_fnc_addCustomTeleporter;
+
+}, false, [], true] call CBA_fnc_addClassEventHandler;

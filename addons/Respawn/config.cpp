@@ -193,6 +193,44 @@ class CfgVehicles
 				defaultValue = """Name""";
             };
 
+            class tun_respawn_teleportCreateMarker: Checkbox
+            {
+                property = "tun_respawn_teleportCreateMarker";
+				displayName = "Create Marker";
+                typeName = "BOOL";
+				tooltip = $STR_Tun_Respawn_Module_tooltip_teleportCreateMarker;
+				defaultValue = "true";
+            };
+
+            class tun_respawn_teleportMarkerIcon: Edit
+            {
+                property = "tun_respawn_teleportMarkerIcone";
+				displayName = "Marker Icon";
+				tooltip = $STR_Tun_Respawn_Module_tooltip_teleportMarkerIcone;
+                typeName = "STRING";
+				// Default text filled in the input box
+				// Because it is an expression, to return a String one must have a string within a string
+				defaultValue = """hd_start""";
+            };
+
+            class tun_respawn_teleportMenuOpenConditio: Edit
+            {
+                property = "tun_respawn_teleportMenuOpenConditio";
+				displayName = "Menu open conditio";
+                typeName = "STRING";
+				tooltip = $STR_Tun_Respawn_Module_tooltip_teleportMenuOpenConditio;
+				defaultValue = """true""";
+            };
+            
+            class tun_respawn_teleportUseAceAction: Checkbox
+            {
+                property = "tun_respawn_teleportUseAceAction";
+				displayName = "Use Ace Actions";
+                typeName = "BOOL";
+				tooltip = $STR_Tun_Respawn_Module_tooltip_teleportUseAceAction;
+				defaultValue = "true";
+            };
+
             class tun_respawn_teleportEnableWest: Checkbox
             {
                 property = "tun_respawn_teleportEnableWest";
