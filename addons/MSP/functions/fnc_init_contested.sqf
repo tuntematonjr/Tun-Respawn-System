@@ -16,7 +16,7 @@
  */
 #include "script_component.hpp"
 
-private _FilteredUnits = [];
+
 [{
     _FilteredUnits = allunits select { side _x in [west,east,resistance,civilian] };
     private _delay = GVAR(contested_check_interval) / (count _FilteredUnits + 1);

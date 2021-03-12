@@ -12,6 +12,5 @@ PREP(force_contested_check);
 PREP(init_contested);
 PREP(initate_msp_action);
 PREP(move_player);
-PREP(pole_actions);
 PREP(report_enemies);
 PREP(update_status);

@@ -5,7 +5,6 @@ INFO("TUN Mobile Respawn Point Enabled");
 [] call FUNC(add_EH);
 
 if (isServer) then {
-    [] call FUNC(pole_actions);
     [] call FUNC(init_contested);
 
 };

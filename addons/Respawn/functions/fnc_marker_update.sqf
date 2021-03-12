@@ -19,7 +19,7 @@ if (isDedicated) exitWith { };
 {
 	_x params ["_marker", "_side"];
 
-	if ( !(getMarkerColor _marker == "") && {[_side, playerSide] call BIS_fnc_sideIsFriendly} ) then {
+	if ( !(getMarkerColor _marker == "") && { _side == playerSide }) then {
 		_marker setMarkerAlphaLocal 1;
 
 		if (_side == playerSide) then{
