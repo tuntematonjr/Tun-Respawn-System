@@ -49,17 +49,19 @@ if (isServer) then {
 		};
 	}];
 
-	//clean bodies during briefing
+	//clean bodies during briefing && safestart
 	_cleanbodiesEH = addMissionEventHandler ["HandleDisconnect", {
 		params ["_unit", "_id", "_uid", "_name"];
-		deleteVehicle _unit;
+		if (cba_missiontime < (GVAR(killJIP_time) * 60) || missionNamespace getVariable [QGVAR(waiting_respawn),false]) then {
+			deleteVehicle _unit;
+		};
 		false;
 	}];
-	//remove clean bodies EH
-	[{cba_missiontime > 0}, {
-		removeMissionEventHandler ["HandleDisconnect", _this];
 
-		if (missionNamespace getVariable ["afi_aar2 ", false]) then {
+
+	//AAR times
+	[{cba_missiontime > 10}, {
+		if (missionNamespace getVariable ["afi_aar2", false]) then {
 			[{
 
 				if (GVAR(enabled_west)) then {
@@ -84,6 +86,5 @@ if (isServer) then {
 
 			}, 10] call CBA_fnc_addPerFrameHandler;
 		};
-
-	},_cleanbodiesEH] call CBA_fnc_waitUntilAndExecute;
+	}] call CBA_fnc_waitUntilAndExecute;
 };
