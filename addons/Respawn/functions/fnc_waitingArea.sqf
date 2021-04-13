@@ -15,7 +15,7 @@
 #include "script_component.hpp"
 private ["_respawn_waitingarea"];
 
-if (isDedicated) exitWith { };
+if (isDedicated || !(playerSide in [west,east,resistance,civilian]) ) exitWith { };
 
 switch (toLower str playerSide) do {
 
