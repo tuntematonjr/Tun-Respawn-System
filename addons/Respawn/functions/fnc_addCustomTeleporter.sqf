@@ -38,5 +38,9 @@
 		};
 
 		[_obj, _conditio, _useAceAction] call FUNC(addTeleportAction);
+
+		if (GVAR(allowCheckTicketsCTP)) then {
+			[_obj, _useAceAction] call FUNC(addCheckTicketCountAction);
+		};
 	};
 };

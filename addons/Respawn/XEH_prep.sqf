@@ -28,4 +28,6 @@ PREP(teleportButton);
 PREP(teleportOnLBSelChanged);
 PREP(addCustomTeleporter);
 PREP(addTeleportAction);
+PREP(checkTicketCount);
+PREP(addCheckTicketCountAction);
 

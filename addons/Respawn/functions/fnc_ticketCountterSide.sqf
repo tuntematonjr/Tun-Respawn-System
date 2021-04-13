@@ -26,14 +26,13 @@ switch (toLower str _side) do {
 			} else {
 				DEC(GVAR(tickets_west));
 				AAR_UPDATE("west","Side tickets", GVAR(tickets_west));
+				publicVariable QGVAR(tickets_west);
 			};
 
 			[5] remoteExecCall ["setPlayerRespawnTime", _player];
 		} else {
 			remoteExecCall [QFUNC(startSpectator), _player];
 		};
-
-
 	};
 
 	case "east": {
@@ -44,6 +43,7 @@ switch (toLower str _side) do {
 			} else {
 				DEC(GVAR(tickets_east));
 				AAR_UPDATE("east","Side tickets", GVAR(tickets_east));
+				publicVariable QGVAR(tickets_east);
 			};
 
 			[5] remoteExecCall ["setPlayerRespawnTime", _player];
@@ -60,6 +60,7 @@ switch (toLower str _side) do {
 			} else {
 				DEC(GVAR(tickets_guer));
 				AAR_UPDATE("guer","Side tickets", GVAR(tickets_guer));
+				publicVariable QGVAR(tickets_guer);
 			};
 
 			[5] remoteExecCall ["setPlayerRespawnTime", _player];
@@ -76,6 +77,7 @@ switch (toLower str _side) do {
 			} else {
 				DEC(GVAR(tickets_civ));
 				AAR_UPDATE("civ","Side tickets", GVAR(tickets_civ));
+				publicVariable QGVAR(tickets_civ);
 			};
 
 			[5] remoteExecCall ["setPlayerRespawnTime", _player];
@@ -85,6 +87,6 @@ switch (toLower str _side) do {
 	};
 
 	default {
-		systemChat "side tiketti fnc kysee";
+		systemChat "Side ticket error";
 	};
 };

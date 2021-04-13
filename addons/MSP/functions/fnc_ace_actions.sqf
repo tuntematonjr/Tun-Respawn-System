@@ -38,8 +38,6 @@ private _vehicle = switch (playerSide) do {
 	};
 };
 
-
-
 //create msp action
 _create_condition = { alive _target && {_target getVariable QGVAR(side) == playerSide} && { driver _target == player} && { speed player == 0 } && {!(missionNamespace getVariable format ["%1_%2", QGVAR(status), playerSide])}};
 _createMSP = ["Set up MSP", "Set up MSP", "", {[_target, true] spawn FUNC(initate_msp_action);}, _create_condition, {}, [], [0, 0, 0], 2, [false, true, false, false, false]] call ace_interact_menu_fnc_createAction;
@@ -97,3 +95,13 @@ _chekTime = ["Check Respawn Time", "Check Respawn Time", "", _timer_action, _tim
 	[_targetobject, _tp_condition, "STR_Tun_MSP_TpText" call BIS_fnc_localize, false, nil, [playerSide], true, _menu_condition] call Tun_Respawn_fnc_addCustomTeleporter;
 
 }, false, [], true] call CBA_fnc_addClassEventHandler;
+
+
+if (GVAR(allowCheckTicketsMSP)) then {
+	_remaining_action = {
+		[playerSide] call FUNC(checkTicketCount);
+	};
+	_remaining_condition = { alive _target && {_target getVariable QGVAR(side) == playerSide}};
+	_remainingTickets = ["STR_Tun_Respawn_CheckTickets" call BIS_fnc_localize, "STR_Tun_Respawn_CheckTickets" call BIS_fnc_localize, "", _remaining_action, _remaining_condition] call ace_interact_menu_fnc_createAction;
+	[_vehicle, 0, ["ACE_MainActions"], _remainingTickets] call ace_interact_menu_fnc_addActionToClass;
+};

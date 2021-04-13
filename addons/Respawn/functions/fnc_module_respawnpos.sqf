@@ -76,5 +76,9 @@ switch (_markername) do {
 private _conditio =  "count (missionNamespace [QGVAR(teleportPoints), []]) > 1" ;
 [_flag, "true", "STR_Tun_Respawn_MainBaseText" call BIS_fnc_localize, false, nil, [_side], false, _conditio ] remoteExecCall [QFUNC(addCustomTeleporter), _side, true];
 
+if (GVAR(allowCheckTicketsBase)) then {
+	[_flag, false] remoteExecCall [QFUNC(addCheckTicketCountAction), _side, true];
+};
+
 // Module function is executed by spawn command, so returned value is not necessary, but it's good practice.
 true

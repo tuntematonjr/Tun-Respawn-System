@@ -238,3 +238,36 @@ ISNILS(GVAR(spectate_civilian),true);
     {}, // Script to execute when setting is changed. (optional) <CODE>
     true //Setting will be marked as needing mission restart after being changed. (optional, default false) <BOOL>
 ] call CBA_Settings_fnc_init;
+
+[
+    QGVAR(allowCheckTicketsBase), // Unique setting name. Matches resulting variable name <STRING>
+    "CHECKBOX", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
+    ["Main base", "STR_Tun_Respawn_CBA_tooltip_CheckTickets" call BIS_fnc_localize], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    ["STR_Tun_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_Tun_Respawn_CBA_Category_checkTickets" call BIS_fnc_localize], // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    false, // Extra properties of the setting depending of _settingType.
+    1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
+    {}, // Script to execute when setting is changed. (optional) <CODE>
+    true //Setting will be marked as needing mission restart after being changed. (optional, default false) <BOOL>
+] call CBA_Settings_fnc_init;
+
+[
+    QGVAR(allowCheckTicketsMSP), // Unique setting name. Matches resulting variable name <STRING>
+    "CHECKBOX", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
+    ["MSP", "STR_Tun_Respawn_CBA_tooltip_CheckTickets" call BIS_fnc_localize], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    ["STR_Tun_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_Tun_Respawn_CBA_Category_checkTickets" call BIS_fnc_localize], // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    false, // Extra properties of the setting depending of _settingType.
+    1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
+    {}, // Script to execute when setting is changed. (optional) <CODE>
+    true //Setting will be marked as needing mission restart after being changed. (optional, default false) <BOOL>
+] call CBA_Settings_fnc_init;
+
+[
+    QGVAR(allowCheckTicketsCTP), // Unique setting name. Matches resulting variable name <STRING>
+    "CHECKBOX", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
+    ["Custom Teleport Points", "STR_Tun_Respawn_CBA_tooltip_CheckTickets" call BIS_fnc_localize], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    ["STR_Tun_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_Tun_Respawn_CBA_Category_checkTickets" call BIS_fnc_localize], // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    false, // Extra properties of the setting depending of _settingType.
+    1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
+    {}, // Script to execute when setting is changed. (optional) <CODE>
+    true //Setting will be marked as needing mission restart after being changed. (optional, default false) <BOOL>
+] call CBA_Settings_fnc_init;
