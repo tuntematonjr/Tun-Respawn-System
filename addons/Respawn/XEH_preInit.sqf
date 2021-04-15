@@ -23,6 +23,7 @@ ISNILS(GVAR(spectate_east),true);
 ISNILS(GVAR(spectate_independent),true);
 ISNILS(GVAR(spectate_civilian),true);
 
+ISNILS(GVAR(endRespawns),false);
 
 //Main settings
 [

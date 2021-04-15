@@ -18,14 +18,15 @@
 setPlayerRespawnTime 99999;
 ( "BIS_fnc_respawnSpectator" call BIS_fnc_rscLayer ) cutText [ "", "PLAIN" ];
 
+if (GVAR(endRespawns)) exitWith {
+	[] call FUNC(startSpectator);
+};
+
 switch (GVAR(respawn_type)) do {
 	case "Sidetickets": {
+		mitavittua = true;
 		[playerSide, player] remoteExecCall [QFUNC(ticketCountterSide),2];
 	};
-
-	/*case "Playertickets": {
-		//WIP
-	};*/
 
 	default {
 		setPlayerRespawnTime 5;
