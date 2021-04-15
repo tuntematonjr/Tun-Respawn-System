@@ -11,18 +11,19 @@
  * 5: Array of enabled sides <ARRAY> (default: [])
  * 6: Use ace action. False to use addAction <BOOL> (default: true)
  * 7: TP menu open conditio, must return true or false <STRING> (default: "true")
+ * 8: Allow ticket check <BOOL> (default: true)
  *
  * Return Value:
  * none
  *
  * Example:
- * [this, "true", "TP 1", true, "hd_start", [west, resistance], true, "true"] call Tun_Respawn_fnc_addCustomTeleporter
+ * [this, "true", "TP 1", true, "hd_start", [west, resistance], true, "true", true] call Tun_Respawn_fnc_addCustomTeleporter
  */
  if (hasInterface) then {
 
 	#include "script_component.hpp"
 
-	params [["_obj", objNull, [objNull]], ["_conditio", "true", [""]], ["_name", "", [""]], ["_createMarker", true, [true]], ["_markerIcon", "hd_start", [""]], ["_enabledSides", [], [[]]], ["_useAceAction", true, [true]], ["_menuOpenConditio", "true", [""]]];
+	params [["_obj", objNull, [objNull]], ["_conditio", "true", [""]], ["_name", "", [""]], ["_createMarker", true, [true]], ["_markerIcon", "hd_start", [""]], ["_enabledSides", [], [[]]], ["_useAceAction", true, [true]], ["_menuOpenConditio", "true", [""]], ["_ticketCheckAllowed", true, [false]]];
 
 	if ( playerSide in _enabledSides ) then {
 	
@@ -39,7 +40,7 @@
 
 		[_obj, _conditio, _useAceAction] call FUNC(addTeleportAction);
 
-		if (GVAR(allowCheckTicketsCTP)) then {
+		if (GVAR(allowCheckTicketsCTP) && _ticketCheckAllowed) then {
 			[_obj, _useAceAction] call FUNC(addCheckTicketCountAction);
 		};
 	};
