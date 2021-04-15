@@ -139,28 +139,28 @@
     </Container>
     <Container name="fnc_contested">
       <Key ID="STR_Tun_MSP_FNC_Contested_hint">
-        <Original>MSP has been contested! \nRespawn position has been updated.</Original>
-        <English>MSP has been contested! \nRespawn position has been updated.</English>
-        <Czech>MSP has been contested! \nRespawn position has been updated.</Czech>
-        <French>MSP has been contested! \nRespawn position has been updated.</French>
-        <Spanish>MSP has been contested! \nRespawn position has been updated.</Spanish>
-        <Italian>MSP has been contested! \nRespawn position has been updated.</Italian>
-        <Polish>MSP has been contested! \nRespawn position has been updated.</Polish>
-        <Portuguese>MSP has been contested! \nRespawn position has been updated.</Portuguese>
-        <Russian>MSP has been contested! \nRespawn position has been updated.</Russian>
-        <German>MSP has been contested! \nRespawn position has been updated.</German>
+        <Original>[['MSP has been contested!'], ['Respawn position has been updated.']]</Original>
+        <English>[['MSP has been contested!'], ['Respawn position has been updated.']]</English>
+        <Czech>[['MSP has been contested!'], ['Respawn position has been updated.']]</Czech>
+        <French>[['MSP has been contested!'], ['Respawn position has been updated.']]</French>
+        <Spanish>[['MSP has been contested!'], ['Respawn position has been updated.']]</Spanish>
+        <Italian>[['MSP has been contested!'], ['Respawn position has been updated.']]</Italian>
+        <Polish>[['MSP has been contested!'], ['Respawn position has been updated.']]</Polish>
+        <Portuguese>[['MSP has been contested!'], ['Respawn position has been updated.']]</Portuguese>
+        <Russian>[['MSP has been contested!'], ['Respawn position has been updated.']]</Russian>
+        <German>[['MSP has been contested!'], ['Respawn position has been updated.']]</German>
       </Key>
       <Key ID="STR_Tun_MSP_FNC_secured_hint">
-        <Original>MSP has been secured! \nRespawn position has been updated.</Original>
-        <English>MSP has been secured! \nRespawn position has been updated.</English>
-        <Czech>MSP has been secured! \nRespawn position has been updated.</Czech>
-        <French>MSP has been secured! \nRespawn position has been updated.</French>
-        <Spanish>MSP has been secured! \nRespawn position has been updated.</Spanish>
-        <Italian>MSP has been secured! \nRespawn position has been updated.</Italian>
-        <Polish>MSP has been secured! \nRespawn position has been updated.</Polish>
-        <Portuguese>MSP has been secured! \nRespawn position has been updated.</Portuguese>
-        <Russian>MSP has been secured! \nRespawn position has been updated.</Russian>
-        <German>MSP has been secured! \nRespawn position has been updated.</German>
+        <Original>[['MSP has been secured!'], ['Respawn position has been updated.']]</Original>
+        <English>[['MSP has been secured!'], ['Respawn position has been updated.']]</English>
+        <Czech>[['MSP has been secured!'], ['Respawn position has been updated.']]</Czech>
+        <French>[['MSP has been secured!'], ['Respawn position has been updated.']]</French>
+        <Spanish>[['MSP has been secured!'], ['Respawn position has been updated.']]</Spanish>
+        <Italian>[['MSP has been secured!'], ['Respawn position has been updated.']]</Italian>
+        <Polish>[['MSP has been secured!'], ['Respawn position has been updated.']]</Polish>
+        <Portuguese>[['MSP has been secured!'], ['Respawn position has been updated.']]</Portuguese>
+        <Russian>[['MSP has been secured!'], ['Respawn position has been updated.']]</Russian>
+        <German>[['MSP has been secured!'], ['Respawn position has been updated.']]</German>
       </Key>
       <Key ID="STR_Tun_MSP_FNC_enemies_near">
         <Original>Enemies spotted near MSP!</Original>
@@ -177,28 +177,28 @@
     </Container>
     <Container name="fnc_setup/pack_msp">
       <Key ID="STR_Tun_MSP_FNC_setup_notification">
-        <Original>MSP has been deployed! \nRespawn position has been updated.</Original>
-        <English>MSP has been deployed! \nRespawn position has been updated.</English>
-        <Czech>MSP has been deployed! \nRespawn position has been updated.</Czech>
-        <French>MSP has been deployed! \nRespawn position has been updated.</French>
-        <Spanish>MSP has been deployed! \nRespawn position has been updated.</Spanish>
-        <Italian>MSP has been deployed! \nRespawn position has been updated.</Italian>
-        <Polish>MSP has been deployed! \nRespawn position has been updated.</Polish>
-        <Portuguese>MSP has been deployed! \nRespawn position has been updated.</Portuguese>
-        <Russian>MSP has been deployed! \nRespawn position has been updated.</Russian>
-        <German>MSP has been deployed! \nRespawn position has been updated.</German>
+        <Original>[['MSP has been deployed!'], ['Respawn position has been updated.']]</Original>
+        <English>[['MSP has been deployed!'], ['Respawn position has been updated.']]</English>
+        <Czech>[['MSP has been deployed!'], ['Respawn position has been updated.']]</Czech>
+        <French>[['MSP has been deployed!'], ['Respawn position has been updated.']]</French>
+        <Spanish>[['MSP has been deployed!'], ['Respawn position has been updated.']]</Spanish>
+        <Italian>[['MSP has been deployed!'], ['Respawn position has been updated.']]</Italian>
+        <Polish>[['MSP has been deployed!'], ['Respawn position has been updated.']]</Polish>
+        <Portuguese>[['MSP has been deployed!'], ['Respawn position has been updated.']]</Portuguese>
+        <Russian>[['MSP has been deployed!'], ['Respawn position has been updated.']]</Russian>
+        <German>[['MSP has been deployed!'], ['Respawn position has been updated.']]</German>
       </Key>
       <Key ID="STR_Tun_MSP_FNC_pack_notification">
-        <Original>MSP has been packed! \nRespawn position has been updated.</Original>
-        <English>MSP has been packed! \nRespawn position has been updated.</English>
-        <Czech>MSP has been packed! \nRespawn position has been updated.</Czech>
-        <French>MSP has been packed! \nRespawn position has been updated.</French>
-        <Spanish>MSP has been packed! \nRespawn position has been updated.</Spanish>
-        <Italian>MSP has been packed! \nRespawn position has been updated.</Italian>
-        <Polish>MSP has been packed! \nRespawn position has been updated.</Polish>
-        <Portuguese>MSP has been packed! \nRespawn position has been updated.</Portuguese>
-        <Russian>MSP has been packed! \nRespawn position has been updated.</Russian>
-        <German>MSP has been packed! \nRespawn position has been updated.</German>
+        <Original>[['MSP has been packed!'], ['Respawn position has been updated.']]</Original>
+        <English>[['MSP has been packed!'], ['Respawn position has been updated.']]</English>
+        <Czech>[['MSP has been packed!'], ['Respawn position has been updated.']]</Czech>
+        <French>[['MSP has been packed!'], ['Respawn position has been updated.']]</French>
+        <Spanish>[['MSP has been packed!'], ['Respawn position has been updated.']]</Spanish>
+        <Italian>[['MSP has been packed!'], ['Respawn position has been updated.']]</Italian>
+        <Polish>[['MSP has been packed!'], ['Respawn position has been updated.']]</Polish>
+        <Portuguese>[['MSP has been packed!'], ['Respawn position has been updated.']]</Portuguese>
+        <Russian>[['MSP has been packed!'], ['Respawn position has been updated.']]</Russian>
+        <German>[['MSP has been packed!'], ['Respawn position has been updated.']]</German>
       </Key>
     </Container>
     <Container name="Classname">
@@ -463,16 +463,16 @@
     </Container>
     <Container name="ace">
       <Key ID="STR_Tun_MSP_remaining_time">
-        <Original>"Remaining time until respawn: %1"</Original>
-        <English>"Remaining time until respawn: %1"</English>
-        <Czech>"Remaining time until respawn: %1"</Czech>
-        <French>"Remaining time until respawn: %1"</French>
-        <Spanish>"Remaining time until respawn: %1"</Spanish>
-        <Italian>"Remaining time until respawn: %1"</Italian>
-        <Polish>"Remaining time until respawn: %1"</Polish>
-        <Portuguese>"Remaining time until respawn: %1"</Portuguese>
-        <Russian>"Remaining time until respawn: %1"</Russian>
-        <German>"Remaining time until respawn: %1"</German>
+        <Original>Remaining time until respawn: %1</Original>
+        <English>Remaining time until respawn: %1</English>
+        <Czech>Remaining time until respawn: %1</Czech>
+        <French>Remaining time until respawn: %1</French>
+        <Spanish>Remaining time until respawn: %1</Spanish>
+        <Italian>Remaining time until respawn: %1</Italian>
+        <Polish>Remaining time until respawn: %1</Polish>
+        <Portuguese>Remaining time until respawn: %1</Portuguese>
+        <Russian>Remaining time until respawn: %1</Russian>
+        <German>Remaining time until respawn: %1</German>
       </Key>
     </Container>
   </Package>
