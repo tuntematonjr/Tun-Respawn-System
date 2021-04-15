@@ -2,7 +2,6 @@
 #include "XEH_prep.sqf"
 
 
-
 if (isServer) then {
     missionNamespace setVariable [QGVAR(contested_east), false, true];
     missionNamespace setVariable [QGVAR(contested_west), false, true];

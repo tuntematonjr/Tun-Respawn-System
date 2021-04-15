@@ -17,20 +17,29 @@
 if (isDedicated) exitWith { };
 
 private _allowed_sides = [];
+private _notAllowed = [];
 if (GVAR(spectate_west)) then {
 	_allowed_sides pushBack west;
+} else {
+	_notAllowed pushBack west;
 };
 
 if (GVAR(spectate_east)) then {
 	_allowed_sides pushBack east;
+} else {
+	_notAllowed pushBack east;
 };
 
 if (GVAR(spectate_independent)) then {
 	_allowed_sides pushBack resistance;
+} else {
+	_notAllowed pushBack resistance;
 };
 
 if (GVAR(spectate_civilian)) then {
 	_allowed_sides pushBack civilian;
+} else {
+	_notAllowed pushBack civilian;
 };
 
 
@@ -39,8 +48,7 @@ if (GVAR(spectate_civilian)) then {
 if ((isClass(configFile >> "CfgPatches" >> "ace_main"))) then {
 	[] call ace_spectator_fnc_setSpectator; //force spectator
 
-	[[], [west, east, independent, civilian]] call ace_spectator_fnc_updateSides;
-	[_allowed_sides, []] call ace_spectator_fnc_updateSides;
+	[_allowed_sides, _notAllowed] call ace_spectator_fnc_updateSides;
 
 	//Set camera modes
 	[[], [0,1,2]] call ace_spectator_fnc_updateCameraModes;
