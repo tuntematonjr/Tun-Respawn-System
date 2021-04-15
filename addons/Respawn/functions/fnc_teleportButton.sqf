@@ -34,5 +34,5 @@ if (_teleportConditio) then {
 	closeDialog 2;
 	[player, _destination, _text, 10] call FUNC(teleport);
 } else {
-	hint ("STR_Tun_Respawn_Teleport_Disabled" call BIS_fnc_localize);
+	("STR_Tun_Respawn_Teleport_Disabled" call BIS_fnc_localize) call CBA_fnc_notify;
 };

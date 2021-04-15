@@ -50,7 +50,7 @@ _removeMSP = ["Pack MSP", "Pack MSP", "", {[_target, false] spawn FUNC(initate_m
 
 _timer_action = {
     _wait_time = ((missionNamespace getVariable format ["Tun_Respawn_wait_time_%1", playerSide]) - cba_missiontime);
-    hint format ["STR_Tun_MSP_remaining_time" call BIS_fnc_localize, [_wait_time] call CBA_fnc_formatElapsedTime];
+    format ["STR_Tun_MSP_remaining_time" call BIS_fnc_localize, [_wait_time] call CBA_fnc_formatElapsedTime] call CBA_fnc_notify;
 };
 _timer_condition = { alive _target && {_target getVariable QGVAR(side) == playerSide}};
 _chekTime = ["Check Respawn Time", "Check Respawn Time", "", _timer_action, _timer_condition] call ace_interact_menu_fnc_createAction;

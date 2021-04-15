@@ -24,7 +24,7 @@ private _msp_var = objNull;
 AAR_UPDATE(_msp,"Is active MSP", _setup);
 
 if (_setup) then {
-	("STR_Tun_MSP_FNC_setup_notification" call BIS_fnc_localize) remoteExecCall ["hint", _side];
+	(call compile ("STR_Tun_MSP_FNC_setup_notification" call BIS_fnc_localize)) remoteExecCall ["CBA_fnc_notify", _side];
 
 	[_msp] remoteExecCall [QFUNC(create_msp_props), 2];
 
@@ -40,7 +40,7 @@ if (_setup) then {
 	_msp_var = _msp;
 
 } else {
-	("STR_Tun_MSP_FNC_pack_notification" call BIS_fnc_localize) remoteExecCall ["hint", _side];
+	(call compile ("STR_Tun_MSP_FNC_pack_notification" call BIS_fnc_localize)) remoteExecCall ["CBA_fnc_notify", _side];
 
 	//Delete props
 	{
