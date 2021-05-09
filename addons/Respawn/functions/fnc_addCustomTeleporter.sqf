@@ -27,6 +27,9 @@
 
 	if ( playerSide in _enabledSides ) then {
 	
+		_conditio = format ["_obj = '%1' call BIS_fnc_objectFromNetId; %2", (_obj call BIS_fnc_netId), _conditio];
+		_menuOpenConditio = format ["_obj = '%1' call BIS_fnc_objectFromNetId; %2", (_obj call BIS_fnc_netId), _menuOpenConditio];
+
 		_obj setVariable [QGVAR(teleportConditio), _conditio];
 		_obj setVariable [QGVAR(teleportName), _name];
 
@@ -38,7 +41,7 @@
 			_obj setVariable [QGVAR(markerName), _marker];
 		};
 
-		[_obj, _conditio, _useAceAction] call FUNC(addTeleportAction);
+		[_obj, _menuOpenConditio, _useAceAction] call FUNC(addTeleportAction);
 
 		if (GVAR(allowCheckTicketsCTP) && _ticketCheckAllowed) then {
 			[_obj, _useAceAction] call FUNC(addCheckTicketCountAction);
