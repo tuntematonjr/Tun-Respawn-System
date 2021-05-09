@@ -39,7 +39,7 @@ private _vehicle = switch (playerSide) do {
 };
 
 //create msp action
-_create_condition = { alive _target && {_target getVariable QGVAR(side) == playerSide} && { driver _target == player} && { speed player == 0 } && {!(missionNamespace getVariable format ["%1_%2", QGVAR(status), playerSide])}};
+_create_condition = { alive _target && {_target getVariable QGVAR(side) == playerSide} && { driver _target == player} && { speed player == 0 } && {!(missionNamespace getVariable [format ["%1_%2", QGVAR(status), playerSide], false])}};;
 _createMSP = ["Set up MSP", "Set up MSP", "", {[_target, true] spawn FUNC(initate_msp_action);}, _create_condition, {}, [], [0, 0, 0], 2, [false, true, false, false, false]] call ace_interact_menu_fnc_createAction;
 
 //remove msp action
@@ -90,7 +90,7 @@ _chekTime = ["Check Respawn Time", "Check Respawn Time", "", _timer_action, _tim
 			};
 		};
 
-		(_msp getVariable ['tun_msp_isMSP', false] && !_status)
+		(_target != _msp && _obj getVariable ['tun_msp_isMSP', false] && !_status)
 	";
 	[_targetobject, _tp_condition, "STR_Tun_MSP_TpText" call BIS_fnc_localize, false, nil, [playerSide], true, _menu_condition] call Tun_Respawn_fnc_addCustomTeleporter;
 
