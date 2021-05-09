@@ -22,8 +22,6 @@
 params ["_target"];
 createDialog "TP_Dialog";
 
-[] call FUNC(marker_update);
-
 private _listIDC = 300001;
 
 {
@@ -39,3 +37,6 @@ private _listIDC = 300001;
 		lbSetData [_listIDC, _index, _objNetId];
 	};
 } forEach GVAR(teleportPoints);
+
+
+

@@ -20,5 +20,5 @@ if (_useAceAction) then {
 	[_object, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
 
 } else {
-	_object addAction ["STR_Tun_Respawn_CheckTickets" call BIS_fnc_localize, { [playerSide] call FUNC(checkTicketCount) }, [], 10, true, true, "", "true"];
+	_object addAction ["STR_Tun_Respawn_CheckTickets" call BIS_fnc_localize, { [playerSide] call FUNC(checkTicketCount) }, [], 10, true, true, "", "true"]
 };
