@@ -64,8 +64,6 @@ _countingUnits = {
 	[_newStatus, _enemyCount, _enemyCountMin, _FriendlyCount]
 };
 
-//todo tee yhtenäinen functio ylös valmiiksi
-
 if ( GVAR(status_east) ) then {
 	if (GVAR(vehicle_east) == objNull) then {
 		GVAR(status_east) = false;
@@ -89,6 +87,7 @@ if ( GVAR(status_east) ) then {
 		GVAR(friendlyCountEast) = _FriendlyCount;
 
 		missionNamespace setVariable [QGVAR(contested_east), _newStatus, true];
+		_msp  setVariable [QGVAR(isContested), _newStatus, true];
 	};
 };
 
@@ -115,6 +114,7 @@ if ( GVAR(status_west) ) then {
 		GVAR(friendlyCountWest) = _FriendlyCount;
 
 		missionNamespace setVariable [QGVAR(contested_west), _newStatus, true];
+		_msp  setVariable [QGVAR(isContested), _newStatus, true];
 	};
 };
 
@@ -141,6 +141,7 @@ if ( GVAR(status_guer) ) then {
 		GVAR(friendlyCountGuer) = _FriendlyCount;
 
 		missionNamespace setVariable [QGVAR(contested_guer), _newStatus, true];
+		_msp  setVariable [QGVAR(isContested), _newStatus, true];
 	};
 };
 
@@ -166,5 +167,6 @@ if ( GVAR(status_civ) ) then {
 		GVAR(friendlyCountCiv) = _FriendlyCount;
 
 		missionNamespace setVariable [QGVAR(contested_civ), _newStatus, true];
+		_msp  setVariable [QGVAR(isContested), _newStatus, true];
 	};
 };

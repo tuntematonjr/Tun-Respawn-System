@@ -32,25 +32,18 @@ if (hasInterface) then {
 	};
 
 	if ( _enabledSide ) then {
-
-		GVAR(teleportPoints) pushBackUnique _logic;
-
-		private _createMarker = _logic getVariable QGVAR(teleportCreateMarker);
-		private _menuOpenConditio = _logic getVariable QGVAR(teleportmenuOpenConditio);
-		private _useAceAction = _logic getVariable QGVAR(teleportUseAceAction);
-
-		if (_createMarker) then {
-			private _text = _logic getVariable QGVAR(teleportName);
-			private _markerName = format["tun_respawn_%1",_text];
-			private _markerIcon= _logic getVariable [QGVAR(teleportMarkerIcon), "hd_start"];
-			private _marker = [_markerName, getpos _logic, "ICON", [1, 1], "TYPE:", _markerIcon, "TEXT:", _text] call CBA_fnc_createMarker;
-			_logic setVariable [QGVAR(markerName), _marker];
-		};
-
 		private _statement = {
-			params ["_logic", "_menuOpenConditio", "_useAceAction"];
+			params ["_logic"];
+
 			private _obj = _logic getVariable [QGVAR(teleportObject), objNull];
-			[_obj, _menuOpenConditio, _useAceAction] call FUNC(addTeleportAction);
+			private _createMarker = _logic getVariable QGVAR(teleportCreateMarker);
+			private _tpConditio = _logic getVariable QGVAR(teleportConditio);
+			private _menuOpenConditio = _logic getVariable QGVAR(teleportmenuOpenConditio);
+			private _useAceAction = _logic getVariable QGVAR(teleportUseAceAction);
+			private _name = _logic getVariable QGVAR(teleportName);
+			private _markerIcon = _logic getVariable [QGVAR(teleportMarkerIcon), "hd_start"];
+			private _allowCheckTickets = _logic getVariable [QGVAR(tun_respawn_teleportCheckTickets), false];
+			[_obj, _tpConditio, _name, _createMarker, _markerIcon, [playerSide], _useAceAction, _menuOpenConditio, _allowCheckTickets] call FUNC(addCustomTeleporter);
 		};
 		
 		[
@@ -59,8 +52,7 @@ if (hasInterface) then {
 				_logic getVariable [QGVAR(teleportObject), objNull] != objNull
 			},
 			_statement,
-			[_logic, _menuOpenConditio, _useAceAction]
+			[_logic]
 		] call CBA_fnc_waitUntilAndExecute;
 	};
-
 };

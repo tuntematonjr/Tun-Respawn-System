@@ -15,7 +15,7 @@
  */
 #include "script_component.hpp"
 
-params [["_side", sideLogic, [west]], ["_update", false, [true]], ["_new_pos", [0,0,0], [[]]]];
+params [["_side", nil, [west]], ["_update", false, [true]], ["_new_pos", [0,0,0], [[]]]];
 
 if (!isServer) exitWith { };
 
@@ -42,18 +42,19 @@ _value = switch (_side) do {
 };
 
 _marker = _value select 0;
-_module = _value select 1;
 _originalpos = _value select 2;
+
+if (_new_pos isequalto [0,0,0]) then {
+	_new_pos = _originalpos;
+};
 
 _marker setMarkerAlpha 0;
 
 if (_update) then {
-	_module setPos _new_pos;
-	_marker setMarkerPos (getPos _module);
+	_marker setMarkerPos _new_pos;
 } else {
-	_module setPos _originalpos;
 	_marker setMarkerPos _originalpos;
 };
 
 //Forsce players to update markers
-[] remoteExecCall [QGVAR(marker_update), [0, -2] select isServer, false];
+[_update] remoteExecCall [QGVAR(marker_update), [0, -2] select isServer, false];

@@ -32,7 +32,7 @@ if (_useAceAction) then {
 } else {
 	_statement = {
 		params ["_obj", "_menuOpenConditio"];
-		_obj addAction ["STR_Tun_Respawn_TeleportMenuVanilla" call BIS_fnc_localize, { [_this select 0] call FUNC(openTeleportMenu) }, [], 10, true, true, "", _menuOpenConditio]
+		_obj addAction ["STR_Tun_Respawn_TeleportMenuVanilla" call BIS_fnc_localize, { [_this select 0] call FUNC(openTeleportMenu) }, [], 10, true, true, "", _menuOpenConditio, 10]
 	};	
 };
 

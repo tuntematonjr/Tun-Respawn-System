@@ -22,22 +22,22 @@ private _players_in_respawn = [];
 
 switch toLower(_side) do {
 	case "west": {
-		_respawn_position = getpos (GVAR(respawnpos_west) select 1);
+		_respawn_position = getMarkerPos (GVAR(respawnpos_west) select 0);
 		_respawn_waitingarea = getpos (GVAR(waitingarea_west) select 1);
 	};
 
 	case "east": {
-		_respawn_position = getpos (GVAR(respawnpos_east) select 1);
+		_respawn_position = getMarkerPos (GVAR(respawnpos_east) select 0);
 		_respawn_waitingarea = getpos (GVAR(waitingarea_east) select 1);
 	};
 
 	case "guer": {
-		_respawn_position = getpos (GVAR(respawnpos_guer) select 1);
+		_respawn_position = getMarkerPos (GVAR(respawnpos_guer) select 0);
 		_respawn_waitingarea = getpos (GVAR(waitingarea_guer) select 1);
 	};
 
 	case "civ": {
-		_respawn_position = getpos (GVAR(respawnpos_civ) select 1);
+		_respawn_position = getMarkerPos (GVAR(respawnpos_civ) select 0);
 		_respawn_waitingarea = getpos (GVAR(waitingarea_civ) select 1);
 	};
 

@@ -231,6 +231,15 @@ class CfgVehicles
 				defaultValue = "true";
             };
 
+            class tun_respawn_teleportCheckTickets: Checkbox
+            {
+                property = "tun_respawn_teleportCheckTickets";
+				displayName = "Allow Check Tickets";
+                typeName = "BOOL";
+				//tooltip = $STR_Tun_Respawn_Module_tooltip_teleportCreateMarker;
+				defaultValue = "true";
+            };
+
             class tun_respawn_teleportEnableWest: Checkbox
             {
                 property = "tun_respawn_teleportEnableWest";

@@ -4,13 +4,13 @@
  *
  * Arguments:
  * 0: Target object <OBJECT>
- * 1: Condition for allow tp there, must return true or false <STRING> (default: "true")
+ * 1: Condition for allow tp there, must return true or false <STRING> (default: "false")
  * 2: TP name <STRING>
  * 3: Create marker <BOOL> (default: true)
  * 4: Marker icon <STRING> (default: "hd_start")
  * 5: Array of enabled sides <ARRAY> (default: [])
  * 6: Use ace action. False to use addAction <BOOL> (default: true)
- * 7: TP menu open conditio, must return true or false <STRING> (default: "true")
+ * 7: TP menu open conditio, must return true or false <STRING> (default: "false")
  * 8: Allow ticket check <BOOL> (default: true)
  *
  * Return Value:
@@ -23,7 +23,7 @@
 
 	#include "script_component.hpp"
 
-	params [["_obj", objNull, [objNull]], ["_conditio", "true", [""]], ["_name", "", [""]], ["_createMarker", true, [true]], ["_markerIcon", "hd_start", [""]], ["_enabledSides", [], [[]]], ["_useAceAction", true, [true]], ["_menuOpenConditio", "true", [""]], ["_ticketCheckAllowed", true, [false]]];
+	params [["_obj", objNull, [objNull]], ["_conditio", "false", [""]], ["_name", "", [""]], ["_createMarker", true, [true]], ["_markerIcon", "hd_start", [""]], ["_enabledSides", [], [[]]], ["_useAceAction", true, [true]], ["_menuOpenConditio", "false", [""]], ["_ticketCheckAllowed", true, [false]]];
 
 	if ( playerSide in _enabledSides ) then {
 	
@@ -43,7 +43,7 @@
 
 		[_obj, _menuOpenConditio, _useAceAction] call FUNC(addTeleportAction);
 
-		if (GVAR(allowCheckTicketsCTP) && _ticketCheckAllowed) then {
+		if (_ticketCheckAllowed) then {
 			[_obj, _useAceAction] call FUNC(addCheckTicketCountAction);
 		};
 	};

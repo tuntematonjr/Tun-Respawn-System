@@ -15,32 +15,32 @@
 #include "script_component.hpp"
 
 if (isDedicated) exitWith { };
-
-private _msp = objNull;
+params [["_backToBase", false]];
+private _contestedStatus = true;
 private _status = false;
 private _marker = "";
 switch (playerSide) do {
 	case west: {
-		_msp = missionNamespace getVariable [QEGVAR(msp,vehicle_west), objNull];
-		_status = missionNamespace getVariable [QEGVAR(msp,status_west), false];
+		_contestedStatus = missionNamespace getVariable ["tun_msp_contested_west", objNull];
+		_status = missionNamespace getVariable ["tun_msp_status_west", false];
 		_marker = "tun_respawn_west";
 	};
 
 	case east: {
-		_msp = missionNamespace getVariable [QEGVAR(msp,vehicle_east), objNull];
-		_status = missionNamespace getVariable [QEGVAR(msp,status_east), false];
+		_contestedStatus = missionNamespace getVariable ["tun_msp_contested_east", objNull];
+		_status = missionNamespace getVariable ["tun_msp_status_east", false];
 		_marker = "tun_respawn_east";
 	};
 
 	case resistance: {
-		_msp = missionNamespace getVariable [QEGVAR(msp,vehicle_guer), objNull];
-		_status = missionNamespace getVariable [QEGVAR(msp,status_guer), false];
+		_contestedStatus = missionNamespace getVariable ["tun_msp_contested_guer", objNull];
+		_status = missionNamespace getVariable ["tun_msp_status_guer", false];
 		_marker = "tun_respawn_guerrila";
 	};
 
 	case civilian: {
-		_msp = missionNamespace getVariable [QEGVAR(msp,vehicle_civ), objNull];
-		_status = missionNamespace getVariable [QEGVAR(msp,status_civ), false];
+		_contestedStatus = missionNamespace getVariable ["tun_msp_contested_civ", objNull];
+		_status = missionNamespace getVariable ["tun_msp_status_civ", false];
 		_marker = "tun_respawn_civilian";
 	};
 };
@@ -49,7 +49,7 @@ private _mainMarker = format["%1_mainbase",_marker];
 _marker setMarkerAlphaLocal 1;
 
 //show main base if msp is
-if (!isNull _msp && _status && alive _msp) then {
+if (_status && !_contestedStatus) then {
 	_mainMarker setMarkerAlphaLocal 1;
 } else{
 	_mainMarker setMarkerAlphaLocal 0;

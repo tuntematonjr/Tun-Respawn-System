@@ -61,41 +61,22 @@ _chekTime = ["Check Respawn Time", "Check Respawn Time", "", _timer_action, _tim
 [_vehicle, 0, ["ACE_MainActions"], _chekTime] call ace_interact_menu_fnc_addActionToClass;
 
 //TP. I hate this system already.
-[_vehicle, "InitPost", {
-	params ["_targetobject"];
+[_vehicle, "Init", {
+	params ["_entity"];
 
-	private _menu_condition =  "alive _target  && {_target getVariable ['tun_msp_isMSP', false]}";
-	private _tp_condition =  "
-		private _msp = objNull;
-		private _status = true; 
-		switch (playerSide) do {
-			case west: {
-				_msp = missionNamespace getVariable ['tun_msp_vehicle_west', objNull];
-				_status = missionNamespace getVariable ['tun_msp_contested_west', true];
-			};
+	private _variable = switch (playerSide) do {
+		case west: { "tun_msp_vehicle_west"; };
+		case east: { "tun_msp_vehicle_east"; };
+		case resistance: { "tun_msp_vehicle_guer"; };
+		case civilian: { "tun_msp_vehicle_civ"; };
+	};
+	private _menu_condition = "alive _target  && {_target getVariable ['tun_msp_isMSP', false]} && {!(_target getVariable ['tun_msp_isContested', false])}";
+	private _tp_conditionText = " private _msp = missionNamespace getVariable ['%1', objNull]; private _status = _msp getVariable ['tun_msp_isContested', false]; (_target != _msp && _obj getVariable ['tun_msp_isMSP', false] && !_status) ";
 
-			case east: {
-				_msp = missionNamespace getVariable ['tun_msp_vehicle_east', objNull];
-				_status = missionNamespace getVariable ['tun_msp_contested_east', true];
-			};
-
-			case resistance: {
-				_msp = missionNamespace getVariable ['tun_msp_vehicle_guer', objNull];
-				_status = missionNamespace getVariable ['tun_msp_contested_guer', true];
-			};
-
-			case civilian: {
-				_msp = missionNamespace getVariable ['tun_msp_vehicle_civ', objNull];
-				_status = missionNamespace getVariable ['tun_msp_contested_civ', true];
-			};
-		};
-
-		(_target != _msp && _obj getVariable ['tun_msp_isMSP', false] && !_status)
-	";
-	[_targetobject, _tp_condition, "STR_Tun_MSP_TpText" call BIS_fnc_localize, false, nil, [playerSide], true, _menu_condition] call Tun_Respawn_fnc_addCustomTeleporter;
+	_tp_condition = format [_tp_conditionText, _variable];
+	[_entity, _tp_condition, "STR_Tun_MSP_TpText" call BIS_fnc_localize, false, nil, [playerSide], true, _menu_condition] call Tun_Respawn_fnc_addCustomTeleporter;
 
 }, false, [], true] call CBA_fnc_addClassEventHandler;
-
 
 if (GVAR(allowCheckTicketsMSP)) then {
 	_remaining_action = {
