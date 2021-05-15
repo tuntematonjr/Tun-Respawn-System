@@ -27,7 +27,7 @@
 - Waiting areas and Spawn points are placed with modules.
 - Support all 4 sides.
 - Tfar support to save radio settings.
-- Teleport network (WIP)
+- Teleport network system
 
 **Mobile Spawn Point (MSP)**
 - Each side can have vehicle type what is used to move spawn point to battlefield.
