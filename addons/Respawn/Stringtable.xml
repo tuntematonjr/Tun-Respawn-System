@@ -51,16 +51,16 @@
         <German>Ticket count for side</German>
       </Key>
       <Key ID="STR_Tun_Respawn_CBA_tooltip_gearscript">
-        <Original>well the cover says it all</Original>
-        <English>well the cover says it all</English>
-        <Czech>well the cover says it all</Czech>
-        <French>well the cover says it all</French>
-        <Spanish>well the cover says it all</Spanish>
-        <Italian>well the cover says it all</Italian>
-        <Polish>well the cover says it all</Polish>
-        <Portuguese>well the cover says it all</Portuguese>
-        <Russian>well the cover says it all</Russian>
-        <German>well the cover says it all</German>
+        <Original>"SQF Gearscript": Needs two variables set "Tun_Respawn_Role" which works as parameter and "Tun_Respawn_GearPath" which is filepath.        "Potato Tool": just calls its own function        "Save gear": Load same loadout which is saved at mission start or it can be updated during mission using Tun_Respawn_fnc_savegear function.</Original>
+        <English>"SQF Gearscript": Needs two variables set "Tun_Respawn_Role" which works as parameter and "Tun_Respawn_GearPath" which is filepath.        "Potato Tool": just calls its own function        "Save gear": Load same loadout which is saved at mission start or it can be updated during mission using Tun_Respawn_fnc_savegear function.</English>
+        <Czech>"SQF Gearscript": Needs two variables set "Tun_Respawn_Role" which works as parameter and "Tun_Respawn_GearPath" which is filepath.        "Potato Tool": just calls its own function        "Save gear": Load same loadout which is saved at mission start or it can be updated during mission using Tun_Respawn_fnc_savegear function.</Czech>
+        <French>"SQF Gearscript": Needs two variables set "Tun_Respawn_Role" which works as parameter and "Tun_Respawn_GearPath" which is filepath.        "Potato Tool": just calls its own function        "Save gear": Load same loadout which is saved at mission start or it can be updated during mission using Tun_Respawn_fnc_savegear function.</French>
+        <Spanish>"SQF Gearscript": Needs two variables set "Tun_Respawn_Role" which works as parameter and "Tun_Respawn_GearPath" which is filepath.        "Potato Tool": just calls its own function        "Save gear": Load same loadout which is saved at mission start or it can be updated during mission using Tun_Respawn_fnc_savegear function.</Spanish>
+        <Italian>"SQF Gearscript": Needs two variables set "Tun_Respawn_Role" which works as parameter and "Tun_Respawn_GearPath" which is filepath.        "Potato Tool": just calls its own function        "Save gear": Load same loadout which is saved at mission start or it can be updated during mission using Tun_Respawn_fnc_savegear function.</Italian>
+        <Polish>"SQF Gearscript": Needs two variables set "Tun_Respawn_Role" which works as parameter and "Tun_Respawn_GearPath" which is filepath.        "Potato Tool": just calls its own function        "Save gear": Load same loadout which is saved at mission start or it can be updated during mission using Tun_Respawn_fnc_savegear function.</Polish>
+        <Portuguese>"SQF Gearscript": Needs two variables set "Tun_Respawn_Role" which works as parameter and "Tun_Respawn_GearPath" which is filepath.        "Potato Tool": just calls its own function        "Save gear": Load same loadout which is saved at mission start or it can be updated during mission using Tun_Respawn_fnc_savegear function.</Portuguese>
+        <Russian>"SQF Gearscript": Needs two variables set "Tun_Respawn_Role" which works as parameter and "Tun_Respawn_GearPath" which is filepath.        "Potato Tool": just calls its own function        "Save gear": Load same loadout which is saved at mission start or it can be updated during mission using Tun_Respawn_fnc_savegear function.</Russian>
+        <German>"SQF Gearscript": Needs two variables set "Tun_Respawn_Role" which works as parameter and "Tun_Respawn_GearPath" which is filepath.        "Potato Tool": just calls its own function        "Save gear": Load same loadout which is saved at mission start or it can be updated during mission using Tun_Respawn_fnc_savegear function.</German>
       </Key>
       <Key ID="STR_Tun_Respawn_CBA_tooltip_respawntypes">
         <Original>"default" : Endless waves. "Sidetickets": Side tickets</Original>

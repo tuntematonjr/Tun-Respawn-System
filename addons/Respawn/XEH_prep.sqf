@@ -30,4 +30,5 @@ PREP(addCustomTeleporter);
 PREP(addTeleportAction);
 PREP(checkTicketCount);
 PREP(addCheckTicketCountAction);
+PREP(loadSavedGear);
 
