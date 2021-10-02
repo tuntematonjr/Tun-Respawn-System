@@ -37,28 +37,28 @@ switch (_markername) do {
 		missionNamespace setVariable [QGVAR(waitingarea_west), [_markername, _logic, _pos], true];
 
 		GVAR(flag_west) = "Flag_Blue_F" createVehicle _pos;
-		["west"] call FUNC(timer);
+		[west] call FUNC(timer);
 	};
 
 	case "respawn_east": {
 		missionNamespace setVariable [QGVAR(waitingarea_east), [_markername, _logic, _pos], true];
 
 		GVAR(flag_east) = "Flag_Red_F" createVehicle _pos;
-		["east"] call FUNC(timer);
+		[east] call FUNC(timer);
 	};
 
 	case "respawn_guerrila": {
 		missionNamespace setVariable [QGVAR(waitingarea_guer), [_markername, _logic, _pos], true];
 
 		GVAR(flag_guerrila) = "Flag_Green_F" createVehicle _pos;
-		["guer"] call FUNC(timer);
+		[resistance] call FUNC(timer);
 	};
 
 	case "respawn_civilian": {
 		missionNamespace setVariable [QGVAR(waitingarea_civ), [_markername, _logic, _pos], true];
 
 		GVAR(flag_civilian) = "Flag_White_F" createVehicle _pos;
-		["civ"] call FUNC(timer);
+		[civilian] call FUNC(timer);
 	};
 };
 

@@ -4,7 +4,7 @@
  * Timer
  *
  * Arguments:
- * 0: side <STRING>
+ * 0: side <SIDE>
  *
  * Return Value:
  * None
@@ -20,28 +20,28 @@ if (GVAR(forced_respawn)) exitWith { INFO("No timer, Only forced waves"); };
 private ["_wait_time_var", "_allow_respawn_var"];
 
 switch (_side) do {
-	case "west": {
+	case west: {
 		GVAR(wait_time_west) = GVAR(wait_time_west) + GVAR(time_west) * 60;
 		_wait_time_var = QGVAR(wait_time_west);
 		_allow_respawn_var = QGVAR(allow_respawn_west);
 		publicVariable QGVAR(wait_time_west);
 	};
 
-	case "east": {
+	case east: {
 		GVAR(wait_time_east) = GVAR(wait_time_east) + GVAR(time_east) * 60;
 		_wait_time_var = QGVAR(wait_time_east);
 		_allow_respawn_var = QGVAR(allow_respawn_east);
 		publicVariable QGVAR(wait_time_east);
 	};
 
-	case "guer": {
+	case resistance: {
 		GVAR(wait_time_guer) = GVAR(wait_time_guer) + GVAR(time_guer) * 60;
 		_wait_time_var = QGVAR(wait_time_guer);
 		_allow_respawn_var = QGVAR(allow_respawn_guer);
 		publicVariable QGVAR(wait_time_guer);
 	};
 
-	case "civ": {
+	case civilian: {
 		GVAR(wait_time_civ) = GVAR(wait_time_civ) + GVAR(time_civ) * 60;
 		_wait_time_var = QGVAR(wait_time_civ);
 		_allow_respawn_var = QGVAR(allow_respawn_civ);
