@@ -8,7 +8,7 @@ INFO("TUN Respawn Enabled");
 if (hasInterface) then {
 	[{!isNull player}, {
 
-		if !(GVAR(use_gearscript)) then {
+		if (GVAR(gearscriptType) isEqualTo "Save gear") then {
 			[] call FUNC(savegear);
 		};
 

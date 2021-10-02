@@ -3,7 +3,7 @@
 
 #define MAJOR 1
 #define MINOR 5
-#define PATCHLVL 0
+#define PATCHLVL 1
 #define BUILD 02102021
 
 #define VERSION MAJOR.MINOR.PATCHLVL.BUILD
