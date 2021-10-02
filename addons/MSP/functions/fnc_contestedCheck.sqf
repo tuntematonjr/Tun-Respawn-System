@@ -25,8 +25,6 @@ if (count _allunits > 0) then {
 	[{ [] call FUNC(contestedSummary) }, [], _delay] call CBA_fnc_waitAndExecute;
 };
 
-
-
 private _checkDistance = {
 	params ["_msp", "_unit", "_nearUnits"];
 
@@ -46,7 +44,6 @@ private _checkDistance = {
 
 	[_unitIsNear, _unitIsNearMin]
 };
-
 
 //todo muuta homma toimimaan unit arraylla
 

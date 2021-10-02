@@ -24,7 +24,6 @@ if (GVAR(endRespawns)) exitWith {
 
 switch (GVAR(respawn_type)) do {
 	case "Sidetickets": {
-		mitavittua = true;
 		[playerSide, player] remoteExecCall [QFUNC(ticketCountterSide),2];
 	};
 
