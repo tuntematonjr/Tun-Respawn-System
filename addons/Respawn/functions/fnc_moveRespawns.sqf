@@ -4,7 +4,7 @@
  * Move respawns and give gear
  *
  * Arguments:
- * 0: ("west","east","resistance","civilian") <STRING>
+ * 0: Side <SIDE>
  *
  * Return Value:
  * The return value <BOOL>
@@ -20,23 +20,23 @@ if (!isServer) exitWith { };
 
 private _players_in_respawn = [];
 
-switch toLower(_side) do {
-	case "west": {
+switch (_side) do {
+	case west: {
 		_respawn_position = getMarkerPos (GVAR(respawnpos_west) select 0);
 		_respawn_waitingarea = getpos (GVAR(waitingarea_west) select 1);
 	};
 
-	case "east": {
+	case east: {
 		_respawn_position = getMarkerPos (GVAR(respawnpos_east) select 0);
 		_respawn_waitingarea = getpos (GVAR(waitingarea_east) select 1);
 	};
 
-	case "guer": {
+	case resistance: {
 		_respawn_position = getMarkerPos (GVAR(respawnpos_guer) select 0);
 		_respawn_waitingarea = getpos (GVAR(waitingarea_guer) select 1);
 	};
 
-	case "civ": {
+	case civilian: {
 		_respawn_position = getMarkerPos (GVAR(respawnpos_civ) select 0);
 		_respawn_waitingarea = getpos (GVAR(waitingarea_civ) select 1);
 	};
@@ -72,6 +72,7 @@ private _fnc_timeisUp = {
 	private _text = "STR_Tun_Respawn_FNC_moveRespawns" call BIS_fnc_localize;
 	[_player, _respawn_position, _text, 20] call FUNC(teleport);
     remoteExecCall [QFUNC(addGear), _player];
+	[QGVAR(EH_unitRespawned), [_player], _player] call CBA_fnc_localEvent;
 };
 
 {
@@ -82,3 +83,5 @@ private _fnc_timeisUp = {
 } forEach _players_in_respawn;
 
 INFO(format ["Side %1 all respawn units moved", _side]);
+
+[QGVAR(EH_moveRespawns), [_side, _players_in_respawn]] call CBA_fnc_serverEvent;
