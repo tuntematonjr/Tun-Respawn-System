@@ -29,3 +29,5 @@ params [["_unit", objNull, [objNull]],
 [_text, 10] remoteExecCall [QFUNC(blackscreen), _unit]; // make player screen black and prevent them moving right away so server can keep up.
 
 _unit setPos ([_destination, _range] call CBA_fnc_randPos);
+
+[QGVAR(EH_unitTeleported), [_unit, _destination]] call CBA_fnc_serverEvent;

@@ -61,6 +61,8 @@ _countingUnits = {
 			AAR_UPDATE(_msp,"Is contested", false);
 		};
 	};
+
+	[QGVAR(EH_contestedUpdate), [_newStatus, _enemyCount, _enemyCountMin, _FriendlyCount]] call CBA_fnc_globalEvent;
 	[_newStatus, _enemyCount, _enemyCountMin, _FriendlyCount]
 };
 
