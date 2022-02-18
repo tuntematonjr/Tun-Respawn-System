@@ -19,6 +19,13 @@
 
     //Add side variable for vehicle classname
     if (isServer) then {
+
+        //check that class exist
+        if !(isClass (configFile >> "CfgVehicles" >> _vehicle)) exitWith {
+            private _errorText = format ["(Tun_MSP_fnc_add_eh) Tried to add following classname as MSP: %1. But it does not exist",_vehicle];
+            ERROR(_errorText);
+        };
+
         [_vehicle, "Init", {
             params ["_entity"];
 
