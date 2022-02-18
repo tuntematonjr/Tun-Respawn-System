@@ -19,15 +19,15 @@
  * Public: [Yes/No]
  */
 #include "script_component.hpp"
-params ["_obj", "_menuOpenConditio", "_useAceAction"];
+params ["_obj", "_menuOpenConditio", "_useAceAction", "_offset", "_parrenPath"];
 
 private ["_statement"];
 if (_useAceAction) then {
 	_statement = {
-		params ["_obj", "_menuOpenConditio"];
+		params ["_obj", "_menuOpenConditio", "_offset", "_parrenPath"];
 		_menuOpenConditio = compile _menuOpenConditio;
-		private _action = ["TpMenu", "STR_Tun_Respawn_TeleportMenu" call BIS_fnc_localize,"",{ [_target] call FUNC(openTeleportMenu) }, _menuOpenConditio] call ace_interact_menu_fnc_createAction;
-		[_obj, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
+		private _action = ["TpMenu", "STR_Tun_Respawn_TeleportMenu" call BIS_fnc_localize,"",{ [_target] call FUNC(openTeleportMenu) }, _menuOpenConditio, nil, nil, _offset] call ace_interact_menu_fnc_createAction;
+		[_obj, 0, _parrenPath, _action] call ace_interact_menu_fnc_addActionToObject;
 	};
 } else {
 	_statement = {
@@ -41,5 +41,5 @@ if (_useAceAction) then {
 		true
 	},
 	_statement,
-	[_obj, _menuOpenConditio]
+	[_obj, _menuOpenConditio, _offset, _parrenPath]
 ] call CBA_fnc_waitUntilAndExecute;
