@@ -31,4 +31,6 @@ PREP(addTeleportAction);
 PREP(checkTicketCount);
 PREP(addCheckTicketCountAction);
 PREP(loadSavedGear);
+PREP(updateWaitingRespawnList);
+PREP(briefingNotes);
 
