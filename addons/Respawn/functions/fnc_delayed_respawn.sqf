@@ -10,16 +10,17 @@
  * The return value <BOOL>
  *
  * Example:
- * [] call Tun_Respawn_fnc_imanexample
+ * [] call Tun_Respawn_fnc_delayed_respawn
  */
 #include "script_component.hpp"
+params ["_unit", "_side"];
 
 _skip = false;
 if (GVAR(delayed_respawn) > 0) then {
 
 	private ["_time", "_waittime"];
 
-	switch (playerSide) do {
+	switch (_side) do {
 
 		case west: {
 			_time = GVAR(wait_time_west);
@@ -48,6 +49,31 @@ if (GVAR(delayed_respawn) > 0) then {
 	_skip = ((_time - cba_missiontime) < ((_waittime * 60) * (GVAR(delayed_respawn) / 100)));
 };
 
-player setVariable [QGVAR(skip_next_wave), _skip, true];
+_unit setVariable [QGVAR(skip_next_wave), _skip, true];
+
+if (_skip) then {
+	switch (_side) do {
+		case west: { 
+			PUSH(GVAR(waitingRespawnDelayedWest),_unit);
+			FILTER(GVAR(waitingRespawnDelayedWest),(!isnull _x && _x in allPlayers && alive _x ));
+			publicVariable QGVAR(waitingRespawnDelayedWest);
+		};
+		case east: { 
+			PUSH(GVAR(waitingRespawnDelayedEast),_unit);
+			FILTER(GVAR(waitingRespawnDelayedEast),(!isnull _x && _x in allPlayers && alive _x ));
+			publicVariable QGVAR(waitingRespawnDelayedEast);
+		};
+		case resistance: { 
+			PUSH(GVAR(waitingRespawnDelayedGuer),_unit);
+			FILTER(GVAR(waitingRespawnDelayedGuer),(!isnull _x && _x in allPlayers && alive _x ));
+			publicVariable QGVAR(waitingRespawnDelayedGuer);
+		};
+		case civilian: { 
+			PUSH(GVAR(waitingRespawnDelayedCiv),_unit);
+			FILTER(GVAR(waitingRespawnDelayedCiv),(!isnull _x && _x in allPlayers && alive _x ));
+			publicVariable QGVAR(waitingRespawnDelayedCiv);
+		};
+	};
+};
 
 _skip
