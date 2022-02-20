@@ -86,11 +86,17 @@ switch (_markername) do {
 	};
 };
 
+//Create base ace action for flagpoles
+private _action = ["Tun_baseAction", "Respawn Actions","",{ }, { true }, nil, nil, [0,-0.35,-2.4]] call ace_interact_menu_fnc_createAction;
+[_flag, 0, [], _action] call ace_interact_menu_fnc_addActionToObject;
+
+// Add tp action
 private _conditio =  "count (missionNamespace getVariable ['tun_respawn_teleportPoints', []]) > 1" ;
-[_flag, "true", "STR_Tun_Respawn_MainBaseText" call BIS_fnc_localize, false, nil, [_side], false, _conditio, false] remoteExecCall [QFUNC(addCustomTeleporter), _side, true];
+[_flag, "true", "STR_Tun_Respawn_MainBaseText" call BIS_fnc_localize, false, nil, [_side], true, _conditio, false, nil, ["Tun_baseAction"]] remoteExecCall [QFUNC(addCustomTeleporter), _side, true];
+
 
 if (GVAR(allowCheckTicketsBase)) then {
-	[_flag, false] remoteExecCall [QFUNC(addCheckTicketCountAction), _side, true];
+	[_flag, true, nil, ["Tun_baseAction"]] remoteExecCall [QFUNC(addCheckTicketCountAction), _side, true];
 };
 
 // Module function is executed by spawn command, so returned value is not necessary, but it's good practice.

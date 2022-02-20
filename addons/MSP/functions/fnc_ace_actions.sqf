@@ -38,6 +38,12 @@ private _vehicle = switch (playerSide) do {
 	};
 };
 
+//check that class exist
+if !(isClass (configFile >> "CfgVehicles" >> _vehicle)) exitWith {
+	private _errorText = format ["(Tun_MSP_fnc_ace_actions) Tried to add following classname as MSP: %1. But it does not exist",_vehicle];
+	ERROR(_errorText);
+};
+
 //create msp action
 _create_condition = { alive _target && {_target getVariable QGVAR(side) == playerSide} && { driver _target == player} && { speed player == 0 } && {!(missionNamespace getVariable [format ["%1_%2", QGVAR(status), playerSide], false])}};;
 _createMSP = ["Set up MSP", "Set up MSP", "", {[_target, true] spawn FUNC(initate_msp_action);}, _create_condition, {}, [], [0, 0, 0], 2, [false, true, false, false, false]] call ace_interact_menu_fnc_createAction;

@@ -98,6 +98,18 @@
         <Russian>TUN - Respawn System</Russian>
         <German>TUN - Respawn System</German>
       </Key>
+      <Key ID="STR_Tun_Respawn_CBA_Category_Briefing">
+        <Original>Briefing notes</Original>
+        <English>Briefing notes</English>
+        <Czech>Briefing notes</Czech>
+        <French>Briefing notes</French>
+        <Spanish>Briefing notes</Spanish>
+        <Italian>Briefing notes</Italian>
+        <Polish>Briefing notes</Polish>
+        <Portuguese>Briefing notes</Portuguese>
+        <Russian>Briefing notes</Russian>
+        <German>Briefing notes</German>
+      </Key>
       <Key ID="STR_Tun_Respawn_CBA_Category_time">
         <Original>Wave times</Original>
         <English>Wave times</English>
@@ -207,16 +219,16 @@
         <German>Only forced respawn waves. No timer!</German>
       </Key>
       <Key ID="STR_Tun_Respawn_CBA_tooltip_delayed_respawn">
-        <Original>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20 (min) and this is set to 50 (%) and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</Original>
-        <English>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20 (min) and this is set to 50 (%) and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</English>
-        <Czech>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20 (min) and this is set to 50 (%) and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</Czech>
-        <French>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20 (min) and this is set to 50 (%) and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</French>
-        <Spanish>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20 (min) and this is set to 50 (%) and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</Spanish>
-        <Italian>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20 (min) and this is set to 50 (%) and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</Italian>
-        <Polish>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20 (min) and this is set to 50 (%) and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</Polish>
-        <Portuguese>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20 (min) and this is set to 50 (%) and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</Portuguese>
-        <Russian>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20 (min) and this is set to 50 (%) and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</Russian>
-        <German>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20 (min) and this is set to 50 (%) and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</German>
+        <Original>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20min and this is set to 50% and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</Original>
+        <English>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20min and this is set to 50% and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</English>
+        <Czech>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20min and this is set to 50% and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</Czech>
+        <French>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20min and this is set to 50% and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</French>
+        <Spanish>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20min and this is set to 50% and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</Spanish>
+        <Italian>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20min and this is set to 50% and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</Italian>
+        <Polish>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20min and this is set to 50% and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</Polish>
+        <Portuguese>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20min and this is set to 50% and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</Portuguese>
+        <Russian>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20min and this is set to 50% and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</Russian>
+        <German>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20min and this is set to 50% and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</German>
       </Key>
       <Key ID="STR_Tun_Respawn_CBA_tooltip_waiting_area_range">
         <Original>Range for waitingarea. Default 100m</Original>
@@ -649,6 +661,164 @@
         <Portuguese>Teleport</Portuguese>
         <Russian>Teleport</Russian>
         <German>Teleport</German>
+      </Key>
+    </Container>
+    <Container name="briefing">
+      <Key ID="STR_Tun_Respawn_CBA_Briefing_Enable_ShowTickets">
+        <Original>Show tickets</Original>
+        <English>Show tickets</English>
+        <Czech>Show tickets</Czech>
+        <French>Show tickets</French>
+        <Spanish>Show tickets</Spanish>
+        <Italian>Show tickets</Italian>
+        <Polish>Show tickets</Polish>
+        <Portuguese>Show tickets</Portuguese>
+        <Russian>Show tickets</Russian>
+        <German>Show tickets</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_Briefing_Enable">
+        <Original>Enable briefing notes</Original>
+        <English>Enable briefing notes</English>
+        <Czech>Enable briefing notes</Czech>
+        <French>Enable briefing notes</French>
+        <Spanish>Enable briefing notes</Spanish>
+        <Italian>Enable briefing notes</Italian>
+        <Polish>Enable briefing notes</Polish>
+        <Portuguese>Enable briefing notes</Portuguese>
+        <Russian>Enable briefing notes</Russian>
+        <German>Enable briefing notes</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_Briefing_Enable_tooltip">
+        <Original>Create briefing tab where all these settings are show.</Original>
+        <English>Create briefing tab where all these settings are show.</English>
+        <Czech>Create briefing tab where all these settings are show.</Czech>
+        <French>Create briefing tab where all these settings are show.</French>
+        <Spanish>Create briefing tab where all these settings are show.</Spanish>
+        <Italian>Create briefing tab where all these settings are show.</Italian>
+        <Polish>Create briefing tab where all these settings are show.</Polish>
+        <Portuguese>Create briefing tab where all these settings are show.</Portuguese>
+        <Russian>Create briefing tab where all these settings are show.</Russian>
+        <German>Create briefing tab where all these settings are show.</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_Briefing_Enable_ShowRespawType">
+        <Original>Show respawn type</Original>
+        <English>Show respawn type</English>
+        <Czech>Show respawn type</Czech>
+        <French>Show respawn type</French>
+        <Spanish>Show respawn type</Spanish>
+        <Italian>Show respawn type</Italian>
+        <Polish>Show respawn type</Polish>
+        <Portuguese>Show respawn type</Portuguese>
+        <Russian>Show respawn type</Russian>
+        <German>Show respawn type</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_Briefing_Enable_ShowTime">
+        <Original>Show respawn wave time</Original>
+        <English>Show respawn wave time</English>
+        <Czech>Show respawn wave time</Czech>
+        <French>Show respawn wave time</French>
+        <Spanish>Show respawn wave time</Spanish>
+        <Italian>Show respawn wave time</Italian>
+        <Polish>Show respawn wave time</Polish>
+        <Portuguese>Show respawn wave time</Portuguese>
+        <Russian>Show respawn wave time</Russian>
+        <German>Show respawn wave time</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_Briefing_Enable_ShowTime_tooltip">
+        <Original>When enabled, wave interval time will be shown in briefing notes.</Original>
+        <English>When enabled, wave interval time will be shown in briefing notes.</English>
+        <Czech>When enabled, wave interval time will be shown in briefing notes.</Czech>
+        <French>When enabled, wave interval time will be shown in briefing notes.</French>
+        <Spanish>When enabled, wave interval time will be shown in briefing notes.</Spanish>
+        <Italian>When enabled, wave interval time will be shown in briefing notes.</Italian>
+        <Polish>When enabled, wave interval time will be shown in briefing notes.</Polish>
+        <Portuguese>When enabled, wave interval time will be shown in briefing notes.</Portuguese>
+        <Russian>When enabled, wave interval time will be shown in briefing notes.</Russian>
+        <German>When enabled, wave interval time will be shown in briefing notes.</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_Briefing_Enable_ShowTickets_tooltip">
+        <Original>When enabled, starting ticket count will be shown in briefing notes.</Original>
+        <English>When enabled, starting ticket count will be shown in briefing notes.</English>
+        <Czech>When enabled, starting ticket count will be shown in briefing notes.</Czech>
+        <French>When enabled, starting ticket count will be shown in briefing notes.</French>
+        <Spanish>When enabled, starting ticket count will be shown in briefing notes.</Spanish>
+        <Italian>When enabled, starting ticket count will be shown in briefing notes.</Italian>
+        <Polish>When enabled, starting ticket count will be shown in briefing notes.</Polish>
+        <Portuguese>When enabled, starting ticket count will be shown in briefing notes.</Portuguese>
+        <Russian>When enabled, starting ticket count will be shown in briefing notes.</Russian>
+        <German>When enabled, starting ticket count will be shown in briefing notes.</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_Briefing_Enable_ShowRespawType_tooltip">
+        <Original>When enabled, respawn type will be shown in briefing notes.</Original>
+        <English>When enabled, respawn type will be shown in briefing notes.</English>
+        <Czech>When enabled, respawn type will be shown in briefing notes.</Czech>
+        <French>When enabled, respawn type will be shown in briefing notes.</French>
+        <Spanish>When enabled, respawn type will be shown in briefing notes.</Spanish>
+        <Italian>When enabled, respawn type will be shown in briefing notes.</Italian>
+        <Polish>When enabled, respawn type will be shown in briefing notes.</Polish>
+        <Portuguese>When enabled, respawn type will be shown in briefing notes.</Portuguese>
+        <Russian>When enabled, respawn type will be shown in briefing notes.</Russian>
+        <German>When enabled, respawn type will be shown in briefing notes.</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_Briefing_Enable_ShowOtherSidesData_tooltip">
+        <Original>Show this side for all. Own side is aways shown, if show tickets is enabled. Also it that is disabled, none of the sides tickets are shown.</Original>
+        <English>Show this side for all. Own side is aways shown, if show tickets is enabled. Also it that is disabled, none of the sides tickets are shown.</English>
+        <Czech>Show this side for all. Own side is aways shown, if show tickets is enabled. Also it that is disabled, none of the sides tickets are shown.</Czech>
+        <French>Show this side for all. Own side is aways shown, if show tickets is enabled. Also it that is disabled, none of the sides tickets are shown.</French>
+        <Spanish>Show this side for all. Own side is aways shown, if show tickets is enabled. Also it that is disabled, none of the sides tickets are shown.</Spanish>
+        <Italian>Show this side for all. Own side is aways shown, if show tickets is enabled. Also it that is disabled, none of the sides tickets are shown.</Italian>
+        <Polish>Show this side for all. Own side is aways shown, if show tickets is enabled. Also it that is disabled, none of the sides tickets are shown.</Polish>
+        <Portuguese>Show this side for all. Own side is aways shown, if show tickets is enabled. Also it that is disabled, none of the sides tickets are shown.</Portuguese>
+        <Russian>Show this side for all. Own side is aways shown, if show tickets is enabled. Also it that is disabled, none of the sides tickets are shown.</Russian>
+        <German>Show this side for all. Own side is aways shown, if show tickets is enabled. Also it that is disabled, none of the sides tickets are shown.</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_Briefing_Enable_ShowOtherSidesData_West">
+        <Original>Show west data to all</Original>
+        <English>Show west data to all</English>
+        <Czech>Show west data to all</Czech>
+        <French>Show west data to all</French>
+        <Spanish>Show west data to all</Spanish>
+        <Italian>Show west data to all</Italian>
+        <Polish>Show west data to all</Polish>
+        <Portuguese>Show west data to all</Portuguese>
+        <Russian>Show west data to all</Russian>
+        <German>Show west data to all</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_Briefing_Enable_ShowOtherSidesData_East">
+        <Original>Show east data to all</Original>
+        <English>Show east data to all</English>
+        <Czech>Show east data to all</Czech>
+        <French>Show east data to all</French>
+        <Spanish>Show east data to all</Spanish>
+        <Italian>Show east data to all</Italian>
+        <Polish>Show east data to all</Polish>
+        <Portuguese>Show east data to all</Portuguese>
+        <Russian>Show east data to all</Russian>
+        <German>Show east data to all</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_Briefing_Enable_ShowOtherSidesData_Resistance">
+        <Original>Show resistance data to all</Original>
+        <English>Show resistance data to all</English>
+        <Czech>Show resistance data to all</Czech>
+        <French>Show resistance data to all</French>
+        <Spanish>Show resistance data to all</Spanish>
+        <Italian>Show resistance data to all</Italian>
+        <Polish>Show resistance data to all</Polish>
+        <Portuguese>Show resistance data to all</Portuguese>
+        <Russian>Show resistance data to all</Russian>
+        <German>Show resistance data to all</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_Briefing_Enable_ShowOtherSidesData_Civilian">
+        <Original>Show civilian data to all</Original>
+        <English>Show civilian data to all</English>
+        <Czech>Show civilian data to all</Czech>
+        <French>Show civilian data to all</French>
+        <Spanish>Show civilian data to all</Spanish>
+        <Italian>Show civilian data to all</Italian>
+        <Polish>Show civilian data to all</Polish>
+        <Portuguese>Show civilian data to all</Portuguese>
+        <Russian>Show civilian data to all</Russian>
+        <German>Show civilian data to all</German>
       </Key>
     </Container>
   </Package>

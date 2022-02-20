@@ -15,16 +15,29 @@
  */
 #include "script_component.hpp"
 
-
 params ["_msp", "_setup"];
 
 private _side = _msp getVariable QGVAR(side);
 private _msp_var = objNull;
+private _whoToNotify = [];
+if (GVAR(setupNotification) isEqualTo 0) then {
+	{
+		private _group = _x;
+		if (side _group isEqualTo _side) then {
+			_whoToNotify pushBack leader _group;
+		};
+	} forEach allGroups;
+} else {
+	_whoToNotify = [_side];
+};
 
 AAR_UPDATE(_msp,"Is active MSP", _setup);
 
 if (_setup) then {
-	(call compile ("STR_Tun_MSP_FNC_setup_notification" call BIS_fnc_localize)) remoteExecCall ["CBA_fnc_notify", _side];
+	
+	if (count _whoToNotify > 0 ) then {
+		(call compile ("STR_Tun_MSP_FNC_setup_notification" call BIS_fnc_localize)) remoteExecCall ["CBA_fnc_notify", _whoToNotify];
+	};
 
 	[_msp] remoteExecCall [QFUNC(create_msp_props), 2];
 
@@ -40,8 +53,9 @@ if (_setup) then {
 	_msp_var = _msp;
 
 } else {
-	(call compile ("STR_Tun_MSP_FNC_pack_notification" call BIS_fnc_localize)) remoteExecCall ["CBA_fnc_notify", _side];
-
+	if (count _whoToNotify > 0 ) then {
+		(call compile ("STR_Tun_MSP_FNC_pack_notification" call BIS_fnc_localize)) remoteExecCall ["CBA_fnc_notify", _whoToNotify];
+	};
 	//Delete props
 	{
 	    deleteVehicle _x;
@@ -105,5 +119,7 @@ switch (_side) do {
 };
 
 if (_setup) then {
-	[] call FUNC(force_contested_check);
+	[{
+		[] call FUNC(contestedCheck)
+	}, nil, 1] call CBA_fnc_waitAndExecute;
 };

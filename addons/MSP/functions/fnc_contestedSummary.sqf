@@ -39,24 +39,34 @@ _countingUnits = {
 	AAR_UPDATE(_msp, "Enemy Count Min", _enemyCountMin);
 	AAR_UPDATE(_msp, "Friendly Count", _FriendlyCount);
 	
-	private _units = [];
-	{
-		private _group = _x;
-		if (side _group == _side) then {
-			_units pushBackUnique leader _group;
-		};
-	} forEach allGroups;
+	//Notification
+	private _whoToNotify = [];
+	if (GVAR(contestedNotification) isEqualTo 0) then {
+		{
+			private _group = _x;
+			if (side _group isEqualTo _side) then {
+				_whoToNotify pushBack leader _group;
+			};
+		} forEach allGroups;
+	} else {
+		_whoToNotify = [_side];
+	};
+
 	//if there is more enemis in max range or even one in min range. Disable MSP
 	if ( _enemyCount > _FriendlyCount || _enemyCountMin > 0 ) then {
 		_newStatus = true;
 		if !(_status) then {
-			(call compile ("STR_Tun_MSP_FNC_Contested_hint" call BIS_fnc_localize)) remoteExecCall ["CBA_fnc_notify", _units];
+			if (count _whoToNotify > 0 ) then {
+				(call compile ("STR_Tun_MSP_FNC_Contested_hint" call BIS_fnc_localize)) remoteExecCall ["CBA_fnc_notify", _whoToNotify];
+			};
 			[_side, false] call TUN_respawn_fnc_update_respawn_point;
 			AAR_UPDATE(_msp,"Is contested", true);
 		};
 	} else {
 		if ( _status ) then {
-			(call compile ("STR_Tun_MSP_FNC_secured_hint" call BIS_fnc_localize)) remoteExecCall ["CBA_fnc_notify", _units];
+			if (count _whoToNotify > 0 ) then {
+				(call compile ("STR_Tun_MSP_FNC_secured_hint" call BIS_fnc_localize)) remoteExecCall ["CBA_fnc_notify", _whoToNotify];
+			};
 			[_side, true, (getPos _msp) ] call TUN_respawn_fnc_update_respawn_point;
 			AAR_UPDATE(_msp,"Is contested", false);
 		};
@@ -172,3 +182,6 @@ if ( GVAR(status_civ) ) then {
 		_msp  setVariable [QGVAR(isContested), _newStatus, true];
 	};
 };
+
+private _debugText = format ["Contested timer end: %1", round cba_missiontime];
+LOG(_debugText);

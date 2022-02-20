@@ -21,19 +21,19 @@ if (!isServer) exitWith { };
 
 _value = switch (_side) do {
 	case west: {
-		tun_respawn_respawnpos_west;
+		GVAR(respawnpos_west);
 	};
 
 	case east: {
-		tun_respawn_respawnpos_east;
+		GVAR(respawnpos_east);
 	};
 
 	case resistance: {
-		tun_respawn_respawnpos_guer;
+		GVAR(respawnpos_guer);
 	};
 
 	case civilian: {
-		tun_respawn_respawnpos_civ;
+		GVAR(respawnpos_civ);
 	};
 
 	default {
