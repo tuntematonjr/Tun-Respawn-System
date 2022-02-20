@@ -98,6 +98,18 @@
         <Russian>Enable MSP</Russian>
         <German>Enable MSP</German>
       </Key>
+      <Key ID="STR_Tun_MSP_CBA_allowCheckTicketsMSP">
+        <Original>Check tickets from msp</Original>
+        <English>Check tickets from msp</English>
+        <Czech>Check tickets from msp</Czech>
+        <French>Check tickets from msp</French>
+        <Spanish>Check tickets from msp</Spanish>
+        <Italian>Check tickets from msp</Italian>
+        <Polish>Check tickets from msp</Polish>
+        <Portuguese>Check tickets from msp</Portuguese>
+        <Russian>Check tickets from msp</Russian>
+        <German>Check tickets from msp</German>
+      </Key>
       <Key ID="STR_Tun_MSP_CBA_tooltip_Enable">
         <Original>Enable MSP system</Original>
         <English>Enable MSP system</English>
@@ -473,6 +485,92 @@
         <Portuguese>Remaining time until respawn: %1</Portuguese>
         <Russian>Remaining time until respawn: %1</Russian>
         <German>Remaining time until respawn: %1</German>
+      </Key>
+    </Container>
+    <Container name="Notifications">
+      <Key ID="STR_Tun_MSP_CBA_whoGetsSetUpNotification">
+        <Original>Who gets notification from MSP setup/pack?</Original>
+        <English>Who gets notification from MSP setup/pack?</English>
+        <Czech>Who gets notification from MSP setup/pack?</Czech>
+        <French>Who gets notification from MSP setup/pack?</French>
+        <Spanish>Who gets notification from MSP setup/pack?</Spanish>
+        <Italian>Who gets notification from MSP setup/pack?</Italian>
+        <Polish>Who gets notification from MSP setup/pack?</Polish>
+        <Portuguese>Who gets notification from MSP setup/pack?</Portuguese>
+        <Russian>Who gets notification from MSP setup/pack?</Russian>
+        <German>Who gets notification from MSP setup/pack?</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_whoGetsContestedNotification">
+        <Original>Who gets notification when MSP contested?</Original>
+        <English>Who gets notification when MSP contested?</English>
+        <Czech>Who gets notification when MSP contested?</Czech>
+        <French>Who gets notification when MSP contested?</French>
+        <Spanish>Who gets notification when MSP contested?</Spanish>
+        <Italian>Who gets notification when MSP contested?</Italian>
+        <Polish>Who gets notification when MSP contested?</Polish>
+        <Portuguese>Who gets notification when MSP contested?</Portuguese>
+        <Russian>Who gets notification when MSP contested?</Russian>
+        <German>Who gets notification when MSP contested?</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_whoGetsReportEnemiesNotification">
+        <Original>Who gets notification when there is enemies near MSP?</Original>
+        <English>Who gets notification when there is enemies near MSP?</English>
+        <Czech>Who gets notification when there is enemies near MSP?</Czech>
+        <French>Who gets notification when there is enemies near MSP?</French>
+        <Spanish>Who gets notification when there is enemies near MSP?</Spanish>
+        <Italian>Who gets notification when there is enemies near MSP?</Italian>
+        <Polish>Who gets notification when there is enemies near MSP?</Polish>
+        <Portuguese>Who gets notification when there is enemies near MSP?</Portuguese>
+        <Russian>Who gets notification when there is enemies near MSP?</Russian>
+        <German>Who gets notification when there is enemies near MSP?</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_whoGetsSetUpNotification_Tooltip">
+        <Original>When MSP is setup or packed up, who whil recive notification from it. Default: Group Leader</Original>
+        <English>When MSP is setup or packed up, who whil recive notification from it. Default: Group Leader</English>
+        <Czech>When MSP is setup or packed up, who whil recive notification from it. Default: Group Leader</Czech>
+        <French>When MSP is setup or packed up, who whil recive notification from it. Default: Group Leader</French>
+        <Spanish>When MSP is setup or packed up, who whil recive notification from it. Default: Group Leader</Spanish>
+        <Italian>When MSP is setup or packed up, who whil recive notification from it. Default: Group Leader</Italian>
+        <Polish>When MSP is setup or packed up, who whil recive notification from it. Default: Group Leader</Polish>
+        <Portuguese>When MSP is setup or packed up, who whil recive notification from it. Default: Group Leader</Portuguese>
+        <Russian>When MSP is setup or packed up, who whil recive notification from it. Default: Group Leader</Russian>
+        <German>When MSP is setup or packed up, who whil recive notification from it. Default: Group Leader</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_whoGetsContestedNotification_Tooltip">
+        <Original>When MSP is contested, who whil recive notification from it. Default: Group Leader</Original>
+        <English>When MSP is contested, who whil recive notification from it. Default: Group Leader</English>
+        <Czech>When MSP is contested, who whil recive notification from it. Default: Group Leader</Czech>
+        <French>When MSP is contested, who whil recive notification from it. Default: Group Leader</French>
+        <Spanish>When MSP is contested, who whil recive notification from it. Default: Group Leader</Spanish>
+        <Italian>When MSP is contested, who whil recive notification from it. Default: Group Leader</Italian>
+        <Polish>When MSP is contested, who whil recive notification from it. Default: Group Leader</Polish>
+        <Portuguese>When MSP is contested, who whil recive notification from it. Default: Group Leader</Portuguese>
+        <Russian>When MSP is contested, who whil recive notification from it. Default: Group Leader</Russian>
+        <German>When MSP is contested, who whil recive notification from it. Default: Group Leader</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_whoGetsReportEnemies_Tooltip">
+        <Original>When there is enemies near MSP, who whil recive notification from it. Default: Group Leader</Original>
+        <English>When there is enemies near MSP, who whil recive notification from it. Default: Group Leader</English>
+        <Czech>When there is enemies near MSP, who whil recive notification from it. Default: Group Leader</Czech>
+        <French>When there is enemies near MSP, who whil recive notification from it. Default: Group Leader</French>
+        <Spanish>When there is enemies near MSP, who whil recive notification from it. Default: Group Leader</Spanish>
+        <Italian>When there is enemies near MSP, who whil recive notification from it. Default: Group Leader</Italian>
+        <Polish>When there is enemies near MSP, who whil recive notification from it. Default: Group Leader</Polish>
+        <Portuguese>When there is enemies near MSP, who whil recive notification from it. Default: Group Leader</Portuguese>
+        <Russian>When there is enemies near MSP, who whil recive notification from it. Default: Group Leader</Russian>
+        <German>When there is enemies near MSP, who whil recive notification from it. Default: Group Leader</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_notificationCategory">
+        <Original>Notifications</Original>
+        <English>Notifications</English>
+        <Czech>Notifications</Czech>
+        <French>Notifications</French>
+        <Spanish>Notifications</Spanish>
+        <Italian>Notifications</Italian>
+        <Polish>Notifications</Polish>
+        <Portuguese>Notifications</Portuguese>
+        <Russian>Notifications</Russian>
+        <German>Notifications</German>
       </Key>
     </Container>
   </Package>
