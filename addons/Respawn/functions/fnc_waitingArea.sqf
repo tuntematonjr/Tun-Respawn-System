@@ -17,21 +17,24 @@ private ["_respawn_waitingarea"];
 
 if (isDedicated || !(playerSide in [west,east,resistance,civilian]) ) exitWith { };
 
-switch (toLower str playerSide) do {
+//tell server to add this player to list
+[player, true, playerSide] remoteExecCall [QFUNC(updateWaitingRespawnList),2];
 
-	case "west": {
+switch (playerSide) do {
+
+	case west: {
 		_respawn_waitingarea = getpos (GVAR(waitingarea_west) select 1);
 	};
 
-	case "east": {
+	case east: {
 		_respawn_waitingarea = getpos (GVAR(waitingarea_east) select 1);
 	};
 
-	case "guer": {
+	case resistance: {
 		_respawn_waitingarea = getpos (GVAR(waitingarea_guer) select 1);
 	};
 
-	case "civ": {
+	case civilian: {
 		_respawn_waitingarea = getpos (GVAR(waitingarea_civ) select 1);
 	};
 };
