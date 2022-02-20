@@ -3,6 +3,8 @@
 
 
 if (isServer) then {
+    missionNamespace setVariable [QGVAR(disableContestedCheck), false, true];
+
     missionNamespace setVariable [QGVAR(contested_east), false, true];
     missionNamespace setVariable [QGVAR(contested_west), false, true];
     missionNamespace setVariable [QGVAR(contested_guer), false, true];
@@ -48,10 +50,22 @@ if (isServer) then {
 };
 
 
+
 [
     QGVAR(enable), // Unique setting name. Matches resulting variable name <STRING>
     "CHECKBOX", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
     ["STR_Tun_MSP_CBA_Enable" call BIS_fnc_localize, "STR_Tun_MSP_CBA_tooltip_Enable" call BIS_fnc_localize], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    "STR_Tun_MSP_CBA_Category_main" call BIS_fnc_localize, // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    false, // Extra properties of the setting depending of _settingType.
+    1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
+    {}, // Script to execute when setting is changed. (optional) <CODE>
+    true //Setting will be marked as needing mission restart after being changed. (optional, default false) <BOOL>
+] call CBA_Settings_fnc_init;
+
+[
+    QGVAR(allowCheckTicketsMSP), // Unique setting name. Matches resulting variable name <STRING>
+    "CHECKBOX", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
+    ["STR_Tun_MSP_CBA_allowCheckTicketsMSP" call BIS_fnc_localize, "STR_Tun_Respawn_CBA_tooltip_CheckTickets" call BIS_fnc_localize], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
     "STR_Tun_MSP_CBA_Category_main" call BIS_fnc_localize, // Category for the settings menu + optional sub-category <STRING, ARRAY>
     false, // Extra properties of the setting depending of _settingType.
     1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
@@ -202,3 +216,38 @@ if (isServer) then {
     {}, // Script to execute when setting is changed. (optional) <CODE>
     true //Setting will be marked as needing mission restart after being changed. (optional, default false) <BOOL>
 ] call CBA_Settings_fnc_init;
+
+
+[
+    QGVAR(setupNotification), // Unique setting name. Matches resulting variable name <STRING>
+    "LIST", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
+    ["STR_Tun_MSP_CBA_whoGetsSetUpNotification" call BIS_fnc_localize, "STR_Tun_MSP_CBA_whoGetsSetUpNotification_Tooltip" call BIS_fnc_localize], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    ["STR_Tun_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_Tun_MSP_CBA_notificationCategory" call BIS_fnc_localize], // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    [[0, 1], ["Group Leaders", "Side"], 0], // Extra properties of the setting depending of _settingType.
+    1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
+    {}, // Script to execute when setting is changed. (optional) <CODE>
+    true //Setting will be marked as needing mission restart after being changed. (optional, default false) <BOOL>
+] call CBA_Settings_fnc_init;
+
+[
+    QGVAR(contestedNotification), // Unique setting name. Matches resulting variable name <STRING>
+    "LIST", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
+    ["STR_Tun_MSP_CBA_whoGetsContestedNotification" call BIS_fnc_localize, "STR_Tun_MSP_CBA_whoGetsContestedNotification_Tooltip" call BIS_fnc_localize], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    ["STR_Tun_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_Tun_MSP_CBA_notificationCategory" call BIS_fnc_localize], // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    [[0, 1], ["Group Leaders", "Side"], 0], // Extra properties of the setting depending of _settingType.
+    1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
+    {}, // Script to execute when setting is changed. (optional) <CODE>
+    true //Setting will be marked as needing mission restart after being changed. (optional, default false) <BOOL>
+] call CBA_Settings_fnc_init;
+
+[
+    QGVAR(reportEnemiesNotification), // Unique setting name. Matches resulting variable name <STRING>
+    "LIST", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
+    ["STR_Tun_MSP_CBA_whoGetsReportEnemiesNotification" call BIS_fnc_localize, "STR_Tun_MSP_CBA_whoGetsReportEnemies_Tooltip" call BIS_fnc_localize], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    ["STR_Tun_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_Tun_MSP_CBA_notificationCategory" call BIS_fnc_localize], // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    [[0, 1], ["Group Leaders", "Side"], 0], // Extra properties of the setting depending of _settingType.
+    1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
+    {}, // Script to execute when setting is changed. (optional) <CODE>
+    true //Setting will be marked as needing mission restart after being changed. (optional, default false) <BOOL>
+] call CBA_Settings_fnc_init;
+
