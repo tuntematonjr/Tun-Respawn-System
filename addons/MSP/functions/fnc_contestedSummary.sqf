@@ -15,6 +15,7 @@
 #include "script_component.hpp"
 
 _countingUnits = {
+	private _debugTime = diag_tickTime;
 	params ["_msp", "_side", "_nearUnits", "_nearUnitsMin", "_status"];
 	private _newStatus = false;
 	private _enemyCount = 0;
@@ -29,12 +30,18 @@ _countingUnits = {
 
 			private _count = _testSide countSide _nearUnitsMin;
 			ADD(_enemyCountMin, _count);
+			private _debugText = format ["Enemy count add: %1 [%3] (%2)",_count, _testSide, _enemyCountMin];
+			LOG(_debugText);
 		} else {
 			private _count = _testSide countSide _nearUnits;
 			ADD(_FriendlyCount, _count);
+			private _debugText = format ["Friendly count add: %1 (%2)",_count, _testSide];
+			LOG(_debugText);
 		};
 	} forEach [west, east, resistance, civilian];
 
+	private _debugText = format ["Enemy count total: %1 [%2] --- Friendly count: %3",_enemyCount, _enemyCountMin, _FriendlyCount];
+	LOG(_debugText);
 	AAR_UPDATE(_msp, "Enemy Count", _enemyCount);
 	AAR_UPDATE(_msp, "Enemy Count Min", _enemyCountMin);
 	AAR_UPDATE(_msp, "Friendly Count", _FriendlyCount);
@@ -72,6 +79,10 @@ _countingUnits = {
 		};
 	};
 
+	private _debugText = format ["Contested summary. Side: %1, NewStatus: %2, enemyCount: %3, enemyCountMin: %4, FriendlyCount: %5",_side, _newStatus, _enemyCount, _enemyCountMin, _FriendlyCount];
+	LOG(_debugText);
+	private _debugText = format ["Contested summary count units spent time: %1", (diag_tickTime -_debugTime) ];
+	LOG(_debugText);
 	[QGVAR(EH_contestedUpdate), [_newStatus, _enemyCount, _enemyCountMin, _FriendlyCount]] call CBA_fnc_globalEvent;
 	[_newStatus, _enemyCount, _enemyCountMin, _FriendlyCount]
 };
@@ -99,7 +110,7 @@ if ( GVAR(status_east) ) then {
 		GVAR(friendlyCountEast) = _FriendlyCount;
 
 		missionNamespace setVariable [QGVAR(contested_east), _newStatus, true];
-		_msp  setVariable [QGVAR(isContested), _newStatus, true];
+		_msp setVariable [QGVAR(isContested), _newStatus, true];
 	};
 };
 
@@ -126,7 +137,7 @@ if ( GVAR(status_west) ) then {
 		GVAR(friendlyCountWest) = _FriendlyCount;
 
 		missionNamespace setVariable [QGVAR(contested_west), _newStatus, true];
-		_msp  setVariable [QGVAR(isContested), _newStatus, true];
+		_msp setVariable [QGVAR(isContested), _newStatus, true];
 	};
 };
 
@@ -153,7 +164,7 @@ if ( GVAR(status_guer) ) then {
 		GVAR(friendlyCountGuer) = _FriendlyCount;
 
 		missionNamespace setVariable [QGVAR(contested_guer), _newStatus, true];
-		_msp  setVariable [QGVAR(isContested), _newStatus, true];
+		_msp setVariable [QGVAR(isContested), _newStatus, true];
 	};
 };
 
@@ -179,9 +190,6 @@ if ( GVAR(status_civ) ) then {
 		GVAR(friendlyCountCiv) = _FriendlyCount;
 
 		missionNamespace setVariable [QGVAR(contested_civ), _newStatus, true];
-		_msp  setVariable [QGVAR(isContested), _newStatus, true];
+		_msp setVariable [QGVAR(isContested), _newStatus, true];
 	};
 };
-
-private _debugText = format ["Contested timer end: %1", round cba_missiontime];
-LOG(_debugText);

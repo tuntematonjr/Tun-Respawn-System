@@ -57,4 +57,4 @@ if (_update) then {
 };
 
 //Forsce players to update markers
-[_update] remoteExecCall [QGVAR(marker_update), [0, -2] select isServer, false];
+[_update] remoteExecCall [QFUNC(marker_update), [0, -2] select isServer, false];

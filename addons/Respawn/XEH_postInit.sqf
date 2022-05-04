@@ -49,8 +49,6 @@ if (isServer) then {
 
 		if (cba_missiontime > (GVAR(killJIP_time) * 60) && GVAR(killJIP)) then {
 			GVAR(disconnected_players) pushBackUnique _uid;
-			private _debugText = format ["Player %1 disconnected. Added %2 to list. Full list: %3", _name, _uid, GVAR(disconnected_players)];
-			LOG(_debugText);
 		};
 	}];
 
