@@ -87,8 +87,7 @@ switch (_markername) do {
 };
 
 //Create base ace action for flagpoles
-private _action = ["Tun_baseAction", "Respawn Actions","",{ }, { true }, nil, nil, [0,-0.35,-2.4]] call ace_interact_menu_fnc_createAction;
-[_flag, 0, [], _action] call ace_interact_menu_fnc_addActionToObject;
+[_flag] remoteExecCall [QFUNC(createFlagActionBase), _side, true];
 
 // Add tp action
 private _conditio =  "count (missionNamespace getVariable ['tun_respawn_teleportPoints', []]) > 1" ;

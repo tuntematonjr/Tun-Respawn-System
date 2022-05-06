@@ -193,3 +193,6 @@ if ( GVAR(status_civ) ) then {
 		_msp setVariable [QGVAR(isContested), _newStatus, true];
 	};
 };
+
+private _debugText = format ["Contested summary end time: %1", diag_tickTime];
+LOG(_debugText);
