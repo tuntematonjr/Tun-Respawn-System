@@ -1,0 +1,19 @@
+name: HEMTT
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  hemtt:
+    name: HEMTT
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Setup HEMTT
+      uses: arma-actions/hemtt@v1
+
+    - name: Build
+      run: hemtt build
