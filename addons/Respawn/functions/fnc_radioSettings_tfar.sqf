@@ -22,6 +22,7 @@ private _fnc_saveSWSettings = {
     if (_unit != player) exitWith {};
     player setVariable [QGVAR(swSettings),(call TFAR_fnc_activeSwRadio) call TFAR_fnc_getSwSettings];
 };
+
 {[_x,_fnc_saveSWSettings] call CBA_fnc_addEventHandler} forEach [
     "TFAR_event_OnSWchannelSet",
     "TFAR_event_OnSWstereoSet",
@@ -33,9 +34,14 @@ private _fnc_saveSWSettings = {
 // same for longrange
 private _fnc_saveLRSettings = {
     params ["_unit"];
+
     if (_unit != player) exitWith {};
-    player setVariable [QGVAR(lrSettings),(call TFAR_fnc_activeLrRadio) call TFAR_fnc_getLrSettings];
+    [{
+        player setVariable [QGVAR(lrSettings),(call TFAR_fnc_activeLrRadio) call TFAR_fnc_getLrSettings];
+    }] call CBA_fnc_execNextFrame;
+    
 };
+
 {[_x,_fnc_saveLRSettings] call CBA_fnc_addEventHandler} forEach [
     "TFAR_event_OnLRchannelSet",
     "TFAR_event_OnLRstereoSet",
