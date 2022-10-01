@@ -3,8 +3,8 @@
 
 #define MAJOR 1
 #define MINOR 6
-#define PATCHLVL 3
-#define BUILD 06052022
+#define PATCHLVL 4
+#define BUILD 01102022
 
 #define VERSION MAJOR.MINOR.PATCHLVL.BUILD
 #define VERSION_AR MAJOR,MINOR,PATCHLVL,BUILD
@@ -14,7 +14,7 @@
 
 #define DEBUG_MODE_FULL
 
-#include "\x\cba\addons\main\script_macros_common.hpp"
+#include "\z\ace\addons\main\script_macros.hpp"
 
 // Default versioning level
 #define DEFAULT_VERSIONING_LEVEL 2
