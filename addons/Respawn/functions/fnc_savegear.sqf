@@ -25,6 +25,7 @@ _googles = goggles player;
 _primaryWeapon = primaryWeapon player;
 _secondaryWeapon = secondaryWeapon player;
 _handGunWeapon = handGunWeapon player;
+_binocularWeapon = binoculars player;
 
 _uniformItems = uniformItems player;
 _vestItems = vestItems player;
@@ -32,7 +33,8 @@ _backPackItems = backPackItems player;
 _primaryWeaponItems = primaryWeaponItems player + primaryWeaponMagazine player;
 _secondaryWeaponItems = secondaryWeaponItems player + secondaryWeaponMagazine player;
 _handGunItems = handgunItems player + handgunMagazine player;
+_binocularItems = binocularItems player + binocularMagazine player;
 
 _assignedItems= assignedItems player;
 
-player setVariable [QGVAR(savedgear), [_uniform, _vest, _headGear, _backPack, _googles, _primaryWeapon, _secondaryWeapon, _handGunWeapon, _uniformItems, _vestItems, _backPackItems, _primaryWeaponItems, _secondaryWeaponItems, _handGunItems, _assignedItems]];
+player setVariable [QGVAR(savedgear), [_uniform, _vest, _headGear, _backPack, _googles, _primaryWeapon, _secondaryWeapon, _handGunWeapon, _binocularWeapon, _uniformItems, _vestItems, _backPackItems, _primaryWeaponItems, _secondaryWeaponItems, _handGunItems, _binocularItems, _assignedItems]];

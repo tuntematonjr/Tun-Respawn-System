@@ -17,7 +17,7 @@
 //if not using gearscript
 private  _var = player getVariable QGVAR(savedgear);
 
-_var params ["_uniform", "_vest", "_headGear", "_backPack", "_googles", "_primaryWeapon", "_secondaryWeapon", "_handGunWeapon", "_uniformItems", "_vestItems", "_backPackItems", "_primaryWeaponItems", "_secondaryWeaponItems", "_handGunItems", "_assignedItems"];
+_var params ["_uniform", "_vest", "_headGear", "_backPack", "_googles", "_primaryWeapon", "_secondaryWeapon", "_handGunWeapon", "_binocularWeapon", "_uniformItems", "_vestItems", "_backPackItems", "_primaryWeaponItems", "_secondaryWeaponItems", "_handGunItems", "_binocularItems", "_assignedItems"];
 
 removeUniform player;
 removeVest player;
@@ -79,6 +79,24 @@ if (_handGunWeapon != "") then {
 			player addHandgunItem _x;
 		};
 	} forEach _handGunItems;
+};
+
+if (_binocularWeapon != "") then {
+	player addWeapon _binocularWeapon;
+
+	//to make sure container is empty
+	{
+		if (_x != "") then {
+			player removeBinocularItem _x;
+		};
+	} forEach (binocularItems player + binocularMagazine player);
+
+	//add original stuff
+	{
+		if (_x != "") then {
+			player addBinocularItem _x;
+		};
+	} forEach _binocularItems;
 };
 
 if (count _assignedItems > 0) then {
