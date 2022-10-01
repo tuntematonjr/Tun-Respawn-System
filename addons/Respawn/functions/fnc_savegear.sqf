@@ -25,7 +25,7 @@ _googles = goggles player;
 _primaryWeapon = primaryWeapon player;
 _secondaryWeapon = secondaryWeapon player;
 _handGunWeapon = handGunWeapon player;
-_binocularWeapon = binoculars player;
+_binocularWeapon = binocular player;
 
 _uniformItems = uniformItems player;
 _vestItems = vestItems player;
