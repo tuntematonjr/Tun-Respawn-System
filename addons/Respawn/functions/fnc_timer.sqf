@@ -56,7 +56,9 @@ switch (_side) do {
 if !( _side in GVAR(timer_running) ) then {
 	GVAR(timer_running) pushBack _side;
 	[{ missionNamespace getVariable (_this select 2) && { cba_missiontime >= missionNamespace getVariable (_this select 1) } }, {
-
+		if (Tun_MSP_enable) then {
+			[] call Tun_MSP_fnc_contestedCheck;
+		};
 		private _side = _this select 0;
 		REM(GVAR(timer_running), _side);
 		[_side] call FUNC(moveRespawns);
