@@ -18,8 +18,6 @@
 
 [{cba_missiontime > GVAR(contested_check_interval)}, {
     [{
-        private _debugText = format ["Contested timer start: %1", round cba_missiontime];
-        LOG(_debugText);
         if !(GVAR(disableContestedCheck)) then {
             [] call FUNC(contestedCheck);
         };

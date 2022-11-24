@@ -12,8 +12,6 @@
  */
 #include "script_component.hpp"
 
-private _debugTime = diag_tickTime;
-
 private _countestedRangeMax = GVAR(contested_radius_max);
 private _countestedRangeMin = GVAR(contested_radius_min);
 	
@@ -58,6 +56,3 @@ if ( GVAR(status_civ) && { (GVAR(vehicle_civ) != objNull) } ) then {
 };
 
 [] call FUNC(contestedSummary);
-
-private _debugText = format ["Contested check spent time: %1", (diag_tickTime -_debugTime) ];
-LOG(_debugText);

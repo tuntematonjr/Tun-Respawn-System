@@ -28,13 +28,9 @@ if !(_skip) then {
 	FILTER(_unitList,(!isnull _x && _x in allPlayers && alive _x ));
 	
 	if (_addPlayer) then {
-		
 		_unitList pushBackUnique _player;
-		private _debugText = format ["Player %1 added to waiting respawn list. Unit count in that list is: %2. Side: %3", _player, count _unitList, _side];
-		LOG(_debugText);
 	} else {
 		_unitList deleteAt (_unitList find _player);
-		private _debugText = format ["Player %1 remowed from waiting respawn list. Unit count in that list is: %2. Side: %3", _player, count _unitList, _side];
 	};
 
 	switch (_side) do {
