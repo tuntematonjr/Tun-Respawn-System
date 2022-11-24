@@ -2,8 +2,6 @@
 if !(GVAR(enable)) exitWith { INFO("TUN Respawn Disabled"); };
 INFO("TUN Respawn Enabled");
 
-//GVAR(respawn_type) = ["default", "Sidetickets"] select GVAR(respawn_type_cba);
-
 
 if (hasInterface) then {
 	[{!isNull player}, {
@@ -42,18 +40,30 @@ if (hasInterface) then {
 };
 
 if (isServer) then {
-	// if player disconnect add its uid to list so when he come back. No ticket is used. Only used if Kill jip is enabled
-	addMissionEventHandler ["PlayerDisconnected", {
-		if (GVAR(respawn_type) == "default") exitWith { };
-		params ["_id", "_uid", "_name", "_jip", "_owner"];
 
-		if (cba_missiontime > (GVAR(killJIP_time) * 60) && GVAR(killJIP)) then {
-			GVAR(disconnected_players) pushBackUnique _uid;
-		};
-	}];
+	if (GVAR(respawn_type) isEqualTo localize "STR_Tun_Respawn_Type_Playertickets") then {
+		GVAR(PlayerTicektsHash) = createHashMap;
+		GVAR(tickets_west), GVAR(tickets_east), GVAR(tickets_guer), GVAR(tickets_civ);
+		AAR_UPDATE("west","Player tickets", GVAR(tickets_west));
+		AAR_UPDATE("east","Player tickets", GVAR(tickets_east));
+		AAR_UPDATE("guer","Player tickets", GVAR(tickets_guer));
+		AAR_UPDATE("civ","Player tickets", GVAR(tickets_civ));
+	};
+
+	if (GVAR(respawn_type) isNotEqualTo localize "STR_Tun_Respawn_Type_Default") then {
+		// if player disconnect add its uid to list so when he come back. No ticket is used. Only used if Kill jip is enabled
+		addMissionEventHandler ["PlayerDisconnected", {
+			if (GVAR(respawn_type) == "default") exitWith { };
+			params ["_id", "_uid", "_name", "_jip", "_owner"];
+
+			if (cba_missiontime > (GVAR(killJIP_time) * 60) && GVAR(killJIP)) then {
+				GVAR(disconnected_players) pushBackUnique _uid;
+			};
+		}];
+	};
 
 	//clean bodies during briefing && safestart
-	_cleanbodiesEH = addMissionEventHandler ["HandleDisconnect", {
+	addMissionEventHandler ["HandleDisconnect", {
 		params ["_unit", "_id", "_uid", "_name"];
 		if (cba_missiontime < (GVAR(killJIP_time) * 60) || missionNamespace getVariable [QGVAR(waiting_respawn),false]) then {
 			deleteVehicle _unit;
@@ -61,9 +71,15 @@ if (isServer) then {
 		false;
 	}];
 
-
 	//AAR times
 	[{cba_missiontime > 10}, {
+		if (GVAR(respawn_type) isEqualTo localize "STR_Tun_Respawn_Type_Sidetickets") then {
+			AAR_UPDATE("west","Side tickets", GVAR(tickets_west));
+			AAR_UPDATE("east","Side tickets", GVAR(tickets_east));
+			AAR_UPDATE("guer","Side tickets", GVAR(tickets_guer));
+			AAR_UPDATE("civ","Side tickets", GVAR(tickets_civ));
+		};
+
 		if (missionNamespace getVariable ["afi_aar2", false]) then {
 			[{
 
