@@ -7,7 +7,7 @@
  * 0: Side <SIDE>
  *
  * Return Value:
- * The return value <BOOL>
+ * The return true when done <BOOL>
  *
  * Example:
  * ["side"] call Tun_Respawn_fnc_moveRespawns
@@ -142,3 +142,5 @@ if (count _waitingRespawn > 0) then {
 		missionNamespace setVariable [_delayedUnitListVarName, [], true];
 	};
 };
+
+true

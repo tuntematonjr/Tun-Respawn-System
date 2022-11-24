@@ -3,20 +3,16 @@
  * [Description]
  *
  * Arguments:
- * 0: The first argument <STRING>
- * 1: The second argument <OBJECT>
- * 2: Multiple input types <STRING|ARRAY|CODE>
- * 3: Optional input <BOOL> (default: true)
- * 4: Optional input with multiple types <CODE|STRING> (default: {true})
- * 5: Not mandatory input <STRING> (default: nil)
+ * 0: Unit who to teleport <OBJECT>
+ * 1: Coordinates where to TP <[ARRAY]>
+ * 2: Text shown <STRING>
+ * 3: Spread Range <NUMBER>
  *
  * Return Value:
- * The return value <BOOL>
+ * The return true when done <BOOL>
  *
  * Example:
  * [_unit, _destination, _text, _range] call Tun_Respawn_fnc_teleport
- *
- * Public: [Yes/No]
  */
 #include "script_component.hpp"
 
@@ -31,3 +27,5 @@ params [["_unit", objNull, [objNull]],
 _unit setPos ([_destination, _range] call CBA_fnc_randPos);
 
 [QGVAR(EH_unitTeleported), [_unit, _destination]] call CBA_fnc_serverEvent;
+
+true

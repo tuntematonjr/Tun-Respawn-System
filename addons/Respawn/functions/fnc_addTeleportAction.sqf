@@ -1,22 +1,20 @@
 ﻿/*
  * Author: [Tuntematon]
  * [Description]
+ * Add action to TP object
  *
  * Arguments:
- * 0: The first argument <STRING>
- * 1: The second argument <OBJECT>
- * 2: Multiple input types <STRING|ARRAY|CODE>
- * 3: Optional input <BOOL> (default: true)
- * 4: Optional input with multiple types <CODE|STRING> (default: {true})
- * 5: Not mandatory input <STRING> (default: nil)
+ * 0: Obj where to add TP action <OBJECT>
+ * 1: Condition when it is enabled <STRING>
+ * 2: Use ace or vanilla action (true is ace) <BOOL>
+ * 3: Action point offset for ace <ARRAY>
+ * 4: ACE action parrent path <STRING>
  *
  * Return Value:
- * The return value <BOOL>
+ * The return true when done <BOOL>
  *
  * Example:
- * ["something", player] call Tun_Respawn_fnc_addTeleportAction
- *
- * Public: [Yes/No]
+ * _flag, true, nil, ["Tun_baseAction"] call Tun_Respawn_fnc_addTeleportAction
  */
 #include "script_component.hpp"
 params ["_obj", "_menuOpenConditio", "_useAceAction", "_offset", "_parrenPath"];
@@ -43,3 +41,5 @@ if (_useAceAction) then {
 	_statement,
 	[_obj, _menuOpenConditio, _offset, _parrenPath]
 ] call CBA_fnc_waitUntilAndExecute;
+
+true

@@ -7,10 +7,10 @@
  * 0: Logic <OBJECT>
  *
  * Return Value:
- * The return value <BOOL>
+ * The return true when done <BOOL>
  *
  * Example:
- * [_logic] call Tun_Respawn_fnc_module_respawnpos
+ * [Logic] call Tun_Respawn_fnc_module_respawnpos
  */
 #include "script_component.hpp"
 

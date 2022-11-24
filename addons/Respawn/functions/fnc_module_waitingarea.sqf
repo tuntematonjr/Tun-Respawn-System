@@ -7,10 +7,10 @@
  * 0: Logic <OBJECT>
  *
  * Return Value:
- * The return value <BOOL>
+ * The return true when done <BOOL>
  *
  * Example:
- * ["something", player] call Tun_Respawn_fnc_module_waitingarea
+ * [Logic] call Tun_Respawn_fnc_module_waitingarea
  */
 #include "script_component.hpp"
 

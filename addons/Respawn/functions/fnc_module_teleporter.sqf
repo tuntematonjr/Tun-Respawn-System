@@ -3,13 +3,13 @@
  * [Description]
  *
  * Arguments:
- * None
+ * 0: Logic <OBJECT>
  *
  * Return Value:
- * None
+ * The return true when done <BOOL>
  *
  * Example:
- * [] call Tun_Respawn_fnc_module_teleporter
+ * [Logic]call Tun_Respawn_fnc_module_teleporter
  */
 #include "script_component.hpp"
 
@@ -56,3 +56,5 @@ if (hasInterface) then {
 		] call CBA_fnc_waitUntilAndExecute;
 	};
 };
+
+true
