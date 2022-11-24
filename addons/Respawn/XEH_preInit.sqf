@@ -79,7 +79,7 @@ ISNILS(GVAR(endRespawns),false);
     "LIST", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
     ["Respawn Type", "STR_Tun_Respawn_CBA_tooltip_respawntypes" call BIS_fnc_localize], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
     ["STR_Tun_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_Tun_Respawn_CBA_Category_generic" call BIS_fnc_localize], // Category for the settings menu + optional sub-category <STRING, ARRAY>
-    [["default", "Sidetickets"], ["default", "Sidetickets"], 0], // Extra properties of the setting depending of _settingType.
+    [[localize "STR_Tun_Respawn_Type_Default", localize "STR_Tun_Respawn_Type_Sidetickets", localize "STR_Tun_Respawn_Type_Playertickets"], [localize "STR_Tun_Respawn_Type_Default", localize "STR_Tun_Respawn_Type_Sidetickets", localize "STR_Tun_Respawn_Type_Playertickets"], 0], // Extra properties of the setting depending of _settingType.
     1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
     {}, // Script to execute when setting is changed. (optional) <CODE>
     true //Setting will be marked as needing mission restart after being changed. (optional, default false) <BOOL>
