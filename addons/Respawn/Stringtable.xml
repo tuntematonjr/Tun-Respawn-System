@@ -39,16 +39,16 @@
         <German>Enable kill JIP system</German>
       </Key>
       <Key ID="STR_Tun_Respawn_CBA_tooltip_ticket">
-        <Original>Ticket count for side</Original>
-        <English>Ticket count for side</English>
-        <Czech>Ticket count for side</Czech>
-        <French>Ticket count for side</French>
-        <Spanish>Ticket count for side</Spanish>
-        <Italian>Ticket count for side</Italian>
-        <Polish>Ticket count for side</Polish>
-        <Portuguese>Ticket count for side</Portuguese>
-        <Russian>Ticket count for side</Russian>
-        <German>Ticket count for side</German>
+        <Original>Ticket count for either for whole side or each player in that side.</Original>
+        <English>Ticket count for either for whole side or each player in that side.</English>
+        <Czech>Ticket count for either for whole side or each player in that side.</Czech>
+        <French>Ticket count for either for whole side or each player in that side.</French>
+        <Spanish>Ticket count for either for whole side or each player in that side.</Spanish>
+        <Italian>Ticket count for either for whole side or each player in that side.</Italian>
+        <Polish>Ticket count for either for whole side or each player in that side.</Polish>
+        <Portuguese>Ticket count for either for whole side or each player in that side.</Portuguese>
+        <Russian>Ticket count for either for whole side or each player in that side.</Russian>
+        <German>Ticket count for either for whole side or each player in that side.</German>
       </Key>
       <Key ID="STR_Tun_Respawn_CBA_tooltip_gearscript">
         <Original>"SQF Gearscript": Needs two variables set "Tun_Respawn_Role" which works as parameter and "Tun_Respawn_GearPath" which is filepath.        "Potato Tool": just calls its own function        "Save gear": Load same loadout which is saved at mission start or it can be updated during mission using Tun_Respawn_fnc_savegear function.</Original>
@@ -63,16 +63,16 @@
         <German>"SQF Gearscript": Needs two variables set "Tun_Respawn_Role" which works as parameter and "Tun_Respawn_GearPath" which is filepath.        "Potato Tool": just calls its own function        "Save gear": Load same loadout which is saved at mission start or it can be updated during mission using Tun_Respawn_fnc_savegear function.</German>
       </Key>
       <Key ID="STR_Tun_Respawn_CBA_tooltip_respawntypes">
-        <Original>"default" : Endless waves. "Sidetickets": Side tickets</Original>
-        <English>"default" : Endless waves. "Sidetickets": Side tickets</English>
-        <Czech>"default" : Endless waves. "Sidetickets": Side tickets</Czech>
-        <French>"default" : Endless waves. "Sidetickets": Side tickets</French>
-        <Spanish>"default" : Endless waves. "Sidetickets": Side tickets</Spanish>
-        <Italian>"default" : Endless waves. "Sidetickets": Side tickets</Italian>
-        <Polish>"default" : Endless waves. "Sidetickets": Side tickets</Polish>
-        <Portuguese>"default" : Endless waves. "Sidetickets": Side tickets</Portuguese>
-        <Russian>"default" : Endless waves. "Sidetickets": Side tickets</Russian>
-        <German>"default" : Endless waves. "Sidetickets": Side tickets</German>
+        <Original>"Default" : Endless waves. "Side tickets": Side shares ticket pool. . "Player tickets": Each player has own ticket pool</Original>
+        <English>"Default" : Endless waves. "Side tickets": Side shares ticket pool. . "Player tickets": Each player has own ticket pool</English>
+        <Czech>"Default" : Endless waves. "Side tickets": Side shares ticket pool. . "Player tickets": Each player has own ticket pool</Czech>
+        <French>"Default" : Endless waves. "Side tickets": Side shares ticket pool. . "Player tickets": Each player has own ticket pool</French>
+        <Spanish>"Default" : Endless waves. "Side tickets": Side shares ticket pool. . "Player tickets": Each player has own ticket pool</Spanish>
+        <Italian>"Default" : Endless waves. "Side tickets": Side shares ticket pool. . "Player tickets": Each player has own ticket pool</Italian>
+        <Polish>"Default" : Endless waves. "Side tickets": Side shares ticket pool. . "Player tickets": Each player has own ticket pool</Polish>
+        <Portuguese>"Default" : Endless waves. "Side tickets": Side shares ticket pool. . "Player tickets": Each player has own ticket pool</Portuguese>
+        <Russian>"Default" : Endless waves. "Side tickets": Side shares ticket pool. . "Player tickets": Each player has own ticket pool</Russian>
+        <German>"Default" : Endless waves. "Side tickets": Side shares ticket pool. . "Player tickets": Each player has own ticket pool</German>
       </Key>
       <Key ID="STR_Tun_Respawn_CBA_tooltip_specta_modes">
         <Original>Enable this cameramode for spectators</Original>
@@ -293,16 +293,16 @@
         <German>Mission is using only forced waves.</German>
       </Key>
       <Key ID="STR_Tun_Respawn_RemainingTicketsText">
-        <Original>Remaining tickets</Original>
-        <English>Remaining tickets</English>
-        <Czech>Remaining tickets</Czech>
-        <French>Remaining tickets</French>
-        <Spanish>Remaining tickets</Spanish>
-        <Italian>Remaining tickets</Italian>
-        <Polish>Remaining tickets</Polish>
-        <Portuguese>Remaining tickets</Portuguese>
-        <Russian>Remaining tickets</Russian>
-        <German>Remaining tickets</German>
+        <Original>Remaining ticket count is:</Original>
+        <English>Remaining ticket count is:</English>
+        <Czech>Remaining ticket count is:</Czech>
+        <French>Remaining ticket count is:</French>
+        <Spanish>Remaining ticket count is:</Spanish>
+        <Italian>Remaining ticket count is:</Italian>
+        <Polish>Remaining ticket count is:</Polish>
+        <Portuguese>Remaining ticket count is:</Portuguese>
+        <Russian>Remaining ticket count is:</Russian>
+        <German>Remaining ticket count is:</German>
       </Key>
       <Key ID="STR_Tun_Respawn_CheckTickets">
         <Original>Check remaining tickets</Original>
@@ -819,6 +819,44 @@
         <Portuguese>Show civilian data to all</Portuguese>
         <Russian>Show civilian data to all</Russian>
         <German>Show civilian data to all</German>
+      </Key>
+    </Container>
+    <Container name="respawn types">
+      <Key ID="STR_Tun_Respawn_Type_Default">
+        <Original>Default</Original>
+        <English>Default</English>
+        <Czech>Default</Czech>
+        <French>Default</French>
+        <Spanish>Default</Spanish>
+        <Italian>Default</Italian>
+        <Polish>Default</Polish>
+        <Portuguese>Default</Portuguese>
+        <Russian>Default</Russian>
+        <German>Default</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Type_Sidetickets">
+        <Original>Side tickets</Original>
+        <English>Side tickets</English>
+        <Czech>Side tickets</Czech>
+        <French>Side tickets</French>
+        <Spanish>Side tickets</Spanish>
+        <Italian>Side tickets</Italian>
+        <Polish>Side tickets</Polish>
+        <Portuguese>Side tickets</Portuguese>
+        <Russian>Side tickets</Russian>
+        <German>Side tickets</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Type_Playertickets">
+        <Original>Player tickets</Original>
+        <English>Player tickets</English>
+        <Czech>Player tickets</Czech>
+        <French>Player tickets</French>
+        <Spanish>Player tickets</Spanish>
+        <Italian>Player tickets</Italian>
+        <Polish>Player tickets</Polish>
+        <Portuguese>Player tickets</Portuguese>
+        <Russian>Player tickets</Russian>
+        <German>Player tickets</German>
       </Key>
     </Container>
   </Package>
