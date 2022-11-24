@@ -17,76 +17,22 @@
 params ["_side","_player"];
 if (!isServer) exitWith { };
 
-switch (toLower str _side) do {
-	case "west": {
-		if ( GVAR(tickets_west) > 0 ) then {
-			//if player disconnected and came back. So no ticket wasted.
-			if (getPlayerUID _player in GVAR(disconnected_players)) then {
-				REM(GVAR(disconnected_players), (getPlayerUID _player));
-			} else {
-				DEC(GVAR(tickets_west));
-				AAR_UPDATE("west","Side tickets", GVAR(tickets_west));
-				publicVariable QGVAR(tickets_west);
-			};
+//if player disconnected and came back. So no ticket wasted.
+if (getPlayerUID _player in GVAR(disconnected_players)) exitWith {
+	REM(GVAR(disconnected_players), (getPlayerUID _player));
+	[5] remoteExecCall ["setPlayerRespawnTime", _player];
+};
 
-			[5] remoteExecCall ["setPlayerRespawnTime", _player];
-		} else {
-			remoteExecCall [QFUNC(startSpectator), _player];
-		};
-	};
+private _sideNum = [west, east, resistance, civilian] findIf { _side isEqualTo _x };
+private _remainingTicketsVar = [QGVAR(tickets_west), QGVAR(tickets_east), QGVAR(tickets_guer), QGVAR(tickets_civ)] select _sideNum;
+private _remainingTickets = missionNamespace getVariable _remainingTicketsVar;
 
-	case "east": {
-		if ( GVAR(tickets_east) > 0 ) then {
-			//if player disconnected and came back. So no ticket wasted.
-			if (getPlayerUID _player in GVAR(disconnected_players)) then {
-				REM(GVAR(disconnected_players), (getPlayerUID _player));
-			} else {
-				DEC(GVAR(tickets_east));
-				AAR_UPDATE("east","Side tickets", GVAR(tickets_east));
-				publicVariable QGVAR(tickets_east);
-			};
-
-			[5] remoteExecCall ["setPlayerRespawnTime", _player];
-		} else {
-			remoteExecCall [QFUNC(startSpectator), _player];
-		};
-	};
-
-	case "guer": {
-		if ( GVAR(tickets_guer) > 0 ) then {
-			//if player disconnected and came back. So no ticket wasted.
-			if (getPlayerUID _player in GVAR(disconnected_players)) then {
-				REM(GVAR(disconnected_players), (getPlayerUID _player));
-			} else {
-				DEC(GVAR(tickets_guer));
-				AAR_UPDATE("guer","Side tickets", GVAR(tickets_guer));
-				publicVariable QGVAR(tickets_guer);
-			};
-
-			[5] remoteExecCall ["setPlayerRespawnTime", _player];
-		} else {
-			remoteExecCall [QFUNC(startSpectator), _player];
-		};
-	};
-
-	case "civ": {
-		if ( GVAR(tickets_civ) > 0 ) then {
-			//if player disconnected and came back. So no ticket wasted.
-			if (getPlayerUID _player in GVAR(disconnected_players)) then {
-				REM(GVAR(disconnected_players), (getPlayerUID _player));
-			} else {
-				DEC(GVAR(tickets_civ));
-				AAR_UPDATE("civ","Side tickets", GVAR(tickets_civ));
-				publicVariable QGVAR(tickets_civ);
-			};
-
-			[5] remoteExecCall ["setPlayerRespawnTime", _player];
-		} else {
-			remoteExecCall [QFUNC(startSpectator), _player];
-		};
-	};
-
-	default {
-		systemChat "Side ticket error";
-	};
+if ( _remainingTickets > 0 ) then {
+	DEC(_remainingTickets);
+	private _sideSTR = str  _side;
+	AAR_UPDATE(_sideSTR,"Side tickets", _remainingTickets);
+	missionNamespace setVariable [_remainingTicketsVar, _remainingTickets, true];
+	[5] remoteExecCall ["setPlayerRespawnTime", _player];
+} else {
+	[{remoteExecCall [QFUNC(startSpectator), _this];}, _player, 5] call CBA_fnc_waitAndExecute;
 };

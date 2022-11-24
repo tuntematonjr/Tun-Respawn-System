@@ -66,9 +66,10 @@ switch (playerSide) do {
 	[_text,0,0,1,0] spawn BIS_fnc_dynamicText;
 
 	//make sure that player is still in area
-	if !(player inArea [_respawn_waitingarea, GVAR(waiting_area_range), GVAR(waiting_area_range), 0, false]) then {
-		player setPos ([_respawn_waitingarea, (GVAR(waiting_area_range) / 2)] call CBA_fnc_randPos);
-		hint "Get over here!";
+	private _waitingRange = GVAR(waiting_area_range);
+	if !(player inArea [_respawn_waitingarea, _waitingRange, _waitingRange, 0, false]) then {
+		player setPos ([_respawn_waitingarea, (_waitingRange / 2)] call CBA_fnc_randPos);
+		"Get over here!" call CBA_fnc_notify;
 	};
 
 }, 1, _respawn_waitingarea] call CBA_fnc_addPerFrameHandler;
