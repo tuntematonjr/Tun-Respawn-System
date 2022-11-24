@@ -19,17 +19,7 @@ params ["_msp", "_setup"];
 
 private _side = _msp getVariable QGVAR(side);
 private _msp_var = objNull;
-private _whoToNotify = [];
-if (GVAR(setupNotification) isEqualTo 0) then {
-	{
-		private _group = _x;
-		if (side _group isEqualTo _side) then {
-			_whoToNotify pushBack leader _group;
-		};
-	} forEach allGroups;
-} else {
-	_whoToNotify = [_side];
-};
+private _whoToNotify = [_side] call FUNC(whoToNotify);
 
 AAR_UPDATE(_msp,"Is active MSP", _setup);
 

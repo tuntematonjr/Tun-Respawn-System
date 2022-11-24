@@ -30,13 +30,9 @@ _countingUnits = {
 
 			private _count = _testSide countSide _nearUnitsMin;
 			ADD(_enemyCountMin, _count);
-			private _debugText = format ["Enemy count add: %1 [%3] (%2)",_count, _testSide, _enemyCountMin];
-			LOG(_debugText);
 		} else {
 			private _count = _testSide countSide _nearUnits;
 			ADD(_FriendlyCount, _count);
-			private _debugText = format ["Friendly count add: %1 (%2)",_count, _testSide];
-			LOG(_debugText);
 		};
 	} forEach [west, east, resistance, civilian];
 
@@ -47,17 +43,7 @@ _countingUnits = {
 	AAR_UPDATE(_msp, "Friendly Count", _FriendlyCount);
 	
 	//Notification
-	private _whoToNotify = [];
-	if (GVAR(contestedNotification) isEqualTo 0) then {
-		{
-			private _group = _x;
-			if (side _group isEqualTo _side) then {
-				_whoToNotify pushBack leader _group;
-			};
-		} forEach allGroups;
-	} else {
-		_whoToNotify = [_side];
-	};
+	private _whoToNotify = [_side] call FUNC(whoToNotify);
 
 	//if there is more enemis in max range or even one in min range. Disable MSP
 	if ( _enemyCount > _FriendlyCount || _enemyCountMin > 0 ) then {
@@ -65,6 +51,7 @@ _countingUnits = {
 		if !(_status) then {
 			if (count _whoToNotify > 0 ) then {
 				(call compile ("STR_Tun_MSP_FNC_Contested_hint" call BIS_fnc_localize)) remoteExecCall ["CBA_fnc_notify", _whoToNotify];
+				LOG(_whoToNotify);
 			};
 			[_side, false] call TUN_respawn_fnc_update_respawn_point;
 			AAR_UPDATE(_msp,"Is contested", true);
@@ -73,6 +60,7 @@ _countingUnits = {
 		if ( _status ) then {
 			if (count _whoToNotify > 0 ) then {
 				(call compile ("STR_Tun_MSP_FNC_secured_hint" call BIS_fnc_localize)) remoteExecCall ["CBA_fnc_notify", _whoToNotify];
+				LOG(_whoToNotify);
 			};
 			[_side, true, (getPos _msp) ] call TUN_respawn_fnc_update_respawn_point;
 			AAR_UPDATE(_msp,"Is contested", false);
@@ -193,6 +181,3 @@ if ( GVAR(status_civ) ) then {
 		_msp setVariable [QGVAR(isContested), _newStatus, true];
 	};
 };
-
-private _debugText = format ["Contested summary end time: %1", diag_tickTime];
-LOG(_debugText);

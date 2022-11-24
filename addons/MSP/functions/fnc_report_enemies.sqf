@@ -20,17 +20,7 @@
 params ["_status", "_msp", "_side"];
 
 //Notification
-private _whoToNotify = [];
-if (GVAR(reportEnemiesNotification) isEqualTo 0) then {
-	{
-		private _group = _x;
-		if (side _group isEqualTo _side) then {
-			_whoToNotify pushBack leader _group;
-		};
-	} forEach allGroups;
-} else {
-	_whoToNotify = [_side];
-};
+private _whoToNotify = [_side] call FUNC(whoToNotify);
 
 //Notify if enemies near
 if ( _status ) then {
