@@ -6,7 +6,7 @@
  * Arguments:
  * 0: The first argument <SIDE>
  * Return Value:
- * Returns remaining tickets <NUMBER>
+ * None
  *
  * Example:
  * [west] call Tun_Respawn_fnc_checkTicketCount
@@ -15,16 +15,17 @@
 if (isDedicated) exitWith { };
 params [["_side", nil, [west]]];
 
-
-private _ticetCount = switch (_side) do {
-	case west: { GVAR(tickets_west) };
-	case east: { GVAR(tickets_east) };
-	case resistance: { GVAR(tickets_guer) };
-	case civilian: { GVAR(tickets_civ) };
-	default { "No side" };
+if (GVAR(respawn_type) isEqualTo localize "STR_Tun_Respawn_Type_Sidetickets")  then {
+	_ticetCount = switch (_side) do {
+		case west: { GVAR(tickets_west) };
+		case east: { GVAR(tickets_east) };
+		case resistance: { GVAR(tickets_guer) };
+		case civilian: { GVAR(tickets_civ) };
+		default { "No side" };
+	};
+	_text = format["%1 %2","STR_Tun_Respawn_RemainingTicketsText" call BIS_fnc_localize, _ticetCount];
+	_text call CBA_fnc_notify;
+} else {
+	[playerSide, player, true] remoteExecCall [QFUNC(getTicketCountPlayer),2];
 };
 
-private _text = format["%1 %3: %2","STR_Tun_Respawn_RemainingTicketsText" call BIS_fnc_localize, _ticetCount, _side];
-_text call CBA_fnc_notify;
-
-_ticetCount
