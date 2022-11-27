@@ -26,25 +26,24 @@
 
     if (GVAR(report_enemies)) then {
         [{
-            if ( GVAR(status_east) ) then {
-                private _status = (GVAR(enemyCountEast) <= GVAR(friendlyCountEast) && GVAR(enemyCountEast) > 0 );
-                [_status, GVAR(vehicle_east), east] call FUNC(report_enemies);
-            };
+            private _hash = GVAR(contestedCheckHash);
+            {
+                _x params ["_side", "_isContested", "_status"];
+                if (_status) then {
+                    private _enemyCount = (_hash get _side) select 0;
+                    if (_enemyCount > 0 && !_isContested) then {
+                        private _whoToNotify = [_side] call FUNC(whoToNotify);
+                        if (count _whoToNotify > 0 ) then {
+                            ("STR_Tun_MSP_FNC_enemies_near" call BIS_fnc_localize) remoteExecCall ["CBA_fnc_notify", _whoToNotify];
+                        };
+                    }; 
+                };
 
-            if ( GVAR(status_west) ) then {
-                private _status = (GVAR(enemyCountWest) <= GVAR(friendlyCountWest) && GVAR(enemyCountWest) > 0 );
-                [_status, GVAR(vehicle_west), west] call FUNC(report_enemies);
-            };
-
-            if ( GVAR(status_guer) ) then {
-                private _status = (GVAR(enemyCountGuer) <= GVAR(friendlyCountGuer) && GVAR(enemyCountGuer) > 0 );
-                [_status, GVAR(vehicle_guer), resistance] call FUNC(report_enemies);
-            };
-
-            if ( GVAR(status_civ) ) then {
-                private _status = (GVAR(enemyCountCiv) <= GVAR(friendlyCountCiv) && GVAR(enemyCountCiv) > 0 );
-                [_status, GVAR(vehicle_civ), civilian] call FUNC(report_enemies);
-            };
+            } forEach [
+                [west, GVAR(contested_west), GVAR(status_west)],
+                [east, GVAR(contested_east), GVAR(contested_east)],
+                [resistance, GVAR(contested_east), GVAR(contested_east)],
+                [civilian, GVAR(contested_east), GVAR(contested_east)]];
         }, GVAR(report_enemies_interval), []] call CBA_fnc_addPerFrameHandler;
     };
 }] call CBA_fnc_waitUntilAndExecute;

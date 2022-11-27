@@ -14,7 +14,7 @@
  */
 #include "script_component.hpp"
 params ["_side", ["_forceAll", false, [false]]];
-private ["_respawn_position", "_respawn_waitingarea", "_respawn_gearPath"];
+private ["_respawn_waitingarea", "_respawn_gearPath"];
 
 if (!isServer) exitWith { };
 
@@ -22,10 +22,10 @@ private _waitingRespawnDelayedInRespawn = [];
 private _totalRespawnCount = 0;
 private _unitListVarName = "";
 private _delayedUnitListVarName = "";
-
+private _hash = GVAR(respawnPointsHash);
+private _respawn_position = getMarkerPos ((_hash get _side) select 0);
 switch (_side) do {
 	case west: {
-		_respawn_position = getMarkerPos (GVAR(respawnpos_west) select 0);
 		_respawn_waitingarea = getpos (GVAR(waitingarea_west) select 1);
 		_waitingRespawnDelayedInRespawn = GVAR(waitingRespawnWest);
 		_totalRespawnCount = GVAR(totalRespawnCountWest);
@@ -34,7 +34,6 @@ switch (_side) do {
 	};
 
 	case east: {
-		_respawn_position = getMarkerPos (GVAR(respawnpos_east) select 0);
 		_respawn_waitingarea = getpos (GVAR(waitingarea_east) select 1);
 		_totalRespawnCount = GVAR(totalRespawnCountEast);
 		_unitListVarName = QGVAR(waitingRespawnEast);
@@ -42,7 +41,6 @@ switch (_side) do {
 	};
 
 	case resistance: {
-		_respawn_position = getMarkerPos (GVAR(respawnpos_guer) select 0);
 		_respawn_waitingarea = getpos (GVAR(waitingarea_guer) select 1);
 		_totalRespawnCount = GVAR(totalRespawnCountGuer);
 		_unitListVarName = QGVAR(waitingRespawnGuer);
@@ -50,7 +48,6 @@ switch (_side) do {
 	};
 
 	case civilian: {
-		_respawn_position = getMarkerPos (GVAR(respawnpos_civ) select 0);
 		_respawn_waitingarea = getpos (GVAR(waitingarea_civ) select 1);
 		_totalRespawnCount = GVAR(totalRespawnCountCiv);
 		_unitListVarName = QGVAR(waitingRespawnCiv);
@@ -61,6 +58,8 @@ switch (_side) do {
 		ERROR_MSG("Move respawn FNC missing side param!");
 	};
 };
+
+
 
 private _waitingRespawn = missionNamespace getVariable _unitListVarName;
 private _waitingRespawnDelayed = missionNamespace getVariable _delayedUnitListVarName;

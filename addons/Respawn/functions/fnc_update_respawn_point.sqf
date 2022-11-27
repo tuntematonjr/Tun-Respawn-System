@@ -4,7 +4,7 @@
  *
  * Arguments:
  * 0: Side <SIDE>
- * 1: False: Rertur to original pos. True: Update to module pos <BOOL> (default: false)
+ * 1: False: Rertur to original pos. True: Update to new given pos <BOOL> (default: false)
  * 2: New position <ARRAY> (default: [0,0,0])
  *
  * Return Value:
@@ -15,46 +15,20 @@
  */
 #include "script_component.hpp"
 
-params [["_side", nil, [west]], ["_update", false, [true]], ["_new_pos", [0,0,0], [[]]]];
+params [["_side", nil, [west]], ["_update", false, [true]], ["_newPos", [0,0,0], [[]]]];
 
 if (!isServer) exitWith { };
 
-_value = switch (_side) do {
-	case west: {
-		GVAR(respawnpos_west);
-	};
+private _value = GVAR(respawnPointsHash) get _side;
 
-	case east: {
-		GVAR(respawnpos_east);
-	};
+private _marker = _value select 0;
+private _originalPos = _value select 1;
 
-	case resistance: {
-		GVAR(respawnpos_guer);
-	};
-
-	case civilian: {
-		GVAR(respawnpos_civ);
-	};
-
-	default {
-		nil;
-	};
+if (_newPos isEqualTo [0,0,0] || !_update) then {
+	_newPos = _originalPos;
 };
 
-_marker = _value select 0;
-_originalpos = _value select 2;
-
-if (_new_pos isequalto [0,0,0]) then {
-	_new_pos = _originalpos;
-};
-
-_marker setMarkerAlpha 0;
-
-if (_update) then {
-	_marker setMarkerPos _new_pos;
-} else {
-	_marker setMarkerPos _originalpos;
-};
+_marker setMarkerPos _newPos;
 
 //Forsce players to update markers
-[_update] remoteExecCall [QFUNC(marker_update), [0, -2] select isServer, false];
+[] remoteExecCall [QFUNC(marker_update), -2, false];
