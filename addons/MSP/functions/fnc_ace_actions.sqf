@@ -80,13 +80,13 @@ _chekTime = ["Check Respawn Time", "Check Respawn Time", "", _timer_action, _tim
 	private _tp_conditionText = " private _msp = missionNamespace getVariable ['%1', objNull]; private _status = _msp getVariable ['tun_msp_isContested', false]; (_target != _msp && _obj getVariable ['tun_msp_isMSP', false] && !_status) ";
 
 	_tp_condition = format [_tp_conditionText, _variable];
-	[_entity, _tp_condition, "STR_Tun_MSP_TpText" call BIS_fnc_localize, false, nil, [playerSide], true, _menu_condition] call Tun_Respawn_fnc_addCustomTeleporter;
+	[_entity, _tp_condition, "STR_Tun_MSP_TpText" call BIS_fnc_localize, false, nil, [playerSide], true, _menu_condition, false] call Tun_Respawn_fnc_addCustomTeleporter;
 
 }, false, [], true] call CBA_fnc_addClassEventHandler;
 
 if (GVAR(allowCheckTicketsMSP)) then {
 	_remaining_action = {
-		[playerSide] call FUNC(checkTicketCount);
+		[playerSide] call EFUNC(respawn,checkTicketCount);
 	};
 	_remaining_condition = { alive _target && {_target getVariable QGVAR(side) == playerSide}};
 	_remainingTickets = ["STR_Tun_Respawn_CheckTickets" call BIS_fnc_localize, "STR_Tun_Respawn_CheckTickets" call BIS_fnc_localize, "", _remaining_action, _remaining_condition] call ace_interact_menu_fnc_createAction;

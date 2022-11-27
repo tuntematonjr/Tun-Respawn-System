@@ -44,7 +44,6 @@
                 case GVAR(clasnames_east): { east };
                 case GVAR(clasnames_resistance): { resistance };
                 case GVAR(clasnames_civilian): { civilian };
-                default { };
             };
 
             _entity setVariable [QGVAR(side), _side, true];

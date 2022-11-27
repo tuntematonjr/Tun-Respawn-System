@@ -1,0 +1,1617 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="Tun Respawn">
+  <Package name="Respawn">
+    <Container name="CBA Settings">
+      <Key ID="STR_Tun_Respawn_CBA_tooltip_time">
+        <Original>Time between respawn waves (minutes)</Original>
+        <English>Time between respawn waves (minutes)</English>
+        <Czech>Time between respawn waves (minutes)</Czech>
+        <French>Time between respawn waves (minutes)</French>
+        <Spanish>Time between respawn waves (minutes)</Spanish>
+        <Italian>Time between respawn waves (minutes)</Italian>
+        <Polish>Time between respawn waves (minutes)</Polish>
+        <Portuguese>Time between respawn waves (minutes)</Portuguese>
+        <Russian>Time between respawn waves (minutes)</Russian>
+        <German>Time between respawn waves (minutes)</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_tooltip_killjip_time">
+        <Original>Time after JIP are killed and moved to respawn (minutes)</Original>
+        <English>Time after JIP are killed and moved to respawn (minutes)</English>
+        <Czech>Time after JIP are killed and moved to respawn (minutes)</Czech>
+        <French>Time after JIP are killed and moved to respawn (minutes)</French>
+        <Spanish>Time after JIP are killed and moved to respawn (minutes)</Spanish>
+        <Italian>Time after JIP are killed and moved to respawn (minutes)</Italian>
+        <Polish>Time after JIP are killed and moved to respawn (minutes)</Polish>
+        <Portuguese>Time after JIP are killed and moved to respawn (minutes)</Portuguese>
+        <Russian>Time after JIP are killed and moved to respawn (minutes)</Russian>
+        <German>Time after JIP are killed and moved to respawn (minutes)</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_tooltip_killjip">
+        <Original>Enable kill JIP system</Original>
+        <English>Enable kill JIP system</English>
+        <Czech>Enable kill JIP system</Czech>
+        <French>Enable kill JIP system</French>
+        <Spanish>Enable kill JIP system</Spanish>
+        <Italian>Enable kill JIP system</Italian>
+        <Polish>Enable kill JIP system</Polish>
+        <Portuguese>Enable kill JIP system</Portuguese>
+        <Russian>Enable kill JIP system</Russian>
+        <German>Enable kill JIP system</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_tooltip_ticket">
+        <Original>Ticket count for either for whole side or each player in that side.</Original>
+        <English>Ticket count for either for whole side or each player in that side.</English>
+        <Czech>Ticket count for either for whole side or each player in that side.</Czech>
+        <French>Ticket count for either for whole side or each player in that side.</French>
+        <Spanish>Ticket count for either for whole side or each player in that side.</Spanish>
+        <Italian>Ticket count for either for whole side or each player in that side.</Italian>
+        <Polish>Ticket count for either for whole side or each player in that side.</Polish>
+        <Portuguese>Ticket count for either for whole side or each player in that side.</Portuguese>
+        <Russian>Ticket count for either for whole side or each player in that side.</Russian>
+        <German>Ticket count for either for whole side or each player in that side.</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_tooltip_gearscript">
+        <Original>"SQF Gearscript": Needs two variables set "Tun_Respawn_Role" which works as parameter and "Tun_Respawn_GearPath" which is filepath.        "Potato Tool": just calls its own function        "Save gear": Load same loadout which is saved at mission start or it can be updated during mission using Tun_Respawn_fnc_savegear function.</Original>
+        <English>"SQF Gearscript": Needs two variables set "Tun_Respawn_Role" which works as parameter and "Tun_Respawn_GearPath" which is filepath.        "Potato Tool": just calls its own function        "Save gear": Load same loadout which is saved at mission start or it can be updated during mission using Tun_Respawn_fnc_savegear function.</English>
+        <Czech>"SQF Gearscript": Needs two variables set "Tun_Respawn_Role" which works as parameter and "Tun_Respawn_GearPath" which is filepath.        "Potato Tool": just calls its own function        "Save gear": Load same loadout which is saved at mission start or it can be updated during mission using Tun_Respawn_fnc_savegear function.</Czech>
+        <French>"SQF Gearscript": Needs two variables set "Tun_Respawn_Role" which works as parameter and "Tun_Respawn_GearPath" which is filepath.        "Potato Tool": just calls its own function        "Save gear": Load same loadout which is saved at mission start or it can be updated during mission using Tun_Respawn_fnc_savegear function.</French>
+        <Spanish>"SQF Gearscript": Needs two variables set "Tun_Respawn_Role" which works as parameter and "Tun_Respawn_GearPath" which is filepath.        "Potato Tool": just calls its own function        "Save gear": Load same loadout which is saved at mission start or it can be updated during mission using Tun_Respawn_fnc_savegear function.</Spanish>
+        <Italian>"SQF Gearscript": Needs two variables set "Tun_Respawn_Role" which works as parameter and "Tun_Respawn_GearPath" which is filepath.        "Potato Tool": just calls its own function        "Save gear": Load same loadout which is saved at mission start or it can be updated during mission using Tun_Respawn_fnc_savegear function.</Italian>
+        <Polish>"SQF Gearscript": Needs two variables set "Tun_Respawn_Role" which works as parameter and "Tun_Respawn_GearPath" which is filepath.        "Potato Tool": just calls its own function        "Save gear": Load same loadout which is saved at mission start or it can be updated during mission using Tun_Respawn_fnc_savegear function.</Polish>
+        <Portuguese>"SQF Gearscript": Needs two variables set "Tun_Respawn_Role" which works as parameter and "Tun_Respawn_GearPath" which is filepath.        "Potato Tool": just calls its own function        "Save gear": Load same loadout which is saved at mission start or it can be updated during mission using Tun_Respawn_fnc_savegear function.</Portuguese>
+        <Russian>"SQF Gearscript": Needs two variables set "Tun_Respawn_Role" which works as parameter and "Tun_Respawn_GearPath" which is filepath.        "Potato Tool": just calls its own function        "Save gear": Load same loadout which is saved at mission start or it can be updated during mission using Tun_Respawn_fnc_savegear function.</Russian>
+        <German>"SQF Gearscript": Needs two variables set "Tun_Respawn_Role" which works as parameter and "Tun_Respawn_GearPath" which is filepath.        "Potato Tool": just calls its own function        "Save gear": Load same loadout which is saved at mission start or it can be updated during mission using Tun_Respawn_fnc_savegear function.</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_tooltip_respawntypes">
+        <Original>"Default" : Endless waves. "Side tickets": Side shares ticket pool. . "Player tickets": Each player has own ticket pool</Original>
+        <English>"Default" : Endless waves. "Side tickets": Side shares ticket pool. . "Player tickets": Each player has own ticket pool</English>
+        <Czech>"Default" : Endless waves. "Side tickets": Side shares ticket pool. . "Player tickets": Each player has own ticket pool</Czech>
+        <French>"Default" : Endless waves. "Side tickets": Side shares ticket pool. . "Player tickets": Each player has own ticket pool</French>
+        <Spanish>"Default" : Endless waves. "Side tickets": Side shares ticket pool. . "Player tickets": Each player has own ticket pool</Spanish>
+        <Italian>"Default" : Endless waves. "Side tickets": Side shares ticket pool. . "Player tickets": Each player has own ticket pool</Italian>
+        <Polish>"Default" : Endless waves. "Side tickets": Side shares ticket pool. . "Player tickets": Each player has own ticket pool</Polish>
+        <Portuguese>"Default" : Endless waves. "Side tickets": Side shares ticket pool. . "Player tickets": Each player has own ticket pool</Portuguese>
+        <Russian>"Default" : Endless waves. "Side tickets": Side shares ticket pool. . "Player tickets": Each player has own ticket pool</Russian>
+        <German>"Default" : Endless waves. "Side tickets": Side shares ticket pool. . "Player tickets": Each player has own ticket pool</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_tooltip_specta_modes">
+        <Original>Enable this cameramode for spectators</Original>
+        <English>Enable this cameramode for spectators</English>
+        <Czech>Enable this cameramode for spectators</Czech>
+        <French>Enable this cameramode for spectators</French>
+        <Spanish>Enable this cameramode for spectators</Spanish>
+        <Italian>Enable this cameramode for spectators</Italian>
+        <Polish>Enable this cameramode for spectators</Polish>
+        <Portuguese>Enable this cameramode for spectators</Portuguese>
+        <Russian>Enable this cameramode for spectators</Russian>
+        <German>Enable this cameramode for spectators</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_Category_main">
+        <Original>TUN - Respawn System</Original>
+        <English>TUN - Respawn System</English>
+        <Czech>TUN - Respawn System</Czech>
+        <French>TUN - Respawn System</French>
+        <Spanish>TUN - Respawn System</Spanish>
+        <Italian>TUN - Respawn System</Italian>
+        <Polish>TUN - Respawn System</Polish>
+        <Portuguese>TUN - Respawn System</Portuguese>
+        <Russian>TUN - Respawn System</Russian>
+        <German>TUN - Respawn System</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_Category_Briefing">
+        <Original>Briefing notes</Original>
+        <English>Briefing notes</English>
+        <Czech>Briefing notes</Czech>
+        <French>Briefing notes</French>
+        <Spanish>Briefing notes</Spanish>
+        <Italian>Briefing notes</Italian>
+        <Polish>Briefing notes</Polish>
+        <Portuguese>Briefing notes</Portuguese>
+        <Russian>Briefing notes</Russian>
+        <German>Briefing notes</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_Category_time">
+        <Original>Wave times</Original>
+        <English>Wave times</English>
+        <Czech>Wave times</Czech>
+        <French>Wave times</French>
+        <Spanish>Wave times</Spanish>
+        <Italian>Wave times</Italian>
+        <Polish>Wave times</Polish>
+        <Portuguese>Wave times</Portuguese>
+        <Russian>Wave times</Russian>
+        <German>Wave times</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_Category_checkTickets">
+        <Original>Check tickets</Original>
+        <English>Check tickets</English>
+        <Czech>Check tickets</Czech>
+        <French>Check tickets</French>
+        <Spanish>Check tickets</Spanish>
+        <Italian>Check tickets</Italian>
+        <Polish>Check tickets</Polish>
+        <Portuguese>Check tickets</Portuguese>
+        <Russian>Check tickets</Russian>
+        <German>Check tickets</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_Category_spectate_cameramode">
+        <Original>Spectator camera modes</Original>
+        <English>Spectator camera modes</English>
+        <Czech>Spectator camera modes</Czech>
+        <French>Spectator camera modes</French>
+        <Spanish>Spectator camera modes</Spanish>
+        <Italian>Spectator camera modes</Italian>
+        <Polish>Spectator camera modes</Polish>
+        <Portuguese>Spectator camera modes</Portuguese>
+        <Russian>Spectator camera modes</Russian>
+        <German>Spectator camera modes</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_Category_ticketcount">
+        <Original>Tickets</Original>
+        <English>Tickets</English>
+        <Czech>Tickets</Czech>
+        <French>Tickets</French>
+        <Spanish>Tickets</Spanish>
+        <Italian>Tickets</Italian>
+        <Polish>Tickets</Polish>
+        <Portuguese>Tickets</Portuguese>
+        <Russian>Tickets</Russian>
+        <German>Tickets</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_Category_generic">
+        <Original>Main Settings</Original>
+        <English>Main Settings</English>
+        <Czech>Main Settings</Czech>
+        <French>Main Settings</French>
+        <Spanish>Main Settings</Spanish>
+        <Italian>Main Settings</Italian>
+        <Polish>Main Settings</Polish>
+        <Portuguese>Main Settings</Portuguese>
+        <Russian>Main Settings</Russian>
+        <German>Main Settings</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_Enable">
+        <Original>Enable Respawn System</Original>
+        <English>Enable Respawn System</English>
+        <Czech>Enable Respawn System</Czech>
+        <French>Enable Respawn System</French>
+        <Spanish>Enable Respawn System</Spanish>
+        <Italian>Enable Respawn System</Italian>
+        <Polish>Enable Respawn System</Polish>
+        <Portuguese>Enable Respawn System</Portuguese>
+        <Russian>Enable Respawn System</Russian>
+        <German>Enable Respawn System</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_tooltip_Enable">
+        <Original>Enable Respawn System for mission.</Original>
+        <English>Enable Respawn System for mission.</English>
+        <Czech>Enable Respawn System for mission.</Czech>
+        <French>Enable Respawn System for mission.</French>
+        <Spanish>Enable Respawn System for mission.</Spanish>
+        <Italian>Enable Respawn System for mission.</Italian>
+        <Polish>Enable Respawn System for mission.</Polish>
+        <Portuguese>Enable Respawn System for mission.</Portuguese>
+        <Russian>Enable Respawn System for mission.</Russian>
+        <German>Enable Respawn System for mission.</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_tooltip_CheckTickets">
+        <Original>Allow checking remaining tickets from this place</Original>
+        <English>Allow checking remaining tickets from this place</English>
+        <Czech>Allow checking remaining tickets from this place</Czech>
+        <French>Allow checking remaining tickets from this place</French>
+        <Spanish>Allow checking remaining tickets from this place</Spanish>
+        <Italian>Allow checking remaining tickets from this place</Italian>
+        <Polish>Allow checking remaining tickets from this place</Polish>
+        <Portuguese>Allow checking remaining tickets from this place</Portuguese>
+        <Russian>Allow checking remaining tickets from this place</Russian>
+        <German>Allow checking remaining tickets from this place</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_tooltip_forceRespawn">
+        <Original>Only forced respawn waves. No timer!</Original>
+        <English>Only forced respawn waves. No timer!</English>
+        <Czech>Only forced respawn waves. No timer!</Czech>
+        <French>Only forced respawn waves. No timer!</French>
+        <Spanish>Only forced respawn waves. No timer!</Spanish>
+        <Italian>Only forced respawn waves. No timer!</Italian>
+        <Polish>Only forced respawn waves. No timer!</Polish>
+        <Portuguese>Only forced respawn waves. No timer!</Portuguese>
+        <Russian>Only forced respawn waves. No timer!</Russian>
+        <German>Only forced respawn waves. No timer!</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_tooltip_delayed_respawn">
+        <Original>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20min and this is set to 50% and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</Original>
+        <English>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20min and this is set to 50% and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</English>
+        <Czech>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20min and this is set to 50% and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</Czech>
+        <French>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20min and this is set to 50% and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</French>
+        <Spanish>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20min and this is set to 50% and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</Spanish>
+        <Italian>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20min and this is set to 50% and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</Italian>
+        <Polish>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20min and this is set to 50% and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</Polish>
+        <Portuguese>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20min and this is set to 50% and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</Portuguese>
+        <Russian>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20min and this is set to 50% and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</Russian>
+        <German>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20min and this is set to 50% and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_tooltip_waiting_area_range">
+        <Original>Range for waitingarea. Default 100m</Original>
+        <English>Range for waitingarea. Default 100m</English>
+        <Czech>Range for waitingarea. Default 100m</Czech>
+        <French>Range for waitingarea. Default 100m</French>
+        <Spanish>Range for waitingarea. Default 100m</Spanish>
+        <Italian>Range for waitingarea. Default 100m</Italian>
+        <Polish>Range for waitingarea. Default 100m</Polish>
+        <Portuguese>Range for waitingarea. Default 100m</Portuguese>
+        <Russian>Range for waitingarea. Default 100m</Russian>
+        <German>Range for waitingarea. Default 100m</German>
+      </Key>
+    </Container>
+    <Container name="FNC">
+      <Key ID="STR_Tun_Respawn_FNC_moveRespawns">
+        <Original>You are respawning! Standby.</Original>
+        <English>You are respawning! Standby.</English>
+        <Czech>You are respawning! Standby.</Czech>
+        <French>You are respawning! Standby.</French>
+        <Spanish>You are respawning! Standby.</Spanish>
+        <Italian>You are respawning! Standby.</Italian>
+        <Polish>You are respawning! Standby.</Polish>
+        <Portuguese>You are respawning! Standby.</Portuguese>
+        <Russian>You are respawning! Standby.</Russian>
+        <German>You are respawning! Standby.</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_FNC_remaining_time">
+        <Original>Remaining time until respawn</Original>
+        <English>Remaining time until respawn</English>
+        <Czech>Remaining time until respawn</Czech>
+        <French>Remaining time until respawn</French>
+        <Spanish>Remaining time until respawn</Spanish>
+        <Italian>Remaining time until respawn</Italian>
+        <Polish>Remaining time until respawn</Polish>
+        <Portuguese>Remaining time until respawn</Portuguese>
+        <Russian>Remaining time until respawn</Russian>
+        <German>Remaining time until respawn</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_FNC_RespawnDisabled">
+        <Original>Respawn is currently disabled.</Original>
+        <English>Respawn is currently disabled.</English>
+        <Czech>Respawn is currently disabled.</Czech>
+        <French>Respawn is currently disabled.</French>
+        <Spanish>Respawn is currently disabled.</Spanish>
+        <Italian>Respawn is currently disabled.</Italian>
+        <Polish>Respawn is currently disabled.</Polish>
+        <Portuguese>Respawn is currently disabled.</Portuguese>
+        <Russian>Respawn is currently disabled.</Russian>
+        <German>Respawn is currently disabled.</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_FNC_only_forced_waves">
+        <Original>Mission is using only forced waves.</Original>
+        <English>Mission is using only forced waves.</English>
+        <Czech>Mission is using only forced waves.</Czech>
+        <French>Mission is using only forced waves.</French>
+        <Spanish>Mission is using only forced waves.</Spanish>
+        <Italian>Mission is using only forced waves.</Italian>
+        <Polish>Mission is using only forced waves.</Polish>
+        <Portuguese>Mission is using only forced waves.</Portuguese>
+        <Russian>Mission is using only forced waves.</Russian>
+        <German>Mission is using only forced waves.</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_RemainingTicketsText">
+        <Original>Remaining ticket count is:</Original>
+        <English>Remaining ticket count is:</English>
+        <Czech>Remaining ticket count is:</Czech>
+        <French>Remaining ticket count is:</French>
+        <Spanish>Remaining ticket count is:</Spanish>
+        <Italian>Remaining ticket count is:</Italian>
+        <Polish>Remaining ticket count is:</Polish>
+        <Portuguese>Remaining ticket count is:</Portuguese>
+        <Russian>Remaining ticket count is:</Russian>
+        <German>Remaining ticket count is:</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CheckTickets">
+        <Original>Check remaining tickets</Original>
+        <English>Check remaining tickets</English>
+        <Czech>Check remaining tickets</Czech>
+        <French>Check remaining tickets</French>
+        <Spanish>Check remaining tickets</Spanish>
+        <Italian>Check remaining tickets</Italian>
+        <Polish>Check remaining tickets</Polish>
+        <Portuguese>Check remaining tickets</Portuguese>
+        <Russian>Check remaining tickets</Russian>
+        <German>Check remaining tickets</German>
+      </Key>
+    </Container>
+    <Container name="Teleport">
+      <Key ID="STR_Tun_Respawn_Teleporting">
+        <Original>You are being teleported to:</Original>
+        <English>You are being teleported to:</English>
+        <Czech>You are being teleported to:</Czech>
+        <French>You are being teleported to:</French>
+        <Spanish>You are being teleported to:</Spanish>
+        <Italian>You are being teleported to:</Italian>
+        <Polish>You are being teleported to:</Polish>
+        <Portuguese>You are being teleported to:</Portuguese>
+        <Russian>You are being teleported to:</Russian>
+        <German>You are being teleported to:</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Teleport_Disabled">
+        <Original>This teleport point is disabled</Original>
+        <English>This teleport point is disabled</English>
+        <Czech>This teleport point is disabled</Czech>
+        <French>This teleport point is disabled</French>
+        <Spanish>This teleport point is disabled</Spanish>
+        <Italian>This teleport point is disabled</Italian>
+        <Polish>This teleport point is disabled</Polish>
+        <Portuguese>This teleport point is disabled</Portuguese>
+        <Russian>This teleport point is disabled</Russian>
+        <German>This teleport point is disabled</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_TeleportMenu">
+        <Original>Open teleportmenu</Original>
+        <English>Open teleportmenu</English>
+        <Czech>Open teleportmenu</Czech>
+        <French>Open teleportmenu</French>
+        <Spanish>Open teleportmenu</Spanish>
+        <Italian>Open teleportmenu</Italian>
+        <Polish>Open teleportmenu</Polish>
+        <Portuguese>Open teleportmenu</Portuguese>
+        <Russian>Open teleportmenu</Russian>
+        <German>Open teleportmenu</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_TeleportMenuVanilla">
+        <Original>&lt;t color='#FF0000'&gt;Open teleportmenu&lt;/t&gt;</Original>
+        <English>&lt;t color='#FF0000'&gt;Open teleportmenu&lt;/t&gt;</English>
+        <Czech>&lt;t color='#FF0000'&gt;Open teleportmenu&lt;/t&gt;</Czech>
+        <French>&lt;t color='#FF0000'&gt;Open teleportmenu&lt;/t&gt;</French>
+        <Spanish>&lt;t color='#FF0000'&gt;Open teleportmenu&lt;/t&gt;</Spanish>
+        <Italian>&lt;t color='#FF0000'&gt;Open teleportmenu&lt;/t&gt;</Italian>
+        <Polish>&lt;t color='#FF0000'&gt;Open teleportmenu&lt;/t&gt;</Polish>
+        <Portuguese>&lt;t color='#FF0000'&gt;Open teleportmenu&lt;/t&gt;</Portuguese>
+        <Russian>&lt;t color='#FF0000'&gt;Open teleportmenu&lt;/t&gt;</Russian>
+        <German>&lt;t color='#FF0000'&gt;Open teleportmenu&lt;/t&gt;</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_MainBaseText">
+        <Original>Main Base</Original>
+        <English>Main Base</English>
+        <Czech>Main Base</Czech>
+        <French>Main Base</French>
+        <Spanish>Main Base</Spanish>
+        <Italian>Main Base</Italian>
+        <Polish>Main Base</Polish>
+        <Portuguese>Main Base</Portuguese>
+        <Russian>Main Base</Russian>
+        <German>Main Base</German>
+      </Key>
+    </Container>
+    <Container name="Modules">
+      <Key ID="STR_Tun_Respawn_Module_Description_Spawn_Point">
+        <Original>Put this module where you want respawn point to be for this side.</Original>
+        <English>Put this module where you want respawn point to be for this side.</English>
+        <Czech>Put this module where you want respawn point to be for this side.</Czech>
+        <French>Put this module where you want respawn point to be for this side.</French>
+        <Spanish>Put this module where you want respawn point to be for this side.</Spanish>
+        <Italian>Put this module where you want respawn point to be for this side.</Italian>
+        <Polish>Put this module where you want respawn point to be for this side.</Polish>
+        <Portuguese>Put this module where you want respawn point to be for this side.</Portuguese>
+        <Russian>Put this module where you want respawn point to be for this side.</Russian>
+        <German>Put this module where you want respawn point to be for this side.</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Module_DisplayName_SpawnPoint">
+        <Original>Spawn Point</Original>
+        <English>Spawn Point</English>
+        <Czech>Spawn Point</Czech>
+        <French>Spawn Point</French>
+        <Spanish>Spawn Point</Spanish>
+        <Italian>Spawn Point</Italian>
+        <Polish>Spawn Point</Polish>
+        <Portuguese>Spawn Point</Portuguese>
+        <Russian>Spawn Point</Russian>
+        <German>Spawn Point</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Module_tooltip_SpawnPoint">
+        <Original>Choose side for this spawn point</Original>
+        <English>Choose side for this spawn point</English>
+        <Czech>Choose side for this spawn point</Czech>
+        <French>Choose side for this spawn point</French>
+        <Spanish>Choose side for this spawn point</Spanish>
+        <Italian>Choose side for this spawn point</Italian>
+        <Polish>Choose side for this spawn point</Polish>
+        <Portuguese>Choose side for this spawn point</Portuguese>
+        <Russian>Choose side for this spawn point</Russian>
+        <German>Choose side for this spawn point</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Module_category">
+        <Original>Tun Respawn</Original>
+        <English>Tun Respawn</English>
+        <Czech>Tun Respawn</Czech>
+        <French>Tun Respawn</French>
+        <Spanish>Tun Respawn</Spanish>
+        <Italian>Tun Respawn</Italian>
+        <Polish>Tun Respawn</Polish>
+        <Portuguese>Tun Respawn</Portuguese>
+        <Russian>Tun Respawn</Russian>
+        <German>Tun Respawn</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Module_RespanPos_novalue">
+        <Original>Respawn Position module do not have side set</Original>
+        <English>Respawn Position module do not have side set</English>
+        <Czech>Respawn Position module do not have side set</Czech>
+        <French>Respawn Position module do not have side set</French>
+        <Spanish>Respawn Position module do not have side set</Spanish>
+        <Italian>Respawn Position module do not have side set</Italian>
+        <Polish>Respawn Position module do not have side set</Polish>
+        <Portuguese>Respawn Position module do not have side set</Portuguese>
+        <Russian>Respawn Position module do not have side set</Russian>
+        <German>Respawn Position module do not have side set</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Module_RespanPos_MultipleMarkers">
+        <Original>There is already "%1" marker. You either have multiple respawn point modules with same settings or marker named that. Either way, remove it.</Original>
+        <English>There is already "%1" marker. You either have multiple respawn point modules with same settings or marker named that. Either way, remove it.</English>
+        <Czech>There is already "%1" marker. You either have multiple respawn point modules with same settings or marker named that. Either way, remove it.</Czech>
+        <French>There is already "%1" marker. You either have multiple respawn point modules with same settings or marker named that. Either way, remove it.</French>
+        <Spanish>There is already "%1" marker. You either have multiple respawn point modules with same settings or marker named that. Either way, remove it.</Spanish>
+        <Italian>There is already "%1" marker. You either have multiple respawn point modules with same settings or marker named that. Either way, remove it.</Italian>
+        <Polish>There is already "%1" marker. You either have multiple respawn point modules with same settings or marker named that. Either way, remove it.</Polish>
+        <Portuguese>There is already "%1" marker. You either have multiple respawn point modules with same settings or marker named that. Either way, remove it.</Portuguese>
+        <Russian>There is already "%1" marker. You either have multiple respawn point modules with same settings or marker named that. Either way, remove it.</Russian>
+        <German>There is already "%1" marker. You either have multiple respawn point modules with same settings or marker named that. Either way, remove it.</German>
+      </Key>
+    </Container>
+    <Container name="TP module">
+      <Key ID="STR_Tun_Respawn_Module_DisplayName_teleportPoint">
+        <Original>Teleport point</Original>
+        <English>Teleport point</English>
+        <Czech>Teleport point</Czech>
+        <French>Teleport point</French>
+        <Spanish>Teleport point</Spanish>
+        <Italian>Teleport point</Italian>
+        <Polish>Teleport point</Polish>
+        <Portuguese>Teleport point</Portuguese>
+        <Russian>Teleport point</Russian>
+        <German>Teleport point</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Module_Description_teleportPoint">
+        <Original>Teleport network point.</Original>
+        <English>Teleport network point.</English>
+        <Czech>Teleport network point.</Czech>
+        <French>Teleport network point.</French>
+        <Spanish>Teleport network point.</Spanish>
+        <Italian>Teleport network point.</Italian>
+        <Polish>Teleport network point.</Polish>
+        <Portuguese>Teleport network point.</Portuguese>
+        <Russian>Teleport network point.</Russian>
+        <German>Teleport network point.</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Module_tooltip_teleportMarkerIcone">
+        <Original>Marker icon, must be in non string format. Default: hd_start</Original>
+        <English>Marker icon, must be in non string format. Default: hd_start</English>
+        <Czech>Marker icon, must be in non string format. Default: hd_start</Czech>
+        <French>Marker icon, must be in non string format. Default: hd_start</French>
+        <Spanish>Marker icon, must be in non string format. Default: hd_start</Spanish>
+        <Italian>Marker icon, must be in non string format. Default: hd_start</Italian>
+        <Polish>Marker icon, must be in non string format. Default: hd_start</Polish>
+        <Portuguese>Marker icon, must be in non string format. Default: hd_start</Portuguese>
+        <Russian>Marker icon, must be in non string format. Default: hd_start</Russian>
+        <German>Marker icon, must be in non string format. Default: hd_start</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Module_tooltip_teleportCreateMarker">
+        <Original>Create marker for this teleport, for enabled sides.</Original>
+        <English>Create marker for this teleport, for enabled sides.</English>
+        <Czech>Create marker for this teleport, for enabled sides.</Czech>
+        <French>Create marker for this teleport, for enabled sides.</French>
+        <Spanish>Create marker for this teleport, for enabled sides.</Spanish>
+        <Italian>Create marker for this teleport, for enabled sides.</Italian>
+        <Polish>Create marker for this teleport, for enabled sides.</Polish>
+        <Portuguese>Create marker for this teleport, for enabled sides.</Portuguese>
+        <Russian>Create marker for this teleport, for enabled sides.</Russian>
+        <German>Create marker for this teleport, for enabled sides.</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Module_tooltip_teleportUseAceAction">
+        <Original>When enabled, will use ace interaction. Otherwise will use addaction.</Original>
+        <English>When enabled, will use ace interaction. Otherwise will use addaction.</English>
+        <Czech>When enabled, will use ace interaction. Otherwise will use addaction.</Czech>
+        <French>When enabled, will use ace interaction. Otherwise will use addaction.</French>
+        <Spanish>When enabled, will use ace interaction. Otherwise will use addaction.</Spanish>
+        <Italian>When enabled, will use ace interaction. Otherwise will use addaction.</Italian>
+        <Polish>When enabled, will use ace interaction. Otherwise will use addaction.</Polish>
+        <Portuguese>When enabled, will use ace interaction. Otherwise will use addaction.</Portuguese>
+        <Russian>When enabled, will use ace interaction. Otherwise will use addaction.</Russian>
+        <German>When enabled, will use ace interaction. Otherwise will use addaction.</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Module_tooltip_teleportName">
+        <Original>Name for teleport location</Original>
+        <English>Name for teleport location</English>
+        <Czech>Name for teleport location</Czech>
+        <French>Name for teleport location</French>
+        <Spanish>Name for teleport location</Spanish>
+        <Italian>Name for teleport location</Italian>
+        <Polish>Name for teleport location</Polish>
+        <Portuguese>Name for teleport location</Portuguese>
+        <Russian>Name for teleport location</Russian>
+        <German>Name for teleport location</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Module_tooltip_teleportMenuOpenConditio">
+        <Original>Condition to enable/disable opening teleport menu. Must return true or flase. Default: true</Original>
+        <English>Condition to enable/disable opening teleport menu. Must return true or flase. Default: true</English>
+        <Czech>Condition to enable/disable opening teleport menu. Must return true or flase. Default: true</Czech>
+        <French>Condition to enable/disable opening teleport menu. Must return true or flase. Default: true</French>
+        <Spanish>Condition to enable/disable opening teleport menu. Must return true or flase. Default: true</Spanish>
+        <Italian>Condition to enable/disable opening teleport menu. Must return true or flase. Default: true</Italian>
+        <Polish>Condition to enable/disable opening teleport menu. Must return true or flase. Default: true</Polish>
+        <Portuguese>Condition to enable/disable opening teleport menu. Must return true or flase. Default: true</Portuguese>
+        <Russian>Condition to enable/disable opening teleport menu. Must return true or flase. Default: true</Russian>
+        <German>Condition to enable/disable opening teleport menu. Must return true or flase. Default: true</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Module_tooltip_teleportConditio">
+        <Original>Conditio to enable/disable TP location. (Code) Default: True</Original>
+        <English>Conditio to enable/disable TP location. (Code) Default: True</English>
+        <Czech>Conditio to enable/disable TP location. (Code) Default: True</Czech>
+        <French>Conditio to enable/disable TP location. (Code) Default: True</French>
+        <Spanish>Conditio to enable/disable TP location. (Code) Default: True</Spanish>
+        <Italian>Conditio to enable/disable TP location. (Code) Default: True</Italian>
+        <Polish>Conditio to enable/disable TP location. (Code) Default: True</Polish>
+        <Portuguese>Conditio to enable/disable TP location. (Code) Default: True</Portuguese>
+        <Russian>Conditio to enable/disable TP location. (Code) Default: True</Russian>
+        <German>Conditio to enable/disable TP location. (Code) Default: True</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Module_tooltip_teleportEnableSides">
+        <Original>Is this side allowed to use this teleportter.</Original>
+        <English>Is this side allowed to use this teleportter.</English>
+        <Czech>Is this side allowed to use this teleportter.</Czech>
+        <French>Is this side allowed to use this teleportter.</French>
+        <Spanish>Is this side allowed to use this teleportter.</Spanish>
+        <Italian>Is this side allowed to use this teleportter.</Italian>
+        <Polish>Is this side allowed to use this teleportter.</Polish>
+        <Portuguese>Is this side allowed to use this teleportter.</Portuguese>
+        <Russian>Is this side allowed to use this teleportter.</Russian>
+        <German>Is this side allowed to use this teleportter.</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Module_tooltip_teleportPointOBJ">
+        <Original>Classname for object where action to teleport is. Non string format: Land_Sleeping_bag_blue_folded_F</Original>
+        <English>Classname for object where action to teleport is. Non string format: Land_Sleeping_bag_blue_folded_F</English>
+        <Czech>Classname for object where action to teleport is. Non string format: Land_Sleeping_bag_blue_folded_F</Czech>
+        <French>Classname for object where action to teleport is. Non string format: Land_Sleeping_bag_blue_folded_F</French>
+        <Spanish>Classname for object where action to teleport is. Non string format: Land_Sleeping_bag_blue_folded_F</Spanish>
+        <Italian>Classname for object where action to teleport is. Non string format: Land_Sleeping_bag_blue_folded_F</Italian>
+        <Polish>Classname for object where action to teleport is. Non string format: Land_Sleeping_bag_blue_folded_F</Polish>
+        <Portuguese>Classname for object where action to teleport is. Non string format: Land_Sleeping_bag_blue_folded_F</Portuguese>
+        <Russian>Classname for object where action to teleport is. Non string format: Land_Sleeping_bag_blue_folded_F</Russian>
+        <German>Classname for object where action to teleport is. Non string format: Land_Sleeping_bag_blue_folded_F</German>
+      </Key>
+    </Container>
+    <Container name="WaitingArea module">
+      <Key ID="STR_Tun_Respawn_Module_WaitingArea_MultipleMarkers">
+        <Original>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</Original>
+        <English>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</English>
+        <Czech>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</Czech>
+        <French>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</French>
+        <Spanish>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</Spanish>
+        <Italian>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</Italian>
+        <Polish>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</Polish>
+        <Portuguese>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</Portuguese>
+        <Russian>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</Russian>
+        <German>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Module_WaitingArea_novalue">
+        <Original>Waiting area module do not have side set</Original>
+        <English>Waiting area module do not have side set</English>
+        <Czech>Waiting area module do not have side set</Czech>
+        <French>Waiting area module do not have side set</French>
+        <Spanish>Waiting area module do not have side set</Spanish>
+        <Italian>Waiting area module do not have side set</Italian>
+        <Polish>Waiting area module do not have side set</Polish>
+        <Portuguese>Waiting area module do not have side set</Portuguese>
+        <Russian>Waiting area module do not have side set</Russian>
+        <German>Waiting area module do not have side set</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Module_DisplayName_WaitingArea">
+        <Original>Respawn Waiting Area</Original>
+        <English>Respawn Waiting Area</English>
+        <Czech>Respawn Waiting Area</Czech>
+        <French>Respawn Waiting Area</French>
+        <Spanish>Respawn Waiting Area</Spanish>
+        <Italian>Respawn Waiting Area</Italian>
+        <Polish>Respawn Waiting Area</Polish>
+        <Portuguese>Respawn Waiting Area</Portuguese>
+        <Russian>Respawn Waiting Area</Russian>
+        <German>Respawn Waiting Area</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Module_Description_Waitingarea">
+        <Original>Put this module where you want respawn waiting area to be for this side.</Original>
+        <English>Put this module where you want respawn waiting area to be for this side.</English>
+        <Czech>Put this module where you want respawn waiting area to be for this side.</Czech>
+        <French>Put this module where you want respawn waiting area to be for this side.</French>
+        <Spanish>Put this module where you want respawn waiting area to be for this side.</Spanish>
+        <Italian>Put this module where you want respawn waiting area to be for this side.</Italian>
+        <Polish>Put this module where you want respawn waiting area to be for this side.</Polish>
+        <Portuguese>Put this module where you want respawn waiting area to be for this side.</Portuguese>
+        <Russian>Put this module where you want respawn waiting area to be for this side.</Russian>
+        <German>Put this module where you want respawn waiting area to be for this side.</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Module_tooltip_WaitingArea">
+        <Original>Choose side for this waiting area</Original>
+        <English>Choose side for this waiting area</English>
+        <Czech>Choose side for this waiting area</Czech>
+        <French>Choose side for this waiting area</French>
+        <Spanish>Choose side for this waiting area</Spanish>
+        <Italian>Choose side for this waiting area</Italian>
+        <Polish>Choose side for this waiting area</Polish>
+        <Portuguese>Choose side for this waiting area</Portuguese>
+        <Russian>Choose side for this waiting area</Russian>
+        <German>Choose side for this waiting area</German>
+      </Key>
+    </Container>
+    <Container name="TP Dialog">
+      <Key ID="STR_Tun_Respawn_tp_dialog_header">
+        <Original>Teleport network</Original>
+        <English>Teleport network</English>
+        <Czech>Teleport network</Czech>
+        <French>Teleport network</French>
+        <Spanish>Teleport network</Spanish>
+        <Italian>Teleport network</Italian>
+        <Polish>Teleport network</Polish>
+        <Portuguese>Teleport network</Portuguese>
+        <Russian>Teleport network</Russian>
+        <German>Teleport network</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_tp_dialog_button">
+        <Original>Teleport</Original>
+        <English>Teleport</English>
+        <Czech>Teleport</Czech>
+        <French>Teleport</French>
+        <Spanish>Teleport</Spanish>
+        <Italian>Teleport</Italian>
+        <Polish>Teleport</Polish>
+        <Portuguese>Teleport</Portuguese>
+        <Russian>Teleport</Russian>
+        <German>Teleport</German>
+      </Key>
+    </Container>
+    <Container name="briefing">
+      <Key ID="STR_Tun_Respawn_CBA_Briefing_Enable_ShowTickets">
+        <Original>Show tickets</Original>
+        <English>Show tickets</English>
+        <Czech>Show tickets</Czech>
+        <French>Show tickets</French>
+        <Spanish>Show tickets</Spanish>
+        <Italian>Show tickets</Italian>
+        <Polish>Show tickets</Polish>
+        <Portuguese>Show tickets</Portuguese>
+        <Russian>Show tickets</Russian>
+        <German>Show tickets</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_Briefing_Enable">
+        <Original>Enable briefing notes</Original>
+        <English>Enable briefing notes</English>
+        <Czech>Enable briefing notes</Czech>
+        <French>Enable briefing notes</French>
+        <Spanish>Enable briefing notes</Spanish>
+        <Italian>Enable briefing notes</Italian>
+        <Polish>Enable briefing notes</Polish>
+        <Portuguese>Enable briefing notes</Portuguese>
+        <Russian>Enable briefing notes</Russian>
+        <German>Enable briefing notes</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_Briefing_Enable_tooltip">
+        <Original>Create briefing tab where all these settings are show.</Original>
+        <English>Create briefing tab where all these settings are show.</English>
+        <Czech>Create briefing tab where all these settings are show.</Czech>
+        <French>Create briefing tab where all these settings are show.</French>
+        <Spanish>Create briefing tab where all these settings are show.</Spanish>
+        <Italian>Create briefing tab where all these settings are show.</Italian>
+        <Polish>Create briefing tab where all these settings are show.</Polish>
+        <Portuguese>Create briefing tab where all these settings are show.</Portuguese>
+        <Russian>Create briefing tab where all these settings are show.</Russian>
+        <German>Create briefing tab where all these settings are show.</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_Briefing_Enable_ShowRespawType">
+        <Original>Show respawn type</Original>
+        <English>Show respawn type</English>
+        <Czech>Show respawn type</Czech>
+        <French>Show respawn type</French>
+        <Spanish>Show respawn type</Spanish>
+        <Italian>Show respawn type</Italian>
+        <Polish>Show respawn type</Polish>
+        <Portuguese>Show respawn type</Portuguese>
+        <Russian>Show respawn type</Russian>
+        <German>Show respawn type</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_Briefing_Enable_ShowTime">
+        <Original>Show respawn wave time</Original>
+        <English>Show respawn wave time</English>
+        <Czech>Show respawn wave time</Czech>
+        <French>Show respawn wave time</French>
+        <Spanish>Show respawn wave time</Spanish>
+        <Italian>Show respawn wave time</Italian>
+        <Polish>Show respawn wave time</Polish>
+        <Portuguese>Show respawn wave time</Portuguese>
+        <Russian>Show respawn wave time</Russian>
+        <German>Show respawn wave time</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_Briefing_Enable_ShowTime_tooltip">
+        <Original>When enabled, wave interval time will be shown in briefing notes.</Original>
+        <English>When enabled, wave interval time will be shown in briefing notes.</English>
+        <Czech>When enabled, wave interval time will be shown in briefing notes.</Czech>
+        <French>When enabled, wave interval time will be shown in briefing notes.</French>
+        <Spanish>When enabled, wave interval time will be shown in briefing notes.</Spanish>
+        <Italian>When enabled, wave interval time will be shown in briefing notes.</Italian>
+        <Polish>When enabled, wave interval time will be shown in briefing notes.</Polish>
+        <Portuguese>When enabled, wave interval time will be shown in briefing notes.</Portuguese>
+        <Russian>When enabled, wave interval time will be shown in briefing notes.</Russian>
+        <German>When enabled, wave interval time will be shown in briefing notes.</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_Briefing_Enable_ShowTickets_tooltip">
+        <Original>When enabled, starting ticket count will be shown in briefing notes.</Original>
+        <English>When enabled, starting ticket count will be shown in briefing notes.</English>
+        <Czech>When enabled, starting ticket count will be shown in briefing notes.</Czech>
+        <French>When enabled, starting ticket count will be shown in briefing notes.</French>
+        <Spanish>When enabled, starting ticket count will be shown in briefing notes.</Spanish>
+        <Italian>When enabled, starting ticket count will be shown in briefing notes.</Italian>
+        <Polish>When enabled, starting ticket count will be shown in briefing notes.</Polish>
+        <Portuguese>When enabled, starting ticket count will be shown in briefing notes.</Portuguese>
+        <Russian>When enabled, starting ticket count will be shown in briefing notes.</Russian>
+        <German>When enabled, starting ticket count will be shown in briefing notes.</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_Briefing_Enable_ShowRespawType_tooltip">
+        <Original>When enabled, respawn type will be shown in briefing notes.</Original>
+        <English>When enabled, respawn type will be shown in briefing notes.</English>
+        <Czech>When enabled, respawn type will be shown in briefing notes.</Czech>
+        <French>When enabled, respawn type will be shown in briefing notes.</French>
+        <Spanish>When enabled, respawn type will be shown in briefing notes.</Spanish>
+        <Italian>When enabled, respawn type will be shown in briefing notes.</Italian>
+        <Polish>When enabled, respawn type will be shown in briefing notes.</Polish>
+        <Portuguese>When enabled, respawn type will be shown in briefing notes.</Portuguese>
+        <Russian>When enabled, respawn type will be shown in briefing notes.</Russian>
+        <German>When enabled, respawn type will be shown in briefing notes.</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_Briefing_Enable_ShowOtherSidesData_tooltip">
+        <Original>Show this side for all. Own side is aways shown, if show tickets is enabled. Also it that is disabled, none of the sides tickets are shown.</Original>
+        <English>Show this side for all. Own side is aways shown, if show tickets is enabled. Also it that is disabled, none of the sides tickets are shown.</English>
+        <Czech>Show this side for all. Own side is aways shown, if show tickets is enabled. Also it that is disabled, none of the sides tickets are shown.</Czech>
+        <French>Show this side for all. Own side is aways shown, if show tickets is enabled. Also it that is disabled, none of the sides tickets are shown.</French>
+        <Spanish>Show this side for all. Own side is aways shown, if show tickets is enabled. Also it that is disabled, none of the sides tickets are shown.</Spanish>
+        <Italian>Show this side for all. Own side is aways shown, if show tickets is enabled. Also it that is disabled, none of the sides tickets are shown.</Italian>
+        <Polish>Show this side for all. Own side is aways shown, if show tickets is enabled. Also it that is disabled, none of the sides tickets are shown.</Polish>
+        <Portuguese>Show this side for all. Own side is aways shown, if show tickets is enabled. Also it that is disabled, none of the sides tickets are shown.</Portuguese>
+        <Russian>Show this side for all. Own side is aways shown, if show tickets is enabled. Also it that is disabled, none of the sides tickets are shown.</Russian>
+        <German>Show this side for all. Own side is aways shown, if show tickets is enabled. Also it that is disabled, none of the sides tickets are shown.</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_Briefing_Enable_ShowOtherSidesData_West">
+        <Original>Show west data to all</Original>
+        <English>Show west data to all</English>
+        <Czech>Show west data to all</Czech>
+        <French>Show west data to all</French>
+        <Spanish>Show west data to all</Spanish>
+        <Italian>Show west data to all</Italian>
+        <Polish>Show west data to all</Polish>
+        <Portuguese>Show west data to all</Portuguese>
+        <Russian>Show west data to all</Russian>
+        <German>Show west data to all</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_Briefing_Enable_ShowOtherSidesData_East">
+        <Original>Show east data to all</Original>
+        <English>Show east data to all</English>
+        <Czech>Show east data to all</Czech>
+        <French>Show east data to all</French>
+        <Spanish>Show east data to all</Spanish>
+        <Italian>Show east data to all</Italian>
+        <Polish>Show east data to all</Polish>
+        <Portuguese>Show east data to all</Portuguese>
+        <Russian>Show east data to all</Russian>
+        <German>Show east data to all</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_Briefing_Enable_ShowOtherSidesData_Resistance">
+        <Original>Show resistance data to all</Original>
+        <English>Show resistance data to all</English>
+        <Czech>Show resistance data to all</Czech>
+        <French>Show resistance data to all</French>
+        <Spanish>Show resistance data to all</Spanish>
+        <Italian>Show resistance data to all</Italian>
+        <Polish>Show resistance data to all</Polish>
+        <Portuguese>Show resistance data to all</Portuguese>
+        <Russian>Show resistance data to all</Russian>
+        <German>Show resistance data to all</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_CBA_Briefing_Enable_ShowOtherSidesData_Civilian">
+        <Original>Show civilian data to all</Original>
+        <English>Show civilian data to all</English>
+        <Czech>Show civilian data to all</Czech>
+        <French>Show civilian data to all</French>
+        <Spanish>Show civilian data to all</Spanish>
+        <Italian>Show civilian data to all</Italian>
+        <Polish>Show civilian data to all</Polish>
+        <Portuguese>Show civilian data to all</Portuguese>
+        <Russian>Show civilian data to all</Russian>
+        <German>Show civilian data to all</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Briefing_default">
+        <Original>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;limited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each side&lt;/font&gt;.</Original>
+        <English>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;limited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each side&lt;/font&gt;.</English>
+        <Czech>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;limited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each side&lt;/font&gt;.</Czech>
+        <French>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;limited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each side&lt;/font&gt;.</French>
+        <Spanish>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;limited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each side&lt;/font&gt;.</Spanish>
+        <Italian>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;limited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each side&lt;/font&gt;.</Italian>
+        <Polish>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;limited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each side&lt;/font&gt;.</Polish>
+        <Portuguese>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;limited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each side&lt;/font&gt;.</Portuguese>
+        <Russian>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;limited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each side&lt;/font&gt;.</Russian>
+        <German>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;limited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each side&lt;/font&gt;.</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Briefing_sidetickets">
+        <Original>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;limited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each side&lt;/font&gt;.</Original>
+        <English>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;limited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each side&lt;/font&gt;.</English>
+        <Czech>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;limited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each side&lt;/font&gt;.</Czech>
+        <French>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;limited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each side&lt;/font&gt;.</French>
+        <Spanish>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;limited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each side&lt;/font&gt;.</Spanish>
+        <Italian>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;limited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each side&lt;/font&gt;.</Italian>
+        <Polish>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;limited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each side&lt;/font&gt;.</Polish>
+        <Portuguese>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;limited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each side&lt;/font&gt;.</Portuguese>
+        <Russian>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;limited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each side&lt;/font&gt;.</Russian>
+        <German>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;limited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each side&lt;/font&gt;.</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Briefing_playertickets">
+        <Original>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;limited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each player&lt;/font&gt;.</Original>
+        <English>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;limited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each player&lt;/font&gt;.</English>
+        <Czech>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;limited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each player&lt;/font&gt;.</Czech>
+        <French>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;limited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each player&lt;/font&gt;.</French>
+        <Spanish>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;limited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each player&lt;/font&gt;.</Spanish>
+        <Italian>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;limited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each player&lt;/font&gt;.</Italian>
+        <Polish>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;limited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each player&lt;/font&gt;.</Polish>
+        <Portuguese>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;limited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each player&lt;/font&gt;.</Portuguese>
+        <Russian>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;limited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each player&lt;/font&gt;.</Russian>
+        <German>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;limited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each player&lt;/font&gt;.</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Briefing_onlyForcedWaves">
+        <Original>Mission uses only forced respawn waves. So no respawn timer.</Original>
+        <English>Mission uses only forced respawn waves. So no respawn timer.</English>
+        <Czech>Mission uses only forced respawn waves. So no respawn timer.</Czech>
+        <French>Mission uses only forced respawn waves. So no respawn timer.</French>
+        <Spanish>Mission uses only forced respawn waves. So no respawn timer.</Spanish>
+        <Italian>Mission uses only forced respawn waves. So no respawn timer.</Italian>
+        <Polish>Mission uses only forced respawn waves. So no respawn timer.</Polish>
+        <Portuguese>Mission uses only forced respawn waves. So no respawn timer.</Portuguese>
+        <Russian>Mission uses only forced respawn waves. So no respawn timer.</Russian>
+        <German>Mission uses only forced respawn waves. So no respawn timer.</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Briefing_killJipEnabled">
+        <Original>%1&lt;br/&gt;&lt;br/&gt;JIP players will be killed and move to respawn after &lt;font face='PuristaBold' size='14'&gt;%2min&lt;/font&gt;  from mission start. If player disconnected earlier, it wont use ticket.</Original>
+        <English>%1&lt;br/&gt;&lt;br/&gt;JIP players will be killed and move to respawn after &lt;font face='PuristaBold' size='14'&gt;%2min&lt;/font&gt;  from mission start. If player disconnected earlier, it wont use ticket.</English>
+        <Czech>%1&lt;br/&gt;&lt;br/&gt;JIP players will be killed and move to respawn after &lt;font face='PuristaBold' size='14'&gt;%2min&lt;/font&gt;  from mission start. If player disconnected earlier, it wont use ticket.</Czech>
+        <French>%1&lt;br/&gt;&lt;br/&gt;JIP players will be killed and move to respawn after &lt;font face='PuristaBold' size='14'&gt;%2min&lt;/font&gt;  from mission start. If player disconnected earlier, it wont use ticket.</French>
+        <Spanish>%1&lt;br/&gt;&lt;br/&gt;JIP players will be killed and move to respawn after &lt;font face='PuristaBold' size='14'&gt;%2min&lt;/font&gt;  from mission start. If player disconnected earlier, it wont use ticket.</Spanish>
+        <Italian>%1&lt;br/&gt;&lt;br/&gt;JIP players will be killed and move to respawn after &lt;font face='PuristaBold' size='14'&gt;%2min&lt;/font&gt;  from mission start. If player disconnected earlier, it wont use ticket.</Italian>
+        <Polish>%1&lt;br/&gt;&lt;br/&gt;JIP players will be killed and move to respawn after &lt;font face='PuristaBold' size='14'&gt;%2min&lt;/font&gt;  from mission start. If player disconnected earlier, it wont use ticket.</Polish>
+        <Portuguese>%1&lt;br/&gt;&lt;br/&gt;JIP players will be killed and move to respawn after &lt;font face='PuristaBold' size='14'&gt;%2min&lt;/font&gt;  from mission start. If player disconnected earlier, it wont use ticket.</Portuguese>
+        <Russian>%1&lt;br/&gt;&lt;br/&gt;JIP players will be killed and move to respawn after &lt;font face='PuristaBold' size='14'&gt;%2min&lt;/font&gt;  from mission start. If player disconnected earlier, it wont use ticket.</Russian>
+        <German>%1&lt;br/&gt;&lt;br/&gt;JIP players will be killed and move to respawn after &lt;font face='PuristaBold' size='14'&gt;%2min&lt;/font&gt;  from mission start. If player disconnected earlier, it wont use ticket.</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Briefing_killJipDisabled">
+        <Original>JIP players are not killed and moved to respawn when they join game.</Original>
+        <English>JIP players are not killed and moved to respawn when they join game.</English>
+        <Czech>JIP players are not killed and moved to respawn when they join game.</Czech>
+        <French>JIP players are not killed and moved to respawn when they join game.</French>
+        <Spanish>JIP players are not killed and moved to respawn when they join game.</Spanish>
+        <Italian>JIP players are not killed and moved to respawn when they join game.</Italian>
+        <Polish>JIP players are not killed and moved to respawn when they join game.</Polish>
+        <Portuguese>JIP players are not killed and moved to respawn when they join game.</Portuguese>
+        <Russian>JIP players are not killed and moved to respawn when they join game.</Russian>
+        <German>JIP players are not killed and moved to respawn when they join game.</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Briefing_reportEnemiesEnabled">
+        <Original>%1&lt;br/&gt;&lt;br/&gt;When MSP has been deployed, it will report enemies every &lt;font face='PuristaBold' size='14'&gt;%2s&lt;/font&gt;, if there is any inside &lt;font face='PuristaBold' size='14'&gt;%3&lt;/font&gt; meter radius.</Original>
+        <English>%1&lt;br/&gt;&lt;br/&gt;When MSP has been deployed, it will report enemies every &lt;font face='PuristaBold' size='14'&gt;%2s&lt;/font&gt;, if there is any inside &lt;font face='PuristaBold' size='14'&gt;%3&lt;/font&gt; meter radius.</English>
+        <Czech>%1&lt;br/&gt;&lt;br/&gt;When MSP has been deployed, it will report enemies every &lt;font face='PuristaBold' size='14'&gt;%2s&lt;/font&gt;, if there is any inside &lt;font face='PuristaBold' size='14'&gt;%3&lt;/font&gt; meter radius.</Czech>
+        <French>%1&lt;br/&gt;&lt;br/&gt;When MSP has been deployed, it will report enemies every &lt;font face='PuristaBold' size='14'&gt;%2s&lt;/font&gt;, if there is any inside &lt;font face='PuristaBold' size='14'&gt;%3&lt;/font&gt; meter radius.</French>
+        <Spanish>%1&lt;br/&gt;&lt;br/&gt;When MSP has been deployed, it will report enemies every &lt;font face='PuristaBold' size='14'&gt;%2s&lt;/font&gt;, if there is any inside &lt;font face='PuristaBold' size='14'&gt;%3&lt;/font&gt; meter radius.</Spanish>
+        <Italian>%1&lt;br/&gt;&lt;br/&gt;When MSP has been deployed, it will report enemies every &lt;font face='PuristaBold' size='14'&gt;%2s&lt;/font&gt;, if there is any inside &lt;font face='PuristaBold' size='14'&gt;%3&lt;/font&gt; meter radius.</Italian>
+        <Polish>%1&lt;br/&gt;&lt;br/&gt;When MSP has been deployed, it will report enemies every &lt;font face='PuristaBold' size='14'&gt;%2s&lt;/font&gt;, if there is any inside &lt;font face='PuristaBold' size='14'&gt;%3&lt;/font&gt; meter radius.</Polish>
+        <Portuguese>%1&lt;br/&gt;&lt;br/&gt;When MSP has been deployed, it will report enemies every &lt;font face='PuristaBold' size='14'&gt;%2s&lt;/font&gt;, if there is any inside &lt;font face='PuristaBold' size='14'&gt;%3&lt;/font&gt; meter radius.</Portuguese>
+        <Russian>%1&lt;br/&gt;&lt;br/&gt;When MSP has been deployed, it will report enemies every &lt;font face='PuristaBold' size='14'&gt;%2s&lt;/font&gt;, if there is any inside &lt;font face='PuristaBold' size='14'&gt;%3&lt;/font&gt; meter radius.</Russian>
+        <German>%1&lt;br/&gt;&lt;br/&gt;When MSP has been deployed, it will report enemies every &lt;font face='PuristaBold' size='14'&gt;%2s&lt;/font&gt;, if there is any inside &lt;font face='PuristaBold' size='14'&gt;%3&lt;/font&gt; meter radius.</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Briefing_reportEnemiesDisabled">
+        <Original>Reporting enemies near MSP is disabled.</Original>
+        <English>Reporting enemies near MSP is disabled.</English>
+        <Czech>Reporting enemies near MSP is disabled.</Czech>
+        <French>Reporting enemies near MSP is disabled.</French>
+        <Spanish>Reporting enemies near MSP is disabled.</Spanish>
+        <Italian>Reporting enemies near MSP is disabled.</Italian>
+        <Polish>Reporting enemies near MSP is disabled.</Polish>
+        <Portuguese>Reporting enemies near MSP is disabled.</Portuguese>
+        <Russian>Reporting enemies near MSP is disabled.</Russian>
+        <German>Reporting enemies near MSP is disabled.</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Briefing_ContestedCheck">
+        <Original>%1&lt;br/&gt;&lt;br/&gt;MSP contested status is updated every &lt;font face='PuristaBold' size='14'&gt;%2s&lt;/font&gt;.&lt;br/&gt;It will get contested if there is more enemis inside &lt;font face='PuristaBold' size='14'&gt;%3m&lt;/font&gt; radius or even one enemy is &lt;font face='PuristaBold' size='14'&gt;%4m&lt;/font&gt; away from it.</Original>
+        <English>%1&lt;br/&gt;&lt;br/&gt;MSP contested status is updated every &lt;font face='PuristaBold' size='14'&gt;%2s&lt;/font&gt;.&lt;br/&gt;It will get contested if there is more enemis inside &lt;font face='PuristaBold' size='14'&gt;%3m&lt;/font&gt; radius or even one enemy is &lt;font face='PuristaBold' size='14'&gt;%4m&lt;/font&gt; away from it.</English>
+        <Czech>%1&lt;br/&gt;&lt;br/&gt;MSP contested status is updated every &lt;font face='PuristaBold' size='14'&gt;%2s&lt;/font&gt;.&lt;br/&gt;It will get contested if there is more enemis inside &lt;font face='PuristaBold' size='14'&gt;%3m&lt;/font&gt; radius or even one enemy is &lt;font face='PuristaBold' size='14'&gt;%4m&lt;/font&gt; away from it.</Czech>
+        <French>%1&lt;br/&gt;&lt;br/&gt;MSP contested status is updated every &lt;font face='PuristaBold' size='14'&gt;%2s&lt;/font&gt;.&lt;br/&gt;It will get contested if there is more enemis inside &lt;font face='PuristaBold' size='14'&gt;%3m&lt;/font&gt; radius or even one enemy is &lt;font face='PuristaBold' size='14'&gt;%4m&lt;/font&gt; away from it.</French>
+        <Spanish>%1&lt;br/&gt;&lt;br/&gt;MSP contested status is updated every &lt;font face='PuristaBold' size='14'&gt;%2s&lt;/font&gt;.&lt;br/&gt;It will get contested if there is more enemis inside &lt;font face='PuristaBold' size='14'&gt;%3m&lt;/font&gt; radius or even one enemy is &lt;font face='PuristaBold' size='14'&gt;%4m&lt;/font&gt; away from it.</Spanish>
+        <Italian>%1&lt;br/&gt;&lt;br/&gt;MSP contested status is updated every &lt;font face='PuristaBold' size='14'&gt;%2s&lt;/font&gt;.&lt;br/&gt;It will get contested if there is more enemis inside &lt;font face='PuristaBold' size='14'&gt;%3m&lt;/font&gt; radius or even one enemy is &lt;font face='PuristaBold' size='14'&gt;%4m&lt;/font&gt; away from it.</Italian>
+        <Polish>%1&lt;br/&gt;&lt;br/&gt;MSP contested status is updated every &lt;font face='PuristaBold' size='14'&gt;%2s&lt;/font&gt;.&lt;br/&gt;It will get contested if there is more enemis inside &lt;font face='PuristaBold' size='14'&gt;%3m&lt;/font&gt; radius or even one enemy is &lt;font face='PuristaBold' size='14'&gt;%4m&lt;/font&gt; away from it.</Polish>
+        <Portuguese>%1&lt;br/&gt;&lt;br/&gt;MSP contested status is updated every &lt;font face='PuristaBold' size='14'&gt;%2s&lt;/font&gt;.&lt;br/&gt;It will get contested if there is more enemis inside &lt;font face='PuristaBold' size='14'&gt;%3m&lt;/font&gt; radius or even one enemy is &lt;font face='PuristaBold' size='14'&gt;%4m&lt;/font&gt; away from it.</Portuguese>
+        <Russian>%1&lt;br/&gt;&lt;br/&gt;MSP contested status is updated every &lt;font face='PuristaBold' size='14'&gt;%2s&lt;/font&gt;.&lt;br/&gt;It will get contested if there is more enemis inside &lt;font face='PuristaBold' size='14'&gt;%3m&lt;/font&gt; radius or even one enemy is &lt;font face='PuristaBold' size='14'&gt;%4m&lt;/font&gt; away from it.</Russian>
+        <German>%1&lt;br/&gt;&lt;br/&gt;MSP contested status is updated every &lt;font face='PuristaBold' size='14'&gt;%2s&lt;/font&gt;.&lt;br/&gt;It will get contested if there is more enemis inside &lt;font face='PuristaBold' size='14'&gt;%3m&lt;/font&gt; radius or even one enemy is &lt;font face='PuristaBold' size='14'&gt;%4m&lt;/font&gt; away from it.</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Briefing_MspVehicle">
+        <Original>%1&lt;br/&gt;&lt;br/&gt;MSP vehicle is &lt;font face='PuristaBold' size='14'&gt;%2&lt;/font&gt;</Original>
+        <English>%1&lt;br/&gt;&lt;br/&gt;MSP vehicle is &lt;font face='PuristaBold' size='14'&gt;%2&lt;/font&gt;</English>
+        <Czech>%1&lt;br/&gt;&lt;br/&gt;MSP vehicle is &lt;font face='PuristaBold' size='14'&gt;%2&lt;/font&gt;</Czech>
+        <French>%1&lt;br/&gt;&lt;br/&gt;MSP vehicle is &lt;font face='PuristaBold' size='14'&gt;%2&lt;/font&gt;</French>
+        <Spanish>%1&lt;br/&gt;&lt;br/&gt;MSP vehicle is &lt;font face='PuristaBold' size='14'&gt;%2&lt;/font&gt;</Spanish>
+        <Italian>%1&lt;br/&gt;&lt;br/&gt;MSP vehicle is &lt;font face='PuristaBold' size='14'&gt;%2&lt;/font&gt;</Italian>
+        <Polish>%1&lt;br/&gt;&lt;br/&gt;MSP vehicle is &lt;font face='PuristaBold' size='14'&gt;%2&lt;/font&gt;</Polish>
+        <Portuguese>%1&lt;br/&gt;&lt;br/&gt;MSP vehicle is &lt;font face='PuristaBold' size='14'&gt;%2&lt;/font&gt;</Portuguese>
+        <Russian>%1&lt;br/&gt;&lt;br/&gt;MSP vehicle is &lt;font face='PuristaBold' size='14'&gt;%2&lt;/font&gt;</Russian>
+        <German>%1&lt;br/&gt;&lt;br/&gt;MSP vehicle is &lt;font face='PuristaBold' size='14'&gt;%2&lt;/font&gt;</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Briefing_DelayedRespawn">
+        <Original>%1&lt;br/&gt;&lt;br/&gt;This mission has &lt;font face='PuristaBold' size='14'&gt;delayed respawn on.&lt;/font&gt; &lt;br/&gt;If there is &lt;font face='PuristaBold' size='14'&gt;less than %2min (%3%5 from %4min)&lt;/font&gt; time left for next wave, &lt;font face='PuristaBold' size='14'&gt;you will skip it.&lt;/font&gt;</Original>
+        <English>%1&lt;br/&gt;&lt;br/&gt;This mission has &lt;font face='PuristaBold' size='14'&gt;delayed respawn on.&lt;/font&gt; &lt;br/&gt;If there is &lt;font face='PuristaBold' size='14'&gt;less than %2min (%3%5 from %4min)&lt;/font&gt; time left for next wave, &lt;font face='PuristaBold' size='14'&gt;you will skip it.&lt;/font&gt;</English>
+        <Czech>%1&lt;br/&gt;&lt;br/&gt;This mission has &lt;font face='PuristaBold' size='14'&gt;delayed respawn on.&lt;/font&gt; &lt;br/&gt;If there is &lt;font face='PuristaBold' size='14'&gt;less than %2min (%3%5 from %4min)&lt;/font&gt; time left for next wave, &lt;font face='PuristaBold' size='14'&gt;you will skip it.&lt;/font&gt;</Czech>
+        <French>%1&lt;br/&gt;&lt;br/&gt;This mission has &lt;font face='PuristaBold' size='14'&gt;delayed respawn on.&lt;/font&gt; &lt;br/&gt;If there is &lt;font face='PuristaBold' size='14'&gt;less than %2min (%3%5 from %4min)&lt;/font&gt; time left for next wave, &lt;font face='PuristaBold' size='14'&gt;you will skip it.&lt;/font&gt;</French>
+        <Spanish>%1&lt;br/&gt;&lt;br/&gt;This mission has &lt;font face='PuristaBold' size='14'&gt;delayed respawn on.&lt;/font&gt; &lt;br/&gt;If there is &lt;font face='PuristaBold' size='14'&gt;less than %2min (%3%5 from %4min)&lt;/font&gt; time left for next wave, &lt;font face='PuristaBold' size='14'&gt;you will skip it.&lt;/font&gt;</Spanish>
+        <Italian>%1&lt;br/&gt;&lt;br/&gt;This mission has &lt;font face='PuristaBold' size='14'&gt;delayed respawn on.&lt;/font&gt; &lt;br/&gt;If there is &lt;font face='PuristaBold' size='14'&gt;less than %2min (%3%5 from %4min)&lt;/font&gt; time left for next wave, &lt;font face='PuristaBold' size='14'&gt;you will skip it.&lt;/font&gt;</Italian>
+        <Polish>%1&lt;br/&gt;&lt;br/&gt;This mission has &lt;font face='PuristaBold' size='14'&gt;delayed respawn on.&lt;/font&gt; &lt;br/&gt;If there is &lt;font face='PuristaBold' size='14'&gt;less than %2min (%3%5 from %4min)&lt;/font&gt; time left for next wave, &lt;font face='PuristaBold' size='14'&gt;you will skip it.&lt;/font&gt;</Polish>
+        <Portuguese>%1&lt;br/&gt;&lt;br/&gt;This mission has &lt;font face='PuristaBold' size='14'&gt;delayed respawn on.&lt;/font&gt; &lt;br/&gt;If there is &lt;font face='PuristaBold' size='14'&gt;less than %2min (%3%5 from %4min)&lt;/font&gt; time left for next wave, &lt;font face='PuristaBold' size='14'&gt;you will skip it.&lt;/font&gt;</Portuguese>
+        <Russian>%1&lt;br/&gt;&lt;br/&gt;This mission has &lt;font face='PuristaBold' size='14'&gt;delayed respawn on.&lt;/font&gt; &lt;br/&gt;If there is &lt;font face='PuristaBold' size='14'&gt;less than %2min (%3%5 from %4min)&lt;/font&gt; time left for next wave, &lt;font face='PuristaBold' size='14'&gt;you will skip it.&lt;/font&gt;</Russian>
+        <German>%1&lt;br/&gt;&lt;br/&gt;This mission has &lt;font face='PuristaBold' size='14'&gt;delayed respawn on.&lt;/font&gt; &lt;br/&gt;If there is &lt;font face='PuristaBold' size='14'&gt;less than %2min (%3%5 from %4min)&lt;/font&gt; time left for next wave, &lt;font face='PuristaBold' size='14'&gt;you will skip it.&lt;/font&gt;</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Briefing_DelayedRespawnOff">
+        <Original>&lt;br/&gt;&lt;br/&gt;This mission has &lt;font face='PuristaBold' size='14'&gt;delayed respawn off.&lt;/font&gt;</Original>
+        <English>&lt;br/&gt;&lt;br/&gt;This mission has &lt;font face='PuristaBold' size='14'&gt;delayed respawn off.&lt;/font&gt;</English>
+        <Czech>&lt;br/&gt;&lt;br/&gt;This mission has &lt;font face='PuristaBold' size='14'&gt;delayed respawn off.&lt;/font&gt;</Czech>
+        <French>&lt;br/&gt;&lt;br/&gt;This mission has &lt;font face='PuristaBold' size='14'&gt;delayed respawn off.&lt;/font&gt;</French>
+        <Spanish>&lt;br/&gt;&lt;br/&gt;This mission has &lt;font face='PuristaBold' size='14'&gt;delayed respawn off.&lt;/font&gt;</Spanish>
+        <Italian>&lt;br/&gt;&lt;br/&gt;This mission has &lt;font face='PuristaBold' size='14'&gt;delayed respawn off.&lt;/font&gt;</Italian>
+        <Polish>&lt;br/&gt;&lt;br/&gt;This mission has &lt;font face='PuristaBold' size='14'&gt;delayed respawn off.&lt;/font&gt;</Polish>
+        <Portuguese>&lt;br/&gt;&lt;br/&gt;This mission has &lt;font face='PuristaBold' size='14'&gt;delayed respawn off.&lt;/font&gt;</Portuguese>
+        <Russian>&lt;br/&gt;&lt;br/&gt;This mission has &lt;font face='PuristaBold' size='14'&gt;delayed respawn off.&lt;/font&gt;</Russian>
+        <German>&lt;br/&gt;&lt;br/&gt;This mission has &lt;font face='PuristaBold' size='14'&gt;delayed respawn off.&lt;/font&gt;</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Briefing_MspEnabled">
+        <Original>Mobile Spawn Point (MSP) has been &lt;font face='PuristaBold' size='14'&gt;enabled&lt;/font&gt;  to this mission for your side.</Original>
+        <English>Mobile Spawn Point (MSP) has been &lt;font face='PuristaBold' size='14'&gt;enabled&lt;/font&gt;  to this mission for your side.</English>
+        <Czech>Mobile Spawn Point (MSP) has been &lt;font face='PuristaBold' size='14'&gt;enabled&lt;/font&gt;  to this mission for your side.</Czech>
+        <French>Mobile Spawn Point (MSP) has been &lt;font face='PuristaBold' size='14'&gt;enabled&lt;/font&gt;  to this mission for your side.</French>
+        <Spanish>Mobile Spawn Point (MSP) has been &lt;font face='PuristaBold' size='14'&gt;enabled&lt;/font&gt;  to this mission for your side.</Spanish>
+        <Italian>Mobile Spawn Point (MSP) has been &lt;font face='PuristaBold' size='14'&gt;enabled&lt;/font&gt;  to this mission for your side.</Italian>
+        <Polish>Mobile Spawn Point (MSP) has been &lt;font face='PuristaBold' size='14'&gt;enabled&lt;/font&gt;  to this mission for your side.</Polish>
+        <Portuguese>Mobile Spawn Point (MSP) has been &lt;font face='PuristaBold' size='14'&gt;enabled&lt;/font&gt;  to this mission for your side.</Portuguese>
+        <Russian>Mobile Spawn Point (MSP) has been &lt;font face='PuristaBold' size='14'&gt;enabled&lt;/font&gt;  to this mission for your side.</Russian>
+        <German>Mobile Spawn Point (MSP) has been &lt;font face='PuristaBold' size='14'&gt;enabled&lt;/font&gt;  to this mission for your side.</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Briefing_MspDisabled">
+        <Original>Mobile Spawn Point (MSP) has been enabled for this mission, but &lt;font face='PuristaBold' size='14'&gt;your side does not have MSP.&lt;/font&gt;</Original>
+        <English>Mobile Spawn Point (MSP) has been enabled for this mission, but &lt;font face='PuristaBold' size='14'&gt;your side does not have MSP.&lt;/font&gt;</English>
+        <Czech>Mobile Spawn Point (MSP) has been enabled for this mission, but &lt;font face='PuristaBold' size='14'&gt;your side does not have MSP.&lt;/font&gt;</Czech>
+        <French>Mobile Spawn Point (MSP) has been enabled for this mission, but &lt;font face='PuristaBold' size='14'&gt;your side does not have MSP.&lt;/font&gt;</French>
+        <Spanish>Mobile Spawn Point (MSP) has been enabled for this mission, but &lt;font face='PuristaBold' size='14'&gt;your side does not have MSP.&lt;/font&gt;</Spanish>
+        <Italian>Mobile Spawn Point (MSP) has been enabled for this mission, but &lt;font face='PuristaBold' size='14'&gt;your side does not have MSP.&lt;/font&gt;</Italian>
+        <Polish>Mobile Spawn Point (MSP) has been enabled for this mission, but &lt;font face='PuristaBold' size='14'&gt;your side does not have MSP.&lt;/font&gt;</Polish>
+        <Portuguese>Mobile Spawn Point (MSP) has been enabled for this mission, but &lt;font face='PuristaBold' size='14'&gt;your side does not have MSP.&lt;/font&gt;</Portuguese>
+        <Russian>Mobile Spawn Point (MSP) has been enabled for this mission, but &lt;font face='PuristaBold' size='14'&gt;your side does not have MSP.&lt;/font&gt;</Russian>
+        <German>Mobile Spawn Point (MSP) has been enabled for this mission, but &lt;font face='PuristaBold' size='14'&gt;your side does not have MSP.&lt;/font&gt;</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Briefing_teleportNetwork">
+        <Original>&lt;br/&gt;&lt;br/&gt;If there is MSP or custom teleport points in this mission, you can accses teleport menu always from Main Base and uncontested MSP using ace action menu. Custom teleport points might have different conditions and uses either vanilla action menu or ace action menu.</Original>
+        <English>&lt;br/&gt;&lt;br/&gt;If there is MSP or custom teleport points in this mission, you can accses teleport menu always from Main Base and uncontested MSP using ace action menu. Custom teleport points might have different conditions and uses either vanilla action menu or ace action menu.</English>
+        <Czech>&lt;br/&gt;&lt;br/&gt;If there is MSP or custom teleport points in this mission, you can accses teleport menu always from Main Base and uncontested MSP using ace action menu. Custom teleport points might have different conditions and uses either vanilla action menu or ace action menu.</Czech>
+        <French>&lt;br/&gt;&lt;br/&gt;If there is MSP or custom teleport points in this mission, you can accses teleport menu always from Main Base and uncontested MSP using ace action menu. Custom teleport points might have different conditions and uses either vanilla action menu or ace action menu.</French>
+        <Spanish>&lt;br/&gt;&lt;br/&gt;If there is MSP or custom teleport points in this mission, you can accses teleport menu always from Main Base and uncontested MSP using ace action menu. Custom teleport points might have different conditions and uses either vanilla action menu or ace action menu.</Spanish>
+        <Italian>&lt;br/&gt;&lt;br/&gt;If there is MSP or custom teleport points in this mission, you can accses teleport menu always from Main Base and uncontested MSP using ace action menu. Custom teleport points might have different conditions and uses either vanilla action menu or ace action menu.</Italian>
+        <Polish>&lt;br/&gt;&lt;br/&gt;If there is MSP or custom teleport points in this mission, you can accses teleport menu always from Main Base and uncontested MSP using ace action menu. Custom teleport points might have different conditions and uses either vanilla action menu or ace action menu.</Polish>
+        <Portuguese>&lt;br/&gt;&lt;br/&gt;If there is MSP or custom teleport points in this mission, you can accses teleport menu always from Main Base and uncontested MSP using ace action menu. Custom teleport points might have different conditions and uses either vanilla action menu or ace action menu.</Portuguese>
+        <Russian>&lt;br/&gt;&lt;br/&gt;If there is MSP or custom teleport points in this mission, you can accses teleport menu always from Main Base and uncontested MSP using ace action menu. Custom teleport points might have different conditions and uses either vanilla action menu or ace action menu.</Russian>
+        <German>&lt;br/&gt;&lt;br/&gt;If there is MSP or custom teleport points in this mission, you can accses teleport menu always from Main Base and uncontested MSP using ace action menu. Custom teleport points might have different conditions and uses either vanilla action menu or ace action menu.</German>
+      </Key>
+    </Container>
+    <Container name="respawn types">
+      <Key ID="STR_Tun_Respawn_Type_Default">
+        <Original>Default</Original>
+        <English>Default</English>
+        <Czech>Default</Czech>
+        <French>Default</French>
+        <Spanish>Default</Spanish>
+        <Italian>Default</Italian>
+        <Polish>Default</Polish>
+        <Portuguese>Default</Portuguese>
+        <Russian>Default</Russian>
+        <German>Default</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Type_Sidetickets">
+        <Original>Side tickets</Original>
+        <English>Side tickets</English>
+        <Czech>Side tickets</Czech>
+        <French>Side tickets</French>
+        <Spanish>Side tickets</Spanish>
+        <Italian>Side tickets</Italian>
+        <Polish>Side tickets</Polish>
+        <Portuguese>Side tickets</Portuguese>
+        <Russian>Side tickets</Russian>
+        <German>Side tickets</German>
+      </Key>
+      <Key ID="STR_Tun_Respawn_Type_Playertickets">
+        <Original>Player tickets</Original>
+        <English>Player tickets</English>
+        <Czech>Player tickets</Czech>
+        <French>Player tickets</French>
+        <Spanish>Player tickets</Spanish>
+        <Italian>Player tickets</Italian>
+        <Polish>Player tickets</Polish>
+        <Portuguese>Player tickets</Portuguese>
+        <Russian>Player tickets</Russian>
+        <German>Player tickets</German>
+      </Key>
+    </Container>
+  </Package>
+  <Package name="MSP">
+    <Container name="CBA">
+      <Key ID="STR_Tun_MSP_CBA_Category_main">
+        <Original>TUN - Mobile Spawn Point</Original>
+        <English>TUN - Mobile Spawn Point</English>
+        <Czech>TUN - Mobile Spawn Point</Czech>
+        <French>TUN - Mobile Spawn Point</French>
+        <Spanish>TUN - Mobile Spawn Point</Spanish>
+        <Italian>TUN - Mobile Spawn Point</Italian>
+        <Polish>TUN - Mobile Spawn Point</Polish>
+        <Portuguese>TUN - Mobile Spawn Point</Portuguese>
+        <Russian>TUN - Mobile Spawn Point</Russian>
+        <German>TUN - Mobile Spawn Point</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_Category_progres">
+        <Original>Progress Bar</Original>
+        <English>Progress Bar</English>
+        <Czech>Progress Bar</Czech>
+        <French>Progress Bar</French>
+        <Spanish>Progress Bar</Spanish>
+        <Italian>Progress Bar</Italian>
+        <Polish>Progress Bar</Polish>
+        <Portuguese>Progress Bar</Portuguese>
+        <Russian>Progress Bar</Russian>
+        <German>Progress Bar</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_tooltip_setup_progresbar">
+        <Original>Time that it takes to setup MSP (seconds)</Original>
+        <English>Setup Time</English>
+        <Czech>Setup Time</Czech>
+        <French>Setup Time</French>
+        <Spanish>Setup Time</Spanish>
+        <Italian>Setup Time</Italian>
+        <Polish>Setup Time</Polish>
+        <Portuguese>Setup Time</Portuguese>
+        <Russian>Setup Time</Russian>
+        <German>Setup Time</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_pack_progresbar">
+        <Original>Packing Time</Original>
+        <English>Packing Time</English>
+        <Czech>Packing Time</Czech>
+        <French>Packing Time</French>
+        <Spanish>Packing Time</Spanish>
+        <Italian>Packing Time</Italian>
+        <Polish>Packing Time</Polish>
+        <Portuguese>Packing Time</Portuguese>
+        <Russian>Packing Time</Russian>
+        <German>Packing Time</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_setup_progresbar">
+        <Original>Setup Time</Original>
+        <English>Setup Time</English>
+        <Czech>Setup Time</Czech>
+        <French>Setup Time</French>
+        <Spanish>Setup Time</Spanish>
+        <Italian>Setup Time</Italian>
+        <Polish>Setup Time</Polish>
+        <Portuguese>Setup Time</Portuguese>
+        <Russian>Setup Time</Russian>
+        <German>Setup Time</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_tooltip_setup_ProgressBar">
+        <Original>Time that it takes to deploy MSP (seconds)</Original>
+        <English>Time that it takes to deploy MSP (seconds)</English>
+        <Czech>Time that it takes to deploy MSP (seconds)</Czech>
+        <French>Time that it takes to deploy MSP (seconds)</French>
+        <Spanish>Time that it takes to deploy MSP (seconds)</Spanish>
+        <Italian>Time that it takes to deploy MSP (seconds)</Italian>
+        <Polish>Time that it takes to deploy MSP (seconds)</Polish>
+        <Portuguese>Time that it takes to deploy MSP (seconds)</Portuguese>
+        <Russian>Time that it takes to deploy MSP (seconds)</Russian>
+        <German>Time that it takes to deploy MSP (seconds)</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_tooltip_pack_progresbar">
+        <Original>Time that it takes to pack MSP (seconds)</Original>
+        <English>Time that it takes to pack MSP (seconds)</English>
+        <Czech>Time that it takes to pack MSP (seconds)</Czech>
+        <French>Time that it takes to pack MSP (seconds)</French>
+        <Spanish>Time that it takes to pack MSP (seconds)</Spanish>
+        <Italian>Time that it takes to pack MSP (seconds)</Italian>
+        <Polish>Time that it takes to pack MSP (seconds)</Polish>
+        <Portuguese>Time that it takes to pack MSP (seconds)</Portuguese>
+        <Russian>Time that it takes to pack MSP (seconds)</Russian>
+        <German>Time that it takes to pack MSP (seconds)</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_Enable">
+        <Original>Enable MSP</Original>
+        <English>Enable MSP</English>
+        <Czech>Enable MSP</Czech>
+        <French>Enable MSP</French>
+        <Spanish>Enable MSP</Spanish>
+        <Italian>Enable MSP</Italian>
+        <Polish>Enable MSP</Polish>
+        <Portuguese>Enable MSP</Portuguese>
+        <Russian>Enable MSP</Russian>
+        <German>Enable MSP</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_allowCheckTicketsMSP">
+        <Original>Check tickets from msp</Original>
+        <English>Check tickets from msp</English>
+        <Czech>Check tickets from msp</Czech>
+        <French>Check tickets from msp</French>
+        <Spanish>Check tickets from msp</Spanish>
+        <Italian>Check tickets from msp</Italian>
+        <Polish>Check tickets from msp</Polish>
+        <Portuguese>Check tickets from msp</Portuguese>
+        <Russian>Check tickets from msp</Russian>
+        <German>Check tickets from msp</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_tooltip_Enable">
+        <Original>Enable MSP system</Original>
+        <English>Enable MSP system</English>
+        <Czech>Enable MSP system</Czech>
+        <French>Enable MSP system</French>
+        <Spanish>Enable MSP system</Spanish>
+        <Italian>Enable MSP system</Italian>
+        <Polish>Enable MSP system</Polish>
+        <Portuguese>Enable MSP system</Portuguese>
+        <Russian>Enable MSP system</Russian>
+        <German>Enable MSP system</German>
+      </Key>
+    </Container>
+    <Container name="fnc_initate_msp_action">
+      <Key ID="STR_Tun_MSP_fnc_initate_msp_action_setting">
+        <Original>Setting up MSP</Original>
+        <English>Setting up MSP</English>
+        <Czech>Setting up MSP</Czech>
+        <French>Setting up MSP</French>
+        <Spanish>Setting up MSP</Spanish>
+        <Italian>Setting up MSP</Italian>
+        <Polish>Setting up MSP</Polish>
+        <Portuguese>Setting up MSP</Portuguese>
+        <Russian>Setting up MSP</Russian>
+        <German>Setting up MSP</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_fnc_initate_msp_action_packing">
+        <Original>Packing MSP</Original>
+        <English>Packing MSP</English>
+        <Czech>Packing MSP</Czech>
+        <French>Packing MSP</French>
+        <Spanish>Packing MSP</Spanish>
+        <Italian>Packing MSP</Italian>
+        <Polish>Packing MSP</Polish>
+        <Portuguese>Packing MSP</Portuguese>
+        <Russian>Packing MSP</Russian>
+        <German>Packing MSP</German>
+      </Key>
+    </Container>
+    <Container name="fnc_contested">
+      <Key ID="STR_Tun_MSP_FNC_Contested_hint">
+        <Original>[['MSP has been contested!'], ['Respawn position has been updated.']]</Original>
+        <English>[['MSP has been contested!'], ['Respawn position has been updated.']]</English>
+        <Czech>[['MSP has been contested!'], ['Respawn position has been updated.']]</Czech>
+        <French>[['MSP has been contested!'], ['Respawn position has been updated.']]</French>
+        <Spanish>[['MSP has been contested!'], ['Respawn position has been updated.']]</Spanish>
+        <Italian>[['MSP has been contested!'], ['Respawn position has been updated.']]</Italian>
+        <Polish>[['MSP has been contested!'], ['Respawn position has been updated.']]</Polish>
+        <Portuguese>[['MSP has been contested!'], ['Respawn position has been updated.']]</Portuguese>
+        <Russian>[['MSP has been contested!'], ['Respawn position has been updated.']]</Russian>
+        <German>[['MSP has been contested!'], ['Respawn position has been updated.']]</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_FNC_secured_hint">
+        <Original>[['MSP has been secured!'], ['Respawn position has been updated.']]</Original>
+        <English>[['MSP has been secured!'], ['Respawn position has been updated.']]</English>
+        <Czech>[['MSP has been secured!'], ['Respawn position has been updated.']]</Czech>
+        <French>[['MSP has been secured!'], ['Respawn position has been updated.']]</French>
+        <Spanish>[['MSP has been secured!'], ['Respawn position has been updated.']]</Spanish>
+        <Italian>[['MSP has been secured!'], ['Respawn position has been updated.']]</Italian>
+        <Polish>[['MSP has been secured!'], ['Respawn position has been updated.']]</Polish>
+        <Portuguese>[['MSP has been secured!'], ['Respawn position has been updated.']]</Portuguese>
+        <Russian>[['MSP has been secured!'], ['Respawn position has been updated.']]</Russian>
+        <German>[['MSP has been secured!'], ['Respawn position has been updated.']]</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_FNC_enemies_near">
+        <Original>Enemies spotted near MSP!</Original>
+        <English>Enemies spotted near MSP!</English>
+        <Czech>Enemies spotted near MSP!</Czech>
+        <French>Enemies spotted near MSP!</French>
+        <Spanish>Enemies spotted near MSP!</Spanish>
+        <Italian>Enemies spotted near MSP!</Italian>
+        <Polish>Enemies spotted near MSP!</Polish>
+        <Portuguese>Enemies spotted near MSP!</Portuguese>
+        <Russian>Enemies spotted near MSP!</Russian>
+        <German>Enemies spotted near MSP!</German>
+      </Key>
+    </Container>
+    <Container name="fnc_setup/pack_msp">
+      <Key ID="STR_Tun_MSP_FNC_setup_notification">
+        <Original>[['MSP has been deployed!'], ['Respawn position has been updated.']]</Original>
+        <English>[['MSP has been deployed!'], ['Respawn position has been updated.']]</English>
+        <Czech>[['MSP has been deployed!'], ['Respawn position has been updated.']]</Czech>
+        <French>[['MSP has been deployed!'], ['Respawn position has been updated.']]</French>
+        <Spanish>[['MSP has been deployed!'], ['Respawn position has been updated.']]</Spanish>
+        <Italian>[['MSP has been deployed!'], ['Respawn position has been updated.']]</Italian>
+        <Polish>[['MSP has been deployed!'], ['Respawn position has been updated.']]</Polish>
+        <Portuguese>[['MSP has been deployed!'], ['Respawn position has been updated.']]</Portuguese>
+        <Russian>[['MSP has been deployed!'], ['Respawn position has been updated.']]</Russian>
+        <German>[['MSP has been deployed!'], ['Respawn position has been updated.']]</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_FNC_pack_notification">
+        <Original>[['MSP has been packed!'], ['Respawn position has been updated.']]</Original>
+        <English>[['MSP has been packed!'], ['Respawn position has been updated.']]</English>
+        <Czech>[['MSP has been packed!'], ['Respawn position has been updated.']]</Czech>
+        <French>[['MSP has been packed!'], ['Respawn position has been updated.']]</French>
+        <Spanish>[['MSP has been packed!'], ['Respawn position has been updated.']]</Spanish>
+        <Italian>[['MSP has been packed!'], ['Respawn position has been updated.']]</Italian>
+        <Polish>[['MSP has been packed!'], ['Respawn position has been updated.']]</Polish>
+        <Portuguese>[['MSP has been packed!'], ['Respawn position has been updated.']]</Portuguese>
+        <Russian>[['MSP has been packed!'], ['Respawn position has been updated.']]</Russian>
+        <German>[['MSP has been packed!'], ['Respawn position has been updated.']]</German>
+      </Key>
+    </Container>
+    <Container name="Classname">
+      <Key ID="STR_Tun_MSP_CBA_classname">
+        <Original>MSP Classname</Original>
+        <English>MSP Classname</English>
+        <Czech>MSP Classname</Czech>
+        <French>MSP Classname</French>
+        <Spanish>MSP Classname</Spanish>
+        <Italian>MSP Classname</Italian>
+        <Polish>MSP Classname</Polish>
+        <Portuguese>MSP Classname</Portuguese>
+        <Russian>MSP Classname</Russian>
+        <German>MSP Classname</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_classname_west">
+        <Original>West MSP Classname</Original>
+        <English>West MSP Classname</English>
+        <Czech>West MSP Classname</Czech>
+        <French>West MSP Classname</French>
+        <Spanish>West MSP Classname</Spanish>
+        <Italian>West MSP Classname</Italian>
+        <Polish>West MSP Classname</Polish>
+        <Portuguese>West MSP Classname</Portuguese>
+        <Russian>West MSP Classname</Russian>
+        <German>West MSP Classname</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_Classname_east">
+        <Original>East MSP Classname</Original>
+        <English>East MSP Classname</English>
+        <Czech>East MSP Classname</Czech>
+        <French>East MSP Classname</French>
+        <Spanish>East MSP Classname</Spanish>
+        <Italian>East MSP Classname</Italian>
+        <Polish>East MSP Classname</Polish>
+        <Portuguese>East MSP Classname</Portuguese>
+        <Russian>East MSP Classname</Russian>
+        <German>East MSP Classname</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_classname_resistance">
+        <Original>Resistance MSP Classname</Original>
+        <English>Resistance MSP Classname</English>
+        <Czech>Resistance MSP Classname</Czech>
+        <French>Resistance MSP Classname</French>
+        <Spanish>Resistance MSP Classname</Spanish>
+        <Italian>Resistance MSP Classname</Italian>
+        <Polish>Resistance MSP Classname</Polish>
+        <Portuguese>Resistance MSP Classname</Portuguese>
+        <Russian>Resistance MSP Classname</Russian>
+        <German>Resistance MSP Classname</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_classname_civilian">
+        <Original>Civilian MSP Classname</Original>
+        <English>Civilian MSP Classname</English>
+        <Czech>Civilian MSP Classname</Czech>
+        <French>Civilian MSP Classname</French>
+        <Spanish>Civilian MSP Classname</Spanish>
+        <Italian>Civilian MSP Classname</Italian>
+        <Polish>Civilian MSP Classname</Polish>
+        <Portuguese>Civilian MSP Classname</Portuguese>
+        <Russian>Civilian MSP Classname</Russian>
+        <German>Civilian MSP Classname</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_tooltip_classname">
+        <Original>Put vehicle classname which will be used as MSP. All vehicles of that type can be used as MSP. Use non-string version of classname like: B_MRAP_01_F. Only one type of vehicle is supported currently</Original>
+        <English>Put vehicle classname which will be used as MSP. All vehicles of that type can be used as MSP. Use non-string version of classname like: B_MRAP_01_F. Only one type of vehicle is supported currently</English>
+        <Czech>Put vehicle classname which will be used as MSP. All vehicles of that type can be used as MSP. Use non-string version of classname like: B_MRAP_01_F. Only one type of vehicle is supported currently</Czech>
+        <French>Put vehicle classname which will be used as MSP. All vehicles of that type can be used as MSP. Use non-string version of classname like: B_MRAP_01_F. Only one type of vehicle is supported currently</French>
+        <Spanish>Put vehicle classname which will be used as MSP. All vehicles of that type can be used as MSP. Use non-string version of classname like: B_MRAP_01_F. Only one type of vehicle is supported currently</Spanish>
+        <Italian>Put vehicle classname which will be used as MSP. All vehicles of that type can be used as MSP. Use non-string version of classname like: B_MRAP_01_F. Only one type of vehicle is supported currently</Italian>
+        <Polish>Put vehicle classname which will be used as MSP. All vehicles of that type can be used as MSP. Use non-string version of classname like: B_MRAP_01_F. Only one type of vehicle is supported currently</Polish>
+        <Portuguese>Put vehicle classname which will be used as MSP. All vehicles of that type can be used as MSP. Use non-string version of classname like: B_MRAP_01_F. Only one type of vehicle is supported currently</Portuguese>
+        <Russian>Put vehicle classname which will be used as MSP. All vehicles of that type can be used as MSP. Use non-string version of classname like: B_MRAP_01_F. Only one type of vehicle is supported currently</Russian>
+        <German>Put vehicle classname which will be used as MSP. All vehicles of that type can be used as MSP. Use non-string version of classname like: B_MRAP_01_F. Only one type of vehicle is supported currently</German>
+      </Key>
+    </Container>
+    <Container name="CBA Contested">
+      <Key ID="STR_Tun_MSP_CBA_tooltip_contested_min">
+        <Original>When there are enemies inside this radius, MSP are always disabled, even if there are more friendlies in max range (meters)</Original>
+        <English>When there are enemies inside this radius, MSP are always disabled, even if there are more friendlies in max range (meters)</English>
+        <Czech>When there are enemies inside this radius, MSP are always disabled, even if there are more friendlies in max range (meters)</Czech>
+        <French>When there are enemies inside this radius, MSP are always disabled, even if there are more friendlies in max range (meters)</French>
+        <Spanish>When there are enemies inside this radius, MSP are always disabled, even if there are more friendlies in max range (meters)</Spanish>
+        <Italian>When there are enemies inside this radius, MSP are always disabled, even if there are more friendlies in max range (meters)</Italian>
+        <Polish>When there are enemies inside this radius, MSP are always disabled, even if there are more friendlies in max range (meters)</Polish>
+        <Portuguese>When there are enemies inside this radius, MSP are always disabled, even if there are more friendlies in max range (meters)</Portuguese>
+        <Russian>When there are enemies inside this radius, MSP are always disabled, even if there are more friendlies in max range (meters)</Russian>
+        <German>When there are enemies inside this radius, MSP are always disabled, even if there are more friendlies in max range (meters)</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_tooltip_contested_check_interval">
+        <Original>Interval for when server updates the contested status for MSP</Original>
+        <English>Interval for when server updates the contested status for MSP</English>
+        <Czech>Interval for when server updates the contested status for MSP</Czech>
+        <French>Interval for when server updates the contested status for MSP</French>
+        <Spanish>Interval for when server updates the contested status for MSP</Spanish>
+        <Italian>Interval for when server updates the contested status for MSP</Italian>
+        <Polish>Interval for when server updates the contested status for MSP</Polish>
+        <Portuguese>Interval for when server updates the contested status for MSP</Portuguese>
+        <Russian>Interval for when server updates the contested status for MSP</Russian>
+        <German>Interval for when server updates the contested status for MSP</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_tooltip_contested_max">
+        <Original>Radius where there needs to be more enemies than allies to disable MSP (meters)</Original>
+        <English>Radius where there needs to be more enemies than allies to disable MSP (meters)</English>
+        <Czech>Radius where there needs to be more enemies than allies to disable MSP (meters)</Czech>
+        <French>Radius where there needs to be more enemies than allies to disable MSP (meters)</French>
+        <Spanish>Radius where there needs to be more enemies than allies to disable MSP (meters)</Spanish>
+        <Italian>Radius where there needs to be more enemies than allies to disable MSP (meters)</Italian>
+        <Polish>Radius where there needs to be more enemies than allies to disable MSP (meters)</Polish>
+        <Portuguese>Radius where there needs to be more enemies than allies to disable MSP (meters)</Portuguese>
+        <Russian>Radius where there needs to be more enemies than allies to disable MSP (meters)</Russian>
+        <German>Radius where there needs to be more enemies than allies to disable MSP (meters)</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_contested_radius_min">
+        <Original>Min Contested Radius</Original>
+        <English>Min Contested Radius</English>
+        <Czech>Min Contested Radius</Czech>
+        <French>Min Contested Radius</French>
+        <Spanish>Min Contested Radius</Spanish>
+        <Italian>Min Contested Radius</Italian>
+        <Polish>Min Contested Radius</Polish>
+        <Portuguese>Min Contested Radius</Portuguese>
+        <Russian>Min Contested Radius</Russian>
+        <German>Min Contested Radius</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_contested_radius_max">
+        <Original>Max Contested Radius</Original>
+        <English>Max Contested Radius</English>
+        <Czech>Max Contested Radius</Czech>
+        <French>Max Contested Radius</French>
+        <Spanish>Max Contested Radius</Spanish>
+        <Italian>Max Contested Radius</Italian>
+        <Polish>Max Contested Radius</Polish>
+        <Portuguese>Max Contested Radius</Portuguese>
+        <Russian>Max Contested Radius</Russian>
+        <German>Max Contested Radius</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_contested_check_interval">
+        <Original>Contested Check Interval</Original>
+        <English>Contested Check Interval</English>
+        <Czech>Contested Check Interval</Czech>
+        <French>Contested Check Interval</French>
+        <Spanish>Contested Check Interval</Spanish>
+        <Italian>Contested Check Interval</Italian>
+        <Polish>Contested Check Interval</Polish>
+        <Portuguese>Contested Check Interval</Portuguese>
+        <Russian>Contested Check Interval</Russian>
+        <German>Contested Check Interval</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_Category_contested">
+        <Original>Contested</Original>
+        <English>Contested</English>
+        <Czech>Contested</Czech>
+        <French>Contested</French>
+        <Spanish>Contested</Spanish>
+        <Italian>Contested</Italian>
+        <Polish>Contested</Polish>
+        <Portuguese>Contested</Portuguese>
+        <Russian>Contested</Russian>
+        <German>Contested</German>
+      </Key>
+    </Container>
+    <Container name="CBA Report">
+      <Key ID="STR_Tun_MSP_CBA_tooltip_report_enemies_range">
+        <Original>Range from MSP where enemies are reported (meters)</Original>
+        <English>Range from MSP where enemies are reported (meters)</English>
+        <Czech>Range from MSP where enemies are reported (meters)</Czech>
+        <French>Range from MSP where enemies are reported (meters)</French>
+        <Spanish>Range from MSP where enemies are reported (meters)</Spanish>
+        <Italian>Range from MSP where enemies are reported (meters)</Italian>
+        <Polish>Range from MSP where enemies are reported (meters)</Polish>
+        <Portuguese>Range from MSP where enemies are reported (meters)</Portuguese>
+        <Russian>Range from MSP where enemies are reported (meters)</Russian>
+        <German>Range from MSP where enemies are reported (meters)</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_tooltip_report_enemies_interval">
+        <Original>Interval when server check if there is enemies near MSP</Original>
+        <English>Interval when server check if there is enemies near MSP</English>
+        <Czech>Interval when server check if there is enemies near MSP</Czech>
+        <French>Interval when server check if there is enemies near MSP</French>
+        <Spanish>Interval when server check if there is enemies near MSP</Spanish>
+        <Italian>Interval when server check if there is enemies near MSP</Italian>
+        <Polish>Interval when server check if there is enemies near MSP</Polish>
+        <Portuguese>Interval when server check if there is enemies near MSP</Portuguese>
+        <Russian>Interval when server check if there is enemies near MSP</Russian>
+        <German>Interval when server check if there is enemies near MSP</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_tooltip_report_enemies">
+        <Original>%1&lt;br/&gt;&lt;br/&gt;Enable Report Enemies near MSP</Original>
+        <English>%1&lt;br/&gt;&lt;br/&gt;Enable Report Enemies near MSP</English>
+        <Czech>%1&lt;br/&gt;&lt;br/&gt;Enable Report Enemies near MSP</Czech>
+        <French>%1&lt;br/&gt;&lt;br/&gt;Enable Report Enemies near MSP</French>
+        <Spanish>%1&lt;br/&gt;&lt;br/&gt;Enable Report Enemies near MSP</Spanish>
+        <Italian>%1&lt;br/&gt;&lt;br/&gt;Enable Report Enemies near MSP</Italian>
+        <Polish>%1&lt;br/&gt;&lt;br/&gt;Enable Report Enemies near MSP</Polish>
+        <Portuguese>%1&lt;br/&gt;&lt;br/&gt;Enable Report Enemies near MSP</Portuguese>
+        <Russian>%1&lt;br/&gt;&lt;br/&gt;Enable Report Enemies near MSP</Russian>
+        <German>%1&lt;br/&gt;&lt;br/&gt;Enable Report Enemies near MSP</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_report_enemies_intervala">
+        <Original>Report Enemies Interval</Original>
+        <English>Report Enemies Interval</English>
+        <Czech>Report Enemies Interval</Czech>
+        <French>Report Enemies Interval</French>
+        <Spanish>Report Enemies Interval</Spanish>
+        <Italian>Report Enemies Interval</Italian>
+        <Polish>Report Enemies Interval</Polish>
+        <Portuguese>Report Enemies Interval</Portuguese>
+        <Russian>Report Enemies Interval</Russian>
+        <German>Report Enemies Interval</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_report_enemies_range">
+        <Original>Report Enemies Range</Original>
+        <English>Report Enemies Range</English>
+        <Czech>Report Enemies Range</Czech>
+        <French>Report Enemies Range</French>
+        <Spanish>Report Enemies Range</Spanish>
+        <Italian>Report Enemies Range</Italian>
+        <Polish>Report Enemies Range</Polish>
+        <Portuguese>Report Enemies Range</Portuguese>
+        <Russian>Report Enemies Range</Russian>
+        <German>Report Enemies Range</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_report_enemies">
+        <Original>Report Enemies</Original>
+        <English>Report Enemies</English>
+        <Czech>Report Enemies</Czech>
+        <French>Report Enemies</French>
+        <Spanish>Report Enemies</Spanish>
+        <Italian>Report Enemies</Italian>
+        <Polish>Report Enemies</Polish>
+        <Portuguese>Report Enemies</Portuguese>
+        <Russian>Report Enemies</Russian>
+        <German>Report Enemies</German>
+      </Key>
+    </Container>
+    <Container name="MSP">
+      <Key ID="STR_Tun_MSP_TpText">
+        <Original>Mobile spawn point</Original>
+        <English>Mobile spawn point</English>
+        <Czech>Mobile spawn point</Czech>
+        <French>Mobile spawn point</French>
+        <Spanish>Mobile spawn point</Spanish>
+        <Italian>Mobile spawn point</Italian>
+        <Polish>Mobile spawn point</Polish>
+        <Portuguese>Mobile spawn point</Portuguese>
+        <Russian>Mobile spawn point</Russian>
+        <German>Mobile spawn point</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_destroyed">
+        <Original>MSP has been destroyed!</Original>
+        <English>MSP has been destroyed!</English>
+        <Czech>MSP has been destroyed!</Czech>
+        <French>MSP has been destroyed!</French>
+        <Spanish>MSP has been destroyed!</Spanish>
+        <Italian>MSP has been destroyed!</Italian>
+        <Polish>MSP has been destroyed!</Polish>
+        <Portuguese>MSP has been destroyed!</Portuguese>
+        <Russian>MSP has been destroyed!</Russian>
+        <German>MSP has been destroyed!</German>
+      </Key>
+    </Container>
+    <Container name="ace">
+      <Key ID="STR_Tun_MSP_remaining_time">
+        <Original>Remaining time until respawn: %1</Original>
+        <English>Remaining time until respawn: %1</English>
+        <Czech>Remaining time until respawn: %1</Czech>
+        <French>Remaining time until respawn: %1</French>
+        <Spanish>Remaining time until respawn: %1</Spanish>
+        <Italian>Remaining time until respawn: %1</Italian>
+        <Polish>Remaining time until respawn: %1</Polish>
+        <Portuguese>Remaining time until respawn: %1</Portuguese>
+        <Russian>Remaining time until respawn: %1</Russian>
+        <German>Remaining time until respawn: %1</German>
+      </Key>
+    </Container>
+    <Container name="Notifications">
+      <Key ID="STR_Tun_MSP_CBA_whoGetsSetUpNotification">
+        <Original>Who gets notification from MSP setup/pack?</Original>
+        <English>Who gets notification from MSP setup/pack?</English>
+        <Czech>Who gets notification from MSP setup/pack?</Czech>
+        <French>Who gets notification from MSP setup/pack?</French>
+        <Spanish>Who gets notification from MSP setup/pack?</Spanish>
+        <Italian>Who gets notification from MSP setup/pack?</Italian>
+        <Polish>Who gets notification from MSP setup/pack?</Polish>
+        <Portuguese>Who gets notification from MSP setup/pack?</Portuguese>
+        <Russian>Who gets notification from MSP setup/pack?</Russian>
+        <German>Who gets notification from MSP setup/pack?</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_whoGetsContestedNotification">
+        <Original>Who gets notification when MSP contested?</Original>
+        <English>Who gets notification when MSP contested?</English>
+        <Czech>Who gets notification when MSP contested?</Czech>
+        <French>Who gets notification when MSP contested?</French>
+        <Spanish>Who gets notification when MSP contested?</Spanish>
+        <Italian>Who gets notification when MSP contested?</Italian>
+        <Polish>Who gets notification when MSP contested?</Polish>
+        <Portuguese>Who gets notification when MSP contested?</Portuguese>
+        <Russian>Who gets notification when MSP contested?</Russian>
+        <German>Who gets notification when MSP contested?</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_whoGetsReportEnemiesNotification">
+        <Original>Who gets notification when there is enemies near MSP?</Original>
+        <English>Who gets notification when there is enemies near MSP?</English>
+        <Czech>Who gets notification when there is enemies near MSP?</Czech>
+        <French>Who gets notification when there is enemies near MSP?</French>
+        <Spanish>Who gets notification when there is enemies near MSP?</Spanish>
+        <Italian>Who gets notification when there is enemies near MSP?</Italian>
+        <Polish>Who gets notification when there is enemies near MSP?</Polish>
+        <Portuguese>Who gets notification when there is enemies near MSP?</Portuguese>
+        <Russian>Who gets notification when there is enemies near MSP?</Russian>
+        <German>Who gets notification when there is enemies near MSP?</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_whoGetsSetUpNotification_Tooltip">
+        <Original>When MSP is setup or packed up, who whil recive notification from it. Default: Group Leader</Original>
+        <English>When MSP is setup or packed up, who whil recive notification from it. Default: Group Leader</English>
+        <Czech>When MSP is setup or packed up, who whil recive notification from it. Default: Group Leader</Czech>
+        <French>When MSP is setup or packed up, who whil recive notification from it. Default: Group Leader</French>
+        <Spanish>When MSP is setup or packed up, who whil recive notification from it. Default: Group Leader</Spanish>
+        <Italian>When MSP is setup or packed up, who whil recive notification from it. Default: Group Leader</Italian>
+        <Polish>When MSP is setup or packed up, who whil recive notification from it. Default: Group Leader</Polish>
+        <Portuguese>When MSP is setup or packed up, who whil recive notification from it. Default: Group Leader</Portuguese>
+        <Russian>When MSP is setup or packed up, who whil recive notification from it. Default: Group Leader</Russian>
+        <German>When MSP is setup or packed up, who whil recive notification from it. Default: Group Leader</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_whoGetsContestedNotification_Tooltip">
+        <Original>When MSP is contested, who whil recive notification from it. Default: Group Leader</Original>
+        <English>When MSP is contested, who whil recive notification from it. Default: Group Leader</English>
+        <Czech>When MSP is contested, who whil recive notification from it. Default: Group Leader</Czech>
+        <French>When MSP is contested, who whil recive notification from it. Default: Group Leader</French>
+        <Spanish>When MSP is contested, who whil recive notification from it. Default: Group Leader</Spanish>
+        <Italian>When MSP is contested, who whil recive notification from it. Default: Group Leader</Italian>
+        <Polish>When MSP is contested, who whil recive notification from it. Default: Group Leader</Polish>
+        <Portuguese>When MSP is contested, who whil recive notification from it. Default: Group Leader</Portuguese>
+        <Russian>When MSP is contested, who whil recive notification from it. Default: Group Leader</Russian>
+        <German>When MSP is contested, who whil recive notification from it. Default: Group Leader</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_whoGetsReportEnemies_Tooltip">
+        <Original>When there is enemies near MSP, who whil recive notification from it. Default: Group Leader</Original>
+        <English>When there is enemies near MSP, who whil recive notification from it. Default: Group Leader</English>
+        <Czech>When there is enemies near MSP, who whil recive notification from it. Default: Group Leader</Czech>
+        <French>When there is enemies near MSP, who whil recive notification from it. Default: Group Leader</French>
+        <Spanish>When there is enemies near MSP, who whil recive notification from it. Default: Group Leader</Spanish>
+        <Italian>When there is enemies near MSP, who whil recive notification from it. Default: Group Leader</Italian>
+        <Polish>When there is enemies near MSP, who whil recive notification from it. Default: Group Leader</Polish>
+        <Portuguese>When there is enemies near MSP, who whil recive notification from it. Default: Group Leader</Portuguese>
+        <Russian>When there is enemies near MSP, who whil recive notification from it. Default: Group Leader</Russian>
+        <German>When there is enemies near MSP, who whil recive notification from it. Default: Group Leader</German>
+      </Key>
+      <Key ID="STR_Tun_MSP_CBA_notificationCategory">
+        <Original>Notifications</Original>
+        <English>Notifications</English>
+        <Czech>Notifications</Czech>
+        <French>Notifications</French>
+        <Spanish>Notifications</Spanish>
+        <Italian>Notifications</Italian>
+        <Polish>Notifications</Polish>
+        <Portuguese>Notifications</Portuguese>
+        <Russian>Notifications</Russian>
+        <German>Notifications</German>
+      </Key>
+    </Container>
+  </Package>
+</Project>

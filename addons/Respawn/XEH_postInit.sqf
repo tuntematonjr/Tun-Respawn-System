@@ -5,10 +5,6 @@ INFO("TUN Respawn Enabled");
 
 if (hasInterface) then {
 	[{!isNull player}, {
-
-		if (GVAR(briefingEnable)) then {
-			[] call FUNC(briefingNotes);
-		};
 		
 		if (GVAR(gearscriptType) isEqualTo "Save gear") then {
 			[] call FUNC(savegear);

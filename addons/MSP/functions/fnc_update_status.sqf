@@ -58,7 +58,7 @@ if (_setup) then {
 
 private _pos = getpos _msp;
 
-[_side, _setup, _pos] remoteExecCall ["Tun_respawn_fnc_update_respawn_point", 2];
+[_side, _setup, _pos] remoteExecCall [QEFUNC(respawn,update_respawn_point), 2];
 
 _msp setVariable [QGVAR(isMSP), _setup, true];
 
@@ -66,50 +66,26 @@ switch (_side) do {
 	case west: {
 		missionNamespace setVariable [QGVAR(vehicle_west), _msp_var, true];
 		missionNamespace setVariable [QGVAR(status_west), _setup, true];
-
-		missionNamespace setVariable [QGVAR(nearUnitsWest), [], 2];
-		missionNamespace setVariable [QGVAR(nearUnitsWestMin), [], 2];	
-		missionNamespace setVariable [QGVAR(enemyCountWest), 0, 2];
-		missionNamespace setVariable [QGVAR(enemyCountMinWest), 0, 2];	
-		missionNamespace setVariable [QGVAR(friendlyCountWest), 0, 2];
 	};
 
 	case east: {
 		missionNamespace setVariable [QGVAR(vehicle_east), _msp_var, true];
 		missionNamespace setVariable [QGVAR(status_east), _setup, true];
-
-		missionNamespace setVariable [QGVAR(nearUnitsEast), [], 2];
-		missionNamespace setVariable [QGVAR(nearUnitsGuerEast), [], 2];	
-		missionNamespace setVariable [QGVAR(enemyCountEast), 0, 2];
-		missionNamespace setVariable [QGVAR(enemyCountMinEast), 0, 2];	
-		missionNamespace setVariable [QGVAR(friendlyCountEast), 0, 2];
 	};
 
 	case resistance: {
 		missionNamespace setVariable [QGVAR(vehicle_guer), _msp_var, true];
 		missionNamespace setVariable [QGVAR(status_guer), _setup, true];
-
-		missionNamespace setVariable [QGVAR(nearUnitsGuer), [], 2];
-		missionNamespace setVariable [QGVAR(nearUnitsGuerMin), [], 2];	
-		missionNamespace setVariable [QGVAR(enemyCountGuer), 0, 2];
-		missionNamespace setVariable [QGVAR(enemyCountMinGuer), 0, 2];	
-		missionNamespace setVariable [QGVAR(friendlyCountGuer), 0, 2];
 	};
 
 	case civilian: {
 		missionNamespace setVariable [QGVAR(vehicle_civ), _msp_var, true];
 		missionNamespace setVariable [QGVAR(status_civ), _setup, true];
-
-		missionNamespace setVariable [QGVAR(nearUnitsCiv), [], 2];
-		missionNamespace setVariable [QGVAR(nearUnitsCivMin), [], 2];	
-		missionNamespace setVariable [QGVAR(enemyCountCiv), 0, 2];
-		missionNamespace setVariable [QGVAR(enemyCountMinCiv), 0, 2];	
-		missionNamespace setVariable [QGVAR(friendlyCountCiv), 0, 2];
 	};
 };
 
 if (_setup) then {
-	[{
-		[] call FUNC(contestedCheck)
-	}, nil, 1] call CBA_fnc_waitAndExecute;
+	//[{
+		[] remoteExecCall [QFUNC(contestedCheck), 2];
+	//}, nil, 1] call CBA_fnc_waitAndExecute;
 };

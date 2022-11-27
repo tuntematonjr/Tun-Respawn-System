@@ -8,7 +8,7 @@ class CfgPatches
         units[] = {"Tun_Respawn_Module_waitingarea", "Tun_Respawn_Module_Respawn_point"};
         weapons[] = {};
         requiredVersion = 1.94;
-        requiredAddons[] = {"A3_Modules_F","3DEN","cba_main","cba_xeh","cba_settings","ace_interaction","ace_interact_menu"};
+        requiredAddons[] = {"A3_Modules_F","3DEN","cba_main","cba_xeh","Tun_Main","ace_interaction","ace_interact_menu"};
         author = "Tuntematon";
         authorUrl = "https://armafinland.fi/";
     };

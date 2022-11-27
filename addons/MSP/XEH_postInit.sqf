@@ -11,7 +11,4 @@ if (isServer) then {
 
 if (hasInterface) then {
     [] call FUNC(ace_actions);
-    if (Tun_respawn_briefingEnable) then {
-        [] call FUNC(briefingNotes);
-    };
 };
