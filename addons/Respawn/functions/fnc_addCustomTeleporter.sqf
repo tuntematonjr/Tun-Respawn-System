@@ -23,10 +23,19 @@
 
 	#include "script_component.hpp"
 
-	params [["_obj", objNull, [objNull]], ["_conditio", "false", [""]], ["_name", "", [""]], ["_createMarker", true, [true]], ["_markerIcon", "hd_start", [""]], ["_enabledSides", [], [[]]], ["_useAceAction", true, [true]], ["_menuOpenConditio", "false", [""]], ["_ticketCheckAllowed", true, [false]], ["_offset", nil, [[]]], ["_parrenPath", ["ACE_MainActions"], [[]]]];
+	params [["_obj", objNull, [objNull]],
+	["_conditio", "false", [""]],
+	["_name", "", [""]],
+	["_createMarker",true, [true]],
+	["_markerIcon", "hd_start", [""]],
+	["_enabledSides", [], [[]]],
+	["_useAceAction", true, [true]],
+	["_menuOpenConditio", "false", [""]],
+	["_ticketCheckAllowed", true, [false]]
+	];
 
 	if ( playerSide in _enabledSides ) then {
-	
+
 		_conditio = format ["_obj = '%1' call BIS_fnc_objectFromNetId; %2", (_obj call BIS_fnc_netId), _conditio];
 		_menuOpenConditio = format ["_obj = '%1' call BIS_fnc_objectFromNetId; %2", (_obj call BIS_fnc_netId), _menuOpenConditio];
 
@@ -41,7 +50,7 @@
 			_obj setVariable [QGVAR(markerName), _marker];
 		};
 
-		[_obj, _menuOpenConditio, _useAceAction, _offset, _parrenPath] call FUNC(addTeleportAction);
+		[_obj, _menuOpenConditio, _useAceAction] call FUNC(addTeleportAction);
 
 		if (_ticketCheckAllowed) then {
 			[_obj, _useAceAction] call FUNC(addCheckTicketCountAction);

@@ -69,7 +69,7 @@ class CfgVehicles
         scope = 2; // Editor visibility; 2 will show it in the menu, 1 will hide it.
         scopeCurator = 1;
         displayName = $STR_Tun_Respawn_Module_DisplayName_WaitingArea; // Name displayed in the menu
-        //icon = ""; // Map icon. Delete this entry to use the default icon
+        icon = "\a3\modules_f_curator\data\portraitcountdown_ca.paa"; // Map icon. Delete this entry to use the default icon
         category = "Tun_Respawn";
 
         // Name of function triggered once conditions are met
@@ -116,7 +116,7 @@ class CfgVehicles
     class Tun_Respawn_Module_Respawn_point: Tun_Respawn_Module_waitingarea
     {
         displayName = $STR_Tun_Respawn_Module_DisplayName_SpawnPoint; // Name displayed in the menu
-
+        icon = "\a3\modules_f\data\portraitrespawn_ca.paa";
         // Name of function triggered once conditions are met
         function = QFUNC(module_respawnpos);
 
@@ -156,6 +156,7 @@ class CfgVehicles
         //isTriggerActivated = 1;
         // Name of function triggered once conditions are met
         function = QFUNC(module_teleporter);
+        icon = "\a3\ui_f\data\map\groupicons\badge_gs.paa";
 
         class Attributes: AttributesBase
         {

@@ -79,16 +79,27 @@ GVAR(respawnPointsHash) set [_side, [_markername, _pos]];
 ["MainBaseLocal", _pos, "Main Base", "mil_start", _color] remoteExecCall [QFUNC(createLocalMarker), _side, true];
 
 //Create base ace action for flagpoles
-[_flag] remoteExecCall [QFUNC(createFlagActionBase), _side, true];
+private _actionPath = [_flag] call FUNC(addMainAction);
 
 // Add tp action
 private _conditio =  "count (missionNamespace getVariable ['tun_respawn_teleportPoints', []]) > 1" ;
-[_flag, "true", "STR_Tun_Respawn_MainBaseText" call BIS_fnc_localize, false, nil, [_side], true, _conditio, false, nil, ["Tun_baseAction"]] remoteExecCall [QFUNC(addCustomTeleporter), _side, true];
+[_flag, "true", "STR_Tun_Respawn_MainBaseText" call BIS_fnc_localize, false, nil, [_side], true, _conditio, false] remoteExecCall [QFUNC(addCustomTeleporter), _side, true];
 
 
 if (GVAR(allowCheckTicketsBase)) then {
-	[_flag, true, nil, ["Tun_baseAction"]] remoteExecCall [QFUNC(addCheckTicketCountAction), _side, true];
+	[_flag, true, nil, _actionPath] remoteExecCall [QFUNC(addCheckTicketCountAction), _side, true];
 };
+
+private _timer_action = {
+    _wait_time = ((missionNamespace getVariable format ["Tun_Respawn_wait_time_%1", playerSide]) - cba_missiontime);
+    format ["STR_Tun_MSP_remaining_time" call BIS_fnc_localize, [_wait_time] call CBA_fnc_formatElapsedTime] call CBA_fnc_notify;
+};
+
+private _timer_condition = { alive _target && {_target getVariable QGVAR(side) == playerSide}};
+private _chekTime = ["Check Respawn Time", "Check Respawn Time", "\a3\modules_f_curator\data\portraitskiptime_ca.paa", _timer_action, _timer_condition] call ace_interact_menu_fnc_createAction;
+[_flag, 0, _actionPath, _chekTime] call ace_interact_menu_fnc_addActionToObject;
 
 // Module function is executed by spawn command, so returned value is not necessary, but it's good practice.
 true
+
+//"\a3\ui_f\data\gui\cfg\cursors\wait_gs.paa"

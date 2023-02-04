@@ -17,15 +17,17 @@
  * _flag, true, nil, ["Tun_baseAction"] call Tun_Respawn_fnc_addTeleportAction
  */
 #include "script_component.hpp"
-params ["_obj", "_menuOpenConditio", "_useAceAction", "_offset", "_parrenPath"];
+params ["_obj", "_menuOpenConditio", "_useAceAction"];
 
 private ["_statement"];
 if (_useAceAction) then {
 	_statement = {
-		params ["_obj", "_menuOpenConditio", "_offset", "_parrenPath"];
+		params ["_obj", "_menuOpenConditio"];
+		private _parentAction = [_obj] call FUNC(getParentAction);
+		private _actionPath = _parentAction + ["Tun_respawnAction"];
 		_menuOpenConditio = compile _menuOpenConditio;
-		private _action = ["TpMenu", "STR_Tun_Respawn_TeleportMenu" call BIS_fnc_localize,"",{ [_target] call FUNC(openTeleportMenu) }, _menuOpenConditio, nil, nil, _offset] call ace_interact_menu_fnc_createAction;
-		[_obj, 0, _parrenPath, _action] call ace_interact_menu_fnc_addActionToObject;
+		private _action = ["TpMenu", "STR_Tun_Respawn_TeleportMenu" call BIS_fnc_localize,"\a3\3den\data\cfg3den\history\changeattributes_ca.paa",{ [_target] call FUNC(openTeleportMenu) }, _menuOpenConditio] call ace_interact_menu_fnc_createAction;
+		[_obj, 0, _actionPath, _action] call ace_interact_menu_fnc_addActionToObject;
 	};
 } else {
 	_statement = {
@@ -34,12 +36,15 @@ if (_useAceAction) then {
 	};	
 };
 
+
+//MITÄ VITTUA TÄÄ TEKEEEEEEEE!
 [
 	{
-		true
+		params ["_obj", "_menuOpenConditio"];
+		!isNull _obj;
 	},
 	_statement,
-	[_obj, _menuOpenConditio, _offset, _parrenPath]
+	[_obj, _menuOpenConditio]
 ] call CBA_fnc_waitUntilAndExecute;
 
 true
