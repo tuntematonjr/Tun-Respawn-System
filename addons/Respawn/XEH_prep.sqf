@@ -36,3 +36,5 @@ PREP(createLocalMarker);
 PREP(getParentAction);
 PREP(getOffSet);
 PREP(addMainAction);
+PREP(addActionsPlayer);
+
