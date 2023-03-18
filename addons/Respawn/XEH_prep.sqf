@@ -27,7 +27,6 @@ PREP(addCustomTeleporter);
 PREP(addTeleportAction);
 PREP(checkTicketCount);
 PREP(addCheckTicketCountAction);
-PREP(loadSavedGear);
 PREP(updateWaitingRespawnList);
 PREP(ticketCounterPlayer);
 PREP(getTicketCountPlayer);

@@ -1,7 +1,7 @@
 ﻿/*
  * Author: [Tuntematon]
  * [Description]
- * Save starting gear
+ * Save gear
  *
  * Arguments:
  * None
@@ -14,27 +14,14 @@
  */
 #include "script_component.hpp"
 
-if (isDedicated) exitWith { };
+private _gearToSave = getUnitLoadout player;
+private _itemsList = _gearToSave select 9;
+private _radio = _itemsList select 2;
 
-_uniform = uniform player;
-_vest = vest player;
-_headGear = headGear player;
-_backPack = backpack player;
-_googles = goggles player;
+if (isNumber (configFile >> "CfgWeapons" >> _radio  >> "tf_radio")) then {
+	_radio = getText  (configFile >> "CfgWeapons" >> _radio  >> "tf_parent");
+	_itemsList set [2, _radio];
+	_gearToSave set [9, _itemsList];
+};
 
-_primaryWeapon = primaryWeapon player;
-_secondaryWeapon = secondaryWeapon player;
-_handGunWeapon = handGunWeapon player;
-_binocularWeapon = binocular player;
-
-_uniformItems = uniformItems player;
-_vestItems = vestItems player;
-_backPackItems = backPackItems player;
-_primaryWeaponItems = primaryWeaponItems player + primaryWeaponMagazine player;
-_secondaryWeaponItems = secondaryWeaponItems player + secondaryWeaponMagazine player;
-_handGunItems = handgunItems player + handgunMagazine player;
-_binocularItems = binocularItems player + binocularMagazine player;
-
-_assignedItems= assignedItems player;
-
-player setVariable [QGVAR(savedgear), [_uniform, _vest, _headGear, _backPack, _googles, _primaryWeapon, _secondaryWeapon, _handGunWeapon, _binocularWeapon, _uniformItems, _vestItems, _backPackItems, _primaryWeaponItems, _secondaryWeaponItems, _handGunItems, _binocularItems, _assignedItems]];
+GVAR(savedgear) = _gearToSave;
