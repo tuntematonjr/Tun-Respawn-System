@@ -13,7 +13,10 @@
 #include "script_component.hpp"
 if (isDedicated) exitWith { };
 
-params [ ["_object", objNull, [objNull]], ["_useAceAction", true, [true]], ["_offset", nil, [[]]], ["_parrenPath", ["ACE_MainActions"], [[]]]];
+params [ ["_object", objNull, [objNull]], 
+["_useAceAction", true, [true]], 
+["_offset", nil, [[]]], 
+["_parrenPath", ["ACE_MainActions"], [[]]]];
 
 if (_useAceAction) then {
 	private _action = ["CheckTickets", "STR_Tun_Respawn_CheckTickets" call BIS_fnc_localize,"\a3\modules_f_curator\data\portraitmissionname_ca.paa",{ [playerSide] call FUNC(checkTicketCount); }, {true}, nil, nil, _offset] call ace_interact_menu_fnc_createAction;

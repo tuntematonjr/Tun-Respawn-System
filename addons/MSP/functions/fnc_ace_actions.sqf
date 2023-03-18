@@ -14,7 +14,6 @@
  */
 #include "script_component.hpp"
 
-
 private _vehicle = switch (playerSide) do {
 
 	case west: {
@@ -37,7 +36,6 @@ private _vehicle = switch (playerSide) do {
 		""
 	};
 };
-
 
 private _actionMain = ["Tun_respawnAction", "Respawn Actions", "\a3\Modules_F_Curator\Data\portraitRespawnTickets_ca.paa", {true}, {true}] call ace_interact_menu_fnc_createAction;
 [_vehicle, 0, ["ACE_MainActions"], _actionMain] call ace_interact_menu_fnc_addActionToClass;
@@ -84,7 +82,7 @@ _chekTime = ["Check Respawn Time", "Check Respawn Time", "\a3\modules_f_curator\
 	private _tp_conditionText = " private _msp = missionNamespace getVariable ['%1', objNull]; private _status = _msp getVariable ['tun_msp_isContested', false]; (_target != _msp && _obj getVariable ['tun_msp_isMSP', false] && !_status) ";
 
 	_tp_condition = format [_tp_conditionText, _variable];
-	[_entity, _tp_condition, "STR_Tun_MSP_TpText" call BIS_fnc_localize, false, nil, [playerSide], true, _menu_condition, false] call Tun_Respawn_fnc_addCustomTeleporter;
+	[_entity, _tp_condition, "STR_Tun_MSP_TpText" call BIS_fnc_localize, false, nil, [playerSide], true, _menu_condition, false, ["ACE_MainActions","Tun_respawnAction"]] call Tun_Respawn_fnc_addCustomTeleporter;
 
 }, false, [], true] call CBA_fnc_addClassEventHandler;
 

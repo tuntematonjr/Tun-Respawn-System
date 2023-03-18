@@ -40,6 +40,8 @@ ISNILS(GVAR(spectate_civilian),true);
 
 ISNILS(GVAR(endRespawns),false);
 
+GVAR(selfTPmenuOpenObj) = objNull;
+
 if (isServer) then {
     GVAR(respawnPointsHash) = createHashMap
 };

@@ -18,15 +18,12 @@ params [["_object", nil,[objNull]]];
 //Get parent action
 private _parentAction = [_object] call FUNC(getParentAction);
 
-//Get object hight, so we can get an offset for the actions (only if no parent action exists)
-private _offSet = [];
-if (count _parentAction == 0) then {
-	_offSet = [_object] call FUNC(getOffSet);
-	_parentAction = ["Tun_respawnMain"];
-	private _actionBase = ["Tun_respawnMain", "Main", "", {true}, {true}, nil, nil, _offSet] call ace_interact_menu_fnc_createAction;
+if (count _parentAction isEqualTo 0) then {
+	private _offSet = [_object] call FUNC(getOffSet);
+	_parentAction = ["Tun_respawn_BaseAceAction"];
+	private _actionBase = ["Tun_respawn_BaseAceAction", "Main", "", {true}, {true}, nil, nil, _offSet, 8] call ace_interact_menu_fnc_createAction;
 	[_object, 0, [], _actionBase] call ace_interact_menu_fnc_addActionToObject;
 };
-
 
 private _actionPath = _parentAction + ["Tun_respawnAction"];
 
@@ -35,6 +32,3 @@ private _actionMain = ["Tun_respawnAction", "Respawn Actions", "\a3\modules_f\da
 [_object, 0, _parentAction, _actionMain] call ace_interact_menu_fnc_addActionToObject;
 
 _actionPath
-//\a3\Modules_F_Curator\Data\iconRespawnTickets_ca.paa
-//\a3\Modules_F_Curator\Data\portraitRespawnTickets_ca.paa
-

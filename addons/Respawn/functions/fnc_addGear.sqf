@@ -29,7 +29,7 @@ switch (GVAR(gearscriptType)) do {
 		[player] call potato_assignGear_fnc_assignGearMan;
 	};
 	case "Save gear": { 
-		[] call FUNC(loadSavedGear);
+		player setUnitLoadout GVAR(savedgear);
 	};
 
 	default { };

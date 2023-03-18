@@ -20,7 +20,6 @@
  * [this, "true", "TP 1", true, "hd_start", [west, resistance], true, "true", true] call Tun_Respawn_fnc_addCustomTeleporter
  */
  if (hasInterface) then {
-
 	#include "script_component.hpp"
 
 	params [["_obj", objNull, [objNull]],
@@ -31,7 +30,8 @@
 	["_enabledSides", [], [[]]],
 	["_useAceAction", true, [true]],
 	["_menuOpenConditio", "false", [""]],
-	["_ticketCheckAllowed", true, [false]]
+	["_ticketCheckAllowed", true, [false]],
+	["_actionPath", ["ACE_MainActions"], [[]]]
 	];
 
 	if ( playerSide in _enabledSides ) then {
@@ -50,10 +50,10 @@
 			_obj setVariable [QGVAR(markerName), _marker];
 		};
 
-		[_obj, _menuOpenConditio, _useAceAction] call FUNC(addTeleportAction);
+		[_obj, _menuOpenConditio, _useAceAction, _actionPath] call FUNC(addTeleportAction);
 
 		if (_ticketCheckAllowed) then {
-			[_obj, _useAceAction] call FUNC(addCheckTicketCountAction);
+			[_obj, _useAceAction, nil, _actionPath] call FUNC(addCheckTicketCountAction);
 		};
 	};
 };

@@ -26,7 +26,7 @@ GVAR(tpMenuOpenedFrom) = _target;
 	private _teleportConditio = call compile (_teleportConditioText);
 	private _teleportName = _obj getVariable [QGVAR(teleportName), "TP"];
 	private _targetObj = _obj getVariable [QGVAR(teleportObject), objNull];
-	private _notSame = ( _target != _targetObj && _target != _obj );
+	private _notSame = ( _target isNotEqualTo _targetObj && _target isNotEqualTo _obj );
 
 	if ( _notSame && _teleportConditio) then {
 		private _objNetId = _obj call BIS_fnc_netId; 

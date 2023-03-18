@@ -19,14 +19,12 @@
  * Public: [Yes/No]
  */
 #include "script_component.hpp"
-params ["_flag"];
+params ["_object"];
 
-//Create base ace action for flagpoles
-private _actionPath = [_flag] call FUNC(addMainAction);
-
+private _actionPath = [_object] call FUNC(addMainAction);
 
 if (GVAR(allowCheckTicketsBase)) then {
-	[_flag, true, nil, _actionPath] remoteExecCall [QFUNC(addCheckTicketCountAction), playerSide, true];
+	[_object, true, nil, _actionPath] call FUNC(addCheckTicketCountAction);
 };
 
 private _timer_action = {
@@ -34,6 +32,10 @@ private _timer_action = {
     format ["STR_Tun_MSP_remaining_time" call BIS_fnc_localize, [_wait_time] call CBA_fnc_formatElapsedTime] call CBA_fnc_notify;
 };
 
-private _timer_condition = { alive _target && {_target getVariable QGVAR(side) == playerSide}};
-private _chekTime = ["Check Respawn Time", "Check Respawn Time", "\a3\modules_f_curator\data\portraitskiptime_ca.paa", _timer_action, _timer_condition] call ace_interact_menu_fnc_createAction;
-[_flag, 0, _actionPath, _chekTime] call ace_interact_menu_fnc_addActionToObject;
+//private _timer_condition = { alive _target && {_target getVariable QGVAR(side) == playerSide}};
+private _chekTime = ["Check Respawn Time", "Check Respawn Time", "\a3\modules_f_curator\data\portraitskiptime_ca.paa", _timer_action, {true}] call ace_interact_menu_fnc_createAction;
+[_object, 0, _actionPath, _chekTime] call ace_interact_menu_fnc_addActionToObject;
+
+// Add tp action
+private _conditio =  "count (missionNamespace getVariable ['tun_respawn_teleportPoints', []]) > 1" ;
+[_object, "true", "STR_Tun_Respawn_MainBaseText" call BIS_fnc_localize, false, nil, [playerSide], true, _conditio, false, _actionPath] call FUNC(addCustomTeleporter);

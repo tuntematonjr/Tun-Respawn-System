@@ -44,11 +44,13 @@ if (hasInterface) then {
 			private _markerIcon = _logic getVariable [QGVAR(teleportMarkerIcon), "hd_start"];
 			private _allowCheckTickets = _logic getVariable [QGVAR(tun_respawn_teleportCheckTickets), false];
 			
+			private _actionPath = [];
+
 			if (_useAceAction) then {
-				[_obj] call FUNC(addMainAction);
+				_actionPath = [_obj] call FUNC(addMainAction);
 			};
 
-			[_obj, _tpConditio, _name, _createMarker, _markerIcon, [playerSide], _useAceAction, _menuOpenConditio, _allowCheckTickets] call FUNC(addCustomTeleporter);
+			[_obj, _tpConditio, _name, _createMarker, _markerIcon, [playerSide], _useAceAction, _menuOpenConditio, _allowCheckTickets, _actionPath] call FUNC(addCustomTeleporter);
 		};
 		
 		[
