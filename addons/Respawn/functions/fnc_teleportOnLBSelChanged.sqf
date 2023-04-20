@@ -21,7 +21,7 @@
 #include "script_component.hpp"
 params ["_control", "_selectedIndex"];
 
-if (_selectedIndex == -1) exitWith { };
+if (_selectedIndex isEqualTo -1) exitWith { };
 
 private _listIDC = 300001;
 private _mapIDC = 300003;

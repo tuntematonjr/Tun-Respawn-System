@@ -18,7 +18,7 @@ private _okButtonIDC = 300002;
 
 private _index = lbCurSel _listIDC;
 
-if (_index == -1) exitWith { };
+if (_index isEqualTo -1) exitWith { };
 
 private _value = lbData [_listIDC, _index];
 private _obj = _value call BIS_fnc_objectFromNetId;

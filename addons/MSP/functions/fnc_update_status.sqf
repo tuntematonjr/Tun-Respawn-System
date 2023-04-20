@@ -36,7 +36,7 @@ if (_setup) then {
 	    [_x, ["getOut", _msp]] remoteExecCall ["action", _x];
 	} forEach crew _msp;
 
-	[{count crew _this == 0}, {
+	[{count crew _this isEqualTo 0}, {
 	    [_this, 2] remoteExecCall ["lock", _this];
 	}, _msp] call CBA_fnc_waitUntilAndExecute;
 

@@ -32,7 +32,7 @@ private _timer_action = {
     format ["STR_Tun_MSP_remaining_time" call BIS_fnc_localize, [_wait_time] call CBA_fnc_formatElapsedTime] call CBA_fnc_notify;
 };
 
-//private _timer_condition = { alive _target && {_target getVariable QGVAR(side) == playerSide}};
+//private _timer_condition = { alive _target && {_target getVariable QGVAR(side) isEqualTo playerSide}};
 private _chekTime = ["Check Respawn Time", "Check Respawn Time", "\a3\modules_f_curator\data\portraitskiptime_ca.paa", _timer_action, {true}] call ace_interact_menu_fnc_createAction;
 [_object, 0, _actionPath, _chekTime] call ace_interact_menu_fnc_addActionToObject;
 

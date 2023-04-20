@@ -20,10 +20,10 @@ _logic = param [0,objNull,[objNull]];
 
 _markername = _logic getVariable ["respawn_side","none"];
 
-if (_markername == "none") exitWith { hint ("STR_Tun_Respawn_Module_WaitingArea_novalue" call BIS_fnc_localize); false }; // Exit if no side
+if (_markername isEqualTo "none") exitWith { hint ("STR_Tun_Respawn_Module_WaitingArea_novalue" call BIS_fnc_localize); false }; // Exit if no side
 
 
-if (getMarkerColor _markername == "") then {
+if (getMarkerColor _markername isEqualTo "") then {
 	_marker = [_markername, getPos _logic, "icon", [1, 1], "PERSIST", "TYPE:", "Empty"] call CBA_fnc_createMarker;
 	_marker setMarkerAlpha 0;
 } else {

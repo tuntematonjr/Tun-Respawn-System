@@ -20,10 +20,10 @@ private _logic = param [0,objNull,[objNull]];
 
 private  _markername = _logic getVariable ["respawn_side","none"];
 private _pos = getPos _logic;
-if (_markername == "none") exitWith { hint "STR_Tun_Respawn_Module_RespanPos_novalue" call BIS_fnc_localize; false }; // Exit if no side
+if (_markername isEqualTo "none") exitWith { hint "STR_Tun_Respawn_Module_RespanPos_novalue" call BIS_fnc_localize; false }; // Exit if no side
 private _marker = "";
 
-if (getMarkerColor _markername == "") then {
+if (getMarkerColor _markername isEqualTo "") then {
 	_marker = createMarker [_markername, _pos];
 	_marker setMarkerType "Empty";
 

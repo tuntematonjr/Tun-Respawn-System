@@ -56,7 +56,7 @@ if (hasInterface) then {
 		[
 			{
 				params ["_logic"];
-				_logic getVariable [QGVAR(teleportObject), objNull] != objNull
+				_logic getVariable [QGVAR(teleportObject), objNull] isNotEqualTo objNull
 			},
 			_statement,
 			[_logic]

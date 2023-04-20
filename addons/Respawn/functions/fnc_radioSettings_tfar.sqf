@@ -19,7 +19,7 @@ if (!hasInterface || { !(isClass(configFile >> "CfgPatches" >> "tfar_core")) }) 
 // save entire settings array once anything is changed basically
 private _fnc_saveSWSettings = {
     params ["_unit"];
-    if (_unit != player) exitWith {};
+    if (_unit isNotEqualTo player) exitWith {};
     player setVariable [QGVAR(swSettings),(call TFAR_fnc_activeSwRadio) call TFAR_fnc_getSwSettings];
 };
 
@@ -35,7 +35,7 @@ private _fnc_saveSWSettings = {
 private _fnc_saveLRSettings = {
     params ["_unit"];
 
-    if (_unit != player) exitWith {};
+    if (_unit isNotEqualTo player) exitWith {};
     [{
         player setVariable [QGVAR(lrSettings),(call TFAR_fnc_activeLrRadio) call TFAR_fnc_getLrSettings];
     }] call CBA_fnc_execNextFrame;
@@ -55,7 +55,7 @@ private _fnc_saveLRSettings = {
     "TFAR_event_OnFrequencyChanged",
     {
         params ["_unit","_radio"];
-        if (_unit != player) exitWith {};
+        if (_unit isNotEqualTo player) exitWith {};
 
         private _activeSw = call TFAR_fnc_activeSwRadio;
         if (_activeSw isEqualTo _radio) exitWith {
@@ -74,7 +74,7 @@ private _fnc_saveLRSettings = {
     "TFAR_event_OnRadiosReceived",
     {
         params ["_unit","_radio"];
-        if (_unit != player) exitWith {};
+        if (_unit isNotEqualTo player) exitWith {};
         private _settings = player getVariable [QGVAR(swSettings),[]];
         if (count _settings > 0) then {
             [call TFAR_fnc_activeSwRadio, _settings] call TFAR_fnc_setSwSettings;
@@ -87,7 +87,7 @@ private _fnc_saveLRSettings = {
     QGVAR(setTfarLRsettings_EH),
     {
         params ["_unit"];
-        if (_unit != player) exitWith {};
+        if (_unit isNotEqualTo player) exitWith {};
 
         private _settings = player getVariable [QGVAR(lrSettings),[]];
         if (count _settings > 0) then {

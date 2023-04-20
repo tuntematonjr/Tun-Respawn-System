@@ -18,10 +18,10 @@ if (isDedicated) exitWith { };
 switch (GVAR(gearscriptType)) do {
 	case "SQF Gearscript": {
 		private _gearScriptPath = player getVariable [QGVAR(GearPath), "Not set"];
-		if (_gearScriptPath == "Not set") exitWith { hint "this unit is missing its gearscript path!"};
+		if (_gearScriptPath isEqualTo "Not set") exitWith { hint "this unit is missing its gearscript path!"};
 
 		private  _role = player getVariable [QGVAR(Role), "Not Set"];
-		if (_role == "Not set") exitWith { hint "Missing role variable !"};
+		if (_role isEqualTo "Not set") exitWith { hint "Missing role variable !"};
 
 		[_role, player] call compile preprocessFileLineNumbers _gearScriptPath;
 	};

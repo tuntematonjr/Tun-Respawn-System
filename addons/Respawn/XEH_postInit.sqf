@@ -67,7 +67,7 @@ if (isServer) then {
 	if (GVAR(respawn_type) isNotEqualTo localize "STR_Tun_Respawn_Type_Default") then {
 		// if player disconnect add its uid to list so when he come back. No ticket is used. Only used if Kill jip is enabled
 		addMissionEventHandler ["PlayerDisconnected", {
-			if (GVAR(respawn_type) == "default") exitWith { };
+			if (GVAR(respawn_type) isEqualTo "default") exitWith { };
 			params ["_id", "_uid", "_name", "_jip", "_owner"];
 
 			if (cba_missiontime > (GVAR(killJIP_time) * 60) && GVAR(killJIP)) then {
