@@ -15,6 +15,7 @@
 #include "script_component.hpp"
 
 if (!hasInterface) exitWith { };
+if (playerSide isEqualTo sideUnknown) exitWith { }; // Exit if a virtual entity (IE zeus)
 private _currentRespawnPos = switch (playerSide) do {
 	case west: {	
 		"tun_respawn_west"
