@@ -3,22 +3,16 @@
  * [Description]
  *
  * Arguments:
- * 0: The first argument <STRING>
- * 1: The second argument <OBJECT>
- * 2: Multiple input types <STRING|ARRAY|CODE>
- * 3: Optional input <BOOL> (default: true)
- * 4: Optional input with multiple types <CODE|STRING> (default: {true})
- * 5: Not mandatory input <STRING> (default: nil)
+ * 0:  OBJ to be added base ace actions <OBJECT>
  *
  * Return Value:
- * The return value <BOOL>
+ * None
  *
  * Example:
- * ["something", player] call Tun_Respawn_fnc_addActionsPlayer
- *
- * Public: [Yes/No]
+ * [flagPole] call Tun_Respawn_fnc_addActionsPlayer
  */
 #include "script_component.hpp"
+
 params ["_object"];
 
 private _actionPath = [_object] call FUNC(addMainAction);
