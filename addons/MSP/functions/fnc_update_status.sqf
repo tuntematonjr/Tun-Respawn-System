@@ -66,26 +66,36 @@ switch (_side) do {
 	case west: {
 		missionNamespace setVariable [QGVAR(vehicle_west), _msp_var, true];
 		missionNamespace setVariable [QGVAR(status_west), _setup, true];
+		if !(_setup) then {
+			missionNamespace setVariable [QGVAR(contested_west), false, true];
+		};
 	};
 
 	case east: {
 		missionNamespace setVariable [QGVAR(vehicle_east), _msp_var, true];
 		missionNamespace setVariable [QGVAR(status_east), _setup, true];
+		if !(_setup) then {
+			missionNamespace setVariable [QGVAR(contested_east), false, true];
+		};
 	};
 
 	case resistance: {
 		missionNamespace setVariable [QGVAR(vehicle_guer), _msp_var, true];
 		missionNamespace setVariable [QGVAR(status_guer), _setup, true];
+		if !(_setup) then {
+			missionNamespace setVariable [QGVAR(contested_guer), false, true];
+		};
 	};
 
 	case civilian: {
 		missionNamespace setVariable [QGVAR(vehicle_civ), _msp_var, true];
 		missionNamespace setVariable [QGVAR(status_civ), _setup, true];
+		if !(_setup) then {
+			missionNamespace setVariable [QGVAR(contested_civ), false, true];
+		};
 	};
 };
 
 if (_setup) then {
-	//[{
-		[] remoteExecCall [QFUNC(contestedCheck), 2];
-	//}, nil, 1] call CBA_fnc_waitAndExecute;
+	[] remoteExecCall [QFUNC(contestedCheck), 2];
 };

@@ -10,20 +10,22 @@
  * Example:
  * [] call Tun_MSP_fnc_contestedCheck
  */
+// private _result = diag_codePerformance [{ 
 #include "script_component.hpp"
 
 private _hash = GVAR(contestedCheckHash);
 private _countestedRangeMax = GVAR(contested_radius_max);
 private _countestedRangeMin = GVAR(contested_radius_min);
+private _allSides = [west,east,resistance,civilian];
 private _allunits = allUnits select {(side _x) in [west,east,resistance,civilian]};
 
 {
-	_x params ["_statusVar", "_msp", "_oldContestedStatusVar", "_side"];
-	private _status = missionNamespace getVariable [_statusVar, false];
+	_x params ["_mspDeployementStatusVar", "_msp", "_contestedStatusVar", "_side"];
+	private _status = missionNamespace getVariable [_mspDeployementStatusVar, false];
 	
 	if ( _status && { !(isNull _msp) } ) then {
-		private _allSides = [west,east,resistance,civilian];
-		_allSides = _allSides - [_side];
+		
+		private _sidesToCheck = _allSides - [_side];
 		private _friendlySides = [_side];
 		private _enemySides = [];
 
@@ -34,9 +36,9 @@ private _allunits = allUnits select {(side _x) in [west,east,resistance,civilian
 			} else {
 				_friendlySides pushBack _otherSide;
 			};
-		} forEach _allSides;
+		} forEach _sidesToCheck;
 
-		private _pos = getPosWorld _msp;
+		private _pos = getpos _msp;
 		private _unitsInArea = _allunits inAreaArray [_pos, _countestedRangeMax, _countestedRangeMax, 0, false, (_countestedRangeMax/2)];
 		private _enemiesInArea = _unitsInArea select {(side _x) in _enemySides};
 		private _friendliesInArea = (count _unitsInArea) - (count _enemiesInArea);
@@ -53,10 +55,10 @@ private _allunits = allUnits select {(side _x) in [west,east,resistance,civilian
 		AAR_UPDATE(_msp, "Friendly Count", _friendliesInArea);
 		AAR_UPDATE(_msp, "Is contested", _isContested);
 
-		private _oldContestedStatus = missionNamespace getVariable [_oldContestedStatusVar, false];
+		private _oldContestedStatus = missionNamespace getVariable [_contestedStatusVar, false];
 		if (_oldContestedStatus isNotEqualTo _isContested) then {
 			AAR_UPDATE(_msp, "Is contested", _isContested);
-			missionNamespace setVariable [_oldContestedStatusVar, _isContested, true];
+			missionNamespace setVariable [_contestedStatusVar, _isContested, true];
 			_msp setVariable [QGVAR(isContested), _isContested, true];
 			private _whoToNotify = [_side] call FUNC(whoToNotify);
 			if (count _whoToNotify > 0 ) then {
@@ -74,7 +76,8 @@ private _allunits = allUnits select {(side _x) in [west,east,resistance,civilian
 	LOG(_debugText);
 	} else {
 		if (_status) then {		
-			missionNamespace setVariable [_statusVar, false, true];
+			missionNamespace setVariable [_mspDeployementStatusVar, false, true];
+			missionNamespace setVariable [_contestedStatusVar, false, true];
 			private _text = "MSP Object Disapeared" + str _side;
 			ERROR(_text);
 		};
@@ -85,5 +88,8 @@ private _allunits = allUnits select {(side _x) in [west,east,resistance,civilian
 	[QGVAR(status_guer), GVAR(vehicle_guer), QGVAR(contested_guer), resistance],
 	[QGVAR(status_civ), GVAR(vehicle_civ), QGVAR(contested_civ), civilian]
 ];
+// }, nil, 10000];
 
-//[] call FUNC(contestedSummary);
+// systemChat str _result;
+
+// diag_log _result;
