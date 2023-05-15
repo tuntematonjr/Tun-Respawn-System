@@ -15,7 +15,7 @@
 #include "script_component.hpp"
 
 if (!hasInterface) exitWith { };
-if (playerSide isEqualTo sideUnknown) exitWith { }; // Exit if a virtual entity (IE zeus)
+if (playerSide isEqualTo sideLogic) exitWith { }; // Exit if a virtual entity (IE zeus)
 private _currentRespawnPos = switch (playerSide) do {
 	case west: {	
 		"tun_respawn_west"
@@ -53,6 +53,3 @@ if (player getvariable [QGVAR(waiting_respawn), false]) then {
 } else {
 	"RespawnPosLocal" setMarkerSizeLocal [1,1];
 };
-
-
-

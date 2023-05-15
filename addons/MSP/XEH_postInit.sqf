@@ -9,6 +9,6 @@ if (isServer) then {
 
 };
 
-if (hasInterface) then {
+if (hasInterface && {playerSide isNotEqualTo sideLogic}) then {
     [] call FUNC(ace_actions);
 };

@@ -13,6 +13,8 @@
  */
 #include "script_component.hpp"
 
+if (playerSide isEqualTo sideLogic) exitWith { }; // Exit if a virtual entity (IE zeus)
+
 private _text = "<font face='PuristaBold' size='20'>Respawn settings</font><br/>";
 
 if (EGVAR(respawn,briefingEnableShowRespawnType)) then {

@@ -3,8 +3,8 @@ if !(GVAR(enable)) exitWith { INFO("TUN Respawn Disabled"); };
 INFO("TUN Respawn Enabled");
 
 
-if (hasInterface) then {
-	[{!isNull player}, {
+if (hasInterface && playerSide isNotEqualTo sideLogic) then {
+	[{!isNull player }, {
 		
 		if (GVAR(gearscriptType) isEqualTo "Save gear") then {
 			[] call FUNC(savegear);
@@ -86,38 +86,40 @@ if (isServer) then {
 	}];
 
 	//AAR times
-	[{cba_missiontime > 10}, {
-		if (GVAR(respawn_type) isEqualTo localize "STR_Tun_Respawn_Type_Sidetickets") then {
-			AAR_UPDATE("west","Side tickets", GVAR(tickets_west));
-			AAR_UPDATE("east","Side tickets", GVAR(tickets_east));
-			AAR_UPDATE("guer","Side tickets", GVAR(tickets_guer));
-			AAR_UPDATE("civ","Side tickets", GVAR(tickets_civ));
-		};
+	if ( !isnil "afi_aar2" ) then { 
+		[{cba_missiontime > 10}, {
+			if (GVAR(respawn_type) isEqualTo localize "STR_Tun_Respawn_Type_Sidetickets") then {
+				AAR_UPDATE("west","Side tickets", GVAR(tickets_west));
+				AAR_UPDATE("east","Side tickets", GVAR(tickets_east));
+				AAR_UPDATE("guer","Side tickets", GVAR(tickets_guer));
+				AAR_UPDATE("civ","Side tickets", GVAR(tickets_civ));
+			};
 
-		if (missionNamespace getVariable ["afi_aar2", false]) then {
-			[{
+			if (missionNamespace getVariable ["afi_aar2", false]) then {
+				[{
 
-				if (GVAR(enabled_west)) then {
-					_time = round (GVAR(wait_time_west) - cba_missiontime);
-					AAR_UPDATE("west","Next respawn wave", _time);
-				};
+					if (GVAR(enabled_west)) then {
+						_time = round (GVAR(wait_time_west) - cba_missiontime);
+						AAR_UPDATE("west","Next respawn wave", _time);
+					};
 
-				if (GVAR(enabled_east)) then {
-					_time = round (GVAR(wait_time_east) - cba_missiontime);
-					AAR_UPDATE("east","Next respawn wave", _time);
-				};
+					if (GVAR(enabled_east)) then {
+						_time = round (GVAR(wait_time_east) - cba_missiontime);
+						AAR_UPDATE("east","Next respawn wave", _time);
+					};
 
-				if (GVAR(enabled_guer)) then {
-					_time = round (GVAR(wait_time_guer) - cba_missiontime);
-					AAR_UPDATE("guer","Next respawn wave", _time);
-				};
+					if (GVAR(enabled_guer)) then {
+						_time = round (GVAR(wait_time_guer) - cba_missiontime);
+						AAR_UPDATE("guer","Next respawn wave", _time);
+					};
 
-				if (GVAR(enabled_civ)) then {
-					_time = round (GVAR(wait_time_civ) - cba_missiontime);
-					AAR_UPDATE("civ","Next respawn wave", _time);
-				};
+					if (GVAR(enabled_civ)) then {
+						_time = round (GVAR(wait_time_civ) - cba_missiontime);
+						AAR_UPDATE("civ","Next respawn wave", _time);
+					};
 
-			}, 10] call CBA_fnc_addPerFrameHandler;
-		};
-	}] call CBA_fnc_waitUntilAndExecute;
+				}, 10] call CBA_fnc_addPerFrameHandler;
+			};
+		}] call CBA_fnc_waitUntilAndExecute;
+	};
 };
