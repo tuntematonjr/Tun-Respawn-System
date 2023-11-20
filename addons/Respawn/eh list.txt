@@ -1,0 +1,5 @@
+EH Name | locality | params
+Tun_respawn_EH_gearAdded - local- unit
+Tun_respawn_EH_moveRespawns - Server - side string (["west"]), units moved
+Tun_respawn_EH_unitTeleported - local - unit, destination pos
+Tun_respawn_EH_unitRespawned - local - unit

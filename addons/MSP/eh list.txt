@@ -1,0 +1,2 @@
+EH Name | locality | params
+Tun_msp_EH_contestedUpdate- global - new status, enemy count, enemy count min, Friendly count
