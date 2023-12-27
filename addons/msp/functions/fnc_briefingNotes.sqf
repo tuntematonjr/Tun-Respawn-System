@@ -23,7 +23,8 @@ private _vehicle = switch (playerSide) do {
 	default { "No side" };
 };
 
-private _text = format ["%1<br/><br/><font face='PuristaBold' size='20'>MSP settings</font><br/>",_text];
+private _text = "<font face='PuristaBold' size='20'>MSP settings</font><br/>";
+
 if (isClass (configFile >> "CfgVehicles" >> _vehicle)) then {
 
 	_text = format ["%1<br/>%2",_text, localize "STR_tunres_Respawn_Briefing_MspEnabled"];
@@ -44,10 +45,11 @@ if (isClass (configFile >> "CfgVehicles" >> _vehicle)) then {
 	_text = format ["%1<br/>%2",_text, localize "STR_tunres_Respawn_Briefing_MspDisabled"];
 };
 
-_text = format ["%1<br/><br/><font color='#4F4F4F' size='11'>Powered By TuntematonEngine v%2.%3.%4</font>", _text, MAJOR, MINOR, PATCHLVL];
+_text = format ["%1<br/><br/><font color='#4F4F4F' size='11'>Powered By TuntematonEngine v%2.%3.%4</font>", _text, MAJOR, MINOR, PATCH];
 
 //player createDiaryRecord ["Diary",["Respawn info",_text]];
 if !(player diarySubjectExists "Respawn info") then {
 	player createDiarySubject ["Respawn info","Tun - Respawn info"];
 };
-player createDiaryRecord ["Respawn info",["Tun - MSP info", _text]];
+
+player createDiaryRecord ["Respawn info",["MSP info", _text]];
