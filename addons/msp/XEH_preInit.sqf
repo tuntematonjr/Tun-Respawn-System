@@ -45,7 +45,10 @@ PREP_RECOMPILE_END;
     ["STR_tunres_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_MSP_CBA_Category_contested" call BIS_fnc_localize],
     [1, 600, 30, 0],
     1,
-    {},
+    {
+        params ["_value"];
+        GVAR(report_enemies_interval) = round _value;
+    },
     true
 ] call CBA_Settings_fnc_init;
 
@@ -56,7 +59,10 @@ PREP_RECOMPILE_END;
     ["STR_tunres_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_MSP_CBA_Category_contested" call BIS_fnc_localize],
     [0, 5000, 500, 0],
     1,
-    {},
+    {
+        params ["_value"];
+        GVAR(report_enemies_range) = round _value;
+    },
     false
 ] call CBA_Settings_fnc_init;
 
@@ -65,9 +71,12 @@ PREP_RECOMPILE_END;
     "SLIDER",
     ["STR_tunres_MSP_CBA_contested_radius_max" call BIS_fnc_localize, "STR_tunres_MSP_CBA_tooltip_contested_max" call BIS_fnc_localize],
     ["STR_tunres_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_MSP_CBA_Category_contested" call BIS_fnc_localize],
-    [0, 5000, 500, 0],
+    [0, 3000, 500, 0],
     1,
-    {},
+    {
+        params ["_value"];
+        GVAR(contested_radius_max) = round _value;
+    },
     false
 ] call CBA_Settings_fnc_init;
 
@@ -76,9 +85,12 @@ PREP_RECOMPILE_END;
     "SLIDER",
     ["STR_tunres_MSP_CBA_contested_radius_min" call BIS_fnc_localize, "STR_tunres_MSP_CBA_tooltip_contested_min" call BIS_fnc_localize],
     ["STR_tunres_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_MSP_CBA_Category_contested" call BIS_fnc_localize],
-    [0, 5000, 200, 0],
+    [0, 3000, 200, 0],
     1,
-    {},
+    {
+        params ["_value"];
+        GVAR(contested_radius_min) = round _value;
+    },
     false
 ] call CBA_Settings_fnc_init;
 
@@ -89,7 +101,10 @@ PREP_RECOMPILE_END;
     ["STR_tunres_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_MSP_CBA_Category_contested" call BIS_fnc_localize],
     [1, 600, 30, 0],
     1,
-    {},
+    {
+        params ["_value"];
+        GVAR(contested_check_interval) = round _value;
+    },
     true
 ] call CBA_Settings_fnc_init;
 
@@ -100,7 +115,10 @@ PREP_RECOMPILE_END;
     ["STR_tunres_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_MSP_CBA_Category_progres" call BIS_fnc_localize],
     [0, 60, 5, 0],
     1,
-    {},
+    {
+        params ["_value"];
+        GVAR(progresbar_time_setup) = round _value;
+    },
     true
 ] call CBA_Settings_fnc_init;
 
@@ -111,7 +129,10 @@ PREP_RECOMPILE_END;
     ["STR_tunres_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_MSP_CBA_Category_progres" call BIS_fnc_localize],
     [0, 60, 5, 0],
     1,
-    {},
+    {
+        params ["_value"];
+        GVAR(progresbar_time_pack) = round _value;
+    },
     true
 ] call CBA_Settings_fnc_init;
 

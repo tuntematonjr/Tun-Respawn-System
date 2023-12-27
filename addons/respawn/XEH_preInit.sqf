@@ -75,7 +75,10 @@ GVAR(selfTPmenuOpenObj) = objNull;
     ["STR_tunres_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Category_generic" call BIS_fnc_localize],
     [1, 300, 20, 0],
     1,
-    {},
+    {
+        params ["_value"];
+        GVAR(killJIP_time) = round _value;
+    },
     true
 ] call CBA_Settings_fnc_init;
 
@@ -119,7 +122,10 @@ GVAR(selfTPmenuOpenObj) = objNull;
     ["STR_tunres_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Category_generic" call BIS_fnc_localize],
     [0, 100, 0, 0],
     1,
-    {},
+    {
+        params ["_value"];
+        GVAR(delayed_respawn) = round _value;
+    },
     true
 ] call CBA_Settings_fnc_init;
 
@@ -130,7 +136,10 @@ GVAR(selfTPmenuOpenObj) = objNull;
     ["STR_tunres_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Category_generic" call BIS_fnc_localize],
     [30, 300, 100, 0],
     1,
-    {},
+    {
+        params ["_value"];
+        GVAR(waiting_area_range) = round _value;
+    },
     true
 ] call CBA_Settings_fnc_init;
 
@@ -142,7 +151,10 @@ GVAR(selfTPmenuOpenObj) = objNull;
     ["STR_tunres_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Category_time" call BIS_fnc_localize],
     [1, 60, 15, 0],
     1,
-    {},
+    {
+        params ["_value"];
+        GVAR(time_west) = round _value;
+    },
     true
 ] call CBA_Settings_fnc_init;
 
@@ -153,7 +165,10 @@ GVAR(selfTPmenuOpenObj) = objNull;
     ["STR_tunres_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Category_time" call BIS_fnc_localize],
     [1, 60, 15, 0],
     1,
-    {},
+    {
+        params ["_value"];
+        GVAR(time_east) = round _value;
+    },
     true
 ] call CBA_Settings_fnc_init;
 
@@ -164,7 +179,10 @@ GVAR(selfTPmenuOpenObj) = objNull;
     ["STR_tunres_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Category_time" call BIS_fnc_localize],
     [1, 60, 15, 0],
     1,
-    {},
+    {
+        params ["_value"];
+        GVAR(time_guer) = round _value;
+    },
     true
 ] call CBA_Settings_fnc_init;
 
@@ -175,7 +193,10 @@ GVAR(selfTPmenuOpenObj) = objNull;
     ["STR_tunres_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Category_time" call BIS_fnc_localize],
     [1, 60, 15, 0],
     1,
-    {},
+    {
+        params ["_value"];
+        GVAR(time_civ) = round _value;
+    },
     true
 ] call CBA_Settings_fnc_init;
 
@@ -221,7 +242,10 @@ GVAR(selfTPmenuOpenObj) = objNull;
     ["STR_tunres_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Category_ticketcount" call BIS_fnc_localize],
     [0, 1000, 0, 0],
     1,
-    {},
+    {
+        params ["_value"];
+        GVAR(tickets_west) = round _value;
+    },
     true
 ] call CBA_Settings_fnc_init;
 
@@ -232,7 +256,10 @@ GVAR(selfTPmenuOpenObj) = objNull;
     ["STR_tunres_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Category_ticketcount" call BIS_fnc_localize],
     [0, 1000, 0, 0],
     1,
-    {},
+    {
+        params ["_value"];
+        GVAR(tickets_east) = round _value;
+    },
     true
 ] call CBA_Settings_fnc_init;
 
@@ -243,7 +270,10 @@ GVAR(selfTPmenuOpenObj) = objNull;
     ["STR_tunres_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Category_ticketcount" call BIS_fnc_localize],
     [0, 1000, 0, 0],
     1,
-    {},
+    {
+        params ["_value"];
+        GVAR(tickets_guer) = round _value;
+    },
     true
 ] call CBA_Settings_fnc_init;
 
@@ -254,7 +284,10 @@ GVAR(selfTPmenuOpenObj) = objNull;
     ["STR_tunres_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Category_ticketcount" call BIS_fnc_localize],
     [0, 1000, 0, 0],
     1,
-    {},
+    {
+        params ["_value"];
+        GVAR(tickets_civ) = round _value;
+    },
     true
 ] call CBA_Settings_fnc_init;
 
