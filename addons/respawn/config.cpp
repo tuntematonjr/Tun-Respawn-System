@@ -7,7 +7,7 @@ class CfgPatches {
         units[] = {QGVAR(Module_waitingarea), QGVAR(Module_Respawn_point), QGVAR(tunres_Respawn_Module_teleportPoint)};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"tunres_main","A3_Modules_F","3DEN","cba_main","cba_xeh","ace_interaction","ace_interact_menu"};
+        requiredAddons[] = {"tunres_main","A3_Modules_F","3DEN","ace_interaction","ace_interact_menu"};
         authors[] = {"Tuntematon"}; // sub array of authors, considered for the specific addon, can be removed or left empty {}
         VERSION_CONFIG;
     };
@@ -15,6 +15,9 @@ class CfgPatches {
 
 // configs go here
 #include "CfgEventHandlers.hpp"
+#include "\a3\ui_f\hpp\definecommoncolors.inc"
+#include "RscCommon.hpp"
+#include "TP_dialog.hpp"
 
 class CfgFactionClasses
 {

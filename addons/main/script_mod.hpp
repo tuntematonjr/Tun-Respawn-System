@@ -1,5 +1,5 @@
 #define MAINPREFIX x
-#define PREFIX main
+#define PREFIX tunres
 
 #include "script_version.hpp"
 
