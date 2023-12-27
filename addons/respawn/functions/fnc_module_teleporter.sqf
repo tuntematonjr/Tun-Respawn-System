@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Author: [Tuntematon]
  * [Description]
  *
@@ -9,7 +9,7 @@
  * The return true when done <BOOL>
  *
  * Example:
- * [Logic]call Tun_Respawn_fnc_module_teleporter
+ * [Logic]call tunres_Respawn_fnc_module_teleporter
  */
 #include "script_component.hpp"
 
@@ -42,7 +42,7 @@ if (hasInterface) then {
 			private _useAceAction = _logic getVariable QGVAR(teleportUseAceAction);
 			private _name = _logic getVariable QGVAR(teleportName);
 			private _markerIcon = _logic getVariable [QGVAR(teleportMarkerIcon), "hd_start"];
-			private _allowCheckTickets = _logic getVariable [QGVAR(tun_respawn_teleportCheckTickets), false];
+			private _allowCheckTickets = _logic getVariable [QGVAR(tunres_respawn_teleportCheckTickets), false];
 			
 			private _actionPath = [];
 

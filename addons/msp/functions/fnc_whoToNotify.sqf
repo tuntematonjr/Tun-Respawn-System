@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Author: [Tuntematon]
  * [Description]
  *
@@ -9,7 +9,7 @@
  * The return array who gets notification <ARRAY>
  *
  * Example:
- * [west] call Tun_MSP_fnc_whoToNotify
+ * [west] call tunres_MSP_fnc_whoToNotify
  */
 #include "script_component.hpp"
 params [["_side", nil, [west]]];

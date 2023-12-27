@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Author: [Tuntematon]
  * [Description]
  *
@@ -10,7 +10,7 @@
  * none
  *
  * Example:
- * [player] call Tun_Respawn_fnc_updateWaitingRespawnList
+ * [player] call tunres_Respawn_fnc_updateWaitingRespawnList
  */
 #include "script_component.hpp"
 params [["_player", nil, [objNull]], ["_addPlayer", nil, [false]], ["_side", nil, [west]]];

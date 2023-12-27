@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Author: [Tuntematon]
  * [Description]
  * 
@@ -8,7 +8,7 @@
  * None
  *
  * Example:
- * [] call Tun_MSP_fnc_contestedCheck
+ * [] call tunres_MSP_fnc_contestedCheck
  */
 // private _result = diag_codePerformance [{ 
 #include "script_component.hpp"
@@ -64,10 +64,10 @@ private _allunits = allUnits select {(side _x) in [west,east,resistance,civilian
 			if (count _whoToNotify > 0 ) then {
 				if (_isContested) then {
 					[_side, false] call EFUNC(respawn,update_respawn_point);
-					(call compile ("STR_Tun_MSP_FNC_Contested_hint" call BIS_fnc_localize)) remoteExecCall ["CBA_fnc_notify", _whoToNotify];
+					(call compile ("STR_tunres_MSP_FNC_Contested_hint" call BIS_fnc_localize)) remoteExecCall ["CBA_fnc_notify", _whoToNotify];
 				} else {
 					[_side, true, (getPos _msp) ] call EFUNC(respawn,update_respawn_point);
-					(call compile ("STR_Tun_MSP_FNC_secured_hint" call BIS_fnc_localize)) remoteExecCall ["CBA_fnc_notify", _whoToNotify];
+					(call compile ("STR_tunres_MSP_FNC_secured_hint" call BIS_fnc_localize)) remoteExecCall ["CBA_fnc_notify", _whoToNotify];
 				};
 			};
 		};

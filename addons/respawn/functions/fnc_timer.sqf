@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Author: [Tuntematon]
  * [Description]
  * Timer
@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * ["west"] call TUN_Respawn_fnc_timer
+ * ["west"] call tunres_Respawn_fnc_timer
  */
 #include "script_component.hpp"
 params ["_side"];
@@ -56,8 +56,8 @@ switch (_side) do {
 if !( _side in GVAR(timer_running) ) then {
 	GVAR(timer_running) pushBack _side;
 	[{ missionNamespace getVariable (_this select 2) && { cba_missiontime >= missionNamespace getVariable (_this select 1) } }, {
-		if (Tun_MSP_enable) then {
-			[] call Tun_MSP_fnc_contestedCheck;
+		if (tunres_MSP_enable) then {
+			[] call tunres_MSP_fnc_contestedCheck;
 		};
 		private _side = _this select 0;
 		REM(GVAR(timer_running), _side);

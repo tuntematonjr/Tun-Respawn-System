@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Author: [Tuntematon]
  * [Description]
  *
@@ -17,7 +17,7 @@
  * none
  *
  * Example:
- * [this, "true", "TP 1", true, "hd_start", [west, resistance], true, "true", true] call Tun_Respawn_fnc_addCustomTeleporter
+ * [this, "true", "TP 1", true, "hd_start", [west, resistance], true, "true", true] call tunres_Respawn_fnc_addCustomTeleporter
  */
  if (hasInterface) then {
 	#include "script_component.hpp"
@@ -45,7 +45,7 @@
 		GVAR(teleportPoints) pushBackUnique _obj;
 
 		if (_createMarker) then {
-			private _markerName = format["tun_respawn_%1",_name];
+			private _markerName = format["tunres_respawn_%1",_name];
 			private _marker = [_markerName, getpos _obj, "ICON", [1, 1], "TYPE:", _markerIcon, "TEXT:", _name] call CBA_fnc_createMarker;
 			_obj setVariable [QGVAR(markerName), _marker];
 		};

@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Author: [Tuntematon]
  * [Description]
  * Count side tickest
@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * [side, player] call TUN_Respawn_fnc_ticketCounterPlayer
+ * [side, player] call tunres_Respawn_fnc_ticketCounterPlayer
  */
 #include "script_component.hpp"
 params ["_side","_player"];
@@ -31,7 +31,7 @@ if ( _remainingTickets > 0 ) then {
 		_hash set [_playerUID, _remainingTickets];
 	};
 	[5] remoteExecCall ["setPlayerRespawnTime", _player];
-	private _text = format["%1 %2","STR_Tun_Respawn_RemainingTicketsText" call BIS_fnc_localize, str _remainingTickets];
+	private _text = format["%1 %2","STR_tunres_Respawn_RemainingTicketsText" call BIS_fnc_localize, str _remainingTickets];
 	_text remoteExecCall ["CBA_fnc_notify", _player];
 
 	} else {

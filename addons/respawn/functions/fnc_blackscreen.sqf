@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Author: [Tuntematon]
  * [Description]
  * Create black screen and text. Disables player moving during that time.
@@ -12,7 +12,7 @@
  * None
  *
  * Example:
- * ["Hi World", 15] call TUN_Respawn_fnc_blackscreen
+ * ["Hi World", 15] call tunres_Respawn_fnc_blackscreen
  */
 #include "script_component.hpp"
 params [["_text",""],["_duration", 10]];

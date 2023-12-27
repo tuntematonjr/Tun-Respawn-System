@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Author: [Nurmi & Tuntematon]
  * [Description]
  *
@@ -9,7 +9,7 @@
  * Parent Action Path in array, if no parent action exists empty array is returned
  *
  * Example:
- * [Object] call Tun_Respawn_fnc_getParentAction
+ * [Object] call tunres_Respawn_fnc_getParentAction
 
  */
 #include "script_component.hpp"

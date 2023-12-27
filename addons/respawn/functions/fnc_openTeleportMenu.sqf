@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Author: [Tuntematon]
  * [Description]
  *
@@ -9,7 +9,7 @@
  * None
  *
  * Example:
- * [OBJ] call Tun_Respawn_fnc_openTeleportMenu
+ * [OBJ] call tunres_Respawn_fnc_openTeleportMenu
  */
 #include "script_component.hpp"
 params ["_target"];

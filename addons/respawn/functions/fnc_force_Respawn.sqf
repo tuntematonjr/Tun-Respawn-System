@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Author: [Tuntematon]
  * [Description]
  * Force respawn wave
@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * [west, false] call Tun_Respawn_fnc_force_Respawn
+ * [west, false] call tunres_Respawn_fnc_force_Respawn
  */
 #include "script_component.hpp"
 

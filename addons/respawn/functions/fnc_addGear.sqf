@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Author: [Tuntematon]
  * [Description]
  * Give player its original gear.
@@ -10,7 +10,7 @@
  * none
  *
  * Example:
- * [] call TUN_Respawn_addGear
+ * [] call tunres_Respawn_addGear
  */
 #include "script_component.hpp"
 if (isDedicated) exitWith { };

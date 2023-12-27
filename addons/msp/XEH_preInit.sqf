@@ -1,51 +1,195 @@
 #include "script_component.hpp"
-#include "XEH_prep.sqf"
+ADDON = false;
 
-if (isServer) then {
-    missionNamespace setVariable [QGVAR(disableContestedCheck), false, true];
+PREP_RECOMPILE_START;
+#include "XEH_PREP.hpp"
+PREP_RECOMPILE_END;
 
-    missionNamespace setVariable [QGVAR(contested_east), false, true];
-    missionNamespace setVariable [QGVAR(contested_west), false, true];
-    missionNamespace setVariable [QGVAR(contested_guer), false, true];
-    missionNamespace setVariable [QGVAR(contested_civ), false, true];
+[
+    QGVAR(enable),
+    "CHECKBOX",
+    ["STR_tunres_MSP_CBA_Enable" call BIS_fnc_localize, "STR_tunres_MSP_CBA_tooltip_Enable" call BIS_fnc_localize],
+    "STR_tunres_MSP_CBA_Category_main" call BIS_fnc_localize,
+    false,
+    1,
+    {},
+    true
+] call CBA_Settings_fnc_init;
 
-    missionNamespace setVariable [QGVAR(status_east), false, true];
-    missionNamespace setVariable [QGVAR(status_west), false, true];
-    missionNamespace setVariable [QGVAR(status_guer), false, true];
-    missionNamespace setVariable [QGVAR(status_civ), false, true];
+[
+    QGVAR(allowCheckTicketsMSP),
+    "CHECKBOX",
+    ["STR_tunres_MSP_CBA_allowCheckTicketsMSP" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_tooltip_CheckTickets" call BIS_fnc_localize],
+    "STR_tunres_MSP_CBA_Category_main" call BIS_fnc_localize,
+    false,
+    1,
+    {},
+    true
+] call CBA_Settings_fnc_init;
 
-    missionNamespace setVariable [QGVAR(vehicle_east), objNull, true];
-    missionNamespace setVariable [QGVAR(vehicle_west), objNull, true];
-    missionNamespace setVariable [QGVAR(vehicle_guer), objNull, true];
-    missionNamespace setVariable [QGVAR(vehicle_civ), objNull, true];
+[
+    QGVAR(report_enemies),
+    "CHECKBOX",
+    ["STR_tunres_MSP_CBA_report_enemies" call BIS_fnc_localize, "STR_tunres_MSP_CBA_tooltip_report_enemies" call BIS_fnc_localize],
+    ["STR_tunres_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_MSP_CBA_Category_contested" call BIS_fnc_localize],
+    true,
+    1,
+    {},
+    true
+] call CBA_Settings_fnc_init;
 
-    missionNamespace setVariable [QGVAR(nearUnitsEast), [], true];
-    missionNamespace setVariable [QGVAR(nearUnitsEastMin), [], true];
+[
+    QGVAR(report_enemies_interval),
+    "SLIDER",
+    ["STR_tunres_MSP_CBA_report_enemies_intervala" call BIS_fnc_localize, "STR_tunres_MSP_CBA_tooltip_report_enemies_interval" call BIS_fnc_localize],
+    ["STR_tunres_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_MSP_CBA_Category_contested" call BIS_fnc_localize],
+    [1, 600, 30, 0],
+    1,
+    {},
+    true
+] call CBA_Settings_fnc_init;
 
-    missionNamespace setVariable [QGVAR(nearUnitsWest), [], true];
-    missionNamespace setVariable [QGVAR(nearUnitsWestMin), [], true];
+[
+    QGVAR(report_enemies_range),
+    "SLIDER",
+    ["STR_tunres_MSP_CBA_report_enemies_range" call BIS_fnc_localize, "STR_tunres_MSP_CBA_tooltip_report_enemies_range" call BIS_fnc_localize],
+    ["STR_tunres_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_MSP_CBA_Category_contested" call BIS_fnc_localize],
+    [0, 5000, 500, 0],
+    1,
+    {},
+    false
+] call CBA_Settings_fnc_init;
 
-    missionNamespace setVariable [QGVAR(nearUnitsGuer), [], true];
-    missionNamespace setVariable [QGVAR(nearUnitsGuerMin), [], true];
+[
+    QGVAR(contested_radius_max),
+    "SLIDER",
+    ["STR_tunres_MSP_CBA_contested_radius_max" call BIS_fnc_localize, "STR_tunres_MSP_CBA_tooltip_contested_max" call BIS_fnc_localize],
+    ["STR_tunres_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_MSP_CBA_Category_contested" call BIS_fnc_localize],
+    [0, 5000, 500, 0],
+    1,
+    {},
+    false
+] call CBA_Settings_fnc_init;
 
-    missionNamespace setVariable [QGVAR(nearUnitsCiv), [], true];
-    missionNamespace setVariable [QGVAR(nearUnitsCivMin), [], true];
+[
+    QGVAR(contested_radius_min),
+    "SLIDER",
+    ["STR_tunres_MSP_CBA_contested_radius_min" call BIS_fnc_localize, "STR_tunres_MSP_CBA_tooltip_contested_min" call BIS_fnc_localize],
+    ["STR_tunres_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_MSP_CBA_Category_contested" call BIS_fnc_localize],
+    [0, 5000, 200, 0],
+    1,
+    {},
+    false
+] call CBA_Settings_fnc_init;
 
-    missionNamespace setVariable [QGVAR(enemyCountEast), 0, true];
-    missionNamespace setVariable [QGVAR(enemyCountMinEast), 0, true];
-    missionNamespace setVariable [QGVAR(friendlyCountEast), 0, true];
+[
+    QGVAR(contested_check_interval),
+    "SLIDER",
+    ["STR_tunres_MSP_CBA_contested_check_interval" call BIS_fnc_localize, "STR_tunres_MSP_CBA_tooltip_contested_check_interval" call BIS_fnc_localize],
+    ["STR_tunres_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_MSP_CBA_Category_contested" call BIS_fnc_localize],
+    [1, 600, 30, 0],
+    1,
+    {},
+    true
+] call CBA_Settings_fnc_init;
 
-    missionNamespace setVariable [QGVAR(enemyCountWest), 0, true];
-    missionNamespace setVariable [QGVAR(enemyCountMinWest), 0, true];
-    missionNamespace setVariable [QGVAR(friendlyCountWest), 0, true];
+[
+    QGVAR(progresbar_time_setup),
+    "SLIDER",
+    ["STR_tunres_MSP_CBA_setup_progresbar" call BIS_fnc_localize, "STR_tunres_MSP_CBA_tooltip_setup_progresbar" call BIS_fnc_localize],
+    ["STR_tunres_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_MSP_CBA_Category_progres" call BIS_fnc_localize],
+    [0, 60, 5, 0],
+    1,
+    {},
+    true
+] call CBA_Settings_fnc_init;
 
-    missionNamespace setVariable [QGVAR(enemyCountGuer), 0, true];
-    missionNamespace setVariable [QGVAR(enemyCountMinGuer), 0, true];
-    missionNamespace setVariable [QGVAR(friendlyCountGuer), 0, true];
+[
+    QGVAR(progresbar_time_pack),
+    "SLIDER",
+    ["STR_tunres_MSP_CBA_pack_progresbar" call BIS_fnc_localize, "STR_tunres_MSP_CBA_tooltip_pack_progresbar" call BIS_fnc_localize],
+    ["STR_tunres_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_MSP_CBA_Category_progres" call BIS_fnc_localize],
+    [0, 60, 5, 0],
+    1,
+    {},
+    true
+] call CBA_Settings_fnc_init;
 
-    missionNamespace setVariable [QGVAR(enemyCountCiv), 0, true];
-    missionNamespace setVariable [QGVAR(enemyCountMinCiv), 0, true];
-    missionNamespace setVariable [QGVAR(friendlyCountCiv), 0, true];
+[
+    QGVAR(clasnames_east),
+    "EDITBOX",
+    ["STR_tunres_MSP_CBA_classname_east" call BIS_fnc_localize, "STR_tunres_MSP_CBA_tooltip_classname" call BIS_fnc_localize],
+    ["STR_tunres_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_MSP_CBA_classname" call BIS_fnc_localize],
+    "O_Truck_03_transport_F",
+    1,
+    {},
+    true
+] call CBA_Settings_fnc_init;
 
-    GVAR(contestedCheckHash) = createHashMap;;
-};
+[
+    QGVAR(clasnames_west),
+    "EDITBOX",
+    ["STR_tunres_MSP_CBA_classname_west" call BIS_fnc_localize, "STR_tunres_MSP_CBA_tooltip_classname" call BIS_fnc_localize],
+    ["STR_tunres_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_MSP_CBA_classname" call BIS_fnc_localize],
+    "B_Truck_01_transport_F",
+    1,
+    {},
+    true
+] call CBA_Settings_fnc_init;
+
+[
+    QGVAR(clasnames_resistance),
+    "EDITBOX",
+    ["STR_tunres_MSP_CBA_classname_resistance" call BIS_fnc_localize, "STR_tunres_MSP_CBA_tooltip_classname" call BIS_fnc_localize],
+    ["STR_tunres_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_MSP_CBA_classname" call BIS_fnc_localize],
+    "I_Truck_02_transport_F",
+    1,
+    {},
+    true
+] call CBA_Settings_fnc_init;
+
+[
+    QGVAR(clasnames_civilian),
+    "EDITBOX",
+    ["STR_tunres_MSP_CBA_classname_civilian" call BIS_fnc_localize, "STR_tunres_MSP_CBA_tooltip_classname" call BIS_fnc_localize],
+    ["STR_tunres_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_MSP_CBA_classname" call BIS_fnc_localize],
+    "C_Truck_02_transport_F",
+    1,
+    {},
+    true
+] call CBA_Settings_fnc_init;
+
+[
+    QGVAR(setupNotification),
+    "LIST",
+    ["STR_tunres_MSP_CBA_whoGetsSetUpNotification" call BIS_fnc_localize, "STR_tunres_MSP_CBA_whoGetsSetUpNotification_Tooltip" call BIS_fnc_localize],
+    ["STR_tunres_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_MSP_CBA_notificationCategory" call BIS_fnc_localize],
+    [[0, 1], ["Group Leaders", "Side"], 0],
+    1,
+    {},
+    true
+] call CBA_Settings_fnc_init;
+
+[
+    QGVAR(contestedNotification),
+    "LIST",
+    ["STR_tunres_MSP_CBA_whoGetsContestedNotification" call BIS_fnc_localize, "STR_tunres_MSP_CBA_whoGetsContestedNotification_Tooltip" call BIS_fnc_localize],
+    ["STR_tunres_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_MSP_CBA_notificationCategory" call BIS_fnc_localize],
+    [[0, 1], ["Group Leaders", "Side"], 0],
+    1,
+    {},
+    true
+] call CBA_Settings_fnc_init;
+
+[
+    QGVAR(reportEnemiesNotification),
+    "LIST",
+    ["STR_tunres_MSP_CBA_whoGetsReportEnemiesNotification" call BIS_fnc_localize, "STR_tunres_MSP_CBA_whoGetsReportEnemies_Tooltip" call BIS_fnc_localize],
+    ["STR_tunres_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_MSP_CBA_notificationCategory" call BIS_fnc_localize],
+    [[0, 1], ["Group Leaders", "Side"], 0],
+    1,
+    {},
+    true
+] call CBA_Settings_fnc_init;
+
+ADDON = true;

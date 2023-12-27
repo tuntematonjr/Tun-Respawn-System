@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Author: [Tuntematon]
  * [Description]
  *
@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * [west, true] call Tun_respawn_fnc_update_respawn_point
+ * [west, true] call tunres_respawn_fnc_update_respawn_point
  */
 #include "script_component.hpp"
 

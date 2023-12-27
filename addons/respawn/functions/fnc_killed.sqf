@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Author: [Tuntematon]
  * [Description]
  * Depending what respawn style is chosen. Chose fnc acording that.
@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [] call TUN_Respawn_fnc_killed
+ * [] call tunres_Respawn_fnc_killed
 
  */
 #include "script_component.hpp"
@@ -23,11 +23,11 @@ if (GVAR(endRespawns)) exitWith {
 };
 
 switch (GVAR(respawn_type)) do {
-	case localize "STR_Tun_Respawn_Type_Sidetickets": {
+	case localize "STR_tunres_Respawn_Type_Sidetickets": {
 		[playerSide, player] remoteExecCall [QFUNC(ticketCounterSide),2];
 	};
 
-	case localize "STR_Tun_Respawn_Type_Playertickets": {
+	case localize "STR_tunres_Respawn_Type_Playertickets": {
 		[playerSide, player] remoteExecCall [QFUNC(ticketCounterPlayer),2];
 	};
 

@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Author: [Tuntematon]
  * [Description]
  * Module fnc to create markers
@@ -10,7 +10,7 @@
  * The return true when done <BOOL>
  *
  * Example:
- * [Logic] call Tun_Respawn_fnc_module_waitingarea
+ * [Logic] call tunres_Respawn_fnc_module_waitingarea
  */
 #include "script_component.hpp"
 
@@ -20,14 +20,18 @@ _logic = param [0,objNull,[objNull]];
 
 _markername = _logic getVariable ["respawn_side","none"];
 
-if (_markername isEqualTo "none") exitWith { hint ("STR_Tun_Respawn_Module_WaitingArea_novalue" call BIS_fnc_localize); false }; // Exit if no side
-
+if (_markername isEqualTo "none") exitWith {  // Exit if no side
+	private _errorText = localize "STR_tunres_Respawn_Module_WaitingArea_novalue";
+    ERROR_MSG(_errorText);
+	false 
+};
 
 if (getMarkerColor _markername isEqualTo "") then {
 	_marker = [_markername, getPos _logic, "icon", [1, 1], "PERSIST", "TYPE:", "Empty"] call CBA_fnc_createMarker;
 	_marker setMarkerAlpha 0;
 } else {
-	hint format [( "STR_Tun_Respawn_Module_WaitingArea_MultipleMarkers" call BIS_fnc_localize), _markername];
+	private _errorText = format [(localize "STR_tunres_Respawn_Module_WaitingArea_MultipleMarkers"), _markername];
+    ERROR_MSG(_errorText);
 };
 
 _pos = getPos _logic;

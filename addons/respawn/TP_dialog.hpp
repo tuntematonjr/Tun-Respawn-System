@@ -32,7 +32,7 @@ class TP_Dialog
 	
 	class ControlsBackground
 	{
-		class tun_respawn_tp_background
+		class tunres_respawn_tp_background
 		{
 			type = 0;
 			idc = -1;
@@ -51,31 +51,31 @@ class TP_Dialog
 	};
 	class Controls
 	{
-		class tun_respawn_tp_list : RscListBox
+		class tunres_respawn_tp_list : RscListBox
 		{
 			idc = 300001;
 			x = safeZoneX + safeZoneW * 0.325;
 			y = safeZoneY + safeZoneH * 0.275;
 			w = safeZoneW * 0.175;
 			h = safeZoneH * 0.425;
-			onLBSelChanged = "params ['_control', '_selectedIndex']; [_control, _selectedIndex] call Tun_Respawn_fnc_teleportOnLBSelChanged";
+			onLBSelChanged = "params ['_control', '_selectedIndex']; [_control, _selectedIndex] call tunres_Respawn_fnc_teleportOnLBSelChanged";
 		};
-		class tun_respawn_tp_button : RscButton
+		class tunres_respawn_tp_button : RscButton
 		{
 			idc = 300002;
 			x = safeZoneX + safeZoneW * 0.625;
 			y = safeZoneY + safeZoneH * 0.67592593;
 			w = safeZoneW * 0.05;
 			h = safeZoneH * 0.05;
-			text = "$STR_Tun_Respawn_tp_dialog_button";
-			action = "[] call Tun_Respawn_fnc_teleportButton";
+			text = "$STR_tunres_Respawn_tp_dialog_button";
+			action = "[] call tunres_Respawn_fnc_teleportButton";
 			SizeEx = GUI_TEXT_SIZE_SMALL;
 			colorBackground[] = GUI_USER_COLORBACKGROUND;
 			colorFocused[] = GUI_USER_COLORBACKGROUND;
 			colorFocused2[] = GUI_USER_COLORBACKGROUND;
 			
 		};		
-		class tun_respawn_tp_header : RscText
+		class tunres_respawn_tp_header : RscText
 		{
 			idc = -1;
 			x = safeZoneX + safeZoneW * 0.50520834;
@@ -83,7 +83,7 @@ class TP_Dialog
 			w = safeZoneW * 0.1796875;
 			h = safeZoneH * 0.08611112;
 			style = 2;
-			text = "$STR_Tun_Respawn_tp_dialog_header";
+			text = "$STR_tunres_Respawn_tp_dialog_header";
 			colorBackground[] = GUI_USER_COLORBACKGROUND;
 			colorText[] = {1,1,1,1};
 			font = "TahomaB";
@@ -91,7 +91,7 @@ class TP_Dialog
 			shadow = 2;
 		};
 		
-		class tun_respawn_tp_minimap : RscMapControl
+		class tunres_respawn_tp_minimap : RscMapControl
 		{
 			idc = 300003;
 			x = safeZoneX + safeZoneW * 0.51875;

@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Author: [Tuntematon]
  * [Description]
  * Add action to TP object
@@ -14,7 +14,7 @@
  * The return true when done <BOOL>
  *
  * Example:
- * _flag, true, nil, ["Tun_baseAction"] call Tun_Respawn_fnc_addTeleportAction
+ * _flag, true, nil, ["tunres_baseAction"] call tunres_Respawn_fnc_addTeleportAction
  */
 #include "script_component.hpp"
 params ["_obj", "_menuOpenConditio", "_useAceAction", "_actionPath"];
@@ -24,13 +24,13 @@ if (_useAceAction) then {
 	_statement = {
 		params ["_obj", "_menuOpenConditio", "_actionPath"];
 		_menuOpenConditio = compile _menuOpenConditio;
-		private _action = ["TpMenu", "STR_Tun_Respawn_TeleportMenu" call BIS_fnc_localize,"\a3\3den\data\cfg3den\history\changeattributes_ca.paa",{ [_target] call FUNC(openTeleportMenu) }, _menuOpenConditio] call ace_interact_menu_fnc_createAction;
+		private _action = ["TpMenu", "STR_tunres_Respawn_TeleportMenu" call BIS_fnc_localize,"\a3\3den\data\cfg3den\history\changeattributes_ca.paa",{ [_target] call FUNC(openTeleportMenu) }, _menuOpenConditio] call ace_interact_menu_fnc_createAction;
 		[_obj, 0, _actionPath, _action] call ace_interact_menu_fnc_addActionToObject;
 	};
 } else {
 	_statement = {
 		params ["_obj", "_menuOpenConditio"];
-		_obj addAction ["STR_Tun_Respawn_TeleportMenuVanilla" call BIS_fnc_localize, { [_this select 0] call FUNC(openTeleportMenu) }, [], 10, true, true, "", _menuOpenConditio, 10]
+		_obj addAction ["STR_tunres_Respawn_TeleportMenuVanilla" call BIS_fnc_localize, { [_this select 0] call FUNC(openTeleportMenu) }, [], 10, true, true, "", _menuOpenConditio, 10]
 	};	
 };
 

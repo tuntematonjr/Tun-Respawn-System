@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Author: [Tuntematon]
  * [Description]
  *
@@ -14,7 +14,7 @@
  * The return value <BOOL>
  *
  * Example:
- * ["something", player] call Tun_Respawn_fnc_teleportOnLBSelChanged
+ * ["something", player] call tunres_Respawn_fnc_teleportOnLBSelChanged
  *
  * Public: [Yes/No]
  */

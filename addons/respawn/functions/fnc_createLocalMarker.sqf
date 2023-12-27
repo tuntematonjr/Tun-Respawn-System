@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Author: [Tuntematon]
  * [Description]
  *
@@ -14,7 +14,7 @@
  * The return value <BOOL>
  *
  * Example:
- * ["something", player] call Tun_Respawn_fnc_createLocalMarker
+ * ["something", player] call tunres_Respawn_fnc_createLocalMarker
  */
 #include "script_component.hpp"
 params ["_name", "_pos", "_text", "_icon", "_color", ["_alpha", 0]];

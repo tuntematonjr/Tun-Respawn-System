@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Author: [Tuntematon]
  * [Description]
  * Start spectator
@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [] call TUN_Respawn_fnc_startSpectator
+ * [] call tunres_Respawn_fnc_startSpectator
  */
 #include "script_component.hpp"
 

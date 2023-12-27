@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Author: [Tuntematon]
  * [Description]
  * Create props around MSP. This is placeholder for now.
@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [_msp] call Tun_MSP_fnc_create_msp_props
+ * [_msp] call tunres_MSP_fnc_create_msp_props
  */
 #include "script_component.hpp"
 

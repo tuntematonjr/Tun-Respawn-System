@@ -1,2 +1,3 @@
 #include "script_component.hpp"
-PREP(briefingNotes);
+
+[] call FUNC(init_contested);

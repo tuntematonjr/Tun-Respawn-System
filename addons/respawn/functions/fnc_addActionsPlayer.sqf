@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Author: [Tuntematon]
  * [Description]
  *
@@ -9,7 +9,7 @@
  * None
  *
  * Example:
- * [flagPole] call Tun_Respawn_fnc_addActionsPlayer
+ * [flagPole] call tunres_Respawn_fnc_addActionsPlayer
  */
 #include "script_component.hpp"
 
@@ -22,8 +22,8 @@ if (GVAR(allowCheckTicketsBase)) then {
 };
 
 private _timer_action = {
-    _wait_time = ((missionNamespace getVariable format ["Tun_Respawn_wait_time_%1", playerSide]) - cba_missiontime);
-    format ["STR_Tun_MSP_remaining_time" call BIS_fnc_localize, [_wait_time] call CBA_fnc_formatElapsedTime] call CBA_fnc_notify;
+    _wait_time = ((missionNamespace getVariable format ["tunres_Respawn_wait_time_%1", playerSide]) - cba_missiontime);
+    format ["STR_tunres_MSP_remaining_time" call BIS_fnc_localize, [_wait_time] call CBA_fnc_formatElapsedTime] call CBA_fnc_notify;
 };
 
 //private _timer_condition = { alive _target && {_target getVariable QGVAR(side) isEqualTo playerSide}};
@@ -31,5 +31,5 @@ private _chekTime = ["Check Respawn Time", "Check Respawn Time", "\a3\modules_f_
 [_object, 0, _actionPath, _chekTime] call ace_interact_menu_fnc_addActionToObject;
 
 // Add tp action
-private _conditio =  "count (missionNamespace getVariable ['tun_respawn_teleportPoints', []]) > 1" ;
-[_object, "true", "STR_Tun_Respawn_MainBaseText" call BIS_fnc_localize, false, nil, [playerSide], true, _conditio, false, _actionPath] call FUNC(addCustomTeleporter);
+private _conditio =  "count (missionNamespace getVariable ['tunres_respawn_teleportPoints', []]) > 1" ;
+[_object, "true", "STR_tunres_Respawn_MainBaseText" call BIS_fnc_localize, false, nil, [playerSide], true, _conditio, false, _actionPath] call FUNC(addCustomTeleporter);

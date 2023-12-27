@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Author: [Tuntematon]
  * [Description]
  * Add init EH and killed EH to MSP
@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [] call Tun_MSP_fnc_add_eh
+ * [] call tunres_MSP_fnc_add_eh
  */
 #include "script_component.hpp"
 
@@ -82,9 +82,9 @@
                 
                 //Do marker update
                 
-                [_side, false] remoteExecCall ["Tun_respawn_fnc_update_respawn_point", 2];
+                [_side, false] remoteExecCall ["tunres_respawn_fnc_update_respawn_point", 2];
 
-                ("STR_Tun_MSP_destroyed" call BIS_fnc_localize) remoteExecCall ["CBA_fnc_notify", _side];
+                ("STR_tunres_MSP_destroyed" call BIS_fnc_localize) remoteExecCall ["CBA_fnc_notify", _side];
             };
         };
 
@@ -94,7 +94,7 @@
         [_vehicle, "Deleted", _mspLostEhCode, true, [], true] call CBA_fnc_addClassEventHandler;
     } else {
         if (isServer) then {
-            private _errorText = format ["(Tun_MSP_fnc_ace_actions) Tried to add following classname as MSP: %1. But it does not exist",_vehicle];
+            private _errorText = format ["(tunres_MSP_fnc_ace_actions) Tried to add following classname as MSP: %1. But it does not exist",_vehicle];
             ERROR(_errorText);
         };
     };

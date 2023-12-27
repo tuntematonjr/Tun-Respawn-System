@@ -1,47 +1,29 @@
 #include "script_component.hpp"
-#include "TP_dialog.hpp"
 
-class CfgPatches
-{
-    class Tun_Respawn
-    {
-        units[] = {"Tun_Respawn_Module_waitingarea", "Tun_Respawn_Module_Respawn_point"};
+// information on this addon specifically
+class CfgPatches {
+    class ADDON {
+        name = COMPONENT_NAME;
+        units[] = {QGVAR(Module_waitingarea), QGVAR(Module_Respawn_point), QGVAR(tunres_Respawn_Module_teleportPoint)};
         weapons[] = {};
-        requiredVersion = 1.94;
-        requiredAddons[] = {"A3_Modules_F","3DEN","cba_main","cba_xeh","Tun_Main","ace_interaction","ace_interact_menu"};
-        author = "Tuntematon";
-        authorUrl = "https://armafinland.fi/";
+        requiredVersion = REQUIRED_VERSION;
+        requiredAddons[] = {"tunres_main","A3_Modules_F","3DEN","cba_main","cba_xeh","ace_interaction","ace_interact_menu"};
+        authors[] = {"Tuntematon"}; // sub array of authors, considered for the specific addon, can be removed or left empty {}
+        VERSION_CONFIG;
     };
 };
+
+// configs go here
+#include "CfgEventHandlers.hpp"
 
 class CfgFactionClasses
 {
     class NO_CATEGORY;
-    class Tun_Respawn : NO_CATEGORY
+    class tunres_Respawn : NO_CATEGORY
     {
-        displayName = $STR_Tun_Respawn_Module_category;
+        displayName = "$STR_tunres_Respawn_Module_category";
     };
 };
-
-
-class Extended_PostInit_EventHandlers {
-    class Tun_Respawn {
-        init = QUOTE(call COMPILE_FILE(XEH_postInit));
-    };
-};
-
-class Extended_PreInit_EventHandlers {
-    class Tun_Respawn {
-        init = QUOTE( call COMPILE_FILE(XEH_preInit) );
-    };
-};
-
-class Extended_PreStart_EventHandlers {
-    class Tun_Respawn {
-        init = QUOTE( call COMPILE_FILE(XEH_preStart) );
-    };
-};
-
 
 class CfgVehicles
 {
@@ -64,13 +46,14 @@ class CfgVehicles
             class AnyBrain;
         };
     };
-    class Tun_Respawn_Module_waitingarea: Module_F
+    
+    class GVAR(Module_waitingarea): Module_F
     {
         scope = 2; // Editor visibility; 2 will show it in the menu, 1 will hide it.
         scopeCurator = 1;
-        displayName = $STR_Tun_Respawn_Module_DisplayName_WaitingArea; // Name displayed in the menu
+        displayName = "$STR_tunres_Respawn_Module_DisplayName_WaitingArea"; // Name displayed in the menu
         icon = "\a3\modules_f_curator\data\portraitcountdown_ca.paa"; // Map icon. Delete this entry to use the default icon
-        category = "Tun_Respawn";
+        category = "tunres_Respawn";
 
         // Name of function triggered once conditions are met
         function = QFUNC(module_waitingarea);
@@ -90,9 +73,9 @@ class CfgVehicles
         {
             class respawn_side: Combo
             {
-                property = "Tun_respawn_module_waiting_area_side";
+                property = QGVAR(module_waiting_area_side);
                 displayName = "Side"; // Argument label
-                tooltip = $STR_Tun_Respawn_Module_tooltip_WaitingArea; // Tooltip description
+                tooltip = "$STR_tunres_Respawn_Module_tooltip_WaitingArea"; // Tooltip description
                 typeName = "STRING"; // Value type, can be "NUMBER", "STRING" or "BOOL"
                 defaultValue = "0"; // Default attribute value. WARNING: This is an expression, and its returned value will be used (50 in this case)
                 class Values
@@ -108,14 +91,14 @@ class CfgVehicles
         };
         class ModuleDescription: ModuleDescription
         {
-            description = $STR_Tun_Respawn_Module_Description_Waitingarea; // Short description, will be formatted as structured text
+            description = "$STR_tunres_Respawn_Module_Description_Waitingarea"; // Short description, will be formatted as structured text
             sync[] = {}; // Array of synced entities (can contain base classes)
         };
     };
 
-    class Tun_Respawn_Module_Respawn_point: Tun_Respawn_Module_waitingarea
+    class GVAR(Module_Respawn_point): GVAR(Module_waitingarea)
     {
-        displayName = $STR_Tun_Respawn_Module_DisplayName_SpawnPoint; // Name displayed in the menu
+        displayName = "$STR_tunres_Respawn_Module_DisplayName_SpawnPoint"; // Name displayed in the menu
         icon = "\a3\modules_f\data\portraitrespawn_ca.paa";
         // Name of function triggered once conditions are met
         function = QFUNC(module_respawnpos);
@@ -124,32 +107,32 @@ class CfgVehicles
         {
             class respawn_side: Combo
             {
-                property = "Tun_respawn_module_respawn_point_side";
+                property = QGVAR(module_respawn_point_side);
                 displayName = "Side"; // Argument label
-                tooltip = $STR_Tun_Respawn_Module_tooltip_SpawnPoint; // Tooltip description
+                tooltip = "$STR_tunres_Respawn_Module_tooltip_SpawnPoint"; // Tooltip description
                 typeName = "STRING"; // Value type, can be "NUMBER", "STRING" or "BOOL"
                 defaultValue = "0"; // Default attribute value. WARNING: This is an expression, and its returned value will be used (50 in this case)
                 class Values
                 {
                     class none  {name = "none";  value = "none";}; // Listbox item
-                    class west {name = "west"; value = "tun_respawn_west";};
-                    class east {name = "east"; value = "tun_respawn_east";};
-                    class resistance {name = "resistance"; value = "tun_respawn_guerrila";};
-                    class civilian {name = "civilian"; value = "tun_respawn_civilian";};
+                    class west {name = "west"; value = "tunres_respawn_west";};
+                    class east {name = "east"; value = "tunres_respawn_east";};
+                    class resistance {name = "resistance"; value = "tunres_respawn_guerrila";};
+                    class civilian {name = "civilian"; value = "tunres_respawn_civilian";};
                 };
             };
             class ModuleDescription: ModuleDescription{};
         };
         class ModuleDescription: ModuleDescription
         {
-            description = $STR_Tun_Respawn_Module_Description_Spawn_Point; // Short description, will be formatted as structured text
+            description = "$STR_tunres_Respawn_Module_Description_Spawn_Point"; // Short description, will be formatted as structured text
             sync[] = {}; // Array of synced entities (can contain base classes)
         };
     };
 
-    class Tun_Respawn_Module_teleportPoint: Tun_Respawn_Module_waitingarea
+    class GVAR(tunres_Respawn_Module_teleportPoint): GVAR(Module_waitingarea)
     {
-        displayName = $STR_Tun_Respawn_Module_DisplayName_teleportPoint; // Name displayed in the menu
+        displayName = "$STR_tunres_Respawn_Module_DisplayName_teleportPoint"; // Name displayed in the menu
         // 0 for server only execution, 1 for global execution, 2 for persistent global execution
         isGlobal = 2;
         // 1 for module waiting until all synced triggers are activated
@@ -161,110 +144,110 @@ class CfgVehicles
         class Attributes: AttributesBase
         {
 
-            class tun_respawn_teleportPointOBJ: Edit
+            class GVAR(teleportPointOBJ): Edit
             {
-                property = "tun_respawn_teleportPointOBJ";
+                property = QGVAR(teleportPointOBJ);
 				displayName = "Teleport point object";
-				tooltip = $STR_Tun_Respawn_Module_tooltip_teleportPointOBJ;
+				tooltip = "$STR_tunres_Respawn_Module_tooltip_teleportPointOBJ";
                 typeName = "STRING";
 				// Default text filled in the input box
 				// Because it is an expression, to return a String one must have a string within a string
 				defaultValue = """Land_Sleeping_bag_blue_folded_F""";
             };
 
-            class tun_respawn_teleportConditio: Edit
+            class GVAR(teleportConditio): Edit
             {
-                property = "tun_respawn_teleportConditio";
+                property = QGVAR(teleportConditio);
 				displayName = "Teleport conditio";
-				tooltip = $STR_Tun_Respawn_Module_tooltip_teleportConditio;
+				tooltip = "$STR_tunres_Respawn_Module_tooltip_teleportConditio";
                 typeName = "STRING";
 				// Default text filled in the input box
 				// Because it is an expression, to return a String one must have a string within a string
 				defaultValue = "true";
             };
 
-            class tun_respawn_teleportName: Edit
+            class GVAR(teleportName): Edit
             {
-                property = "tun_respawn_teleportName";
+                property = QGVAR(teleportName);
 				displayName = "Teleport name";
-				tooltip = $STR_Tun_Respawn_Module_tooltip_teleportName;
+				tooltip = "$STR_tunres_Respawn_Module_tooltip_teleportName";
                 typeName = "STRING";
 				// Default text filled in the input box
 				// Because it is an expression, to return a String one must have a string within a string
 				defaultValue = """Name""";
             };
 
-            class tun_respawn_teleportCreateMarker: Checkbox
+            class GVAR(teleportCreateMarker): Checkbox
             {
-                property = "tun_respawn_teleportCreateMarker";
+                property = QGVAR(teleportCreateMarker);
 				displayName = "Create Marker";
                 typeName = "BOOL";
-				tooltip = $STR_Tun_Respawn_Module_tooltip_teleportCreateMarker;
+				tooltip = "$STR_tunres_Respawn_Module_tooltip_teleportCreateMarker";
 				defaultValue = "true";
             };
 
-            class tun_respawn_teleportMarkerIcon: Edit
+            class GVAR(teleportMarkerIcone): Edit
             {
-                property = "tun_respawn_teleportMarkerIcone";
+                property = QGVAR(teleportMarkerIcone);
 				displayName = "Marker Icon";
-				tooltip = $STR_Tun_Respawn_Module_tooltip_teleportMarkerIcone;
+				tooltip = "$STR_tunres_Respawn_Module_tooltip_teleportMarkerIcone";
                 typeName = "STRING";
 				// Default text filled in the input box
 				// Because it is an expression, to return a String one must have a string within a string
 				defaultValue = """hd_start""";
             };
 
-            class tun_respawn_teleportMenuOpenConditio: Edit
+            class GVAR(teleportMenuOpenConditio): Edit
             {
-                property = "tun_respawn_teleportMenuOpenConditio";
+                property = QGVAR(teleportMenuOpenConditio);
 				displayName = "Menu open conditio";
                 typeName = "STRING";
-				tooltip = $STR_Tun_Respawn_Module_tooltip_teleportMenuOpenConditio;
+				tooltip = "$STR_tunres_Respawn_Module_tooltip_teleportMenuOpenConditio";
 				defaultValue = """true""";
             };
             
-            class tun_respawn_teleportUseAceAction: Checkbox
+            class GVAR(teleportUseAceAction): Checkbox
             {
-                property = "tun_respawn_teleportUseAceAction";
+                property = QGVAR(teleportUseAceAction);
 				displayName = "Use Ace Actions";
                 typeName = "BOOL";
-				tooltip = $STR_Tun_Respawn_Module_tooltip_teleportUseAceAction;
+				tooltip = "$STR_tunres_Respawn_Module_tooltip_teleportUseAceAction";
 				defaultValue = "true";
             };
 
-            class tun_respawn_teleportCheckTickets: Checkbox
+            class GVAR(teleportCheckTickets): Checkbox
             {
-                property = "tun_respawn_teleportCheckTickets";
+                property = QGVAR(teleportCheckTickets);
 				displayName = "Allow Check Tickets";
                 typeName = "BOOL";
-				//tooltip = $STR_Tun_Respawn_Module_tooltip_teleportCreateMarker;
+				//tooltip = $STR_tunres_Respawn_Module_tooltip_teleportCreateMarker;
 				defaultValue = "true";
             };
 
-            class tun_respawn_teleportEnableWest: Checkbox
+            class GVAR(teleportEnableWest): Checkbox
             {
-                property = "tun_respawn_teleportEnableWest";
+                property = QGVAR(teleportEnableWest);
 				displayName = "Enable West";
                 typeName = "BOOL";
-				tooltip = $STR_Tun_Respawn_Module_tooltip_teleportEnableSides;
+				tooltip = "$STR_tunres_Respawn_Module_tooltip_teleportEnableSides";
 				defaultValue = "false";
             };
 
-            class tun_respawn_teleportEnableEast: GVAR(teleportEnableWest)
+            class GVAR(teleportEnableEast): GVAR(teleportEnableWest)
             {
-                property = "tun_respawn_teleportEnableEast";
+                property = QGVAR(teleportEnableEast);
 				displayName = "Enable East";
             };
 
-            class tun_respawn_teleportEnableResistance: GVAR(teleportEnableWest)
+            class GVAR(teleportEnableResistance): GVAR(teleportEnableWest)
             {
-                property = "tun_respawn_teleportEnableResistance";
+                property = QGVAR(teleportEnableResistance);
 				displayName = "Enable Resistance";
             };
 
-            class tun_respawn_teleportEnableCivilian: GVAR(teleportEnableWest)
+            class GVAR(teleportEnableCivilian): GVAR(teleportEnableWest)
             {
-                property = "tun_respawn_teleportEnableCivilian";
+                property = QGVAR(teleportEnableCivilian);
 				displayName = "Enable Civilian";
             };
 
@@ -272,7 +255,7 @@ class CfgVehicles
         };
         class ModuleDescription: ModuleDescription
         {
-            description = $STR_Tun_Respawn_Module_Description_Spawn_Point; // Short description, will be formatted as structured text
+            description = "$STR_tunres_Respawn_Module_Description_Spawn_Point"; // Short description, will be formatted as structured text
             position = 1; // Position is taken into effect
             direction = 0; // Direction is taken into effect
             optional = 1; // Synced entity is optional

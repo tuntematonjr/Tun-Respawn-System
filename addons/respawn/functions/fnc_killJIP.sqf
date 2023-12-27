@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Author: [Tuntematon]
  * [Description]
  * Kill jip after time. Set in CBA settings
@@ -10,7 +10,7 @@
  * Nones
  *
  * Example:
- * [] call TUN_Respawn_fnc_killJIP
+ * [] call tunres_Respawn_fnc_killJIP
  */
 #include "script_component.hpp"
 if (!hasInterface) exitWith { };

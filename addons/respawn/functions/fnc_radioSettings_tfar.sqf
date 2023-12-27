@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Author: [ gruppe-adler ]
  * https://github.com/gruppe-adler/TvT_Template.VR/blob/master/functions/linearSD/fn_transferRadiosAcrossRespawn.sqf
  * [Description]
@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [] call Tun_Respawn_fnc_radioSettings_tfar
+ * [] call tunres_Respawn_fnc_radioSettings_tfar
  */
 #include "script_component.hpp"
 

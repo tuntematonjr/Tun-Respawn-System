@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Author: [Tuntematon]
  * [Description]
  * Update all marker alphas. If in waiting area, makes respawn marker BIG!
@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [] call Tun_Respawn_fnc_marker_update
+ * [] call tunres_Respawn_fnc_marker_update
  */
 #include "script_component.hpp"
 
@@ -18,19 +18,19 @@ if (!hasInterface) exitWith { };
 if (playerSide isEqualTo sideLogic) exitWith { }; // Exit if a virtual entity (IE zeus)
 private _currentRespawnPos = switch (playerSide) do {
 	case west: {	
-		"tun_respawn_west"
+		"tunres_respawn_west"
 	};
 
 	case east: {
-		"tun_respawn_east";
+		"tunres_respawn_east";
 	};
 
 	case resistance: {
-		"tun_respawn_guerrila"
+		"tunres_respawn_guerrila"
 	};
 
 	case civilian: {
-		"tun_respawn_civilian"
+		"tunres_respawn_civilian"
 	};
 };
 

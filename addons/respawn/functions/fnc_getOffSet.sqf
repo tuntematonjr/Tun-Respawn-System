@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Author: [Nurmi]
  * [Description]
  *
@@ -9,7 +9,7 @@
  * Object hight in model coordinates, if object is higher than 1.8[m] defult value is used (1.6[m])
  *
  * Example:
- * [Object] call Tun_Respawn_fnc_getOffSet
+ * [Object] call tunres_Respawn_fnc_getOffSet
 
  */
 #include "script_component.hpp"

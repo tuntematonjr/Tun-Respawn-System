@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Author: [Tuntematon]
  * [Description]
  * Remove gear
@@ -10,7 +10,7 @@
  * none
  *
  * Example:
- * [] call TUN_Respawn_fnc_removegear
+ * [] call tunres_Respawn_fnc_removegear
  */
 #include "script_component.hpp"
 

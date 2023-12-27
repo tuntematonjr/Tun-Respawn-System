@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Author: [Tuntematon]
  * [Description]
  *
@@ -14,7 +14,7 @@
  * The return value <BOOL>
  *
  * Example:
- * ["something", player] call Tun_MSP_fnc_imanexample
+ * ["something", player] call tunres_MSP_fnc_imanexample
  *
  * Public: [Yes/No]
  */

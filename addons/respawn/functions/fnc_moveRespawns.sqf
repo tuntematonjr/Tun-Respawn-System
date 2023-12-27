@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Author: [Tuntematon]
  * [Description]
  * Move respawns and give gear
@@ -10,7 +10,7 @@
  * The return true when done <BOOL>
  *
  * Example:
- * ["side"] call Tun_Respawn_fnc_moveRespawns
+ * ["side"] call tunres_Respawn_fnc_moveRespawns
  */
 #include "script_component.hpp"
 params ["_side", ["_forceAll", false, [false]]];
@@ -110,7 +110,7 @@ if (count _waitingRespawn > 0) then {
 		};
 
 		_unit setVariable [QGVAR(waiting_respawn), false, true];
-		private _text = "STR_Tun_Respawn_FNC_moveRespawns" call BIS_fnc_localize;
+		private _text = "STR_tunres_Respawn_FNC_moveRespawns" call BIS_fnc_localize;
 		[_unit, _respawn_position, _text, 20] call FUNC(teleport);
 		remoteExecCall [QFUNC(addGear), _unit];
 		[QGVAR(EH_unitRespawned), [_unit], _unit] call CBA_fnc_localEvent;

@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Author: [Tuntematon]
  * [Description]
  *
@@ -12,7 +12,7 @@
  * The return true when done <BOOL>
  *
  * Example:
- * [_unit, _destination, _text, _range] call Tun_Respawn_fnc_teleport
+ * [_unit, _destination, _text, _range] call tunres_Respawn_fnc_teleport
  */
 #include "script_component.hpp"
 

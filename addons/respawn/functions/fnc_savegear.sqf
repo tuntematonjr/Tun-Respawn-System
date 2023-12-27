@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Author: [Tuntematon]
  * [Description]
  * Save gear
@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [] call Tun_Respawn_fnc_savegear
+ * [] call tunres_Respawn_fnc_savegear
  */
 #include "script_component.hpp"
 

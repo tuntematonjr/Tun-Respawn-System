@@ -1,32 +1,17 @@
 #include "script_component.hpp"
 
-class CfgPatches
-{
-    class tun_msp
-    {
+// information on this addon specifically
+class CfgPatches {
+    class ADDON {
+        name = COMPONENT_NAME;
         units[] = {};
         weapons[] = {};
-        requiredVersion = 1.94;
-        requiredAddons[] = {"cba_main","cba_xeh","Tun_Respawn","Tun_Main","ace_interaction","ace_interact_menu"};
-        author[] = {"Tuntematon"};
-        authorUrl = "https://armafinland.fi/";
+        requiredVersion = REQUIRED_VERSION;
+        requiredAddons[] = {"TunRes_main", "cba_main","cba_xeh","tunres_Respawn","ace_interaction","ace_interact_menu"};
+        authors[] = {"Tuntematon"}; // sub array of authors, considered for the specific addon, can be removed or left empty {}
+        VERSION_CONFIG;
     };
 };
 
-class Extended_PostInit_EventHandlers {
-    class tun_msp {
-        init = QUOTE(call COMPILE_FILE(XEH_postInit));
-    };
-};
-
-class Extended_PreInit_EventHandlers {
-    class tun_msp {
-        init = QUOTE( call COMPILE_FILE(XEH_preInit) );
-    };
-};
-
-class Extended_PreStart_EventHandlers {
-    class tun_msp {
-        init = QUOTE( call COMPILE_FILE(XEH_preStart) );
-    };
-};
+// configs go here
+#include "CfgEventHandlers.hpp"

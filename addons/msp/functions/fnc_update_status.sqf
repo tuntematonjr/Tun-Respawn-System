@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Author: [Tuntematon]
  * [Description]
  *
@@ -11,7 +11,7 @@
  * none
  *
  * Example:
- * [msp, true] call Tun_MSP_fnc_update_status
+ * [msp, true] call tunres_MSP_fnc_update_status
  */
 #include "script_component.hpp"
 
@@ -26,7 +26,7 @@ AAR_UPDATE(_msp,"Is active MSP", _setup);
 if (_setup) then {
 	
 	if (count _whoToNotify > 0 ) then {
-		(call compile ("STR_Tun_MSP_FNC_setup_notification" call BIS_fnc_localize)) remoteExecCall ["CBA_fnc_notify", _whoToNotify];
+		(call compile ("STR_tunres_MSP_FNC_setup_notification" call BIS_fnc_localize)) remoteExecCall ["CBA_fnc_notify", _whoToNotify];
 	};
 
 	[_msp] remoteExecCall [QFUNC(create_msp_props), 2];
@@ -44,7 +44,7 @@ if (_setup) then {
 
 } else {
 	if (count _whoToNotify > 0 ) then {
-		(call compile ("STR_Tun_MSP_FNC_pack_notification" call BIS_fnc_localize)) remoteExecCall ["CBA_fnc_notify", _whoToNotify];
+		(call compile ("STR_tunres_MSP_FNC_pack_notification" call BIS_fnc_localize)) remoteExecCall ["CBA_fnc_notify", _whoToNotify];
 	};
 	//Delete props
 	{

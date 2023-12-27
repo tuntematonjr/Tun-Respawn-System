@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Author: [Tuntematon]
  * [Description]
  * Initate waiting area loop
@@ -10,7 +10,7 @@
  * The return value <BOOL>
  *
  * Example:
- * [] call TUN_Respawn_fnc_waitingArea
+ * [] call tunres_Respawn_fnc_waitingArea
  */
 #include "script_component.hpp"
 private ["_respawn_waitingarea"];
@@ -53,13 +53,13 @@ switch (playerSide) do {
 	};
 
 
-	private _text = format ["<t color='#0800ff' size = '.8'>%1</t>", "STR_Tun_Respawn_FNC_only_forced_waves" call BIS_fnc_localize];
+	private _text = format ["<t color='#0800ff' size = '.8'>%1</t>", "STR_tunres_Respawn_FNC_only_forced_waves" call BIS_fnc_localize];
 
 	if (_wait_time >= 0 && { (missionNamespace getVariable [format ["%1_%2", QGVAR(allow_respawn), playerSide], true]) }) then {
-		_text = format ["<t color='#0800ff' size = '.8'>%2<br />%1</t>", ([_wait_time] call CBA_fnc_formatElapsedTime), "STR_Tun_Respawn_FNC_remaining_time" call BIS_fnc_localize];
+		_text = format ["<t color='#0800ff' size = '.8'>%2<br />%1</t>", ([_wait_time] call CBA_fnc_formatElapsedTime), "STR_tunres_Respawn_FNC_remaining_time" call BIS_fnc_localize];
 	} else {
 		if (player getvariable [QGVAR(waiting_respawn), true] && { !(GVAR(forced_respawn)) }) then {
-			_text = format ["<t color='#0800ff' size = '.8'>%1</t>", "STR_Tun_Respawn_FNC_RespawnDisabled" call BIS_fnc_localize];
+			_text = format ["<t color='#0800ff' size = '.8'>%1</t>", "STR_tunres_Respawn_FNC_RespawnDisabled" call BIS_fnc_localize];
 		};
 	};
 

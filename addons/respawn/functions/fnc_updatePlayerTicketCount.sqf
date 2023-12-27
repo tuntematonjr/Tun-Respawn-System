@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Author: [Tuntematon]
  * [Description]
  *
@@ -10,7 +10,7 @@
  * The return true when done <BOOL>
  *
  * Example:
- * [player, 10] call Tun_Respawn_fnc_updatePlayerTicketCount
+ * [player, 10] call tunres_Respawn_fnc_updatePlayerTicketCount
  */
 #include "script_component.hpp"
 if (!isServer) exitWith { };

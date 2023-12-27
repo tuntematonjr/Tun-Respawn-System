@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Author: [Tuntematon]
  * [Description]
  * Count side tickest
@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * [side, player] call TUN_Respawn_fnc_ticketCounterSide
+ * [side, player] call tunres_Respawn_fnc_ticketCounterSide
  */
 #include "script_component.hpp"
 params ["_side","_player"];

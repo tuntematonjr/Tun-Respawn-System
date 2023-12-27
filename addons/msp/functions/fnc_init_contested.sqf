@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Author: [Tuntematon]
  * [Description]
  * Notify if ther is enemies inside max radius
@@ -12,7 +12,7 @@
  * None
  *
  * Example:
- * [] call Tun_MSP_fnc_init_contested
+ * [] call tunres_MSP_fnc_init_contested
  */
 #include "script_component.hpp"
 
@@ -34,7 +34,7 @@
                     if (_enemyCount > 0 && !_isContested) then {
                         private _whoToNotify = [_side] call FUNC(whoToNotify);
                         if (count _whoToNotify > 0 ) then {
-                            ("STR_Tun_MSP_FNC_enemies_near" call BIS_fnc_localize) remoteExecCall ["CBA_fnc_notify", _whoToNotify];
+                            ("STR_tunres_MSP_FNC_enemies_near" call BIS_fnc_localize) remoteExecCall ["CBA_fnc_notify", _whoToNotify];
                         };
                     }; 
                 };

@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Author: [Tuntematon]
  * [Description]
  * If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20 (min) and this is set to 50 (%) and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.
@@ -10,7 +10,7 @@
  * The return value <BOOL>
  *
  * Example:
- * [] call Tun_Respawn_fnc_delayed_respawn
+ * [] call tunres_Respawn_fnc_delayed_respawn
  */
 #include "script_component.hpp"
 params ["_unit", "_side"];
