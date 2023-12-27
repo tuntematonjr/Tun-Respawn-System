@@ -18,6 +18,10 @@ params [ ["_object", objNull, [objNull]],
 ["_offset", nil, [[]]], 
 ["_parrenPath", ["ACE_MainActions"], [[]]]];
 
+if (GVAR(respawn_type) isEqualTo localize "STR_tunres_Respawn_Type_Default") exitWith {
+	LOG("Skip adding ticket check ace action, as we dont use tickets");
+ };
+
 if (_useAceAction) then {
 	private _action = ["CheckTickets", "STR_tunres_Respawn_CheckTickets" call BIS_fnc_localize,"\a3\modules_f_curator\data\portraitmissionname_ca.paa",{ [playerSide] call FUNC(checkTicketCount); }, {true}, nil, nil, _offset] call ace_interact_menu_fnc_createAction;
 	[_object, 0, _parrenPath, _action] call ace_interact_menu_fnc_addActionToObject;
