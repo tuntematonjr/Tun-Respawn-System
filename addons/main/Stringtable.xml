@@ -285,60 +285,60 @@
                 <English>Show civilian data to all</English>
             </Key>
             <Key ID="STR_tunres_Respawn_Briefing_default">
-                <Original>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;unlimited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each side&lt;/font&gt;.</Original>
-                <English>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;unlimited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each side&lt;/font&gt;.</English>
+                <Original>Mission has an &lt;font size='16'&gt;wave respawn&lt;/font&gt; with &lt;font size='16'&gt;unlimited tickets&lt;/font&gt; for &lt;font size='16'&gt;each side&lt;/font&gt;.</Original>
+                <English>Mission has an &lt;font size='16'&gt;wave respawn&lt;/font&gt; with &lt;font size='16'&gt;unlimited tickets&lt;/font&gt; for &lt;font size='16'&gt;each side&lt;/font&gt;.</English>
             </Key>
             <Key ID="STR_tunres_Respawn_Briefing_sidetickets">
-                <Original>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;limited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each side&lt;/font&gt;.</Original>
-                <English>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;limited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each side&lt;/font&gt;.</English>
+                <Original>Mission has an &lt;font  size='16'&gt;wave respawn&lt;/font&gt; with &lt;font  size='16'&gt;limited tickets&lt;/font&gt; for &lt;font  size='16'&gt;each side&lt;/font&gt;.</Original>
+                <English>Mission has an &lt;font  size='16'&gt;wave respawn&lt;/font&gt; with &lt;font  size='16'&gt;limited tickets&lt;/font&gt; for &lt;font  size='16'&gt;each side&lt;/font&gt;.</English>
             </Key>
             <Key ID="STR_tunres_Respawn_Briefing_playertickets">
-                <Original>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;limited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each player&lt;/font&gt;.</Original>
-                <English>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;limited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each player&lt;/font&gt;.</English>
+                <Original>Mission has an &lt;font  size='16'&gt;wave respawn&lt;/font&gt; with &lt;font  size='16'&gt;limited tickets&lt;/font&gt; for &lt;font  size='16'&gt;each player&lt;/font&gt;.</Original>
+                <English>Mission has an &lt;font  size='16'&gt;wave respawn&lt;/font&gt; with &lt;font  size='16'&gt;limited tickets&lt;/font&gt; for &lt;font  size='16'&gt;each player&lt;/font&gt;.</English>
             </Key>
             <Key ID="STR_tunres_Respawn_Briefing_onlyForcedWaves">
                 <Original>Mission uses only forced respawn waves. So no respawn timer.</Original>
                 <English>Mission uses only forced respawn waves. So no respawn timer.</English>
             </Key>
             <Key ID="STR_tunres_Respawn_Briefing_killJipEnabled">
-                <Original>%1&lt;br/&gt;&lt;br/&gt;JIP players will be killed and move to respawn after &lt;font face='PuristaBold' size='14'&gt;%2min&lt;/font&gt;  from mission start. If player disconnected earlier, it wont use ticket.</Original>
-                <English>%1&lt;br/&gt;&lt;br/&gt;JIP players will be killed and move to respawn after &lt;font face='PuristaBold' size='14'&gt;%2min&lt;/font&gt;  from mission start. If player disconnected earlier, it wont use ticket.</English>
+                <Original>%1&lt;br/&gt;&lt;br/&gt;JIP players will be killed and move to respawn after &lt;font  size='16'&gt;%2min&lt;/font&gt;  from mission start. If player disconnected earlier, it wont use ticket.</Original>
+                <English>%1&lt;br/&gt;&lt;br/&gt;JIP players will be killed and move to respawn after &lt;font  size='16'&gt;%2min&lt;/font&gt;  from mission start. If player disconnected earlier, it wont use ticket.</English>
             </Key>
             <Key ID="STR_tunres_Respawn_Briefing_killJipDisabled">
                 <Original>JIP players are not killed and moved to respawn when they join game.</Original>
                 <English>JIP players are not killed and moved to respawn when they join game.</English>
             </Key>
             <Key ID="STR_tunres_Respawn_Briefing_reportEnemiesEnabled">
-                <Original>%1&lt;br/&gt;&lt;br/&gt;When MSP has been deployed, it will report enemies every &lt;font face='PuristaBold' size='14'&gt;%2s&lt;/font&gt;, if there is any inside &lt;font face='PuristaBold' size='14'&gt;%3&lt;/font&gt; meter radius.</Original>
-                <English>%1&lt;br/&gt;&lt;br/&gt;When MSP has been deployed, it will report enemies every &lt;font face='PuristaBold' size='14'&gt;%2s&lt;/font&gt;, if there is any inside &lt;font face='PuristaBold' size='14'&gt;%3&lt;/font&gt; meter radius.</English>
+                <Original>%1&lt;br/&gt;&lt;br/&gt;When MSP has been deployed, it will report enemies every &lt;font  size='16'&gt;%2s&lt;/font&gt;, if there is any inside &lt;font  size='16'&gt;%3&lt;/font&gt; meter radius.</Original>
+                <English>%1&lt;br/&gt;&lt;br/&gt;When MSP has been deployed, it will report enemies every &lt;font  size='16'&gt;%2s&lt;/font&gt;, if there is any inside &lt;font  size='16'&gt;%3&lt;/font&gt; meter radius.</English>
             </Key>
             <Key ID="STR_tunres_Respawn_Briefing_reportEnemiesDisabled">
                 <Original>Reporting enemies near MSP is disabled.</Original>
                 <English>Reporting enemies near MSP is disabled.</English>
             </Key>
             <Key ID="STR_tunres_Respawn_Briefing_ContestedCheck">
-                <Original>%1&lt;br/&gt;&lt;br/&gt;MSP contested status is updated every &lt;font face='PuristaBold' size='14'&gt;%2s&lt;/font&gt;.&lt;br/&gt;It will get contested if there is more enemis inside &lt;font face='PuristaBold' size='14'&gt;%3m&lt;/font&gt; radius or even one enemy is &lt;font face='PuristaBold' size='14'&gt;%4m&lt;/font&gt; away from it.</Original>
-                <English>%1&lt;br/&gt;&lt;br/&gt;MSP contested status is updated every &lt;font face='PuristaBold' size='14'&gt;%2s&lt;/font&gt;.&lt;br/&gt;It will get contested if there is more enemis inside &lt;font face='PuristaBold' size='14'&gt;%3m&lt;/font&gt; radius or even one enemy is &lt;font face='PuristaBold' size='14'&gt;%4m&lt;/font&gt; away from it.</English>
+                <Original>%1&lt;br/&gt;&lt;br/&gt;MSP contested status is updated every &lt;font  size='16'&gt;%2s&lt;/font&gt;.&lt;br/&gt;It will get contested if there is more enemis inside &lt;font  size='16'&gt;%3m&lt;/font&gt; radius or even one enemy is &lt;font  size='16'&gt;%4m&lt;/font&gt; away from it.</Original>
+                <English>%1&lt;br/&gt;&lt;br/&gt;MSP contested status is updated every &lt;font  size='16'&gt;%2s&lt;/font&gt;.&lt;br/&gt;It will get contested if there is more enemis inside &lt;font  size='16'&gt;%3m&lt;/font&gt; radius or even one enemy is &lt;font  size='16'&gt;%4m&lt;/font&gt; away from it.</English>
             </Key>
             <Key ID="STR_tunres_Respawn_Briefing_MspVehicle">
-                <Original>%1&lt;br/&gt;&lt;br/&gt;MSP vehicle is &lt;font face='PuristaBold' size='14'&gt;%2&lt;/font&gt;</Original>
-                <English>%1&lt;br/&gt;&lt;br/&gt;MSP vehicle is &lt;font face='PuristaBold' size='14'&gt;%2&lt;/font&gt;</English>
+                <Original>%1&lt;br/&gt;&lt;br/&gt;MSP vehicle is &lt;font  size='16'&gt;%2&lt;/font&gt;</Original>
+                <English>%1&lt;br/&gt;&lt;br/&gt;MSP vehicle is &lt;font  size='16'&gt;%2&lt;/font&gt;</English>
             </Key>
             <Key ID="STR_tunres_Respawn_Briefing_DelayedRespawn">
-                <Original>%1&lt;br/&gt;&lt;br/&gt;This mission has &lt;font face='PuristaBold' size='14'&gt;delayed respawn on.&lt;/font&gt; &lt;br/&gt;If there is &lt;font face='PuristaBold' size='14'&gt;less than %2min (%3%5 from %4min)&lt;/font&gt; time left for next wave, &lt;font face='PuristaBold' size='14'&gt;you will skip it.&lt;/font&gt;</Original>
-                <English>%1&lt;br/&gt;&lt;br/&gt;This mission has &lt;font face='PuristaBold' size='14'&gt;delayed respawn on.&lt;/font&gt; &lt;br/&gt;If there is &lt;font face='PuristaBold' size='14'&gt;less than %2min (%3%5 from %4min)&lt;/font&gt; time left for next wave, &lt;font face='PuristaBold' size='14'&gt;you will skip it.&lt;/font&gt;</English>
+                <Original>%1&lt;br/&gt;&lt;br/&gt;This mission has &lt;font  size='16'&gt;delayed respawn on.&lt;/font&gt; &lt;br/&gt;If there is &lt;font  size='16'&gt;less than %2min (%3%5 from %4min)&lt;/font&gt; time left for next wave, &lt;font  size='16'&gt;you will skip it.&lt;/font&gt;</Original>
+                <English>%1&lt;br/&gt;&lt;br/&gt;This mission has &lt;font  size='16'&gt;delayed respawn on.&lt;/font&gt; &lt;br/&gt;If there is &lt;font  size='16'&gt;less than %2min (%3%5 from %4min)&lt;/font&gt; time left for next wave, &lt;font  size='16'&gt;you will skip it.&lt;/font&gt;</English>
             </Key>
             <Key ID="STR_tunres_Respawn_Briefing_DelayedRespawnOff">
-                <Original>&lt;br/&gt;&lt;br/&gt;This mission has &lt;font face='PuristaBold' size='14'&gt;delayed respawn off.&lt;/font&gt;</Original>
-                <English>&lt;br/&gt;&lt;br/&gt;This mission has &lt;font face='PuristaBold' size='14'&gt;delayed respawn off.&lt;/font&gt;</English>
+                <Original>&lt;br/&gt;&lt;br/&gt;This mission has &lt;font  size='16'&gt;delayed respawn off.&lt;/font&gt;</Original>
+                <English>&lt;br/&gt;&lt;br/&gt;This mission has &lt;font  size='16'&gt;delayed respawn off.&lt;/font&gt;</English>
             </Key>
             <Key ID="STR_tunres_Respawn_Briefing_MspEnabled">
-                <Original>Mobile Spawn Point (MSP) has been &lt;font face='PuristaBold' size='14'&gt;enabled&lt;/font&gt;  to this mission for your side.</Original>
-                <English>Mobile Spawn Point (MSP) has been &lt;font face='PuristaBold' size='14'&gt;enabled&lt;/font&gt;  to this mission for your side.</English>
+                <Original>Mobile Spawn Point (MSP) has been &lt;font  size='16'&gt;enabled&lt;/font&gt;  to this mission for your side.</Original>
+                <English>Mobile Spawn Point (MSP) has been &lt;font  size='16'&gt;enabled&lt;/font&gt;  to this mission for your side.</English>
             </Key>
             <Key ID="STR_tunres_Respawn_Briefing_MspDisabled">
-                <Original>Mobile Spawn Point (MSP) has been enabled for this mission, but &lt;font face='PuristaBold' size='14'&gt;your side does not have MSP.&lt;/font&gt;</Original>
-                <English>Mobile Spawn Point (MSP) has been enabled for this mission, but &lt;font face='PuristaBold' size='14'&gt;your side does not have MSP.&lt;/font&gt;</English>
+                <Original>Mobile Spawn Point (MSP) has been enabled for this mission, but &lt;font  size='16'&gt;your side does not have MSP.&lt;/font&gt;</Original>
+                <English>Mobile Spawn Point (MSP) has been enabled for this mission, but &lt;font  size='16'&gt;your side does not have MSP.&lt;/font&gt;</English>
             </Key>
             <Key ID="STR_tunres_Respawn_Briefing_teleportNetwork">
                 <Original>&lt;br/&gt;&lt;br/&gt;If there is MSP or custom teleport points in this mission, you can accses teleport menu always from Main Base and uncontested MSP using ace action menu. Custom teleport points might have different conditions and uses either vanilla action menu or ace action menu.</Original>
