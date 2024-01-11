@@ -15,7 +15,7 @@ if (GVAR(respawn_type) isNotEqualTo localize "STR_tunres_Respawn_Type_Default") 
 		params ["_id", "_uid", "_name", "_jip", "_owner"];
 
 		if (cba_missiontime > (GVAR(killJIP_time) * 60) && GVAR(killJIP)) then {
-			GVAR(disconnected_players) pushBackUnique _uid;
+			GVAR(disconnected_players) set [_uid, true];
 		};
 	}];
 };
@@ -41,24 +41,24 @@ if ( !isnil "afi_aar2" ) then {
 
 		if (missionNamespace getVariable ["afi_aar2", false]) then {
 			[{
-
+				private _hash = GVAR(nextWaveTimes);
 				if (GVAR(enabled_west)) then {
-					_time = round (GVAR(wait_time_west) - cba_missiontime);
+					private _time = (_hash get west);
 					AAR_UPDATE("west","Next respawn wave", _time);
 				};
 
 				if (GVAR(enabled_east)) then {
-					_time = round (GVAR(wait_time_east) - cba_missiontime);
+					private _time = (_hash get east);
 					AAR_UPDATE("east","Next respawn wave", _time);
 				};
 
 				if (GVAR(enabled_guer)) then {
-					_time = round (GVAR(wait_time_guer) - cba_missiontime);
+					private _time = (_hash get resistance);
 					AAR_UPDATE("guer","Next respawn wave", _time);
 				};
 
 				if (GVAR(enabled_civ)) then {
-					_time = round (GVAR(wait_time_civ) - cba_missiontime);
+					private _time = (_hash get civilian);
 					AAR_UPDATE("civ","Next respawn wave", _time);
 				};
 

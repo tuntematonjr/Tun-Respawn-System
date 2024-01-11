@@ -15,65 +15,24 @@
 #include "script_component.hpp"
 params ["_unit", "_side"];
 
-_skip = false;
+private _skip = false;
 if (GVAR(delayed_respawn) > 0) then {
-
-	private ["_time", "_waittime"];
-
-	switch (_side) do {
-
-		case west: {
-			_time = GVAR(wait_time_west);
-			_waittime = GVAR(time_west);
-		};
-		case east: {
-			_time = GVAR(wait_time_east);
-			_waittime = GVAR(time_east);
-		};
-
-		case resistance: {
-			_time = GVAR(wait_time_guer);
-			_waittime = GVAR(time_guer);
-		};
-
-		case civilian: {
-			_time = GVAR(wait_time_civ);
-			_waittime = GVAR(time_civ);
-		};
-
-		default {
-			ERROR_MSG("Delayed respawn got no side");
-		};
-	};
-
-	_skip = ((_time - cba_missiontime) < ((_waittime * 60) * (GVAR(delayed_respawn) / 100)));
+	private _hashWaitTime = GVAR(nextWaveTimes);
+	private _hashWaveLenght = GVAR(waveLenghtTimes);
+	private _time = _hashWaitTime get _side;
+	private _waveLenghtTime = _hashWaveLenght get _side;
+	_skip = ((_time - cba_missiontime) < ((_waveLenghtTime * 60) * (GVAR(delayed_respawn) / 100)));
 };
 
 _unit setVariable [QGVAR(skip_next_wave), _skip, true];
 
 if (_skip) then {
-	switch (_side) do {
-		case west: { 
-			PUSH(GVAR(waitingRespawnDelayedWest),_unit);
-			FILTER(GVAR(waitingRespawnDelayedWest),(!isnull _x && _x in allPlayers && alive _x ));
-			publicVariable QGVAR(waitingRespawnDelayedWest);
-		};
-		case east: { 
-			PUSH(GVAR(waitingRespawnDelayedEast),_unit);
-			FILTER(GVAR(waitingRespawnDelayedEast),(!isnull _x && _x in allPlayers && alive _x ));
-			publicVariable QGVAR(waitingRespawnDelayedEast);
-		};
-		case resistance: { 
-			PUSH(GVAR(waitingRespawnDelayedGuer),_unit);
-			FILTER(GVAR(waitingRespawnDelayedGuer),(!isnull _x && _x in allPlayers && alive _x ));
-			publicVariable QGVAR(waitingRespawnDelayedGuer);
-		};
-		case civilian: { 
-			PUSH(GVAR(waitingRespawnDelayedCiv),_unit);
-			FILTER(GVAR(waitingRespawnDelayedCiv),(!isnull _x && _x in allPlayers && alive _x ));
-			publicVariable QGVAR(waitingRespawnDelayedCiv);
-		};
-	};
+	private _waitingRespawnDelayedHash = GVAR(waitingRespawnDelayedList);
+	private _waitingRespawnDelayed = _waitingRespawnDelayedHash get _side;
+	PUSH(_waitingRespawnDelayed,_unit);
+	FILTER(_waitingRespawnDelayed,(!isnull _x && _x in allPlayers && alive _x ));
+	_waitingRespawnDelayed set [_side, _waitingRespawnDelayed];
+	publicVariable QGVAR(waitingRespawnDelayedList);
 };
 
 _skip

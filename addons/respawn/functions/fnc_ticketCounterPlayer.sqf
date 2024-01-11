@@ -23,8 +23,8 @@ private _remainingTickets = [_side, _player, false] call FUNC(getTicketCountPlay
 
 if ( _remainingTickets > 0 ) then {
 	//if player disconnected and came back. So no ticket wasted.
-	if (_playerUID in GVAR(disconnected_players)) then {
-		REM(GVAR(disconnected_players), _playerUID);
+	if (GVAR(disconnected_players) getOrDefault [_playerUID, false]) then {
+		GVAR(disconnected_players) set [_uid, false];
 	} else {
 		DEC(_remainingTickets);
 		AAR_UPDATE(_player,"Player tickets", _remainingTickets);

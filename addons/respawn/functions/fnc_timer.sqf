@@ -10,58 +10,34 @@
  * None
  *
  * Example:
- * ["west"] call tunres_Respawn_fnc_timer
+ * [west] call tunres_Respawn_fnc_timer
  */
 #include "script_component.hpp"
-params ["_side"];
+params [["_side", nil, [west]]];
+
 if (!isServer) exitWith { };
 
 if (GVAR(forced_respawn)) exitWith { INFO("No timer, Only forced waves"); };
-private ["_wait_time_var", "_allow_respawn_var"];
 
-switch (_side) do {
-	case west: {
-		GVAR(wait_time_west) = GVAR(wait_time_west) + GVAR(time_west) * 60;
-		_wait_time_var = QGVAR(wait_time_west);
-		_allow_respawn_var = QGVAR(allow_respawn_west);
-		publicVariable QGVAR(wait_time_west);
-	};
+private _hashWaitTime = GVAR(nextWaveTimes);
+private _hashWaveLenght = GVAR(waveLenghtTimes);
+private _time = (_hashWaitTime get _side) + (_hashWaveLenght get _side) * 60;
 
-	case east: {
-		GVAR(wait_time_east) = GVAR(wait_time_east) + GVAR(time_east) * 60;
-		_wait_time_var = QGVAR(wait_time_east);
-		_allow_respawn_var = QGVAR(allow_respawn_east);
-		publicVariable QGVAR(wait_time_east);
-	};
+_hashWaitTime set [_side, _time];
 
-	case resistance: {
-		GVAR(wait_time_guer) = GVAR(wait_time_guer) + GVAR(time_guer) * 60;
-		_wait_time_var = QGVAR(wait_time_guer);
-		_allow_respawn_var = QGVAR(allow_respawn_guer);
-		publicVariable QGVAR(wait_time_guer);
-	};
-
-	case civilian: {
-		GVAR(wait_time_civ) = GVAR(wait_time_civ) + GVAR(time_civ) * 60;
-		_wait_time_var = QGVAR(wait_time_civ);
-		_allow_respawn_var = QGVAR(allow_respawn_civ);
-		publicVariable QGVAR(wait_time_civ);
-	};
-
-	default {
-		ERROR_MSG("respawn timer FNC missing side param!");
-	};
-};
-
-if !( _side in GVAR(timer_running) ) then {
-	GVAR(timer_running) pushBack _side;
-	[{ missionNamespace getVariable (_this select 2) && { cba_missiontime >= missionNamespace getVariable (_this select 1) } }, {
-		if (tunres_MSP_enable) then {
-			[] call tunres_MSP_fnc_contestedCheck;
+if ( GVAR(timerRunning) getOrDefault [_side, false]) then {
+	GVAR(timerRunning) set [_side, true];
+	[{ _this params["_side"];
+		GVAR(allowRespawn) get _side && 
+		{ cba_missiontime >= GVAR(nextWaveTimes) get _side } 
+	}, {
+		_this params["_side"];
+		if (EGVAR(msp,enable)) then {
+			[] call EFUNC(msp,contestedCheck);
 		};
-		private _side = _this select 0;
-		REM(GVAR(timer_running), _side);
+
+		GVAR(timerRunning) set [_side, false];
 		[_side] call FUNC(moveRespawns);
 		[_side] call FUNC(timer);
-	}, [_side, _wait_time_var, _allow_respawn_var]] call CBA_fnc_waitUntilAndExecute;
+	}, [_side]] call CBA_fnc_waitUntilAndExecute;
 };

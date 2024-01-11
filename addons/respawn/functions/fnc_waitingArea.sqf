@@ -44,19 +44,21 @@ switch (playerSide) do {
 	if !( player getvariable QGVAR(waiting_respawn) ) exitWith { [_handle] call CBA_fnc_removePerFrameHandler; };
 
 	//Show remaining time
-	private _respawn_time = (missionNamespace getVariable format ["%1_%2", QGVAR(wait_time), playerSide]);
-	private _wait_time = round (_respawn_time - cba_missiontime);
+	private _hashWaitTime = GVAR(nextWaveTimes);
+	private _waitTime = _hashWaitTime get playerSide;
+	private _remainingWaitTime = round (_waitTime - cba_missiontime);
 
 	if (player getVariable [QGVAR(skip_next_wave), false]) then {
-		private _wave_time = (missionNamespace getVariable format ["%1%2", QGVAR(time_), playerSide]) * 60;
-		_wait_time = _wait_time + _wave_time;
+		private _hashWaveLenght = GVAR(waveLenghtTimes);
+		private _waveLenght = _hashWaveLenght get playerSide;
+		_remainingWaitTime = _remainingWaitTime + _waveLenght;
 	};
 
 
 	private _text = format ["<t color='#0800ff' size = '.8'>%1</t>", "STR_tunres_Respawn_FNC_only_forced_waves" call BIS_fnc_localize];
 
-	if (_wait_time >= 0 && { (missionNamespace getVariable [format ["%1_%2", QGVAR(allow_respawn), playerSide], true]) }) then {
-		_text = format ["<t color='#0800ff' size = '.8'>%2<br />%1</t>", ([_wait_time] call CBA_fnc_formatElapsedTime), "STR_tunres_Respawn_FNC_remaining_time" call BIS_fnc_localize];
+	if (_remainingWaitTime >= 0 && { (missionNamespace getVariable [format ["%1_%2", QGVAR(allow_respawn), playerSide], true]) }) then {
+		_text = format ["<t color='#0800ff' size = '.8'>%2<br />%1</t>", ([_remainingWaitTime] call CBA_fnc_formatElapsedTime), "STR_tunres_Respawn_FNC_remaining_time" call BIS_fnc_localize];
 	} else {
 		if (player getvariable [QGVAR(waiting_respawn), true] && { !(GVAR(forced_respawn)) }) then {
 			_text = format ["<t color='#0800ff' size = '.8'>%1</t>", "STR_tunres_Respawn_FNC_RespawnDisabled" call BIS_fnc_localize];

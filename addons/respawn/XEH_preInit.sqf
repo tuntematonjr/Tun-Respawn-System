@@ -6,34 +6,23 @@ PREP_RECOMPILE_START;
 PREP_RECOMPILE_END;
 
 //Remaining time for wave.
-ISNILS(GVAR(wait_time_west),0);
-ISNILS(GVAR(wait_time_east),0);
-ISNILS(GVAR(wait_time_guer),0);
-ISNILS(GVAR(wait_time_civ),0);
+private _waitTimesPreArray = [[west,0],[east,0],[resistance,0],[civilian,0]];
+GVAR(nextWaveTimes) = createHashMapFromArray _waitTimesPreArray;
 
-ISNILS(GVAR(totalRespawnCountWest),0);
-ISNILS(GVAR(totalRespawnCountEast),0);
-ISNILS(GVAR(totalRespawnCountGuer),0);
-ISNILS(GVAR(totalRespawnCountCiv),0);
+//Respawn wave lenght times
+GVAR(waveLenghtTimes) = createHashMap;
 
-ISNILS(GVAR(allow_respawn_west),true);
-ISNILS(GVAR(allow_respawn_east),true);
-ISNILS(GVAR(allow_respawn_guer),true);
-ISNILS(GVAR(allow_respawn_civ),true);
+private _waitingRespawnEmptyArray= [[west,[]],[east,[]],[resistance,[]],[civilian,[]]];
+GVAR(waitingRespawnList) = createHashMapFromArray _waitingRespawnEmptyArray;
+GVAR(waitingRespawnDelayedList) = createHashMapFromArray _waitingRespawnEmptyArray;
 
-ISNILS(GVAR(waitingRespawnWest),[]);
-ISNILS(GVAR(waitingRespawnEast),[]);
-ISNILS(GVAR(waitingRespawnGuer),[]);
-ISNILS(GVAR(waitingRespawnCiv),[]);
+//Total respawn count (log stuff)
+GVAR(totalRespawnCount) = createHashMapFromArray _waitTimesPreArray;
 
-ISNILS(GVAR(waitingRespawnDelayedWest),[]);
-ISNILS(GVAR(waitingRespawnDelayedEast),[]);
-ISNILS(GVAR(waitingRespawnDelayedGuer),[]);
-ISNILS(GVAR(waitingRespawnDelayedCiv),[]);
+GVAR(allowRespawn) = createHashMapFromArray _waitingRespawnEmptyArray;
 
-ISNILS(GVAR(disconnected_players),[]);
-
-ISNILS(GVAR(timer_running),[]);
+GVAR(disconnected_players) = createHashMapFromArray _waitingRespawnEmptyArray;
+GVAR(timerRunning) = createHashMapFromArray [[west,false],[east,false],[resistance,false],[civilian,false]];
 ISNILS(GVAR(teleportPoints),[]);
 
 //allowed sides to spectate !WIP! Currentlu forced all
@@ -153,7 +142,7 @@ GVAR(selfTPmenuOpenObj) = objNull;
     1,
     {
         params ["_value"];
-        GVAR(time_west) = round _value;
+        GVAR(waveLenghtTimes) set [west, round _value];
     },
     true
 ] call CBA_Settings_fnc_init;
@@ -167,7 +156,7 @@ GVAR(selfTPmenuOpenObj) = objNull;
     1,
     {
         params ["_value"];
-        GVAR(time_east) = round _value;
+        GVAR(waveLenghtTimes) set [east, round _value];
     },
     true
 ] call CBA_Settings_fnc_init;
@@ -181,7 +170,7 @@ GVAR(selfTPmenuOpenObj) = objNull;
     1,
     {
         params ["_value"];
-        GVAR(time_guer) = round _value;
+        GVAR(waveLenghtTimes) set [resistance, round _value];
     },
     true
 ] call CBA_Settings_fnc_init;
@@ -195,7 +184,7 @@ GVAR(selfTPmenuOpenObj) = objNull;
     1,
     {
         params ["_value"];
-        GVAR(time_civ) = round _value;
+        GVAR(waveLenghtTimes) set [civilian, round _value];
     },
     true
 ] call CBA_Settings_fnc_init;

@@ -36,32 +36,27 @@ if (GVAR(briefingEnableShowRespawnType)) then {
 };
 
 if (GVAR(briefingEnableShowTime)) then {
+	private _waveLenghtTimeHash = GVAR(waveLenghtTimes);
 	_text = format ["%1<br/><br/><font face='PuristaBold' size='15'>Wave interval</font>",_text];
 	if (playerSide isEqualTo west || GVAR(briefingEnableShowOtherSidesDataWest)) then {
-		_text = format ["%1<br/>For West is %2min",_text, GVAR(time_west)];
+		_text = format ["%1<br/>For West is %2min",_text, _waveLenghtTimeHash get west];
 	};
 
 	if (playerSide isEqualTo east || GVAR(briefingEnableShowOtherSidesDataEast)) then {
-		_text = format ["%1<br/>For East is %2min",_text, GVAR(time_east)];
+		_text = format ["%1<br/>For East is %2min",_text,_waveLenghtTimeHash get east];
 	};
 
 	if (playerSide isEqualTo resistance || GVAR(briefingEnableShowOtherSidesDataResistance)) then {
-		_text = format ["%1<br/>For Resistance is %2min",_text, GVAR(time_guer)];
+		_text = format ["%1<br/>For Resistance is %2min",_text, _waveLenghtTimeHash get resistance];
 	};
 
 	if (playerSide isEqualTo civilian || GVAR(briefingEnableShowOtherSidesDataCivilian)) then {
-		_text = format ["%1<br/>For Civilian is %2min",_text, GVAR(time_civ)];
+		_text = format ["%1<br/>For Civilian is %2min",_text, _waveLenghtTimeHash get civilian];
 	};
 
 	private _delayedRespawn = GVAR(delayed_respawn);
 	if (_delayedRespawn > 0) then {
-		private _respawnTime = switch (playerSide) do {
-			case west: { GVAR(time_west) };
-			case east: { GVAR(time_west) };
-			case resistance: { GVAR(time_west) };
-			case civilian: { GVAR(time_west) };
-		};
-		
+		private _respawnTime = _waveLenghtTimeHash get playerSide;
 		_respawnTime = _respawnTime * 60;
 		private _delayedTime = [(_respawnTime * (_delayedRespawn / 100)), "M:SS"] call CBA_fnc_formatElapsedTime;
 		_respawnTime = [_respawnTime, "M:SS"] call CBA_fnc_formatElapsedTime;
@@ -72,7 +67,7 @@ if (GVAR(briefingEnableShowTime)) then {
 	};
 };
 
-if (GVAR(briefingEnableShowTickets) && { GVAR(briefingEnableShowRespawnType) isNotEqualTo localize "STR_tunres_Respawn_Type_Default"}) then {
+if (GVAR(briefingEnableShowTickets) && { GVAR(respawn_type) isNotEqualTo localize "STR_tunres_Respawn_Type_Default"}) then {
 	_text = format ["%1<br/><br/><font face='PuristaBold' size='15'>Tickets</font>",_text];
 	if (playerSide isEqualTo west || GVAR(briefingEnableShowOtherSidesDataWest)) then {
 		_text = format ["%1<br/>Ticket count: %2 (West)",_text, GVAR(tickets_west)];

@@ -16,10 +16,11 @@
 #include "script_component.hpp"
 params ["_side","_player"];
 if (!isServer) exitWith { };
+private _playerUID = getPlayerUID _player;
 
 //if player disconnected and came back. So no ticket wasted.
-if (getPlayerUID _player in GVAR(disconnected_players)) exitWith {
-	REM(GVAR(disconnected_players), (getPlayerUID _player));
+if (GVAR(disconnected_players) getOrDefault [_playerUID, false]) then {
+	GVAR(disconnected_players) set [_uid, false];
 	[5] remoteExecCall ["setPlayerRespawnTime", _player];
 };
 
