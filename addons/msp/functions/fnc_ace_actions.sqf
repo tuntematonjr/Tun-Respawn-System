@@ -36,6 +36,7 @@ private _vehicle = switch (playerSide) do {
 	default {
 		""
 	};
+
 };
 
 private _actionMain = ["tunres_respawnAction", "Respawn Actions", "\a3\Modules_F_Curator\Data\portraitRespawnTickets_ca.paa", {true}, {true}] call ace_interact_menu_fnc_createAction;
@@ -51,14 +52,8 @@ if (isClass (configFile >> "CfgVehicles" >> _vehicle)) then {
 	private _remove_condition = { alive _target && {_target getVariable QGVAR(side) isEqualTo playerSide} && {_target getVariable [QGVAR(isMSP), false]} };
 	_removeMSP = ["Pack MSP", "Pack MSP", "\a3\3den\data\cfgwaypoints\load_ca.paa", {[_target, false] spawn FUNC(initate_msp_action);}, _remove_condition, {}, [], [0, 0, 0], 2, [false, true, false, false, false]] call ace_interact_menu_fnc_createAction;
 
-	//remaining time for respawn.
-
-	private _timer_action = {
-		_wait_time = ((missionNamespace getVariable format ["tunres_Respawn_wait_time_%1", playerSide]) - cba_missiontime);
-		format ["STR_tunres_MSP_remaining_time" call BIS_fnc_localize, [_wait_time] call CBA_fnc_formatElapsedTime] call CBA_fnc_notify;
-	};
 	private _timer_condition = { alive _target && {_target getVariable QGVAR(side) isEqualTo playerSide}};
-	_chekTime = ["Check Respawn Time", "Check Respawn Time", "\a3\modules_f_curator\data\portraitskiptime_ca.paa", _timer_action, _timer_condition] call ace_interact_menu_fnc_createAction;
+	_chekTime = ["Check Respawn Time", "Check Respawn Time", "\a3\modules_f_curator\data\portraitskiptime_ca.paa", EFUNC(respawn,remainingWaitTimeNotification), _timer_condition] call ace_interact_menu_fnc_createAction;
 
 	//Ace inteaction
 	[_vehicle, 1, ["ACE_SelfActions"], _createMSP] call ace_interact_menu_fnc_addActionToClass;
