@@ -57,11 +57,13 @@ switch (playerSide) do {
 
 	private _text = format ["<t color='#0800ff' size = '.8'>%1</t>", "STR_tunres_Respawn_FNC_only_forced_waves" call BIS_fnc_localize];
 
-	if (_remainingWaitTime >= 0 && { (missionNamespace getVariable [format ["%1_%2", QGVAR(allow_respawn), playerSide], true]) }) then {
+	if (_remainingWaitTime >= 0 && { GVAR(allowRespawn) get playerSide }) then {
 		_text = format ["<t color='#0800ff' size = '.8'>%2<br />%1</t>", ([_remainingWaitTime] call CBA_fnc_formatElapsedTime), "STR_tunres_Respawn_FNC_remaining_time" call BIS_fnc_localize];
 	} else {
-		if (player getvariable [QGVAR(waiting_respawn), true] && { !(GVAR(forced_respawn)) }) then {
+		if (player getvariable [QGVAR(waiting_respawn), true] && { !(GVAR(forced_respawn)) } && { !(GVAR(allowRespawn) get playerSide) }) then {
 			_text = format ["<t color='#0800ff' size = '.8'>%1</t>", "STR_tunres_Respawn_FNC_RespawnDisabled" call BIS_fnc_localize];
+		} else {
+			_text = format ["Something is vevy vevy wrong. time: %1 - allowRespawn: %2 - forced respawn: %3 ", _remainingWaitTime, GVAR(allowRespawn) get playerSid, GVAR(forced_respawn)];
 		};
 	};
 
