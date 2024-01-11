@@ -5,24 +5,29 @@ PREP_RECOMPILE_START;
 #include "XEH_PREP.hpp"
 PREP_RECOMPILE_END;
 
-//Remaining time for wave.
+private _waitingRespawnEmptyArray= [[west,[]],[east,[]],[resistance,[]],[civilian,[]]];
 private _waitTimesPreArray = [[west,0],[east,0],[resistance,0],[civilian,0]];
+private _emptyFalseArray = [[west,false],[east,false],[resistance,false],[civilian,false]];
+private _emptyTrueArray = [[west,true],[east,true],[resistance,true],[civilian,true]];
+//Remaining time for wave.
+
 GVAR(nextWaveTimes) = createHashMapFromArray _waitTimesPreArray;
 
 //Respawn wave lenght times
 GVAR(waveLenghtTimes) = createHashMap;
 
-private _waitingRespawnEmptyArray= [[west,[]],[east,[]],[resistance,[]],[civilian,[]]];
+//Respawn waiting area unit arrays
 GVAR(waitingRespawnList) = createHashMapFromArray _waitingRespawnEmptyArray;
 GVAR(waitingRespawnDelayedList) = createHashMapFromArray _waitingRespawnEmptyArray;
 
 //Total respawn count (log stuff)
 GVAR(totalRespawnCount) = createHashMapFromArray _waitTimesPreArray;
 
-GVAR(allowRespawn) = createHashMapFromArray _waitingRespawnEmptyArray;
+//Allow respawn for each side
+GVAR(allowRespawn) = createHashMapFromArray _emptyTrueArray;
 
 GVAR(disconnected_players) = createHashMapFromArray _waitingRespawnEmptyArray;
-GVAR(timerRunning) = createHashMapFromArray [[west,false],[east,false],[resistance,false],[civilian,false]];
+GVAR(timerRunning) = createHashMapFromArray _emptyFalseArray;
 ISNILS(GVAR(teleportPoints),[]);
 
 //allowed sides to spectate !WIP! Currentlu forced all
