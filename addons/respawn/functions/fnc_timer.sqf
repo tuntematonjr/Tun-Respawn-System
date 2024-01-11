@@ -25,7 +25,7 @@ private _time = (_hashWaitTime get _side) + (_hashWaveLenght get _side) * 60;
 
 _hashWaitTime set [_side, _time];
 
-if ( GVAR(timerRunning) getOrDefault [_side, false]) then {
+if !( GVAR(timerRunning) getOrDefault [_side, false]) then {
 	GVAR(timerRunning) set [_side, true];
 	[{ _this params["_side"];
 		GVAR(allowRespawn) get _side && 
