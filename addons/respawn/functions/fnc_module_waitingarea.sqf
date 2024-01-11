@@ -41,30 +41,39 @@ switch (_markername) do {
 		missionNamespace setVariable [QGVAR(waitingarea_west), [_markername, _logic, _pos], true];
 
 		GVAR(flag_west) = "Flag_Blue_F" createVehicle _pos;
-		[west] call FUNC(timer);
+		[{ADDON}, {
+			[west] call FUNC(timer);
+		}] call CBA_fnc_waitUntilAndExecute;
 	};
 
 	case "respawn_east": {
 		missionNamespace setVariable [QGVAR(waitingarea_east), [_markername, _logic, _pos], true];
 
 		GVAR(flag_east) = "Flag_Red_F" createVehicle _pos;
-		[east] call FUNC(timer);
+		[{ADDON}, {
+			[east] call FUNC(timer);
+		}] call CBA_fnc_waitUntilAndExecute;
 	};
 
 	case "respawn_guerrila": {
 		missionNamespace setVariable [QGVAR(waitingarea_guer), [_markername, _logic, _pos], true];
 
 		GVAR(flag_guerrila) = "Flag_Green_F" createVehicle _pos;
-		[resistance] call FUNC(timer);
+		[{ADDON}, {
+			[resistance] call FUNC(timer);
+		}] call CBA_fnc_waitUntilAndExecute;
 	};
 
 	case "respawn_civilian": {
 		missionNamespace setVariable [QGVAR(waitingarea_civ), [_markername, _logic, _pos], true];
 
 		GVAR(flag_civilian) = "Flag_White_F" createVehicle _pos;
-		[civilian] call FUNC(timer);
+		[{ADDON}, {
+			[civilian] call FUNC(timer);
+		}] call CBA_fnc_waitUntilAndExecute;
 	};
 };
 
 // Module function is executed by spawn command, so returned value is not necessary, but it's good practice.
 true
+
