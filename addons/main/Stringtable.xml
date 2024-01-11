@@ -1,569 +1,567 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="Tun Respawn">
-  <Package name="Respawn">
-    <Container name="CBA Settings">
-      <Key ID="STR_tunres_Respawn_CBA_tooltip_time">
-        <Original>Time between respawn waves (minutes)</Original>
-        <English>Time between respawn waves (minutes)</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_CBA_tooltip_killjip_time">
-        <Original>Time after JIP are killed and moved to respawn (minutes)</Original>
-        <English>Time after JIP are killed and moved to respawn (minutes)</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_CBA_tooltip_killjip">
-        <Original>Enable kill JIP system</Original>
-        <English>Enable kill JIP system</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_CBA_tooltip_ticket">
-        <Original>Ticket count for either for whole side or each player in that side.</Original>
-        <English>Ticket count for either for whole side or each player in that side.</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_CBA_tooltip_gearscript">
-        <Original>"SQF Gearscript": Needs two variables set "tunres_Respawn_Role" which works as parameter and "tunres_Respawn_GearPath" which is filepath.        "Potato Tool": just calls its own function        "Save gear": Load same loadout which is saved at mission start or it can be updated during mission using tunres_Respawn_fnc_savegear function.</Original>
-        <English>"SQF Gearscript": Needs two variables set "tunres_Respawn_Role" which works as parameter and "tunres_Respawn_GearPath" which is filepath.        "Potato Tool": just calls its own function        "Save gear": Load same loadout which is saved at mission start or it can be updated during mission using tunres_Respawn_fnc_savegear function.</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_CBA_tooltip_respawntypes">
-        <Original>"Default" : Endless waves. "Side tickets": Side shares ticket pool. . "Player tickets": Each player has own ticket pool</Original>
-        <English>"Default" : Endless waves. "Side tickets": Side shares ticket pool. . "Player tickets": Each player has own ticket pool</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_CBA_tooltip_specta_modes">
-        <Original>Enable this cameramode for spectators</Original>
-        <English>Enable this cameramode for spectators</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_CBA_Category_main">
-        <Original>TUN - Respawn System</Original>
-        <English>TUN - Respawn System</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_CBA_Category_Briefing">
-        <Original>Briefing notes</Original>
-        <English>Briefing notes</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_CBA_Category_time">
-        <Original>Wave times</Original>
-        <English>Wave times</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_CBA_Category_checkTickets">
-        <Original>Check tickets</Original>
-        <English>Check tickets</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_CBA_Category_spectate_cameramode">
-        <Original>Spectator camera modes</Original>
-        <English>Spectator camera modes</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_CBA_Category_ticketcount">
-        <Original>Tickets</Original>
-        <English>Tickets</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_CBA_Category_generic">
-        <Original>Main Settings</Original>
-        <English>Main Settings</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_CBA_Enable">
-        <Original>Enable Respawn System</Original>
-        <English>Enable Respawn System</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_CBA_tooltip_Enable">
-        <Original>Enable Respawn System for mission.</Original>
-        <English>Enable Respawn System for mission.</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_CBA_tooltip_CheckTickets">
-        <Original>Allow checking remaining tickets from this place</Original>
-        <English>Allow checking remaining tickets from this place</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_CBA_tooltip_forceRespawn">
-        <Original>Only forced respawn waves. No timer!</Original>
-        <English>Only forced respawn waves. No timer!</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_CBA_tooltip_delayed_respawn">
-        <Original>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20min and this is set to 50% and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</Original>
-        <English>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20min and this is set to 50% and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_CBA_tooltip_waiting_area_range">
-        <Original>Range for waitingarea. Default 100m</Original>
-        <English>Range for waitingarea. Default 100m</English>
-      </Key>
-    </Container>
-    <Container name="FNC">
-      <Key ID="STR_tunres_Respawn_FNC_moveRespawns">
-        <Original>You are respawning! Standby.</Original>
-        <English>You are respawning! Standby.</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_FNC_remaining_time">
-        <Original>Remaining time until respawn</Original>
-        <English>Remaining time until respawn</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_FNC_RespawnDisabled">
-        <Original>Respawn is currently disabled.</Original>
-        <English>Respawn is currently disabled.</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_FNC_only_forced_waves">
-        <Original>Mission is using only forced waves.</Original>
-        <English>Mission is using only forced waves.</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_RemainingTicketsText">
-        <Original>Remaining ticket count is:</Original>
-        <English>Remaining ticket count is:</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_CheckTickets">
-        <Original>Check remaining tickets</Original>
-        <English>Check remaining tickets</English>
-      </Key>
-    </Container>
-    <Container name="Teleport">
-      <Key ID="STR_tunres_Respawn_Teleporting">
-        <Original>You are being teleported to:</Original>
-        <English>You are being teleported to:</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_Teleport_Disabled">
-        <Original>This teleport point is disabled</Original>
-        <English>This teleport point is disabled</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_TeleportMenu">
-        <Original>Open teleportmenu</Original>
-        <English>Open teleportmenu</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_TeleportMenuVanilla">
-        <Original>&lt;t color='#FF0000'&gt;Open teleportmenu&lt;/t&gt;</Original>
-        <English>&lt;t color='#FF0000'&gt;Open teleportmenu&lt;/t&gt;</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_MainBaseText">
-        <Original>Main Base</Original>
-        <English>Main Base</English>
-      </Key>
-    </Container>
-    <Container name="Modules">
-      <Key ID="STR_tunres_Respawn_Module_Description_Spawn_Point">
-        <Original>Put this module where you want respawn point to be for this side.</Original>
-        <English>Put this module where you want respawn point to be for this side.</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_Module_DisplayName_SpawnPoint">
-        <Original>Spawn Point</Original>
-        <English>Spawn Point</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_Module_tooltip_SpawnPoint">
-        <Original>Choose side for this spawn point</Original>
-        <English>Choose side for this spawn point</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_Module_category">
-        <Original>Tun Respawn</Original>
-        <English>Tun Respawn</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_Module_RespanPos_novalue">
-        <Original>Respawn Position module do not have side set</Original>
-        <English>Respawn Position module do not have side set</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_Module_RespanPos_MultipleMarkers">
-        <Original>There is already "%1" marker. You either have multiple respawn point modules with same settings or marker named that. Either way, remove it.</Original>
-        <English>There is already "%1" marker. You either have multiple respawn point modules with same settings or marker named that. Either way, remove it.</English>
-      </Key>
-    </Container>
-    <Container name="TP module">
-      <Key ID="STR_tunres_Respawn_Module_DisplayName_teleportPoint">
-        <Original>Teleport point</Original>
-        <English>Teleport point</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_Module_Description_teleportPoint">
-        <Original>Teleport network point.</Original>
-        <English>Teleport network point.</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_Module_tooltip_teleportMarkerIcone">
-        <Original>Marker icon, must be in non string format. Default: hd_start</Original>
-        <English>Marker icon, must be in non string format. Default: hd_start</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_Module_tooltip_teleportCreateMarker">
-        <Original>Create marker for this teleport, for enabled sides.</Original>
-        <English>Create marker for this teleport, for enabled sides.</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_Module_tooltip_teleportUseAceAction">
-        <Original>When enabled, will use ace interaction. Otherwise will use addaction.</Original>
-        <English>When enabled, will use ace interaction. Otherwise will use addaction.</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_Module_tooltip_teleportName">
-        <Original>Name for teleport location</Original>
-        <English>Name for teleport location</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_Module_tooltip_teleportMenuOpenConditio">
-        <Original>Condition to enable/disable opening teleport menu. Must return true or flase. Default: true</Original>
-        <English>Condition to enable/disable opening teleport menu. Must return true or flase. Default: true</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_Module_tooltip_teleportConditio">
-        <Original>Conditio to enable/disable TP location. (Code) Default: True</Original>
-        <English>Conditio to enable/disable TP location. (Code) Default: True</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_Module_tooltip_teleportEnableSides">
-        <Original>Is this side allowed to use this teleportter.</Original>
-        <English>Is this side allowed to use this teleportter.</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_Module_tooltip_teleportPointOBJ">
-        <Original>Classname for object where action to teleport is. Non string format: Land_Sleeping_bag_blue_folded_F</Original>
-        <English>Classname for object where action to teleport is. Non string format: Land_Sleeping_bag_blue_folded_F</English>
-      </Key>
-    </Container>
-    <Container name="WaitingArea module">
-      <Key ID="STR_tunres_Respawn_Module_WaitingArea_MultipleMarkers">
-        <Original>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</Original>
-        <English>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_Module_WaitingArea_novalue">
-        <Original>Waiting area module do not have side set</Original>
-        <English>Waiting area module do not have side set</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_Module_DisplayName_WaitingArea">
-        <Original>Respawn Waiting Area</Original>
-        <English>Respawn Waiting Area</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_Module_Description_Waitingarea">
-        <Original>Put this module where you want respawn waiting area to be for this side.</Original>
-        <English>Put this module where you want respawn waiting area to be for this side.</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_Module_tooltip_WaitingArea">
-        <Original>Choose side for this waiting area</Original>
-        <English>Choose side for this waiting area</English>
-      </Key>
-    </Container>
-    <Container name="TP Dialog">
-      <Key ID="STR_tunres_Respawn_tp_dialog_header">
-        <Original>Teleport network</Original>
-        <English>Teleport network</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_tp_dialog_button">
-        <Original>Teleport</Original>
-        <English>Teleport</English>
-      </Key>
-    </Container>
-    <Container name="briefing">
-      <Key ID="STR_tunres_Respawn_CBA_Briefing_Enable_ShowTickets">
-        <Original>Show tickets</Original>
-        <English>Show tickets</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_CBA_Briefing_Enable">
-        <Original>Enable briefing notes</Original>
-        <English>Enable briefing notes</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_CBA_Briefing_Enable_tooltip">
-        <Original>Create briefing tab where all these settings are show.</Original>
-        <English>Create briefing tab where all these settings are show.</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_CBA_Briefing_Enable_ShowRespawType">
-        <Original>Show respawn type</Original>
-        <English>Show respawn type</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_CBA_Briefing_Enable_ShowTime">
-        <Original>Show respawn wave time</Original>
-        <English>Show respawn wave time</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_CBA_Briefing_Enable_ShowTime_tooltip">
-        <Original>When enabled, wave interval time will be shown in briefing notes.</Original>
-        <English>When enabled, wave interval time will be shown in briefing notes.</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_CBA_Briefing_Enable_ShowTickets_tooltip">
-        <Original>When enabled, starting ticket count will be shown in briefing notes.</Original>
-        <English>When enabled, starting ticket count will be shown in briefing notes.</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_CBA_Briefing_Enable_ShowRespawType_tooltip">
-        <Original>When enabled, respawn type will be shown in briefing notes.</Original>
-        <English>When enabled, respawn type will be shown in briefing notes.</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_CBA_Briefing_Enable_ShowOtherSidesData_tooltip">
-        <Original>Show this side for all. Own side is aways shown, if show tickets is enabled. Also it that is disabled, none of the sides tickets are shown.</Original>
-        <English>Show this side for all. Own side is aways shown, if show tickets is enabled. Also it that is disabled, none of the sides tickets are shown.</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_CBA_Briefing_Enable_ShowOtherSidesData_West">
-        <Original>Show west data to all</Original>
-        <English>Show west data to all</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_CBA_Briefing_Enable_ShowOtherSidesData_East">
-        <Original>Show east data to all</Original>
-        <English>Show east data to all</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_CBA_Briefing_Enable_ShowOtherSidesData_Resistance">
-        <Original>Show resistance data to all</Original>
-        <English>Show resistance data to all</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_CBA_Briefing_Enable_ShowOtherSidesData_Civilian">
-        <Original>Show civilian data to all</Original>
-        <English>Show civilian data to all</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_Briefing_default">
-        <Original>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;limited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each side&lt;/font&gt;.</Original>
-        <English>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;limited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each side&lt;/font&gt;.</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_Briefing_sidetickets">
-        <Original>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;limited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each side&lt;/font&gt;.</Original>
-        <English>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;limited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each side&lt;/font&gt;.</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_Briefing_playertickets">
-        <Original>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;limited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each player&lt;/font&gt;.</Original>
-        <English>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;limited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each player&lt;/font&gt;.</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_Briefing_onlyForcedWaves">
-        <Original>Mission uses only forced respawn waves. So no respawn timer.</Original>
-        <English>Mission uses only forced respawn waves. So no respawn timer.</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_Briefing_killJipEnabled">
-        <Original>%1&lt;br/&gt;&lt;br/&gt;JIP players will be killed and move to respawn after &lt;font face='PuristaBold' size='14'&gt;%2min&lt;/font&gt;  from mission start. If player disconnected earlier, it wont use ticket.</Original>
-        <English>%1&lt;br/&gt;&lt;br/&gt;JIP players will be killed and move to respawn after &lt;font face='PuristaBold' size='14'&gt;%2min&lt;/font&gt;  from mission start. If player disconnected earlier, it wont use ticket.</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_Briefing_killJipDisabled">
-        <Original>JIP players are not killed and moved to respawn when they join game.</Original>
-        <English>JIP players are not killed and moved to respawn when they join game.</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_Briefing_reportEnemiesEnabled">
-        <Original>%1&lt;br/&gt;&lt;br/&gt;When MSP has been deployed, it will report enemies every &lt;font face='PuristaBold' size='14'&gt;%2s&lt;/font&gt;, if there is any inside &lt;font face='PuristaBold' size='14'&gt;%3&lt;/font&gt; meter radius.</Original>
-        <English>%1&lt;br/&gt;&lt;br/&gt;When MSP has been deployed, it will report enemies every &lt;font face='PuristaBold' size='14'&gt;%2s&lt;/font&gt;, if there is any inside &lt;font face='PuristaBold' size='14'&gt;%3&lt;/font&gt; meter radius.</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_Briefing_reportEnemiesDisabled">
-        <Original>Reporting enemies near MSP is disabled.</Original>
-        <English>Reporting enemies near MSP is disabled.</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_Briefing_ContestedCheck">
-        <Original>%1&lt;br/&gt;&lt;br/&gt;MSP contested status is updated every &lt;font face='PuristaBold' size='14'&gt;%2s&lt;/font&gt;.&lt;br/&gt;It will get contested if there is more enemis inside &lt;font face='PuristaBold' size='14'&gt;%3m&lt;/font&gt; radius or even one enemy is &lt;font face='PuristaBold' size='14'&gt;%4m&lt;/font&gt; away from it.</Original>
-        <English>%1&lt;br/&gt;&lt;br/&gt;MSP contested status is updated every &lt;font face='PuristaBold' size='14'&gt;%2s&lt;/font&gt;.&lt;br/&gt;It will get contested if there is more enemis inside &lt;font face='PuristaBold' size='14'&gt;%3m&lt;/font&gt; radius or even one enemy is &lt;font face='PuristaBold' size='14'&gt;%4m&lt;/font&gt; away from it.</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_Briefing_MspVehicle">
-        <Original>%1&lt;br/&gt;&lt;br/&gt;MSP vehicle is &lt;font face='PuristaBold' size='14'&gt;%2&lt;/font&gt;</Original>
-        <English>%1&lt;br/&gt;&lt;br/&gt;MSP vehicle is &lt;font face='PuristaBold' size='14'&gt;%2&lt;/font&gt;</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_Briefing_DelayedRespawn">
-        <Original>%1&lt;br/&gt;&lt;br/&gt;This mission has &lt;font face='PuristaBold' size='14'&gt;delayed respawn on.&lt;/font&gt; &lt;br/&gt;If there is &lt;font face='PuristaBold' size='14'&gt;less than %2min (%3%5 from %4min)&lt;/font&gt; time left for next wave, &lt;font face='PuristaBold' size='14'&gt;you will skip it.&lt;/font&gt;</Original>
-        <English>%1&lt;br/&gt;&lt;br/&gt;This mission has &lt;font face='PuristaBold' size='14'&gt;delayed respawn on.&lt;/font&gt; &lt;br/&gt;If there is &lt;font face='PuristaBold' size='14'&gt;less than %2min (%3%5 from %4min)&lt;/font&gt; time left for next wave, &lt;font face='PuristaBold' size='14'&gt;you will skip it.&lt;/font&gt;</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_Briefing_DelayedRespawnOff">
-        <Original>&lt;br/&gt;&lt;br/&gt;This mission has &lt;font face='PuristaBold' size='14'&gt;delayed respawn off.&lt;/font&gt;</Original>
-        <English>&lt;br/&gt;&lt;br/&gt;This mission has &lt;font face='PuristaBold' size='14'&gt;delayed respawn off.&lt;/font&gt;</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_Briefing_MspEnabled">
-        <Original>Mobile Spawn Point (MSP) has been &lt;font face='PuristaBold' size='14'&gt;enabled&lt;/font&gt;  to this mission for your side.</Original>
-        <English>Mobile Spawn Point (MSP) has been &lt;font face='PuristaBold' size='14'&gt;enabled&lt;/font&gt;  to this mission for your side.</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_Briefing_MspDisabled">
-        <Original>Mobile Spawn Point (MSP) has been enabled for this mission, but &lt;font face='PuristaBold' size='14'&gt;your side does not have MSP.&lt;/font&gt;</Original>
-        <English>Mobile Spawn Point (MSP) has been enabled for this mission, but &lt;font face='PuristaBold' size='14'&gt;your side does not have MSP.&lt;/font&gt;</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_Briefing_teleportNetwork">
-        <Original>&lt;br/&gt;&lt;br/&gt;If there is MSP or custom teleport points in this mission, you can accses teleport menu always from Main Base and uncontested MSP using ace action menu. Custom teleport points might have different conditions and uses either vanilla action menu or ace action menu.</Original>
-        <English>&lt;br/&gt;&lt;br/&gt;If there is MSP or custom teleport points in this mission, you can accses teleport menu always from Main Base and uncontested MSP using ace action menu. Custom teleport points might have different conditions and uses either vanilla action menu or ace action menu.</English>
-      </Key>
-    </Container>
-    <Container name="respawn types">
-      <Key ID="STR_tunres_Respawn_Type_Default">
-        <Original>Default</Original>
-        <English>Default</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_Type_Sidetickets">
-        <Original>Side tickets</Original>
-        <English>Side tickets</English>
-      </Key>
-      <Key ID="STR_tunres_Respawn_Type_Playertickets">
-        <Original>Player tickets</Original>
-        <English>Player tickets</English>
-      </Key>
-    </Container>
-  </Package>
-  <Package name="MSP">
-    <Container name="CBA">
-      <Key ID="STR_tunres_MSP_CBA_Category_main">
-        <Original>TUN - Mobile Spawn Point</Original>
-        <English>TUN - Mobile Spawn Point</English>
-      </Key>
-      <Key ID="STR_tunres_MSP_CBA_Category_progres">
-        <Original>Progress Bar</Original>
-        <English>Progress Bar</English>
-      </Key>
-      <Key ID="STR_tunres_MSP_CBA_tooltip_setup_progresbar">
-        <Original>Time that it takes to setup MSP (seconds)</Original>
-        <English>Setup Time</English>
-      </Key>
-      <Key ID="STR_tunres_MSP_CBA_pack_progresbar">
-        <Original>Packing Time</Original>
-        <English>Packing Time</English>
-      </Key>
-      <Key ID="STR_tunres_MSP_CBA_setup_progresbar">
-        <Original>Setup Time</Original>
-        <English>Setup Time</English>
-      </Key>
-      <Key ID="STR_tunres_MSP_CBA_tooltip_setup_ProgressBar">
-        <Original>Time that it takes to deploy MSP (seconds)</Original>
-        <English>Time that it takes to deploy MSP (seconds)</English>
-      </Key>
-      <Key ID="STR_tunres_MSP_CBA_tooltip_pack_progresbar">
-        <Original>Time that it takes to pack MSP (seconds)</Original>
-        <English>Time that it takes to pack MSP (seconds)</English>
-      </Key>
-      <Key ID="STR_tunres_MSP_CBA_Enable">
-        <Original>Enable MSP</Original>
-        <English>Enable MSP</English>
-      </Key>
-      <Key ID="STR_tunres_MSP_CBA_allowCheckTicketsMSP">
-        <Original>Check tickets from msp</Original>
-        <English>Check tickets from msp</English>
-      </Key>
-      <Key ID="STR_tunres_MSP_CBA_tooltip_Enable">
-        <Original>Enable MSP system</Original>
-        <English>Enable MSP system</English>
-      </Key>
-    </Container>
-    <Container name="fnc_initate_msp_action">
-      <Key ID="STR_tunres_MSP_fnc_initate_msp_action_setting">
-        <Original>Setting up MSP</Original>
-        <English>Setting up MSP</English>
-      </Key>
-      <Key ID="STR_tunres_MSP_fnc_initate_msp_action_packing">
-        <Original>Packing MSP</Original>
-        <English>Packing MSP</English>
-      </Key>
-    </Container>
-    <Container name="fnc_contested">
-      <Key ID="STR_tunres_MSP_FNC_Contested_hint">
-        <Original>[['MSP has been contested!'], ['Respawn position has been updated.']]</Original>
-        <English>[['MSP has been contested!'], ['Respawn position has been updated.']]</English>
-      </Key>
-      <Key ID="STR_tunres_MSP_FNC_secured_hint">
-        <Original>[['MSP has been secured!'], ['Respawn position has been updated.']]</Original>
-        <English>[['MSP has been secured!'], ['Respawn position has been updated.']]</English>
-      </Key>
-      <Key ID="STR_tunres_MSP_FNC_enemies_near">
-        <Original>Enemies spotted near MSP!</Original>
-        <English>Enemies spotted near MSP!</English>
-      </Key>
-    </Container>
-    <Container name="fnc_setup/pack_msp">
-      <Key ID="STR_tunres_MSP_FNC_setup_notification">
-        <Original>[['MSP has been deployed!'], ['Respawn position has been updated.']]</Original>
-        <English>[['MSP has been deployed!'], ['Respawn position has been updated.']]</English>
-      </Key>
-      <Key ID="STR_tunres_MSP_FNC_pack_notification">
-        <Original>[['MSP has been packed!'], ['Respawn position has been updated.']]</Original>
-        <English>[['MSP has been packed!'], ['Respawn position has been updated.']]</English>
-      </Key>
-    </Container>
-    <Container name="Classname">
-      <Key ID="STR_tunres_MSP_CBA_classname">
-        <Original>MSP Classname</Original>
-        <English>MSP Classname</English>
-      </Key>
-      <Key ID="STR_tunres_MSP_CBA_classname_west">
-        <Original>West MSP Classname</Original>
-        <English>West MSP Classname</English>
-      </Key>
-      <Key ID="STR_tunres_MSP_CBA_Classname_east">
-        <Original>East MSP Classname</Original>
-        <English>East MSP Classname</English>
-      </Key>
-      <Key ID="STR_tunres_MSP_CBA_classname_resistance">
-        <Original>Resistance MSP Classname</Original>
-        <English>Resistance MSP Classname</English>
-      </Key>
-      <Key ID="STR_tunres_MSP_CBA_classname_civilian">
-        <Original>Civilian MSP Classname</Original>
-        <English>Civilian MSP Classname</English>
-      </Key>
-      <Key ID="STR_tunres_MSP_CBA_tooltip_classname">
-        <Original>Put vehicle classname which will be used as MSP. All vehicles of that type can be used as MSP. Use non-string version of classname like: B_MRAP_01_F. Only one type of vehicle is supported currently</Original>
-        <English>Put vehicle classname which will be used as MSP. All vehicles of that type can be used as MSP. Use non-string version of classname like: B_MRAP_01_F. Only one type of vehicle is supported currently</English>
-      </Key>
-    </Container>
-    <Container name="CBA Contested">
-      <Key ID="STR_tunres_MSP_CBA_tooltip_contested_min">
-        <Original>When there are enemies inside this radius, MSP are always disabled, even if there are more friendlies in max range (meters)</Original>
-        <English>When there are enemies inside this radius, MSP are always disabled, even if there are more friendlies in max range (meters)</English>
-      </Key>
-      <Key ID="STR_tunres_MSP_CBA_tooltip_contested_check_interval">
-        <Original>Interval for when server updates the contested status for MSP</Original>
-        <English>Interval for when server updates the contested status for MSP</English>
-      </Key>
-      <Key ID="STR_tunres_MSP_CBA_tooltip_contested_max">
-        <Original>Radius where there needs to be more enemies than allies to disable MSP (meters)</Original>
-        <English>Radius where there needs to be more enemies than allies to disable MSP (meters)</English>
-      </Key>
-      <Key ID="STR_tunres_MSP_CBA_contested_radius_min">
-        <Original>Min Contested Radius</Original>
-        <English>Min Contested Radius</English>
-      </Key>
-      <Key ID="STR_tunres_MSP_CBA_contested_radius_max">
-        <Original>Max Contested Radius</Original>
-        <English>Max Contested Radius</English>
-      </Key>
-      <Key ID="STR_tunres_MSP_CBA_contested_check_interval">
-        <Original>Contested Check Interval</Original>
-        <English>Contested Check Interval</English>
-      </Key>
-      <Key ID="STR_tunres_MSP_CBA_Category_contested">
-        <Original>Contested</Original>
-        <English>Contested</English>
-      </Key>
-    </Container>
-    <Container name="CBA Report">
-      <Key ID="STR_tunres_MSP_CBA_tooltip_report_enemies_range">
-        <Original>Range from MSP where enemies are reported (meters)</Original>
-        <English>Range from MSP where enemies are reported (meters)</English>
-      </Key>
-      <Key ID="STR_tunres_MSP_CBA_tooltip_report_enemies_interval">
-        <Original>Interval when server check if there is enemies near MSP</Original>
-        <English>Interval when server check if there is enemies near MSP</English>
-      </Key>
-      <Key ID="STR_tunres_MSP_CBA_tooltip_report_enemies">
-        <Original>%1&lt;br/&gt;&lt;br/&gt;Enable Report Enemies near MSP</Original>
-        <English>%1&lt;br/&gt;&lt;br/&gt;Enable Report Enemies near MSP</English>
-      </Key>
-      <Key ID="STR_tunres_MSP_CBA_report_enemies_intervala">
-        <Original>Report Enemies Interval</Original>
-        <English>Report Enemies Interval</English>
-      </Key>
-      <Key ID="STR_tunres_MSP_CBA_report_enemies_range">
-        <Original>Report Enemies Range</Original>
-        <English>Report Enemies Range</English>
-      </Key>
-      <Key ID="STR_tunres_MSP_CBA_report_enemies">
-        <Original>Report Enemies</Original>
-        <English>Report Enemies</English>
-      </Key>
-    </Container>
-    <Container name="MSP">
-      <Key ID="STR_tunres_MSP_TpText">
-        <Original>Mobile spawn point</Original>
-        <English>Mobile spawn point</English>
-      </Key>
-      <Key ID="STR_tunres_MSP_destroyed">
-        <Original>MSP has been destroyed!</Original>
-        <English>MSP has been destroyed!</English>
-      </Key>
-    </Container>
-    <Container name="ace">
-      <Key ID="STR_tunres_MSP_remaining_time">
-        <Original>Remaining time until respawn: %1</Original>
-        <English>Remaining time until respawn: %1</English>
-      </Key>
-    </Container>
-    <Container name="Notifications">
-      <Key ID="STR_tunres_MSP_CBA_whoGetsSetUpNotification">
-        <Original>Who gets notification from MSP setup/pack?</Original>
-        <English>Who gets notification from MSP setup/pack?</English>
-      </Key>
-      <Key ID="STR_tunres_MSP_CBA_whoGetsContestedNotification">
-        <Original>Who gets notification when MSP contested?</Original>
-        <English>Who gets notification when MSP contested?</English>
-      </Key>
-      <Key ID="STR_tunres_MSP_CBA_whoGetsReportEnemiesNotification">
-        <Original>Who gets notification when there is enemies near MSP?</Original>
-        <English>Who gets notification when there is enemies near MSP?</English>
-      </Key>
-      <Key ID="STR_tunres_MSP_CBA_whoGetsSetUpNotification_Tooltip">
-        <Original>When MSP is setup or packed up, who whil recive notification from it. Default: Group Leader</Original>
-        <English>When MSP is setup or packed up, who whil recive notification from it. Default: Group Leader</English>
-      </Key>
-      <Key ID="STR_tunres_MSP_CBA_whoGetsContestedNotification_Tooltip">
-        <Original>When MSP is contested, who whil recive notification from it. Default: Group Leader</Original>
-        <English>When MSP is contested, who whil recive notification from it. Default: Group Leader</English>
-      </Key>
-      <Key ID="STR_tunres_MSP_CBA_whoGetsReportEnemies_Tooltip">
-        <Original>When there is enemies near MSP, who whil recive notification from it. Default: Group Leader</Original>
-        <English>When there is enemies near MSP, who whil recive notification from it. Default: Group Leader</English>
-      </Key>
-      <Key ID="STR_tunres_MSP_CBA_notificationCategory">
-        <Original>Notifications</Original>
-        <English>Notifications</English>
-      </Key>
-    </Container>
-  </Package>
+    <Package name="Respawn">
+        <Container name="CBA Settings">
+            <Key ID="STR_tunres_Respawn_CBA_tooltip_time">
+                <Original>Time between respawn waves (minutes)</Original>
+                <English>Time between respawn waves (minutes)</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_CBA_tooltip_killjip_time">
+                <Original>Time after JIP are killed and moved to respawn (minutes)</Original>
+                <English>Time after JIP are killed and moved to respawn (minutes)</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_CBA_tooltip_killjip">
+                <Original>Enable kill JIP system</Original>
+                <English>Enable kill JIP system</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_CBA_tooltip_ticket">
+                <Original>Ticket count for either for whole side or each player in that side.</Original>
+                <English>Ticket count for either for whole side or each player in that side.</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_CBA_tooltip_gearscript">
+                <Original>"SQF Gearscript": Needs two variables set "tunres_Respawn_Role" which works as parameter and "tunres_Respawn_GearPath" which is filepath.        "Potato Tool": just calls its own function        "Save gear": Load same loadout which is saved at mission start or it can be updated during mission using tunres_Respawn_fnc_savegear function.</Original>
+                <English>"SQF Gearscript": Needs two variables set "tunres_Respawn_Role" which works as parameter and "tunres_Respawn_GearPath" which is filepath.        "Potato Tool": just calls its own function        "Save gear": Load same loadout which is saved at mission start or it can be updated during mission using tunres_Respawn_fnc_savegear function.</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_CBA_tooltip_respawntypes">
+                <Original>"Default" : Endless waves. "Side tickets": Side shares ticket pool. . "Player tickets": Each player has own ticket pool</Original>
+                <English>"Default" : Endless waves. "Side tickets": Side shares ticket pool. . "Player tickets": Each player has own ticket pool</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_CBA_tooltip_specta_modes">
+                <Original>Enable this cameramode for spectators</Original>
+                <English>Enable this cameramode for spectators</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_CBA_Category_main">
+                <Original>TUN - Respawn System</Original>
+                <English>TUN - Respawn System</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_CBA_Category_Briefing">
+                <Original>Briefing notes</Original>
+                <English>Briefing notes</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_CBA_Category_time">
+                <Original>Wave times</Original>
+                <English>Wave times</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_CBA_Category_checkTickets">
+                <Original>Check tickets</Original>
+                <English>Check tickets</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_CBA_Category_spectate_cameramode">
+                <Original>Spectator camera modes</Original>
+                <English>Spectator camera modes</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_CBA_Category_ticketcount">
+                <Original>Tickets</Original>
+                <English>Tickets</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_CBA_Category_generic">
+                <Original>Main Settings</Original>
+                <English>Main Settings</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_CBA_Enable">
+                <Original>Enable Respawn System</Original>
+                <English>Enable Respawn System</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_CBA_tooltip_Enable">
+                <Original>Enable Respawn System for mission.</Original>
+                <English>Enable Respawn System for mission.</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_CBA_tooltip_CheckTickets">
+                <Original>Allow checking remaining tickets from this place</Original>
+                <English>Allow checking remaining tickets from this place</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_CBA_tooltip_forceRespawn">
+                <Original>Only forced respawn waves. No timer!</Original>
+                <English>Only forced respawn waves. No timer!</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_CBA_tooltip_delayed_respawn">
+                <Original>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20min and this is set to 50% and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</Original>
+                <English>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20min and this is set to 50% and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_CBA_tooltip_waiting_area_range">
+                <Original>Range for waitingarea. Default 100m</Original>
+                <English>Range for waitingarea. Default 100m</English>
+            </Key>
+        </Container>
+        <Container name="FNC">
+            <Key ID="STR_tunres_Respawn_FNC_moveRespawns">
+                <Original>You are respawning! Standby.</Original>
+                <English>You are respawning! Standby.</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_FNC_remaining_time">
+                <Original>Remaining time until respawn</Original>
+                <English>Remaining time until respawn</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_FNC_RespawnDisabled">
+                <Original>Respawn is currently disabled.</Original>
+                <English>Respawn is currently disabled.</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_FNC_only_forced_waves">
+                <Original>Mission is using only forced waves.</Original>
+                <English>Mission is using only forced waves.</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_RemainingTicketsText">
+                <Original>Remaining ticket count is:</Original>
+                <English>Remaining ticket count is:</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_CheckTickets">
+                <Original>Check remaining tickets</Original>
+                <English>Check remaining tickets</English>
+            </Key>
+        </Container>
+        <Container name="Teleport">
+            <Key ID="STR_tunres_Respawn_Teleporting">
+                <Original>You are being teleported to:</Original>
+                <English>You are being teleported to:</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_Teleport_Disabled">
+                <Original>This teleport point is disabled</Original>
+                <English>This teleport point is disabled</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_TeleportMenu">
+                <Original>Open teleportmenu</Original>
+                <English>Open teleportmenu</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_TeleportMenuVanilla">
+                <Original>&lt;t color='#FF0000'&gt;Open teleportmenu&lt;/t&gt;</Original>
+                <English>&lt;t color='#FF0000'&gt;Open teleportmenu&lt;/t&gt;</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_MainBaseText">
+                <Original>Main Base</Original>
+                <English>Main Base</English>
+            </Key>
+        </Container>
+        <Container name="Modules">
+            <Key ID="STR_tunres_Respawn_Module_Description_Spawn_Point">
+                <Original>Put this module where you want respawn point to be for this side.</Original>
+                <English>Put this module where you want respawn point to be for this side.</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_Module_DisplayName_SpawnPoint">
+                <Original>Spawn Point</Original>
+                <English>Spawn Point</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_Module_tooltip_SpawnPoint">
+                <Original>Choose side for this spawn point</Original>
+                <English>Choose side for this spawn point</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_Module_category">
+                <Original>Tun Respawn</Original>
+                <English>Tun Respawn</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_Module_RespanPos_novalue">
+                <Original>Respawn Position module do not have side set</Original>
+                <English>Respawn Position module do not have side set</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_Module_RespanPos_MultipleMarkers">
+                <Original>There is already "%1" marker. You either have multiple respawn point modules with same settings or marker named that. Either way, remove it.</Original>
+                <English>There is already "%1" marker. You either have multiple respawn point modules with same settings or marker named that. Either way, remove it.</English>
+            </Key>
+        </Container>
+        <Container name="TP module">
+            <Key ID="STR_tunres_Respawn_Module_DisplayName_teleportPoint">
+                <Original>Teleport point</Original>
+                <English>Teleport point</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_Module_Description_teleportPoint">
+                <Original>Teleport network point.</Original>
+                <English>Teleport network point.</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_Module_tooltip_teleportMarkerIcone">
+                <Original>Marker icon, must be in non string format. Default: hd_start</Original>
+                <English>Marker icon, must be in non string format. Default: hd_start</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_Module_tooltip_teleportCreateMarker">
+                <Original>Create marker for this teleport, for enabled sides.</Original>
+                <English>Create marker for this teleport, for enabled sides.</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_Module_tooltip_teleportUseAceAction">
+                <Original>When enabled, will use ace interaction. Otherwise will use addaction.</Original>
+                <English>When enabled, will use ace interaction. Otherwise will use addaction.</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_Module_tooltip_teleportName">
+                <Original>Name for teleport location</Original>
+                <English>Name for teleport location</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_Module_tooltip_teleportMenuOpenConditio">
+                <Original>Condition to enable/disable opening teleport menu. Must return true or flase. Default: true</Original>
+                <English>Condition to enable/disable opening teleport menu. Must return true or flase. Default: true</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_Module_tooltip_teleportConditio">
+                <Original>Conditio to enable/disable TP location. (Code) Default: True</Original>
+                <English>Conditio to enable/disable TP location. (Code) Default: True</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_Module_tooltip_teleportEnableSides">
+                <Original>Is this side allowed to use this teleportter.</Original>
+                <English>Is this side allowed to use this teleportter.</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_Module_tooltip_teleportPointOBJ">
+                <Original>Classname for object where action to teleport is. Non string format: Land_Sleeping_bag_blue_folded_F</Original>
+                <English>Classname for object where action to teleport is. Non string format: Land_Sleeping_bag_blue_folded_F</English>
+            </Key>
+        </Container>
+        <Container name="WaitingArea module">
+            <Key ID="STR_tunres_Respawn_Module_WaitingArea_MultipleMarkers">
+                <Original>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</Original>
+                <English>There is already "%1" marker. You either have multiple Waiting Area modules with same settings or marker named that. Either way, remove it.</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_Module_WaitingArea_novalue">
+                <Original>Waiting area module do not have side set</Original>
+                <English>Waiting area module do not have side set</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_Module_DisplayName_WaitingArea">
+                <Original>Respawn Waiting Area</Original>
+                <English>Respawn Waiting Area</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_Module_Description_Waitingarea">
+                <Original>Put this module where you want respawn waiting area to be for this side.</Original>
+                <English>Put this module where you want respawn waiting area to be for this side.</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_Module_tooltip_WaitingArea">
+                <Original>Choose side for this waiting area</Original>
+                <English>Choose side for this waiting area</English>
+            </Key>
+        </Container>
+        <Container name="TP Dialog">
+            <Key ID="STR_tunres_Respawn_tp_dialog_header">
+                <Original>Teleport network</Original>
+                <English>Teleport network</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_tp_dialog_button">
+                <Original>Teleport</Original>
+                <English>Teleport</English>
+            </Key>
+        </Container>
+        <Container name="briefing">
+            <Key ID="STR_tunres_Respawn_CBA_Briefing_Enable_ShowTickets">
+                <Original>Show tickets</Original>
+                <English>Show tickets</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_CBA_Briefing_Enable">
+                <Original>Enable briefing notes</Original>
+                <English>Enable briefing notes</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_CBA_Briefing_Enable_tooltip">
+                <Original>Create briefing tab where all these settings are show.</Original>
+                <English>Create briefing tab where all these settings are show.</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_CBA_Briefing_Enable_ShowRespawType">
+                <Original>Show respawn type</Original>
+                <English>Show respawn type</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_CBA_Briefing_Enable_ShowTime">
+                <Original>Show respawn wave time</Original>
+                <English>Show respawn wave time</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_CBA_Briefing_Enable_ShowTime_tooltip">
+                <Original>When enabled, wave interval time will be shown in briefing notes.</Original>
+                <English>When enabled, wave interval time will be shown in briefing notes.</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_CBA_Briefing_Enable_ShowTickets_tooltip">
+                <Original>When enabled, starting ticket count will be shown in briefing notes.</Original>
+                <English>When enabled, starting ticket count will be shown in briefing notes.</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_CBA_Briefing_Enable_ShowRespawType_tooltip">
+                <Original>When enabled, respawn type will be shown in briefing notes.</Original>
+                <English>When enabled, respawn type will be shown in briefing notes.</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_CBA_Briefing_Enable_ShowOtherSidesData_tooltip">
+                <Original>Show this side for all. Own side is aways shown, if show tickets is enabled. Also it that is disabled, none of the sides tickets are shown.</Original>
+                <English>Show this side for all. Own side is aways shown, if show tickets is enabled. Also it that is disabled, none of the sides tickets are shown.</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_CBA_Briefing_Enable_ShowOtherSidesData_West">
+                <Original>Show west data to all</Original>
+                <English>Show west data to all</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_CBA_Briefing_Enable_ShowOtherSidesData_East">
+                <Original>Show east data to all</Original>
+                <English>Show east data to all</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_CBA_Briefing_Enable_ShowOtherSidesData_Resistance">
+                <Original>Show resistance data to all</Original>
+                <English>Show resistance data to all</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_CBA_Briefing_Enable_ShowOtherSidesData_Civilian">
+                <Original>Show civilian data to all</Original>
+                <English>Show civilian data to all</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_Briefing_default">
+                <Original>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;unlimited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each side&lt;/font&gt;.</Original>
+                <English>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;unlimited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each side&lt;/font&gt;.</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_Briefing_sidetickets">
+                <Original>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;limited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each side&lt;/font&gt;.</Original>
+                <English>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;limited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each side&lt;/font&gt;.</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_Briefing_playertickets">
+                <Original>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;limited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each player&lt;/font&gt;.</Original>
+                <English>Mission has an &lt;font face='PuristaBold' size='14'&gt;wave respawn&lt;/font&gt; with &lt;font face='PuristaBold' size='14'&gt;limited tickets&lt;/font&gt; for &lt;font face='PuristaBold' size='14'&gt;each player&lt;/font&gt;.</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_Briefing_onlyForcedWaves">
+                <Original>Mission uses only forced respawn waves. So no respawn timer.</Original>
+                <English>Mission uses only forced respawn waves. So no respawn timer.</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_Briefing_killJipEnabled">
+                <Original>%1&lt;br/&gt;&lt;br/&gt;JIP players will be killed and move to respawn after &lt;font face='PuristaBold' size='14'&gt;%2min&lt;/font&gt;  from mission start. If player disconnected earlier, it wont use ticket.</Original>
+                <English>%1&lt;br/&gt;&lt;br/&gt;JIP players will be killed and move to respawn after &lt;font face='PuristaBold' size='14'&gt;%2min&lt;/font&gt;  from mission start. If player disconnected earlier, it wont use ticket.</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_Briefing_killJipDisabled">
+                <Original>JIP players are not killed and moved to respawn when they join game.</Original>
+                <English>JIP players are not killed and moved to respawn when they join game.</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_Briefing_reportEnemiesEnabled">
+                <Original>%1&lt;br/&gt;&lt;br/&gt;When MSP has been deployed, it will report enemies every &lt;font face='PuristaBold' size='14'&gt;%2s&lt;/font&gt;, if there is any inside &lt;font face='PuristaBold' size='14'&gt;%3&lt;/font&gt; meter radius.</Original>
+                <English>%1&lt;br/&gt;&lt;br/&gt;When MSP has been deployed, it will report enemies every &lt;font face='PuristaBold' size='14'&gt;%2s&lt;/font&gt;, if there is any inside &lt;font face='PuristaBold' size='14'&gt;%3&lt;/font&gt; meter radius.</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_Briefing_reportEnemiesDisabled">
+                <Original>Reporting enemies near MSP is disabled.</Original>
+                <English>Reporting enemies near MSP is disabled.</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_Briefing_ContestedCheck">
+                <Original>%1&lt;br/&gt;&lt;br/&gt;MSP contested status is updated every &lt;font face='PuristaBold' size='14'&gt;%2s&lt;/font&gt;.&lt;br/&gt;It will get contested if there is more enemis inside &lt;font face='PuristaBold' size='14'&gt;%3m&lt;/font&gt; radius or even one enemy is &lt;font face='PuristaBold' size='14'&gt;%4m&lt;/font&gt; away from it.</Original>
+                <English>%1&lt;br/&gt;&lt;br/&gt;MSP contested status is updated every &lt;font face='PuristaBold' size='14'&gt;%2s&lt;/font&gt;.&lt;br/&gt;It will get contested if there is more enemis inside &lt;font face='PuristaBold' size='14'&gt;%3m&lt;/font&gt; radius or even one enemy is &lt;font face='PuristaBold' size='14'&gt;%4m&lt;/font&gt; away from it.</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_Briefing_MspVehicle">
+                <Original>%1&lt;br/&gt;&lt;br/&gt;MSP vehicle is &lt;font face='PuristaBold' size='14'&gt;%2&lt;/font&gt;</Original>
+                <English>%1&lt;br/&gt;&lt;br/&gt;MSP vehicle is &lt;font face='PuristaBold' size='14'&gt;%2&lt;/font&gt;</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_Briefing_DelayedRespawn">
+                <Original>%1&lt;br/&gt;&lt;br/&gt;This mission has &lt;font face='PuristaBold' size='14'&gt;delayed respawn on.&lt;/font&gt; &lt;br/&gt;If there is &lt;font face='PuristaBold' size='14'&gt;less than %2min (%3%5 from %4min)&lt;/font&gt; time left for next wave, &lt;font face='PuristaBold' size='14'&gt;you will skip it.&lt;/font&gt;</Original>
+                <English>%1&lt;br/&gt;&lt;br/&gt;This mission has &lt;font face='PuristaBold' size='14'&gt;delayed respawn on.&lt;/font&gt; &lt;br/&gt;If there is &lt;font face='PuristaBold' size='14'&gt;less than %2min (%3%5 from %4min)&lt;/font&gt; time left for next wave, &lt;font face='PuristaBold' size='14'&gt;you will skip it.&lt;/font&gt;</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_Briefing_DelayedRespawnOff">
+                <Original>&lt;br/&gt;&lt;br/&gt;This mission has &lt;font face='PuristaBold' size='14'&gt;delayed respawn off.&lt;/font&gt;</Original>
+                <English>&lt;br/&gt;&lt;br/&gt;This mission has &lt;font face='PuristaBold' size='14'&gt;delayed respawn off.&lt;/font&gt;</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_Briefing_MspEnabled">
+                <Original>Mobile Spawn Point (MSP) has been &lt;font face='PuristaBold' size='14'&gt;enabled&lt;/font&gt;  to this mission for your side.</Original>
+                <English>Mobile Spawn Point (MSP) has been &lt;font face='PuristaBold' size='14'&gt;enabled&lt;/font&gt;  to this mission for your side.</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_Briefing_MspDisabled">
+                <Original>Mobile Spawn Point (MSP) has been enabled for this mission, but &lt;font face='PuristaBold' size='14'&gt;your side does not have MSP.&lt;/font&gt;</Original>
+                <English>Mobile Spawn Point (MSP) has been enabled for this mission, but &lt;font face='PuristaBold' size='14'&gt;your side does not have MSP.&lt;/font&gt;</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_Briefing_teleportNetwork">
+                <Original>&lt;br/&gt;&lt;br/&gt;If there is MSP or custom teleport points in this mission, you can accses teleport menu always from Main Base and uncontested MSP using ace action menu. Custom teleport points might have different conditions and uses either vanilla action menu or ace action menu.</Original>
+                <English>&lt;br/&gt;&lt;br/&gt;If there is MSP or custom teleport points in this mission, you can accses teleport menu always from Main Base and uncontested MSP using ace action menu. Custom teleport points might have different conditions and uses either vanilla action menu or ace action menu.</English>
+            </Key>
+        </Container>
+        <Container name="respawn types">
+            <Key ID="STR_tunres_Respawn_Type_Default">
+                <Original>Default</Original>
+                <English>Default</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_Type_Sidetickets">
+                <Original>Side tickets</Original>
+                <English>Side tickets</English>
+            </Key>
+            <Key ID="STR_tunres_Respawn_Type_Playertickets">
+                <Original>Player tickets</Original>
+                <English>Player tickets</English>
+            </Key>
+        </Container>
+        <Container name="CBA">
+            <Key ID="STR_tunres_MSP_CBA_Category_main">
+                <Original>TUN - Mobile Spawn Point</Original>
+                <English>TUN - Mobile Spawn Point</English>
+            </Key>
+            <Key ID="STR_tunres_MSP_CBA_Category_progres">
+                <Original>Progress Bar</Original>
+                <English>Progress Bar</English>
+            </Key>
+            <Key ID="STR_tunres_MSP_CBA_tooltip_setup_progresbar">
+                <Original>Time that it takes to setup MSP (seconds)</Original>
+                <English>Setup Time</English>
+            </Key>
+            <Key ID="STR_tunres_MSP_CBA_pack_progresbar">
+                <Original>Packing Time</Original>
+                <English>Packing Time</English>
+            </Key>
+            <Key ID="STR_tunres_MSP_CBA_setup_progresbar">
+                <Original>Setup Time</Original>
+                <English>Setup Time</English>
+            </Key>
+            <Key ID="STR_tunres_MSP_CBA_tooltip_setup_ProgressBar">
+                <Original>Time that it takes to deploy MSP (seconds)</Original>
+                <English>Time that it takes to deploy MSP (seconds)</English>
+            </Key>
+            <Key ID="STR_tunres_MSP_CBA_tooltip_pack_progresbar">
+                <Original>Time that it takes to pack MSP (seconds)</Original>
+                <English>Time that it takes to pack MSP (seconds)</English>
+            </Key>
+            <Key ID="STR_tunres_MSP_CBA_Enable">
+                <Original>Enable MSP</Original>
+                <English>Enable MSP</English>
+            </Key>
+            <Key ID="STR_tunres_MSP_CBA_allowCheckTicketsMSP">
+                <Original>Check tickets from msp</Original>
+                <English>Check tickets from msp</English>
+            </Key>
+            <Key ID="STR_tunres_MSP_CBA_tooltip_Enable">
+                <Original>Enable MSP system</Original>
+                <English>Enable MSP system</English>
+            </Key>
+        </Container>
+        <Container name="fnc_initate_msp_action">
+            <Key ID="STR_tunres_MSP_fnc_initate_msp_action_setting">
+                <Original>Setting up MSP</Original>
+                <English>Setting up MSP</English>
+            </Key>
+            <Key ID="STR_tunres_MSP_fnc_initate_msp_action_packing">
+                <Original>Packing MSP</Original>
+                <English>Packing MSP</English>
+            </Key>
+        </Container>
+        <Container name="fnc_contested">
+            <Key ID="STR_tunres_MSP_FNC_Contested_hint">
+                <Original>[['MSP has been contested!'], ['Respawn position has been updated.']]</Original>
+                <English>[['MSP has been contested!'], ['Respawn position has been updated.']]</English>
+            </Key>
+            <Key ID="STR_tunres_MSP_FNC_secured_hint">
+                <Original>[['MSP has been secured!'], ['Respawn position has been updated.']]</Original>
+                <English>[['MSP has been secured!'], ['Respawn position has been updated.']]</English>
+            </Key>
+            <Key ID="STR_tunres_MSP_FNC_enemies_near">
+                <Original>Enemies spotted near MSP!</Original>
+                <English>Enemies spotted near MSP!</English>
+            </Key>
+        </Container>
+        <Container name="fnc_setup/pack_msp">
+            <Key ID="STR_tunres_MSP_FNC_setup_notification">
+                <Original>[['MSP has been deployed!'], ['Respawn position has been updated.']]</Original>
+                <English>[['MSP has been deployed!'], ['Respawn position has been updated.']]</English>
+            </Key>
+            <Key ID="STR_tunres_MSP_FNC_pack_notification">
+                <Original>[['MSP has been packed!'], ['Respawn position has been updated.']]</Original>
+                <English>[['MSP has been packed!'], ['Respawn position has been updated.']]</English>
+            </Key>
+        </Container>
+        <Container name="Classname">
+            <Key ID="STR_tunres_MSP_CBA_classname">
+                <Original>MSP Classname</Original>
+                <English>MSP Classname</English>
+            </Key>
+            <Key ID="STR_tunres_MSP_CBA_classname_west">
+                <Original>West MSP Classname</Original>
+                <English>West MSP Classname</English>
+            </Key>
+            <Key ID="STR_tunres_MSP_CBA_Classname_east">
+                <Original>East MSP Classname</Original>
+                <English>East MSP Classname</English>
+            </Key>
+            <Key ID="STR_tunres_MSP_CBA_classname_resistance">
+                <Original>Resistance MSP Classname</Original>
+                <English>Resistance MSP Classname</English>
+            </Key>
+            <Key ID="STR_tunres_MSP_CBA_classname_civilian">
+                <Original>Civilian MSP Classname</Original>
+                <English>Civilian MSP Classname</English>
+            </Key>
+            <Key ID="STR_tunres_MSP_CBA_tooltip_classname">
+                <Original>Put vehicle classname which will be used as MSP. All vehicles of that type can be used as MSP. Use non-string version of classname like: B_MRAP_01_F. Only one type of vehicle is supported currently</Original>
+                <English>Put vehicle classname which will be used as MSP. All vehicles of that type can be used as MSP. Use non-string version of classname like: B_MRAP_01_F. Only one type of vehicle is supported currently</English>
+            </Key>
+        </Container>
+        <Container name="CBA Contested">
+            <Key ID="STR_tunres_MSP_CBA_tooltip_contested_min">
+                <Original>When there are enemies inside this radius, MSP are always disabled, even if there are more friendlies in max range (meters)</Original>
+                <English>When there are enemies inside this radius, MSP are always disabled, even if there are more friendlies in max range (meters)</English>
+            </Key>
+            <Key ID="STR_tunres_MSP_CBA_tooltip_contested_check_interval">
+                <Original>Interval for when server updates the contested status for MSP</Original>
+                <English>Interval for when server updates the contested status for MSP</English>
+            </Key>
+            <Key ID="STR_tunres_MSP_CBA_tooltip_contested_max">
+                <Original>Radius where there needs to be more enemies than allies to disable MSP (meters)</Original>
+                <English>Radius where there needs to be more enemies than allies to disable MSP (meters)</English>
+            </Key>
+            <Key ID="STR_tunres_MSP_CBA_contested_radius_min">
+                <Original>Min Contested Radius</Original>
+                <English>Min Contested Radius</English>
+            </Key>
+            <Key ID="STR_tunres_MSP_CBA_contested_radius_max">
+                <Original>Max Contested Radius</Original>
+                <English>Max Contested Radius</English>
+            </Key>
+            <Key ID="STR_tunres_MSP_CBA_contested_check_interval">
+                <Original>Contested Check Interval</Original>
+                <English>Contested Check Interval</English>
+            </Key>
+            <Key ID="STR_tunres_MSP_CBA_Category_contested">
+                <Original>Contested</Original>
+                <English>Contested</English>
+            </Key>
+        </Container>
+        <Container name="CBA Report">
+            <Key ID="STR_tunres_MSP_CBA_tooltip_report_enemies_range">
+                <Original>Range from MSP where enemies are reported (meters)</Original>
+                <English>Range from MSP where enemies are reported (meters)</English>
+            </Key>
+            <Key ID="STR_tunres_MSP_CBA_tooltip_report_enemies_interval">
+                <Original>Interval when server check if there is enemies near MSP</Original>
+                <English>Interval when server check if there is enemies near MSP</English>
+            </Key>
+            <Key ID="STR_tunres_MSP_CBA_tooltip_report_enemies">
+                <Original>%1&lt;br/&gt;&lt;br/&gt;Enable Report Enemies near MSP</Original>
+                <English>%1&lt;br/&gt;&lt;br/&gt;Enable Report Enemies near MSP</English>
+            </Key>
+            <Key ID="STR_tunres_MSP_CBA_report_enemies_intervala">
+                <Original>Report Enemies Interval</Original>
+                <English>Report Enemies Interval</English>
+            </Key>
+            <Key ID="STR_tunres_MSP_CBA_report_enemies_range">
+                <Original>Report Enemies Range</Original>
+                <English>Report Enemies Range</English>
+            </Key>
+            <Key ID="STR_tunres_MSP_CBA_report_enemies">
+                <Original>Report Enemies</Original>
+                <English>Report Enemies</English>
+            </Key>
+        </Container>
+        <Container name="MSP">
+            <Key ID="STR_tunres_MSP_TpText">
+                <Original>Mobile spawn point</Original>
+                <English>Mobile spawn point</English>
+            </Key>
+            <Key ID="STR_tunres_MSP_destroyed">
+                <Original>MSP has been destroyed!</Original>
+                <English>MSP has been destroyed!</English>
+            </Key>
+        </Container>
+        <Container name="ace">
+            <Key ID="STR_tunres_MSP_remaining_time">
+                <Original>Remaining time until respawn: %1</Original>
+                <English>Remaining time until respawn: %1</English>
+            </Key>
+        </Container>
+        <Container name="Notifications">
+            <Key ID="STR_tunres_MSP_CBA_whoGetsSetUpNotification">
+                <Original>Who gets notification from MSP setup/pack?</Original>
+                <English>Who gets notification from MSP setup/pack?</English>
+            </Key>
+            <Key ID="STR_tunres_MSP_CBA_whoGetsContestedNotification">
+                <Original>Who gets notification when MSP contested?</Original>
+                <English>Who gets notification when MSP contested?</English>
+            </Key>
+            <Key ID="STR_tunres_MSP_CBA_whoGetsReportEnemiesNotification">
+                <Original>Who gets notification when there is enemies near MSP?</Original>
+                <English>Who gets notification when there is enemies near MSP?</English>
+            </Key>
+            <Key ID="STR_tunres_MSP_CBA_whoGetsSetUpNotification_Tooltip">
+                <Original>When MSP is setup or packed up, who whil recive notification from it. Default: Group Leader</Original>
+                <English>When MSP is setup or packed up, who whil recive notification from it. Default: Group Leader</English>
+            </Key>
+            <Key ID="STR_tunres_MSP_CBA_whoGetsContestedNotification_Tooltip">
+                <Original>When MSP is contested, who whil recive notification from it. Default: Group Leader</Original>
+                <English>When MSP is contested, who whil recive notification from it. Default: Group Leader</English>
+            </Key>
+            <Key ID="STR_tunres_MSP_CBA_whoGetsReportEnemies_Tooltip">
+                <Original>When there is enemies near MSP, who whil recive notification from it. Default: Group Leader</Original>
+                <English>When there is enemies near MSP, who whil recive notification from it. Default: Group Leader</English>
+            </Key>
+            <Key ID="STR_tunres_MSP_CBA_notificationCategory">
+                <Original>Notifications</Original>
+                <English>Notifications</English>
+            </Key>
+        </Container>
+    </Package>
 </Project>
