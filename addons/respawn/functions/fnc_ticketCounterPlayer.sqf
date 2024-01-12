@@ -19,7 +19,7 @@ if (!isServer) exitWith { };
 
 private _hash = GVAR(PlayerTicektsHash);
 private _playerUID = getPlayerUID _player;
-private _remainingTickets = [_side, _player, false] call FUNC(getTicketCountPlayer);
+private _remainingTickets = [_side, _player, false] call FUNC(getPlayerTicketCount);
 
 if ( _remainingTickets > 0 ) then {
 	//if player disconnected and came back. So no ticket wasted.

@@ -20,6 +20,6 @@ if (GVAR(respawn_type) isEqualTo localize "STR_tunres_Respawn_Type_Sidetickets")
 	_text = format["%1 %2","STR_tunres_Respawn_RemainingTicketsText" call BIS_fnc_localize, _ticetCount];
 	_text call CBA_fnc_notify;
 } else {
-	[playerSide, player, true] remoteExecCall [QFUNC(getTicketCountPlayer),2];
+	[playerSide, player, true] remoteExecCall [QFUNC(getPlayerTicketCount),2];
 };
 

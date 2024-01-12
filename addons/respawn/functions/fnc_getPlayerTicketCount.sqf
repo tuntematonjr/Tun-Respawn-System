@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * [side, player, true] call tunres_Respawn_fnc_getTicketCountPlayer
+ * [side, player, true] call tunres_Respawn_fnc_getPlayerTicketCount
  */
 #include "script_component.hpp"
 params [["_side", nil, [west]], ["_player", objNull, [objNull]], ["_doHint", false, [true]]];
