@@ -37,7 +37,7 @@ if !( GVAR(timerRunning) getOrDefault [_side, false]) then {
 		};
 
 		GVAR(timerRunning) set [_side, false];
-		[_side] call FUNC(moveRespawns);
+		[_side] call FUNC(doRespawnWave);
 		[_side] call FUNC(timer);
 	}, [_side]] call CBA_fnc_waitUntilAndExecute;
 };

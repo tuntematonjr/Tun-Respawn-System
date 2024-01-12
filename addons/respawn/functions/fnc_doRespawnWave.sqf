@@ -10,7 +10,7 @@
  * The return true when done <BOOL>
  *
  * Example:
- * ["side"] call tunres_Respawn_fnc_moveRespawns
+ * ["side"] call tunres_Respawn_fnc_doRespawnWave
  */
 #include "script_component.hpp"
 params [["_side", nil, [west]], ["_forceAll", false, [false]]];
