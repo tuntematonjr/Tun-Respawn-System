@@ -59,9 +59,12 @@ if (count _waitingRespawn > 0) then {
 
 		//when done, remove and move delayed units to main var
 		if ((count _unitList) isEqualTo 0) exitWith {
+
 			[_handle] call CBA_fnc_removePerFrameHandler;
+
 			private _waitingRespawnDelayedHash = GVAR(waitingRespawnDelayedList);
 			private _waitingRespawnDelayed = _waitingRespawnDelayedHash get _side;
+
 			{
 				private _unit = _x;
 				_unit setVariable [QGVAR(skip_next_wave), false, true];
@@ -75,16 +78,19 @@ if (count _waitingRespawn > 0) then {
 		};
 
 		private _unit = _unitList select 0;
-		
 		_unitList deleteAt 0;
+
 		if (isnull _unit || !(_unit in allPlayers) || !alive _unit ) exitWith {
 			_waitingRespawnHash set [_side, _unitList];
 		};
 
 		_unit setVariable [QGVAR(waiting_respawn), false, true];
 		private _text = localize "STR_tunres_Respawn_FNC_moveRespawns";
-		[_unit, _respawn_position, _text, 20] call FUNC(teleport);
+		
+		[_unit, _respawn_position, _text, 20, true] call FUNC(teleportUnit);
+
 		remoteExecCall [QFUNC(addGear), _unit];
+
 		[QGVAR(EH_unitRespawned), [_unit], _unit] call CBA_fnc_localEvent;
 	}, 0.2, [_respawn_position, _side]] call CBA_fnc_addPerFrameHandler;
 
