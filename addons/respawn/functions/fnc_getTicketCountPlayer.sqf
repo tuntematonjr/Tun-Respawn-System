@@ -22,13 +22,12 @@ private _playerUID = getPlayerUID _player;
 private _remainingTickets = _hash getOrDefault [_playerUID, -10];
 
 if (_remainingTickets isEqualTo -10) then {
-	private _sideNum = [west, east, resistance, civilian] findIf { _side isEqualTo _x };
-	_remainingTickets = [GVAR(tickets_west), GVAR(tickets_east), GVAR(tickets_guer), GVAR(tickets_civ)] select _sideNum;
+	_remainingTickets = GVAR(tickets) get _side;
 	_hash set [_playerUID, _remainingTickets, true];
 };
 
 if (_doHint) then {
-	private _text = format["%1 %2","STR_tunres_Respawn_RemainingTicketsText" call BIS_fnc_localize, str _remainingTickets];
+	private _text = format["%1 %2",localize "STR_tunres_Respawn_RemainingTicketsText", str _remainingTickets];
 	_text remoteExecCall ["CBA_fnc_notify", _player];
 };
 

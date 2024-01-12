@@ -9,12 +9,14 @@ private _waitingRespawnEmptyArray= [[west,[]],[east,[]],[resistance,[]],[civilia
 private _waitTimesPreArray = [[west,0],[east,0],[resistance,0],[civilian,0]];
 private _emptyFalseArray = [[west,false],[east,false],[resistance,false],[civilian,false]];
 private _emptyTrueArray = [[west,true],[east,true],[resistance,true],[civilian,true]];
-//Remaining time for wave.
-
+//cba_missiontime time when next wave happens.
 GVAR(nextWaveTimes) = createHashMapFromArray _waitTimesPreArray;
 
 //Respawn wave lenght times
 GVAR(waveLenghtTimes) = createHashMap;
+
+//Tickets
+GVAR(tickets) = createHashMap;
 
 //Respawn waiting area unit arrays
 GVAR(waitingRespawnList) = createHashMapFromArray _waitingRespawnEmptyArray;
@@ -238,7 +240,7 @@ GVAR(selfTPmenuOpenObj) = objNull;
     1,
     {
         params ["_value"];
-        GVAR(tickets_west) = round _value;
+        GVAR(tickets) set [west, round _value];
     },
     true
 ] call CBA_Settings_fnc_init;
@@ -252,7 +254,7 @@ GVAR(selfTPmenuOpenObj) = objNull;
     1,
     {
         params ["_value"];
-        GVAR(tickets_east) = round _value;
+        GVAR(tickets) set [east, round _value];
     },
     true
 ] call CBA_Settings_fnc_init;
@@ -266,7 +268,7 @@ GVAR(selfTPmenuOpenObj) = objNull;
     1,
     {
         params ["_value"];
-        GVAR(tickets_guer) = round _value;
+        GVAR(tickets) set [resistance, round _value];
     },
     true
 ] call CBA_Settings_fnc_init;
@@ -280,7 +282,7 @@ GVAR(selfTPmenuOpenObj) = objNull;
     1,
     {
         params ["_value"];
-        GVAR(tickets_civ) = round _value;
+        GVAR(tickets) set [civilian, round _value];
     },
     true
 ] call CBA_Settings_fnc_init;
