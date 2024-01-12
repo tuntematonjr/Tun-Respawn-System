@@ -82,6 +82,14 @@
                 <Original>Range for waitingarea. Default 100m</Original>
                 <English>Range for waitingarea. Default 100m</English>
             </Key>
+            <Key ID="STR_tunres_Respawan_RemainingTickestSide">
+                <English>Remaining tickets for your side:</English>
+                <Original>Remaining tickets for your side:</Original>
+            </Key>
+            <Key ID="STR_tunres_Respawan_RemainingTickestPlayer">
+                <English>Your remaining tickets:</English>
+                <Original>Your remaining tickets:</Original>
+            </Key>
         </Container>
         <Container name="FNC">
             <Key ID="STR_tunres_Respawn_FNC_moveRespawns">
