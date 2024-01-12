@@ -38,8 +38,7 @@ _pos = getPos _logic;
 
 switch (_markername) do {
 	case "respawn_west": {
-		missionNamespace setVariable [QGVAR(waitingarea_west), [_markername, _logic, _pos], true];
-
+		_side = west;
 		GVAR(flag_west) = "Flag_Blue_F" createVehicle _pos;
 		[{ADDON}, {
 			[west] call FUNC(timer);
@@ -47,8 +46,7 @@ switch (_markername) do {
 	};
 
 	case "respawn_east": {
-		missionNamespace setVariable [QGVAR(waitingarea_east), [_markername, _logic, _pos], true];
-
+		_side = east;
 		GVAR(flag_east) = "Flag_Red_F" createVehicle _pos;
 		[{ADDON}, {
 			[east] call FUNC(timer);
@@ -56,7 +54,7 @@ switch (_markername) do {
 	};
 
 	case "respawn_guerrila": {
-		missionNamespace setVariable [QGVAR(waitingarea_guer), [_markername, _logic, _pos], true];
+		_side = resistance;
 
 		GVAR(flag_guerrila) = "Flag_Green_F" createVehicle _pos;
 		[{ADDON}, {
@@ -65,8 +63,7 @@ switch (_markername) do {
 	};
 
 	case "respawn_civilian": {
-		missionNamespace setVariable [QGVAR(waitingarea_civ), [_markername, _logic, _pos], true];
-
+		_side = civilian;
 		GVAR(flag_civilian) = "Flag_White_F" createVehicle _pos;
 		[{ADDON}, {
 			[civilian] call FUNC(timer);
@@ -74,6 +71,8 @@ switch (_markername) do {
 	};
 };
 
+GVAR(waitingArea) set [_side, [_markername, _logic, _pos]];
+publicVariable QGVAR(waitingArea);
 // Module function is executed by spawn command, so returned value is not necessary, but it's good practice.
 true
 

@@ -20,24 +20,7 @@ if (isDedicated || !(_playerSide in [west,east,resistance,civilian]) ) exitWith 
 //tell server to add this player to list
 [player, true, _playerSide] remoteExecCall [QFUNC(updateWaitingRespawnList),2];
 
-switch (_playerSide) do {
-
-	case west: {
-		_respawn_waitingarea = getpos (GVAR(waitingarea_west) select 1);
-	};
-
-	case east: {
-		_respawn_waitingarea = getpos (GVAR(waitingarea_east) select 1);
-	};
-
-	case resistance: {
-		_respawn_waitingarea = getpos (GVAR(waitingarea_guer) select 1);
-	};
-
-	case civilian: {
-		_respawn_waitingarea = getpos (GVAR(waitingarea_civ) select 1);
-	};
-};
+_respawn_waitingarea = GVAR(waitingArea) get _playerSide;
 
 [{
 	params ["_respawn_waitingarea"];

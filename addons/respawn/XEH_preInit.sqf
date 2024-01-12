@@ -18,6 +18,9 @@ GVAR(waveLenghtTimes) = createHashMap;
 //Tickets
 GVAR(tickets) = createHashMap;
 
+//Waiting area stuff
+GVAR(waitingArea) = createHashMap;
+
 //Respawn waiting area unit arrays
 GVAR(waitingRespawnList) = createHashMapFromArray _waitingRespawnEmptyArray;
 GVAR(waitingRespawnDelayedList) = createHashMapFromArray _waitingRespawnEmptyArray;
