@@ -20,7 +20,7 @@ private _logic = param [0,objNull,[objNull]];
 
 private  _markername = _logic getVariable ["respawn_side","none"];
 private _pos = getPos _logic;
-if (_markername isEqualTo "none") exitWith { hint "STR_tunres_Respawn_Module_RespanPos_novalue" call BIS_fnc_localize; false }; // Exit if no side
+if (_markername isEqualTo "none") exitWith { hint localize "STR_tunres_Respawn_Module_RespanPos_novalue"; false }; // Exit if no side
 private _marker = "";
 
 if (getMarkerColor _markername isEqualTo "") then {
@@ -28,7 +28,7 @@ if (getMarkerColor _markername isEqualTo "") then {
 	_marker setMarkerType "Empty";
 
 } else {
-	hint format [("STR_tunres_Respawn_Module_RespanPos_MultipleMarkers" call BIS_fnc_localize), _markername];
+	hint format [(localize "STR_tunres_Respawn_Module_RespanPos_MultipleMarkers"), _markername];
 };
 
 private ["_side", "_color"];

@@ -31,7 +31,7 @@ if (playerSide isEqualTo sideLogic) exitWith { }; // Exit if a virtual entity (I
 		_return
 	};
 
-	private _action = ["TpMenu","STR_tunres_Respawn_TeleportMenu" call BIS_fnc_localize,"\a3\3den\data\cfg3den\history\changeattributes_ca.paa",{ [GVAR(selfTPmenuOpenObj)] call FUNC(openTeleportMenu) }, _conditio] call ace_interact_menu_fnc_createAction;
+	private _action = ["TpMenu", localize "STR_tunres_Respawn_TeleportMenu","\a3\3den\data\cfg3den\history\changeattributes_ca.paa",{ [GVAR(selfTPmenuOpenObj)] call FUNC(openTeleportMenu) }, _conditio] call ace_interact_menu_fnc_createAction;
 	[(typeOf player), 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToClass;
 
 	//Add respawn eh

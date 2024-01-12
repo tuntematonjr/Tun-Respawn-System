@@ -8,8 +8,8 @@ PREP_RECOMPILE_END;
 [
     QGVAR(enable),
     "CHECKBOX",
-    ["STR_tunres_MSP_CBA_Enable" call BIS_fnc_localize, "STR_tunres_MSP_CBA_tooltip_Enable" call BIS_fnc_localize],
-    "STR_tunres_MSP_CBA_Category_main" call BIS_fnc_localize,
+    [localize "STR_tunres_MSP_CBA_Enable", localize "STR_tunres_MSP_CBA_tooltip_Enable"],
+    localize "STR_tunres_MSP_CBA_Category_main",
     false,
     1,
     {},
@@ -19,8 +19,8 @@ PREP_RECOMPILE_END;
 [
     QGVAR(allowCheckTicketsMSP),
     "CHECKBOX",
-    ["STR_tunres_MSP_CBA_allowCheckTicketsMSP" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_tooltip_CheckTickets" call BIS_fnc_localize],
-    "STR_tunres_MSP_CBA_Category_main" call BIS_fnc_localize,
+    [localize "STR_tunres_MSP_CBA_allowCheckTicketsMSP", localize "STR_tunres_Respawn_CBA_tooltip_CheckTickets"],
+    localize "STR_tunres_MSP_CBA_Category_main",
     false,
     1,
     {},
@@ -30,8 +30,8 @@ PREP_RECOMPILE_END;
 [
     QGVAR(report_enemies),
     "CHECKBOX",
-    ["STR_tunres_MSP_CBA_report_enemies" call BIS_fnc_localize, "STR_tunres_MSP_CBA_tooltip_report_enemies" call BIS_fnc_localize],
-    ["STR_tunres_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_MSP_CBA_Category_contested" call BIS_fnc_localize],
+    [localize "STR_tunres_MSP_CBA_report_enemies", localize "STR_tunres_MSP_CBA_tooltip_report_enemies"],
+    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contested"],
     true,
     1,
     {},
@@ -41,8 +41,8 @@ PREP_RECOMPILE_END;
 [
     QGVAR(report_enemies_interval),
     "SLIDER",
-    ["STR_tunres_MSP_CBA_report_enemies_intervala" call BIS_fnc_localize, "STR_tunres_MSP_CBA_tooltip_report_enemies_interval" call BIS_fnc_localize],
-    ["STR_tunres_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_MSP_CBA_Category_contested" call BIS_fnc_localize],
+    [localize "STR_tunres_MSP_CBA_report_enemies_intervala", localize "STR_tunres_MSP_CBA_tooltip_report_enemies_interval"],
+    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contested"],
     [1, 600, 30, 0],
     1,
     {
@@ -55,8 +55,8 @@ PREP_RECOMPILE_END;
 [
     QGVAR(report_enemies_range),
     "SLIDER",
-    ["STR_tunres_MSP_CBA_report_enemies_range" call BIS_fnc_localize, "STR_tunres_MSP_CBA_tooltip_report_enemies_range" call BIS_fnc_localize],
-    ["STR_tunres_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_MSP_CBA_Category_contested" call BIS_fnc_localize],
+    [localize "STR_tunres_MSP_CBA_report_enemies_range", localize "STR_tunres_MSP_CBA_tooltip_report_enemies_range"],
+    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contested"],
     [0, 5000, 500, 0],
     1,
     {
@@ -69,8 +69,8 @@ PREP_RECOMPILE_END;
 [
     QGVAR(contested_radius_max),
     "SLIDER",
-    ["STR_tunres_MSP_CBA_contested_radius_max" call BIS_fnc_localize, "STR_tunres_MSP_CBA_tooltip_contested_max" call BIS_fnc_localize],
-    ["STR_tunres_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_MSP_CBA_Category_contested" call BIS_fnc_localize],
+    [localize "STR_tunres_MSP_CBA_contested_radius_max", localize "STR_tunres_MSP_CBA_tooltip_contested_max"],
+    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contested"],
     [0, 3000, 500, 0],
     1,
     {
@@ -83,8 +83,8 @@ PREP_RECOMPILE_END;
 [
     QGVAR(contested_radius_min),
     "SLIDER",
-    ["STR_tunres_MSP_CBA_contested_radius_min" call BIS_fnc_localize, "STR_tunres_MSP_CBA_tooltip_contested_min" call BIS_fnc_localize],
-    ["STR_tunres_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_MSP_CBA_Category_contested" call BIS_fnc_localize],
+    [localize "STR_tunres_MSP_CBA_contested_radius_min", localize "STR_tunres_MSP_CBA_tooltip_contested_min"],
+    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contested"],
     [0, 3000, 200, 0],
     1,
     {
@@ -97,8 +97,8 @@ PREP_RECOMPILE_END;
 [
     QGVAR(contested_check_interval),
     "SLIDER",
-    ["STR_tunres_MSP_CBA_contested_check_interval" call BIS_fnc_localize, "STR_tunres_MSP_CBA_tooltip_contested_check_interval" call BIS_fnc_localize],
-    ["STR_tunres_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_MSP_CBA_Category_contested" call BIS_fnc_localize],
+    [localize "STR_tunres_MSP_CBA_contested_check_interval", localize "STR_tunres_MSP_CBA_tooltip_contested_check_interval"],
+    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contested"],
     [1, 600, 30, 0],
     1,
     {
@@ -111,8 +111,8 @@ PREP_RECOMPILE_END;
 [
     QGVAR(progresbar_time_setup),
     "SLIDER",
-    ["STR_tunres_MSP_CBA_setup_progresbar" call BIS_fnc_localize, "STR_tunres_MSP_CBA_tooltip_setup_progresbar" call BIS_fnc_localize],
-    ["STR_tunres_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_MSP_CBA_Category_progres" call BIS_fnc_localize],
+    [localize "STR_tunres_MSP_CBA_setup_progresbar", localize "STR_tunres_MSP_CBA_tooltip_setup_progresbar"],
+    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_progres"],
     [0, 60, 5, 0],
     1,
     {
@@ -125,8 +125,8 @@ PREP_RECOMPILE_END;
 [
     QGVAR(progresbar_time_pack),
     "SLIDER",
-    ["STR_tunres_MSP_CBA_pack_progresbar" call BIS_fnc_localize, "STR_tunres_MSP_CBA_tooltip_pack_progresbar" call BIS_fnc_localize],
-    ["STR_tunres_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_MSP_CBA_Category_progres" call BIS_fnc_localize],
+    [localize "STR_tunres_MSP_CBA_pack_progresbar", localize "STR_tunres_MSP_CBA_tooltip_pack_progresbar"],
+    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_progres"],
     [0, 60, 5, 0],
     1,
     {
@@ -139,8 +139,8 @@ PREP_RECOMPILE_END;
 [
     QGVAR(clasnames_east),
     "EDITBOX",
-    ["STR_tunres_MSP_CBA_classname_east" call BIS_fnc_localize, "STR_tunres_MSP_CBA_tooltip_classname" call BIS_fnc_localize],
-    ["STR_tunres_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_MSP_CBA_classname" call BIS_fnc_localize],
+    [localize "STR_tunres_MSP_CBA_classname_east", localize "STR_tunres_MSP_CBA_tooltip_classname"],
+    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_classname"],
     "O_Truck_03_transport_F",
     1,
     {},
@@ -150,8 +150,8 @@ PREP_RECOMPILE_END;
 [
     QGVAR(clasnames_west),
     "EDITBOX",
-    ["STR_tunres_MSP_CBA_classname_west" call BIS_fnc_localize, "STR_tunres_MSP_CBA_tooltip_classname" call BIS_fnc_localize],
-    ["STR_tunres_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_MSP_CBA_classname" call BIS_fnc_localize],
+    [localize "STR_tunres_MSP_CBA_classname_west", localize "STR_tunres_MSP_CBA_tooltip_classname"],
+    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_classname"],
     "B_Truck_01_transport_F",
     1,
     {},
@@ -161,8 +161,8 @@ PREP_RECOMPILE_END;
 [
     QGVAR(clasnames_resistance),
     "EDITBOX",
-    ["STR_tunres_MSP_CBA_classname_resistance" call BIS_fnc_localize, "STR_tunres_MSP_CBA_tooltip_classname" call BIS_fnc_localize],
-    ["STR_tunres_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_MSP_CBA_classname" call BIS_fnc_localize],
+    [localize "STR_tunres_MSP_CBA_classname_resistance", localize "STR_tunres_MSP_CBA_tooltip_classname"],
+    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_classname"],
     "I_Truck_02_transport_F",
     1,
     {},
@@ -172,8 +172,8 @@ PREP_RECOMPILE_END;
 [
     QGVAR(clasnames_civilian),
     "EDITBOX",
-    ["STR_tunres_MSP_CBA_classname_civilian" call BIS_fnc_localize, "STR_tunres_MSP_CBA_tooltip_classname" call BIS_fnc_localize],
-    ["STR_tunres_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_MSP_CBA_classname" call BIS_fnc_localize],
+    [localize "STR_tunres_MSP_CBA_classname_civilian", localize "STR_tunres_MSP_CBA_tooltip_classname"],
+    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_classname"],
     "C_Truck_02_transport_F",
     1,
     {},
@@ -183,8 +183,8 @@ PREP_RECOMPILE_END;
 [
     QGVAR(setupNotification),
     "LIST",
-    ["STR_tunres_MSP_CBA_whoGetsSetUpNotification" call BIS_fnc_localize, "STR_tunres_MSP_CBA_whoGetsSetUpNotification_Tooltip" call BIS_fnc_localize],
-    ["STR_tunres_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_MSP_CBA_notificationCategory" call BIS_fnc_localize],
+    [localize "STR_tunres_MSP_CBA_whoGetsSetUpNotification", localize "STR_tunres_MSP_CBA_whoGetsSetUpNotification_Tooltip"],
+    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_notificationCategory"],
     [[0, 1], ["Group Leaders", "Side"], 0],
     1,
     {},
@@ -194,8 +194,8 @@ PREP_RECOMPILE_END;
 [
     QGVAR(contestedNotification),
     "LIST",
-    ["STR_tunres_MSP_CBA_whoGetsContestedNotification" call BIS_fnc_localize, "STR_tunres_MSP_CBA_whoGetsContestedNotification_Tooltip" call BIS_fnc_localize],
-    ["STR_tunres_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_MSP_CBA_notificationCategory" call BIS_fnc_localize],
+    [localize "STR_tunres_MSP_CBA_whoGetsContestedNotification", localize "STR_tunres_MSP_CBA_whoGetsContestedNotification_Tooltip"],
+    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_notificationCategory"],
     [[0, 1], ["Group Leaders", "Side"], 0],
     1,
     {},
@@ -205,8 +205,8 @@ PREP_RECOMPILE_END;
 [
     QGVAR(reportEnemiesNotification),
     "LIST",
-    ["STR_tunres_MSP_CBA_whoGetsReportEnemiesNotification" call BIS_fnc_localize, "STR_tunres_MSP_CBA_whoGetsReportEnemies_Tooltip" call BIS_fnc_localize],
-    ["STR_tunres_MSP_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_MSP_CBA_notificationCategory" call BIS_fnc_localize],
+    [localize "STR_tunres_MSP_CBA_whoGetsReportEnemiesNotification", localize "STR_tunres_MSP_CBA_whoGetsReportEnemies_Tooltip"],
+    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_notificationCategory"],
     [[0, 1], ["Group Leaders", "Side"], 0],
     1,
     {},

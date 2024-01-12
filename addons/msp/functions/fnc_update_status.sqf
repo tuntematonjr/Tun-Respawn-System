@@ -26,7 +26,7 @@ AAR_UPDATE(_msp,"Is active MSP", _setup);
 if (_setup) then {
 	
 	if (count _whoToNotify > 0 ) then {
-		(call compile ("STR_tunres_MSP_FNC_setup_notification" call BIS_fnc_localize)) remoteExecCall ["CBA_fnc_notify", _whoToNotify];
+		(call compile (localize "STR_tunres_MSP_FNC_setup_notification")) remoteExecCall ["CBA_fnc_notify", _whoToNotify];
 	};
 
 	[_msp] remoteExecCall [QFUNC(create_msp_props), 2];
@@ -44,7 +44,7 @@ if (_setup) then {
 
 } else {
 	if (count _whoToNotify > 0 ) then {
-		(call compile ("STR_tunres_MSP_FNC_pack_notification" call BIS_fnc_localize)) remoteExecCall ["CBA_fnc_notify", _whoToNotify];
+		(call compile (localize "STR_tunres_MSP_FNC_pack_notification")) remoteExecCall ["CBA_fnc_notify", _whoToNotify];
 	};
 	//Delete props
 	{

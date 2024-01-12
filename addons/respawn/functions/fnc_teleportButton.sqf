@@ -29,12 +29,12 @@ private _teleportConditio = call compile (_teleportConditioText);
 private _teleportName = _obj getVariable [QGVAR(teleportName), "TP"];
 
 private _destination = getpos _obj;
-private _text = format["%1 %2", "STR_tunres_Respawn_Teleporting" call BIS_fnc_localize, _teleportName];
+private _text = format["%1 %2", localize "STR_tunres_Respawn_Teleporting", _teleportName];
 
 if (_teleportConditio) then {
 	closeDialog 2;
 	GVAR(tpMenuOpenedFrom) = objNull;
 	[player, _destination, _text, 10] call FUNC(teleport);
 } else {
-	("STR_tunres_Respawn_Teleport_Disabled" call BIS_fnc_localize) call CBA_fnc_notify;
+	(localize "STR_tunres_Respawn_Teleport_Disabled") call CBA_fnc_notify;
 };

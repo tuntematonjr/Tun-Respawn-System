@@ -27,4 +27,4 @@ private _chekTime = ["Check Respawn Time", "Check Respawn Time", "\a3\modules_f_
 
 // Add tp action
 private _conditio =  "count (missionNamespace getVariable ['tunres_respawn_teleportPoints', []]) > 1" ;
-[_object, "true", "STR_tunres_Respawn_MainBaseText" call BIS_fnc_localize, false, nil, [playerSide], true, _conditio, false, _actionPath] call FUNC(addCustomTeleporter);
+[_object, "true", localize "STR_tunres_Respawn_MainBaseText", false, nil, [playerSide], true, _conditio, false, _actionPath] call FUNC(addCustomTeleporter);

@@ -74,7 +74,7 @@ if (isClass (configFile >> "CfgVehicles" >> _vehicle)) then {
 		private _tp_conditionText = " private _msp = missionNamespace getVariable ['%1', objNull]; private _status = _msp getVariable ['tunres_msp_isContested', false]; (_target isNotEqualTo _msp && _obj getVariable ['tunres_msp_isMSP', false] && !_status) ";
 
 		_tp_conditionText = format [_tp_conditionText, _variable];
-		[_entity, _tp_conditionText, "STR_tunres_MSP_TpText" call BIS_fnc_localize, false, nil, [playerSide], true, _menu_condition, false, ["ACE_MainActions","tunres_respawnAction"]] call tunres_Respawn_fnc_addCustomTeleporter;
+		[_entity, _tp_conditionText, localize "STR_tunres_MSP_TpText", false, nil, [playerSide], true, _menu_condition, false, ["ACE_MainActions","tunres_respawnAction"]] call tunres_Respawn_fnc_addCustomTeleporter;
 
 	}, false, [], true] call CBA_fnc_addClassEventHandler;
 
@@ -83,7 +83,7 @@ if (isClass (configFile >> "CfgVehicles" >> _vehicle)) then {
 			[playerSide] call EFUNC(respawn,checkTicketCount);
 		};
 		private _remaining_condition = { alive _target && {_target getVariable QGVAR(side) isEqualTo playerSide}};
-		_remainingTickets = ["STR_tunres_Respawn_CheckTickets" call BIS_fnc_localize, "STR_tunres_Respawn_CheckTickets" call BIS_fnc_localize, "\a3\modules_f_curator\data\portraitmissionname_ca.paa", _remaining_action, _remaining_condition] call ace_interact_menu_fnc_createAction;
+		_remainingTickets = [localize "STR_tunres_Respawn_CheckTickets", localize "STR_tunres_Respawn_CheckTickets", "\a3\modules_f_curator\data\portraitmissionname_ca.paa", _remaining_action, _remaining_condition] call ace_interact_menu_fnc_createAction;
 		[_vehicle, 0, ["ACE_MainActions","tunres_respawnAction"], _remainingTickets] call ace_interact_menu_fnc_addActionToClass;
 	};
 } else {

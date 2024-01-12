@@ -84,7 +84,7 @@
                 
                 [_side, false] remoteExecCall ["tunres_respawn_fnc_update_respawn_point", 2];
 
-                ("STR_tunres_MSP_destroyed" call BIS_fnc_localize) remoteExecCall ["CBA_fnc_notify", _side];
+                (localize "STR_tunres_MSP_destroyed") remoteExecCall ["CBA_fnc_notify", _side];
             };
         };
 

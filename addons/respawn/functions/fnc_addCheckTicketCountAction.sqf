@@ -23,9 +23,9 @@ if (GVAR(respawn_type) isEqualTo localize "STR_tunres_Respawn_Type_Default") exi
  };
 
 if (_useAceAction) then {
-	private _action = ["CheckTickets", "STR_tunres_Respawn_CheckTickets" call BIS_fnc_localize,"\a3\modules_f_curator\data\portraitmissionname_ca.paa",{ [playerSide] call FUNC(checkTicketCount); }, {true}, nil, nil, _offset] call ace_interact_menu_fnc_createAction;
+	private _action = ["CheckTickets", localize "STR_tunres_Respawn_CheckTickets","\a3\modules_f_curator\data\portraitmissionname_ca.paa",{ [playerSide] call FUNC(checkTicketCount); }, {true}, nil, nil, _offset] call ace_interact_menu_fnc_createAction;
 	[_object, 0, _parrenPath, _action] call ace_interact_menu_fnc_addActionToObject;
 
 } else {
-	_object addAction ["STR_tunres_Respawn_CheckTickets" call BIS_fnc_localize, { [playerSide] call FUNC(checkTicketCount) }, [], 10, true, true, "", "true", 10];
+	_object addAction [localize "STR_tunres_Respawn_CheckTickets", { [playerSide] call FUNC(checkTicketCount) }, [], 10, true, true, "", "true", 10];
 };

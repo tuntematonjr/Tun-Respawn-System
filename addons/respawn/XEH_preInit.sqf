@@ -51,8 +51,8 @@ GVAR(selfTPmenuOpenObj) = objNull;
 [
     QGVAR(enable), // Unique setting name. Matches resulting variable name <STRING>
     "CHECKBOX", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
-    ["STR_tunres_Respawn_CBA_Enable" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_tooltip_Enable" call BIS_fnc_localize], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
-    "STR_tunres_Respawn_CBA_Category_main" call BIS_fnc_localize, // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    [localize "STR_tunres_Respawn_CBA_Enable", localize "STR_tunres_Respawn_CBA_tooltip_Enable"], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    localize "STR_tunres_Respawn_CBA_Category_main", // Category for the settings menu + optional sub-category <STRING, ARRAY>
     false, // Extra properties of the setting depending of _settingType.
     1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
     {}, // Script to execute when setting is changed. (optional) <CODE>
@@ -62,8 +62,8 @@ GVAR(selfTPmenuOpenObj) = objNull;
 [
     QGVAR(killJIP),
     "CHECKBOX",
-    ["Kill JIP", "STR_tunres_Respawn_CBA_tooltip_killjip" call BIS_fnc_localize],
-    ["STR_tunres_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Category_generic" call BIS_fnc_localize],
+    ["Kill JIP", localize "STR_tunres_Respawn_CBA_tooltip_killjip"],
+    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_generic"],
     true,
     1,
     {},
@@ -73,8 +73,8 @@ GVAR(selfTPmenuOpenObj) = objNull;
 [
     QGVAR(killJIP_time),
     "SLIDER",
-    ["Kill JIP Time", "STR_tunres_Respawn_CBA_tooltip_killjip_time" call BIS_fnc_localize],
-    ["STR_tunres_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Category_generic" call BIS_fnc_localize],
+    ["Kill JIP Time", localize "STR_tunres_Respawn_CBA_tooltip_killjip_time"],
+    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_generic"],
     [1, 300, 20, 0],
     1,
     {
@@ -87,8 +87,8 @@ GVAR(selfTPmenuOpenObj) = objNull;
 [
     QGVAR(respawn_type),
     "LIST",
-    ["Respawn Type", "STR_tunres_Respawn_CBA_tooltip_respawntypes" call BIS_fnc_localize],
-    ["STR_tunres_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Category_generic" call BIS_fnc_localize],
+    ["Respawn Type", localize "STR_tunres_Respawn_CBA_tooltip_respawntypes"],
+    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_generic"],
     [[localize "STR_tunres_Respawn_Type_Default", localize "STR_tunres_Respawn_Type_Sidetickets", localize "STR_tunres_Respawn_Type_Playertickets"], [localize "STR_tunres_Respawn_Type_Default", localize "STR_tunres_Respawn_Type_Sidetickets", localize "STR_tunres_Respawn_Type_Playertickets"], 0],
     1,
     {},
@@ -98,8 +98,8 @@ GVAR(selfTPmenuOpenObj) = objNull;
 [
     QGVAR(gearscriptType),
     "LIST",
-    ["Gearscript type", "STR_tunres_Respawn_CBA_tooltip_gearscript" call BIS_fnc_localize],
-    ["STR_tunres_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Category_generic" call BIS_fnc_localize],
+    ["Gearscript type", localize "STR_tunres_Respawn_CBA_tooltip_gearscript"],
+    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_generic"],
     [["SQF Gearscript", "Potato Tool", "Save gear"], ["SQF Gearscript", "Potato Tool", "Save gear"], 0],
     1,
     {},
@@ -109,8 +109,8 @@ GVAR(selfTPmenuOpenObj) = objNull;
 [
     QGVAR(forced_respawn),
     "CHECKBOX",
-    ["Only Forced Waves", "STR_tunres_Respawn_CBA_tooltip_forceRespawn" call BIS_fnc_localize],
-    ["STR_tunres_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Category_generic" call BIS_fnc_localize],
+    ["Only Forced Waves", localize "STR_tunres_Respawn_CBA_tooltip_forceRespawn"],
+    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_generic"],
     false,
     1,
     {},
@@ -120,8 +120,8 @@ GVAR(selfTPmenuOpenObj) = objNull;
 [
     QGVAR(delayed_respawn),
     "SLIDER",
-    ["Delayed respawn", "STR_tunres_Respawn_CBA_tooltip_delayed_respawn" call BIS_fnc_localize],
-    ["STR_tunres_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Category_generic" call BIS_fnc_localize],
+    ["Delayed respawn", localize "STR_tunres_Respawn_CBA_tooltip_delayed_respawn"],
+    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_generic"],
     [0, 100, 0, 0],
     1,
     {
@@ -134,8 +134,8 @@ GVAR(selfTPmenuOpenObj) = objNull;
 [
     QGVAR(waiting_area_range),
     "SLIDER",
-    ["Waiting Area Range", "STR_tunres_Respawn_CBA_tooltip_waiting_area_range" call BIS_fnc_localize],
-    ["STR_tunres_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Category_generic" call BIS_fnc_localize],
+    ["Waiting Area Range", localize "STR_tunres_Respawn_CBA_tooltip_waiting_area_range"],
+    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_generic"],
     [30, 300, 100, 0],
     1,
     {
@@ -149,8 +149,8 @@ GVAR(selfTPmenuOpenObj) = objNull;
 [
     QGVAR(time_west),
     "SLIDER",
-    ["West", "STR_tunres_Respawn_CBA_tooltip_time" call BIS_fnc_localize],
-    ["STR_tunres_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Category_time" call BIS_fnc_localize],
+    ["West", localize "STR_tunres_Respawn_CBA_tooltip_time"],
+    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_time"],
     [1, 60, 15, 0],
     1,
     {
@@ -163,8 +163,8 @@ GVAR(selfTPmenuOpenObj) = objNull;
 [
     QGVAR(time_east),
     "SLIDER",
-    ["East", "STR_tunres_Respawn_CBA_tooltip_time" call BIS_fnc_localize],
-    ["STR_tunres_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Category_time" call BIS_fnc_localize],
+    ["East", localize "STR_tunres_Respawn_CBA_tooltip_time"],
+    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_time"],
     [1, 60, 15, 0],
     1,
     {
@@ -177,8 +177,8 @@ GVAR(selfTPmenuOpenObj) = objNull;
 [
     QGVAR(time_guer),
     "SLIDER",
-    ["Resistance", "STR_tunres_Respawn_CBA_tooltip_time" call BIS_fnc_localize],
-    ["STR_tunres_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Category_time" call BIS_fnc_localize],
+    ["Resistance", localize "STR_tunres_Respawn_CBA_tooltip_time"],
+    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_time"],
     [1, 60, 15, 0],
     1,
     {
@@ -191,8 +191,8 @@ GVAR(selfTPmenuOpenObj) = objNull;
 [
     QGVAR(time_civ),
     "SLIDER",
-    ["Civilian", "STR_tunres_Respawn_CBA_tooltip_time" call BIS_fnc_localize],
-    ["STR_tunres_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Category_time" call BIS_fnc_localize],
+    ["Civilian", localize "STR_tunres_Respawn_CBA_tooltip_time"],
+    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_time"],
     [1, 60, 15, 0],
     1,
     {
@@ -206,8 +206,8 @@ GVAR(selfTPmenuOpenObj) = objNull;
 [
     QGVAR(spectate_Cameramode_1st),
     "CHECKBOX",
-    ["1st", "STR_tunres_Respawn_CBA_tooltip_specta_modes" call BIS_fnc_localize],
-    ["STR_tunres_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Category_spectate_cameramode" call BIS_fnc_localize],
+    ["1st", localize "STR_tunres_Respawn_CBA_tooltip_specta_modes"],
+    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_spectate_cameramode"],
     true,
     1,
     {},
@@ -217,8 +217,8 @@ GVAR(selfTPmenuOpenObj) = objNull;
 [
     QGVAR(spectate_Cameramode_3th),
     "CHECKBOX",
-    ["3th", "STR_tunres_Respawn_CBA_tooltip_specta_modes" call BIS_fnc_localize],
-    ["STR_tunres_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Category_spectate_cameramode" call BIS_fnc_localize],
+    ["3th", localize "STR_tunres_Respawn_CBA_tooltip_specta_modes"],
+    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_spectate_cameramode"],
     true,
     1,
     {},
@@ -228,8 +228,8 @@ GVAR(selfTPmenuOpenObj) = objNull;
 [
     QGVAR(spectate_Cameramode_free),
     "CHECKBOX",
-    ["Free", "STR_tunres_Respawn_CBA_tooltip_specta_modes" call BIS_fnc_localize],
-    ["STR_tunres_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Category_spectate_cameramode" call BIS_fnc_localize],
+    ["Free", localize "STR_tunres_Respawn_CBA_tooltip_specta_modes"],
+    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_spectate_cameramode"],
     true,
     1,
     {},
@@ -240,8 +240,8 @@ GVAR(selfTPmenuOpenObj) = objNull;
 [
     QGVAR(tickets_west),
     "SLIDER",
-    ["West", "STR_tunres_Respawn_CBA_tooltip_ticket" call BIS_fnc_localize],
-    ["STR_tunres_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Category_ticketcount" call BIS_fnc_localize],
+    ["West", localize "STR_tunres_Respawn_CBA_tooltip_ticket"],
+    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_ticketcount"],
     [0, 1000, 0, 0],
     1,
     {
@@ -254,8 +254,8 @@ GVAR(selfTPmenuOpenObj) = objNull;
 [
     QGVAR(tickets_east),
     "SLIDER",
-    ["East", "STR_tunres_Respawn_CBA_tooltip_ticket" call BIS_fnc_localize],
-    ["STR_tunres_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Category_ticketcount" call BIS_fnc_localize],
+    ["East", localize "STR_tunres_Respawn_CBA_tooltip_ticket"],
+    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_ticketcount"],
     [0, 1000, 0, 0],
     1,
     {
@@ -268,8 +268,8 @@ GVAR(selfTPmenuOpenObj) = objNull;
 [
     QGVAR(tickets_guer),
     "SLIDER",
-    ["Resistance", "STR_tunres_Respawn_CBA_tooltip_ticket" call BIS_fnc_localize],
-    ["STR_tunres_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Category_ticketcount" call BIS_fnc_localize],
+    ["Resistance", localize "STR_tunres_Respawn_CBA_tooltip_ticket"],
+    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_ticketcount"],
     [0, 1000, 0, 0],
     1,
     {
@@ -282,8 +282,8 @@ GVAR(selfTPmenuOpenObj) = objNull;
 [
     QGVAR(tickets_civ),
     "SLIDER",
-    ["Civilian", "STR_tunres_Respawn_CBA_tooltip_ticket" call BIS_fnc_localize],
-    ["STR_tunres_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Category_ticketcount" call BIS_fnc_localize],
+    ["Civilian", localize "STR_tunres_Respawn_CBA_tooltip_ticket"],
+    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_ticketcount"],
     [0, 1000, 0, 0],
     1,
     {
@@ -296,8 +296,8 @@ GVAR(selfTPmenuOpenObj) = objNull;
 [
     QGVAR(allowCheckTicketsBase),
     "CHECKBOX",
-    ["Main base", "STR_tunres_Respawn_CBA_tooltip_CheckTickets" call BIS_fnc_localize],
-    ["STR_tunres_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Category_checkTickets" call BIS_fnc_localize],
+    ["Main base", localize "STR_tunres_Respawn_CBA_tooltip_CheckTickets"],
+    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_checkTickets"],
     false,
     1,
     {},
@@ -308,8 +308,8 @@ GVAR(selfTPmenuOpenObj) = objNull;
 [
     QGVAR(briefingEnable),
     "CHECKBOX",
-    ["STR_tunres_Respawn_CBA_Briefing_Enable" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Briefing_Enable_tooltip" call BIS_fnc_localize],
-    ["STR_tunres_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Category_Briefing" call BIS_fnc_localize],
+    [localize "STR_tunres_Respawn_CBA_Briefing_Enable", localize "STR_tunres_Respawn_CBA_Briefing_Enable_tooltip"],
+    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_Briefing"],
     true,
     1,
     {},
@@ -319,8 +319,8 @@ GVAR(selfTPmenuOpenObj) = objNull;
 [
     QGVAR(briefingEnableShowRespawnType),
     "CHECKBOX",
-    ["STR_tunres_Respawn_CBA_Briefing_Enable_ShowRespawType" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Briefing_Enable_ShowRespawType_tooltip" call BIS_fnc_localize],
-    ["STR_tunres_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Category_Briefing" call BIS_fnc_localize],
+    [localize "STR_tunres_Respawn_CBA_Briefing_Enable_ShowRespawType", localize "STR_tunres_Respawn_CBA_Briefing_Enable_ShowRespawType_tooltip"],
+    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_Briefing"],
     true,
     1,
     {},
@@ -330,8 +330,8 @@ GVAR(selfTPmenuOpenObj) = objNull;
 [
     QGVAR(briefingEnableShowTickets),
     "CHECKBOX",
-    ["STR_tunres_Respawn_CBA_Briefing_Enable_ShowTickets" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Briefing_Enable_ShowTickets_tooltip" call BIS_fnc_localize],
-    ["STR_tunres_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Category_Briefing" call BIS_fnc_localize],
+    [localize "STR_tunres_Respawn_CBA_Briefing_Enable_ShowTickets", localize "STR_tunres_Respawn_CBA_Briefing_Enable_ShowTickets_tooltip"],
+    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_Briefing"],
     true,
     1,
     {},
@@ -341,8 +341,8 @@ GVAR(selfTPmenuOpenObj) = objNull;
 [
     QGVAR(briefingEnableShowTime),
     "CHECKBOX",
-    ["STR_tunres_Respawn_CBA_Briefing_Enable_ShowTime" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Briefing_Enable_ShowTime_tooltip" call BIS_fnc_localize],
-    ["STR_tunres_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Category_Briefing" call BIS_fnc_localize],
+    [localize "STR_tunres_Respawn_CBA_Briefing_Enable_ShowTime", localize "STR_tunres_Respawn_CBA_Briefing_Enable_ShowTime_tooltip"],
+    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_Briefing"],
     true,
     1,
     {},
@@ -352,8 +352,8 @@ GVAR(selfTPmenuOpenObj) = objNull;
 [
     QGVAR(briefingEnableShowOtherSidesDataWest),
     "CHECKBOX",
-    ["STR_tunres_Respawn_CBA_Briefing_Enable_ShowOtherSidesData_West" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Briefing_Enable_ShowOtherSidesData_tooltip" call BIS_fnc_localize],
-    ["STR_tunres_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Category_Briefing" call BIS_fnc_localize],
+    [localize "STR_tunres_Respawn_CBA_Briefing_Enable_ShowOtherSidesData_West", localize "STR_tunres_Respawn_CBA_Briefing_Enable_ShowOtherSidesData_tooltip"],
+    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_Briefing"],
     true,
     1,
     {},
@@ -363,8 +363,8 @@ GVAR(selfTPmenuOpenObj) = objNull;
 [
     QGVAR(briefingEnableShowOtherSidesDataEast),
     "CHECKBOX",
-    ["STR_tunres_Respawn_CBA_Briefing_Enable_ShowOtherSidesData_East" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Briefing_Enable_ShowOtherSidesData_tooltip" call BIS_fnc_localize],
-    ["STR_tunres_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Category_Briefing" call BIS_fnc_localize],
+    [localize "STR_tunres_Respawn_CBA_Briefing_Enable_ShowOtherSidesData_East", localize "STR_tunres_Respawn_CBA_Briefing_Enable_ShowOtherSidesData_tooltip"],
+    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_Briefing"],
     true,
     1,
     {},
@@ -374,8 +374,8 @@ GVAR(selfTPmenuOpenObj) = objNull;
 [
     QGVAR(briefingEnableShowOtherSidesDataResistance),
     "CHECKBOX",
-    ["STR_tunres_Respawn_CBA_Briefing_Enable_ShowOtherSidesData_Resistance" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Briefing_Enable_ShowOtherSidesData_tooltip" call BIS_fnc_localize],
-    ["STR_tunres_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Category_Briefing" call BIS_fnc_localize],
+    [localize "STR_tunres_Respawn_CBA_Briefing_Enable_ShowOtherSidesData_Resistance", localize "STR_tunres_Respawn_CBA_Briefing_Enable_ShowOtherSidesData_tooltip"],
+    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_Briefing"],
     true,
     1,
     {},
@@ -385,8 +385,8 @@ GVAR(selfTPmenuOpenObj) = objNull;
 [
     QGVAR(briefingEnableShowOtherSidesDataCivilian),
     "CHECKBOX",
-    ["STR_tunres_Respawn_CBA_Briefing_Enable_ShowOtherSidesData_Civilian" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Briefing_Enable_ShowOtherSidesData_tooltip" call BIS_fnc_localize],
-    ["STR_tunres_Respawn_CBA_Category_main" call BIS_fnc_localize, "STR_tunres_Respawn_CBA_Category_Briefing" call BIS_fnc_localize],
+    [localize "STR_tunres_Respawn_CBA_Briefing_Enable_ShowOtherSidesData_Civilian", localize "STR_tunres_Respawn_CBA_Briefing_Enable_ShowOtherSidesData_tooltip"],
+    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_Briefing"],
     false,
     1,
     {},

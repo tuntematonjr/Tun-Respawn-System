@@ -31,7 +31,7 @@ if ( _remainingTickets > 0 ) then {
 		_hash set [_playerUID, _remainingTickets];
 	};
 	[5] remoteExecCall ["setPlayerRespawnTime", _player];
-	private _text = format["%1 %2","STR_tunres_Respawn_RemainingTicketsText" call BIS_fnc_localize, str _remainingTickets];
+	private _text = format["%1 %2",localize "STR_tunres_Respawn_RemainingTicketsText", str _remainingTickets];
 	_text remoteExecCall ["CBA_fnc_notify", _player];
 
 	} else {

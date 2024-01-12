@@ -64,10 +64,10 @@ private _allunits = allUnits select {(side _x) in [west,east,resistance,civilian
 			if (count _whoToNotify > 0 ) then {
 				if (_isContested) then {
 					[_side, false] call EFUNC(respawn,update_respawn_point);
-					(call compile ("STR_tunres_MSP_FNC_Contested_hint" call BIS_fnc_localize)) remoteExecCall ["CBA_fnc_notify", _whoToNotify];
+					(call compile (localize "STR_tunres_MSP_FNC_Contested_hint")) remoteExecCall ["CBA_fnc_notify", _whoToNotify];
 				} else {
 					[_side, true, (getPos _msp) ] call EFUNC(respawn,update_respawn_point);
-					(call compile ("STR_tunres_MSP_FNC_secured_hint" call BIS_fnc_localize)) remoteExecCall ["CBA_fnc_notify", _whoToNotify];
+					(call compile (localize "STR_tunres_MSP_FNC_secured_hint")) remoteExecCall ["CBA_fnc_notify", _whoToNotify];
 				};
 			};
 		};

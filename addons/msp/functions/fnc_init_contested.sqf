@@ -34,7 +34,7 @@
                     if (_enemyCount > 0 && !_isContested) then {
                         private _whoToNotify = [_side] call FUNC(whoToNotify);
                         if (count _whoToNotify > 0 ) then {
-                            ("STR_tunres_MSP_FNC_enemies_near" call BIS_fnc_localize) remoteExecCall ["CBA_fnc_notify", _whoToNotify];
+                            (localize "STR_tunres_MSP_FNC_enemies_near") remoteExecCall ["CBA_fnc_notify", _whoToNotify];
                         };
                     }; 
                 };
