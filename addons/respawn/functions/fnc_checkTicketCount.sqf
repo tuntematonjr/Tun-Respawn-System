@@ -22,4 +22,3 @@ if (GVAR(respawn_type) isEqualTo localize "STR_tunres_Respawn_Type_Sidetickets")
 } else {
 	[playerSide, player, true] remoteExecCall [QFUNC(getPlayerTicketCount),2];
 };
-
