@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * [west, false] call tunres_Respawn_fnc_force_Respawn
+ * [west, false] call tunres_Respawn_fnc_forceRespawnWave
  */
 #include "script_component.hpp"
 
@@ -19,7 +19,7 @@ if (!isServer) exitWith { };
 
 params [["_side", nil, [east]], ["_reset", false, [false]]];
 
-[_side, true] call FUNC(moveRespawns);
+[_side, true] call FUNC(doRespawnWave);
 
 if (_reset && { !(GVAR(forced_respawn)) }) then {
 	[_side] call FUNC(timer);
