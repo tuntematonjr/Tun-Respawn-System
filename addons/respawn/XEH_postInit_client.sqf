@@ -37,7 +37,7 @@ if (playerSide isEqualTo sideLogic) exitWith { }; // Exit if a virtual entity (I
 	//Add respawn eh
 	[player, "Respawn", {
 		[] call FUNC(removegear);
-		player setVariable [QGVAR(waiting_respawn), true, true];
+		player setVariable [QGVAR(isWaitingRespawn), true, true];
 		[] call FUNC(waitingArea);
 	}] call CBA_fnc_addBISEventHandler;
 

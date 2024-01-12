@@ -48,7 +48,7 @@ if ((getMarkerPos "RespawnPosLocal") distance2D (getMarkerPos "MainBaseLocal") >
 };
 
 //maker marker bigger, if waiting respawn just because
-if (player getvariable [QGVAR(waiting_respawn), false]) then {
+if (player getvariable [QGVAR(isWaitingRespawn), false]) then {
 	"RespawnPosLocal" setMarkerSizeLocal [3,3];
 } else {
 	"RespawnPosLocal" setMarkerSizeLocal [1,1];

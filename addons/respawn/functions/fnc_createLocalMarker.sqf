@@ -17,7 +17,12 @@
  * ["RespawnPosLocal", _pos, "Respawn", "respawn_inf", _color, 1] call tunres_Respawn_fnc_createLocalMarker
  */
 #include "script_component.hpp"
-params [["_name", nil [""]], ["_pos", nil [[]]], ["_text", nil [""]], ["_icon", nil [""]], ["_color", nil [""]], ["_alpha", 0, [0]]];
+params [["_name", nil, [""]], 
+		["_pos", nil, [[]]], 
+		["_text", nil, [""]], 
+		["_icon", nil, [""]], 
+		["_color", nil, [""]], 
+		["_alpha", 0, [0]]];
 if (!hasInterface) exitWith {};
 
 private _marker = createMarkerLocal [_name, _pos];

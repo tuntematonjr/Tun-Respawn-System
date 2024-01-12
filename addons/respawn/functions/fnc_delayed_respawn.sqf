@@ -24,7 +24,7 @@ if (GVAR(delayed_respawn) > 0) then {
 	_skip = ((_time - cba_missiontime) < ((_waveLenghtTime * 60) * (GVAR(delayed_respawn) / 100)));
 };
 
-_unit setVariable [QGVAR(skip_next_wave), _skip, true];
+_unit setVariable [QGVAR(skipNextWave), _skip, true];
 
 if (_skip) then {
 	private _waitingRespawnDelayedHash = GVAR(waitingRespawnDelayedList);

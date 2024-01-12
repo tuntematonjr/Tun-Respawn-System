@@ -23,7 +23,7 @@ if (GVAR(respawn_type) isNotEqualTo localize "STR_tunres_Respawn_Type_Default") 
 //clean bodies during briefing && safestart
 addMissionEventHandler ["HandleDisconnect", {
 	params ["_unit", "_id", "_uid", "_name"];
-	if (cba_missiontime < (GVAR(killJIP_time) * 60) || _unit getVariable [QGVAR(waiting_respawn),false]) then {
+	if (cba_missiontime < (GVAR(killJIP_time) * 60) || _unit getVariable [QGVAR(isWaitingRespawn),false]) then {
 		deleteVehicle _unit;
 	};
 	false;
@@ -35,7 +35,7 @@ if ( !isnil "afi_aar2" ) then {
 		if (missionNamespace getVariable ["afi_aar2", false]) then {
 
 			if ((GVAR(respawn_type) isEqualTo localize "STR_tunres_Respawn_Type_Sidetickets")) then {
-				private _hashTickets = GVAR(tickets)
+				private _hashTickets = GVAR(tickets);
 				private _enabledSideHash = GVAR(enabledSides);
 
 				if (_enabledSideHash getOrDefault [west, false]) then {
