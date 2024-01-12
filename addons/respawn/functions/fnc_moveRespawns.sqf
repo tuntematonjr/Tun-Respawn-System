@@ -85,7 +85,7 @@ if (count _waitingRespawn > 0) then {
 		};
 
 		_unit setVariable [QGVAR(waiting_respawn), false, true];
-		private _text = localize "STR_tunres_Respawn_FNC_moveRespawns";
+		private _text = localize "STR_tunres_Respawn_FNC_moveRespawnText";
 		
 		[_unit, _respawn_position, _text, 20, true] call FUNC(teleportUnit);
 
@@ -102,7 +102,7 @@ if (count _waitingRespawn > 0) then {
 	private _debugText = format ["Side %1 all respawn units moved. Respawned: %2. Total count is: %3", _side, _waitingRespawnCount, _totalRespawnCount]; 
 	INFO(_debugText);
 
-	[QGVAR(EH_moveRespawns), [_side, _waitingRespawn]] call CBA_fnc_serverEvent;
+	[QGVAR(EH_respawnWave), [_side, _waitingRespawn]] call CBA_fnc_serverEvent;
 } else {
 	//No one at respawn
 	if (count _waitingRespawnDelayed > 0) then {
