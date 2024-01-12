@@ -24,11 +24,11 @@ if (GVAR(endRespawns)) exitWith {
 
 switch (GVAR(respawn_type)) do {
 	case localize "STR_tunres_Respawn_Type_Sidetickets": {
-		[playerSide, player] remoteExecCall [QFUNC(decreaseSideTicketCountOnDeath),2];
+		[playerSide, player] remoteExecCall [QFUNC(bleedSideTicketCountOnDeath),2];
 	};
 
 	case localize "STR_tunres_Respawn_Type_Playertickets": {
-		[playerSide, player] remoteExecCall [QFUNC(ticketCounterPlayer),2];
+		[playerSide, player] remoteExecCall [QFUNC(bleedPlayerTicketCountOnDeath),2];
 	};
 
 	default {
