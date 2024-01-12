@@ -21,6 +21,7 @@ private ["_text", "_time", "_conditio"];
 private _statusvar = format ["%1_%2", QGVAR(status), playerSide];
 
 if (_setup) then {
+    [_target] call FUNC(contestZoneMarkers);
     _text = localize "STR_tunres_MSP_fnc_initate_msp_action_setting";
     _conditio = { !(missionNamespace getVariable (_this select 0 select 1)) };
     _time = GVAR(progresbar_time_setup);
@@ -30,5 +31,5 @@ if (_setup) then {
     _time = GVAR(progresbar_time_pack);
 };
 
-_code = { (_this select 0 select 0) call FUNC(update_status); };
+private _code = { (_this select 0 select 0) call FUNC(update_status); };
 [_text, _time, _conditio, _code, {hint "aborted"},[[_target, _setup], _statusvar]] call CBA_fnc_progressBar;

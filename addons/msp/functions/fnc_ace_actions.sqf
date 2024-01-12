@@ -52,13 +52,19 @@ if (isClass (configFile >> "CfgVehicles" >> _vehicle)) then {
 	private _remove_condition = { alive _target && {_target getVariable QGVAR(side) isEqualTo playerSide} && {_target getVariable [QGVAR(isMSP), false]} };
 	_removeMSP = ["Pack MSP", "Pack MSP", "\a3\3den\data\cfgwaypoints\load_ca.paa", {[_target, false] spawn FUNC(initate_msp_action);}, _remove_condition, {}, [], [0, 0, 0], 2, [false, true, false, false, false]] call ace_interact_menu_fnc_createAction;
 
-	private _timer_condition = { alive _target && {_target getVariable QGVAR(side) isEqualTo playerSide}};
-	_chekTime = ["Check Respawn Time", "Check Respawn Time", "\a3\modules_f_curator\data\portraitskiptime_ca.paa", EFUNC(respawn,remainingWaitTimeNotification), _timer_condition] call ace_interact_menu_fnc_createAction;
+	private _aliveAndSameSideConditio = { alive _target && {_target getVariable QGVAR(side) isEqualTo playerSide}};
+
+	//check time
+	private _chekTime = ["Check Respawn Time", "Check Respawn Time", "\a3\modules_f_curator\data\portraitskiptime_ca.paa", EFUNC(respawn,remainingWaitTimeNotification), _aliveAndSameSideConditio] call ace_interact_menu_fnc_createAction;
+
+	//Check contest area
+	private _checkArea = ["Check contest area", "Check contest area", "\a3\modules_f_curator\data\portraitskiptime_ca.paa", {[_target] call FUNC(contestZoneMarkers);}, _aliveAndSameSideConditio] call ace_interact_menu_fnc_createAction;
 
 	//Ace inteaction
 	[_vehicle, 1, ["ACE_SelfActions"], _createMSP] call ace_interact_menu_fnc_addActionToClass;
 	[_vehicle, 0, ["ACE_MainActions","tunres_respawnAction"], _removeMSP] call ace_interact_menu_fnc_addActionToClass;
 	[_vehicle, 0, ["ACE_MainActions","tunres_respawnAction"], _chekTime] call ace_interact_menu_fnc_addActionToClass;
+	[_vehicle, 0, ["ACE_MainActions","tunres_respawnAction"], _checkArea] call ace_interact_menu_fnc_addActionToClass;
 
 	//TP. I hate this system already.
 	[_vehicle, "InitPost", {

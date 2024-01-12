@@ -7,3 +7,5 @@ PREP(initate_msp_action);
 PREP(update_status);
 PREP(whoToNotify);
 PREP(briefingNotes);
+PREP(contestZoneMarkers);
+
