@@ -21,6 +21,9 @@ GVAR(tickets) = createHashMap;
 //Waiting area stuff
 GVAR(waitingArea) = createHashMap;
 
+//Which side has respawn system started
+GVAR(enabledSides) = createHashMapFromArray _emptyFalseArray;
+
 //Respawn waiting area unit arrays
 GVAR(waitingRespawnList) = createHashMapFromArray _waitingRespawnEmptyArray;
 GVAR(waitingRespawnDelayedList) = createHashMapFromArray _waitingRespawnEmptyArray;

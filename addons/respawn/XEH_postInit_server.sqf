@@ -36,45 +36,47 @@ if ( !isnil "afi_aar2" ) then {
 
 			if ((GVAR(respawn_type) isEqualTo localize "STR_tunres_Respawn_Type_Sidetickets")) then {
 				private _hashTickets = GVAR(tickets)
-				if (GVAR(enabled_west)) then {
+				private _enabledSideHash = GVAR(enabledSides);
+
+				if (_enabledSideHash getOrDefault [west, false]) then {
 					private _ticektsWest = _hashTickets get west;
 					AAR_UPDATE("west","Side tickets", _ticektsWest);
 				};
 
-				if (GVAR(enabled_east)) then {
+				if (_enabledSideHash getOrDefault [east, false]) then {
 					private _ticektsEast = _hashTickets  get east;
 					AAR_UPDATE("east","Side tickets", _ticektsEast);
 				};
 
-				if (GVAR(enabled_guer)) then {
+				if (_enabledSideHash getOrDefault [resistance, false]) then {
 					private _ticektsResistance = _hashTickets get resistance;
 					AAR_UPDATE("guer","Side tickets", _ticektsResistance);
 				};
 
-				if (GVAR(enabled_civ)) then {
+				if (_enabledSideHash getOrDefault [civilian, false]) then {
 					private _ticektsCivilian = _hashTickets get civilian;
 					AAR_UPDATE("civ","Side tickets", _ticektsCivilian);
 				};
 			};
 
 			[{
-				private _hashTime = GVAR(nextWaveTimes);
-				if (GVAR(enabled_west)) then {
+				private _enabledSideHash = GVAR(enabledSides);
+				if (_enabledSideHash getOrDefault [west, false]) then {
 					private _time = (_hashTime get west);
 					AAR_UPDATE("west","Next respawn wave", _time);
 				};
 
-				if (GVAR(enabled_east)) then {
+				if (_enabledSideHash getOrDefault [east, false]) then {
 					private _time = (_hashTime get east);
 					AAR_UPDATE("east","Next respawn wave", _time);
 				};
 
-				if (GVAR(enabled_guer)) then {
+				if (_enabledSideHash getOrDefault [resistance, false]) then {
 					private _time = (_hashTime get resistance);
 					AAR_UPDATE("guer","Next respawn wave", _time);
 				};
 
-				if (GVAR(enabled_civ)) then {
+				if (_enabledSideHash getOrDefault [civilian, false]) then {
 					private _time = (_hashTime get civilian);
 					AAR_UPDATE("civ","Next respawn wave", _time);
 				};

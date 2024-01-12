@@ -35,8 +35,7 @@ private ["_side", "_color"];
 private _flag = objNull;
 
 switch (_markername) do {
-	case "tunres_respawn_west": {	
-		missionNamespace setVariable [QGVAR(enabled_west),true, true];
+	case "tunres_respawn_west": {
 		_flag = "Flag_Blue_F" createVehicle _pos;
 		GVAR(flag_west_spawn) = _flag;
 		publicVariable QGVAR(flag_west_spawn);
@@ -45,7 +44,6 @@ switch (_markername) do {
 	};
 
 	case "tunres_respawn_east": {
-		missionNamespace setVariable [QGVAR(enabled_east),true, true];
 		_flag = "Flag_Red_F" createVehicle _pos;
 		GVAR(flag_east_spawn) = _flag;
 		publicVariable QGVAR(flag_east_spawn);
@@ -54,7 +52,6 @@ switch (_markername) do {
 	};
 
 	case "tunres_respawn_guerrila": {
-		missionNamespace setVariable [QGVAR(enabled_guer),true, true];
 		_flag = "Flag_Green_F" createVehicle _pos;
 		GVAR(flag_guerrila_spawn) = _flag;
 		publicVariable QGVAR(flag_guerrila_spawn);
@@ -63,17 +60,19 @@ switch (_markername) do {
 	};
 
 	case "tunres_respawn_civilian": {
-		missionNamespace setVariable [QGVAR(enabled_civ),true, true];
 		_flag = "Flag_White_F" createVehicle _pos;
 		GVAR(flag_civilian_spawn) = _flag;
 		publicVariable QGVAR(flag_civilian_spawn);
 		_side = civilian;
 		_color = "ColorCIV";
-
 	};
 };
+GVAR(enabledSides) set [_side, true];
+publicVariable QGVAR(enabledSides);
 
 GVAR(respawnPointsHash) set [_side, [_markername, _pos]];
+publicVariable QGVAR(respawnPointsHash);
+
 ["RespawnPosLocal", _pos, "Respawn", "respawn_inf", _color, 1] remoteExecCall [QFUNC(createLocalMarker), _side, true];
 ["MainBaseLocal", _pos, "Main Base", "mil_start", _color] remoteExecCall [QFUNC(createLocalMarker), _side, true];
 
