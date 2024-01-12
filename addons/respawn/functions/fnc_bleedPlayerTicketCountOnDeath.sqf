@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * [side, player] call tunres_Respawn_fnc_ticketCounterPlayer
+ * [side, player] call tunres_Respawn_fnc_bleedPlayerTicketCountOnDeath
  */
 #include "script_component.hpp"
 params ["_side","_player"];
