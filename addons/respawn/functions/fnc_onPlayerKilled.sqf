@@ -1,7 +1,7 @@
 /*
  * Author: [Tuntematon]
  * [Description]
- * Depending what respawn style is chosen. Chose fnc acording that.
+ * Depending what respawn style is chosen.
  *
  * Arguments:
  * None
@@ -35,4 +35,3 @@ switch (GVAR(respawn_type)) do {
 		setPlayerRespawnTime 5;
 	};
 };
-
