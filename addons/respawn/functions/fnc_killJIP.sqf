@@ -26,7 +26,7 @@ if (!hasInterface) exitWith { };
 
 
 			player allowDamage true;
-			player setDammage 1;
+			player setDamage 1;
 		}, [], 1] call CBA_fnc_waitAndExecute;
 	};
 }] call CBA_fnc_waitUntilAndExecute;

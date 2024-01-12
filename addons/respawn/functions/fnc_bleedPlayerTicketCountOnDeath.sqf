@@ -1,7 +1,7 @@
 /*
  * Author: [Tuntematon]
  * [Description]
- * Count side tickest
+ * Count side tickets
  *
  * Arguments:
  * 0: Playerside <side>

@@ -82,6 +82,10 @@
                 <Original>Range for waitingarea. Default 100m</Original>
                 <English>Range for waitingarea. Default 100m</English>
             </Key>
+            <Key ID="STR_tunres_Respawn_FNC_moveRespawns">
+                <English>You are respawning! Standby.</English>
+                <Original>You are respawning! Standby.</Original>
+            </Key>
             <Key ID="STR_tunres_Respawan_RemainingTickestSide">
                 <English>Remaining tickets for your side:</English>
                 <Original>Remaining tickets for your side:</Original>
@@ -92,10 +96,6 @@
             </Key>
         </Container>
         <Container name="FNC">
-            <Key ID="STR_tunres_Respawn_FNC_moveRespawns">
-                <Original>You are respawning! Standby.</Original>
-                <English>You are respawning! Standby.</English>
-            </Key>
             <Key ID="STR_tunres_Respawn_FNC_remaining_time">
                 <Original>Remaining time until respawn</Original>
                 <English>Remaining time until respawn</English>
