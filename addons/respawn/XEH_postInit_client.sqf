@@ -43,7 +43,7 @@ if (playerSide isEqualTo sideLogic) exitWith { }; // Exit if a virtual entity (I
 
 	// Add killed EH
 	[player, "killed", {
-		[] call FUNC(killed);
+		[] call FUNC(onPlayerKilled);
 	}] call CBA_fnc_addBISEventHandler;
 }] call CBA_fnc_waitUntilAndExecute;
 

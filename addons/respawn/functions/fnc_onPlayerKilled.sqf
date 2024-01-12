@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [] call tunres_Respawn_fnc_killed
+ * [] call tunres_Respawn_fnc_onPlayerKilled
 
  */
 #include "script_component.hpp"
