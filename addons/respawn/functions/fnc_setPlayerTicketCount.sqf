@@ -7,10 +7,9 @@
  * 1: New ticket count <NUMBER>
  *
  * Return Value:
- * The return true when done <BOOL>
  *
  * Example:
- * [player, 10] call tunres_Respawn_fnc_updatePlayerTicketCount
+ * [player, 10] call tunres_Respawn_fnc_setPlayerTicketCount
  */
 #include "script_component.hpp"
 if (!isServer) exitWith { };
