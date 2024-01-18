@@ -10,10 +10,10 @@
  * None
  *
  * Example:
- * [_msp] call tunres_MSP_fnc_create_msp_props
+ * [_msp] call tunres_MSP_fnc_createMspProps
  */
 #include "script_component.hpp"
-
+if (!isServer) then {};
 params ["_msp"];
 
 //todo give user ability to chose what props will be added.
