@@ -13,15 +13,9 @@
  */
 #include "script_component.hpp"
 
-if (playerSide isEqualTo sideLogic) exitWith { }; // Exit if a virtual entity (IE zeus)
+if (playerSide isEqualTo sideLogic || !hasInterface) exitWith { };  // Exit if a virtual entity (IE zeus)
 
-private _vehicle = switch (playerSide) do {
-	case west: { GVAR(clasnames_west) };
-	case east: { GVAR(clasnames_east) };
-	case resistance: { GVAR(clasnames_resistance) };
-	case civilian: { GVAR(clasnames_civilian) };
-	default { "No side" };
-};
+private _vehicle = GVAR(classnames) get playerSide;
 
 private _text = "<font face='PuristaBold' size='20'>MSP settings</font><br/>";
 
@@ -29,8 +23,8 @@ if (isClass (configFile >> "CfgVehicles" >> _vehicle)) then {
 
 	_text = format ["%1<br/>%2",_text, localize "STR_tunres_Respawn_Briefing_MspEnabled"];
 
-	if (GVAR(report_enemies)) then {
-		_text = format [localize "STR_tunres_Respawn_Briefing_reportEnemiesEnabled",_text, GVAR(report_enemies_interval), GVAR(report_enemies_range)];
+	if (GVAR(reportEnemiesEnabled)) then {
+		_text = format [localize "STR_tunres_Respawn_Briefing_reportEnemiesEnabled",_text, GVAR(reportEnemiesInterval), GVAR(reportEnemiesRange)];
 	} else {
 		_text = format ["%1<br/> %2",_text, localize "STR_tunres_Respawn_Briefing_reportEnemiesDisabled"];
 	};
@@ -39,7 +33,7 @@ if (isClass (configFile >> "CfgVehicles" >> _vehicle)) then {
 		_text = format ["%1<br/>You can check remaining tickets from MSP (using ace actions).",_text];
 	};
 
-	_text = format [localize "STR_tunres_Respawn_Briefing_ContestedCheck",_text, GVAR(contested_check_interval), GVAR(contested_radius_max), GVAR(contested_radius_min)];
+	_text = format [localize "STR_tunres_Respawn_Briefing_ContestedCheck",_text, GVAR(contestedCheckInterval), GVAR(contestedRadiusMax), GVAR(contestedRadiusMin)];
 	_text = format [localize "STR_tunres_Respawn_Briefing_MspVehicle",_text, getText (configFile >> "CfgVehicles" >> _vehicle >> "displayName")];
 } else {
 	_text = format ["%1<br/>%2",_text, localize "STR_tunres_Respawn_Briefing_MspDisabled"];

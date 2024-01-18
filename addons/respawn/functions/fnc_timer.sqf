@@ -33,7 +33,7 @@ if !( GVAR(timerRunning) getOrDefault [_side, false]) then {
 	}, {
 		_this params["_side"];
 		if (EGVAR(msp,enable)) then {
-			[] call EFUNC(msp,contestedCheck);
+			[_side] call EFUNC(msp,contestedCheck);
 		};
 
 		GVAR(timerRunning) set [_side, false];

@@ -5,6 +5,9 @@ PREP_RECOMPILE_START;
 #include "XEH_PREP.hpp"
 PREP_RECOMPILE_END;
 
+//Msp classnames
+GVAR(classnames) = createHashMap;
+
 [
     QGVAR(enable),
     "CHECKBOX",
@@ -28,9 +31,9 @@ PREP_RECOMPILE_END;
 ] call CBA_Settings_fnc_init;
 
 [
-    QGVAR(report_enemies),
+    QGVAR(reportEnemiesEnabled),
     "CHECKBOX",
-    [localize "STR_tunres_MSP_CBA_report_enemies", localize "STR_tunres_MSP_CBA_tooltip_report_enemies"],
+    [localize "STR_tunres_MSP_CBA_reportEnemiesEnabled", localize "STR_tunres_MSP_CBA_tooltip_reportEnemiesEnabled"],
     [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contested"],
     true,
     1,
@@ -39,77 +42,77 @@ PREP_RECOMPILE_END;
 ] call CBA_Settings_fnc_init;
 
 [
-    QGVAR(report_enemies_interval),
+    QGVAR(reportEnemiesInterval),
     "SLIDER",
-    [localize "STR_tunres_MSP_CBA_report_enemies_intervala", localize "STR_tunres_MSP_CBA_tooltip_report_enemies_interval"],
+    [localize "STR_tunres_MSP_CBA_reportEnemiesIntervala", localize "STR_tunres_MSP_CBA_tooltip_reportEnemiesInterval"],
     [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contested"],
     [1, 600, 30, 0],
     1,
     {
         params ["_value"];
-        GVAR(report_enemies_interval) = round _value;
+        GVAR(reportEnemiesInterval) = round _value;
     },
     true
 ] call CBA_Settings_fnc_init;
 
 [
-    QGVAR(report_enemies_range),
+    QGVAR(reportEnemiesRange),
     "SLIDER",
-    [localize "STR_tunres_MSP_CBA_report_enemies_range", localize "STR_tunres_MSP_CBA_tooltip_report_enemies_range"],
+    [localize "STR_tunres_MSP_CBA_reportEnemiesRange", localize "STR_tunres_MSP_CBA_tooltip_reportEnemiesRange"],
     [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contested"],
     [0, 5000, 500, 0],
     1,
     {
         params ["_value"];
-        GVAR(report_enemies_range) = round _value;
+        GVAR(reportEnemiesRange) = round _value;
     },
     false
 ] call CBA_Settings_fnc_init;
 
 [
-    QGVAR(contested_radius_max),
+    QGVAR(contestedRadiusMax),
     "SLIDER",
-    [localize "STR_tunres_MSP_CBA_contested_radius_max", localize "STR_tunres_MSP_CBA_tooltip_contested_max"],
+    [localize "STR_tunres_MSP_CBA_contestedRadiusMax", localize "STR_tunres_MSP_CBA_tooltip_contested_max"],
     [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contested"],
     [0, 3000, 500, 0],
     1,
     {
         params ["_value"];
-        GVAR(contested_radius_max) = round _value;
+        GVAR(contestedRadiusMax) = round _value;
     },
     false
 ] call CBA_Settings_fnc_init;
 
 [
-    QGVAR(contested_radius_min),
+    QGVAR(contestedRadiusMin),
     "SLIDER",
-    [localize "STR_tunres_MSP_CBA_contested_radius_min", localize "STR_tunres_MSP_CBA_tooltip_contested_min"],
+    [localize "STR_tunres_MSP_CBA_contestedRadiusMin", localize "STR_tunres_MSP_CBA_tooltip_contested_min"],
     [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contested"],
     [0, 3000, 200, 0],
     1,
     {
         params ["_value"];
-        GVAR(contested_radius_min) = round _value;
+        GVAR(contestedRadiusMin) = round _value;
     },
     false
 ] call CBA_Settings_fnc_init;
 
 [
-    QGVAR(contested_check_interval),
+    QGVAR(contestedCheckInterval),
     "SLIDER",
-    [localize "STR_tunres_MSP_CBA_contested_check_interval", localize "STR_tunres_MSP_CBA_tooltip_contested_check_interval"],
+    [localize "STR_tunres_MSP_CBA_contestedCheckInterval", localize "STR_tunres_MSP_CBA_tooltip_contestedCheckInterval"],
     [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contested"],
     [1, 600, 30, 0],
     1,
     {
         params ["_value"];
-        GVAR(contested_check_interval) = round _value;
+        GVAR(contestedCheckInterval) = round _value;
     },
     true
 ] call CBA_Settings_fnc_init;
 
 [
-    QGVAR(progresbar_time_setup),
+    QGVAR(progresbarTimeSetup),
     "SLIDER",
     [localize "STR_tunres_MSP_CBA_setup_progresbar", localize "STR_tunres_MSP_CBA_tooltip_setup_progresbar"],
     [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_progres"],
@@ -117,13 +120,13 @@ PREP_RECOMPILE_END;
     1,
     {
         params ["_value"];
-        GVAR(progresbar_time_setup) = round _value;
+        GVAR(progresbarTimeSetup) = round _value;
     },
     true
 ] call CBA_Settings_fnc_init;
 
 [
-    QGVAR(progresbar_time_pack),
+    QGVAR(progresbarTimePack),
     "SLIDER",
     [localize "STR_tunres_MSP_CBA_pack_progresbar", localize "STR_tunres_MSP_CBA_tooltip_pack_progresbar"],
     [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_progres"],
@@ -131,52 +134,64 @@ PREP_RECOMPILE_END;
     1,
     {
         params ["_value"];
-        GVAR(progresbar_time_pack) = round _value;
+        GVAR(progresbarTimePack) = round _value;
     },
     true
 ] call CBA_Settings_fnc_init;
 
 [
-    QGVAR(clasnames_east),
+    QGVAR(clasnamesEast),
     "EDITBOX",
     [localize "STR_tunres_MSP_CBA_classname_east", localize "STR_tunres_MSP_CBA_tooltip_classname"],
     [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_classname"],
     "O_Truck_03_transport_F",
     1,
-    {},
+    {
+        params ["_value"];
+        GVAR(classnames) set [east , _value];
+    },
     true
 ] call CBA_Settings_fnc_init;
 
 [
-    QGVAR(clasnames_west),
+    QGVAR(clasnamesWest),
     "EDITBOX",
     [localize "STR_tunres_MSP_CBA_classname_west", localize "STR_tunres_MSP_CBA_tooltip_classname"],
     [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_classname"],
     "B_Truck_01_transport_F",
     1,
-    {},
+    {
+        params ["_value"];
+        GVAR(classnames) set [west , _value];
+    },
     true
 ] call CBA_Settings_fnc_init;
 
 [
-    QGVAR(clasnames_resistance),
+    QGVAR(clasnamesResistance),
     "EDITBOX",
     [localize "STR_tunres_MSP_CBA_classname_resistance", localize "STR_tunres_MSP_CBA_tooltip_classname"],
     [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_classname"],
     "I_Truck_02_transport_F",
     1,
-    {},
+    {
+        params ["_value"];
+        GVAR(classnames) set [resistance , _value];
+    },
     true
 ] call CBA_Settings_fnc_init;
 
 [
-    QGVAR(clasnames_civilian),
+    QGVAR(clasnamesCivilian),
     "EDITBOX",
     [localize "STR_tunres_MSP_CBA_classname_civilian", localize "STR_tunres_MSP_CBA_tooltip_classname"],
     [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_classname"],
     "C_Truck_02_transport_F",
     1,
-    {},
+    {
+        params ["_value"];
+        GVAR(classnames) set [civilian , _value];
+    },
     true
 ] call CBA_Settings_fnc_init;
 

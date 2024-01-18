@@ -1,6 +1,9 @@
 #include "script_component.hpp"
 
-if !(GVAR(enable)) exitWith { INFO("TUN Mobile Respawn Point Disabled"); };
-INFO("TUN Mobile Respawn Point Enabled");
+[{ ADDON }, {
+	
+	if !(GVAR(enable)) exitWith { INFO("TUN Mobile Respawn Point Disabled"); };
+	INFO("TUN Mobile Respawn Point Enabled");
 
-[] call FUNC(add_EH);
+	[] call FUNC(addEventHandlers);
+}] call CBA_fnc_waitUntilAndExecute;

@@ -4,5 +4,5 @@
 ADDON
 }, {
 	[] call FUNC(briefingNotes);
-	[] call FUNC(ace_actions);
+	[] call FUNC(addAceActions);
 }] call CBA_fnc_waitUntilAndExecute;

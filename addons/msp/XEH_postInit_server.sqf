@@ -1,3 +1,6 @@
 #include "script_component.hpp"
 
-[] call FUNC(init_contested);
+
+[{ ADDON }, {
+	[] call FUNC(startContestedChecks);
+}] call CBA_fnc_waitUntilAndExecute;
