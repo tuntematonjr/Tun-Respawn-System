@@ -41,7 +41,7 @@ if (isClass (configFile >> "CfgVehicles" >> _vehicle)) then {
 	private _chekTime = ["Check Respawn Time", "Check Respawn Time", "\a3\modules_f_curator\data\portraitskiptime_ca.paa", EFUNC(respawn,remainingWaitTimeNotification), _aliveAndSameSideConditio] call ace_interact_menu_fnc_createAction;
 
 	//Check contest area
-	private _checkArea = ["Check contest area", "Check contest area", "\a3\modules_f_curator\data\portraitskiptime_ca.paa", {[_target] call FUNC(createContestZoneMarkers);}, _aliveAndSameSideConditio] call ace_interact_menu_fnc_createAction;
+	private _checkArea = ["Check contest area", "Check contest area", "a3\ui_f\data\igui\cfg\simpletasks\types\map_ca.paa", {[_target] call FUNC(createContestZoneMarkers);}, _aliveAndSameSideConditio] call ace_interact_menu_fnc_createAction;
 
 	//Ace inteaction
 	[_vehicle, 1, ["ACE_SelfActions"], _createMSP] call ace_interact_menu_fnc_addActionToClass;
