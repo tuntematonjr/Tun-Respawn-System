@@ -409,12 +409,12 @@
                 <English>Enable MSP system</English>
             </Key>
         </Container>
-        <Container name="fnc_initate_msp_action">
-            <Key ID="STR_tunres_MSP_fnc_initate_msp_action_setting">
+        <Container name="fnc_startUpdateDeployementStatus">
+            <Key ID="STR_tunres_MSP_fnc_startUpdateDeployementStatus_setting">
                 <Original>Setting up MSP</Original>
                 <English>Setting up MSP</English>
             </Key>
-            <Key ID="STR_tunres_MSP_fnc_initate_msp_action_packing">
+            <Key ID="STR_tunres_MSP_fnc_startUpdateDeployementStatus_packing">
                 <Original>Packing MSP</Original>
                 <English>Packing MSP</English>
             </Key>
@@ -474,7 +474,7 @@
                 <Original>When there are enemies inside this radius, MSP are always disabled, even if there are more friendlies in max range (meters)</Original>
                 <English>When there are enemies inside this radius, MSP are always disabled, even if there are more friendlies in max range (meters)</English>
             </Key>
-            <Key ID="STR_tunres_MSP_CBA_tooltip_contested_check_interval">
+            <Key ID="STR_tunres_MSP_CBA_tooltip_contestedCheckInterval">
                 <Original>Interval for when server updates the contested status for MSP</Original>
                 <English>Interval for when server updates the contested status for MSP</English>
             </Key>
@@ -482,15 +482,15 @@
                 <Original>Radius where there needs to be more enemies than allies to disable MSP (meters)</Original>
                 <English>Radius where there needs to be more enemies than allies to disable MSP (meters)</English>
             </Key>
-            <Key ID="STR_tunres_MSP_CBA_contested_radius_min">
+            <Key ID="STR_tunres_MSP_CBA_contestedRadiusMin">
                 <Original>Min Contested Radius</Original>
                 <English>Min Contested Radius</English>
             </Key>
-            <Key ID="STR_tunres_MSP_CBA_contested_radius_max">
+            <Key ID="STR_tunres_MSP_CBA_contestedRadiusMax">
                 <Original>Max Contested Radius</Original>
                 <English>Max Contested Radius</English>
             </Key>
-            <Key ID="STR_tunres_MSP_CBA_contested_check_interval">
+            <Key ID="STR_tunres_MSP_CBA_contestedCheckInterval">
                 <Original>Contested Check Interval</Original>
                 <English>Contested Check Interval</English>
             </Key>
@@ -500,27 +500,27 @@
             </Key>
         </Container>
         <Container name="CBA Report">
-            <Key ID="STR_tunres_MSP_CBA_tooltip_report_enemies_range">
+            <Key ID="STR_tunres_MSP_CBA_tooltip_reportEnemiesRange">
                 <Original>Range from MSP where enemies are reported (meters)</Original>
                 <English>Range from MSP where enemies are reported (meters)</English>
             </Key>
-            <Key ID="STR_tunres_MSP_CBA_tooltip_report_enemies_interval">
+            <Key ID="STR_tunres_MSP_CBA_tooltip_reportEnemiesInterval">
                 <Original>Interval when server check if there is enemies near MSP</Original>
                 <English>Interval when server check if there is enemies near MSP</English>
             </Key>
-            <Key ID="STR_tunres_MSP_CBA_tooltip_report_enemies">
+            <Key ID="STR_tunres_MSP_CBA_tooltip_reportEnemiesEnabled">
                 <Original>%1&lt;br/&gt;&lt;br/&gt;Enable Report Enemies near MSP</Original>
                 <English>%1&lt;br/&gt;&lt;br/&gt;Enable Report Enemies near MSP</English>
             </Key>
-            <Key ID="STR_tunres_MSP_CBA_report_enemies_intervala">
+            <Key ID="STR_tunres_MSP_CBA_reportEnemiesIntervala">
                 <Original>Report Enemies Interval</Original>
                 <English>Report Enemies Interval</English>
             </Key>
-            <Key ID="STR_tunres_MSP_CBA_report_enemies_range">
+            <Key ID="STR_tunres_MSP_CBA_reportEnemiesRange">
                 <Original>Report Enemies Range</Original>
                 <English>Report Enemies Range</English>
             </Key>
-            <Key ID="STR_tunres_MSP_CBA_report_enemies">
+            <Key ID="STR_tunres_MSP_CBA_reportEnemiesEnabled">
                 <Original>Report Enemies</Original>
                 <English>Report Enemies</English>
             </Key>
