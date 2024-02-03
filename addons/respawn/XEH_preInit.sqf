@@ -9,6 +9,8 @@ private _waitingRespawnEmptyArray= [[west,[]],[east,[]],[resistance,[]],[civilia
 private _waitTimesPreArray = [[west,0],[east,0],[resistance,0],[civilian,0]];
 private _emptyFalseArray = [[west,false],[east,false],[resistance,false],[civilian,false]];
 private _emptyTrueArray = [[west,true],[east,true],[resistance,true],[civilian,true]];
+
+
 //cba_missiontime time when next wave happens.
 GVAR(nextWaveTimes) = createHashMapFromArray _waitTimesPreArray;
 
@@ -38,11 +40,11 @@ GVAR(disconnectedPlayers) = createHashMapFromArray _waitingRespawnEmptyArray;
 GVAR(timerRunning) = createHashMapFromArray _emptyFalseArray;
 ISNILS(GVAR(teleportPoints),[]);
 
-//allowed sides to spectate !WIP! Currentlu forced all
-ISNILS(GVAR(spectate_west),true);
-ISNILS(GVAR(spectate_east),true);
-ISNILS(GVAR(spectate_independent),true);
-ISNILS(GVAR(spectate_civilian),true);
+//allowed sides to spectate 
+GVAR(allowedSpectateSidesWest) = [west];
+GVAR(allowedSpectateSidesEast) = [east];
+GVAR(allowedSpectateSidesResistance) = [resistance];
+GVAR(allowedSpectateSidesCivilian) = [civilian];
 
 ISNILS(GVAR(endRespawns),false);
 
@@ -233,6 +235,204 @@ GVAR(selfTPmenuOpenObj) = objNull;
     true,
     1,
     {},
+    true
+] call CBA_Settings_fnc_init;
+
+//allow spectate west
+[
+    QGVAR(allowWestSpectateEast),
+    "CHECKBOX",
+    ["East", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesTooltip"],
+    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesWest"],
+    true,
+    1,
+    {
+        params ["_value"];
+        if (_value) then {
+            GVAR(allowedSpectateSidesWest) pushBack east;
+        };
+    },
+    true
+] call CBA_Settings_fnc_init;
+
+[
+    QGVAR(allowWestSpectateResistance),
+    "CHECKBOX",
+    ["Resistance", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesTooltip"],
+    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesWest"],
+    true,
+    1,
+    {
+        params ["_value"];
+        if (_value) then {
+            GVAR(allowedSpectateSidesWest) pushBack resistance;
+        };
+    },
+    true
+] call CBA_Settings_fnc_init;
+
+[
+    QGVAR(allowWestSpectateCivilian),
+    "CHECKBOX",
+    ["Civilian", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesTooltip"],
+    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesWest"],
+    true,
+    1,
+    {
+        params ["_value"];
+        if (_value) then {
+            GVAR(allowedSpectateSidesWest) pushBack civilian;
+        };
+    },
+    true
+] call CBA_Settings_fnc_init;
+
+//allow spectate east
+[
+    QGVAR(allowEastSpectateWest),
+    "CHECKBOX",
+    ["West", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesTooltip"],
+    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesEast"],
+    true,
+    1,
+    {
+        params ["_value"];
+        if (_value) then {
+            GVAR(allowedSpectateSidesEast) pushBack west;
+        };
+    },
+    true
+] call CBA_Settings_fnc_init;
+
+[
+    QGVAR(allowEastSpectateResistance),
+    "CHECKBOX",
+    ["Resistance", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesTooltip"],
+    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesEast"],
+    true,
+    1,
+    {
+        params ["_value"];
+        if (_value) then {
+            GVAR(allowedSpectateSidesEast) pushBack resistance;
+        };
+    },
+    true
+] call CBA_Settings_fnc_init;
+
+[
+    QGVAR(allowEastSpectateCivilian),
+    "CHECKBOX",
+    ["Civilian", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesTooltip"],
+    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesEast"],
+    true,
+    1,
+    {
+        params ["_value"];
+        if (_value) then {
+            GVAR(allowedSpectateSidesEast) pushBack civilian;
+        };
+    },
+    true
+] call CBA_Settings_fnc_init;
+
+//allow spectate resistance
+[
+    QGVAR(allowResistanceSpectateWest),
+    "CHECKBOX",
+    ["West", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesTooltip"],
+    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesResistance"],
+    true,
+    1,
+    {
+        params ["_value"];
+        if (_value) then {
+            GVAR(allowedSpectateSidesResistance) pushBack west;
+        };
+    },
+    true
+] call CBA_Settings_fnc_init;
+
+[
+    QGVAR(allowResistanceSpectateEast),
+    "CHECKBOX",
+    ["East", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesTooltip"],
+    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesResistance"],
+    true,
+    1,
+    {
+        params ["_value"];
+        if (_value) then {
+            GVAR(allowedSpectateSidesResistance) pushBack east;
+        };
+    },
+    true
+] call CBA_Settings_fnc_init;
+
+
+[
+    QGVAR(allowResistanceSpectateCivilian),
+    "CHECKBOX",
+    ["Civilian", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesTooltip"],
+    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesResistance"],
+    true,
+    1,
+    {
+        params ["_value"];
+        if (_value) then {
+            GVAR(allowedSpectateSidesResistance) pushBack civilian;
+        };
+    },
+    true
+] call CBA_Settings_fnc_init;
+
+//allow spectate civilians
+[
+    QGVAR(allowCivilianSpectateWest),
+    "CHECKBOX",
+    ["West", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesTooltip"],
+    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesCivilian"],
+    true,
+    1,
+    {
+        params ["_value"];
+        if (_value) then {
+            GVAR(allowedSpectateSidesCivilian) pushBack west;
+        };
+    },
+    true
+] call CBA_Settings_fnc_init;
+
+[
+    QGVAR(allowCivilianSpectateEast),
+    "CHECKBOX",
+    ["East", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesTooltip"],
+    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesCivilian"],
+    true,
+    1,
+    {
+        params ["_value"];
+        if (_value) then {
+            GVAR(allowedSpectateSidesCivilian) pushBack east;
+        };
+    },
+    true
+] call CBA_Settings_fnc_init;
+
+
+[
+    QGVAR(allowCivilianSpectateResistance),
+    "CHECKBOX",
+    ["Resistance", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesTooltip"],
+    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesCivilian"],
+    true,
+    1,
+    {
+        params ["_value"];
+        if (_value) then {
+            GVAR(allowedSpectateSidesCivilian) pushBack resistance;
+        };
+    },
     true
 ] call CBA_Settings_fnc_init;
 
