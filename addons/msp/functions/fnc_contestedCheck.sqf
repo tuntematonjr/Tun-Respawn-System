@@ -13,7 +13,7 @@
 // private _result = diag_codePerformance [{ 
 #include "script_component.hpp"
 params[["_side", nil,[west]],["_mspSetup", false]];
-ok = _mspSetup;
+
 if (!isServer) then {};
 private _oldAllowRespawnStatus = GVAR(allowRespawn) get _side;
 GVAR(allowRespawn) set [_side, false];
@@ -64,7 +64,7 @@ if ( _mspDeployementStatus && { !(isNull _msp) } ) then {
 		GVAR(contestedStatus) set [_side, _isContested];
 		publicVariable QGVAR(contestedStatus);
 		_msp setVariable [QGVAR(isContested), _isContested, true];
-		private _whoToNotify = [_side] call FUNC(whoToNotify);
+		private _whoToNotify = [_side, GVAR(contestedNotification)] call FUNC(whoToNotify);
 		if (count _whoToNotify > 0 ) then {
 			if (_isContested) then {
 				[_side, false] call EFUNC(respawn,update_respawn_point);

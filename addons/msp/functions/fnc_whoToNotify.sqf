@@ -12,9 +12,9 @@
  * [west] call tunres_MSP_fnc_whoToNotify
  */
 #include "script_component.hpp"
-params [["_side", nil, [west]]];
+params [["_side", nil, [west]], ["_type", 1]];
 private _whoToNotify = [];
-if (GVAR(contestedNotification) isEqualTo 0) then {
+if (_type isEqualTo 0) then {
 	{
 		private _group = _x;
 		private _leader = leader _group;

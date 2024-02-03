@@ -32,6 +32,7 @@ if (!isServer) then {};
         };
     }, GVAR(contestedCheckInterval), []] call CBA_fnc_addPerFrameHandler;
 
+    //Report enemies loop thing
     if (GVAR(reportEnemiesEnabled)) then {
         [{
             private _hash = GVAR(contestedCheckHash);
@@ -42,7 +43,7 @@ if (!isServer) then {};
                 if (_mspStatus) then {
                     private _enemyCount = (_hash get _side) select 0;
                     if (_enemyCount > 0 && !_contestedStatus) then {
-                        private _whoToNotify = [_side] call FUNC(whoToNotify);
+                        private _whoToNotify = [_side, GVAR(reportEnemiesNotification)] call FUNC(whoToNotify);
                         if (count _whoToNotify > 0 ) then {
                             (localize "STR_tunres_MSP_FNC_enemies_near") remoteExecCall ["CBA_fnc_notify", _whoToNotify];
                         };
