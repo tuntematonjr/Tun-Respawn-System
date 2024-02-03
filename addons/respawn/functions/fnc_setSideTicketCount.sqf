@@ -7,7 +7,7 @@
  * 1: New ticket count <NUMBER>
  *
  * Return Value:
- *
+ * True on success
  * Example:
  * [west, 10] call tunres_Respawn_fnc_setSideTicketCount
  */

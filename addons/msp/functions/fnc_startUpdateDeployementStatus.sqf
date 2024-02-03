@@ -15,7 +15,6 @@
  */
 #include "script_component.hpp"
 
-
 params ["_target", "_setup"];
 private ["_text", "_time", "_conditio"];
 
@@ -44,6 +43,5 @@ private _code = {
                     _args call FUNC(updateDeployementStatus);
                     openMap false;
                 };
-//[_text, _time, _conditio, _code, {hint "Aborted"}, [_target, _setup]] call CBA_fnc_progressBar;
 
 [_time, [_target, _setup], _code, {hint "Aborted!";}, _text, _conditio, ["notOnMap","isnotinside"]] call ace_common_fnc_progressBar;

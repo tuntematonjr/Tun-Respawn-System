@@ -34,7 +34,7 @@ GVAR(totalRespawnCount) = createHashMapFromArray _waitTimesPreArray;
 //Allow respawn for each side
 GVAR(allowRespawn) = createHashMapFromArray _emptyTrueArray;
 
-GVAR(disconnected_players) = createHashMapFromArray _waitingRespawnEmptyArray;
+GVAR(disconnectedPlayers) = createHashMapFromArray _waitingRespawnEmptyArray;
 GVAR(timerRunning) = createHashMapFromArray _emptyFalseArray;
 ISNILS(GVAR(teleportPoints),[]);
 
@@ -100,7 +100,7 @@ GVAR(selfTPmenuOpenObj) = objNull;
     "LIST",
     ["Gearscript type", localize "STR_tunres_Respawn_CBA_tooltip_gearscript"],
     [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_generic"],
-    [[0, 1, 2, 3], ["SQF Gearscript", "Potato Tool", "Save gear", "None"], 3],
+    [[0, 1, 2, 3], ["SQF Gearscript", "Potato Tool", "Save gear", "None"], 2],
     1,
     {},
     true
@@ -298,7 +298,7 @@ GVAR(selfTPmenuOpenObj) = objNull;
     "CHECKBOX",
     ["Main base", localize "STR_tunres_Respawn_CBA_tooltip_CheckTickets"],
     [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_checkTickets"],
-    false,
+    true,
     1,
     {},
     true

@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 
 if (GVAR(respawnType) isEqualTo 2) then {
-	GVAR(PlayerTicektsHash) = createHashMap;
+	GVAR(playerTicektsHash) = createHashMap;
 	AAR_UPDATE("west","Player tickets",(round GVAR(initialTicketsWest)));
 	AAR_UPDATE("east","Player tickets",(round GVAR(initialTicketsEast)));
 	AAR_UPDATE("guer","Player tickets",(round GVAR(initialTicketsResistance)));
@@ -15,7 +15,7 @@ if (GVAR(respawnType) isNotEqualTo 0) then {
 		params ["_id", "_uid", "_name", "_jip", "_owner"];
 
 		if (cba_missiontime > (GVAR(killJipTime) * 60) && GVAR(killJIP)) then {
-			GVAR(disconnected_players) set [_uid, true];
+			GVAR(disconnectedPlayers) set [_uid, true];
 		};
 	}];
 };
