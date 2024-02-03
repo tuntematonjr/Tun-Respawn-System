@@ -82,10 +82,6 @@
                 <Original>Range for waitingarea. Default 100m</Original>
                 <English>Range for waitingarea. Default 100m</English>
             </Key>
-            <Key ID="STR_tunres_Respawn_FNC_moveRespawns">
-                <English>You are respawning! Standby.</English>
-                <Original>You are respawning! Standby.</Original>
-            </Key>
             <Key ID="STR_tunres_Respawan_RemainingTickestPlayer">
                 <English>Your remaining tickets:</English>
                 <Original>Your remaining tickets:</Original>
@@ -93,6 +89,46 @@
             <Key ID="STR_tunres_Respawan_RemainingTicketsSide">
                 <English>Remaining tickets for your side:</English>
                 <Original>Remaining tickets for your side:</Original>
+            </Key>
+            <Key ID="STR_tunres_Respawn_FNC_moveRespawnText">
+                <English>You are respawning! Standby.</English>
+                <Original>You are respawning! Standby.</Original>
+            </Key>
+            <Key ID="STR_tunres_MSP_CBA_Category_contestedWest">
+                <English>Contested settings West</English>
+                <Original>Contested settings West</Original>
+            </Key>
+            <Key ID="STR_tunres_MSP_CBA_Category_contestedEast">
+                <English>Contested settings East</English>
+                <Original>Contested settings East</Original>
+            </Key>
+            <Key ID="STR_tunres_MSP_CBA_Category_contestedResistance">
+                <English>Contested settings Resistance</English>
+                <Original>Contested settings Resistance</Original>
+            </Key>
+            <Key ID="STR_tunres_MSP_CBA_Category_contestedCivilian">
+                <English>Contested settings Civilian</English>
+                <Original>Contested settings Civilian</Original>
+            </Key>
+            <Key ID="STR_tunres_Respawn_CBA_Category_spectate_sidesWest">
+                <English>Spectator allowed sides for west</English>
+                <Original>Spectator allowed sides for west</Original>
+            </Key>
+            <Key ID="STR_tunres_Respawn_CBA_Category_spectate_sidesEast">
+                <English>Spectator allowed sides for east</English>
+                <Original>Spectator allowed sides for east</Original>
+            </Key>
+            <Key ID="STR_tunres_Respawn_CBA_Category_spectate_sidesResistance">
+                <English>Spectator allowed sides for resistance</English>
+                <Original>Spectator allowed sides for resistance</Original>
+            </Key>
+            <Key ID="STR_tunres_Respawn_CBA_Category_spectate_sidesCivilian">
+                <English>Spectator allowed sides for civilian</English>
+                <Original>Spectator allowed sides for civilian</Original>
+            </Key>
+            <Key ID="STR_tunres_Respawn_CBA_Category_spectate_sidesTooltip">
+                <English>Allow this side to be spectated</English>
+                <Original>Allow this side to be spectated</Original>
             </Key>
         </Container>
         <Container name="FNC">
@@ -471,16 +507,16 @@
         </Container>
         <Container name="CBA Contested">
             <Key ID="STR_tunres_MSP_CBA_tooltip_contested_min">
-                <Original>When there are enemies inside this radius, MSP are always disabled, even if there are more friendlies in max range (meters)</Original>
-                <English>When there are enemies inside this radius, MSP are always disabled, even if there are more friendlies in max range (meters)</English>
+                <Original>When there are enemies inside this radius, MSP are always disabled, even if there are more friendlies in max range (meters), for this side</Original>
+                <English>When there are enemies inside this radius, MSP are always disabled, even if there are more friendlies in max range (meters), for this side</English>
             </Key>
             <Key ID="STR_tunres_MSP_CBA_tooltip_contestedCheckInterval">
-                <Original>Interval for when server updates the contested status for MSP</Original>
-                <English>Interval for when server updates the contested status for MSP</English>
+                <Original>Interval for when server updates the contested status for MSP, for this side</Original>
+                <English>Interval for when server updates the contested status for MSP, for this side</English>
             </Key>
             <Key ID="STR_tunres_MSP_CBA_tooltip_contested_max">
-                <Original>Radius where there needs to be more enemies than allies to disable MSP (meters)</Original>
-                <English>Radius where there needs to be more enemies than allies to disable MSP (meters)</English>
+                <Original>Radius where there needs to be more enemies than allies to disable MSP (meters), for this side</Original>
+                <English>Radius where there needs to be more enemies than allies to disable MSP (meters), for this side</English>
             </Key>
             <Key ID="STR_tunres_MSP_CBA_contestedRadiusMin">
                 <Original>Min Contested Radius</Original>
@@ -494,23 +530,19 @@
                 <Original>Contested Check Interval</Original>
                 <English>Contested Check Interval</English>
             </Key>
-            <Key ID="STR_tunres_MSP_CBA_Category_contested">
-                <Original>Contested</Original>
-                <English>Contested</English>
-            </Key>
         </Container>
         <Container name="CBA Report">
             <Key ID="STR_tunres_MSP_CBA_tooltip_reportEnemiesRange">
-                <Original>Range from MSP where enemies are reported (meters)</Original>
-                <English>Range from MSP where enemies are reported (meters)</English>
+                <Original>Range from MSP where enemies are reported (meters), for this side</Original>
+                <English>Range from MSP where enemies are reported (meters), for this side</English>
             </Key>
             <Key ID="STR_tunres_MSP_CBA_tooltip_reportEnemiesInterval">
-                <Original>Interval when server check if there is enemies near MSP</Original>
-                <English>Interval when server check if there is enemies near MSP</English>
+                <Original>Interval when server check if there is enemies near MSP, for this side</Original>
+                <English>Interval when server check if there is enemies near MSP, for this side</English>
             </Key>
             <Key ID="STR_tunres_MSP_CBA_tooltip_reportEnemiesEnabled">
-                <Original>%1&lt;br/&gt;&lt;br/&gt;Enable Report Enemies near MSP</Original>
-                <English>%1&lt;br/&gt;&lt;br/&gt;Enable Report Enemies near MSP</English>
+                <Original>Enable Report Enemies near MSP, for this side</Original>
+                <English>Enable Report Enemies near MSP, for this side</English>
             </Key>
             <Key ID="STR_tunres_MSP_CBA_reportEnemiesIntervala">
                 <Original>Report Enemies Interval</Original>
@@ -551,8 +583,8 @@
                 <English>Who gets notification when MSP contested?</English>
             </Key>
             <Key ID="STR_tunres_MSP_CBA_whoGetsReportEnemiesNotification">
-                <Original>Who gets notification when there is enemies near MSP?</Original>
-                <English>Who gets notification when there is enemies near MSP?</English>
+                <Original>Who to notify when enemies near MSP?</Original>
+                <English>Who to notify when enemies near MSP?</English>
             </Key>
             <Key ID="STR_tunres_MSP_CBA_whoGetsSetUpNotification_Tooltip">
                 <Original>When MSP is setup or packed up, who whil recive notification from it. Default: Group Leader</Original>
