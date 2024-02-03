@@ -60,7 +60,7 @@ if (isClass (configFile >> "CfgVehicles" >> _vehicle)) then {
 
 	}, false, [], true] call CBA_fnc_addClassEventHandler;
 
-	if (GVAR(allowCheckTicketsMSP)) then {
+	if (GVAR(allowCheckTicketsMSP) && EGVAR(respawn,respawnType) isNotEqualTo 0) then {
 		private _remaining_action = {
 			[] call EFUNC(respawn,checkTicketCount);
 		};
