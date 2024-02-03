@@ -1,2 +1,3 @@
 EH Name | locality | params
-tunres_msp_EH_contestedUpdate- global - new status, enemy count, enemy count min, Friendly count
+tunres_msp_EH_contestedUpdate - global - Side, NewStatus, OldStatus, enemyCount, enemyCountMin, FriendlyCount, Was MSP setup
+tunres_msp_EH_mspStatusUpdate - global - MSP <OBJ>, True: Setup MSP. False: Pack MSP <BOOL>

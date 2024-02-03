@@ -62,7 +62,7 @@ if (isClass (configFile >> "CfgVehicles" >> _vehicle)) then {
 
 	if (GVAR(allowCheckTicketsMSP)) then {
 		private _remaining_action = {
-			[playerSide] call EFUNC(respawn,checkTicketCount);
+			[] call EFUNC(respawn,checkTicketCount);
 		};
 		private _remaining_condition = { alive _target && {_target getVariable QGVAR(side) isEqualTo playerSide}};
 		_remainingTickets = [localize "STR_tunres_Respawn_CheckTickets", localize "STR_tunres_Respawn_CheckTickets", "\a3\modules_f_curator\data\portraitmissionname_ca.paa", _remaining_action, _remaining_condition] call ace_interact_menu_fnc_createAction;

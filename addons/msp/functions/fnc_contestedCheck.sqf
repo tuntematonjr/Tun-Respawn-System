@@ -75,6 +75,7 @@ if ( _mspDeployementStatus && { !(isNull _msp) } ) then {
 			};
 		};
 	};
+	[QGVAR(EH_mspStatusUpdate), [_side, _isContested, _oldContestedStatus, _enemiesInArea, _enemiesInAreaMin, _friendliesInArea,  _mspSetup]] call CBA_fnc_globalEvent;
 	private _debugText = format ["Contested summary. Side: %1, NewStatus: %2, OldStatus: %3, enemyCount: %4, enemyCountMin: %5, FriendlyCount: %6, Was MSP setup: %7",_side, _isContested, _oldContestedStatus, _enemiesInArea, _enemiesInAreaMin, _friendliesInArea,  _mspSetup];
 	LOG(_debugText);
 } else {
