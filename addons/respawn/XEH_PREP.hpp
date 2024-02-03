@@ -10,7 +10,7 @@ PREP(bleedSideTicketCountOnDeath);
 PREP(briefingNotes);
 PREP(checkTicketCount);
 PREP(createLocalMarker);
-PREP(delayed_respawn);
+PREP(delayedRespawn);
 PREP(doRespawnWave);
 PREP(forceRespawnPlayer);
 PREP(forceRespawnWave);

@@ -6,7 +6,7 @@
                 <Original>Time between respawn waves (minutes)</Original>
                 <English>Time between respawn waves (minutes)</English>
             </Key>
-            <Key ID="STR_tunres_Respawn_CBA_tooltip_killjip_time">
+            <Key ID="STR_tunres_Respawn_CBA_tooltip_killJipTime">
                 <Original>Time after JIP are killed and moved to respawn (minutes)</Original>
                 <English>Time after JIP are killed and moved to respawn (minutes)</English>
             </Key>
@@ -19,8 +19,8 @@
                 <English>Ticket count for either for whole side or each player in that side.</English>
             </Key>
             <Key ID="STR_tunres_Respawn_CBA_tooltip_gearscript">
-                <Original>"SQF Gearscript": Needs two variables set "tunres_Respawn_Role" which works as parameter and "tunres_Respawn_GearPath" which is filepath.        "Potato Tool": just calls its own function        "Save gear": Load same loadout which is saved at mission start or it can be updated during mission using tunres_Respawn_fnc_savegear function.</Original>
-                <English>"SQF Gearscript": Needs two variables set "tunres_Respawn_Role" which works as parameter and "tunres_Respawn_GearPath" which is filepath.        "Potato Tool": just calls its own function        "Save gear": Load same loadout which is saved at mission start or it can be updated during mission using tunres_Respawn_fnc_savegear function.</English>
+                <Original>"SQF Gearscript": Needs two variables set "tunres_Respawn_Role" which works as parameter and "tunres_Respawn_GearPath" which is filepath.        "Potato Tool": just calls its own function        "Save gear": Load same loadout which is saved at mission start or it can be updated during mission using tunres_Respawn_fnc_savegear function.        None: No gearscripts run. People will spawn witouth any gear, use eventhandler "tunres_respawn_EH_unitRespawned " to give your gears.</Original>
+                <English>"SQF Gearscript": Needs two variables set "tunres_Respawn_Role" which works as parameter and "tunres_Respawn_GearPath" which is filepath.        "Potato Tool": just calls its own function        "Save gear": Load same loadout which is saved at mission start or it can be updated during mission using tunres_Respawn_fnc_savegear function.        None: No gearscripts run. People will spawn witouth any gear, use eventhandler "tunres_respawn_EH_unitRespawned " to give your gears.</English>
             </Key>
             <Key ID="STR_tunres_Respawn_CBA_tooltip_respawntypes">
                 <Original>"Default" : Endless waves. "Side tickets": Side shares ticket pool. . "Player tickets": Each player has own ticket pool</Original>
@@ -74,11 +74,11 @@
                 <Original>Only forced respawn waves. No timer!</Original>
                 <English>Only forced respawn waves. No timer!</English>
             </Key>
-            <Key ID="STR_tunres_Respawn_CBA_tooltip_delayed_respawn">
+            <Key ID="STR_tunres_Respawn_CBA_tooltip_delayedRespawn">
                 <Original>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20min and this is set to 50% and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</Original>
                 <English>If remaining respawn time is less than percent specified here, player skips the next wave. Ie. if wave interval is 20min and this is set to 50% and player dies after there is less than 10 minutes remaining until next respawn, player will skip the next wave and needs to wait for the following one. 0 = Disabled.</English>
             </Key>
-            <Key ID="STR_tunres_Respawn_CBA_tooltip_waiting_area_range">
+            <Key ID="STR_tunres_Respawn_CBA_tooltip_waitingAreaRange">
                 <Original>Range for waitingarea. Default 100m</Original>
                 <English>Range for waitingarea. Default 100m</English>
             </Key>

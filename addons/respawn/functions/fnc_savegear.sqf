@@ -24,4 +24,4 @@ if (isNumber (configFile >> "CfgWeapons" >> _radio  >> "tf_radio")) then {
 	_gearToSave set [9, _itemsList];
 };
 
-GVAR(savedgear) = _gearToSave;
+GVAR(savedGear) = _gearToSave;

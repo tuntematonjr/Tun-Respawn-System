@@ -15,7 +15,7 @@
 #include "script_component.hpp"
 params [["_player", nil, [objNull]], ["_addPlayer", nil, [false]], ["_side", nil, [west]]];
 
-private _skip = [_player, _side] call FUNC(delayed_respawn);
+private _skip = [_player, _side] call FUNC(delayedRespawn);
 
 if !(_skip) then {
 	private _waitingRespawnHash = GVAR(waitingRespawnList);

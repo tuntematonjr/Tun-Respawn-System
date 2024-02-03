@@ -15,7 +15,7 @@
 if (isDedicated) exitWith { };
 params [["_side", nil, [west]]];
 
-if (GVAR(respawn_type) isEqualTo localize "STR_tunres_Respawn_Type_Sidetickets")  then {
+if (GVAR(respawnType) isEqualTo 1)  then {
 	_ticetCount = GVAR(tickets) get _side;
 	_text = format["%1 %2",localize "STR_tunres_Respawn_RemainingTicketsText", _ticetCount];
 	_text call CBA_fnc_notify;

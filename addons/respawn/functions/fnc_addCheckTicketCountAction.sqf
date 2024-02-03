@@ -18,7 +18,7 @@ params [ ["_object", objNull, [objNull]],
 ["_offset", nil, [[]]], 
 ["_parrenPath", ["ACE_MainActions"], [[]]]];
 
-if (GVAR(respawn_type) isEqualTo localize "STR_tunres_Respawn_Type_Default") exitWith {
+if (GVAR(respawnType) isEqualTo 0) exitWith {
 	LOG("Skip adding ticket check ace action, as we dont use tickets");
  };
 

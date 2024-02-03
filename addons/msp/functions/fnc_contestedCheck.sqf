@@ -53,14 +53,14 @@ if ( _mspDeployementStatus && { !(isNull _msp) } ) then {
 	if (_enemiesInAreaMin > 0 || _enemiesInArea > _friendliesInArea) then {
 		_isContested = true;
 	};
-	AAR_UPDATE(_msp, "Enemy Count", _enemiesInArea);
-	AAR_UPDATE(_msp, "Enemy Count Min", _enemiesInAreaMin);
-	AAR_UPDATE(_msp, "Friendly Count", _friendliesInArea);
-	AAR_UPDATE(_msp, "Is contested", _isContested);
+	AAR_UPDATE(_msp,"Enemy Count",_enemiesInArea);
+	AAR_UPDATE(_msp,"Enemy Count Min",_enemiesInAreaMin);
+	AAR_UPDATE(_msp,"Friendly Count",_friendliesInArea);
+	AAR_UPDATE(_msp,"Is contested",_isContested);
 
 	private _oldContestedStatus = GVAR(contestedStatus) get _side;
 	if (_oldContestedStatus isNotEqualTo _isContested) then {
-		AAR_UPDATE(_msp, "Is contested", _isContested);
+		AAR_UPDATE(_msp,"Is contested",_isContested);
 		GVAR(contestedStatus) set [_side, _isContested];
 		publicVariable QGVAR(contestedStatus);
 		_msp setVariable [QGVAR(isContested), _isContested, true];

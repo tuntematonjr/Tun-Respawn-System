@@ -10,18 +10,18 @@
  * The return value <BOOL>
  *
  * Example:
- * [] call tunres_Respawn_fnc_delayed_respawn
+ * [] call tunres_Respawn_fnc_delayedRespawn
  */
 #include "script_component.hpp"
 params ["_unit", "_side"];
 
 private _skip = false;
-if (GVAR(delayed_respawn) > 0) then {
+if (GVAR(delayedRespawn) > 0) then {
 	private _hashWaitTime = GVAR(nextWaveTimes);
 	private _hashWaveLenght = GVAR(waveLenghtTimes);
 	private _time = _hashWaitTime get _side;
 	private _waveLenghtTime = _hashWaveLenght get _side;
-	_skip = ((_time - cba_missiontime) < ((_waveLenghtTime * 60) * (GVAR(delayed_respawn) / 100)));
+	_skip = ((_time - cba_missiontime) < ((_waveLenghtTime * 60) * (GVAR(delayedRespawn) / 100)));
 };
 
 _unit setVariable [QGVAR(skipNextWave), _skip, true];

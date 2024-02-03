@@ -29,7 +29,7 @@ _remainingTickets = GVAR(tickets) get _side;
 if ( _remainingTickets > 0 ) then {
 	DEC(_remainingTickets);
 	private _sideSTR = str  _side;
-	AAR_UPDATE(_sideSTR,"Side tickets", _remainingTickets);
+	AAR_UPDATE(_sideSTR,"Side tickets",_remainingTickets);
 	GVAR(tickets) set [_side, _remainingTickets];
 	publicVariable QGVAR(tickets);
 	[5] remoteExecCall ["setPlayerRespawnTime", _player];

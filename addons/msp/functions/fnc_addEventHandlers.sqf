@@ -24,15 +24,15 @@
             [_vehicle, "InitPost", {
                 params ["_entity"];
 
-                AAR_UPDATE(_entity,"Is active MSP", false);
-                AAR_UPDATE(_entity,"Is contested", false);
-                AAR_UPDATE(_entity,"Enemies near", false);
-                AAR_UPDATE(_entity,"Report enemies radius", GVAR(reportEnemiesRange));
-                AAR_UPDATE(_entity,"Contested radius max", GVAR(contestedRadiusMax));
-                AAR_UPDATE(_entity,"Contested radius min", GVAR(contestedRadiusMin));
-                AAR_UPDATE(_entity,"Enemy Count", 0);
-                AAR_UPDATE(_entity,"Enemy Count Min", 0);
-                AAR_UPDATE(_entity,"Friendly Count", 0);
+                AAR_UPDATE(_entity,"Is active MSP",false);
+                AAR_UPDATE(_entity,"Is contested",false);
+                AAR_UPDATE(_entity,"Enemies near",false);
+                AAR_UPDATE(_entity,"Report enemies radius",GVAR(reportEnemiesRange));
+                AAR_UPDATE(_entity,"Contested radius max",GVAR(contestedRadiusMax));
+                AAR_UPDATE(_entity,"Contested radius min",GVAR(contestedRadiusMin));
+                AAR_UPDATE(_entity,"Enemy Count",0);
+                AAR_UPDATE(_entity,"Enemy Count Min",0);
+                AAR_UPDATE(_entity,"Friendly Count",0);
 
                 _entity setVariable [QGVAR(side), _side, true];
             }, true, [], true] call CBA_fnc_addClassEventHandler;
@@ -41,9 +41,9 @@
         private _mspLostEhCode = {
             params ["_unit"];
             private _side = _unit getVariable QGVAR(side);
-            AAR_UPDATE(_unit,"Is active MSP", "RIP");
-            AAR_UPDATE(_unit,"Is contested", "RIP");
-            AAR_UPDATE(_unit,"Enemies near", "RIP");
+            AAR_UPDATE(_unit,"Is active MSP","RIP");
+            AAR_UPDATE(_unit,"Is contested","RIP");
+            AAR_UPDATE(_unit,"Enemies near","RIP");
 
             if ( local _unit && { _unit getVariable [QGVAR(isMSP), false] } ) then {
                 {

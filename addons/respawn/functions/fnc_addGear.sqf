@@ -14,29 +14,29 @@
  */
 #include "script_component.hpp"
 if (isDedicated) exitWith { };
+params [["_unit", player, [objNull]]];
 
 switch (GVAR(gearscriptType)) do {
-	case "SQF Gearscript": {
-		private _gearScriptPath = player getVariable [QGVAR(GearPath), "Not set"];
+	case 0: {
+		private _gearScriptPath = _unit getVariable [QGVAR(GearPath), "Not set"];
 		if (_gearScriptPath isEqualTo "Not set") exitWith { hint "this unit is missing its gearscript path!"};
 
-		private  _role = player getVariable [QGVAR(Role), "Not Set"];
+		private  _role = _unit getVariable [QGVAR(Role), "Not Set"];
 		if (_role isEqualTo "Not set") exitWith { hint "Missing role variable !"};
 
-		[_role, player] call compile preprocessFileLineNumbers _gearScriptPath;
+		[_role, _unit] call compile preprocessFileLineNumbers _gearScriptPath;
 	};
-	case "Potato Tool": { 
-		[player] call potato_assignGear_fnc_assignGearMan;
+	case 1: { 
+		[_unit] call potato_assignGear_fnc_assignGearMan;
 	};
-	case "Save gear": { 
-		player setUnitLoadout GVAR(savedgear);
+	case 2: { 
+		_unit setUnitLoadout GVAR(savedGear);
 	};
-
 	default { };
 };
 
 if (isClass(configFile >> "CfgPatches" >> "tfar_core")) then {
-	[QGVAR(setTfarLRsettings_EH), [player]] call CBA_fnc_localEvent;
+	[QGVAR(setTfarLRsettings_EH), [_unit]] call CBA_fnc_localEvent;
 };
 
-[QGVAR(EH_GearAdded), [player]] call CBA_fnc_localEvent;
+[QGVAR(EH_GearAdded), [_unit]] call CBA_fnc_localEvent;

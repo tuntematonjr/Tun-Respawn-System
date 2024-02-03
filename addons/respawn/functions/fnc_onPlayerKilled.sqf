@@ -19,19 +19,20 @@ setPlayerRespawnTime 99999;
 ( "BIS_fnc_respawnSpectator" call BIS_fnc_rscLayer ) cutText [ "", "PLAIN" ];
 
 if (GVAR(endRespawns)) exitWith {
-	[{remoteExecCall [QFUNC(startSpectator), _this];}, _player, 5] call CBA_fnc_waitAndExecute;
+	[{
+		remoteExecCall [QFUNC(startSpectator), _this];
+	}, player, 5] call CBA_fnc_waitAndExecute;
 };
 
-switch (GVAR(respawn_type)) do {
-	case localize "STR_tunres_Respawn_Type_Sidetickets": {
-		[playerSide, player] remoteExecCall [QFUNC(bleedSideTicketCountOnDeath),2];
-	};
-
-	case localize "STR_tunres_Respawn_Type_Playertickets": {
-		[playerSide, player] remoteExecCall [QFUNC(bleedPlayerTicketCountOnDeath),2];
-	};
-
-	default {
+switch (GVAR(respawnType)) do {
+	case 0: {
 		setPlayerRespawnTime 5;
 	};
+	case 1: {
+		[playerSide, player] remoteExecCall [QFUNC(bleedSideTicketCountOnDeath),2];
+	};
+	case 2: {
+		[playerSide, player] remoteExecCall [QFUNC(bleedPlayerTicketCountOnDeath),2];
+	};
+	default {};
 };

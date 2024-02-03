@@ -18,17 +18,17 @@ if (playerSide isEqualTo sideLogic) exitWith { }; // Exit if a virtual entity (I
 private _text = "<font face='PuristaBold' size='20'>Respawn settings</font><br/>";
 
 if (GVAR(briefingEnableShowRespawnType)) then {
-	if ( GVAR(forced_respawn) ) then {
+	if ( GVAR(forcedRespawn) ) then {
 		_text = format ["%1<br/>%2",_text, localize "STR_tunres_Respawn_Briefing_onlyForcedWaves"];
 	};
-	switch (GVAR(respawn_type)) do {
-		case localize "STR_tunres_Respawn_Type_Sidetickets": { 
-			_text = format ["<br/>%1<br/>%2",_text, localize "STR_tunres_Respawn_Briefing_sidetickets"];	
-		};
-		case localize "STR_tunres_Respawn_Type_Default": { 
+	switch (GVAR(respawnType)) do {
+		case 0: { 
 			_text = format ["<br/>%1<br/>%2",_text, localize "STR_tunres_Respawn_Briefing_default"];
 		};
-		case localize "STR_tunres_Respawn_Type_Playertickets": { 
+		case 1: { 
+			_text = format ["<br/>%1<br/>%2",_text, localize "STR_tunres_Respawn_Briefing_sidetickets"];	
+		};
+		case 2: { 
 			_text = format ["<br/>%1<br/>%2",_text, localize "STR_tunres_Respawn_Briefing_playertickets"];
 		};
 		default { };
@@ -54,7 +54,7 @@ if (GVAR(briefingEnableShowTime)) then {
 		_text = format ["%1<br/>For Civilian is %2min",_text, _waveLenghtTimeHash get civilian];
 	};
 
-	private _delayedRespawn = GVAR(delayed_respawn);
+	private _delayedRespawn = GVAR(delayedRespawn);
 	if (_delayedRespawn > 0) then {
 		private _respawnTime = _waveLenghtTimeHash get playerSide;
 		_respawnTime = _respawnTime * 60;
@@ -67,22 +67,22 @@ if (GVAR(briefingEnableShowTime)) then {
 	};
 };
 
-if (GVAR(briefingEnableShowTickets) && { GVAR(respawn_type) isNotEqualTo localize "STR_tunres_Respawn_Type_Default"}) then {
+if (GVAR(briefingEnableShowTickets) && { GVAR(respawnType) isNotEqualTo 0}) then {
 	_text = format ["%1<br/><br/><font face='PuristaBold' size='15'>Tickets</font>",_text];
 	if (playerSide isEqualTo west || GVAR(briefingEnableShowOtherSidesDataWest)) then {
-		_text = format ["%1<br/>Ticket count: %2 (West)",_text, GVAR(tickets_west)];
+		_text = format ["%1<br/>Ticket count: %2 (West)",_text, GVAR(initialTicketsWest)];
 	};
 
 	if (playerSide isEqualTo east || GVAR(briefingEnableShowOtherSidesDataEast)) then {
-		_text = format ["%1<br/>Ticket count: %2 (East)",_text, GVAR(tickets_east)];
+		_text = format ["%1<br/>Ticket count: %2 (East)",_text, GVAR(initialTicketsEast)];
 	};
 
 	if (playerSide isEqualTo resistance || GVAR(briefingEnableShowOtherSidesDataResistance)) then {
-		_text = format ["%1<br/>Ticket count: %2 (Resistance)",_text, GVAR(tickets_guer)];
+		_text = format ["%1<br/>Ticket count: %2 (Resistance)",_text, GVAR(initialTicketsResistance)];
 	};
 
 	if (playerSide isEqualTo civilian || GVAR(briefingEnableShowOtherSidesDataCivilian)) then {
-		_text = format ["%1<br/>Ticket count: %2 (Civilian)",_text, GVAR(tickets_civ)];
+		_text = format ["%1<br/>Ticket count: %2 (Civilian)",_text, GVAR(initialTicketsCivilian)];
 	};
 	
 	if (GVAR(allowCheckTicketsBase)) then {
@@ -91,7 +91,7 @@ if (GVAR(briefingEnableShowTickets) && { GVAR(respawn_type) isNotEqualTo localiz
 };
 
 if (GVAR(killJIP)) then {
-	_text = format [localize "STR_tunres_Respawn_Briefing_killJipEnabled",_text, GVAR(killJIP_time)];
+	_text = format [localize "STR_tunres_Respawn_Briefing_killJipEnabled",_text, GVAR(killJipTime)];
 } else {
 	_text = format ["%1<br/><br/>%2",_text, localize "STR_tunres_Respawn_Briefing_killJipDisabled"];
 };

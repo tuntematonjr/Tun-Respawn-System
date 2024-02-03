@@ -17,7 +17,7 @@ params [["_side", nil, [west]]];
 
 if (!isServer) exitWith { };
 
-if (GVAR(forced_respawn)) exitWith { INFO("No timer, Only forced waves"); };
+if (GVAR(forcedRespawn)) exitWith { INFO("No timer, Only forced waves"); };
 
 private _hashWaitTime = GVAR(nextWaveTimes);
 private _hashWaveLenght = GVAR(waveLenghtTimes);

@@ -55,9 +55,9 @@ if ((isClass(configFile >> "CfgPatches" >> "ace_main"))) then {
 
 	private _Cameramodes = [];
 
-	if (GVAR(spectate_Cameramode_1st)) then { _Cameramodes pushBack 0; };
-	if (GVAR(spectate_Cameramode_3th)) then { _Cameramodes pushBack 1; };
-	if (GVAR(spectate_Cameramode_free)) then { _Cameramodes pushBack 2; };
+	if (GVAR(spectateCameramode1st)) then { _Cameramodes pushBack 0; };
+	if (GVAR(spectateCameramode3th)) then { _Cameramodes pushBack 1; };
+	if (GVAR(spectateCameramodeFree)) then { _Cameramodes pushBack 2; };
 
 	[_Cameramodes, []] call ace_spectator_fnc_updateCameraModes;
 } else {
@@ -65,8 +65,8 @@ if ((isClass(configFile >> "CfgPatches" >> "ace_main"))) then {
 	player,
 	 _allowed_sides,
 	 true,
-	 GVAR(spectate_Cameramode_free),
-	 GVAR(spectate_Cameramode_3th),
+	 GVAR(spectateCameramodeFree),
+	 GVAR(spectateCameramode3th),
 	 true,
 	 true,
 	 true,

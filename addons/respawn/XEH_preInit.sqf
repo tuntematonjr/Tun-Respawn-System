@@ -71,25 +71,25 @@ GVAR(selfTPmenuOpenObj) = objNull;
 ] call CBA_Settings_fnc_init;
 
 [
-    QGVAR(killJIP_time),
+    QGVAR(killJipTime),
     "SLIDER",
-    ["Kill JIP Time", localize "STR_tunres_Respawn_CBA_tooltip_killjip_time"],
+    ["Kill JIP Time", localize "STR_tunres_Respawn_CBA_tooltip_killJipTime"],
     [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_generic"],
     [1, 300, 20, 0],
     1,
     {
         params ["_value"];
-        GVAR(killJIP_time) = round _value;
+        GVAR(killJipTime) = round _value;
     },
     true
 ] call CBA_Settings_fnc_init;
 
 [
-    QGVAR(respawn_type),
+    QGVAR(respawnType),
     "LIST",
     ["Respawn Type", localize "STR_tunres_Respawn_CBA_tooltip_respawntypes"],
     [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_generic"],
-    [[localize "STR_tunres_Respawn_Type_Default", localize "STR_tunres_Respawn_Type_Sidetickets", localize "STR_tunres_Respawn_Type_Playertickets"], [localize "STR_tunres_Respawn_Type_Default", localize "STR_tunres_Respawn_Type_Sidetickets", localize "STR_tunres_Respawn_Type_Playertickets"], 0],
+    [[0, 1, 2], [localize "STR_tunres_Respawn_Type_Default", localize "STR_tunres_Respawn_Type_Sidetickets", localize "STR_tunres_Respawn_Type_Playertickets"], 0],
     1,
     {},
     true
@@ -100,14 +100,14 @@ GVAR(selfTPmenuOpenObj) = objNull;
     "LIST",
     ["Gearscript type", localize "STR_tunres_Respawn_CBA_tooltip_gearscript"],
     [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_generic"],
-    [["SQF Gearscript", "Potato Tool", "Save gear"], ["SQF Gearscript", "Potato Tool", "Save gear"], 0],
+    [[0, 1, 2, 3], ["SQF Gearscript", "Potato Tool", "Save gear", "None"], 3],
     1,
     {},
     true
 ] call CBA_Settings_fnc_init;
 
 [
-    QGVAR(forced_respawn),
+    QGVAR(forcedRespawn),
     "CHECKBOX",
     ["Only Forced Waves", localize "STR_tunres_Respawn_CBA_tooltip_forceRespawn"],
     [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_generic"],
@@ -118,36 +118,36 @@ GVAR(selfTPmenuOpenObj) = objNull;
 ] call CBA_Settings_fnc_init;
 
 [
-    QGVAR(delayed_respawn),
+    QGVAR(delayedRespawn),
     "SLIDER",
-    ["Delayed respawn", localize "STR_tunres_Respawn_CBA_tooltip_delayed_respawn"],
+    ["Delayed respawn", localize "STR_tunres_Respawn_CBA_tooltip_delayedRespawn"],
     [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_generic"],
     [0, 100, 0, 0],
     1,
     {
         params ["_value"];
-        GVAR(delayed_respawn) = round _value;
+        GVAR(delayedRespawn) = round _value;
     },
     true
 ] call CBA_Settings_fnc_init;
 
 [
-    QGVAR(waiting_area_range),
+    QGVAR(waitingAreaRange),
     "SLIDER",
-    ["Waiting Area Range", localize "STR_tunres_Respawn_CBA_tooltip_waiting_area_range"],
+    ["Waiting Area Range", localize "STR_tunres_Respawn_CBA_tooltip_waitingAreaRange"],
     [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_generic"],
     [30, 300, 100, 0],
     1,
     {
         params ["_value"];
-        GVAR(waiting_area_range) = round _value;
+        GVAR(waitingAreaRange) = round _value;
     },
     true
 ] call CBA_Settings_fnc_init;
 
 //Wave times
 [
-    QGVAR(time_west),
+    QGVAR(initialWaveTimeWest),
     "SLIDER",
     ["West", localize "STR_tunres_Respawn_CBA_tooltip_time"],
     [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_time"],
@@ -161,7 +161,7 @@ GVAR(selfTPmenuOpenObj) = objNull;
 ] call CBA_Settings_fnc_init;
 
 [
-    QGVAR(time_east),
+    QGVAR(initialWaveTimeEast),
     "SLIDER",
     ["East", localize "STR_tunres_Respawn_CBA_tooltip_time"],
     [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_time"],
@@ -175,7 +175,7 @@ GVAR(selfTPmenuOpenObj) = objNull;
 ] call CBA_Settings_fnc_init;
 
 [
-    QGVAR(time_guer),
+    QGVAR(initialWaveTimeResistance),
     "SLIDER",
     ["Resistance", localize "STR_tunres_Respawn_CBA_tooltip_time"],
     [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_time"],
@@ -189,7 +189,7 @@ GVAR(selfTPmenuOpenObj) = objNull;
 ] call CBA_Settings_fnc_init;
 
 [
-    QGVAR(time_civ),
+    QGVAR(initialWaveTimeCivilian),
     "SLIDER",
     ["Civilian", localize "STR_tunres_Respawn_CBA_tooltip_time"],
     [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_time"],
@@ -204,7 +204,7 @@ GVAR(selfTPmenuOpenObj) = objNull;
 
 //Spectator camera modes
 [
-    QGVAR(spectate_Cameramode_1st),
+    QGVAR(spectateCameramode1st),
     "CHECKBOX",
     ["1st", localize "STR_tunres_Respawn_CBA_tooltip_specta_modes"],
     [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_spectate_cameramode"],
@@ -215,7 +215,7 @@ GVAR(selfTPmenuOpenObj) = objNull;
 ] call CBA_Settings_fnc_init;
 
 [
-    QGVAR(spectate_Cameramode_3th),
+    QGVAR(spectateCameramode3th),
     "CHECKBOX",
     ["3th", localize "STR_tunres_Respawn_CBA_tooltip_specta_modes"],
     [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_spectate_cameramode"],
@@ -226,7 +226,7 @@ GVAR(selfTPmenuOpenObj) = objNull;
 ] call CBA_Settings_fnc_init;
 
 [
-    QGVAR(spectate_Cameramode_free),
+    QGVAR(spectateCameramodeFree),
     "CHECKBOX",
     ["Free", localize "STR_tunres_Respawn_CBA_tooltip_specta_modes"],
     [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_spectate_cameramode"],
@@ -238,7 +238,7 @@ GVAR(selfTPmenuOpenObj) = objNull;
 
 //Ticket count
 [
-    QGVAR(tickets_west),
+    QGVAR(initialTicketsWest),
     "SLIDER",
     ["West", localize "STR_tunres_Respawn_CBA_tooltip_ticket"],
     [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_ticketcount"],
@@ -252,7 +252,7 @@ GVAR(selfTPmenuOpenObj) = objNull;
 ] call CBA_Settings_fnc_init;
 
 [
-    QGVAR(tickets_east),
+    QGVAR(initialTicketsEast),
     "SLIDER",
     ["East", localize "STR_tunres_Respawn_CBA_tooltip_ticket"],
     [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_ticketcount"],
@@ -266,7 +266,7 @@ GVAR(selfTPmenuOpenObj) = objNull;
 ] call CBA_Settings_fnc_init;
 
 [
-    QGVAR(tickets_guer),
+    QGVAR(initialTicketsResistance),
     "SLIDER",
     ["Resistance", localize "STR_tunres_Respawn_CBA_tooltip_ticket"],
     [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_ticketcount"],
@@ -280,7 +280,7 @@ GVAR(selfTPmenuOpenObj) = objNull;
 ] call CBA_Settings_fnc_init;
 
 [
-    QGVAR(tickets_civ),
+    QGVAR(initialTicketsCivilian),
     "SLIDER",
     ["Civilian", localize "STR_tunres_Respawn_CBA_tooltip_ticket"],
     [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_ticketcount"],

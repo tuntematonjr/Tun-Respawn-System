@@ -9,8 +9,7 @@ ADDON
 if (playerSide isEqualTo sideLogic) exitWith { }; // Exit if a virtual entity (IE zeus)
 
 [{!isNull player }, {
-	
-	if (GVAR(gearscriptType) isEqualTo "Save gear") then {
+	if (GVAR(gearscriptType) isEqualTo 2) then {
 		[] call FUNC(savegear);
 	};
 

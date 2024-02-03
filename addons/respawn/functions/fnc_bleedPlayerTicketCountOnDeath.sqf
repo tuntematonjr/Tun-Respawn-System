@@ -27,7 +27,7 @@ if ( _remainingTickets > 0 ) then {
 		GVAR(disconnected_players) set [_uid, false];
 	} else {
 		DEC(_remainingTickets);
-		AAR_UPDATE(_player,"Player tickets", _remainingTickets);
+		AAR_UPDATE(_player,"Player tickets",_remainingTickets);
 		_hash set [_playerUID, _remainingTickets];
 	};
 	[5] remoteExecCall ["setPlayerRespawnTime", _player];

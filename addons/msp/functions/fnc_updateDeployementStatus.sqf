@@ -22,7 +22,7 @@ params [["_msp", objNull, [objNull]], ["_setup", nil, [false]]];
 private _side = _msp getVariable QGVAR(side);
 private _whoToNotify = [_side] call FUNC(whoToNotify);
 
-AAR_UPDATE(_msp,"Is active MSP", _setup);
+AAR_UPDATE(_msp,"Is active MSP",_setup);
 
 if (_setup) then {
 	

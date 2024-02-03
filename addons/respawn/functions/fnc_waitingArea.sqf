@@ -51,22 +51,22 @@ GVAR(firstMark) = true;
 	if (_remainingWaitTime >= 0 && { GVAR(allowRespawn) get _playerSide }) then {
 		_text = format ["<t color='#0800ff' size = '0.8'>%2<br />%1</t>", ([_remainingWaitTime] call CBA_fnc_formatElapsedTime), localize "STR_tunres_Respawn_FNC_remaining_time"];
 	} else {
-		if (player getvariable [QGVAR(isWaitingRespawn), true] && { !(GVAR(forced_respawn)) } && { !(GVAR(allowRespawn) get _playerSide) }) then {
+		if (player getvariable [QGVAR(isWaitingRespawn), true] && { !(GVAR(forcedRespawn)) } && { !(GVAR(allowRespawn) get _playerSide) }) then {
 			_text = format ["<t color='#0800ff' size = '0.8'>%1</t>", localize "STR_tunres_Respawn_FNC_RespawnDisabled"];
 		} else {
-			_text = format ["Something is vevy vevy wrong. time: %1 - allowRespawn: %2 - forced respawn: %3 ", _remainingWaitTime, GVAR(allowRespawn) get playerSid, GVAR(forced_respawn)];
+			_text = format ["Something is vevy vevy wrong. time: %1 - allowRespawn: %2 - forced respawn: %3 ", _remainingWaitTime, GVAR(allowRespawn) get playerSid, GVAR(forcedRespawn)];
 		};
 	};
 
 	private _usesTickets = false;
 	private "_tickets";
 	private "_ticketsTypeText";
-	if (GVAR(respawn_type) isEqualTo localize "STR_tunres_Respawn_Type_Sidetickets") then {
+	if (GVAR(respawnType) isEqualTo 1) then {
 		_tickets = GVAR(tickets) get _playerSide;
 		_ticketsTypeText = localize "STR_tunres_Respawan_RemainingTicketsSide";
 		_usesTickets = true;
 	} else {
-		if (GVAR(respawn_type) isEqualTo localize "STR_tunres_Respawn_Type_Playertickets") then {
+		if (GVAR(respawnType) isEqualTo 2) then {
 			_tickets = GVAR(tickets) get _playerSide;
 			_ticketsTypeText = localize "STR_tunres_Respawan_RemainingTicketsPlayer";
 			_usesTickets = true;
@@ -80,7 +80,7 @@ GVAR(firstMark) = true;
 	[_text,0,0,1,0] spawn BIS_fnc_dynamicText;
 
 	//make sure that player is still in area
-	private _waitingRange = GVAR(waiting_area_range);
+	private _waitingRange = GVAR(waitingAreaRange);
 	if !(player inArea [_respawnWaitingarea, _waitingRange, _waitingRange, 0, false]) then {
 		player setPos ([_respawnWaitingarea, (_waitingRange / 2)] call CBA_fnc_randPos);
 		"Get over here!" call CBA_fnc_notify;

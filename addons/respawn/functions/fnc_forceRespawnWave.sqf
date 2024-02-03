@@ -21,6 +21,6 @@ params [["_side", nil, [east]], ["_reset", false, [false]]];
 
 [_side, true] call FUNC(doRespawnWave);
 
-if (_reset && { !(GVAR(forced_respawn)) }) then {
+if (_reset && { !(GVAR(forcedRespawn)) }) then {
 	[_side] call FUNC(timer);
 };
