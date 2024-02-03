@@ -18,9 +18,11 @@ if (!isServer) then {};
 private _oldAllowRespawnStatus = GVAR(allowRespawn) get _side;
 GVAR(allowRespawn) set [_side, false];
 
+private _values = GVAR(contestValues) get _side;
+private _contestedRadiusMax = _values param [2];
+private _contestedRadiusMin = _values param [3];
+
 private _hash = GVAR(contestedCheckHash);
-private _countestedRangeMax = GVAR(contestedRadiusMax);
-private _countestedRangeMin = GVAR(contestedRadiusMin);
 private _allUnits = units west + units east + units resistance + units civilian;
 
 private _mspDeployementStatus = GVAR(deployementStatus) get _side;
@@ -42,10 +44,10 @@ if ( _mspDeployementStatus && { !(isNull _msp) } ) then {
 	} forEach _sidesToCheck;
 
 	private _pos = getpos _msp;
-	private _unitsInArea = _allunits inAreaArray [_pos, _countestedRangeMax, _countestedRangeMax, 0, false, (_countestedRangeMax/2)];
+	private _unitsInArea = _allunits inAreaArray [_pos, _contestedRadiusMax, _contestedRadiusMax, 0, false, (_contestedRadiusMax/2)];
 	private _enemiesInArea = _unitsInArea select {(side _x) in _enemySides};
 	private _friendliesInArea = (count _unitsInArea) - (count _enemiesInArea);
-	private _enemiesInAreaMin = count (_enemiesInArea inAreaArray [_pos, _countestedRangeMin, _countestedRangeMin, 0, false, (_countestedRangeMin/2)]);
+	private _enemiesInAreaMin = count (_enemiesInArea inAreaArray [_pos, _contestedRadiusMin, _contestedRadiusMin, 0, false, (_contestedRadiusMin/2)]);
 	_enemiesInArea = count _enemiesInArea;
 	_hash set [_side, [_enemiesInArea, _enemiesInAreaMin, _friendliesInArea]];
 	
@@ -65,7 +67,7 @@ if ( _mspDeployementStatus && { !(isNull _msp) } ) then {
 		publicVariable QGVAR(contestedStatus);
 		_msp setVariable [QGVAR(isContested), _isContested, true];
 		private _whoToNotify = [_side, GVAR(contestedNotification)] call FUNC(whoToNotify);
-		if (count _whoToNotify > 0 ) then {
+		if (_whoToNotify isNotEqualTo [] ) then {
 			if (_isContested) then {
 				[_side, false] call EFUNC(respawn,update_respawn_point);
 				(call compile (localize "STR_tunres_MSP_FNC_Contested_hint")) remoteExecCall ["CBA_fnc_notify", _whoToNotify];

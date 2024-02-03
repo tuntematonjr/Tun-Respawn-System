@@ -67,6 +67,7 @@ publicVariable QGVAR(activeVehicle);
 
 if (_setup) then {
 	[_side, true] remoteExecCall [QFUNC(contestedCheck), 2];
+	[_side, true] remoteExecCall [QFUNC(startContestedChecks), 2];
 } else {
 	GVAR(contestedStatus) set [_side, false];
 	publicVariable QGVAR(contestedStatus);

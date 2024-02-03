@@ -21,10 +21,12 @@ private _text = "<font face='PuristaBold' size='20'>MSP settings</font><br/>";
 
 if (isClass (configFile >> "CfgVehicles" >> _vehicle)) then {
 
+	private _values = GVAR(contestValues) get playerSide;
+	_values params ["_reportEnemiesInterval", "_reportEnemiesRange", "_contestedRadiusMax", "_contestedRadiusMin", "_contestedCheckInterval", "_reportEnemiesEnabled"];
 	_text = format ["%1<br/>%2",_text, localize "STR_tunres_Respawn_Briefing_MspEnabled"];
 
-	if (GVAR(reportEnemiesEnabled)) then {
-		_text = format [localize "STR_tunres_Respawn_Briefing_reportEnemiesEnabled",_text, GVAR(reportEnemiesInterval), GVAR(reportEnemiesRange)];
+	if (_reportEnemiesEnabled) then {
+		_text = format [localize "STR_tunres_Respawn_Briefing_reportEnemiesEnabled",_text, _reportEnemiesInterval, _reportEnemiesRange];
 	} else {
 		_text = format ["%1<br/> %2",_text, localize "STR_tunres_Respawn_Briefing_reportEnemiesDisabled"];
 	};
@@ -33,7 +35,7 @@ if (isClass (configFile >> "CfgVehicles" >> _vehicle)) then {
 		_text = format ["%1<br/>You can check remaining tickets from MSP (using ace actions).",_text];
 	};
 
-	_text = format [localize "STR_tunres_Respawn_Briefing_ContestedCheck",_text, GVAR(contestedCheckInterval), GVAR(contestedRadiusMax), GVAR(contestedRadiusMin)];
+	_text = format [localize "STR_tunres_Respawn_Briefing_ContestedCheck",_text, _contestedCheckInterval, _contestedRadiusMax, _contestedRadiusMin];
 	_text = format [localize "STR_tunres_Respawn_Briefing_MspVehicle",_text, getText (configFile >> "CfgVehicles" >> _vehicle >> "displayName")];
 } else {
 	_text = format ["%1<br/>%2",_text, localize "STR_tunres_Respawn_Briefing_MspDisabled"];

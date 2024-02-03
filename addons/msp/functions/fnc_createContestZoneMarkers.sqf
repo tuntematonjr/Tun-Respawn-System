@@ -18,22 +18,24 @@ if (playerSide isEqualTo sideLogic || !hasInterface) exitWith { };
 
 params[["_target", player]];
 
+private _values = GVAR(contestValues) get playerSide;
+private _reportEnemiesRange = _values param [1];
+private _contestedRadiusMax = _values param [2];
+private _contestedRadiusMin = _values param [3];
+
 openMap true;
 private _pos = getPos _target;
-private _reportEnemiesRange = GVAR(reportEnemiesRange);
-private _contestRangeMax = GVAR(contestedRadiusMax);
-private _contestRangeMin = GVAR(contestedRadiusMin);
-private _posMax = _pos getPos [_contestRangeMax, 100];
-private _posMin = _pos getPos [_contestRangeMin, 90];
+private _posMax = _pos getPos [_contestedRadiusMax, 100];
+private _posMin = _pos getPos [_contestedRadiusMin, 90];
 private _posReport= _pos getPos [_reportEnemiesRange, 80];
-[QGVAR(contestMarkerMapMax), _pos, "ELLIPSE", [_contestRangeMax, _contestRangeMax], "COLOR:", "ColorOrange"] call CBA_fnc_createMarker;
-[QGVAR(contestMarkerMapMaxText), _posMax, "ICON", [1,1], "TEXT:", format["Max Contest range (%1m)",_contestRangeMax], "COLOR:", "ColorOrange", "TYPE:", "hd_warning"] call CBA_fnc_createMarker;
+[QGVAR(contestMarkerMapMax), _pos, "ELLIPSE", [_contestedRadiusMax, _contestedRadiusMax], "COLOR:", "ColorOrange"] call CBA_fnc_createMarker;
+[QGVAR(contestMarkerMapMaxText), _posMax, "ICON", [1,1], "TEXT:", format["Max Contest range (%1m)",_contestedRadiusMax], "COLOR:", "ColorOrange", "TYPE:", "hd_warning"] call CBA_fnc_createMarker;
 
 [QGVAR(contestMarkerMapReport), _pos, "ELLIPSE", [_reportEnemiesRange, _reportEnemiesRange], "COLOR:", "colorOPFOR"] call CBA_fnc_createMarker;
 [QGVAR(contestMarkerMapReportText), _posReport, "ICON", [1,1],"TEXT:", format["Report enemies range (%1m)",_reportEnemiesRange], "COLOR:", "ColorYellow", "TYPE:", "hd_warning"] call CBA_fnc_createMarker;
 
-[QGVAR(contestMarkerMapMin), _pos, "ELLIPSE", [_contestRangeMin, _contestRangeMin], "COLOR:", "colorOPFOR"] call CBA_fnc_createMarker;
-[QGVAR(contestMarkerMapMinText), _posMin, "ICON", [1,1],"TEXT:", format["Min Contest range (%1m)",_contestRangeMin], "COLOR:", "ColorRed", "TYPE:", "hd_warning"] call CBA_fnc_createMarker;
+[QGVAR(contestMarkerMapMin), _pos, "ELLIPSE", [_contestedRadiusMin, _contestedRadiusMin], "COLOR:", "colorOPFOR"] call CBA_fnc_createMarker;
+[QGVAR(contestMarkerMapMinText), _posMin, "ICON", [1,1],"TEXT:", format["Min Contest range (%1m)",_contestedRadiusMin], "COLOR:", "ColorRed", "TYPE:", "hd_warning"] call CBA_fnc_createMarker;
 
 [QGVAR(contestMarkerMapMSPText), _pos, "ICON", [1,1],"TEXT:", "MSP", "TYPE:", "loc_Truck"] call CBA_fnc_createMarker;
 

@@ -8,6 +8,10 @@ PREP_RECOMPILE_END;
 //Msp classnames
 GVAR(classnames) = createHashMap;
 
+//reportEnemiesInterval 0 - reportEnemiesRange 1 - contestedRadiusMax 2 - contestedRadiusMin 3 - contestedCheckInterval 4 - reportEnemiesEnabled 5
+GVAR(contestValues) = createHashMapFromArray [[west,[0,0,0,0,0,false]],[east,[0,0,0,0,0,false]],[resistance,[0,0,0,0,0,false]],[civilian,[0,0,0,0,0,false]]];
+GVAR(contestHandles) = createHashMap;
+GVAR(contestCheckRunning) = createHashMapFromArray [[west,false],[east,false],[resistance,false],[civilian,false]];
 [
     QGVAR(enable),
     "CHECKBOX",
@@ -24,17 +28,6 @@ GVAR(classnames) = createHashMap;
     "CHECKBOX",
     [localize "STR_tunres_MSP_CBA_allowCheckTicketsMSP", localize "STR_tunres_Respawn_CBA_tooltip_CheckTickets"],
     localize "STR_tunres_MSP_CBA_Category_main",
-    false,
-    1,
-    {},
-    true
-] call CBA_Settings_fnc_init;
-
-[
-    QGVAR(reportEnemiesEnabled),
-    "CHECKBOX",
-    [localize "STR_tunres_MSP_CBA_reportEnemiesEnabled", localize "STR_tunres_MSP_CBA_tooltip_reportEnemiesEnabled"],
-    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contested"],
     true,
     1,
     {},
@@ -42,71 +35,425 @@ GVAR(classnames) = createHashMap;
 ] call CBA_Settings_fnc_init;
 
 [
-    QGVAR(reportEnemiesInterval),
-    "SLIDER",
-    [localize "STR_tunres_MSP_CBA_reportEnemiesIntervala", localize "STR_tunres_MSP_CBA_tooltip_reportEnemiesInterval"],
-    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contested"],
-    [1, 600, 30, 0],
+    QGVAR(reportEnemiesEnabledWest),
+    "CHECKBOX",
+    [(localize "STR_tunres_MSP_CBA_reportEnemiesEnabled") + " West", localize "STR_tunres_MSP_CBA_tooltip_reportEnemiesEnabled"],
+    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedWest"],
+    true,
     1,
     {
         params ["_value"];
-        GVAR(reportEnemiesInterval) = round _value;
+        private _array = GVAR(contestValues) get west;
+        _array set [5, _value];
+        GVAR(contestValues) set [west, _array];
     },
     true
 ] call CBA_Settings_fnc_init;
 
 [
-    QGVAR(reportEnemiesRange),
+    QGVAR(reportEnemiesEnabledEast),
+    "CHECKBOX",
+    [(localize "STR_tunres_MSP_CBA_reportEnemiesEnabled") + " East", localize "STR_tunres_MSP_CBA_tooltip_reportEnemiesEnabled"],
+    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedEast"],
+    true,
+    1,
+    {
+        params ["_value"];
+        private _array = GVAR(contestValues) get east;
+        _array set [5, _value];
+        GVAR(contestValues) set [east, _array];
+    },
+    true
+] call CBA_Settings_fnc_init;
+
+[
+    QGVAR(reportEnemiesEnabledResistance),
+    "CHECKBOX",
+    [(localize "STR_tunres_MSP_CBA_reportEnemiesEnabled") + " Resistance", localize "STR_tunres_MSP_CBA_tooltip_reportEnemiesEnabled"],
+    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedResistance"],
+    true,
+    1,
+    {
+        params ["_value"];
+        private _array = GVAR(contestValues) get resistance;
+        _array set [5, _value];
+        GVAR(contestValues) set [resistance, _array];
+    },
+    true
+] call CBA_Settings_fnc_init;
+
+[
+    QGVAR(reportEnemiesEnabledCivilian),
+    "CHECKBOX",
+    [(localize "STR_tunres_MSP_CBA_reportEnemiesEnabled" + " Civilian"), localize "STR_tunres_MSP_CBA_tooltip_reportEnemiesEnabled"],
+    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedCivilian"],
+    true,
+    1,
+    {
+        params ["_value"];
+        private _array = GVAR(contestValues) get civilian;
+        _array set [5, _value];
+        GVAR(contestValues) set [civilian, _array];
+    },
+    true
+] call CBA_Settings_fnc_init;
+
+[
+    QGVAR(reportEnemiesIntervalWest),
     "SLIDER",
-    [localize "STR_tunres_MSP_CBA_reportEnemiesRange", localize "STR_tunres_MSP_CBA_tooltip_reportEnemiesRange"],
-    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contested"],
+    [(localize "STR_tunres_MSP_CBA_reportEnemiesIntervala") + " West", localize "STR_tunres_MSP_CBA_tooltip_reportEnemiesInterval"],
+    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedWest"],
+    [1, 600, 60, 0],
+    1,
+    {
+        params ["_value"];
+        _value = round _value;
+        GVAR(reportEnemiesIntervalWest) = _value;
+        private _array = GVAR(contestValues) get west;
+        _array set [0, _value];
+        GVAR(contestValues) set [west, _array];
+    },
+    true
+] call CBA_Settings_fnc_init;
+
+[
+    QGVAR(reportEnemiesIntervalEast),
+    "SLIDER",
+    [(localize "STR_tunres_MSP_CBA_reportEnemiesIntervala") + " East", localize "STR_tunres_MSP_CBA_tooltip_reportEnemiesInterval"],
+    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedEast"],
+    [1, 600, 60, 0],
+    1,
+    {
+        params ["_value"];
+        _value = round _value;
+        GVAR(reportEnemiesIntervalEast) = _value;
+        private _array = GVAR(contestValues) get east;
+        _array set [0, _value];
+        GVAR(contestValues) set [east, _array];
+    },
+    true
+] call CBA_Settings_fnc_init;
+
+[
+    QGVAR(reportEnemiesIntervalResistance),
+    "SLIDER",
+    [(localize "STR_tunres_MSP_CBA_reportEnemiesIntervala") + " Resistance", localize "STR_tunres_MSP_CBA_tooltip_reportEnemiesInterval"],
+    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedResistance"],
+    [1, 600, 60, 0],
+    1,
+    {
+        params ["_value"];
+        _value = round _value;
+        GVAR(reportEnemiesIntervalResistance) = _value;
+        private _array = GVAR(contestValues) get resistance;
+        _array set [0, _value];
+        GVAR(contestValues) set [resistance, _array];
+    },
+    true
+] call CBA_Settings_fnc_init;
+
+[
+    QGVAR(reportEnemiesIntervalCivilian),
+    "SLIDER",
+    [(localize "STR_tunres_MSP_CBA_reportEnemiesIntervala") + " Civilian", localize "STR_tunres_MSP_CBA_tooltip_reportEnemiesInterval"],
+    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedCivilian"],
+    [1, 600, 60, 0],
+    1,
+    {
+        params ["_value"];
+        _value = round _value;
+        GVAR(reportEnemiesIntervalCivilian) = _value;
+        private _array = GVAR(contestValues) get civilian;
+        _array set [0, _value];
+        GVAR(contestValues) set [civilian, _array];
+    },
+    true
+] call CBA_Settings_fnc_init;
+
+[
+    QGVAR(reportEnemiesRangeWest),
+    "SLIDER",
+    [(localize "STR_tunres_MSP_CBA_reportEnemiesRange") + " West", localize "STR_tunres_MSP_CBA_tooltip_reportEnemiesRange"],
+    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedWest"],
     [0, 5000, 500, 0],
     1,
     {
         params ["_value"];
-        GVAR(reportEnemiesRange) = round _value;
+        _value = round _value;
+        GVAR(reportEnemiesRangeWest) = _value;
+        private _array = GVAR(contestValues) get west;
+        _array set [1, _value];
+        GVAR(contestValues) set [west, _array];
     },
     false
 ] call CBA_Settings_fnc_init;
 
 [
-    QGVAR(contestedRadiusMax),
+    QGVAR(reportEnemiesRangeEast),
     "SLIDER",
-    [localize "STR_tunres_MSP_CBA_contestedRadiusMax", localize "STR_tunres_MSP_CBA_tooltip_contested_max"],
-    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contested"],
+    [(localize "STR_tunres_MSP_CBA_reportEnemiesRange") + " East", localize "STR_tunres_MSP_CBA_tooltip_reportEnemiesRange"],
+    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedEast"],
+    [0, 5000, 500, 0],
+    1,
+    {
+        params ["_value"];
+        _value = round _value;
+        GVAR(reportEnemiesRangeEast) = _value;
+        private _array = GVAR(contestValues) get east;
+        _array set [1, _value];
+        GVAR(contestValues) set [east, _array];
+    },
+    false
+] call CBA_Settings_fnc_init;
+
+[
+    QGVAR(reportEnemiesRangeResistance),
+    "SLIDER",
+    [(localize "STR_tunres_MSP_CBA_reportEnemiesRange") + " Resistance", localize "STR_tunres_MSP_CBA_tooltip_reportEnemiesRange"],
+    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedResistance"],
+    [0, 5000, 500, 0],
+    1,
+    {
+        params ["_value"];
+        _value = round _value;
+        GVAR(reportEnemiesRangeResistance) = _value;
+        private _array = GVAR(contestValues) get resistance;
+        _array set [1, _value];
+        GVAR(contestValues) set [resistance, _array];
+    },
+    false
+] call CBA_Settings_fnc_init;
+
+[
+    QGVAR(reportEnemiesRangeCivilian),
+    "SLIDER",
+    [(localize "STR_tunres_MSP_CBA_reportEnemiesRange") + " Civilian", localize "STR_tunres_MSP_CBA_tooltip_reportEnemiesRange"],
+    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedCivilian"],
+    [0, 5000, 500, 0],
+    1,
+    {
+        params ["_value"];
+        _value = round _value;
+        GVAR(reportEnemiesRangeCivilian) = _value;
+        private _array = GVAR(contestValues) get civilian;
+        _array set [1, _value];
+        GVAR(contestValues) set [civilian, _array];
+    },
+    false
+] call CBA_Settings_fnc_init;
+
+[
+    QGVAR(contestedRadiusMaxWest),
+    "SLIDER",
+    [(localize "STR_tunres_MSP_CBA_contestedRadiusMax") + " West", localize "STR_tunres_MSP_CBA_tooltip_contested_max"],
+    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedWest"],
     [0, 3000, 500, 0],
     1,
     {
         params ["_value"];
-        GVAR(contestedRadiusMax) = round _value;
+        _value = round _value;
+        GVAR(contestedRadiusMaxWest) = _value;
+        private _array = GVAR(contestValues) get west;
+        _array set [2, _value];
+        GVAR(contestValues) set [west, _array];
     },
     false
 ] call CBA_Settings_fnc_init;
 
 [
-    QGVAR(contestedRadiusMin),
+    QGVAR(contestedRadiusMaxEast),
     "SLIDER",
-    [localize "STR_tunres_MSP_CBA_contestedRadiusMin", localize "STR_tunres_MSP_CBA_tooltip_contested_min"],
-    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contested"],
+    [(localize "STR_tunres_MSP_CBA_contestedRadiusMax") + " East", localize "STR_tunres_MSP_CBA_tooltip_contested_max"],
+    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedEast"],
+    [0, 3000, 500, 0],
+    1,
+    {
+        params ["_value"];
+        _value = round _value;
+        GVAR(contestedRadiusMaxEast) = _value;
+        private _array = GVAR(contestValues) get east;
+        _array set [2, _value];
+        GVAR(contestValues) set [east, _array];
+    },
+    false
+] call CBA_Settings_fnc_init;
+
+[
+    QGVAR(contestedRadiusMaxResistance),
+    "SLIDER",
+    [(localize "STR_tunres_MSP_CBA_contestedRadiusMax") + " Resistance", localize "STR_tunres_MSP_CBA_tooltip_contested_max"],
+    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedResistance"],
+    [0, 3000, 500, 0],
+    1,
+    {
+        params ["_value"];
+        _value = round _value;
+        GVAR(contestedRadiusMaxResistance) = _value;
+        private _array = GVAR(contestValues) get resistance;
+        _array set [2, _value];
+        GVAR(contestValues) set [resistance, _array];
+    },
+    false
+] call CBA_Settings_fnc_init;
+
+[
+    QGVAR(contestedRadiusMaxCivilian),
+    "SLIDER",
+    [(localize "STR_tunres_MSP_CBA_contestedRadiusMax") + " Civilian", localize "STR_tunres_MSP_CBA_tooltip_contested_max"],
+    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedCivilian"],
+    [0, 3000, 500, 0],
+    1,
+    {
+        params ["_value"];
+        _value = round _value;
+        GVAR(contestedRadiusMaxCivilian) = _value;
+        private _array = GVAR(contestValues) get civilian;
+        _array set [2, _value];
+        GVAR(contestValues) set [civilian, _array];
+    },
+    false
+] call CBA_Settings_fnc_init;
+
+[
+    QGVAR(contestedRadiusMinWest),
+    "SLIDER",
+    [(localize "STR_tunres_MSP_CBA_contestedRadiusMin") + " West", localize "STR_tunres_MSP_CBA_tooltip_contested_min"],
+    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedWest"],
     [0, 3000, 200, 0],
     1,
     {
         params ["_value"];
-        GVAR(contestedRadiusMin) = round _value;
+        _value = round _value;
+        GVAR(contestedRadiusMinWest) = _value;
+        private _array = GVAR(contestValues) get west;
+        _array set [3, _value];
+        GVAR(contestValues) set [west, _array];
     },
     false
 ] call CBA_Settings_fnc_init;
 
 [
-    QGVAR(contestedCheckInterval),
+    QGVAR(contestedRadiusMinEast),
     "SLIDER",
-    [localize "STR_tunres_MSP_CBA_contestedCheckInterval", localize "STR_tunres_MSP_CBA_tooltip_contestedCheckInterval"],
-    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contested"],
-    [1, 600, 30, 0],
+    [(localize "STR_tunres_MSP_CBA_contestedRadiusMin") + " East", localize "STR_tunres_MSP_CBA_tooltip_contested_min"],
+    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedEast"],
+    [0, 3000, 200, 0],
     1,
     {
         params ["_value"];
-        GVAR(contestedCheckInterval) = round _value;
+        _value = round _value;
+        GVAR(contestedRadiusMinEast) = _value;
+        private _array = GVAR(contestValues) get east;
+        _array set [3, _value];
+        GVAR(contestValues) set [east, _array];
+    },
+    false
+] call CBA_Settings_fnc_init;
+
+[
+    QGVAR(contestedRadiusMinResistance),
+    "SLIDER",
+    [(localize "STR_tunres_MSP_CBA_contestedRadiusMin") + " Resistance", localize "STR_tunres_MSP_CBA_tooltip_contested_min"],
+    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedResistance"],
+    [0, 3000, 200, 0],
+    1,
+    {
+        params ["_value"];
+        _value = round _value;
+        GVAR(contestedRadiusMinResistance) = _value;
+        private _array = GVAR(contestValues) get resistance;
+        _array set [3, _value];
+        GVAR(contestValues) set [resistance, _array];
+    },
+    false
+] call CBA_Settings_fnc_init;
+
+[
+    QGVAR(contestedRadiusMinCivilian),
+    "SLIDER",
+    [(localize "STR_tunres_MSP_CBA_contestedRadiusMin") + " Civilian", localize "STR_tunres_MSP_CBA_tooltip_contested_min"],
+    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedCivilian"],
+    [0, 3000, 200, 0],
+    1,
+    {
+        params ["_value"];
+        _value = round _value;
+        GVAR(contestedRadiusMinCivilian) = _value;
+        private _array = GVAR(contestValues) get civilian;
+        _array set [3, _value];
+        GVAR(contestValues) set [civilian, _array];
+    },
+    false
+] call CBA_Settings_fnc_init;
+
+[
+    QGVAR(contestedCheckIntervalWest),
+    "SLIDER",
+    [(localize "STR_tunres_MSP_CBA_contestedCheckInterval") + " West", localize "STR_tunres_MSP_CBA_tooltip_contestedCheckInterval"],
+    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedWest"],
+    [1, 600, 20, 0],
+    1,
+    {
+        params ["_value"];
+        _value = round _value;
+        GVAR(contestedCheckIntervalWest) = _value;
+        private _array = GVAR(contestValues) get west;
+        _array set [4, _value];
+        GVAR(contestValues) set [west, _array];
+    },
+    true
+] call CBA_Settings_fnc_init;
+
+[
+    QGVAR(contestedCheckIntervalEast),
+    "SLIDER",
+    [(localize "STR_tunres_MSP_CBA_contestedCheckInterval") + " East", localize "STR_tunres_MSP_CBA_tooltip_contestedCheckInterval"],
+    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedEast"],
+    [1, 600, 20, 0],
+    1,
+    {
+        params ["_value"];
+        _value = round _value;
+        GVAR(contestedCheckIntervalEast) = _value;
+        private _array = GVAR(contestValues) get east;
+        _array set [4, _value];
+        GVAR(contestValues) set [west, _array];
+    },
+    true
+] call CBA_Settings_fnc_init;
+
+[
+    QGVAR(contestedCheckIntervalResistance),
+    "SLIDER",
+    [(localize "STR_tunres_MSP_CBA_contestedCheckInterval") + " Resistance", localize "STR_tunres_MSP_CBA_tooltip_contestedCheckInterval"],
+    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedResistance"],
+    [1, 600, 20, 0],
+    1,
+    {
+        params ["_value"];
+        _value = round _value;
+        GVAR(contestedCheckIntervalResistance) = _value;
+        private _array = GVAR(contestValues) get resistance;
+        _array set [4, _value];
+        GVAR(contestValues) set [resistance, _array];
+    },
+    true
+] call CBA_Settings_fnc_init;
+
+[
+    QGVAR(contestedCheckIntervalCivilian),
+    "SLIDER",
+    [(localize "STR_tunres_MSP_CBA_contestedCheckInterval") + " Civilian", localize "STR_tunres_MSP_CBA_tooltip_contestedCheckInterval"],
+    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedCivilian"],
+    [1, 600, 20, 0],
+    1,
+    {
+        params ["_value"];
+        _value = round _value;
+        GVAR(contestedCheckIntervalCivilian) = _value;
+        private _array = GVAR(contestValues) get civilian;
+        _array set [4, _value];
+        GVAR(contestValues) set [civilian, _array];
     },
     true
 ] call CBA_Settings_fnc_init;

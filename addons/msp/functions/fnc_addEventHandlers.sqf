@@ -31,12 +31,17 @@
                     };
                 } forEach GVAR(classnames);
 
+                private _values = GVAR(contestValues) get _side;
+                private _reportEnemiesRange = _values param [1];
+                private _contestedRadiusMax = _values param [2];
+                private _contestedRadiusMin = _values param [3];
+                
                 AAR_UPDATE(_entity,"Is active MSP",false);
                 AAR_UPDATE(_entity,"Is contested",false);
                 AAR_UPDATE(_entity,"Enemies near",false);
-                AAR_UPDATE(_entity,"Report enemies radius",GVAR(reportEnemiesRange));
-                AAR_UPDATE(_entity,"Contested radius max",GVAR(contestedRadiusMax));
-                AAR_UPDATE(_entity,"Contested radius min",GVAR(contestedRadiusMin));
+                AAR_UPDATE(_entity,"Report enemies radius",_reportEnemiesRange);
+                AAR_UPDATE(_entity,"Contested radius max",_contestedRadiusMax);
+                AAR_UPDATE(_entity,"Contested radius min",_contestedRadiusMin);
                 AAR_UPDATE(_entity,"Enemy Count",0);
                 AAR_UPDATE(_entity,"Enemy Count Min",0);
                 AAR_UPDATE(_entity,"Friendly Count",0);
