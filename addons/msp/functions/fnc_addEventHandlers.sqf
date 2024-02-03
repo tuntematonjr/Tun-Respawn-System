@@ -23,6 +23,13 @@
         if (isServer) then {
             [_vehicle, "InitPost", {
                 params ["_entity"];
+                private _side = sideEmpty;
+                {
+                    if (_y isEqualTo (typeOf _entity)) then {
+                        _side = _x;
+                        break;
+                    };
+                } forEach GVAR(classnames);
 
                 AAR_UPDATE(_entity,"Is active MSP",false);
                 AAR_UPDATE(_entity,"Is contested",false);
