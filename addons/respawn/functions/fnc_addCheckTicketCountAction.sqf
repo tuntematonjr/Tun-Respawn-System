@@ -20,12 +20,12 @@ params [ ["_object", objNull, [objNull]],
 
 if (GVAR(respawnType) isEqualTo 0) exitWith {
 	LOG("Skip adding ticket check ace action, as we dont use tickets");
- };
+};
 
 if (_useAceAction) then {
-	private _action = ["CheckTickets", localize "STR_tunres_Respawn_CheckTickets","\a3\modules_f_curator\data\portraitmissionname_ca.paa",{ [playerSide] call FUNC(checkTicketCount); }, {true}, nil, nil, _offset] call ace_interact_menu_fnc_createAction;
+	private _action = ["CheckTickets", localize "STR_tunres_Respawn_CheckTickets","\a3\modules_f_curator\data\portraitmissionname_ca.paa",{ [] call FUNC(checkTicketCount); }, {true}, nil, nil, _offset] call ace_interact_menu_fnc_createAction;
 	[_object, 0, _parrenPath, _action] call ace_interact_menu_fnc_addActionToObject;
 
 } else {
-	_object addAction [localize "STR_tunres_Respawn_CheckTickets", { [playerSide] call FUNC(checkTicketCount) }, [], 10, true, true, "", "true", 10];
+	_object addAction [localize "STR_tunres_Respawn_CheckTickets", { [] call FUNC(checkTicketCount) }, [], 10, true, true, "", "true", 10];
 };

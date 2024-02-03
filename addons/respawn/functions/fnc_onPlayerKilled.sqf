@@ -24,15 +24,8 @@ if (GVAR(endRespawns)) exitWith {
 	}, player, 5] call CBA_fnc_waitAndExecute;
 };
 
-switch (GVAR(respawnType)) do {
-	case 0: {
-		setPlayerRespawnTime 5;
-	};
-	case 1: {
-		[playerSide, player] remoteExecCall [QFUNC(bleedSideTicketCountOnDeath),2];
-	};
-	case 2: {
-		[playerSide, player] remoteExecCall [QFUNC(bleedPlayerTicketCountOnDeath),2];
-	};
-	default {};
+if (GVAR(respawnType) isEqualTo 0) then {
+	setPlayerRespawnTime 5;
+} else {
+	[playerSide, player] remoteExecCall [QFUNC(bleedTicketCountOnDeath),2];
 };
