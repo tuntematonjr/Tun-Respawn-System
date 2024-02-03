@@ -15,5 +15,11 @@
 if (!isServer) exitWith { };
 params ["_side", "_count"];
 
-private _hash = GVAR(tickets);
-_hash set [_side, _count];
+if (GVAR(respawnType) isEqualTo 1) then {
+	GVAR(tickets) set [_side, _count];
+	publicVariable QGVAR(tickets);
+	breakWith true;
+} else {
+	ERROR("Tried to set side tickest, when not using side tickest");
+	breakWith false;
+};

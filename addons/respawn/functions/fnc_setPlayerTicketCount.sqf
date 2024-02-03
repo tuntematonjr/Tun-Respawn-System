@@ -15,6 +15,12 @@
 if (!isServer) exitWith { };
 params ["_player", "_count"];
 
-private _hash = GVAR(PlayerTicektsHash);
-private _playerUID = getPlayerUID _player;
-_hash set [_playerUID, _count];
+if (GVAR(respawnType) isEqualTo 2) then {
+	private _hash = GVAR(playerTicektsHash);
+	private _playerUID = getPlayerUID _player;
+	_hash set [_playerUID, _count];
+	breakWith true;
+} else {
+	ERROR("Tried to set player tickest, when not using player tickest");
+	breakWith false;
+};
