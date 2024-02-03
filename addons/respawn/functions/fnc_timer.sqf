@@ -21,12 +21,14 @@ if (GVAR(forcedRespawn)) exitWith { INFO("No timer, Only forced waves"); };
 
 private _hashWaitTime = GVAR(nextWaveTimes);
 private _hashWaveLenght = GVAR(waveLenghtTimes);
-private _time = (_hashWaitTime get _side) + (_hashWaveLenght get _side) * 60;
+private _time = round ((_hashWaitTime get _side) + (_hashWaveLenght get _side) * 60);
 
 _hashWaitTime set [_side, _time];
+publicVariable QGVAR(nextWaveTimes);
 
 if !( GVAR(timerRunning) getOrDefault [_side, false]) then {
 	GVAR(timerRunning) set [_side, true];
+	publicVariable QGVAR(timerRunning);
 	[{ _this params["_side"];
 		GVAR(allowRespawn) get _side && 
 		{ cba_missiontime >= GVAR(nextWaveTimes) get _side } 
@@ -37,6 +39,7 @@ if !( GVAR(timerRunning) getOrDefault [_side, false]) then {
 		};
 
 		GVAR(timerRunning) set [_side, false];
+		publicVariable QGVAR(timerRunning);
 		[_side] call FUNC(doRespawnWave);
 		[_side] call FUNC(timer);
 	}, [_side]] call CBA_fnc_waitUntilAndExecute;
