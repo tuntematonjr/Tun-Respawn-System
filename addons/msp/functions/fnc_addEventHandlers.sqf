@@ -68,7 +68,7 @@
                 publicVariable QGVAR(activeVehicle);
 
                 //Do marker update                
-                [_side, false] remoteExecCall ["tunres_respawn_fnc_update_respawn_point", 2];
+                [_side, false] remoteExecCall ["tunres_respawn_fnc_updateRespawnPoint", 2];
 
                 (localize "STR_tunres_MSP_destroyed") remoteExecCall ["CBA_fnc_notify", _side];
             };

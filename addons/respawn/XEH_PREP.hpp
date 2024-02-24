@@ -35,6 +35,6 @@ PREP(teleportButton);
 PREP(teleportOnLBSelChanged);
 PREP(teleportUnit);
 PREP(timer);
-PREP(update_respawn_point);
+PREP(updateRespawnPoint);
 PREP(updateWaitingRespawnList);
 PREP(waitingArea);

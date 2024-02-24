@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * [west, true] call tunres_respawn_fnc_update_respawn_point
+ * [west, true] call tunres_respawn_fnc_updateRespawnPoint
  */
 #include "script_component.hpp"
 

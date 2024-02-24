@@ -69,10 +69,10 @@ if ( _mspDeployementStatus && { !(isNull _msp) } ) then {
 		private _whoToNotify = [_side, GVAR(contestedNotification)] call FUNC(whoToNotify);
 		if (_whoToNotify isNotEqualTo [] ) then {
 			if (_isContested) then {
-				[_side, false] call EFUNC(respawn,update_respawn_point);
+				[_side, false] call EFUNC(respawn,updateRespawnPoint);
 				(call compile (localize "STR_tunres_MSP_FNC_Contested_hint")) remoteExecCall ["CBA_fnc_notify", _whoToNotify];
 			} else {
-				[_side, true, (getPos _msp) ] call EFUNC(respawn,update_respawn_point);
+				[_side, true, (getPos _msp) ] call EFUNC(respawn,updateRespawnPoint);
 				(call compile (localize "STR_tunres_MSP_FNC_secured_hint")) remoteExecCall ["CBA_fnc_notify", _whoToNotify];
 			};
 		};

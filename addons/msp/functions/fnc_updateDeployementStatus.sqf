@@ -57,7 +57,7 @@ if (_setup) then {
 
 private _pos = getpos _msp;
 
-[_side, _setup, _pos] remoteExecCall [QEFUNC(respawn,update_respawn_point), 2];
+[_side, _setup, _pos] remoteExecCall [QEFUNC(respawn,updateRespawnPoint), 2];
 
 _msp setVariable [QGVAR(isMSP), _setup, true];
 GVAR(deployementStatus) set [_side, _setup];
