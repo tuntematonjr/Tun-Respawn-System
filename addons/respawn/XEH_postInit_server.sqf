@@ -80,7 +80,6 @@ if ( !isnil "afi_aar2" ) then {
 					private _time = (_hashTime get civilian);
 					AAR_UPDATE("civ","Next respawn wave",_time);
 				};
-
 			}, 10] call CBA_fnc_addPerFrameHandler;
 		};
 	}] call CBA_fnc_waitUntilAndExecute;
