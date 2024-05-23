@@ -87,8 +87,15 @@ if (count _waitingRespawn > 0) then {
 
 	private _debugText = format ["Side %1 all respawn units moved. Respawned: %2. Total count is: %3", _side, _waitingRespawnCount, _totalRespawnCount]; 
 	INFO(_debugText);
-
+ 
 	[QGVAR(EH_respawnWave), [_side, _waitingRespawn]] call CBA_fnc_serverEvent;
+
+	if (GVAR(respawnType) isEqualTo 1) then {
+		AAR_EVENT(FORMAT_4(localize "STR_tunres_Respawn_AAR_RespawnWaveTickets",str _side,_waitingRespawnCount,_totalRespawnCount,[_side] call FUNC(getTicketCount)),_msp,nil,nil);
+	} else {
+		AAR_EVENT(FORMAT_3(localize "STR_tunres_Respawn_AAR_RespawnWave",str _side,_waitingRespawnCount,_totalRespawnCount),_msp,nil,nil);
+	};
+
 } else {
 	//No one at respawn
 	if (count _waitingRespawnDelayed > 0) then {

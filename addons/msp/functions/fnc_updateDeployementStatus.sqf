@@ -52,7 +52,7 @@ if (_setup) then {
 
 	//Unlock vehicle
 	[_msp, 0] remoteExecCall ["lock", _msp];
-	_msp = objNull;
+
 };
 
 private _pos = getpos _msp;
@@ -62,16 +62,16 @@ private _pos = getpos _msp;
 _msp setVariable [QGVAR(isMSP), _setup, true];
 GVAR(deployementStatus) set [_side, _setup];
 publicVariable QGVAR(deployementStatus);
-GVAR(activeVehicle) set [_side, _msp];
+GVAR(activeVehicle) set [_side, [objNull, _msp] select _setup];
 publicVariable QGVAR(activeVehicle);
 
-if (_setup) then {
-	[_side, true] remoteExecCall [QFUNC(contestedCheck), 2];
-	[_side, true] remoteExecCall [QFUNC(startContestedChecks), 2];
-} else {
+AAR_EVENT(FORMAT_1(localize ARG_1((ARR_2(["STR_tunres_MSP_AAR_MSP_Packed","STR_tunres_MSP_AAR_MSP_Deployed"])),_setup),str _side),_msp,player,nil);
+
+//Change deployement status
+if !(_setup) then {
 	GVAR(contestedStatus) set [_side, false];
 	publicVariable QGVAR(contestedStatus);
-	[_side, false] remoteExecCall [QFUNC(startContestedChecks), 2];
 };
 
+[_side, _setup] remoteExecCall [QFUNC(startContestedChecks), 2];
 [QGVAR(EH_mspStatusUpdate), [_msp, _setup]] call CBA_fnc_globalEvent;

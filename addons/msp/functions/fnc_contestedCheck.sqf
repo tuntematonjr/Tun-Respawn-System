@@ -10,11 +10,10 @@
  * Example:
  * [] call tunres_MSP_fnc_contestedCheck
  */
-// private _result = diag_codePerformance [{ 
 #include "script_component.hpp"
-params[["_side", nil,[west]],["_mspSetup", false]];
+params[["_side", nil,[west]]];
 
-if (!isServer) then {};
+if (!isServer) exitWith {};
 private _oldAllowRespawnStatus = GVAR(allowRespawn) get _side;
 GVAR(allowRespawn) set [_side, false];
 
@@ -55,17 +54,23 @@ if ( _mspDeployementStatus && { !(isNull _msp) } ) then {
 	if (_enemiesInAreaMin > 0 || _enemiesInArea > _friendliesInArea) then {
 		_isContested = true;
 	};
+
 	AAR_UPDATE(_msp,"Enemy Count",_enemiesInArea);
 	AAR_UPDATE(_msp,"Enemy Count Min",_enemiesInAreaMin);
 	AAR_UPDATE(_msp,"Friendly Count",_friendliesInArea);
 	AAR_UPDATE(_msp,"Is contested",_isContested);
 
 	private _oldContestedStatus = GVAR(contestedStatus) get _side;
+
 	if (_oldContestedStatus isNotEqualTo _isContested) then {
+
+		AAR_EVENT(FORMAT_1(localize ARG_1(ARR_2(["STR_tunres_MSP_AAR_MSP_notContested","STR_tunres_MSP_AAR_MSP_isContested"]),_isContested),str _side),_msp,nil,nil);
 		AAR_UPDATE(_msp,"Is contested",_isContested);
+
 		GVAR(contestedStatus) set [_side, _isContested];
 		publicVariable QGVAR(contestedStatus);
 		_msp setVariable [QGVAR(isContested), _isContested, true];
+
 		private _whoToNotify = [_side, GVAR(contestedNotification)] call FUNC(whoToNotify);
 		if (_whoToNotify isNotEqualTo [] ) then {
 			if (_isContested) then {
@@ -77,8 +82,8 @@ if ( _mspDeployementStatus && { !(isNull _msp) } ) then {
 			};
 		};
 	};
-	[QGVAR(EH_mspStatusUpdate), [_side, _isContested, _oldContestedStatus, _enemiesInArea, _enemiesInAreaMin, _friendliesInArea,  _mspSetup]] call CBA_fnc_globalEvent;
-	private _debugText = format ["Contested summary. Side: %1, NewStatus: %2, OldStatus: %3, enemyCount: %4, enemyCountMin: %5, FriendlyCount: %6, Was MSP setup: %7",_side, _isContested, _oldContestedStatus, _enemiesInArea, _enemiesInAreaMin, _friendliesInArea,  _mspSetup];
+	[QGVAR(EH_mspStatusUpdate), [_side, _isContested, _oldContestedStatus, _enemiesInArea, _enemiesInAreaMin, _friendliesInArea]] call CBA_fnc_globalEvent;
+	private _debugText = format ["Contested summary. Side: %1, NewStatus: %2, OldStatus: %3, enemyCount: %4, enemyCountMin: %5, FriendlyCount: %6",_side, _isContested, _oldContestedStatus, _enemiesInArea, _enemiesInAreaMin, _friendliesInArea];
 	LOG(_debugText);
 } else {
 	if (_mspDeployementStatus) then {
