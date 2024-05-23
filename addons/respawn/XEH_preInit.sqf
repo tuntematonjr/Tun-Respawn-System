@@ -5,7 +5,7 @@ PREP_RECOMPILE_START;
 #include "XEH_PREP.hpp"
 PREP_RECOMPILE_END;
 
-private _waitingRespawnEmptyArray= [[west,[]],[east,[]],[resistance,[]],[civilian,[]]];
+private _waitingRespawnEmptyArray = [[west,[]],[east,[]],[resistance,[]],[civilian,[]]];
 private _waitTimesPreArray = [[west,0],[east,0],[resistance,0],[civilian,0]];
 private _emptyFalseArray = [[west,false],[east,false],[resistance,false],[civilian,false]];
 private _emptyTrueArray = [[west,true],[east,true],[resistance,true],[civilian,true]];
@@ -46,9 +46,13 @@ GVAR(allowedSpectateSidesEast) = [east];
 GVAR(allowedSpectateSidesResistance) = [resistance];
 GVAR(allowedSpectateSidesCivilian) = [civilian];
 
-ISNILS(GVAR(endRespawns),false);
+//flag poles [mainbase,waitingrea]
+GVAR(flagPoles) = createHashMapFromArray [[west,[objNull,objNull]],[east,[objNull,objNull]],[resistance,[objNull,objNull]],[civilian,[objNull,objNull]]];
 
+
+ISNILS(GVAR(endRespawns),false);
 GVAR(selfTPmenuOpenObj) = objNull;
+
 
 [
     QGVAR(enable), // Unique setting name. Matches resulting variable name <STRING>
