@@ -130,6 +130,50 @@
                 <English>Allow this side to be spectated</English>
                 <Original>Allow this side to be spectated</Original>
             </Key>
+            <Key ID="STR_tunres_MSP_AAR_MSP_Deployed">
+                <English>__%1__ deployed MSP by __inst__.</English>
+                <Original>__%1__ deployed MSP by __inst__.</Original>
+            </Key>
+            <Key ID="STR_tunres_MSP_AAR_MSP_Packed">
+                <English>__%1__ packed MSP by __inst__.</English>
+                <Original>__%1__ packed MSP by __inst__.</Original>
+            </Key>
+            <Key ID="STR_tunres_MSP_AAR_MSP_isContested">
+                <English>__%1__ MSP is contested</English>
+                <Original>__%1__ MSP is contested</Original>
+            </Key>
+            <Key ID="STR_tunres_MSP_AAR_MSP_notContested">
+                <English>__%1__ MSP is no longer contested</English>
+                <Original>__%1__ MSP is no longer contested</Original>
+            </Key>
+            <Key ID="STR_tunres_Respawn_AAR_RespawnWave">
+                <English>Respawn wave for __%1__. %2 units respawned. Total respawn count is %3</English>
+                <Original>Respawn wave for __%1__. %2 units respawned. Total respawn count is %3</Original>
+            </Key>
+            <Key ID="STR_tunres_Respawn_AAR_RespawnWaveTickets">
+                <English>Respawn wave for __%1__. %2 units respawned. Total respawn count is %3 and tickets left %4</English>
+                <Original>Respawn wave for __%1__. %2 units respawned. Total respawn count is %3 and tickets left %4</Original>
+            </Key>
+            <Key ID="STR_tunres_MSP_DeployementAborted">
+                <English>MSP deployement aborted!</English>
+                <Original>MSP deployement aborted!</Original>
+            </Key>
+            <Key ID="STR_tunres_MSP_checkIfMSPContested">
+                <English>MSP contest status: %1</English>
+                <Original>MSP contest status: %1</Original>
+            </Key>
+            <Key ID="STR_tunres_Respawn_RespawnPoint">
+                <English>Respawn point</English>
+                <Original>Respawn point</Original>
+            </Key>
+            <Key ID="STR_tunres_Respawn_MainBase">
+                <English>Main base</English>
+                <Original>Main base</Original>
+            </Key>
+            <Key ID="STR_tunres_Respawn_Module_tooltip_flagTexture">
+                <English>To use custom texture, give path to it in non string format. If left empty or invalid paht, uses default side color</English>
+                <Original>To use custom texture, give path to it in non string format. If left empty or invalid paht, uses default side color</Original>
+            </Key>
         </Container>
         <Container name="FNC">
             <Key ID="STR_tunres_Respawn_FNC_remaining_time">
@@ -253,8 +297,8 @@
                 <English>Waiting area module do not have side set</English>
             </Key>
             <Key ID="STR_tunres_Respawn_Module_DisplayName_WaitingArea">
-                <Original>Respawn Waiting Area</Original>
-                <English>Respawn Waiting Area</English>
+                <Original>Waiting Area</Original>
+                <English>Waiting Area</English>
             </Key>
             <Key ID="STR_tunres_Respawn_Module_Description_Waitingarea">
                 <Original>Put this module where you want respawn waiting area to be for this side.</Original>
@@ -412,17 +456,13 @@
                 <Original>Progress Bar</Original>
                 <English>Progress Bar</English>
             </Key>
-            <Key ID="STR_tunres_MSP_CBA_tooltip_setup_progresbar">
-                <Original>Time that it takes to setup MSP (seconds)</Original>
-                <English>Setup Time</English>
-            </Key>
             <Key ID="STR_tunres_MSP_CBA_pack_progresbar">
-                <Original>Packing Time</Original>
-                <English>Packing Time</English>
+                <Original>Pack time</Original>
+                <English>Pack time</English>
             </Key>
             <Key ID="STR_tunres_MSP_CBA_setup_progresbar">
-                <Original>Setup Time</Original>
-                <English>Setup Time</English>
+                <Original>Deploy time</Original>
+                <English>Deploy time</English>
             </Key>
             <Key ID="STR_tunres_MSP_CBA_tooltip_setup_ProgressBar">
                 <Original>Time that it takes to deploy MSP (seconds)</Original>
@@ -575,8 +615,8 @@
         </Container>
         <Container name="Notifications">
             <Key ID="STR_tunres_MSP_CBA_whoGetsSetUpNotification">
-                <Original>Who gets notification from MSP setup/pack?</Original>
-                <English>Who gets notification from MSP setup/pack?</English>
+                <Original>Who gets notification from MSP deploy/pack?</Original>
+                <English>Who gets notification from MSP deploy/pack?</English>
             </Key>
             <Key ID="STR_tunres_MSP_CBA_whoGetsContestedNotification">
                 <Original>Who gets notification when MSP contested?</Original>
