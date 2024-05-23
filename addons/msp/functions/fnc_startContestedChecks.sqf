@@ -29,20 +29,22 @@ if (_start) then {
     private _reportEnemiesEnabled = _values param [5];
 
     private _handleContest = [{
+        params["_side"];
         if !(GVAR(disableContestedCheck)) then {
             private _mspDeployementStatus = GVAR(deployementStatus) get _side;
             if (_mspDeployementStatus) then {
-                [_args] call FUNC(contestedCheck);
+                [_side] call FUNC(contestedCheck);
             } else {
                 ERROR("Tried to run contested check, while msp was not deployed!!");
             };
         };
-    }, _contestedCheckInterval, [_side]] call CBA_fnc_addPerFrameHandler;
+    }, _contestedCheckInterval, _side] call CBA_fnc_addPerFrameHandler;
 
     //Report enemies loop thing
     private _handleReport = nil;
     if (_reportEnemiesEnabled) then {
         _handleReport = [{
+            params["_side"];
             //So that this does not run, when contest update is offline
             if !(GVAR(disableContestedCheck)) then {
                 private _side = _args;
@@ -61,7 +63,7 @@ if (_start) then {
                     ERROR("Tried to run report enemies, while msp was not deployed!!");
                 };
             };
-        }, _reportEnemiesInterval, [_side]] call CBA_fnc_addPerFrameHandler;
+        }, _reportEnemiesInterval, _side] call CBA_fnc_addPerFrameHandler;
     };
     GVAR(contestHandles) set [_side,[_handleContest,_handleReport]];
 } else {
@@ -72,8 +74,9 @@ if (_start) then {
 
     private _values = GVAR(contestHandles) get _side;
     {
-        if (!isNil _x) then {
-            [_x] call CBA_fnc_removePerFrameHandler;
+        private _handle = _x;
+        if (!isNil {_handle}) then {
+            [_handle] call CBA_fnc_removePerFrameHandler;
         };
     } forEach _values;
 };
