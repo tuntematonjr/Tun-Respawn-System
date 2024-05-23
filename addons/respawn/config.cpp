@@ -4,7 +4,7 @@
 class CfgPatches {
     class ADDON {
         name = COMPONENT_NAME;
-        units[] = {QGVAR(Module_waitingarea), QGVAR(Module_Respawn_point), QGVAR(tunres_Respawn_Module_teleportPoint)};
+        units[] = {QGVAR(moduleWaitingArea), QGVAR(moduleRespawnPoint), QGVAR(moduleTeleportPoint)};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {"tunres_main","A3_Modules_F","3DEN","ace_interaction","ace_interact_menu"};
