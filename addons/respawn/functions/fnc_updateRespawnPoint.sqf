@@ -4,7 +4,7 @@
  *
  * Arguments:
  * 0: Side <SIDE>
- * 1: False: Rertur to original pos. True: Update to new given pos <BOOL> (default: false)
+ * 1: False: Return to original pos. True: Update to new given pos <BOOL> (default: false)
  * 2: New position <ARRAY> (default: [0,0,0])
  *
  * Return Value:
@@ -30,5 +30,5 @@ if (_newPos isEqualTo [0,0,0] || !_update) then {
 
 _marker setMarkerPos _newPos;
 
-//Forsce players to update markers
-[] remoteExecCall [QFUNC(marker_update), -2, false];
+//Force players to update markers
+[] remoteExecCall [QFUNC(updateRespawnMarkers), _side, false];

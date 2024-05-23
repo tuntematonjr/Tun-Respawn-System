@@ -12,6 +12,7 @@ GVAR(classnames) = createHashMap;
 GVAR(contestValues) = createHashMapFromArray [[west,[0,0,0,0,0,false]],[east,[0,0,0,0,0,false]],[resistance,[0,0,0,0,0,false]],[civilian,[0,0,0,0,0,false]]];
 GVAR(contestHandles) = createHashMap;
 GVAR(contestCheckRunning) = createHashMapFromArray [[west,false],[east,false],[resistance,false],[civilian,false]];
+
 [
     QGVAR(enable),
     "CHECKBOX",
@@ -461,7 +462,7 @@ GVAR(contestCheckRunning) = createHashMapFromArray [[west,false],[east,false],[r
 [
     QGVAR(progresbarTimeSetup),
     "SLIDER",
-    [localize "STR_tunres_MSP_CBA_setup_progresbar", localize "STR_tunres_MSP_CBA_tooltip_setup_progresbar"],
+    [localize "STR_tunres_MSP_CBA_setup_progresbar", localize "STR_tunres_MSP_CBA_tooltip_setup_ProgressBar"],
     [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_progres"],
     [0, 60, 5, 0],
     1,

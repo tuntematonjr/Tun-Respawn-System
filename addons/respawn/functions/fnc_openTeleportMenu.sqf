@@ -15,7 +15,7 @@
 params ["_target"];
 createDialog "TP_Dialog";
 
-[] call FUNC(marker_update);
+[] call FUNC(updateRespawnMarkers);
 
 private _listIDC = 300001;
 

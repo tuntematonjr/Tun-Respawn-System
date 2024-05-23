@@ -3,6 +3,8 @@
 [{!isNull player  &&
 ADDON
 }, {
-	[] call FUNC(briefingNotes);
-	[] call FUNC(addAceActions);
+	if (GVAR(enable)) then {
+		[] call FUNC(briefingNotes);
+		[] call FUNC(addAceActions);
+	};
 }] call CBA_fnc_waitUntilAndExecute;

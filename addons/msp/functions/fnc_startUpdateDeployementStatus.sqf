@@ -19,12 +19,13 @@ params ["_target", "_setup"];
 private ["_text", "_time", "_conditio"];
 
 if (_setup) then {
-    [_target] call FUNC(createContestZoneMarkers);
+    [_target] call FUNC(checkContestZoneArea);
     _text = localize "STR_tunres_MSP_fnc_startUpdateDeployementStatus_setting";
     _conditio = {
                     private _msp = (_args select 0);
                     driver _msp isEqualTo player &&
                     alive _msp &&
+                    insideBuilding player isEqualTo 0 &&
                     !(GVAR(deployementStatus) get playerSide)
                 };
     _time = GVAR(progresbarTimeSetup);
@@ -32,7 +33,6 @@ if (_setup) then {
     _text = localize "STR_tunres_MSP_fnc_startUpdateDeployementStatus_packing";
     _conditio = {
                     private _msp = (_args select 0);
-                    driver _msp isEqualTo player &&
                     alive _msp &&
                     (GVAR(deployementStatus) get playerSide)
                 };
@@ -44,4 +44,4 @@ private _code = {
                     openMap false;
                 };
 
-[_time, [_target, _setup], _code, {hint "Aborted!";}, _text, _conditio, ["notOnMap","isnotinside"]] call ace_common_fnc_progressBar;
+[_time, [_target, _setup], _code, {(localize "STR_tunres_MSP_DeployementAborted") call CBA_fnc_notify}, _text, _conditio, ["notOnMap","isnotinside"]] call ace_common_fnc_progressBar;

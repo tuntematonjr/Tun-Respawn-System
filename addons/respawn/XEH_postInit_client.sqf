@@ -3,7 +3,9 @@
 [{!isNull player  &&
 ADDON
 }, {
-	[] call FUNC(briefingNotes);
+	if (GVAR(enable)) then {
+		[] call FUNC(briefingNotes);
+	};
 }] call CBA_fnc_waitUntilAndExecute;
 
 if (playerSide isEqualTo sideLogic) exitWith { }; // Exit if a virtual entity (IE zeus)
@@ -48,9 +50,9 @@ if (playerSide isEqualTo sideLogic) exitWith { }; // Exit if a virtual entity (I
 
 addMissionEventHandler ["Map", {
 	params ["_mapIsOpened", "_mapIsForced"];
-	[] call FUNC(marker_update);
+	[] call FUNC(updateRespawnMarkers);
 }];
 
 [] call FUNC(killJIP);
-[] call FUNC(marker_update);
+[] call FUNC(updateRespawnMarkers);
 [] call FUNC(radioSettings_tfar);
