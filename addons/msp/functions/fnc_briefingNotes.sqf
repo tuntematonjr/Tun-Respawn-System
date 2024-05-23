@@ -49,3 +49,11 @@ if !(player diarySubjectExists "Respawn info") then {
 };
 
 player createDiaryRecord ["Respawn info",["MSP info", _text]];
+
+player createDiaryRecord ["Respawn info",["MSP check contest area",
+"After enabling, you can click on map and it will create area markers.
+<br/><br/><font size=20><execute expression=' [true] call "+QFUNC(checkContestZoneMarkersBriefing)+"'> Enable contest area check.</execute></font>
+<br/><br/><font size=20><execute expression=' [false] call "+QFUNC(checkContestZoneMarkersBriefing)+"'> Disable contest area check.</execute></font>
+
+"
+]];

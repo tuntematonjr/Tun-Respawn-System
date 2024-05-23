@@ -16,40 +16,40 @@
 
 if (playerSide isEqualTo sideLogic || !hasInterface) exitWith { }; 
 
-params[["_target", player]];
+params["_pos"];
 
 private _values = GVAR(contestValues) get playerSide;
 private _reportEnemiesRange = _values param [1];
 private _contestedRadiusMax = _values param [2];
 private _contestedRadiusMin = _values param [3];
 
-openMap true;
-private _pos = getPos _target;
 private _posMax = _pos getPos [_contestedRadiusMax, 100];
 private _posMin = _pos getPos [_contestedRadiusMin, 90];
-private _posReport= _pos getPos [_reportEnemiesRange, 80];
-[QGVAR(contestMarkerMapMax), _pos, "ELLIPSE", [_contestedRadiusMax, _contestedRadiusMax], "COLOR:", "ColorOrange"] call CBA_fnc_createMarker;
-[QGVAR(contestMarkerMapMaxText), _posMax, "ICON", [1,1], "TEXT:", format["Max Contest range (%1m)",_contestedRadiusMax], "COLOR:", "ColorOrange", "TYPE:", "hd_warning"] call CBA_fnc_createMarker;
-
-[QGVAR(contestMarkerMapReport), _pos, "ELLIPSE", [_reportEnemiesRange, _reportEnemiesRange], "COLOR:", "colorOPFOR"] call CBA_fnc_createMarker;
-[QGVAR(contestMarkerMapReportText), _posReport, "ICON", [1,1],"TEXT:", format["Report enemies range (%1m)",_reportEnemiesRange], "COLOR:", "ColorYellow", "TYPE:", "hd_warning"] call CBA_fnc_createMarker;
-
-[QGVAR(contestMarkerMapMin), _pos, "ELLIPSE", [_contestedRadiusMin, _contestedRadiusMin], "COLOR:", "colorOPFOR"] call CBA_fnc_createMarker;
-[QGVAR(contestMarkerMapMinText), _posMin, "ICON", [1,1],"TEXT:", format["Min Contest range (%1m)",_contestedRadiusMin], "COLOR:", "ColorRed", "TYPE:", "hd_warning"] call CBA_fnc_createMarker;
-
-[QGVAR(contestMarkerMapMSPText), _pos, "ICON", [1,1],"TEXT:", "MSP", "TYPE:", "loc_Truck"] call CBA_fnc_createMarker;
+private _posReport = _pos getPos [_reportEnemiesRange, 80];
 
 
-GVAR(contestMarkerMapEH) = addMissionEventHandler ["Map", {
-	params ["_mapIsOpened", "_mapIsForced"];
-	if !(_mapIsOpened) then {
-    	removeMissionEventHandler ["Map", GVAR(contestMarkerMapEH)];
-		deleteMarkerLocal QGVAR(contestMarkerMapMax);
-		deleteMarkerLocal QGVAR(contestMarkerMapMin);
-		deleteMarkerLocal QGVAR(contestMarkerMapMinText);
-		deleteMarkerLocal QGVAR(contestMarkerMapMaxText);
-		deleteMarkerLocal QGVAR(contestMarkerMapReport);
-		deleteMarkerLocal QGVAR(contestMarkerMapReportText);
-		deleteMarkerLocal QGVAR(contestMarkerMapMSPText);
-	};
-}]
+// * 0: Marker name <STRING>
+// * 1: Position <ARRAY>
+// * 2: Marker text <STRING>
+// * 3: Icon/brush <STRING> https://community.bistudio.com/wiki/setMarkerBrushLocal  https://community.bistudio.com/wiki/setMarkerTypeLocal
+// * 4: Color <STRING>
+// * 5: Alpha <Number> 
+// * 6: Priority <Number> 
+// * 7: Shape <STRING> (Default: "ICON") "ICON", "RECTANGLE", "ELLIPSE", "POLYLINE" 
+// * 8: Size [a-axis, b-axis] <ARRAY> 
+// * 9: Direction <Number> 
+
+
+[QGVAR(contestMarkerMapMax), _pos, nil, "Solid", "ColorOrange", 0.75, -2, "ELLIPSE", [_contestedRadiusMax, _contestedRadiusMax]] call EFUNC(respawn,createLocalMarker);
+
+[QGVAR(contestMarkerMapMaxText), _posMax, format["Max Contest range (%1m)",_contestedRadiusMax], "hd_warning", "ColorOrange", 1, 110] call EFUNC(respawn,createLocalMarker);
+
+[QGVAR(contestMarkerMapReport), _pos, nil, "Solid", "ColorYellow", 0.75, -3, "ELLIPSE",  [_reportEnemiesRange, _reportEnemiesRange]] call EFUNC(respawn,createLocalMarker);
+
+[QGVAR(contestMarkerMapReportText), _posReport, format["Report enemies range (%1m)",_reportEnemiesRange], "hd_warning", "ColorYellow", 1, 110] call EFUNC(respawn,createLocalMarker);
+
+[QGVAR(contestMarkerMapMin), _pos, nil, "Solid", "colorOPFOR", 0.75, -1, "ELLIPSE",  [_contestedRadiusMin, _contestedRadiusMin]] call EFUNC(respawn,createLocalMarker);
+
+[QGVAR(contestMarkerMapMinText), _posMin, format["Min Contest range (%1m)",_contestedRadiusMin], "hd_warning", "ColorRed", 1, 110] call EFUNC(respawn,createLocalMarker);
+
+[QGVAR(contestMarkerMapMSPText), _pos, "MSP", "loc_Truck", "ColorBlack", 1, 110, nil, [2,2]] call EFUNC(respawn,createLocalMarker);
