@@ -41,20 +41,24 @@ if (isClass (configFile >> "CfgVehicles" >> _vehicle)) then {
 	private _chekTime = ["Check Respawn Time", "Check Respawn Time", "\a3\modules_f_curator\data\portraitskiptime_ca.paa", EFUNC(respawn,remainingWaitTimeNotification), _aliveAndSameSideConditio] call ace_interact_menu_fnc_createAction;
 
 	//Check contest area
-	private _checkArea = ["Check contest area", "Check contest area", "a3\ui_f\data\igui\cfg\simpletasks\types\map_ca.paa", {[_target] call FUNC(createContestZoneMarkers);}, _aliveAndSameSideConditio] call ace_interact_menu_fnc_createAction;
+	private _checkArea = ["Check contest area", "Check contest area", "a3\ui_f\data\igui\cfg\simpletasks\types\map_ca.paa", {[_target] call FUNC(checkContestZoneArea);}, _aliveAndSameSideConditio] call ace_interact_menu_fnc_createAction;
+
+	//Check if contested
+	private _checkContest= ["Check if MSP contested", "Check if MSP contested", "", {format[localize "STR_tunres_MSP_checkIfMSPContested", _target getVariable [QGVAR(isContested), false]] call cba_fnc_notify}, _aliveAndSameSideConditio] call ace_interact_menu_fnc_createAction;
 
 	//Ace inteaction
 	[_vehicle, 1, ["ACE_SelfActions"], _createMSP] call ace_interact_menu_fnc_addActionToClass;
 	[_vehicle, 0, ["ACE_MainActions","tunres_respawnAction"], _removeMSP] call ace_interact_menu_fnc_addActionToClass;
 	[_vehicle, 0, ["ACE_MainActions","tunres_respawnAction"], _chekTime] call ace_interact_menu_fnc_addActionToClass;
 	[_vehicle, 0, ["ACE_MainActions","tunres_respawnAction"], _checkArea] call ace_interact_menu_fnc_addActionToClass;
+	[_vehicle, 0, ["ACE_MainActions","tunres_respawnAction"], _checkContest] call ace_interact_menu_fnc_addActionToClass;
 
 	//TP. I hate this system already.
 	[_vehicle, "InitPost", {
 		params ["_entity"];
 
-		private _menu_condition = "alive _target  && {_target getVariable ['tunres_msp_isMSP', false]} && {!(_target getVariable ['tunres_msp_isContested', false])}";
-		private _tp_conditionText = " private _msp = "+ QGVAR(activeVehicle) +"get playerSide; private _status = _msp getVariable ['tunres_msp_isContested', false]; (_target isNotEqualTo _msp && _obj getVariable ['tunres_msp_isMSP', false] && !_status) ";
+		private _menu_condition = "alive _target  && {_target getVariable [ '"+ QGVAR(isMSP) +"' , false]} && {!(_target getVariable ['tunres_msp_isContested', false])}";
+		private _tp_conditionText = " private _msp = "+ QGVAR(activeVehicle) +" get playerSide; private _status = _msp getVariable ['tunres_msp_isContested', false]; (_target isNotEqualTo _msp && _obj getVariable [ '"+ QGVAR(isMSP) +"' , false] && !_status) ";
 
 		[_entity, _tp_conditionText, localize "STR_tunres_MSP_TpText", false, nil, [playerSide], true, _menu_condition, false, ["ACE_MainActions","tunres_respawnAction"]] call EFUNC(respawn,addCustomTeleporter);
 
