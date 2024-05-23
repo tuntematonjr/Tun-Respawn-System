@@ -20,7 +20,7 @@ class CfgVehicles
         };
     };
     
-    class GVAR(Module_waitingarea): Module_F
+    class GVAR(moduleWaitingArea): Module_F
     {
         scope = 2; // Editor visibility; 2 will show it in the menu, 1 will hide it.
         scopeCurator = 1;
@@ -29,7 +29,7 @@ class CfgVehicles
         category = "tunres_Respawn";
 
         // Name of function triggered once conditions are met
-        function = QFUNC(module_waitingarea);
+        function = QFUNC(moduleWaitingArea);
         // Execution priority, modules with lower number are executed first. 0 is used when the attribute is undefined
         functionPriority = 10;
         // 0 for server only execution, 1 for global execution, 2 for persistent global execution
@@ -46,7 +46,7 @@ class CfgVehicles
         {
             class respawn_side: Combo
             {
-                property = QGVAR(module_waiting_area_side);
+                property = QGVAR(module_side);
                 displayName = "Side"; // Argument label
                 tooltip = "$STR_tunres_Respawn_Module_tooltip_WaitingArea"; // Tooltip description
                 typeName = "STRING"; // Value type, can be "NUMBER", "STRING" or "BOOL"
@@ -60,6 +60,16 @@ class CfgVehicles
                     class civilian {name = "civilian"; value = "respawn_civilian";};
                 };
             };
+            class flag_texture: Edit
+            {
+                property = QGVAR(flag_texture);
+				displayName = "Flag texture";
+				tooltip = "$STR_tunres_Respawn_Module_tooltip_flagTexture";
+                typeName = "STRING";
+				// Default text filled in the input box
+				// Because it is an expression, to return a String one must have a string within a string
+				defaultValue = """""";
+            };
             class ModuleDescription: ModuleDescription{};
         };
         class ModuleDescription: ModuleDescription
@@ -69,18 +79,18 @@ class CfgVehicles
         };
     };
 
-    class GVAR(Module_Respawn_point): GVAR(Module_waitingarea)
+    class GVAR(moduleRespawnPoint): GVAR(moduleWaitingArea)
     {
         displayName = "$STR_tunres_Respawn_Module_DisplayName_SpawnPoint"; // Name displayed in the menu
         icon = "\a3\modules_f\data\portraitrespawn_ca.paa";
         // Name of function triggered once conditions are met
-        function = QFUNC(module_respawnpos);
+        function = QFUNC(moduleRespawnPoint);
 
         class Attributes: AttributesBase
         {
             class respawn_side: Combo
             {
-                property = QGVAR(module_respawn_point_side);
+                property = QGVAR(module_side);
                 displayName = "Side"; // Argument label
                 tooltip = "$STR_tunres_Respawn_Module_tooltip_SpawnPoint"; // Tooltip description
                 typeName = "STRING"; // Value type, can be "NUMBER", "STRING" or "BOOL"
@@ -88,11 +98,21 @@ class CfgVehicles
                 class Values
                 {
                     class none  {name = "none";  value = "none";}; // Listbox item
-                    class west {name = "west"; value = "tunres_respawn_west";};
-                    class east {name = "east"; value = "tunres_respawn_east";};
-                    class resistance {name = "resistance"; value = "tunres_respawn_guerrila";};
-                    class civilian {name = "civilian"; value = "tunres_respawn_civilian";};
+                    class west {name = "west"; value = MARKER_NAME_CONFIG(west);};
+                    class east {name = "east"; value = MARKER_NAME_CONFIG(east);};
+                    class resistance {name = "resistance"; value = MARKER_NAME_CONFIG(resistance);};
+                    class civilian {name = "civilian"; value = MARKER_NAME_CONFIG(civilian);};
                 };
+            };
+            class flag_texture: Edit
+            {
+                property = QGVAR(flag_texture);
+				displayName = "Flag texture";
+				tooltip = "$STR_tunres_Respawn_Module_tooltip_flagTexture";
+                typeName = "STRING";
+				// Default text filled in the input box
+				// Because it is an expression, to return a String one must have a string within a string
+				defaultValue = """""";
             };
             class ModuleDescription: ModuleDescription{};
         };
@@ -103,7 +123,7 @@ class CfgVehicles
         };
     };
 
-    class GVAR(tunres_Respawn_Module_teleportPoint): GVAR(Module_waitingarea)
+    class GVAR(moduleTeleportPoint): GVAR(moduleWaitingArea)
     {
         displayName = "$STR_tunres_Respawn_Module_DisplayName_teleportPoint"; // Name displayed in the menu
         // 0 for server only execution, 1 for global execution, 2 for persistent global execution
@@ -111,7 +131,7 @@ class CfgVehicles
         // 1 for module waiting until all synced triggers are activated
         //isTriggerActivated = 1;
         // Name of function triggered once conditions are met
-        function = QFUNC(module_teleporter);
+        function = QFUNC(moduleTeleport);
         icon = "\a3\ui_f\data\map\groupicons\badge_gs.paa";
 
         class Attributes: AttributesBase
@@ -194,7 +214,7 @@ class CfgVehicles
 				displayName = "Allow Check Tickets";
                 typeName = "BOOL";
 				//tooltip = $STR_tunres_Respawn_Module_tooltip_teleportCreateMarker;
-				defaultValue = "true";
+				defaultValue = "false";
             };
 
             class GVAR(teleportEnableWest): Checkbox
