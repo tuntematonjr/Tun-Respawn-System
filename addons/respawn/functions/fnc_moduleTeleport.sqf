@@ -9,7 +9,7 @@
  * The return true when done <BOOL>
  *
  * Example:
- * [Logic]call tunres_Respawn_fnc_module_teleporter
+ * [Logic]call tunres_Respawn_fnc_moduleTeleport
  */
 #include "script_component.hpp"
 
