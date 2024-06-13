@@ -85,7 +85,8 @@ GVAR(selfTPmenuOpenObj) = objNull;
     1,
     {
         params ["_value"];
-        GVAR(killJipTime) = round _value;
+        _value = round _value;
+        GVAR(killJipTime) = _value;
     },
     true
 ] call CBA_Settings_fnc_init;
@@ -132,7 +133,8 @@ GVAR(selfTPmenuOpenObj) = objNull;
     1,
     {
         params ["_value"];
-        GVAR(delayedRespawn) = round _value;
+        _value = round _value;
+        GVAR(delayedRespawn) = _value;
     },
     true
 ] call CBA_Settings_fnc_init;
@@ -146,7 +148,8 @@ GVAR(selfTPmenuOpenObj) = objNull;
     1,
     {
         params ["_value"];
-        GVAR(waitingAreaRange) = round _value;
+        _value = round _value;
+        GVAR(waitingAreaRange) = _value;
     },
     true
 ] call CBA_Settings_fnc_init;
@@ -161,7 +164,9 @@ GVAR(selfTPmenuOpenObj) = objNull;
     1,
     {
         params ["_value"];
-        GVAR(waveLenghtTimes) set [west, round _value];
+        _value = round _value;
+        GVAR(initialWaveTimeWest) = _value;
+        GVAR(waveLenghtTimes) set [west, _value];
     },
     true
 ] call CBA_Settings_fnc_init;
@@ -175,7 +180,9 @@ GVAR(selfTPmenuOpenObj) = objNull;
     1,
     {
         params ["_value"];
-        GVAR(waveLenghtTimes) set [east, round _value];
+        _value = round _value;
+        GVAR(initialWaveTimeEast) = _value;
+        GVAR(waveLenghtTimes) set [east, _value];
     },
     true
 ] call CBA_Settings_fnc_init;
@@ -189,7 +196,9 @@ GVAR(selfTPmenuOpenObj) = objNull;
     1,
     {
         params ["_value"];
-        GVAR(waveLenghtTimes) set [resistance, round _value];
+        _value = round _value;
+        GVAR(initialWaveTimeResistance) = _value;
+        GVAR(waveLenghtTimes) set [resistance, _value];
     },
     true
 ] call CBA_Settings_fnc_init;
@@ -203,7 +212,9 @@ GVAR(selfTPmenuOpenObj) = objNull;
     1,
     {
         params ["_value"];
-        GVAR(waveLenghtTimes) set [civilian, round _value];
+        _value = round _value;
+        GVAR(initialWaveTimeCivilian) = _value;
+        GVAR(waveLenghtTimes) set [civilian, _value];
     },
     true
 ] call CBA_Settings_fnc_init;
@@ -450,7 +461,9 @@ GVAR(selfTPmenuOpenObj) = objNull;
     1,
     {
         params ["_value"];
-        GVAR(tickets) set [west, round _value];
+        _value = round _value;
+        GVAR(initialTicketsWest) = _value;
+        GVAR(tickets) set [west, _value];
     },
     true
 ] call CBA_Settings_fnc_init;
@@ -464,7 +477,9 @@ GVAR(selfTPmenuOpenObj) = objNull;
     1,
     {
         params ["_value"];
-        GVAR(tickets) set [east, round _value];
+        _value = round _value;
+        GVAR(initialTicketsEast) = _value;
+        GVAR(tickets) set [east, _value];
     },
     true
 ] call CBA_Settings_fnc_init;
@@ -478,7 +493,9 @@ GVAR(selfTPmenuOpenObj) = objNull;
     1,
     {
         params ["_value"];
-        GVAR(tickets) set [resistance, round _value];
+        _value = round _value;
+        GVAR(initialTicketsResistance) = _value;
+        GVAR(tickets) set [resistance, _value];
     },
     true
 ] call CBA_Settings_fnc_init;
@@ -492,7 +509,9 @@ GVAR(selfTPmenuOpenObj) = objNull;
     1,
     {
         params ["_value"];
-        GVAR(tickets) set [civilian, round _value];
+        _value = round _value;
+        GVAR(initialTicketsCivilian) = _value;
+        GVAR(tickets) set [civilian, _value];
     },
     true
 ] call CBA_Settings_fnc_init;
