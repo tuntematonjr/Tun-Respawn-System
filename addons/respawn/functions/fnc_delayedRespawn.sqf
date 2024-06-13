@@ -27,11 +27,12 @@ if (GVAR(delayedRespawn) > 0) then {
 _unit setVariable [QGVAR(skipNextWave), _skip, true];
 
 if (_skip) then {
+	LOG("Skipped respawn wave");
 	private _waitingRespawnDelayedHash = GVAR(waitingRespawnDelayedList);
 	private _waitingRespawnDelayed = _waitingRespawnDelayedHash get _side;
 	PUSH(_waitingRespawnDelayed,_unit);
 	FILTER(_waitingRespawnDelayed,(!isnull _x && _x in allPlayers && alive _x ));
-	_waitingRespawnDelayed set [_side, _waitingRespawnDelayed];
+	_waitingRespawnDelayedHash set [_side, _waitingRespawnDelayed];
 	publicVariable QGVAR(waitingRespawnDelayedList);
 };
 
