@@ -14,7 +14,6 @@
  */
 #include "script_component.hpp"
 params [["_side", nil, [west]], ["_forceAll", false, [false]]];
-private ["_respawn_waitingarea", "_respawn_gearPath"];
 
 if (!isServer) exitWith { };
 
@@ -51,16 +50,18 @@ if (count _waitingRespawn > 0) then {
 
 	//move
 	[{
-		_args params ["_side"];
-		private _waitingRespawnHash = GVAR(waitingRespawnList);
+		_args params ["_side", "_waitingRespawnHash", "_waitingRespawnDelayedHash"];
+		//private _waitingRespawnHash = GVAR(waitingRespawnList);
 		private _unitList = _waitingRespawnHash get _side;
-
+		private _text = format["respawn unit list: %1",_unitList];
+		LOG(_text);
 		//when done, remove and move delayed units to main var
 		if ((count _unitList) isEqualTo 0) exitWith {
 
+			LOG("No more units to respawn");
 			[_handle] call CBA_fnc_removePerFrameHandler;
 
-			private _waitingRespawnDelayedHash = GVAR(waitingRespawnDelayedList);
+			//private _waitingRespawnDelayedHash = GVAR(waitingRespawnDelayedList);
 			private _waitingRespawnDelayed = _waitingRespawnDelayedHash get _side;
 
 			{
@@ -76,9 +77,10 @@ if (count _waitingRespawn > 0) then {
 		};
 
 		private _unit = _unitList select 0;
-
+		private _text = format["respawn unit: %1",_unit];
+		LOG(_text);
 		[_side, _unit] call FUNC(respawnUnit);
-	}, 0.2, [ _side]] call CBA_fnc_addPerFrameHandler;
+	}, 0.2, [_side, _waitingRespawnHash, _waitingRespawnDelayedHash]] call CBA_fnc_addPerFrameHandler;
 
 
 	private _waitingRespawnCount = count _waitingRespawn;
