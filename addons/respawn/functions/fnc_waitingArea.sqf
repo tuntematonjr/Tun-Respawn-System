@@ -21,6 +21,7 @@ if (isDedicated || !(_playerSide in [west,east,resistance,civilian]) ) exitWith 
 [player, true, _playerSide] remoteExecCall [QFUNC(updateWaitingRespawnList),2];
 
 private _respawnWaitingarea = (GVAR(waitingArea) get _playerSide) select 1;
+GVAR(mark) = 0;
 
 [{
 	params ["_respawnWaitingarea", "_playerSide"];
