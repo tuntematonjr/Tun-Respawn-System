@@ -35,6 +35,7 @@ GVAR(mark) = 0;
 	if (_playerSkipsWave) then {
 		private _hashWaveLenght = GVAR(waveLenghtTimes);
 		private _waveLenght = _hashWaveLenght get _playerSide;
+		_remainingWaitTime = _remainingWaitTime + (_waveLenght*60);
 	};
 
 	if ((GVAR(mark) < 1 && _remainingWaitTime <= 20) || (GVAR(mark) < 2 && _remainingWaitTime <= 10) )then {
