@@ -5,14 +5,9 @@ PREP_RECOMPILE_START;
 #include "XEH_PREP.hpp"
 PREP_RECOMPILE_END;
 
-private _waitingRespawnEmptyArray = [[west,[]],[east,[]],[resistance,[]],[civilian,[]]];
-private _waitTimesPreArray = [[west,0],[east,0],[resistance,0],[civilian,0]];
-private _emptyFalseArray = [[west,false],[east,false],[resistance,false],[civilian,false]];
-private _emptyTrueArray = [[west,true],[east,true],[resistance,true],[civilian,true]];
-
 
 //cba_missiontime time when next wave happens.
-GVAR(nextWaveTimes) = createHashMapFromArray _waitTimesPreArray;
+GVAR(nextWaveTimes) = createHashMapFromArray ZEROS_FOR_SIDES;
 
 //Respawn wave lenght times
 GVAR(waveLenghtTimes) = createHashMap;
@@ -24,20 +19,12 @@ GVAR(tickets) = createHashMap;
 GVAR(waitingArea) = createHashMap;
 
 //Which side has respawn system started
-GVAR(enabledSides) = createHashMapFromArray _emptyFalseArray;
-
-//Respawn waiting area unit arrays
-GVAR(waitingRespawnList) = createHashMapFromArray _waitingRespawnEmptyArray;
-GVAR(waitingRespawnDelayedList) = createHashMapFromArray _waitingRespawnEmptyArray;
-
-//Total respawn count (log stuff)
-GVAR(totalRespawnCount) = createHashMapFromArray _waitTimesPreArray;
+GVAR(enabledSides) = createHashMapFromArray FALSES_FOR_SIDES;
 
 //Allow respawn for each side
-GVAR(allowRespawn) = createHashMapFromArray _emptyTrueArray;
+GVAR(allowRespawn) = createHashMapFromArray TRUES_FOR_SIDES;
 
-GVAR(disconnectedPlayers) = createHashMapFromArray _waitingRespawnEmptyArray;
-GVAR(timerRunning) = createHashMapFromArray _emptyFalseArray;
+GVAR(timerRunning) = createHashMapFromArray FALSES_FOR_SIDES;
 ISNILS(GVAR(teleportPoints),[]);
 
 //allowed sides to spectate 
@@ -50,8 +37,7 @@ GVAR(allowedSpectateSidesCivilian) = [civilian];
 GVAR(flagPoles) = createHashMapFromArray [[west,[objNull,objNull]],[east,[objNull,objNull]],[resistance,[objNull,objNull]],[civilian,[objNull,objNull]]];
 
 
-ISNILS(GVAR(endRespawns),false);
-GVAR(selfTPmenuOpenObj) = objNull;
+
 
 
 [

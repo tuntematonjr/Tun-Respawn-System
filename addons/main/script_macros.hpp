@@ -19,3 +19,10 @@
 #define AAR_UPDATE(OBJ,VARNAME,VALUE) if ( AAR_IS_ENABLED ) then { [OBJ, VARNAME, VALUE] call afi_aar2_fnc_addcustomdata; }
 //AAR event
 #define AAR_EVENT(TEXT,INSTIGATOR,TARGET,POI) if ( AAR_IS_ENABLED ) then { if (isServer) then { [TEXT,INSTIGATOR,TARGET,POI] call afi_aar2_fnc_addCustomEvent;} else {[TEXT,INSTIGATOR,TARGET,POI] remoteExecCall ["afi_aar2_fnc_addCustomEvent", 2]} };
+
+
+//Hash template macros
+#define EMPTY_ARRAY_FOR_SIDES [[west,[]],[east,[]],[resistance,[]],[civilian,[]]]
+#define ZEROS_FOR_SIDES [[west,0],[east,0],[resistance,0],[civilian,0]]
+#define FALSES_FOR_SIDES [[west,false],[east,false],[resistance,false],[civilian,false]]
+#define TRUES_FOR_SIDES [[west,true],[east,true],[resistance,true],[civilian,true]]

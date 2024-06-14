@@ -1,5 +1,7 @@
 #include "script_component.hpp"
 
+GVAR(selfTPmenuOpenObj) = objNull;
+
 [{!isNull player  &&
 ADDON
 }, {
