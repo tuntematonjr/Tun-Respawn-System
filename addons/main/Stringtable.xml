@@ -246,6 +246,10 @@
                 <English>Respawn settings</English>
                 <Original>Respawn settings</Original>
             </Key>
+            <Key ID="STR_tunres_Respawn_FNC_playerSkipsWave">
+                <English>You are going to skip the next respawn wave.</English>
+                <Original>You are going to skip the next respawn wave.</Original>
+            </Key>
         </Container>
         <Container name="FNC">
             <Key ID="STR_tunres_Respawn_FNC_remaining_time">
