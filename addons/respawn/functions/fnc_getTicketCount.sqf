@@ -15,7 +15,7 @@
 #include "script_component.hpp"
 if (!isServer) exitWith { };
 params [["_side", nil, [west]], ["_player", objNull, [objNull]], ["_doHint", false, [true]]];
-private _ticketCount = -1;
+private "_ticketCount";
 switch (GVAR(respawnType)) do {
 	case 1: { 
 		private _hash = GVAR(tickets);
