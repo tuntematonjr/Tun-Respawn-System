@@ -24,15 +24,15 @@ private _respawnWaitingarea = (GVAR(waitingArea) get _playerSide) select 1;
 GVAR(firstMark) = true;
 
 [{
-	params ["_respawnWaitingarea"];
+	params ["_respawnWaitingarea", "_playerSide"];
 	if !( player getvariable QGVAR(isWaitingRespawn) ) exitWith { [_handle] call CBA_fnc_removePerFrameHandler; };
-	private _playerSide = playerSide;
+	private _playerSkipsWave = player getVariable [QGVAR(skipNextWave), nil];
 	//Show remaining time
 	private _hashWaitTime = GVAR(nextWaveTimes);
 	private _waitTime = _hashWaitTime get _playerSide;
 	private _remainingWaitTime = round (_waitTime - cba_missiontime);
 
-	if (player getVariable [QGVAR(skipNextWave), false]) then {
+	if (_playerSkipsWave) then {
 		private _hashWaveLenght = GVAR(waveLenghtTimes);
 		private _waveLenght = _hashWaveLenght get _playerSide;
 		_remainingWaitTime = _remainingWaitTime + _waveLenght;
@@ -47,14 +47,15 @@ GVAR(firstMark) = true;
 		playSound "TacticalPing";
 	};
 
+	private _allowRespawn = GVAR(allowRespawn) get _playerSide;
 	private _text = format ["<t color='#0800ff' size = '0.8'>%1</t>", localize "STR_tunres_Respawn_FNC_only_forced_waves"];
-	if (_remainingWaitTime >= 0 && { GVAR(allowRespawn) get _playerSide }) then {
+	if (_remainingWaitTime >= 0 && { _allowRespawn }) then {
 		_text = format ["<t color='#0800ff' size = '0.8'>%2<br />%1</t>", ([_remainingWaitTime] call CBA_fnc_formatElapsedTime), localize "STR_tunres_Respawn_FNC_remaining_time"];
 	} else {
-		if (player getvariable [QGVAR(isWaitingRespawn), true] && { !(GVAR(forcedRespawn)) } && { !(GVAR(allowRespawn) get _playerSide) }) then {
+		if (player getvariable [QGVAR(isWaitingRespawn), true] && { !(GVAR(forcedRespawn)) } && { !_allowRespawn }) then {
 			_text = format ["<t color='#0800ff' size = '0.8'>%1</t>", localize "STR_tunres_Respawn_FNC_RespawnDisabled"];
 		} else {
-			_text = format ["Something is vevy vevy wrong. time: %1 - allowRespawn: %2 - forced respawn: %3 ", _remainingWaitTime, GVAR(allowRespawn) get playerSid, GVAR(forcedRespawn)];
+			_text = format ["Something is vevy vevy wrong. time: %1 - allowRespawn: %2 - forced respawn: %3 ", _remainingWaitTime, _allowRespawn, GVAR(forcedRespawn)];
 		};
 	};
 
@@ -86,4 +87,4 @@ GVAR(firstMark) = true;
 		"Get over here!" call CBA_fnc_notify;
 	};
 
-}, 1, _respawnWaitingarea] call CBA_fnc_addPerFrameHandler;
+}, 1, [_respawnWaitingarea, _playerSide]] call CBA_fnc_addPerFrameHandler;
