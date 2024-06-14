@@ -1,16 +1,14 @@
 #include "script_component.hpp"
 //only executed on server
 
-private _emptyFalseArray = [[west,false],[east,false],[resistance,false],[civilian,false]];
-
 missionNamespace setVariable [QGVAR(disableContestedCheck), false, true];
 
 //Contested status
-GVAR(contestedStatus) = createHashMapFromArray _emptyFalseArray;
+GVAR(contestedStatus) = createHashMapFromArray FALSES_FOR_SIDES;
 publicVariable QGVAR(contestedStatus);
 
 //MSP status. If true, msp is setup
-GVAR(deployementStatus) = createHashMapFromArray _emptyFalseArray;
+GVAR(deployementStatus) = createHashMapFromArray FALSES_FOR_SIDES;
 publicVariable QGVAR(deployementStatus);
 
 //MSP vehicle
