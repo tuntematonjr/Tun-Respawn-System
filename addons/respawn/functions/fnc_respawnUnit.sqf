@@ -17,15 +17,7 @@ params [["_side", nil, [west]], ["_unit", objnull, [objnull]]];
 private _respawnPointsHash = GVAR(respawnPointsHash);
 private _respawnPosition = getMarkerPos ((_respawnPointsHash get _side) select 0);
 
-private _waitingRespawnHash = GVAR(waitingRespawnList);
-private _unitList = _waitingRespawnHash get _side;
-
-if (isnull _unit || !(_unit in allPlayers) || !alive _unit ) exitWith {
-	_waitingRespawnHash set [_side, _unitList];
-};
-
-_unitList deleteAt (_unitList find _unit);
-_waitingRespawnHash set [_side, _unitList];
+[_unit, false, _side, false] call FUNC(updateWaitingRespawnList);
 
 _unit setVariable [QGVAR(isWaitingRespawn), false, true];
 private _text = localize "STR_tunres_Respawn_FNC_moveRespawnText";
