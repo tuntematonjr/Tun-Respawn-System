@@ -38,8 +38,8 @@ GVAR(firstMark) = true;
 		_remainingWaitTime = _remainingWaitTime + _waveLenght;
 	};
 
-	if (GVAR(firstMark) && {_remainingWaitTime <= 20} ) then {
-		GVAR(firstMark) = false;
+	if ((GVAR(mark) < 1 && _remainingWaitTime <= 20) || (GVAR(mark) < 2 && _remainingWaitTime <= 10) )then {
+		INC(GVAR(mark));
 		playSound "Orange_PhoneCall_Ringtone";
 	};
 
