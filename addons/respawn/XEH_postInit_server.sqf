@@ -1,5 +1,8 @@
 #include "script_component.hpp"
 
+
+if (GVAR(enable)) exitwith { };
+
 if (GVAR(respawnType) isEqualTo 2) then {
 	GVAR(playerTicektsHash) = createHashMap;
 	AAR_UPDATE("west","Player tickets",(round GVAR(initialTicketsWest)));

@@ -1,25 +1,21 @@
 #include "script_component.hpp"
 
-GVAR(selfTPmenuOpenObj) = objNull;
-
 [{!isNull player  &&
 ADDON
 }, {
-	if (GVAR(enable)) then {
-		[] call FUNC(briefingNotes);
-	};
-}] call CBA_fnc_waitUntilAndExecute;
+	if (!GVAR(enable)) exitWith { }; // Exit if not enabled
+	
+	[] call FUNC(briefingNotes);
 
-if (playerSide isEqualTo sideLogic) exitWith { }; // Exit if a virtual entity (IE zeus)
+	if (playerSide isEqualTo sideLogic) exitWith { }; // Exit if a virtual entity (IE zeus) 
+	GVAR(selfTPmenuOpenObj) = objNull;
 
-[{!isNull player }, {
 	if (GVAR(gearscriptType) isEqualTo 2) then {
 		[] call FUNC(savegear);
 	};
 
 	private _conditio = {
 		private _return = false;
-
 		{
 			private _obj = _x;
 			if (player distance2D _obj < 15) then {
@@ -39,6 +35,7 @@ if (playerSide isEqualTo sideLogic) exitWith { }; // Exit if a virtual entity (I
 
 	//Add respawn eh
 	[player, "Respawn", {
+		params ["_newObject","_oldObject"];
 		[] call FUNC(removegear);
 		player setVariable [QGVAR(isWaitingRespawn), true, true];
 		[] call FUNC(waitingArea);
@@ -48,13 +45,13 @@ if (playerSide isEqualTo sideLogic) exitWith { }; // Exit if a virtual entity (I
 	[player, "killed", {
 		[] call FUNC(onPlayerKilled);
 	}] call CBA_fnc_addBISEventHandler;
-}] call CBA_fnc_waitUntilAndExecute;
 
-addMissionEventHandler ["Map", {
-	params ["_mapIsOpened", "_mapIsForced"];
+	addMissionEventHandler ["Map", {
+		params ["_mapIsOpened", "_mapIsForced"];
+		[] call FUNC(updateRespawnMarkers);
+	}];
+
+	[] call FUNC(killJIP);
 	[] call FUNC(updateRespawnMarkers);
-}];
-
-[] call FUNC(killJIP);
-[] call FUNC(updateRespawnMarkers);
-[] call FUNC(radioSettings_tfar);
+	[] call FUNC(radioSettings_tfar);
+}] call CBA_fnc_waitUntilAndExecute;
