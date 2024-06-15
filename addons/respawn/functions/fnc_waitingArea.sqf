@@ -17,6 +17,8 @@
 private _playerSide = playerSide;
 if (isDedicated || !(_playerSide in [west,east,resistance,civilian]) ) exitWith { };
 
+LOG("Start waiting area");
+
 //tell server to add this player to list
 if (isNil QGVAR(uselesBody)) then {
 	player setVariable [QGVAR(skipNextWave), nil];
@@ -28,12 +30,21 @@ if (isNil QGVAR(uselesBody)) then {
 [player, true, _playerSide] remoteExecCall [QFUNC(updateWaitingRespawnList),2];
 
 private _respawnWaitingarea = (GVAR(waitingArea) get _playerSide) select 1;
+private _waitingRange = GVAR(waitingAreaRange);
+private _respawnType = GVAR(respawnType);
 GVAR(mark) = 0;
 
 [{
-	params ["_respawnWaitingarea", "_playerSide"];
-	if !( player getvariable QGVAR(isWaitingRespawn) ) exitWith { [_handle] call CBA_fnc_removePerFrameHandler; };
+	_args params ["_respawnWaitingarea", "_playerSide", "_waitingRange", "_respawnType"];
+	if !( player getvariable QGVAR(isWaitingRespawn) ) exitWith {
+		[_handle] call CBA_fnc_removePerFrameHandler;
+	};
+
 	private _playerSkipsWave = player getVariable [QGVAR(skipNextWave), nil];
+
+	//Skip respawn due to slow variable init
+	if (isNil "_playerSkipsWave") exitWith {};
+
 	//Show remaining time
 	private _hashWaitTime = GVAR(nextWaveTimes);
 	private _waitTime = _hashWaitTime get _playerSide;
@@ -66,32 +77,22 @@ GVAR(mark) = 0;
 		};
 	};
 
-	private _usesTickets = false;
-	private "_tickets";
-	private "_ticketsTypeText";
-	if (GVAR(respawnType) isEqualTo 1) then {
-		_tickets = GVAR(tickets) get _playerSide;
-		_ticketsTypeText = localize "STR_tunres_Respawan_RemainingTicketsSide";
-		_usesTickets = true;
-	} else {
-		if (GVAR(respawnType) isEqualTo 2) then {
-			_tickets = GVAR(tickets) get _playerSide;
-			_ticketsTypeText = localize "STR_tunres_Respawan_RemainingTicketsPlayer";
-			_usesTickets = true;
-		};
+	if (_playerSkipsWave) then {
+		_text = format["%1<br/><t color='#0800ff' size = '0.5'>%2</t>", _text, localize "STR_tunres_Respawn_FNC_playerSkipsWave"];
 	};
 
-	if (_usesTickets) then {
+	if (_respawnType in [1,2]) then {
+		private _tickets = GVAR(tickets) get _playerSide;
+		DEC(_respawnType); // so it works on select 
+		private _ticketsTypeText = localize (["STR_tunres_Respawan_RemainingTicketsSide", "STR_tunres_Respawan_RemainingTicketsPlayer"] select _respawnType);
 		_text = format["%1<br/><t color='#0800ff' size = '0.5'>%2 %3</t>", _text, _ticketsTypeText, _tickets];
 	};
 
 	[_text,0,0,1,0] spawn BIS_fnc_dynamicText;
 
 	//make sure that player is still in area
-	private _waitingRange = GVAR(waitingAreaRange);
 	if !(player inArea [_respawnWaitingarea, _waitingRange, _waitingRange, 0, false]) then {
 		player setPos ([_respawnWaitingarea, (_waitingRange / 2)] call CBA_fnc_randPos);
 		"Get over here!" call CBA_fnc_notify;
 	};
-
-}, 1, [_respawnWaitingarea, _playerSide]] call CBA_fnc_addPerFrameHandler;
+}, 1, [_respawnWaitingarea, _playerSide, _waitingRange,_respawnType]] call CBA_fnc_addPerFrameHandler;
