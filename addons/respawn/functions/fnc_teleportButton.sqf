@@ -34,7 +34,7 @@ private _text = format["%1 %2", localize "STR_tunres_Respawn_Teleporting", _tele
 if (_teleportConditio) then {
 	closeDialog 2;
 	GVAR(tpMenuOpenedFrom) = objNull;
-	[player, _destination, _text, 10, true] call FUNC(teleportUnit);
+	[player, _destination, _text, 10, true, 15] call FUNC(teleportUnit);
 } else {
 	(localize "STR_tunres_Respawn_Teleport_Disabled") call CBA_fnc_notify;
 };

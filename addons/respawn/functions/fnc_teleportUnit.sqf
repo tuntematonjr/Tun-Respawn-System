@@ -20,15 +20,15 @@ params [["_unit", objNull, [objNull]],
 		["_destination", [0,0,0], [[]]], 
 		["_text", "", [""]],
 		["_range", 10, [0]],
-		["_godMode", false, [false],
-		["_godModeLenght", 30, [0]]]
+		["_godMode", false, [false]],
+		["_godModeLenght", 30, [0]]
 ];
 
 if (_godMode) then {
-	player allowDamage true;
+	player allowDamage false;
 	LOG("Enable god mode");
 	[{
-		player allowDamage false;
+		player allowDamage true;
 		LOG("Disable god mode");
 	}, [], _godModeLenght] call CBA_fnc_waitAndExecute;
 };
