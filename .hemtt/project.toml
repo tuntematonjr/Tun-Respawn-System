@@ -10,7 +10,7 @@ include = [
 ]
 
 [version]
-git_hash = 0 
+git_hash = 8 
 
 [binarize]
 enabled = true 
@@ -25,11 +25,8 @@ workshop = [
     "894678801", # TFAR
 ]
 parameters = [
-    "-skipIntro",           # These parameters are passed to the Arma 3 executable
-    "-noSplash",            # They do not need to be added to your list
-    "-showScriptErrors",    # You can add additional parameters here
-    "-debug",
     "-filePatching",
+    "-noPause",
     "C:\\Users\\mikal\\Documents\\Arma 3 - Other Profiles\\Tuntematon\\missions\\TUN_Respawn_System.Stratis\\mission.sqm", # Launch into existing Editor Mission - \\ needed
 ]
 

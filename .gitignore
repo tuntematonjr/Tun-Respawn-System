@@ -23,6 +23,7 @@ pohja.sqf
 release/*
 releases/*
 sqfvm.exe
+template/*
 texHeaders.bin
 Thumbs.db
 tools/temp

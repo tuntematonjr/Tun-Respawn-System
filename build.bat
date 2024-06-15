@@ -1,3 +1,3 @@
 @echo off
-hemtt build --no-bin -vv
+hemtt build -vv
 pause
