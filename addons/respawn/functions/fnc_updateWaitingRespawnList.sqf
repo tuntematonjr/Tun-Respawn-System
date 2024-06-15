@@ -32,3 +32,9 @@ if (_addPlayer) then {
 	
 _unitListHash set [_side, _unitList];
 
+{
+	private _hash = _x;
+	private _unitList = _hash get _side;
+	FILTER(_unitList,(!isnull _x && _x in allPlayers && alive _x ));
+	_hash set [_side, _unitList];
+} forEach [GVAR(waitingRespawnList), GVAR(waitingRespawnDelayedList)];
