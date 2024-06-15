@@ -1,1 +1,0 @@
-#include "\x\TunRes\addons\addon_template\script_component.hpp"
