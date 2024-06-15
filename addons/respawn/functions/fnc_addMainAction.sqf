@@ -21,14 +21,14 @@ private _parentAction = [_object] call FUNC(getParentAction);
 if (count _parentAction isEqualTo 0) then {
 	private _offSet = [_object] call FUNC(getOffSet);
 	_parentAction = ["tunres_respawn_BaseAceAction"];
-	private _actionBase = ["tunres_respawn_BaseAceAction", "Main", "", {true}, {true}, nil, nil, _offSet, 8] call ace_interact_menu_fnc_createAction;
+	private _actionBase = ["tunres_respawn_BaseAceAction", localize "STR_tunres_Respawn_AceAction_Main", "", {true}, {true}, nil, nil, _offSet, 8] call ace_interact_menu_fnc_createAction;
 	[_object, 0, [], _actionBase] call ace_interact_menu_fnc_addActionToObject;
 };
 
-private _actionPath = _parentAction + ["tunres_respawnAction"];
+private _actionPath = _parentAction + [QEGVAR(main,respawnAction)];
 
 //Add main action
-private _actionMain = ["tunres_respawnAction", "Respawn Actions", "\a3\modules_f\data\portraitrespawn_ca.paa", {true}, {true}] call ace_interact_menu_fnc_createAction;
+private _actionMain = [QEGVAR(main,respawnAction), localize "STR_tunres_MSP_AceAction_RespawnActions", "\a3\modules_f\data\portraitrespawn_ca.paa", {true}, {true}] call ace_interact_menu_fnc_createAction;
 [_object, 0, _parentAction, _actionMain] call ace_interact_menu_fnc_addActionToObject;
 
 _actionPath

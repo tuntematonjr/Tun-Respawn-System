@@ -21,10 +21,9 @@ if (isnull _player || !(_player in allPlayers) || !alive _player ) exitWith {
 	LOG("Tried to add unit what is not there");
 };
 
-private _unitSkipsNextWave = [_player, _side] call FUNC(delayedRespawn);
-private _unitListHash = [GVAR(waitingRespawnDelayedList), GVAR(waitingRespawnList)] select _unitSkipsNextWave;
+private _unitSkipsNextWave = _player getVariable [QGVAR(skipNextWave), [_player, _side] call FUNC(delayedRespawn)];
+private _unitListHash = [GVAR(waitingRespawnList), GVAR(waitingRespawnDelayedList)] select _unitSkipsNextWave;
 private _unitList = _unitListHash get _side;
-FILTER(_unitList,(!isnull _x && _x in allPlayers && alive _x ));
 
 if (_addPlayer) then {
 	_unitList pushBackUnique _player;

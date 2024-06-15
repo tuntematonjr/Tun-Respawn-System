@@ -1,12 +1,12 @@
 //Exported via Arma Dialog Creator (https://github.com/kayler-renslow/arma-dialog-creator)
 
-class TP_Dialog
+class GVAR(TP_Dialog)
 {
 	idd = 300000;
 	
 	class ControlsBackground
 	{
-		class tunres_respawn_tp_background : RscBackgroundGUI
+		class GVAR(tp_background) : RscBackgroundGUI
 		{
 			idc = -1;
 			x = "safeZoneX + safeZoneW * 0.345275";
@@ -19,17 +19,17 @@ class TP_Dialog
 	};
 	class Controls
 	{
-		class tunres_respawn_tp_list : RscListBox
+		class GVAR(tp_list) : RscListBox
 		{
 			idc = 300001;
 			x = "safeZoneX + safeZoneW * 0.365905";
 			y = "safeZoneY + safeZoneH * 0.291065";
 			w = "safeZoneW * 0.113465";
 			h = "safeZoneH * 0.417871";
-			onLBSelChanged = "params ['_control', '_selectedIndex']; [_control, _selectedIndex] call tunres_Respawn_fnc_teleportOnLBSelChanged";
+			onLBSelChanged = QUOTE(ARR_3(params ['_control','_selectedIndex']; [_control,_selectedIndex] call FUNC(teleportOnLBSelChanged);));
 			colorBackground[] = {0.302, 0.302, 0.302, 1};
 		};
-		class tunres_respawn_tp_button : RscButton
+		class GVAR(tp_button) : RscButton
 		{
 			idc = 300002;
 			x = "safeZoneX + safeZoneW * 0.58252";
@@ -44,7 +44,7 @@ class TP_Dialog
 			colorFocused2[] = GUI_BCG_COLOR;
 			
 		};		
-		class tunres_respawn_tp_header : RscTitle
+		class GVAR(tp_header) : RscTitle
 		{
 			idc = -1;
 			x = "safeZoneX + safeZoneW * 0.489685";
@@ -60,7 +60,7 @@ class TP_Dialog
 			shadow = 2;
 		};
 		
-		class tunres_respawn_tp_minimap : RscMapControl
+		class GVAR(tp_minimap) : RscMapControl
 		{
 			idc = 300003;
 			x = "safeZoneX + safeZoneW * 0.489685";

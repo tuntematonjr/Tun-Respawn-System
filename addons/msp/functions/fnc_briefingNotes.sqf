@@ -43,14 +43,13 @@ if (isClass (configFile >> "CfgVehicles" >> _vehicle)) then {
 
 _text = format ["%1<br/><br/><font color='#4F4F4F' size='11'>Powered By TuntematonEngine v%2.%3.%4</font>", _text, MAJOR, MINOR, PATCH];
 
-//player createDiaryRecord ["Diary",["Respawn info",_text]];
-if !(player diarySubjectExists "Respawn info") then {
-	player createDiarySubject ["Respawn info","Tun - Respawn info"];
+if !(player diarySubjectExists QEGVAR(main,briefing)) then {
+	player createDiarySubject [QEGVAR(main,briefing),localize "STR_tunres_Respawn_Briefing_RespawnMainCategory"];
 };
 
-player createDiaryRecord ["Respawn info",[localize "STR_tunres_MSP_Briefing_Category", _text]];
+player createDiaryRecord [QEGVAR(main,briefing),[localize "STR_tunres_MSP_Briefing_Category", _text]];
 
-player createDiaryRecord ["Respawn info",[localize "STR_tunres_MSP_Briefing_AreaContestCheckCategory",
+player createDiaryRecord [QEGVAR(main,briefing),[localize "STR_tunres_MSP_Briefing_AreaContestCheckCategory",
 localize "STR_tunres_MSP_Briefing_AreaContestCheckText" +"
 <br/><br/><font size=20><execute expression=' [true] call "+QFUNC(checkContestZoneMarkersBriefing)+"'>"+ localize "STR_tunres_MSP_Briefing_EnableAreaContestCheck" +"</execute></font>
 <br/><br/><font size=20><execute expression=' [false] call "+QFUNC(checkContestZoneMarkersBriefing)+"'>"+ localize "STR_tunres_MSP_Briefing_DisableAreaContestCheck" +"</execute></font>"

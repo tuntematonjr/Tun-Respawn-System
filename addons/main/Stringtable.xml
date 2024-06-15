@@ -158,10 +158,6 @@
                 <English>MSP deployement aborted!</English>
                 <Original>MSP deployement aborted!</Original>
             </Key>
-            <Key ID="STR_tunres_MSP_checkIfMSPContested">
-                <English>MSP contest status: %1</English>
-                <Original>MSP contest status: %1</Original>
-            </Key>
             <Key ID="STR_tunres_Respawn_RespawnPoint">
                 <English>Respawn point</English>
                 <Original>Respawn point</Original>
@@ -249,6 +245,50 @@
             <Key ID="STR_tunres_Respawn_FNC_playerSkipsWave">
                 <English>You are going to skip the next respawn wave.</English>
                 <Original>You are going to skip the next respawn wave.</Original>
+            </Key>
+            <Key ID="STR_tunres_MSP_AceAction_CheckIfMspContested">
+                <English>Check if MSP is contested</English>
+                <Original>Check if MSP is contested</Original>
+            </Key>
+            <Key ID="STR_tunres_MSP_AceAction_CheckMspContestedArea">
+                <English>Check contest area</English>
+                <Original>Check contest area</Original>
+            </Key>
+            <Key ID="STR_tunres_Respawn_AceAction_CheckNextWaveTime">
+                <English>Check respawn time until the next wave</English>
+                <Original>Check respawn time until the next wave</Original>
+            </Key>
+            <Key ID="STR_tunres_MSP_AceAction_PackMSP">
+                <English>Pack MSP</English>
+                <Original>Pack MSP</Original>
+            </Key>
+            <Key ID="STR_tunres_MSP_AceAction_DeployMSP">
+                <English>Deploy MSP</English>
+                <Original>Deploy MSP</Original>
+            </Key>
+            <Key ID="STR_tunres_MSP_AceAction_RespawnActions">
+                <English>Respawn Actions</English>
+                <Original>Respawn Actions</Original>
+            </Key>
+            <Key ID="STR_tunres_Respawn_AceAction_Main">
+                <English>Main</English>
+                <Original>Main</Original>
+            </Key>
+            <Key ID="STR_tunres_Respawn_Briefing_RespawnInfoTab">
+                <English>Respawn settings</English>
+                <Original>Respawn settings</Original>
+            </Key>
+            <Key ID="STR_tunres_Respawn_Briefing_RespawnMainCategory">
+                <English>Tun - Respawn settings</English>
+                <Original>Tun - Respawn settings</Original>
+            </Key>
+            <Key ID="STR_tunres_MSP_IsContested">
+                <English>MSP is contested</English>
+                <Original>MSP is contested</Original>
+            </Key>
+            <Key ID="STR_tunres_MSP_NotContested">
+                <English>MSP is not contested</English>
+                <Original>MSP is not contested</Original>
             </Key>
         </Container>
         <Container name="FNC">

@@ -13,7 +13,7 @@
  */
 #include "script_component.hpp"
 params ["_target"];
-createDialog "TP_Dialog";
+createDialog QGVAR(TP_Dialog);
 
 [] call FUNC(updateRespawnMarkers);
 

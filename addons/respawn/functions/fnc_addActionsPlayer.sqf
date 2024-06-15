@@ -22,7 +22,7 @@ if (GVAR(allowCheckTicketsBase)) then {
 };
 
 //private _timer_condition = { alive _target && {_target getVariable QGVAR(side) isEqualTo playerSide}};
-private _chekTime = ["Check Respawn Time", "Check Respawn Time", "\a3\modules_f_curator\data\portraitskiptime_ca.paa", FUNC(remainingWaitTimeNotification), {true}] call ace_interact_menu_fnc_createAction;
+private _chekTime = ["Check Respawn Time", localize "STR_tunres_Respawn_AceAction_CheckNextWaveTime", "\a3\modules_f_curator\data\portraitskiptime_ca.paa", FUNC(remainingWaitTimeNotification), {true}] call ace_interact_menu_fnc_createAction;
 [_object, 0, _actionPath, _chekTime] call ace_interact_menu_fnc_addActionToObject;
 
 // Add tp action

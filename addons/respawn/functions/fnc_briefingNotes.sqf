@@ -99,9 +99,8 @@ if (GVAR(killJIP)) then {
 _text = _text + "<br/><br/>" + localize "STR_tunres_Respawn_Briefing_teleportNetwork";
 _text = format ["%1<br/><br/><font color='#4F4F4F' size='11'>Powered By TuntematonEngine v%2.%3.%4</font>", _text, MAJOR, MINOR, PATCH];
 
-//player createDiaryRecord ["Diary",["Respawn info",_text]];
-if !(player diarySubjectExists "Respawn info") then {
-	player createDiarySubject ["Respawn info","Tun - Respawn info"];
+if !(player diarySubjectExists QEGVAR(main,briefing)) then {
+	player createDiarySubject [QEGVAR(main,briefing),localize "STR_tunres_Respawn_Briefing_RespawnMainCategory"];
 };
 
-player createDiaryRecord ["Respawn info",["Respawn info", _text]];
+player createDiaryRecord [QEGVAR(main,briefing),[localize "STR_tunres_Respawn_Briefing_RespawnInfoTab", _text]];
