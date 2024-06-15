@@ -6,7 +6,6 @@
  * 0: unit to add or remove <OBJECT>
  * 1: true to add, false to remove <BOOL>
  * 2: Unit side <SIDE>
- * 3: true/false to publicVariable unit list <BOOL>
  *
  * Return Value:
  * none
@@ -15,7 +14,7 @@
  * [player] call tunres_Respawn_fnc_updateWaitingRespawnList 
  */
 #include "script_component.hpp"
-params [["_player", nil, [objNull]], ["_addPlayer", nil, [false]], ["_side", nil, [west]], ["_doPublicVar", true, [true]]];
+params [["_player", nil, [objNull]], ["_addPlayer", nil, [false]], ["_side", nil, [west]]];
 
 if (isnull _player || !(_player in allPlayers) || !alive _player ) exitWith {
 	LOG("Tried to add unit what is not there");
@@ -33,7 +32,3 @@ if (_addPlayer) then {
 	
 _unitListHash set [_side, _unitList];
 
-// //this is for not broadcasting on every player on respawn wave.
-// if (_doPublicVar) then {
-// 	publicVariable [QGVAR(waitingRespawnDelayedList), QGVAR(waitingRespawnList)] select _unitSkipsNextWave;
-// };

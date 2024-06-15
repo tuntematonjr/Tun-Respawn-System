@@ -29,7 +29,6 @@ class CfgFactionClasses
 #include "TP_dialog.hpp"
 #include "CfgVehicles.hpp"
 
-
 class CfgRespawnTemplates {
     class ADDON {
         displayName = "Tun wave respawn";

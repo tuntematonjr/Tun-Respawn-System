@@ -11,7 +11,7 @@ GVAR(classnames) = createHashMap;
 //reportEnemiesInterval 0 - reportEnemiesRange 1 - contestedRadiusMax 2 - contestedRadiusMin 3 - contestedCheckInterval 4 - reportEnemiesEnabled 5
 GVAR(contestValues) = createHashMapFromArray [[west,[0,0,0,0,0,false]],[east,[0,0,0,0,0,false]],[resistance,[0,0,0,0,0,false]],[civilian,[0,0,0,0,0,false]]];
 GVAR(contestHandles) = createHashMap;
-GVAR(contestCheckRunning) = createHashMapFromArray [[west,false],[east,false],[resistance,false],[civilian,false]];
+GVAR(contestCheckRunning) = createHashMapFromArray FALSES_FOR_SIDES;
 
 [
     QGVAR(enable),

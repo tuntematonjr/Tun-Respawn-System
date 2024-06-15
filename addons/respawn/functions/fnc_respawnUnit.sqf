@@ -17,9 +17,10 @@ params [["_side", nil, [west]], ["_unit", objnull, [objnull]]];
 private _respawnPointsHash = GVAR(respawnPointsHash);
 private _respawnPosition = getMarkerPos ((_respawnPointsHash get _side) select 0);
 
-[_unit, false, _side, false] call FUNC(updateWaitingRespawnList);
+[_unit, false, _side] call FUNC(updateWaitingRespawnList);
 
 _unit setVariable [QGVAR(isWaitingRespawn), false, true];
+
 private _text = localize "STR_tunres_Respawn_FNC_moveRespawnText";
 
 [_unit, _respawnPosition, _text, 20, true] call FUNC(teleportUnit);

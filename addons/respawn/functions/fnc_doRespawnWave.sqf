@@ -51,10 +51,9 @@ if (count _waitingRespawn > 0) then {
 	//move
 	[{
 		_args params ["_side", "_waitingRespawnHash", "_waitingRespawnDelayedHash"];
-		//private _waitingRespawnHash = GVAR(waitingRespawnList);
+
 		private _unitList = _waitingRespawnHash get _side;
-		private _text = format["respawn unit list: %1",_unitList];
-		LOG(_text);
+
 		//when done, remove and move delayed units to main var
 		if ((count _unitList) isEqualTo 0) exitWith {
 
@@ -71,9 +70,6 @@ if (count _waitingRespawn > 0) then {
 			
 			_waitingRespawnHash set [_side, _waitingRespawnDelayed];
 			_waitingRespawnDelayedHash set [_side, []];
-			
-			publicVariable QGVAR(waitingRespawnList);
-			publicVariable QGVAR(waitingRespawnDelayedList);
 		};
 
 		private _unit = _unitList select 0;
@@ -81,7 +77,6 @@ if (count _waitingRespawn > 0) then {
 		LOG(_text);
 		[_side, _unit] call FUNC(respawnUnit);
 	}, 0.2, [_side, _waitingRespawnHash, _waitingRespawnDelayedHash]] call CBA_fnc_addPerFrameHandler;
-
 
 	private _waitingRespawnCount = count _waitingRespawn;
 	_totalRespawnCount = _totalRespawnCount + _waitingRespawnCount;
@@ -107,8 +102,6 @@ if (count _waitingRespawn > 0) then {
 		} forEach _waitingRespawnDelayed;
 		_waitingRespawnHash set [_side, _waitingRespawnDelayed];
 		_waitingRespawnDelayedHash set [_side, []];
-		publicVariable QGVAR(waitingRespawnList);
-		publicVariable QGVAR(waitingRespawnDelayedList);
 	};
 };
 
