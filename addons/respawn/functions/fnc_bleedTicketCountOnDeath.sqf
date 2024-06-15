@@ -29,6 +29,12 @@ if (GVAR(disconnectedPlayers) getOrDefault [_playerUID, false]) exitWith {
 	[5] remoteExecCall ["setPlayerRespawnTime", _player];
 };
 
+//Player was already in respawn area.
+if ( _player getvariable [QGVAR(isWaitingRespawn), false]) exitWith {
+	LOG("Player already waiting respawn");
+	[1] remoteExecCall ["setPlayerRespawnTime", _player];
+};
+
 private _remainingTickets = [_side, _player, false] call FUNC(getTicketCount);
 
 if !( _remainingTickets > 0 ) exitWith {

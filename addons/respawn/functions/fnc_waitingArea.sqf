@@ -18,6 +18,13 @@ private _playerSide = playerSide;
 if (isDedicated || !(_playerSide in [west,east,resistance,civilian]) ) exitWith { };
 
 //tell server to add this player to list
+if (isNil QGVAR(uselesBody)) then {
+	player setVariable [QGVAR(skipNextWave), nil];
+} else {
+	deleteVehicle GVAR(uselesBody);
+	GVAR(uselesBody) = nil;
+};
+
 [player, true, _playerSide] remoteExecCall [QFUNC(updateWaitingRespawnList),2];
 
 private _respawnWaitingarea = (GVAR(waitingArea) get _playerSide) select 1;
