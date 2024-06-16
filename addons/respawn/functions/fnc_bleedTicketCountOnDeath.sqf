@@ -48,14 +48,10 @@ DEC(_remainingTickets);
 if (_respawnType isEqualTo 1) then {
 	private _sideSTR = str  _side;
 	AAR_UPDATE(_sideSTR,"Side tickets",_remainingTickets);
-	GVAR(tickets) set [_side, _remainingTickets];
-	publicVariable QGVAR(tickets);
+	[_side, _remainingTickets] call FUNC(setTicketCount);
 } else {
 	AAR_UPDATE(_player,"Player tickets",_remainingTickets);
-	GVAR(playerTicektsHash) set [_playerUID, _remainingTickets];
-
-	private _text = format["%1 %2",localize "STR_tunres_Respawn_RemainingTicketsText", str _remainingTickets];
-	_text remoteExecCall ["CBA_fnc_notify", _player];	
+	[_player, _remainingTickets] call FUNC(setTicketCount);
 };
 
 [5] remoteExecCall ["setPlayerRespawnTime", _player];
