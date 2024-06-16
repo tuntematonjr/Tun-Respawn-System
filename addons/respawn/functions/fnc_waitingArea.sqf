@@ -20,9 +20,7 @@ if (isDedicated || !(_playerSide in [west,east,resistance,civilian]) ) exitWith 
 LOG("Start waiting area");
 
 //tell server to add this player to list
-if (isNil QGVAR(uselesBody)) then {
-	player setVariable [QGVAR(skipNextWave), nil];
-} else {
+if (!isNil QGVAR(uselesBody)) then {
 	deleteVehicle GVAR(uselesBody);
 	GVAR(uselesBody) = nil;
 };
