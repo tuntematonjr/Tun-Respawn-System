@@ -17,11 +17,11 @@ if (!isServer) exitWith { };
 params [["_side", nil, [west]], ["_player", objNull, [objNull]], ["_doHint", false, [true]]];
 private "_ticketCount";
 switch (GVAR(respawnType)) do {
-	case 1: { 
+	case 1: { //Side ticket
 		private _hash = GVAR(tickets);
 		_ticketCount = _hash get _side;
 	};
-	case 2: {
+	case 2: { // Player tickets
 		if (!isNull _player) then {
 			private _hash = GVAR(playerTicektsHash);
 			private _playerUID = getPlayerUID _player;
