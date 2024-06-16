@@ -1,7 +1,8 @@
 #include "script_component.hpp"
 
-
-if (GVAR(enable)) exitwith { };
+if (!GVAR(enable)) exitwith {
+	INFO("Respawn not enabled, server exit");
+};
 
 if (GVAR(respawnType) isEqualTo 2) then {
 	GVAR(playerTicektsHash) = createHashMap;
