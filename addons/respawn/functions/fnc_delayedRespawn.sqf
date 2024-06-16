@@ -17,8 +17,8 @@ params ["_unit", "_side"];
 
 private _skip = false;
 if (GVAR(delayedRespawn) > 0) then {
-	private _hashWaitTime = GVAR(nextWaveTimes);
-	private _hashWaveLenght = GVAR(waveLenghtTimes);
+	private _hashWaitTime = GVAR(nextWaveTimesHash);
+	private _hashWaveLenght = GVAR(waveLenghtTimesHash);
 	private _time = _hashWaitTime get _side;
 	private _waveLenghtTime = _hashWaveLenght get _side;
 	_skip = ((_time - cba_missiontime) < ((_waveLenghtTime * 60) * (GVAR(delayedRespawn) / 100)));

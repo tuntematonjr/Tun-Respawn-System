@@ -26,7 +26,7 @@ if (_setup) then {
                     driver _msp isEqualTo player &&
                     alive _msp &&
                     insideBuilding player isEqualTo 0 &&
-                    !(GVAR(deployementStatus) get playerSide)
+                    !(GVAR(deployementStatusHash) get playerSide)
                 };
     _time = GVAR(progresbarTimeSetup);
 } else {
@@ -34,7 +34,7 @@ if (_setup) then {
     _conditio = {
                     private _msp = (_args select 0);
                     alive _msp &&
-                    (GVAR(deployementStatus) get playerSide)
+                    (GVAR(deployementStatusHash) get playerSide)
                 };
     _time = GVAR(progresbarTimePack);
 };

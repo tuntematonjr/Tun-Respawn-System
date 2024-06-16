@@ -27,7 +27,7 @@ if (!isNil QGVAR(uselesBody)) then {
 
 [player, true, _playerSide] remoteExecCall [QFUNC(updateWaitingRespawnList),2];
 
-private _respawnWaitingarea = (GVAR(waitingArea) get _playerSide) select 1;
+private _respawnWaitingarea = (GVAR(waitingAreaHash) get _playerSide) select 1;
 private _waitingRange = GVAR(waitingAreaRange);
 private _respawnType = GVAR(respawnType);
 GVAR(mark) = 0;
@@ -45,12 +45,12 @@ GVAR(waitingAreaPFH) = [{
 	if (isNil "_playerSkipsWave") exitWith {};
 
 	//Show remaining time
-	private _hashWaitTime = GVAR(nextWaveTimes);
+	private _hashWaitTime = GVAR(nextWaveTimesHash);
 	private _waitTime = _hashWaitTime get _playerSide;
 	private _remainingWaitTime = round (_waitTime - cba_missiontime);
 
 	if (_playerSkipsWave) then {
-		private _hashWaveLenght = GVAR(waveLenghtTimes);
+		private _hashWaveLenght = GVAR(waveLenghtTimesHash);
 		private _waveLenght = _hashWaveLenght get _playerSide;
 		_remainingWaitTime = _remainingWaitTime + (_waveLenght*60);
 	};
@@ -64,7 +64,7 @@ GVAR(waitingAreaPFH) = [{
 		playSound "TacticalPing";
 	};
 
-	private _allowRespawn = GVAR(allowRespawn) get _playerSide;
+	private _allowRespawn = GVAR(allowRespawnHash) get _playerSide;
 	private _text = format ["<t color='#0800ff' size = '0.8'>%1</t>", localize "STR_tunres_Respawn_FNC_only_forced_waves"];
 	if (_remainingWaitTime >= 0 && { _allowRespawn }) then {
 		_text = format ["<t color='#0800ff' size = '0.8'>%2<br />%1</t>", ([_remainingWaitTime] call CBA_fnc_formatElapsedTime), localize "STR_tunres_Respawn_FNC_remaining_time"];

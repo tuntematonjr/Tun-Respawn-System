@@ -62,18 +62,18 @@ switch (_markername) do {
 	};
 };
 
-private _values = GVAR(flagPoles) get _side;
+private _values = GVAR(flagPolesHash) get _side;
 _values set [0, _flag];
-GVAR(flagPoles) set [_side, _values];
-publicVariable QGVAR(flagPoles);
+GVAR(flagPolesHash) set [_side, _values];
+publicVariable QGVAR(flagPolesHash);
 
 //Set flag texure, if given texture exist
 if (fileExists _flagTexture) then {
 	_flag setFlagTexture _flagTexture;
 };
 
-GVAR(enabledSides) set [_side, true];
-publicVariable QGVAR(enabledSides);
+GVAR(enabledSidesHash) set [_side, true];
+publicVariable QGVAR(enabledSidesHash);
 
 GVAR(respawnPointsHash) set [_side, [_markername, _pos]];
 publicVariable QGVAR(respawnPointsHash);

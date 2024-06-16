@@ -60,17 +60,17 @@ private _pos = getpos _msp;
 [_side, _setup, _pos] remoteExecCall [QEFUNC(respawn,updateRespawnPoint), 2];
 
 _msp setVariable [QGVAR(isMSP), _setup, true];
-GVAR(deployementStatus) set [_side, _setup];
-publicVariable QGVAR(deployementStatus);
-GVAR(activeVehicle) set [_side, [objNull, _msp] select _setup];
-publicVariable QGVAR(activeVehicle);
+GVAR(deployementStatusHash) set [_side, _setup];
+publicVariable QGVAR(deployementStatusHash);
+GVAR(activeVehicleHash) set [_side, [objNull, _msp] select _setup];
+publicVariable QGVAR(activeVehicleHash);
 
 AAR_EVENT(FORMAT_1(localize ARG_1((ARR_2(["STR_tunres_MSP_AAR_MSP_Packed","STR_tunres_MSP_AAR_MSP_Deployed"])),_setup),str _side),_msp,player,nil);
 
 //Change deployement status
 if !(_setup) then {
-	GVAR(contestedStatus) set [_side, false];
-	publicVariable QGVAR(contestedStatus);
+	GVAR(contestedStatusHash) set [_side, false];
+	publicVariable QGVAR(contestedStatusHash);
 };
 
 [_side, _setup] remoteExecCall [QFUNC(startContestedChecks), 2];

@@ -17,10 +17,10 @@ params [["_side", nil, [west]], ["_forceAll", false, [false]]];
 
 if (!isServer) exitWith { };
 
-private _totalRespawnCountHash = GVAR(totalRespawnCount);
+private _totalRespawnCountHash = GVAR(totalRespawnCountHash);
 private _totalRespawnCount = _totalRespawnCountHash get _side;
-private _waitingRespawnHash = GVAR(waitingRespawnList);
-private _waitingRespawnDelayedHash = GVAR(waitingRespawnDelayedList);
+private _waitingRespawnHash = GVAR(waitingRespawnListHash);
+private _waitingRespawnDelayedHash = GVAR(waitingRespawnDelayedListHash);
 private _waitingRespawn = _waitingRespawnHash get _side;
 private _waitingRespawnDelayed = _waitingRespawnDelayedHash get _side;
 
@@ -60,7 +60,7 @@ if (count _waitingRespawn > 0) then {
 			LOG("No more units to respawn");
 			[_handle] call CBA_fnc_removePerFrameHandler;
 
-			//private _waitingRespawnDelayedHash = GVAR(waitingRespawnDelayedList);
+			//private _waitingRespawnDelayedHash = GVAR(waitingRespawnDelayedListHash);
 			private _waitingRespawnDelayed = _waitingRespawnDelayedHash get _side;
 
 			{

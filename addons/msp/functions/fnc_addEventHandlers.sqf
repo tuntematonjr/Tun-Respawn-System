@@ -15,7 +15,7 @@
 #include "script_component.hpp"
 {
     private _side = _x;
-    private _vehicle = GVAR(classnames) get _side;
+    private _vehicle = GVAR(classnamesHash) get _side;
 
     //check that class exist
     if (isClass (configFile >> "CfgVehicles" >> _vehicle)) then {
@@ -29,9 +29,9 @@
                         _side = _x;
                         break;
                     };
-                } forEach GVAR(classnames);
+                } forEach GVAR(classnamesHash);
 
-                private _values = GVAR(contestValues) get _side;
+                private _values = GVAR(contestValuesHash) get _side;
                 private _reportEnemiesRange = _values param [1];
                 private _contestedRadiusMax = _values param [2];
                 private _contestedRadiusMin = _values param [3];
@@ -62,10 +62,10 @@
                     deleteVehicle _x;
                 } forEach (_unit getVariable QGVAR(objects));
 
-                GVAR(deployementStatus) set [_side, false];
-                publicVariable QGVAR(deployementStatus);
-                GVAR(activeVehicle) set [_side, objNull];
-                publicVariable QGVAR(activeVehicle);
+                GVAR(deployementStatusHash) set [_side, false];
+                publicVariable QGVAR(deployementStatusHash);
+                GVAR(activeVehicleHash) set [_side, objNull];
+                publicVariable QGVAR(activeVehicleHash);
 
                 //Do marker update                
                 [_side, false] remoteExecCall ["tunres_respawn_fnc_updateRespawnPoint", 2];

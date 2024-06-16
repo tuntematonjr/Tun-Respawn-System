@@ -15,7 +15,7 @@
 #include "script_component.hpp"
 if (playerSide isEqualTo sideLogic || !hasInterface) exitWith { }; // Exit if a virtual entity (IE zeus)
 
-private _vehicle = GVAR(classnames) get playerSide;
+private _vehicle = GVAR(classnamesHash) get playerSide;
 
 private _actionMain = [QEGVAR(main,respawnAction), localize "STR_tunres_MSP_AceAction_RespawnActions", "\a3\Modules_F_Curator\Data\portraitRespawnTickets_ca.paa", {true}, {true}] call ace_interact_menu_fnc_createAction;
 [_vehicle, 0, ["ACE_MainActions"], _actionMain] call ace_interact_menu_fnc_addActionToClass;
@@ -27,7 +27,7 @@ if (isClass (configFile >> "CfgVehicles" >> _vehicle)) then {
 								{_target getVariable QGVAR(side) isEqualTo playerSide} &&
 								{ driver _target isEqualTo player} &&
 								{ speed player isEqualTo 0 } &&
-								{!((GVAR(deployementStatus) getOrDefault [playerSide, false]))}
+								{!((GVAR(deployementStatusHash) getOrDefault [playerSide, false]))}
 								};
 	_createMSP = ["Set up MSP", localize "STR_tunres_MSP_AceAction_DeployMSP", "\a3\3den\data\cfgwaypoints\unload_ca.paa", {[_target, true] call FUNC(startUpdateDeployementStatus);}, _create_condition, {}, [], [0, 0, 0], 2, [false, true, false, false, false]] call ace_interact_menu_fnc_createAction;
 
@@ -61,7 +61,7 @@ if (isClass (configFile >> "CfgVehicles" >> _vehicle)) then {
 		params ["_entity"];
 
 		private _menu_condition = "alive _target  && {_target getVariable [ '"+ QGVAR(isMSP) +"' , false]} && {!(_target getVariable ['tunres_msp_isContested', false])}";
-		private _tp_conditionText = " private _msp = "+ QGVAR(activeVehicle) +" get playerSide; private _status = _msp getVariable ['tunres_msp_isContested', false]; (_target isNotEqualTo _msp && _obj getVariable [ '"+ QGVAR(isMSP) +"' , false] && !_status) ";
+		private _tp_conditionText = " private _msp = "+ QGVAR(activeVehicleHash) +" get playerSide; private _status = _msp getVariable ['tunres_msp_isContested', false]; (_target isNotEqualTo _msp && _obj getVariable [ '"+ QGVAR(isMSP) +"' , false] && !_status) ";
 
 		[_entity, _tp_conditionText, localize "STR_tunres_MSP_TpText", false, nil, [playerSide], true, _menu_condition, false, ["ACE_MainActions",QEGVAR(main,respawnAction)]] call EFUNC(respawn,addCustomTeleporter);
 

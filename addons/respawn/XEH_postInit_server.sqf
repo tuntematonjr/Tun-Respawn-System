@@ -19,7 +19,7 @@ if (GVAR(respawnType) isNotEqualTo 0) then {
 		params ["_id", "_uid", "_name", "_jip", "_owner"];
 
 		if (cba_missiontime > (GVAR(killJipTime) * 60) && GVAR(killJIP)) then {
-			GVAR(disconnectedPlayers) set [_uid, true];
+			GVAR(disconnectedPlayersHash) set [_uid, true];
 		};
 	}];
 };
@@ -39,8 +39,8 @@ if ( !isnil "afi_aar2" ) then {
 		if (missionNamespace getVariable ["afi_aar2", false]) then {
 
 			if ((GVAR(respawnType) isEqualTo 1)) then {
-				private _hashTickets = GVAR(tickets);
-				private _enabledSideHash = GVAR(enabledSides);
+				private _hashTickets = GVAR(ticketsHash);
+				private _enabledSideHash = GVAR(enabledSidesHash);
 
 				if (_enabledSideHash getOrDefault [west, false]) then {
 					private _ticektsWest = _hashTickets get west;
@@ -64,7 +64,7 @@ if ( !isnil "afi_aar2" ) then {
 			};
 
 			[{
-				private _enabledSideHash = GVAR(enabledSides);
+				private _enabledSideHash = GVAR(enabledSidesHash);
 				if (_enabledSideHash getOrDefault [west, false]) then {
 					private _time = (_hashTime get west);
 					AAR_UPDATE("west","Next respawn wave",_time);

@@ -25,13 +25,13 @@ if (isnull _player || !(_player in allPlayers) || !alive _player ) exitWith {
 	private _unitList = _hash get _side;
 	FILTER(_unitList,(!isnull _x && _x in allPlayers && alive _x ));
 	_hash set [_side, _unitList];
-} forEach [GVAR(waitingRespawnList), GVAR(waitingRespawnDelayedList)];
+} forEach [GVAR(waitingRespawnListHash), GVAR(waitingRespawnDelayedListHash)];
 
 if (isNil {_player getVariable [QGVAR(skipNextWave), nil]}) then {
 	[_player, _side] call FUNC(delayedRespawn)
 };
 
-private _unitListHash = [GVAR(waitingRespawnList), GVAR(waitingRespawnDelayedList)] select (_player getVariable [QGVAR(skipNextWave), false]);
+private _unitListHash = [GVAR(waitingRespawnListHash), GVAR(waitingRespawnDelayedListHash)] select (_player getVariable [QGVAR(skipNextWave), false]);
 private _unitList = _unitListHash get _side;
 
 if (_addPlayer) then {

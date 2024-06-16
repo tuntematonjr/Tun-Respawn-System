@@ -15,13 +15,13 @@
 
 if (playerSide isEqualTo sideLogic || !hasInterface) exitWith { };  // Exit if a virtual entity (IE zeus)
 
-private _vehicle = GVAR(classnames) get playerSide;
+private _vehicle = GVAR(classnamesHash) get playerSide;
 
 private _text = "<font face='PuristaBold' size='20'>"+ localize "STR_tunres_MSP_Briefing_Header" +"</font><br/>";
 
 if (isClass (configFile >> "CfgVehicles" >> _vehicle)) then {
 
-	private _values = GVAR(contestValues) get playerSide;
+	private _values = GVAR(contestValuesHash) get playerSide;
 	_values params ["_reportEnemiesInterval", "_reportEnemiesRange", "_contestedRadiusMax", "_contestedRadiusMin", "_contestedCheckInterval", "_reportEnemiesEnabled"];
 	_text = format ["%1<br/>- %2",_text, localize "STR_tunres_Respawn_Briefing_MspEnabled"];
 

@@ -14,18 +14,18 @@
 params[["_side", nil,[west]]];
 
 if (!isServer) exitWith {};
-private _oldAllowRespawnStatus = GVAR(allowRespawn) get _side;
-GVAR(allowRespawn) set [_side, false];
+private _oldAllowRespawnStatus = GVAR(allowRespawnHash) get _side;
+GVAR(allowRespawnHash) set [_side, false];
 
-private _values = GVAR(contestValues) get _side;
+private _values = GVAR(contestValuesHash) get _side;
 private _contestedRadiusMax = _values param [2];
 private _contestedRadiusMin = _values param [3];
 
 private _hash = GVAR(contestedCheckHash);
 private _allUnits = units west + units east + units resistance + units civilian;
 
-private _mspDeployementStatus = GVAR(deployementStatus) get _side;
-private _msp = GVAR(activeVehicle) get _side;
+private _mspDeployementStatus = GVAR(deployementStatusHash) get _side;
+private _msp = GVAR(activeVehicleHash) get _side;
 
 if ( _mspDeployementStatus && { !(isNull _msp) } ) then {
 	
@@ -60,15 +60,15 @@ if ( _mspDeployementStatus && { !(isNull _msp) } ) then {
 	AAR_UPDATE(_msp,"Friendly Count",_friendliesInArea);
 	AAR_UPDATE(_msp,"Is contested",_isContested);
 
-	private _oldContestedStatus = GVAR(contestedStatus) get _side;
+	private _oldContestedStatus = GVAR(contestedStatusHash) get _side;
 
 	if (_oldContestedStatus isNotEqualTo _isContested) then {
 
 		AAR_EVENT(FORMAT_1(localize ARG_1(ARR_2(["STR_tunres_MSP_AAR_MSP_notContested","STR_tunres_MSP_AAR_MSP_isContested"]),_isContested),str _side),_msp,nil,nil);
 		AAR_UPDATE(_msp,"Is contested",_isContested);
 
-		GVAR(contestedStatus) set [_side, _isContested];
-		publicVariable QGVAR(contestedStatus);
+		GVAR(contestedStatusHash) set [_side, _isContested];
+		publicVariable QGVAR(contestedStatusHash);
 		_msp setVariable [QGVAR(isContested), _isContested, true];
 
 		private _whoToNotify = [_side, GVAR(contestedNotification)] call FUNC(whoToNotify);
@@ -87,13 +87,13 @@ if ( _mspDeployementStatus && { !(isNull _msp) } ) then {
 	LOG(_debugText);
 } else {
 	if (_mspDeployementStatus) then {
-		GVAR(deployementStatus) set [_side, false];
-		publicVariable QGVAR(deployementStatus);
-		GVAR(contestedStatus) set [_side, false];
-		publicVariable QGVAR(contestedStatus);
+		GVAR(deployementStatusHash) set [_side, false];
+		publicVariable QGVAR(deployementStatusHash);
+		GVAR(contestedStatusHash) set [_side, false];
+		publicVariable QGVAR(contestedStatusHash);
 		private _text = "MSP Object Disapeared" + str _side;
 		ERROR(_text);
 	};
 };
 
-GVAR(allowRespawn) set [_side, _oldAllowRespawnStatus];
+GVAR(allowRespawnHash) set [_side, _oldAllowRespawnStatus];

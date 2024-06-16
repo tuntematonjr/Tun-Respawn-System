@@ -18,7 +18,7 @@ if (playerSide isEqualTo sideLogic || !hasInterface) exitWith { };
 
 params["_pos"];
 
-private _values = GVAR(contestValues) get playerSide;
+private _values = GVAR(contestValuesHash) get playerSide;
 private _reportEnemiesRange = _values param [1];
 private _contestedRadiusMax = _values param [2];
 private _contestedRadiusMin = _values param [3];

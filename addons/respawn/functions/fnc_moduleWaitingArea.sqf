@@ -80,12 +80,12 @@ if (fileExists _flagTexture) then {
 }, _side] call CBA_fnc_waitUntilAndExecute;
 
 
-private _values = GVAR(flagPoles) get _side;
+private _values = GVAR(flagPolesHash) get _side;
 _values set [1, _flag];
-GVAR(flagPoles) set [_side, _values];
-publicVariable QGVAR(flagPoles);
+GVAR(flagPolesHash) set [_side, _values];
+publicVariable QGVAR(flagPolesHash);
 
-GVAR(waitingArea) set [_side, [_markername, _logic, _pos]];
-publicVariable QGVAR(waitingArea);
+GVAR(waitingAreaHash) set [_side, [_markername, _logic, _pos]];
+publicVariable QGVAR(waitingAreaHash);
 // Module function is executed by spawn command, so returned value is not necessary, but it's good practice.
 true

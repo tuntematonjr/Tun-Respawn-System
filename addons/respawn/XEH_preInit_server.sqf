@@ -3,11 +3,11 @@
 GVAR(respawnPointsHash) = createHashMap;
 GVAR(playerTicektsHash) = createHashMap;
 
-GVAR(disconnectedPlayers) = createHashMapFromArray EMPTY_ARRAY_FOR_SIDES;
+GVAR(disconnectedPlayersHash) = createHashMapFromArray EMPTY_ARRAY_FOR_SIDES;
 
 //Respawn waiting area unit arrays
-GVAR(waitingRespawnList) = createHashMapFromArray EMPTY_ARRAY_FOR_SIDES;
-GVAR(waitingRespawnDelayedList) = createHashMapFromArray EMPTY_ARRAY_FOR_SIDES;
+GVAR(waitingRespawnListHash) = createHashMapFromArray EMPTY_ARRAY_FOR_SIDES;
+GVAR(waitingRespawnDelayedListHash) = createHashMapFromArray EMPTY_ARRAY_FOR_SIDES;
 
 //Total respawn count (log stuff)
-GVAR(totalRespawnCount) = createHashMapFromArray ZEROS_FOR_SIDES;
+GVAR(totalRespawnCountHash) = createHashMapFromArray ZEROS_FOR_SIDES;

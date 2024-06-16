@@ -18,7 +18,7 @@ params [["_side", nil, [west]], ["_player", objNull, [objNull]], ["_doHint", fal
 private "_ticketCount";
 switch (GVAR(respawnType)) do {
 	case 1: { //Side ticket
-		private _hash = GVAR(tickets);
+		private _hash = GVAR(ticketsHash);
 		_ticketCount = _hash get _side;
 	};
 	case 2: { // Player tickets
@@ -28,7 +28,7 @@ switch (GVAR(respawnType)) do {
 			_ticketCount = _hash getOrDefault [_playerUID, -10];
 
 			if (_ticketCount isEqualTo -10) then {
-				_ticketCount = GVAR(tickets) get _side;
+				_ticketCount = GVAR(ticketsHash) get _side;
 				_hash set [_playerUID, _ticketCount, true];
 			};
 		} else {

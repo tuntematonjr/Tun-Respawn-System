@@ -6,12 +6,12 @@ PREP_RECOMPILE_START;
 PREP_RECOMPILE_END;
 
 //Msp classnames
-GVAR(classnames) = createHashMap;
+GVAR(classnamesHash) = createHashMap;
 
 //reportEnemiesInterval 0 - reportEnemiesRange 1 - contestedRadiusMax 2 - contestedRadiusMin 3 - contestedCheckInterval 4 - reportEnemiesEnabled 5
-GVAR(contestValues) = createHashMapFromArray [[west,[0,0,0,0,0,false]],[east,[0,0,0,0,0,false]],[resistance,[0,0,0,0,0,false]],[civilian,[0,0,0,0,0,false]]];
-GVAR(contestHandles) = createHashMap;
-GVAR(contestCheckRunning) = createHashMapFromArray FALSES_FOR_SIDES;
+GVAR(contestValuesHash) = createHashMapFromArray [[west,[0,0,0,0,0,false]],[east,[0,0,0,0,0,false]],[resistance,[0,0,0,0,0,false]],[civilian,[0,0,0,0,0,false]]];
+GVAR(contestHandlesHash) = createHashMap;
+GVAR(contestCheckRunningHash) = createHashMapFromArray FALSES_FOR_SIDES;
 
 [
     QGVAR(enable),
@@ -44,9 +44,9 @@ GVAR(contestCheckRunning) = createHashMapFromArray FALSES_FOR_SIDES;
     1,
     {
         params ["_value"];
-        private _array = GVAR(contestValues) get west;
+        private _array = GVAR(contestValuesHash) get west;
         _array set [5, _value];
-        GVAR(contestValues) set [west, _array];
+        GVAR(contestValuesHash) set [west, _array];
     },
     true
 ] call CBA_Settings_fnc_init;
@@ -60,9 +60,9 @@ GVAR(contestCheckRunning) = createHashMapFromArray FALSES_FOR_SIDES;
     1,
     {
         params ["_value"];
-        private _array = GVAR(contestValues) get east;
+        private _array = GVAR(contestValuesHash) get east;
         _array set [5, _value];
-        GVAR(contestValues) set [east, _array];
+        GVAR(contestValuesHash) set [east, _array];
     },
     true
 ] call CBA_Settings_fnc_init;
@@ -76,9 +76,9 @@ GVAR(contestCheckRunning) = createHashMapFromArray FALSES_FOR_SIDES;
     1,
     {
         params ["_value"];
-        private _array = GVAR(contestValues) get resistance;
+        private _array = GVAR(contestValuesHash) get resistance;
         _array set [5, _value];
-        GVAR(contestValues) set [resistance, _array];
+        GVAR(contestValuesHash) set [resistance, _array];
     },
     true
 ] call CBA_Settings_fnc_init;
@@ -92,9 +92,9 @@ GVAR(contestCheckRunning) = createHashMapFromArray FALSES_FOR_SIDES;
     1,
     {
         params ["_value"];
-        private _array = GVAR(contestValues) get civilian;
+        private _array = GVAR(contestValuesHash) get civilian;
         _array set [5, _value];
-        GVAR(contestValues) set [civilian, _array];
+        GVAR(contestValuesHash) set [civilian, _array];
     },
     true
 ] call CBA_Settings_fnc_init;
@@ -110,9 +110,9 @@ GVAR(contestCheckRunning) = createHashMapFromArray FALSES_FOR_SIDES;
         params ["_value"];
         _value = round _value;
         GVAR(reportEnemiesIntervalWest) = _value;
-        private _array = GVAR(contestValues) get west;
+        private _array = GVAR(contestValuesHash) get west;
         _array set [0, _value];
-        GVAR(contestValues) set [west, _array];
+        GVAR(contestValuesHash) set [west, _array];
     },
     true
 ] call CBA_Settings_fnc_init;
@@ -128,9 +128,9 @@ GVAR(contestCheckRunning) = createHashMapFromArray FALSES_FOR_SIDES;
         params ["_value"];
         _value = round _value;
         GVAR(reportEnemiesIntervalEast) = _value;
-        private _array = GVAR(contestValues) get east;
+        private _array = GVAR(contestValuesHash) get east;
         _array set [0, _value];
-        GVAR(contestValues) set [east, _array];
+        GVAR(contestValuesHash) set [east, _array];
     },
     true
 ] call CBA_Settings_fnc_init;
@@ -146,9 +146,9 @@ GVAR(contestCheckRunning) = createHashMapFromArray FALSES_FOR_SIDES;
         params ["_value"];
         _value = round _value;
         GVAR(reportEnemiesIntervalResistance) = _value;
-        private _array = GVAR(contestValues) get resistance;
+        private _array = GVAR(contestValuesHash) get resistance;
         _array set [0, _value];
-        GVAR(contestValues) set [resistance, _array];
+        GVAR(contestValuesHash) set [resistance, _array];
     },
     true
 ] call CBA_Settings_fnc_init;
@@ -164,9 +164,9 @@ GVAR(contestCheckRunning) = createHashMapFromArray FALSES_FOR_SIDES;
         params ["_value"];
         _value = round _value;
         GVAR(reportEnemiesIntervalCivilian) = _value;
-        private _array = GVAR(contestValues) get civilian;
+        private _array = GVAR(contestValuesHash) get civilian;
         _array set [0, _value];
-        GVAR(contestValues) set [civilian, _array];
+        GVAR(contestValuesHash) set [civilian, _array];
     },
     true
 ] call CBA_Settings_fnc_init;
@@ -182,9 +182,9 @@ GVAR(contestCheckRunning) = createHashMapFromArray FALSES_FOR_SIDES;
         params ["_value"];
         _value = round _value;
         GVAR(reportEnemiesRangeWest) = _value;
-        private _array = GVAR(contestValues) get west;
+        private _array = GVAR(contestValuesHash) get west;
         _array set [1, _value];
-        GVAR(contestValues) set [west, _array];
+        GVAR(contestValuesHash) set [west, _array];
     },
     false
 ] call CBA_Settings_fnc_init;
@@ -200,9 +200,9 @@ GVAR(contestCheckRunning) = createHashMapFromArray FALSES_FOR_SIDES;
         params ["_value"];
         _value = round _value;
         GVAR(reportEnemiesRangeEast) = _value;
-        private _array = GVAR(contestValues) get east;
+        private _array = GVAR(contestValuesHash) get east;
         _array set [1, _value];
-        GVAR(contestValues) set [east, _array];
+        GVAR(contestValuesHash) set [east, _array];
     },
     false
 ] call CBA_Settings_fnc_init;
@@ -218,9 +218,9 @@ GVAR(contestCheckRunning) = createHashMapFromArray FALSES_FOR_SIDES;
         params ["_value"];
         _value = round _value;
         GVAR(reportEnemiesRangeResistance) = _value;
-        private _array = GVAR(contestValues) get resistance;
+        private _array = GVAR(contestValuesHash) get resistance;
         _array set [1, _value];
-        GVAR(contestValues) set [resistance, _array];
+        GVAR(contestValuesHash) set [resistance, _array];
     },
     false
 ] call CBA_Settings_fnc_init;
@@ -236,9 +236,9 @@ GVAR(contestCheckRunning) = createHashMapFromArray FALSES_FOR_SIDES;
         params ["_value"];
         _value = round _value;
         GVAR(reportEnemiesRangeCivilian) = _value;
-        private _array = GVAR(contestValues) get civilian;
+        private _array = GVAR(contestValuesHash) get civilian;
         _array set [1, _value];
-        GVAR(contestValues) set [civilian, _array];
+        GVAR(contestValuesHash) set [civilian, _array];
     },
     false
 ] call CBA_Settings_fnc_init;
@@ -254,9 +254,9 @@ GVAR(contestCheckRunning) = createHashMapFromArray FALSES_FOR_SIDES;
         params ["_value"];
         _value = round _value;
         GVAR(contestedRadiusMaxWest) = _value;
-        private _array = GVAR(contestValues) get west;
+        private _array = GVAR(contestValuesHash) get west;
         _array set [2, _value];
-        GVAR(contestValues) set [west, _array];
+        GVAR(contestValuesHash) set [west, _array];
     },
     false
 ] call CBA_Settings_fnc_init;
@@ -272,9 +272,9 @@ GVAR(contestCheckRunning) = createHashMapFromArray FALSES_FOR_SIDES;
         params ["_value"];
         _value = round _value;
         GVAR(contestedRadiusMaxEast) = _value;
-        private _array = GVAR(contestValues) get east;
+        private _array = GVAR(contestValuesHash) get east;
         _array set [2, _value];
-        GVAR(contestValues) set [east, _array];
+        GVAR(contestValuesHash) set [east, _array];
     },
     false
 ] call CBA_Settings_fnc_init;
@@ -290,9 +290,9 @@ GVAR(contestCheckRunning) = createHashMapFromArray FALSES_FOR_SIDES;
         params ["_value"];
         _value = round _value;
         GVAR(contestedRadiusMaxResistance) = _value;
-        private _array = GVAR(contestValues) get resistance;
+        private _array = GVAR(contestValuesHash) get resistance;
         _array set [2, _value];
-        GVAR(contestValues) set [resistance, _array];
+        GVAR(contestValuesHash) set [resistance, _array];
     },
     false
 ] call CBA_Settings_fnc_init;
@@ -308,9 +308,9 @@ GVAR(contestCheckRunning) = createHashMapFromArray FALSES_FOR_SIDES;
         params ["_value"];
         _value = round _value;
         GVAR(contestedRadiusMaxCivilian) = _value;
-        private _array = GVAR(contestValues) get civilian;
+        private _array = GVAR(contestValuesHash) get civilian;
         _array set [2, _value];
-        GVAR(contestValues) set [civilian, _array];
+        GVAR(contestValuesHash) set [civilian, _array];
     },
     false
 ] call CBA_Settings_fnc_init;
@@ -326,9 +326,9 @@ GVAR(contestCheckRunning) = createHashMapFromArray FALSES_FOR_SIDES;
         params ["_value"];
         _value = round _value;
         GVAR(contestedRadiusMinWest) = _value;
-        private _array = GVAR(contestValues) get west;
+        private _array = GVAR(contestValuesHash) get west;
         _array set [3, _value];
-        GVAR(contestValues) set [west, _array];
+        GVAR(contestValuesHash) set [west, _array];
     },
     false
 ] call CBA_Settings_fnc_init;
@@ -344,9 +344,9 @@ GVAR(contestCheckRunning) = createHashMapFromArray FALSES_FOR_SIDES;
         params ["_value"];
         _value = round _value;
         GVAR(contestedRadiusMinEast) = _value;
-        private _array = GVAR(contestValues) get east;
+        private _array = GVAR(contestValuesHash) get east;
         _array set [3, _value];
-        GVAR(contestValues) set [east, _array];
+        GVAR(contestValuesHash) set [east, _array];
     },
     false
 ] call CBA_Settings_fnc_init;
@@ -362,9 +362,9 @@ GVAR(contestCheckRunning) = createHashMapFromArray FALSES_FOR_SIDES;
         params ["_value"];
         _value = round _value;
         GVAR(contestedRadiusMinResistance) = _value;
-        private _array = GVAR(contestValues) get resistance;
+        private _array = GVAR(contestValuesHash) get resistance;
         _array set [3, _value];
-        GVAR(contestValues) set [resistance, _array];
+        GVAR(contestValuesHash) set [resistance, _array];
     },
     false
 ] call CBA_Settings_fnc_init;
@@ -380,9 +380,9 @@ GVAR(contestCheckRunning) = createHashMapFromArray FALSES_FOR_SIDES;
         params ["_value"];
         _value = round _value;
         GVAR(contestedRadiusMinCivilian) = _value;
-        private _array = GVAR(contestValues) get civilian;
+        private _array = GVAR(contestValuesHash) get civilian;
         _array set [3, _value];
-        GVAR(contestValues) set [civilian, _array];
+        GVAR(contestValuesHash) set [civilian, _array];
     },
     false
 ] call CBA_Settings_fnc_init;
@@ -398,9 +398,9 @@ GVAR(contestCheckRunning) = createHashMapFromArray FALSES_FOR_SIDES;
         params ["_value"];
         _value = round _value;
         GVAR(contestedCheckIntervalWest) = _value;
-        private _array = GVAR(contestValues) get west;
+        private _array = GVAR(contestValuesHash) get west;
         _array set [4, _value];
-        GVAR(contestValues) set [west, _array];
+        GVAR(contestValuesHash) set [west, _array];
     },
     true
 ] call CBA_Settings_fnc_init;
@@ -416,9 +416,9 @@ GVAR(contestCheckRunning) = createHashMapFromArray FALSES_FOR_SIDES;
         params ["_value"];
         _value = round _value;
         GVAR(contestedCheckIntervalEast) = _value;
-        private _array = GVAR(contestValues) get east;
+        private _array = GVAR(contestValuesHash) get east;
         _array set [4, _value];
-        GVAR(contestValues) set [west, _array];
+        GVAR(contestValuesHash) set [west, _array];
     },
     true
 ] call CBA_Settings_fnc_init;
@@ -434,9 +434,9 @@ GVAR(contestCheckRunning) = createHashMapFromArray FALSES_FOR_SIDES;
         params ["_value"];
         _value = round _value;
         GVAR(contestedCheckIntervalResistance) = _value;
-        private _array = GVAR(contestValues) get resistance;
+        private _array = GVAR(contestValuesHash) get resistance;
         _array set [4, _value];
-        GVAR(contestValues) set [resistance, _array];
+        GVAR(contestValuesHash) set [resistance, _array];
     },
     true
 ] call CBA_Settings_fnc_init;
@@ -452,9 +452,9 @@ GVAR(contestCheckRunning) = createHashMapFromArray FALSES_FOR_SIDES;
         params ["_value"];
         _value = round _value;
         GVAR(contestedCheckIntervalCivilian) = _value;
-        private _array = GVAR(contestValues) get civilian;
+        private _array = GVAR(contestValuesHash) get civilian;
         _array set [4, _value];
-        GVAR(contestValues) set [civilian, _array];
+        GVAR(contestValuesHash) set [civilian, _array];
     },
     true
 ] call CBA_Settings_fnc_init;
@@ -496,7 +496,7 @@ GVAR(contestCheckRunning) = createHashMapFromArray FALSES_FOR_SIDES;
     1,
     {
         params ["_value"];
-        GVAR(classnames) set [east , _value];
+        GVAR(classnamesHash) set [east , _value];
     },
     true
 ] call CBA_Settings_fnc_init;
@@ -510,7 +510,7 @@ GVAR(contestCheckRunning) = createHashMapFromArray FALSES_FOR_SIDES;
     1,
     {
         params ["_value"];
-        GVAR(classnames) set [west , _value];
+        GVAR(classnamesHash) set [west , _value];
     },
     true
 ] call CBA_Settings_fnc_init;
@@ -524,7 +524,7 @@ GVAR(contestCheckRunning) = createHashMapFromArray FALSES_FOR_SIDES;
     1,
     {
         params ["_value"];
-        GVAR(classnames) set [resistance , _value];
+        GVAR(classnamesHash) set [resistance , _value];
     },
     true
 ] call CBA_Settings_fnc_init;
@@ -538,7 +538,7 @@ GVAR(contestCheckRunning) = createHashMapFromArray FALSES_FOR_SIDES;
     1,
     {
         params ["_value"];
-        GVAR(classnames) set [civilian , _value];
+        GVAR(classnamesHash) set [civilian , _value];
     },
     true
 ] call CBA_Settings_fnc_init;

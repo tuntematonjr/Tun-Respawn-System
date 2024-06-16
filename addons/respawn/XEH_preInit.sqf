@@ -5,26 +5,25 @@ PREP_RECOMPILE_START;
 #include "XEH_PREP.hpp"
 PREP_RECOMPILE_END;
 
-
 //cba_missiontime time when next wave happens.
-GVAR(nextWaveTimes) = createHashMapFromArray ZEROS_FOR_SIDES;
+GVAR(nextWaveTimesHash) = createHashMapFromArray ZEROS_FOR_SIDES;
 
 //Respawn wave lenght times
-GVAR(waveLenghtTimes) = createHashMap;
+GVAR(waveLenghtTimesHash) = createHashMap;
 
 //Tickets
-GVAR(tickets) = createHashMap;
+GVAR(ticketsHash) = createHashMap;
 
 //Waiting area stuff
-GVAR(waitingArea) = createHashMap;
+GVAR(waitingAreaHash) = createHashMap;
 
 //Which side has respawn system started
-GVAR(enabledSides) = createHashMapFromArray FALSES_FOR_SIDES;
+GVAR(enabledSidesHash) = createHashMapFromArray FALSES_FOR_SIDES;
 
 //Allow respawn for each side
-GVAR(allowRespawn) = createHashMapFromArray TRUES_FOR_SIDES;
+GVAR(allowRespawnHash) = createHashMapFromArray TRUES_FOR_SIDES;
 
-GVAR(timerRunning) = createHashMapFromArray FALSES_FOR_SIDES;
+GVAR(timerRunningHash) = createHashMapFromArray FALSES_FOR_SIDES;
 ISNILS(GVAR(teleportPoints),[]);
 
 //allowed sides to spectate 
@@ -34,11 +33,7 @@ GVAR(allowedSpectateSidesResistance) = [resistance];
 GVAR(allowedSpectateSidesCivilian) = [civilian];
 
 //flag poles [mainbase,waitingrea]
-GVAR(flagPoles) = createHashMapFromArray [[west,[objNull,objNull]],[east,[objNull,objNull]],[resistance,[objNull,objNull]],[civilian,[objNull,objNull]]];
-
-
-
-
+GVAR(flagPolesHash) = createHashMapFromArray [[west,[objNull,objNull]],[east,[objNull,objNull]],[resistance,[objNull,objNull]],[civilian,[objNull,objNull]]];
 
 [
     QGVAR(enable), // Unique setting name. Matches resulting variable name <STRING>
@@ -152,7 +147,7 @@ GVAR(flagPoles) = createHashMapFromArray [[west,[objNull,objNull]],[east,[objNul
         params ["_value"];
         _value = round _value;
         GVAR(initialWaveTimeWest) = _value;
-        GVAR(waveLenghtTimes) set [west, _value];
+        GVAR(waveLenghtTimesHash) set [west, _value];
     },
     true
 ] call CBA_Settings_fnc_init;
@@ -168,7 +163,7 @@ GVAR(flagPoles) = createHashMapFromArray [[west,[objNull,objNull]],[east,[objNul
         params ["_value"];
         _value = round _value;
         GVAR(initialWaveTimeEast) = _value;
-        GVAR(waveLenghtTimes) set [east, _value];
+        GVAR(waveLenghtTimesHash) set [east, _value];
     },
     true
 ] call CBA_Settings_fnc_init;
@@ -184,7 +179,7 @@ GVAR(flagPoles) = createHashMapFromArray [[west,[objNull,objNull]],[east,[objNul
         params ["_value"];
         _value = round _value;
         GVAR(initialWaveTimeResistance) = _value;
-        GVAR(waveLenghtTimes) set [resistance, _value];
+        GVAR(waveLenghtTimesHash) set [resistance, _value];
     },
     true
 ] call CBA_Settings_fnc_init;
@@ -200,7 +195,7 @@ GVAR(flagPoles) = createHashMapFromArray [[west,[objNull,objNull]],[east,[objNul
         params ["_value"];
         _value = round _value;
         GVAR(initialWaveTimeCivilian) = _value;
-        GVAR(waveLenghtTimes) set [civilian, _value];
+        GVAR(waveLenghtTimesHash) set [civilian, _value];
     },
     true
 ] call CBA_Settings_fnc_init;
@@ -449,7 +444,7 @@ GVAR(flagPoles) = createHashMapFromArray [[west,[objNull,objNull]],[east,[objNul
         params ["_value"];
         _value = round _value;
         GVAR(initialTicketsWest) = _value;
-        GVAR(tickets) set [west, _value];
+        GVAR(ticketsHash) set [west, _value];
     },
     true
 ] call CBA_Settings_fnc_init;
@@ -465,7 +460,7 @@ GVAR(flagPoles) = createHashMapFromArray [[west,[objNull,objNull]],[east,[objNul
         params ["_value"];
         _value = round _value;
         GVAR(initialTicketsEast) = _value;
-        GVAR(tickets) set [east, _value];
+        GVAR(ticketsHash) set [east, _value];
     },
     true
 ] call CBA_Settings_fnc_init;
@@ -481,7 +476,7 @@ GVAR(flagPoles) = createHashMapFromArray [[west,[objNull,objNull]],[east,[objNul
         params ["_value"];
         _value = round _value;
         GVAR(initialTicketsResistance) = _value;
-        GVAR(tickets) set [resistance, _value];
+        GVAR(ticketsHash) set [resistance, _value];
     },
     true
 ] call CBA_Settings_fnc_init;
@@ -497,7 +492,7 @@ GVAR(flagPoles) = createHashMapFromArray [[west,[objNull,objNull]],[east,[objNul
         params ["_value"];
         _value = round _value;
         GVAR(initialTicketsCivilian) = _value;
-        GVAR(tickets) set [civilian, _value];
+        GVAR(ticketsHash) set [civilian, _value];
     },
     true
 ] call CBA_Settings_fnc_init;

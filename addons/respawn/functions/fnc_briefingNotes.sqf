@@ -36,7 +36,7 @@ if (GVAR(briefingEnableShowRespawnType)) then {
 };
 
 if (GVAR(briefingEnableShowTime)) then {
-	private _waveLenghtTimeHash = GVAR(waveLenghtTimes);
+	private _waveLenghtTimeHash = GVAR(waveLenghtTimesHash);
 	_text = format ["%1<br/><br/><font face='PuristaBold' size='15'>Wave interval</font>",_text];
 	if (playerSide isEqualTo west || GVAR(briefingEnableShowOtherSidesDataWest)) then {
 		_text = format ["%1<br/>- "+localize "STR_tunres_Respawn_Briefing_WaveTime_west",_text, _waveLenghtTimeHash get west];

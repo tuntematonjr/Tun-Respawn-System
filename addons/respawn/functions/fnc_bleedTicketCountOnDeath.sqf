@@ -24,8 +24,8 @@ if (_respawnType isEqualTo 0) exitWith {
 private _playerUID = getPlayerUID _player;
 
 //if player disconnected and came back. So no ticket wasted.
-if (GVAR(disconnectedPlayers) getOrDefault [_playerUID, false]) exitWith {
-	GVAR(disconnectedPlayers) set [_uid, false];
+if (GVAR(disconnectedPlayersHash) getOrDefault [_playerUID, false]) exitWith {
+	GVAR(disconnectedPlayersHash) set [_uid, false];
 	[5] remoteExecCall ["setPlayerRespawnTime", _player];
 };
 

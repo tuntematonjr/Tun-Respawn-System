@@ -19,11 +19,11 @@ params ["_side", "_start"];
 if (!isServer) then {};
 
 if (_start) then {
-    if (GVAR(contestCheckRunning) getOrDefault [_side, false]) exitWith {
+    if (GVAR(contestCheckRunningHash) getOrDefault [_side, false]) exitWith {
         ERROR("Tried to start contested check, while it was already on!!");
     };
 
-    private _values = GVAR(contestValues) get _side;
+    private _values = GVAR(contestValuesHash) get _side;
     private _reportEnemiesInterval = _values select 0;
     private _contestedCheckInterval = _values select 4;
     private _reportEnemiesEnabled = _values select 5;
@@ -31,7 +31,7 @@ if (_start) then {
     private _handleContest = [{
         _args params["_side"];
         if !(GVAR(disableContestedCheck)) then {
-            private _mspDeployementStatus = GVAR(deployementStatus) get _side;
+            private _mspDeployementStatus = GVAR(deployementStatusHash) get _side;
             if (_mspDeployementStatus) then {
                 [_side] call FUNC(contestedCheck);
             } else {
@@ -49,8 +49,8 @@ if (_start) then {
             if !(GVAR(disableContestedCheck)) then {
                 private _side = _args;
                 private _hash = GVAR(contestedCheckHash);
-                private _contestedStatus = GVAR(contestedStatus) get _side;
-                private _mspStatus = GVAR(deployementStatus) get _side;
+                private _contestedStatus = GVAR(contestedStatusHash) get _side;
+                private _mspStatus = GVAR(deployementStatusHash) get _side;
                 if (_mspStatus) then {
                     private _enemyCount = (_hash get _side) select 0;
                     if (_enemyCount > 0 && !_contestedStatus) then {
@@ -65,14 +65,14 @@ if (_start) then {
             };
         }, _reportEnemiesInterval, _side] call CBA_fnc_addPerFrameHandler;
     };
-    GVAR(contestHandles) set [_side,[_handleContest,_handleReport]];
+    GVAR(contestHandlesHash) set [_side,[_handleContest,_handleReport]];
 } else {
 
-    if !(GVAR(contestCheckRunning) getOrDefault [_side, false]) exitWith {
+    if !(GVAR(contestCheckRunningHash) getOrDefault [_side, false]) exitWith {
         ERROR("Tried to stop contested check, while it was already off!!");
     };
 
-    private _values = GVAR(contestHandles) get _side;
+    private _values = GVAR(contestHandlesHash) get _side;
     {
         private _handle = _x;
         if (!isNil {_handle}) then {
@@ -81,4 +81,4 @@ if (_start) then {
     } forEach _values;
 };
 
-GVAR(contestCheckRunning) set [_side, _start];
+GVAR(contestCheckRunningHash) set [_side, _start];

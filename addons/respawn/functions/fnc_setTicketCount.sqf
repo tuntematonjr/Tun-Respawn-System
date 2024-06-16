@@ -18,8 +18,8 @@ params [["_target", nil, [objnull, west]], ["_count", nil, [0]]];
 switch (GVAR(respawnType)) do {
 	case 1: {
 		if (IS_SIDE(_target)) then {
-			GVAR(tickets) set [_target, _count];
-			publicVariable QGVAR(tickets);
+			GVAR(ticketsHash) set [_target, _count];
+			publicVariable QGVAR(ticketsHash);
 			breakWith true;
 		} else {
 			ERROR("Tried to set side tickest, but did not give side");
