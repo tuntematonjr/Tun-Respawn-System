@@ -44,8 +44,6 @@ ADDON
 	// Add killed EH
 	[player, "killed", {
 		params ["_unit", "_killer", "_instigator", "_useEffects"];
-		_test = format["testi juttu: %1",player getvariable [QGVAR(isWaitingRespawn), false]];
-		LOG(_test);
 		if (player getvariable [QGVAR(isWaitingRespawn), false]) then {
 			GVAR(uselesBody) = _unit;
 		};
