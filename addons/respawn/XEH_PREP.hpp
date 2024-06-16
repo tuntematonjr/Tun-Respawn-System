@@ -16,6 +16,7 @@ PREP(forceRespawnWave);
 PREP(getOffSet);
 PREP(getParentAction);
 PREP(getTicketCount);
+PREP(getTicketCountClient);
 PREP(killJIP);
 PREP(moduleRespawnPoint);
 PREP(moduleTeleport);
