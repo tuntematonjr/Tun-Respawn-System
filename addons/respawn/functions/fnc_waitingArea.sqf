@@ -82,7 +82,7 @@ GVAR(mark) = 0;
 	};
 
 	if (_respawnType in [1,2]) then {
-		private _tickets = GVAR(tickets) get _playerSide;
+		private _tickets = [false] call FUNC(getTicketCountClient);
 		DEC(_respawnType); // so it works on select 
 		private _ticketsTypeText = localize (["STR_tunres_Respawan_RemainingTicketsSide", "STR_tunres_Respawan_RemainingTicketsPlayer"] select _respawnType);
 		_text = format["%1<br/><t color='#0800ff' size = '0.5'>%2 %3</t>", _text, _ticketsTypeText, _tickets];
