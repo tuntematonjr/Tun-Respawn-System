@@ -20,6 +20,7 @@ private _respawnPosition = getMarkerPos ((_respawnPointsHash get _side) select 0
 [_unit, false, _side] call FUNC(updateWaitingRespawnList);
 
 _unit setVariable [QGVAR(isWaitingRespawn), false, true];
+player setVariable [QGVAR(skipNextWave), nil];
 
 private _text = localize "STR_tunres_Respawn_FNC_moveRespawnText";
 

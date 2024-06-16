@@ -21,6 +21,7 @@ LOG("Start waiting area");
 
 //tell server to add this player to list
 if (!isNil QGVAR(uselesBody)) then {
+	LOG("Delete old body");
 	deleteVehicle GVAR(uselesBody);
 	GVAR(uselesBody) = nil;
 };

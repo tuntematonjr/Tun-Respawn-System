@@ -28,6 +28,7 @@ if (isnull _player || !(_player in allPlayers) || !alive _player ) exitWith {
 } forEach [GVAR(waitingRespawnListHash), GVAR(waitingRespawnDelayedListHash)];
 
 if (isNil {_player getVariable [QGVAR(skipNextWave), nil]}) then {
+	LOG("Check if unit needs to be at delayed respawn");
 	[_player, _side] call FUNC(delayedRespawn)
 };
 
