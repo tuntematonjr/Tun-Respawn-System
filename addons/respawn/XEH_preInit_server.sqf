@@ -1,6 +1,7 @@
 #include "script_component.hpp"
 
 GVAR(respawnPointsHash) = createHashMap;
+GVAR(playerTicektsHash) = createHashMap;
 
 GVAR(disconnectedPlayers) = createHashMapFromArray EMPTY_ARRAY_FOR_SIDES;
 

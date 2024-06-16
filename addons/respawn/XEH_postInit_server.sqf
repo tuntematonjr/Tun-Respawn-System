@@ -5,7 +5,7 @@ if (!GVAR(enable)) exitwith {
 };
 
 if (GVAR(respawnType) isEqualTo 2) then {
-	GVAR(playerTicektsHash) = createHashMap;
+	LOG("Init aar for player tickets");
 	AAR_UPDATE("west","Player tickets",(round GVAR(initialTicketsWest)));
 	AAR_UPDATE("east","Player tickets",(round GVAR(initialTicketsEast)));
 	AAR_UPDATE("guer","Player tickets",(round GVAR(initialTicketsResistance)));
