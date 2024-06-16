@@ -44,7 +44,9 @@ ADDON
 	// Add killed EH
 	[player, "killed", {
 		params ["_unit", "_killer", "_instigator", "_useEffects"];
-		if (player getvariable [QGVAR(isWaitingRespawn), false]) then {
+		if (player getvariable [QGVAR(isWaitingRespawn), false]) then {	
+			[GVAR(waitingAreaPFH)] call CBA_fnc_removePerFrameHandler;
+			GVAR(waitingAreaPFH) = nil;
 			GVAR(uselesBody) = _unit;
 		};
 		[] call FUNC(onPlayerKilled);

@@ -34,9 +34,10 @@ private _waitingRange = GVAR(waitingAreaRange);
 private _respawnType = GVAR(respawnType);
 GVAR(mark) = 0;
 
-[{
+GVAR(waitingAreaPFH) = [{
 	_args params ["_respawnWaitingarea", "_playerSide", "_waitingRange", "_respawnType"];
 	if !( player getvariable QGVAR(isWaitingRespawn) ) exitWith {
+		GVAR(waitingAreaPFH) = nil;
 		[_handle] call CBA_fnc_removePerFrameHandler;
 	};
 
