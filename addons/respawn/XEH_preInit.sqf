@@ -27,10 +27,8 @@ GVAR(timerRunningHash) = createHashMapFromArray FALSES_FOR_SIDES;
 ISNILS(GVAR(teleportPoints),[]);
 
 //allowed sides to spectate 
-GVAR(allowedSpectateSidesWest) = [west];
-GVAR(allowedSpectateSidesEast) = [east];
-GVAR(allowedSpectateSidesResistance) = [resistance];
-GVAR(allowedSpectateSidesCivilian) = [civilian];
+GVAR(allowedSpectateSidesHash) = createHashMapFromArray EMPTY_ARRAY_FOR_SIDES;
+GVAR(allowedSpectateCameraModes) = [];
 
 //flag poles [mainbase,waitingrea]
 GVAR(flagPolesHash) = createHashMapFromArray [[west,[objNull,objNull]],[east,[objNull,objNull]],[resistance,[objNull,objNull]],[civilian,[objNull,objNull]]];
@@ -208,7 +206,12 @@ GVAR(flagPolesHash) = createHashMapFromArray [[west,[objNull,objNull]],[east,[ob
     [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_spectate_cameramode"],
     true,
     1,
-    {},
+    {
+        params ["_value"];
+        if (_value) then {
+            GVAR(allowedSpectateCameraModes) pushBackUnique MODE_FPS;
+        };
+    },
     true
 ] call CBA_Settings_fnc_init;
 
@@ -219,7 +222,12 @@ GVAR(flagPolesHash) = createHashMapFromArray [[west,[objNull,objNull]],[east,[ob
     [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_spectate_cameramode"],
     true,
     1,
-    {},
+    {
+        params ["_value"];
+        if (_value) then {
+            GVAR(allowedSpectateCameraModes) pushBackUnique MODE_FOLLOW;
+        };
+    },
     true
 ] call CBA_Settings_fnc_init;
 
@@ -230,7 +238,12 @@ GVAR(flagPolesHash) = createHashMapFromArray [[west,[objNull,objNull]],[east,[ob
     [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_spectate_cameramode"],
     true,
     1,
-    {},
+    {
+        params ["_value"];
+        if (_value) then {
+            GVAR(allowedSpectateCameraModes) pushBackUnique MODE_FREE;
+        };
+    },
     true
 ] call CBA_Settings_fnc_init;
 
@@ -245,7 +258,9 @@ GVAR(flagPolesHash) = createHashMapFromArray [[west,[objNull,objNull]],[east,[ob
     {
         params ["_value"];
         if (_value) then {
-            GVAR(allowedSpectateSidesWest) pushBack east;
+            private _values = GVAR(allowedSpectateSidesHash) get west;
+            _values pushBackUnique east;
+            GVAR(allowedSpectateSidesHash) set [west, _values];
         };
     },
     true
@@ -261,7 +276,9 @@ GVAR(flagPolesHash) = createHashMapFromArray [[west,[objNull,objNull]],[east,[ob
     {
         params ["_value"];
         if (_value) then {
-            GVAR(allowedSpectateSidesWest) pushBack resistance;
+            private _values = GVAR(allowedSpectateSidesHash) get west;
+            _values pushBackUnique resistance;
+            GVAR(allowedSpectateSidesHash) set [west, _values];
         };
     },
     true
@@ -277,7 +294,9 @@ GVAR(flagPolesHash) = createHashMapFromArray [[west,[objNull,objNull]],[east,[ob
     {
         params ["_value"];
         if (_value) then {
-            GVAR(allowedSpectateSidesWest) pushBack civilian;
+            private _values = GVAR(allowedSpectateSidesHash) get west;
+            _values pushBackUnique civilian;
+            GVAR(allowedSpectateSidesHash) set [west, _values];
         };
     },
     true
@@ -294,7 +313,9 @@ GVAR(flagPolesHash) = createHashMapFromArray [[west,[objNull,objNull]],[east,[ob
     {
         params ["_value"];
         if (_value) then {
-            GVAR(allowedSpectateSidesEast) pushBack west;
+            private _values = GVAR(allowedSpectateSidesHash) get east;
+            _values pushBackUnique west;
+            GVAR(allowedSpectateSidesHash) set [east, _values];
         };
     },
     true
@@ -310,7 +331,9 @@ GVAR(flagPolesHash) = createHashMapFromArray [[west,[objNull,objNull]],[east,[ob
     {
         params ["_value"];
         if (_value) then {
-            GVAR(allowedSpectateSidesEast) pushBack resistance;
+            private _values = GVAR(allowedSpectateSidesHash) get east;
+            _values pushBackUnique resistance;
+            GVAR(allowedSpectateSidesHash) set [east, _values];
         };
     },
     true
@@ -326,7 +349,9 @@ GVAR(flagPolesHash) = createHashMapFromArray [[west,[objNull,objNull]],[east,[ob
     {
         params ["_value"];
         if (_value) then {
-            GVAR(allowedSpectateSidesEast) pushBack civilian;
+            private _values = GVAR(allowedSpectateSidesHash) get east;
+            _values pushBackUnique civilian;
+            GVAR(allowedSpectateSidesHash) set [east, _values];
         };
     },
     true
@@ -343,7 +368,9 @@ GVAR(flagPolesHash) = createHashMapFromArray [[west,[objNull,objNull]],[east,[ob
     {
         params ["_value"];
         if (_value) then {
-            GVAR(allowedSpectateSidesResistance) pushBack west;
+            private _values = GVAR(allowedSpectateSidesHash) get resistance;
+            _values pushBackUnique west;
+            GVAR(allowedSpectateSidesHash) set [resistance, _values];
         };
     },
     true
@@ -359,7 +386,9 @@ GVAR(flagPolesHash) = createHashMapFromArray [[west,[objNull,objNull]],[east,[ob
     {
         params ["_value"];
         if (_value) then {
-            GVAR(allowedSpectateSidesResistance) pushBack east;
+            private _values = GVAR(allowedSpectateSidesHash) get resistance;
+            _values pushBackUnique east;
+            GVAR(allowedSpectateSidesHash) set [resistance, _values];
         };
     },
     true
@@ -376,7 +405,9 @@ GVAR(flagPolesHash) = createHashMapFromArray [[west,[objNull,objNull]],[east,[ob
     {
         params ["_value"];
         if (_value) then {
-            GVAR(allowedSpectateSidesResistance) pushBack civilian;
+            private _values = GVAR(allowedSpectateSidesHash) get resistance;
+            _values pushBackUnique civilian;
+            GVAR(allowedSpectateSidesHash) set [resistance, _values];
         };
     },
     true
@@ -393,7 +424,9 @@ GVAR(flagPolesHash) = createHashMapFromArray [[west,[objNull,objNull]],[east,[ob
     {
         params ["_value"];
         if (_value) then {
-            GVAR(allowedSpectateSidesCivilian) pushBack west;
+            private _values = GVAR(allowedSpectateSidesHash) get civilian;
+            _values pushBackUnique west;
+            GVAR(allowedSpectateSidesHash) set [civilian, _values];
         };
     },
     true
@@ -409,7 +442,9 @@ GVAR(flagPolesHash) = createHashMapFromArray [[west,[objNull,objNull]],[east,[ob
     {
         params ["_value"];
         if (_value) then {
-            GVAR(allowedSpectateSidesCivilian) pushBack east;
+            private _values = GVAR(allowedSpectateSidesHash) get civilian;
+            _values pushBackUnique east;
+            GVAR(allowedSpectateSidesHash) set [civilian, _values];
         };
     },
     true
@@ -426,7 +461,9 @@ GVAR(flagPolesHash) = createHashMapFromArray [[west,[objNull,objNull]],[east,[ob
     {
         params ["_value"];
         if (_value) then {
-            GVAR(allowedSpectateSidesCivilian) pushBack resistance;
+            private _values = GVAR(allowedSpectateSidesHash) get civilian;
+            _values pushBackUnique resistance;
+            GVAR(allowedSpectateSidesHash) set [civilian, _values];
         };
     },
     true

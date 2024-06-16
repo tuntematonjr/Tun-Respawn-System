@@ -15,31 +15,25 @@
 #include "script_component.hpp"
 
 if (!hasInterface) exitWith { };
+LOG("Start spectator");
 
-private _allowedSides = switch (playerSide) do {
-	case west: { GVAR(allowedSpectateSidesWest) };
-	case east: { GVAR(allowedSpectateSidesEast) };
-	case resistance: { GVAR(allowedSpectateSidesResistance)  };
-	case civilian: { GVAR(allowedSpectateSidesCivilian) };
-	default { [west, east, resistance, civilian] };
-};
+private _allowedSides = +GVAR(allowedSpectateSidesHash) get playerSide;
+_allowedSides pushBackUnique playerSide;
+
+private _notAllowedSides = [west, east, resistance, civilian] - _allowedSides;
 
 // use ace spectator if using ace
 if ((isClass(configFile >> "CfgPatches" >> "ace_main"))) then {
 	[] call ace_spectator_fnc_setSpectator; //force spectator
 
-	[_allowedSides, [west, east, resistance, civilian]] call ace_spectator_fnc_updateSides;
+	//Set allowed sides
+	[_allowedSides, _notAllowedSides] call ace_spectator_fnc_updateSides;
 
 	//Set camera modes
-	[[], [0,1,2]] call ace_spectator_fnc_updateCameraModes;
-
-	private _Cameramodes = [];
-
-	if (GVAR(spectateCameramode1st)) then { _Cameramodes pushBack 0; };
-	if (GVAR(spectateCameramode3th)) then { _Cameramodes pushBack 1; };
-	if (GVAR(spectateCameramodeFree)) then { _Cameramodes pushBack 2; };
-
-	[_Cameramodes, []] call ace_spectator_fnc_updateCameraModes;
+	private _allowedCameraModes = +GVAR(allowedSpectateCameraModes);
+	private _notAllowedCameraModes = ALL_MODES - _allowedCameraModes;
+	
+	[_allowedCameraModes, _notAllowedCameraModes] call ace_spectator_fnc_updateCameraModes;
 } else {
 	["Initialize", [
 	player,

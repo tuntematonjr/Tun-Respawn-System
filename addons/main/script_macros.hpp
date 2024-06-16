@@ -26,3 +26,9 @@
 #define ZEROS_FOR_SIDES [[west,0],[east,0],[resistance,0],[civilian,0]]
 #define FALSES_FOR_SIDES [[west,false],[east,false],[resistance,false],[civilian,false]]
 #define TRUES_FOR_SIDES [[west,true],[east,true],[resistance,true],[civilian,true]]
+
+//Spectator modes
+#define MODE_FREE   0
+#define MODE_FPS    1
+#define MODE_FOLLOW 2
+#define ALL_MODES   [MODE_FREE,MODE_FPS,MODE_FOLLOW]
