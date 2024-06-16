@@ -34,6 +34,7 @@ PREP(teleportButton);
 PREP(teleportOnLBSelChanged);
 PREP(teleportUnit);
 PREP(timer);
+PREP(updateClientsTicketCount);
 PREP(updateRespawnMarkers);
 PREP(updateRespawnPoint);
 PREP(updateWaitingRespawnList);

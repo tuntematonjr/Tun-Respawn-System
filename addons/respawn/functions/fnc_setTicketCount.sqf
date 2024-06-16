@@ -32,6 +32,7 @@ switch (GVAR(respawnType)) do {
 			private _hash = GVAR(playerTicektsHash);
 			private _playerUID = getPlayerUID _target;
 			_hash set [_playerUID, _count];
+			[_count] remoteExecCall [QFUNC(updateClientsTicketCount), _target];
 			breakWith true;
 		} else {
 			ERROR("Tried to set player tickest, but did not give player");
