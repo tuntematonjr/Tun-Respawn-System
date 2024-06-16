@@ -15,15 +15,13 @@ if (!hasInterface) exitWith { };
 params [["_doHint", false, [true]]];
 private _side = playerSide;
 
-GVAR(playerTickets)
-
 private _ticketCount = switch (GVAR(respawnType)) do {
 	case 1: { //Side ticket
 		private _hash = GVAR(ticketsHash);
-		_hash get _side;
+		_hash get _side
 	};
 	case 2: { // Player tickets
-		missionNamespace getVariable [QGVAR(playerTickets), GVAR(ticketsHash) get _side];
+		missionNamespace getVariable [QGVAR(playerTickets), GVAR(ticketsHash) get _side]
 	};
 	default { 
 		breakWith "Not using tickest";
