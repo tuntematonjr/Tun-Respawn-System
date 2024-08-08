@@ -1,5 +1,5 @@
 # main.yml
-name: CI
+name: sqflint
 
 on:
   push:
