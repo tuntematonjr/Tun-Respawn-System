@@ -10,7 +10,7 @@ include = [
 ]
 
 [version]
-git_hash = 8 
+git_hash = 0 
 
 [binarize]
 enabled = true 
