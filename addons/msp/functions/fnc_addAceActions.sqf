@@ -35,7 +35,8 @@ if (isClass (configFile >> "CfgVehicles" >> _vehicle)) then {
 	private _remove_condition = { alive _target && {_target getVariable QGVAR(side) isEqualTo playerSide} && {_target getVariable [QGVAR(isMSP), false]} };
 	_removeMSP = ["Pack MSP", localize "STR_tunres_MSP_AceAction_PackMSP", "\a3\3den\data\cfgwaypoints\load_ca.paa", {[_target, false] call FUNC(startUpdateDeployementStatus);}, _remove_condition, {}, [], [0, 0, 0], 2, [false, true, false, false, false]] call ace_interact_menu_fnc_createAction;
 
-	private _aliveAndSameSideConditio = { alive _target && {_target getVariable QGVAR(side) isEqualTo playerSide}};
+	private _aliveAndSameSideConditio = {alive _target && {_target getVariable QGVAR(side) isEqualTo playerSide}};
+	private _aliveAndSameSideAndIsMSPConditio = {alive _target && {_target getVariable QGVAR(side) isEqualTo playerSide} && _target getVariable [QGVAR(isMSP), false]};
 
 	//check time
 	private _chekTime = ["Check Respawn Time", localize "STR_tunres_Respawn_AceAction_CheckNextWaveTime", "\a3\modules_f_curator\data\portraitskiptime_ca.paa", EFUNC(respawn,remainingWaitTimeNotification), _aliveAndSameSideConditio] call ace_interact_menu_fnc_createAction;
@@ -47,7 +48,7 @@ if (isClass (configFile >> "CfgVehicles" >> _vehicle)) then {
 	private _checkContest= ["Check if MSP contested", localize "STR_tunres_MSP_AceAction_CheckIfMspContested", "", {
 		private _text = localize (["STR_tunres_MSP_NotContested","STR_tunres_MSP_IsContested"] select (_target getVariable [QGVAR(isContested), false]));
 		_text call cba_fnc_notify;
-		}, _aliveAndSameSideConditio] call ace_interact_menu_fnc_createAction;
+	}, _aliveAndSameSideAndIsMSPConditio] call ace_interact_menu_fnc_createAction;
 
 	//Ace inteaction
 	[_vehicle, 1, ["ACE_SelfActions"], _createMSP] call ace_interact_menu_fnc_addActionToClass;
@@ -59,12 +60,10 @@ if (isClass (configFile >> "CfgVehicles" >> _vehicle)) then {
 	//TP. I hate this system already.
 	[_vehicle, "InitPost", {
 		params ["_entity"];
-
-		private _menu_condition = "alive _target  && {_target getVariable [ '"+ QGVAR(isMSP) +"' , false]} && {!(_target getVariable ['tunres_msp_isContested', false])}";
-		private _tp_conditionText = " private _msp = "+ QGVAR(activeVehicleHash) +" get playerSide; private _status = _msp getVariable ['tunres_msp_isContested', false]; (_target isNotEqualTo _msp && _obj getVariable [ '"+ QGVAR(isMSP) +"' , false] && !_status) ";
+		private _menu_condition = toString {alive _target  && {_target getVariable [QGVAR(isMSP), false]} && {!(_target getVariable [QGVAR(isContested), false])}};
+		private _tp_conditionText = toString {private _msp = GVAR(activeVehicleHash) get playerSide; private _status = _msp getVariable [QGVAR(isContested), false]; (_target isNotEqualTo _msp && _obj getVariable [QGVAR(isMSP), false] && !_status)};
 
 		[_entity, _tp_conditionText, localize "STR_tunres_MSP_TpText", false, nil, [playerSide], true, _menu_condition, false, ["ACE_MainActions",QEGVAR(main,respawnAction)]] call EFUNC(respawn,addCustomTeleporter);
-
 	}, false, [], true] call CBA_fnc_addClassEventHandler;
 
 	if (GVAR(allowCheckTicketsMSP) && EGVAR(respawn,respawnType) isNotEqualTo 0) then {
