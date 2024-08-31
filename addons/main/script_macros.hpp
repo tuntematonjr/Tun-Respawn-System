@@ -16,9 +16,9 @@
 //AAR enabled check
 #define AAR_IS_ENABLED !isnil "afi_aar2"
 //AAR update macro
-#define AAR_UPDATE(OBJ,VARNAME,VALUE) if ( AAR_IS_ENABLED ) then { [OBJ, VARNAME, VALUE] call afi_aar2_fnc_addcustomdata; }
+#define AAR_UPDATE(OBJ,VARNAME,VALUE) if ( AAR_IS_ENABLED ) then { [OBJ, VARNAME, VALUE] call afi_aar2_fnc_addcustomdata; LOG("aar update thing done")} else {LOG("Skip aar update")}
 //AAR event
-#define AAR_EVENT(TEXT,INSTIGATOR,TARGET,POI) if ( AAR_IS_ENABLED ) then { if (isServer) then { [TEXT,INSTIGATOR,TARGET,POI] call afi_aar2_fnc_addCustomEvent;} else {[TEXT,INSTIGATOR,TARGET,POI] remoteExecCall ["afi_aar2_fnc_addCustomEvent", 2]} };
+#define AAR_EVENT(TEXT,INSTIGATOR,TARGET,POI) if ( AAR_IS_ENABLED ) then { if (isServer) then { [TEXT,INSTIGATOR,TARGET,POI] call afi_aar2_fnc_addCustomEvent;LOG("AAR servuri eventti")} else {[TEXT,INSTIGATOR,TARGET,POI] remoteExecCall ["afi_aar2_fnc_addCustomEvent", 2]; LOG("Remote event to servuri AAR")}; LOG("aar thing done")} else {LOG("Skip eventti aar")}
 
 
 //Hash template macros
