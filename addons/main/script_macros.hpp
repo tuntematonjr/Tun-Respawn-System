@@ -14,7 +14,7 @@
 #define MARKER_NAME(var1) FORMAT_2("%1_%2",QUOTE(ADDON),var1)
 
 //AAR enabled check
-#define AAR_IS_ENABLED !isnil "afi_aar2"
+#define AAR_IS_ENABLED !isNil "afi_aar2"
 //AAR update macro
 #define AAR_UPDATE(OBJ,VARNAME,VALUE) if ( AAR_IS_ENABLED ) then { [OBJ, VARNAME, VALUE] call afi_aar2_fnc_addcustomdata; LOG("aar update thing done")} else {LOG("Skip aar update")}
 //AAR event
