@@ -21,7 +21,7 @@ params [["_text",""],["_duration", 10]];
 
 [format ["<t color='#0800ff' size = '2'> %1</t>", _text],-1, -1, _duration] spawn BIS_fnc_dynamicText;
 
-_camera = "camera" camCreate [(getPos player select 0),(getPos player select 1),100];
+_camera = "camera" camCreate [(getPosASL player select 0),(getPosASL player select 1),100];
 _camera cameraEffect ["internal","back"];
 _camera camSetFov 0.700;
 _camera camSetTarget player;

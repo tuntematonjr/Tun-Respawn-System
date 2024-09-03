@@ -21,5 +21,5 @@ params ["_msp"];
 _net = "CamoNet_BLUFOR_open_F" createVehicle [0,0,0];
 _net attachTo [_msp,[0,0,0]];
 _net setDir 90;
-_net setPos getPos _net;
+_net setPosASL getPosASL _net;
 _msp setVariable [QGVAR(objects), [_net], true];

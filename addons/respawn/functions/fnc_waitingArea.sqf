@@ -92,7 +92,7 @@ GVAR(waitingAreaPFH) = [{
 
 	//make sure that player is still in area
 	if !(player inArea [_respawnWaitingarea, _waitingRange, _waitingRange, 0, false]) then {
-		player setPos ([_respawnWaitingarea, (_waitingRange / 2)] call CBA_fnc_randPos);
+		player setPosASL ([_respawnWaitingarea, (_waitingRange / 2)] call CBA_fnc_randPos);
 		"Get over here!" call CBA_fnc_notify;
 	};
 }, 1, [_respawnWaitingarea, _playerSide, _waitingRange,_respawnType]] call CBA_fnc_addPerFrameHandler;

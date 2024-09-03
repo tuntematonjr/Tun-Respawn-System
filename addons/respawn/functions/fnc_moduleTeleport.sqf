@@ -17,7 +17,7 @@ private _logic = param [0,objNull,[objNull]];
 
 if (isServer) then { 
 	private _obj = _logic getVariable [QGVAR(teleportPointOBJ), "FlagPole_F"];
-	_obj = _obj createVehicle getpos _logic;
+	_obj = _obj createVehicle getPosASL _logic;
 	_logic setVariable [QGVAR(teleportObject), _obj, true];
 };
 

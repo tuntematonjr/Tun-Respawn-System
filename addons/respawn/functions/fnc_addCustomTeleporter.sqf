@@ -46,7 +46,7 @@
 
 		if (_createMarker) then {
 			private _markerName = MARKER_NAME(_name);
-			private _marker = [_markerName, getpos _obj, _name, _markerIcon, nil, 1, 100] call FUNC(createLocalMarker);
+			private _marker = [_markerName, getPosASL _obj, _name, _markerIcon, nil, 1, 100] call FUNC(createLocalMarker);
 			_obj setVariable [QGVAR(markerName), _marker];
 		};
 

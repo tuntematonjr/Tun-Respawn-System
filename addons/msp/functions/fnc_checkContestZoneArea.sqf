@@ -19,7 +19,7 @@ if (playerSide isEqualTo sideLogic || !hasInterface) exitWith { };
 params[["_target", player]];
 
 openMap true;
-private _pos = getPos _target;
+private _pos = getPosASL _target;
 
 [_pos] call FUNC(createContestZoneMarkers);
 

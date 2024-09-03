@@ -23,9 +23,9 @@ private _reportEnemiesRange = _values param [1];
 private _contestedRadiusMax = _values param [2];
 private _contestedRadiusMin = _values param [3];
 
-private _posMax = _pos getPos [_contestedRadiusMax, 100];
-private _posMin = _pos getPos [_contestedRadiusMin, 90];
-private _posReport = _pos getPos [_reportEnemiesRange, 80];
+private _posMax = _pos getPosASL [_contestedRadiusMax, 100];
+private _posMin = _pos getPosASL [_contestedRadiusMin, 90];
+private _posReport = _pos getPosASL [_reportEnemiesRange, 80];
 
 
 // * 0: Marker name <STRING>

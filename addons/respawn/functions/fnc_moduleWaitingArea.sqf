@@ -28,14 +28,14 @@ if (_markername isEqualTo "none") exitWith {  // Exit if no side
 };
 
 if (getMarkerColor _markername isEqualTo "") then {
-	_marker = [_markername, getPos _logic, "icon", [1, 1], "PERSIST", "TYPE:", "Empty"] call CBA_fnc_createMarker;
+	_marker = [_markername, getPosASL _logic, "icon", [1, 1], "PERSIST", "TYPE:", "Empty"] call CBA_fnc_createMarker;
 	_marker setMarkerAlpha 0;
 } else {
 	private _errorText = format [(localize "STR_tunres_Respawn_Module_WaitingArea_MultipleMarkers"), _markername];
     ERROR_MSG(_errorText);
 };
 
-private _pos = getPos _logic;
+private _pos = getPosASL _logic;
 private _flag = objNull;
 private _side = nil;
 

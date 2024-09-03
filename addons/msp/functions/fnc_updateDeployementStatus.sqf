@@ -55,7 +55,7 @@ if (_setup) then {
 
 };
 
-private _pos = getpos _msp;
+private _pos = getPosASL _msp;
 
 [_side, _setup, _pos] remoteExecCall [QEFUNC(respawn,updateRespawnPoint), 2];
 

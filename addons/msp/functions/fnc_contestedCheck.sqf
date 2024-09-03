@@ -42,7 +42,7 @@ if ( _mspDeployementStatus && { !(isNull _msp) } ) then {
 		};
 	} forEach _sidesToCheck;
 
-	private _pos = getpos _msp;
+	private _pos = getPosASL _msp;
 	private _unitsInArea = _allunits inAreaArray [_pos, _contestedRadiusMax, _contestedRadiusMax, 0, false, (_contestedRadiusMax/2)];
 	private _enemiesInArea = _unitsInArea select {(side _x) in _enemySides};
 	private _friendliesInArea = (count _unitsInArea) - (count _enemiesInArea);
@@ -77,7 +77,7 @@ if ( _mspDeployementStatus && { !(isNull _msp) } ) then {
 				[_side, false] call EFUNC(respawn,updateRespawnPoint);
 				(call compile (localize "STR_tunres_MSP_FNC_Contested_hint")) remoteExecCall ["CBA_fnc_notify", _whoToNotify];
 			} else {
-				[_side, true, (getPos _msp) ] call EFUNC(respawn,updateRespawnPoint);
+				[_side, true, (getPosASL _msp) ] call EFUNC(respawn,updateRespawnPoint);
 				(call compile (localize "STR_tunres_MSP_FNC_secured_hint")) remoteExecCall ["CBA_fnc_notify", _whoToNotify];
 			};
 		};

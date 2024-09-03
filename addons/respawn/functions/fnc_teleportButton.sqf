@@ -28,7 +28,7 @@ private _teleportConditio = call compile (_teleportConditioText);
 
 private _teleportName = _obj getVariable [QGVAR(teleportName), "TP"];
 
-private _destination = getpos _obj;
+private _destination = getPosASL _obj;
 private _text = format["%1 %2", localize "STR_tunres_Respawn_Teleporting", _teleportName];
 
 if (_teleportConditio) then {

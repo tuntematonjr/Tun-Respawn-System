@@ -21,7 +21,7 @@ private _logic = param [0,objNull,[objNull]];
 private _markername = _logic getVariable ["respawn_side","none"];
 private _flagTexture = _logic getVariable ["flag_texture",""];
 
-private _pos = getPos _logic;
+private _pos = getPosASL _logic;
 if (_markername isEqualTo "none") exitWith { hint localize "STR_tunres_Respawn_Module_RespanPos_novalue"; false }; // Exit if no side
 private _marker = "";
 
