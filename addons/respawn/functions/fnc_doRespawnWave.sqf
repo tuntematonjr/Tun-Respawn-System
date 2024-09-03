@@ -27,8 +27,8 @@ private _waitingRespawnDelayed = _waitingRespawnDelayedHash get _side;
 if (count _waitingRespawn > 0 || count _waitingRespawnDelayed > 0) then {
 
 	//Filter ghost units out
-	FILTER(_waitingRespawn,(!isnull _x && _x in allPlayers && alive _x ));
-	FILTER(_waitingRespawnDelayed,(!isnull _x && _x in allPlayers && alive _x ));
+	FILTER(_waitingRespawn,(!isNull _x && _x in allPlayers && alive _x ));
+	FILTER(_waitingRespawnDelayed,(!isNull _x && _x in allPlayers && alive _x ));
 
 	//If forced all, clears delayed respawn
 	if (_forceAll) then {

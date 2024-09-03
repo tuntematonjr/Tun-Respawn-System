@@ -18,8 +18,8 @@ params [["_object", objNull,[objNull]]];
 
 private _parentAction = [];
 //check if there is base actions made in config, if not checks if there is made with script
-if (isClass(configFile >> "CfgVehicles" >> typeof _object >> "ACE_Actions")) then { 
-	_parentAction = [configName (("true" configClasses (configFile >> "CfgVehicles" >> typeof _object >> "ACE_Actions")) select 0)];
+if (isClass(configFile >> "CfgVehicles" >> typeOf _object >> "ACE_Actions")) then { 
+	_parentAction = [configName (("true" configClasses (configFile >> "CfgVehicles" >> typeOf _object >> "ACE_Actions")) select 0)];
 } else {
 	private _allActions = _object getVariable ["ace_interact_menu_actions", []];
 	{

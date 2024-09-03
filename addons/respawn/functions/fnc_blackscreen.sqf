@@ -23,7 +23,7 @@ params [["_text",""],["_duration", 10]];
 
 _camera = "camera" camCreate [(getPos player select 0),(getPos player select 1),100];
 _camera cameraEffect ["internal","back"];
-_camera camSetFOV 0.700;
+_camera camSetFov 0.700;
 _camera camSetTarget player;
 _camera camCommit 0;
 

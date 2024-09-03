@@ -13,7 +13,7 @@
  */
 #include "script_component.hpp"
 if (!isServer) exitWith { };
-params [["_target", nil, [objnull, west]], ["_count", nil, [0]]];
+params [["_target", nil, [objNull, west]], ["_count", nil, [0]]];
 
 switch (GVAR(respawnType)) do {
 	case 1: {

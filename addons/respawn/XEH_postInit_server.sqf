@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-if (!GVAR(enable)) exitwith {
+if (!GVAR(enable)) exitWith {
 	INFO("Respawn not enabled, server exit");
 };
 
@@ -34,7 +34,7 @@ addMissionEventHandler ["HandleDisconnect", {
 }];
 
 //AAR times  
-if ( !isnil "afi_aar2" ) then {
+if ( !isNil "afi_aar2" ) then {
 	[{cba_missiontime > 10}, {
 		if (missionNamespace getVariable ["afi_aar2", false]) then {
 

@@ -30,7 +30,7 @@ if (GVAR(disconnectedPlayersHash) getOrDefault [_playerUID, false]) exitWith {
 };
 
 //Player was already in respawn area.
-if ( _player getvariable [QGVAR(isWaitingRespawn), false]) exitWith {
+if ( _player getVariable [QGVAR(isWaitingRespawn), false]) exitWith {
 	LOG("Player already waiting respawn");
 	[1] remoteExecCall ["setPlayerRespawnTime", _player];
 };

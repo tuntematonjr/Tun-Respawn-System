@@ -35,7 +35,7 @@ GVAR(mark) = 0;
 
 GVAR(waitingAreaPFH) = [{
 	_args params ["_respawnWaitingarea", "_playerSide", "_waitingRange", "_respawnType"];
-	if !( player getvariable QGVAR(isWaitingRespawn) ) exitWith {
+	if !( player getVariable QGVAR(isWaitingRespawn) ) exitWith {
 		GVAR(waitingAreaPFH) = nil;
 		[_handle] call CBA_fnc_removePerFrameHandler;
 	};
@@ -70,7 +70,7 @@ GVAR(waitingAreaPFH) = [{
 	if (_remainingWaitTime >= 0 && { _allowRespawn }) then {
 		_text = format ["<t color='#0800ff' size = '0.8'>%2<br />%1</t>", ([_remainingWaitTime] call CBA_fnc_formatElapsedTime), localize "STR_tunres_Respawn_FNC_remaining_time"];
 	} else {
-		if (player getvariable [QGVAR(isWaitingRespawn), true] && { !(GVAR(forcedRespawn)) } && { !_allowRespawn }) then {
+		if (player getVariable [QGVAR(isWaitingRespawn), true] && { !(GVAR(forcedRespawn)) } && { !_allowRespawn }) then {
 			_text = format ["<t color='#0800ff' size = '0.8'>%1</t>", localize "STR_tunres_Respawn_FNC_RespawnDisabled"];
 		} else {
 			_text = format ["Something is vevy vevy wrong. time: %1 - allowRespawn: %2 - forced respawn: %3 ", _remainingWaitTime, _allowRespawn, GVAR(forcedRespawn)];

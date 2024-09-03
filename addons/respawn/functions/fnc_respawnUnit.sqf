@@ -13,7 +13,7 @@
  * [_side, _unit] call tunres_Respawn_fnc_respawnUnit
  */
 #include "script_component.hpp"
-params [["_side", nil, [west]], ["_unit", objnull, [objnull]]];
+params [["_side", nil, [west]], ["_unit", objNull, [objNull]]];
 private _respawnPointsHash = GVAR(respawnPointsHash);
 private _respawnPosition = getMarkerPos ((_respawnPointsHash get _side) select 0);
 
