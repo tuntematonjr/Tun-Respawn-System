@@ -17,7 +17,7 @@
 
 if (!isServer) then {};
 
-params [["_msp", objNull, [objNull]], ["_setup", nil, [false]]];
+params [["_msp", objNull, [objNull]], ["_setup", nil, [false]], "_player"];
 
 private _side = _msp getVariable QGVAR(side);
 private _whoToNotify = [_side, GVAR(setupNotification)] call FUNC(whoToNotify);
