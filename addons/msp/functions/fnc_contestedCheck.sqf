@@ -64,8 +64,13 @@ if ( _mspDeployementStatus && { !(isNull _msp) } ) then {
 
 	if (_oldContestedStatus isNotEqualTo _isContested) then {
 
-		AAR_EVENT(FORMAT_1(localize ARG_1(ARR_2(["STR_tunres_MSP_AAR_MSP_notContested","STR_tunres_MSP_AAR_MSP_isContested"]),_isContested),str _side),_msp,nil,nil);
-		AAR_UPDATE(_msp,"Is contested",_isContested);
+		if (AAR_IS_ENABLED) then {
+			private _text = (localize(["STR_tunres_MSP_AAR_MSP_notContested","STR_tunres_MSP_AAR_MSP_isContested"] select _isContested));
+			_text = format[_text, _side];
+
+			AAR_EVENT(_text,_msp,nil,nil);
+			AAR_UPDATE(_msp,"Is contested",_isContested);
+		};
 
 		GVAR(contestedStatusHash) set [_side, _isContested];
 		publicVariable QGVAR(contestedStatusHash);

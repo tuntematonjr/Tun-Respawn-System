@@ -65,7 +65,12 @@ publicVariable QGVAR(deployementStatusHash);
 GVAR(activeVehicleHash) set [_side, [objNull, _msp] select _setup];
 publicVariable QGVAR(activeVehicleHash);
 
-AAR_EVENT(FORMAT_1(localize ARG_1((ARR_2(["STR_tunres_MSP_AAR_MSP_Packed","STR_tunres_MSP_AAR_MSP_Deployed"])),_setup),str _side),_msp,player,nil);
+if (AAR_IS_ENABLED) then {
+	private _text = localize(["STR_tunres_MSP_AAR_MSP_Packed","STR_tunres_MSP_AAR_MSP_Deployed"] select _setup);
+	_text = format[_text, _side];
+
+	AAR_EVENT(_text,_msp,_player,nil);
+};
 
 //Change deployement status
 if !(_setup) then {

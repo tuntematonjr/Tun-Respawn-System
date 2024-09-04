@@ -87,11 +87,14 @@ if (count _waitingRespawn > 0) then {
  
 	[QGVAR(EH_respawnWave), [_side, _waitingRespawn]] call CBA_fnc_serverEvent;
 
-	if (GVAR(respawnType) isEqualTo 1) then {
-		AAR_EVENT(FORMAT_4(localize "STR_tunres_Respawn_AAR_RespawnWaveTickets",str _side,_waitingRespawnCount,_totalRespawnCount,[_side] call FUNC(getTicketCount)),_msp,nil,nil);
+if (AAR_IS_ENABLED) then {
+	private _text =  if (GVAR(respawnType) isEqualTo 1) then {
+		format[(localize "STR_tunres_Respawn_AAR_RespawnWaveTickets"), str _side, _waitingRespawnCount, _totalRespawnCount, [_side] call FUNC(getTicketCount)];
 	} else {
-		AAR_EVENT(FORMAT_3(localize "STR_tunres_Respawn_AAR_RespawnWave",str _side,_waitingRespawnCount,_totalRespawnCount),_msp,nil,nil);
+		format[(localize "STR_tunres_Respawn_AAR_RespawnWave"), str _side, _waitingRespawnCount, _totalRespawnCount]
 	};
+	AAR_EVENT(_text,_msp,nil,nil);
+};
 
 } else {
 	//No one at respawn

@@ -16,9 +16,9 @@
 //AAR enabled check
 #define AAR_IS_ENABLED !isNil "afi_aar2"
 //AAR update macro
-#define AAR_UPDATE(OBJ,VARNAME,VALUE) if ( AAR_IS_ENABLED ) then { [OBJ, VARNAME, VALUE] call afi_aar2_fnc_addcustomdata; LOG("aar update thing done")} else {LOG("Skip aar update")}
+#define AAR_UPDATE(OBJ,VARNAME,VALUE)   [QEGVAR(main,AAR_UpdateEH), [OBJ,VARNAME,VALUE]] call CBA_fnc_serverEvent
 //AAR event
-#define AAR_EVENT(TEXT,INSTIGATOR,TARGET,POI) if ( AAR_IS_ENABLED ) then { if (isServer) then { [TEXT,INSTIGATOR,TARGET,POI] call afi_aar2_fnc_addCustomEvent;LOG("AAR servuri eventti")} else {[TEXT,INSTIGATOR,TARGET,POI] remoteExecCall ["afi_aar2_fnc_addCustomEvent", 2]; LOG("Remote event to servuri AAR")}; LOG("aar thing done")} else {LOG("Skip eventti aar")}
+#define AAR_EVENT(TEXT,INSTIGATOR,TARGET,POI)   [QEGVAR(main,AAR_EventEH), [TEXT,INSTIGATOR,TARGET,POI]] call CBA_fnc_serverEvent
 
 
 #define ALL_SIDES   [west,east,resistance,civilian]
