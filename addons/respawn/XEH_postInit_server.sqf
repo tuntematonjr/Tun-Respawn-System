@@ -65,25 +65,15 @@ if ( AAR_IS_ENABLED ) then {
 
 			[{
 				private _enabledSideHash = GVAR(enabledSidesHash);
-				if (_enabledSideHash getOrDefault [west, false]) then {
-					private _time = (_hashTime get west);
-					AAR_UPDATE("west","Next respawn wave",_time);
-				};
-
-				if (_enabledSideHash getOrDefault [east, false]) then {
-					private _time = (_hashTime get east);
-					AAR_UPDATE("east","Next respawn wave",_time);
-				};
-
-				if (_enabledSideHash getOrDefault [resistance, false]) then {
-					private _time = (_hashTime get resistance);
-					AAR_UPDATE("guer","Next respawn wave",_time);
-				};
-
-				if (_enabledSideHash getOrDefault [civilian, false]) then {
-					private _time = (_hashTime get civilian);
-					AAR_UPDATE("civ","Next respawn wave",_time);
-				};
+				private _hashTime = GVAR(nextWaveTimesHash);
+				{
+					private _side = _x;
+					if (_enabledSideHash getOrDefault [_side, false]) then {
+						private _time = (_hashTime get _side);
+						private _sideSTR = str _side;
+						AAR_UPDATE(_sideSTR,"Next respawn wave",_time);
+					};
+				} forEach ALL_SIDES;
 			}, 10] call CBA_fnc_addPerFrameHandler;
 		};
 	}] call CBA_fnc_waitUntilAndExecute;
