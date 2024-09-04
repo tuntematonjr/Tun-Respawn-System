@@ -29,7 +29,7 @@ private _msp = GVAR(activeVehicleHash) get _side;
 
 if ( _mspDeployementStatus && { !(isNull _msp) } ) then {
 	
-	private _sidesToCheck = [west,east,resistance,civilian] - [_side];
+	private _sidesToCheck = ALL_SIDES - [_side];
 	private _friendlySides = [_side];
 	private _enemySides = [];
 

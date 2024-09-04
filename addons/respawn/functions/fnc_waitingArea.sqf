@@ -15,7 +15,7 @@
 #include "script_component.hpp"
 
 private _playerSide = playerSide;
-if (isDedicated || !(_playerSide in [west,east,resistance,civilian]) ) exitWith { };
+if (isDedicated || !(_playerSide in ALL_SIDES) ) exitWith { };
 
 LOG("Start waiting area");
 

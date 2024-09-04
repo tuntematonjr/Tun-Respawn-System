@@ -84,4 +84,4 @@
             ERROR(_errorText);
         };
     };
-} forEach [west,east,resistance,civilian];
+} forEach ALL_SIDES;

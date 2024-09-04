@@ -21,6 +21,8 @@
 #define AAR_EVENT(TEXT,INSTIGATOR,TARGET,POI) if ( AAR_IS_ENABLED ) then { if (isServer) then { [TEXT,INSTIGATOR,TARGET,POI] call afi_aar2_fnc_addCustomEvent;LOG("AAR servuri eventti")} else {[TEXT,INSTIGATOR,TARGET,POI] remoteExecCall ["afi_aar2_fnc_addCustomEvent", 2]; LOG("Remote event to servuri AAR")}; LOG("aar thing done")} else {LOG("Skip eventti aar")}
 
 
+#define ALL_SIDES   [west,east,resistance,civilian]
+
 //Hash template macros
 #define EMPTY_ARRAY_FOR_SIDES [[west,[]],[east,[]],[resistance,[]],[civilian,[]]]
 #define ZEROS_FOR_SIDES [[west,0],[east,0],[resistance,0],[civilian,0]]
