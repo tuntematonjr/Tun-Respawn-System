@@ -14,7 +14,10 @@ class CfgPatches {
     };
 };
 
+// configs go here
+#include "CfgEventHandlers.hpp"
 #include "CfgVehicles.hpp"
+
 // information on the whole mod (only needed once)
 class CfgMods {
     class PREFIX {
