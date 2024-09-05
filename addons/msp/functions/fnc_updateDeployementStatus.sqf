@@ -76,5 +76,5 @@ if !(_setup) then {
 	publicVariable QGVAR(contestedStatusHash);
 };
 
-[_side, _setup] remoteExecCall [QFUNC(startContestedChecks), 2];
+[QGVAR(startContestedChecksEH), [_side, _setup]] call CBA_fnc_serverEvent;
 [QGVAR(EH_mspStatusUpdate), [_msp, _setup]] call CBA_fnc_globalEvent;
