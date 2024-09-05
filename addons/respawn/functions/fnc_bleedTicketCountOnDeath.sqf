@@ -39,7 +39,7 @@ private _remainingTickets = [_side, _player, false] call FUNC(getTicketCount);
 
 if !( _remainingTickets > 0 ) exitWith {
 	[{
-		remoteExecCall [QFUNC(startSpectator), _this];
+		[QGVAR(startSpectatorEH), "", _this] call CBA_fnc_targetEvent;
 	}, _player, 5] call CBA_fnc_waitAndExecute;
 };
 

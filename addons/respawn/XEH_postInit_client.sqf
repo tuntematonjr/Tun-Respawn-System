@@ -61,3 +61,7 @@ ADDON
 	[] call FUNC(updateRespawnMarkers);
 	[] call FUNC(radioSettings_tfar);
 }] call CBA_fnc_waitUntilAndExecute;
+
+[QGVAR(startSpectatorEH), {
+	[] call FUNC(startSpectator);
+}] call CBA_fnc_addEventHandler;

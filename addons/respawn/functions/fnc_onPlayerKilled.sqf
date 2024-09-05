@@ -20,7 +20,7 @@ setPlayerRespawnTime 99999;
 
 if (GVAR(endRespawns)) exitWith {
 	[{
-		remoteExecCall [QFUNC(startSpectator), _this];
+		[QGVAR(startSpectatorEH), "", _this] call CBA_fnc_targetEvent;
 	}, player, 5] call CBA_fnc_waitAndExecute;
 };
 
