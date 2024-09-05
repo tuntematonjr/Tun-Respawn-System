@@ -23,7 +23,7 @@ if (_type isEqualTo 0) then {
 		};
 	} forEach allGroups;
 } else {
-	_whoToNotify = [_side];
+	_whoToNotify = allPlayers select {side _x isEqualTo _side	};
 };
 
 _whoToNotify
