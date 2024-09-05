@@ -195,40 +195,40 @@
                 <Original>You can check remaining tickets from MSP using ACE actions.</Original>
             </Key>
             <Key ID="STR_tunres_Respawn_Briefing_TicketCount_west">
-                <English>Ticket count: %2 (&lt;font color="#004c99"&gt;West&lt;/font&gt;)</English>
-                <Original>Ticket count: %2 (&lt;font color="#004c99"&gt;West&lt;/font&gt;)</Original>
+                <English>Ticket count: %2 (&lt;font color="#0000FF"&gt;West&lt;/font&gt;)</English>
+                <Original>Ticket count: %2 (&lt;font color="#0000FF"&gt;West&lt;/font&gt;)</Original>
             </Key>
             <Key ID="STR_tunres_Respawn_Briefing_TicketCount_east">
-                <English>Ticket count: %2 (&lt;font color="#7f0000"&gt;East&lt;/font&gt;)</English>
-                <Original>Ticket count: %2 (&lt;font color="#7f0000"&gt;East&lt;/font&gt;)</Original>
+                <English>Ticket count: %2 (&lt;font color="#E60000"&gt;East&lt;/font&gt;)</English>
+                <Original>Ticket count: %2 (&lt;font color="#E60000"&gt;East&lt;/font&gt;)</Original>
             </Key>
             <Key ID="STR_tunres_Respawn_Briefing_TicketCount_resistance">
-                <English>Ticket count: %2 (&lt;font color="#007f00"&gt;Resistance&lt;/font&gt;)</English>
-                <Original>Ticket count: %2 (&lt;font color="#007f00"&gt;Resistance&lt;/font&gt;)</Original>
+                <English>Ticket count: %2 (&lt;font color="#00CC00"&gt;Resistance&lt;/font&gt;)</English>
+                <Original>Ticket count: %2 (&lt;font color="#00CC00"&gt;Resistance&lt;/font&gt;)</Original>
             </Key>
             <Key ID="STR_tunres_Respawn_Briefing_TicketCount_civilian">
-                <English>Ticket count: %2 (&lt;font color="#66007f"&gt;Civilian&lt;/font&gt;)</English>
-                <Original>Ticket count: %2 (&lt;font color="#66007f"&gt;Civilian&lt;/font&gt;)</Original>
+                <English>Ticket count: %2 (&lt;font color="#B040A7"&gt;Civilian&lt;/font&gt;)</English>
+                <Original>Ticket count: %2 (&lt;font color="#B040A7"&gt;Civilian&lt;/font&gt;)</Original>
             </Key>
             <Key ID="STR_tunres_Respawn_Briefing_CheckTicketsMainbase">
                 <English>You can check remaining tickets from the main base (flagpole) using ACE actions.</English>
                 <Original>You can check remaining tickets from the main base (flagpole) using ACE actions.</Original>
             </Key>
             <Key ID="STR_tunres_Respawn_Briefing_WaveTime_west">
-                <English>For &lt;font color="#004c99"&gt;West&lt;/font&gt; is %2min</English>
-                <Original>For &lt;font color="#004c99"&gt;West&lt;/font&gt; is %2min</Original>
+                <English>For &lt;font color="#0000FF"&gt;West&lt;/font&gt; is %2min</English>
+                <Original>For &lt;font color="#0000FF"&gt;West&lt;/font&gt; is %2min</Original>
             </Key>
             <Key ID="STR_tunres_Respawn_Briefing_WaveTime_east">
-                <English>For &lt;font color="#7f0000"&gt;East&lt;/font&gt; is %2min</English>
-                <Original>For &lt;font color="#7f0000"&gt;East&lt;/font&gt; is %2min</Original>
+                <English>For &lt;font color="#E60000"&gt;East&lt;/font&gt; is %2min</English>
+                <Original>For &lt;font color="#E60000"&gt;East&lt;/font&gt; is %2min</Original>
             </Key>
             <Key ID="STR_tunres_Respawn_Briefing_WaveTime_resistance">
-                <English>For &lt;font color="#007f00"&gt;Resistance&lt;/font&gt; is %2min</English>
-                <Original>For &lt;font color="#007f00"&gt;Resistance&lt;/font&gt; is %2min</Original>
+                <English>For &lt;font color="#00CC00"&gt;Resistance&lt;/font&gt; is %2min</English>
+                <Original>For &lt;font color="#00CC00"&gt;Resistance&lt;/font&gt; is %2min</Original>
             </Key>
             <Key ID="STR_tunres_Respawn_Briefing_WaveTime_civilian">
-                <English>For &lt;font color="#66007f"&gt;Civilian&lt;/font&gt; is %2min</English>
-                <Original>For &lt;font color="#66007f"&gt;Civilian&lt;/font&gt; is %2min</Original>
+                <English>For &lt;font color="#B040A7"&gt;Civilian&lt;/font&gt; is %2min</English>
+                <Original>For &lt;font color="#B040A7"&gt;Civilian&lt;/font&gt; is %2min</Original>
             </Key>
             <Key ID="STR_tunres_Respawn_Briefing_Category_Tickets">
                 <English>Tickets</English>
