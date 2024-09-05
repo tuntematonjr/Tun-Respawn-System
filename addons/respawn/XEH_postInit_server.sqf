@@ -78,3 +78,8 @@ if ( AAR_IS_ENABLED ) then {
 		};
 	}] call CBA_fnc_waitUntilAndExecute;
 };
+
+[QGVAR(updateRespawnPointEH), {
+	params["_side","_setup","_pos"];
+	[_side, _setup, _pos] call FUNC(updateRespawnPoint);
+}] call CBA_fnc_addEventHandler;

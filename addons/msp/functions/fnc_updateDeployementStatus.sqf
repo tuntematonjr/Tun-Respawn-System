@@ -55,7 +55,7 @@ if (_whoToNotify isNotEqualTo [] ) then {
 
 private _pos = getPosASL _msp;
 
-[_side, _setup, _pos] remoteExecCall [QEFUNC(respawn,updateRespawnPoint), 2];
+[QEGVAR(respawn,updateRespawnPointEH), [_side, _setup, _pos]] call CBA_fnc_serverEvent;
 
 _msp setVariable [QGVAR(isMSP), _setup, true];
 GVAR(deployementStatusHash) set [_side, _setup];

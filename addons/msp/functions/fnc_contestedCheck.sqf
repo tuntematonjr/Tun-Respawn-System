@@ -78,7 +78,7 @@ if ( _mspDeployementStatus && { !(isNull _msp) } ) then {
 
 		private _whoToNotify = [_side, GVAR(contestedNotification)] call FUNC(whoToNotify);
 		if (_whoToNotify isNotEqualTo [] ) then {
-			[_side, !_isContested] call EFUNC(respawn,updateRespawnPoint);
+			[QEGVAR(respawn,updateRespawnPointEH), [_side, !_isContested]] call CBA_fnc_serverEvent;
 
 			private _text = if (_isContested) then {
 				localize "STR_tunres_MSP_FNC_Contested_hint"

@@ -67,8 +67,8 @@
                 GVAR(activeVehicleHash) set [_side, objNull];
                 publicVariable QGVAR(activeVehicleHash);
 
-                //Do marker update                
-                [_side, false] remoteExecCall ["tunres_respawn_fnc_updateRespawnPoint", 2];
+                //Update respawn point
+                [QEGVAR(respawn,updateRespawnPointEH), [_side, false]] call CBA_fnc_serverEvent;
 
                 private _whoToNotify = [_side, 1] call FUNC(whoToNotify);
                 [QEGVAR(main,doNotification), [localize "STR_tunres_MSP_destroyed"], _whoToNotify] call CBA_fnc_targetEvent;
