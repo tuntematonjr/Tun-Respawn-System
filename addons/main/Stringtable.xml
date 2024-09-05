@@ -290,6 +290,14 @@
                 <English>Your remaining tickets:</English>
                 <Original>Your remaining tickets:</Original>
             </Key>
+            <Key ID="STR_tunres_MSP_checkContestCantUse">
+                <English>Can't be used during mission!</English>
+                <Original>Can't be used during mission!</Original>
+            </Key>
+            <Key ID="STR_tunres_Respawn_youAreNotAllowedToLeave">
+                <English>Get over here!</English>
+                <Original>Get over here!</Original>
+            </Key>
         </Container>
         <Container name="FNC">
             <Key ID="STR_tunres_Respawn_FNC_remaining_time">
@@ -613,12 +621,12 @@
         </Container>
         <Container name="fnc_contested">
             <Key ID="STR_tunres_MSP_FNC_Contested_hint">
-                <Original>[['MSP has been contested!'], ['Respawn position has been updated.']]</Original>
-                <English>[['MSP has been contested!'], ['Respawn position has been updated.']]</English>
+                <Original>MSP has been contested!\nRespawn position has been updated.</Original>
+                <English>MSP has been contested!\nRespawn position has been updated.</English>
             </Key>
             <Key ID="STR_tunres_MSP_FNC_secured_hint">
-                <Original>[['MSP has been secured!'], ['Respawn position has been updated.']]</Original>
-                <English>[['MSP has been secured!'], ['Respawn position has been updated.']]</English>
+                <Original>MSP has been secured!\nRespawn position has been updated.</Original>
+                <English>MSP has been secured!\nRespawn position has been updated.</English>
             </Key>
             <Key ID="STR_tunres_MSP_FNC_enemies_near">
                 <Original>Enemies spotted near MSP!</Original>
@@ -627,12 +635,12 @@
         </Container>
         <Container name="fnc_setup/pack_msp">
             <Key ID="STR_tunres_MSP_FNC_setup_notification">
-                <Original>[['MSP has been deployed!'], ['Respawn position has been updated.']]</Original>
-                <English>[['MSP has been deployed!'], ['Respawn position has been updated.']]</English>
+                <Original>MSP has been deployed!\nRespawn position has been updated.</Original>
+                <English>MSP has been deployed!\nRespawn position has been updated.</English>
             </Key>
             <Key ID="STR_tunres_MSP_FNC_pack_notification">
-                <Original>[['MSP has been packed!'], ['Respawn position has been updated.']]</Original>
-                <English>[['MSP has been packed!'], ['Respawn position has been updated.']]</English>
+                <Original>MSP has been packed!\nRespawn position has been updated.</Original>
+                <English>MSP has been packed!\nRespawn position has been updated.</English>
             </Key>
         </Container>
         <Container name="Classname">

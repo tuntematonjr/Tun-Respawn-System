@@ -20,16 +20,11 @@ if (!isServer) then {};
 params [["_msp", objNull, [objNull]], ["_setup", nil, [false]], "_player"];
 
 private _side = _msp getVariable QGVAR(side);
-private _whoToNotify = [_side, GVAR(setupNotification)] call FUNC(whoToNotify);
+
 
 AAR_UPDATE(_msp,"Is active MSP",_setup);
 
 if (_setup) then {
-	
-	if (_whoToNotify isNotEqualTo [] ) then {
-		(call compile (localize "STR_tunres_MSP_FNC_setup_notification")) remoteExecCall ["CBA_fnc_notify", _whoToNotify];
-	};
-
 	[_msp] remoteExecCall [QFUNC(createMspProps), 2];
 
 	//force player out from MSP and LOCK it
@@ -42,9 +37,6 @@ if (_setup) then {
 	}, _msp] call CBA_fnc_waitUntilAndExecute;
 
 } else {
-	if (_whoToNotify isNotEqualTo [] ) then {
-		(call compile (localize "STR_tunres_MSP_FNC_pack_notification")) remoteExecCall ["CBA_fnc_notify", _whoToNotify];
-	};
 	//Delete props
 	{
 	    deleteVehicle _x;
@@ -53,6 +45,12 @@ if (_setup) then {
 	//Unlock vehicle
 	[_msp, 0] remoteExecCall ["lock", _msp];
 
+};
+
+private _whoToNotify = [_side, GVAR(setupNotification)] call FUNC(whoToNotify);
+if (_whoToNotify isNotEqualTo [] ) then {
+	private _text = localize ["STR_tunres_MSP_FNC_pack_notification", "STR_tunres_MSP_FNC_setup_notification"] select _setup;
+	[QGVAR(doNotification), [_text], _whoToNotify] call CBA_fnc_targetEvent;
 };
 
 private _pos = getPosASL _msp;

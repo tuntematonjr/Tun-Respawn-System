@@ -70,7 +70,8 @@
                 //Do marker update                
                 [_side, false] remoteExecCall ["tunres_respawn_fnc_updateRespawnPoint", 2];
 
-                (localize "STR_tunres_MSP_destroyed") remoteExecCall ["CBA_fnc_notify", _side];
+                private _whoToNotify = [_side, 1] call FUNC(whoToNotify);
+                [QGVAR(doNotification), [localize "STR_tunres_MSP_destroyed"], _whoToNotify] call CBA_fnc_targetEvent;
             };
         };
 

@@ -44,4 +44,4 @@ private _code = {
                     openMap false;
                 };
 
-[_time, [_target, _setup, player], _code, {(localize "STR_tunres_MSP_DeployementAborted") call CBA_fnc_notify}, _text, _conditio, ["notOnMap","isnotinside"]] call ace_common_fnc_progressBar;
+[_time, [_target, _setup, player], _code, {[QGVAR(doNotification), [localize "STR_tunres_MSP_DeployementAborted"]] call CBA_fnc_localEvent;}, _text, _conditio, ["notOnMap","isnotinside"]] call ace_common_fnc_progressBar;

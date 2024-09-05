@@ -36,5 +36,5 @@ if (_teleportConditio) then {
 	GVAR(tpMenuOpenedFrom) = objNull;
 	[player, _destination, _text, 10, true, 15] call FUNC(teleportUnit);
 } else {
-	(localize "STR_tunres_Respawn_Teleport_Disabled") call CBA_fnc_notify;
+	[QGVAR(doNotification), [localize "STR_tunres_Respawn_Teleport_Disabled"]] call CBA_fnc_localEvent;
 };

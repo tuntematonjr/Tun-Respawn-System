@@ -93,6 +93,6 @@ GVAR(waitingAreaPFH) = [{
 	//make sure that player is still in area
 	if !(player inArea [_respawnWaitingarea, _waitingRange, _waitingRange, 0, false]) then {
 		player setPosASL ([_respawnWaitingarea, (_waitingRange / 2)] call CBA_fnc_randPos);
-		"Get over here!" call CBA_fnc_notify;
+		[QGVAR(doNotification), [localize "STR_tunres_Respawn_youAreNotAllowedToLeave"]] call CBA_fnc_localEvent;
 	};
 }, 1, [_respawnWaitingarea, _playerSide, _waitingRange,_respawnType]] call CBA_fnc_addPerFrameHandler;

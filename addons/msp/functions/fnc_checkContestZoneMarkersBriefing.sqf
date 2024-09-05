@@ -22,8 +22,8 @@
 params[["_enable", true]];
 
 if (_enable) then {
-	if (cba_missiontime > 1) exitWith { 
-		"Can't be used during mission!" call CBA_fnc_notify;
+	if (cba_missiontime > 1) exitWith {
+        [QGVAR(doNotification), [localize "STR_tunres_MSP_checkContestCantUse"]] call CBA_fnc_localEvent;
 	};
 
 	if (!isNil QGVAR(checkContestZoneMarkersBriefingEH)) exitWith {

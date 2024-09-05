@@ -78,13 +78,14 @@ if ( _mspDeployementStatus && { !(isNull _msp) } ) then {
 
 		private _whoToNotify = [_side, GVAR(contestedNotification)] call FUNC(whoToNotify);
 		if (_whoToNotify isNotEqualTo [] ) then {
-			if (_isContested) then {
-				[_side, false] call EFUNC(respawn,updateRespawnPoint);
-				(call compile (localize "STR_tunres_MSP_FNC_Contested_hint")) remoteExecCall ["CBA_fnc_notify", _whoToNotify];
+			[_side, !_isContested] call EFUNC(respawn,updateRespawnPoint);
+
+			private _text = if (_isContested) then {
+				localize "STR_tunres_MSP_FNC_Contested_hint"
 			} else {
-				[_side, true, (getPosASL _msp) ] call EFUNC(respawn,updateRespawnPoint);
-				(call compile (localize "STR_tunres_MSP_FNC_secured_hint")) remoteExecCall ["CBA_fnc_notify", _whoToNotify];
+				localize "STR_tunres_MSP_FNC_secured_hint"
 			};
+			[QGVAR(doNotification), [_text], _whoToNotify] call CBA_fnc_targetEvent;
 		};
 	};
 	[QGVAR(EH_mspStatusUpdate), [_side, _isContested, _oldContestedStatus, _enemiesInArea, _enemiesInAreaMin, _friendliesInArea]] call CBA_fnc_globalEvent;

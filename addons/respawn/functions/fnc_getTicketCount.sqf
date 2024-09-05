@@ -43,7 +43,7 @@ switch (GVAR(respawnType)) do {
 
 if (_doHint && !isNull _player) then {
 	private _text = format["%1 %2",localize "STR_tunres_Respawn_RemainingTicketsText", str _ticketCount];
-	_text remoteExecCall ["CBA_fnc_notify", _player];
+	[QGVAR(doNotification), [_text], _player] call CBA_fnc_targetEvent;
 };
 
 _ticketCount

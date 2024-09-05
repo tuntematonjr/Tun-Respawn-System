@@ -47,7 +47,7 @@ if (isClass (configFile >> "CfgVehicles" >> _vehicle)) then {
 	//Check if contested
 	private _checkContest= ["Check if MSP contested", localize "STR_tunres_MSP_AceAction_CheckIfMspContested", "", {
 		private _text = localize (["STR_tunres_MSP_NotContested","STR_tunres_MSP_IsContested"] select (_target getVariable [QGVAR(isContested), false]));
-		_text call cba_fnc_notify;
+		[QGVAR(doNotification), [_text]] call CBA_fnc_localEvent;
 	}, _aliveAndSameSideAndIsMSPConditio] call ace_interact_menu_fnc_createAction;
 
 	//Ace inteaction
