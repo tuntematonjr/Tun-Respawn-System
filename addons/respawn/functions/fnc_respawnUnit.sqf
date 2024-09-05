@@ -17,7 +17,7 @@ params [["_side", nil, [west]], ["_unit", objNull, [objNull]]];
 private _respawnPointsHash = GVAR(respawnPointsHash);
 private _respawnPosition = getMarkerPos ((_respawnPointsHash get _side) select 0);
 
-[_unit, false, _side] call FUNC(updateWaitingRespawnList);
+[QGVAR(updateWaitingRespawnListEH), [_unit, false, _side]] call CBA_fnc_serverEvent;
 
 _unit setVariable [QGVAR(isWaitingRespawn), false, true];
 player setVariable [QGVAR(skipNextWave), nil];

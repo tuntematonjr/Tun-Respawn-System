@@ -26,7 +26,7 @@ if (!isNil QGVAR(uselesBody)) then {
 	GVAR(uselesBody) = nil;
 };
 
-[player, true, _playerSide] remoteExecCall [QFUNC(updateWaitingRespawnList),2];
+[QGVAR(updateWaitingRespawnListEH), [player, true, _playerSide]] call CBA_fnc_serverEvent;
 
 private _respawnWaitingarea = (GVAR(waitingAreaHash) get _playerSide) select 1;
 private _waitingRange = GVAR(waitingAreaRange);
