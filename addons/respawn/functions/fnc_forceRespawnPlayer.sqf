@@ -20,4 +20,4 @@ if !(player getVariable [QGVAR(isWaitingRespawn),false]) exitWith {
 
 player setVariable [QGVAR(skipNextWave), false, true];
 
-[playerSide, player] remoteExecCall [QFUNC(respawnUnit), 2];
+[QGVAR(respawnUnitEH), [playerSide, player]] call CBA_fnc_serverEvent;

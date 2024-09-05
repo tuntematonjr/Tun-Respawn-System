@@ -88,3 +88,10 @@ if ( AAR_IS_ENABLED ) then {
 	params["_player","_addPlayer","_side"];
 	[_player, _addPlayer, _side] call FUNC(updateWaitingRespawnList);
 }] call CBA_fnc_addEventHandler;
+
+[QGVAR(respawnUnitEH), {
+	params["_side","_unit"];
+	[_side, _unit] call FUNC(respawnUnit);
+}] call CBA_fnc_addEventHandler;
+
+[QGVAR(respawnUnitEH), [_unit, false, _side]] call CBA_fnc_serverEvent;

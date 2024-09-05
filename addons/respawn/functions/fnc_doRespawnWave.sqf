@@ -75,7 +75,7 @@ if (count _waitingRespawn > 0) then {
 		private _unit = _unitList select 0;
 		private _text = format["respawn unit: %1",_unit];
 		LOG(_text);
-		[_side, _unit] call FUNC(respawnUnit);
+		[QGVAR(respawnUnitEH), [_side, _unit]] call CBA_fnc_serverEvent;
 	}, 0.2, [_side, _waitingRespawnHash, _waitingRespawnDelayedHash]] call CBA_fnc_addPerFrameHandler;
 
 	private _waitingRespawnCount = count _waitingRespawn;
