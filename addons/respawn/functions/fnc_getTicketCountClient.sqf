@@ -30,7 +30,7 @@ private _ticketCount = switch (GVAR(respawnType)) do {
 
 if (_doHint && !isNull player) then {
 	private _text = format["%1 %2",localize "STR_tunres_Respawn_RemainingTicketsText", str _ticketCount];
-	[QGVAR(doNotification), [_text]] call CBA_fnc_localEvent;
+	[QEGVAR(main,doNotification), [_text]] call CBA_fnc_localEvent;
 };
 
 _ticketCount

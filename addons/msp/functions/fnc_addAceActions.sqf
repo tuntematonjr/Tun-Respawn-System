@@ -47,7 +47,7 @@ if (isClass (configFile >> "CfgVehicles" >> _vehicle)) then {
 	//Check if contested
 	private _checkContest= ["Check if MSP contested", localize "STR_tunres_MSP_AceAction_CheckIfMspContested", "", {
 		private _text = localize (["STR_tunres_MSP_NotContested","STR_tunres_MSP_IsContested"] select (_target getVariable [QGVAR(isContested), false]));
-		[QGVAR(doNotification), [_text]] call CBA_fnc_localEvent;
+		[QEGVAR(main,doNotification), [_text]] call CBA_fnc_localEvent;
 	}, _aliveAndSameSideAndIsMSPConditio] call ace_interact_menu_fnc_createAction;
 
 	//Ace inteaction
@@ -71,7 +71,7 @@ if (isClass (configFile >> "CfgVehicles" >> _vehicle)) then {
 			[] call EFUNC(respawn,checkTicketCount);
 		};
 		private _remaining_condition = { alive _target && {_target getVariable QGVAR(side) isEqualTo playerSide}};
-		_remainingTickets = [localize "STR_tunres_Respawn_CheckTickets", localize "STR_tunres_Respawn_CheckTickets", "\a3\modules_f_curator\data\portraitmissionname_ca.paa", _remaining_action, _remaining_condition] call ace_interact_menu_fnc_createAction;
+		private _remainingTickets = [localize "STR_tunres_Respawn_CheckTickets", localize "STR_tunres_Respawn_CheckTickets", "\a3\modules_f_curator\data\portraitmissionname_ca.paa", _remaining_action, _remaining_condition] call ace_interact_menu_fnc_createAction;
 		[_vehicle, 0, ["ACE_MainActions",QEGVAR(main,respawnAction)], _remainingTickets] call ace_interact_menu_fnc_addActionToClass;
 	};
 } else {

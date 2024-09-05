@@ -49,8 +49,8 @@ if (_setup) then {
 
 private _whoToNotify = [_side, GVAR(setupNotification)] call FUNC(whoToNotify);
 if (_whoToNotify isNotEqualTo [] ) then {
-	private _text = localize ["STR_tunres_MSP_FNC_pack_notification", "STR_tunres_MSP_FNC_setup_notification"] select _setup;
-	[QGVAR(doNotification), [_text], _whoToNotify] call CBA_fnc_targetEvent;
+	private _text = localize (["STR_tunres_MSP_FNC_pack_notification", "STR_tunres_MSP_FNC_setup_notification"] select _setup);
+	[QEGVAR(main,doNotification), [_text], _whoToNotify] call CBA_fnc_targetEvent;
 };
 
 private _pos = getPosASL _msp;

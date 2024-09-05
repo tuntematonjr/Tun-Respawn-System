@@ -56,7 +56,7 @@ if (_start) then {
                     if (_enemyCount > 0 && !_contestedStatus) then {
                         private _whoToNotify = [_side, GVAR(reportEnemiesNotification)] call FUNC(whoToNotify);
                         if (_whoToNotify isNotEqualTo [] ) then {
-                            [QGVAR(doNotification), [(localize "STR_tunres_MSP_FNC_enemies_near")], _whoToNotify] call CBA_fnc_targetEvent;
+                            [QEGVAR(main,doNotification), [(localize "STR_tunres_MSP_FNC_enemies_near")], _whoToNotify] call CBA_fnc_targetEvent;
                         };
                     }; 
                 } else {

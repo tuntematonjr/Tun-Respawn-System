@@ -71,7 +71,7 @@
                 [_side, false] remoteExecCall ["tunres_respawn_fnc_updateRespawnPoint", 2];
 
                 private _whoToNotify = [_side, 1] call FUNC(whoToNotify);
-                [QGVAR(doNotification), [localize "STR_tunres_MSP_destroyed"], _whoToNotify] call CBA_fnc_targetEvent;
+                [QEGVAR(main,doNotification), [localize "STR_tunres_MSP_destroyed"], _whoToNotify] call CBA_fnc_targetEvent;
             };
         };
 

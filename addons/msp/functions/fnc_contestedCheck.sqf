@@ -85,7 +85,7 @@ if ( _mspDeployementStatus && { !(isNull _msp) } ) then {
 			} else {
 				localize "STR_tunres_MSP_FNC_secured_hint"
 			};
-			[QGVAR(doNotification), [_text], _whoToNotify] call CBA_fnc_targetEvent;
+			[QEGVAR(main,doNotification), [_text], _whoToNotify] call CBA_fnc_targetEvent;
 		};
 	};
 	[QGVAR(EH_mspStatusUpdate), [_side, _isContested, _oldContestedStatus, _enemiesInArea, _enemiesInAreaMin, _friendliesInArea]] call CBA_fnc_globalEvent;
