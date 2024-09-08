@@ -20,8 +20,6 @@ if (!isServer) then {};
 params [["_msp", objNull, [objNull]], ["_setup", nil, [false]], "_player"];
 
 private _side = _msp getVariable QGVAR(side);
-
-
 AAR_UPDATE(_msp,"Is active MSP",_setup);
 
 if (_setup) then {

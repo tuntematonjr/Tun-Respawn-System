@@ -16,7 +16,7 @@
  */
 #include "script_component.hpp"
 params ["_side", "_start"];
-if (!isServer) then {};
+if (!isServer) exitWith {};
 
 if (_start) then {
     if (GVAR(contestCheckRunningHash) getOrDefault [_side, false]) exitWith {
