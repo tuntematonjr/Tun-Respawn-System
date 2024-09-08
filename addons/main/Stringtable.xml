@@ -147,8 +147,8 @@
                 <Original>Respawn wave for __%1__. %2 units respawned. Total respawn count is %3.</Original>
             </Key>
             <Key ID="STR_tunres_Respawn_AAR_RespawnWaveTickets">
-                <English>Respawn wave for __%1__. %2 units respawned. Total respawn count is %3 and tickets left %4.</English>
-                <Original>Respawn wave for __%1__. %2 units respawned. Total respawn count is %3 and tickets left %4.</Original>
+                <English>Respawn wave for __%1__. %2 units have respawned. Total respawns so far: %3. Remaining tickets: %4.</English>
+                <Original>Respawn wave for __%1__. %2 units have respawned. Total respawns so far: %3. Remaining tickets: %4.</Original>
             </Key>
             <Key ID="STR_tunres_MSP_DeployementAborted">
                 <English>MSP deployement aborted!</English>
