@@ -42,7 +42,7 @@ if ( _mspDeployementStatus && { !(isNull _msp) } ) then {
 		};
 	} forEach _sidesToCheck;
 
-	private _pos = getPosASL _msp;
+	private _pos = ASLToAGL (getPosASL _msp);
 	private _unitsInArea = _allunits inAreaArray [_pos, _contestedRadiusMax, _contestedRadiusMax, 0, false, (_contestedRadiusMax/2)];
 	private _enemiesInArea = _unitsInArea select {(side _x) in _enemySides};
 	private _friendliesInArea = (count _unitsInArea) - (count _enemiesInArea);
