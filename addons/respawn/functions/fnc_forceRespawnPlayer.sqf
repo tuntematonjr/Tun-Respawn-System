@@ -22,4 +22,6 @@ AAR_EVENT((localize"STR_tunres_Respawn_playerForceRespawned"),player,nil,nil);
 
 player setVariable [QGVAR(skipNextWave), false, true];
 
+[1] call FUNC(upddateRespawnCount);
+
 [QGVAR(respawnUnitEH), [playerSide, player]] call CBA_fnc_serverEvent;
