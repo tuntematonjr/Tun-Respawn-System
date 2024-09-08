@@ -19,6 +19,10 @@ if (!isServer) exitWith { };
 
 params [["_side", nil, [east]], ["_reset", false, [false]]];
 
+private _text = format[localize"STR_tunres_Respawn_sideForceRespawned",str _side];
+
+AAR_EVENT(_text,nil,nil,nil);
+
 [_side, true] call FUNC(doRespawnWave);
 
 if (_reset && { !(GVAR(forcedRespawn)) }) then {

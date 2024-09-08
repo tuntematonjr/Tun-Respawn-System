@@ -18,6 +18,8 @@ if !(player getVariable [QGVAR(isWaitingRespawn),false]) exitWith {
 	ERROR("Tried to force respawn unit, whichs is not at respawn");
 };
 
+AAR_EVENT((localize"STR_tunres_Respawn_playerForceRespawned"),player,nil,nil);
+
 player setVariable [QGVAR(skipNextWave), false, true];
 
 [QGVAR(respawnUnitEH), [playerSide, player]] call CBA_fnc_serverEvent;
