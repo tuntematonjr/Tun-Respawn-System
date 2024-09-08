@@ -14,11 +14,11 @@
 #define MARKER_NAME(var1) FORMAT_2("%1_%2",QUOTE(ADDON),var1)
 
 //AAR enabled check
-#define AAR_IS_ENABLED !isNil "afi_aar2"
+#define AAR_IS_ENABLED LOG("AAR enabled"); !isNil "afi_aar2"
 //AAR update macro
-#define AAR_UPDATE(OBJ,VARNAME,VALUE)   [QEGVAR(main,AAR_UpdateEH), [OBJ,VARNAME,VALUE]] call CBA_fnc_serverEvent
+#define AAR_UPDATE(OBJ,VARNAME,VALUE)   LOG("AAR update macro"); [QEGVAR(main,AAR_UpdateEH), [OBJ,VARNAME,VALUE]] call CBA_fnc_serverEvent
 //AAR event
-#define AAR_EVENT(TEXT,INSTIGATOR,TARGET,POI)   [QEGVAR(main,AAR_EventEH), [TEXT,INSTIGATOR,TARGET,POI]] call CBA_fnc_serverEvent
+#define AAR_EVENT(TEXT,INSTIGATOR,TARGET,POI)   LOG("AAR eventti macro"); [QEGVAR(main,AAR_EventEH), [TEXT,INSTIGATOR,TARGET,POI]] call CBA_fnc_serverEvent
 
 
 #define ALL_SIDES   [west,east,resistance,civilian]
