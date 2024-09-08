@@ -17,8 +17,7 @@ params [["_side", nil, [west]], ["_forceAll", false, [false]]];
 
 if (!isServer) exitWith { };
 
-private _totalRespawnCountHash = GVAR(totalRespawnCountHash);
-private _totalRespawnCount = _totalRespawnCountHash get _side;
+private _totalRespawnCount = GVAR(totalRespawnCountHash) get _side;
 private _waitingRespawnHash = GVAR(waitingRespawnListHash);
 private _waitingRespawnDelayedHash = GVAR(waitingRespawnDelayedListHash);
 private _waitingRespawn = _waitingRespawnHash get _side;
@@ -79,8 +78,7 @@ if (count _waitingRespawn > 0) then {
 	}, 0.2, [_side, _waitingRespawnHash, _waitingRespawnDelayedHash]] call CBA_fnc_addPerFrameHandler;
 
 	private _waitingRespawnCount = count _waitingRespawn;
-	_totalRespawnCount = _totalRespawnCount + _waitingRespawnCount;
-	_totalRespawnCountHash set [_side, _totalRespawnCount];
+	_totalRespawnCount = [_waitingRespawnCount] call FUNC(upddateRespawnCount);
 
 	private _debugText = format ["Side %1 all respawn units moved. Respawned: %2. Total count is: %3", _side, _waitingRespawnCount, _totalRespawnCount]; 
 	INFO(_debugText);
@@ -89,7 +87,7 @@ if (count _waitingRespawn > 0) then {
 
 if (AAR_IS_ENABLED) then {
 	private _text =  if (GVAR(respawnType) isEqualTo 1) then {
-		format[(localize "STR_tunres_Respawn_AAR_RespawnWaveTickets"), str _side, _waitingRespawnCount, _totalRespawnCount, [_side] call FUNC(getTicketCount)];
+		format[(localize "STR_tunres_Respawn_AAR_RespawnWaveTickets"), str _side, _waitingRespawnCount, _totalRespawnCount, [_side] call FUNC(getTicketCount)]
 	} else {
 		format[(localize "STR_tunres_Respawn_AAR_RespawnWave"), str _side, _waitingRespawnCount, _totalRespawnCount]
 	};
