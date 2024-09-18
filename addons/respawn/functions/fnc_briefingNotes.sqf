@@ -57,7 +57,6 @@ if (GVAR(briefingEnableShowTime)) then {
 	private _delayedRespawn = GVAR(delayedRespawn);
 	if (_delayedRespawn > 0) then {
 		private _respawnTime = _waveLenghtTimeHash get playerSide;
-		_respawnTime = _respawnTime * 60;
 		private _delayedTime = [(_respawnTime * (_delayedRespawn / 100)), "M:SS"] call CBA_fnc_formatElapsedTime;
 		_respawnTime = [_respawnTime, "M:SS"] call CBA_fnc_formatElapsedTime;
 		_text = format ["%1<br/><br/>- " + LSTRING(Briefing_DelayedRespawn),_text, _delayedTime, _delayedRespawn, _respawnTime, "%"];

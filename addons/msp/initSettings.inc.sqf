@@ -86,7 +86,7 @@
 
 [
     QGVAR(reportEnemiesIntervalWest),
-    "SLIDER",
+    "TIME",
     [(LLSTRING(CBA_reportEnemiesIntervala)) + " West", LLSTRING(CBA_tooltip_reportEnemiesInterval)],
     [LLSTRING(CBA_Category_main), LLSTRING(CBA_Category_contestedWest)],
     [1, 600, 60, 0],
@@ -104,7 +104,7 @@
 
 [
     QGVAR(reportEnemiesIntervalEast),
-    "SLIDER",
+    "TIME",
     [(LLSTRING(CBA_reportEnemiesIntervala)) + " East", LLSTRING(CBA_tooltip_reportEnemiesInterval)],
     [LLSTRING(CBA_Category_main), LLSTRING(CBA_Category_contestedEast)],
     [1, 600, 60, 0],
@@ -122,7 +122,7 @@
 
 [
     QGVAR(reportEnemiesIntervalResistance),
-    "SLIDER",
+    "TIME",
     [(LLSTRING(CBA_reportEnemiesIntervala)) + " Resistance", LLSTRING(CBA_tooltip_reportEnemiesInterval)],
     [LLSTRING(CBA_Category_main), LLSTRING(CBA_Category_contestedResistance)],
     [1, 600, 60, 0],
@@ -140,7 +140,7 @@
 
 [
     QGVAR(reportEnemiesIntervalCivilian),
-    "SLIDER",
+    "TIME",
     [(LLSTRING(CBA_reportEnemiesIntervala)) + " Civilian", LLSTRING(CBA_tooltip_reportEnemiesInterval)],
     [LLSTRING(CBA_Category_main), LLSTRING(CBA_Category_contestedCivilian)],
     [1, 600, 60, 0],
@@ -375,7 +375,7 @@
 
 [
     QGVAR(contestedCheckIntervalWest),
-    "SLIDER",
+    "TIME",
     [(LLSTRING(CBA_contestedCheckInterval)) + " West", LLSTRING(CBA_tooltip_contestedCheckInterval)],
     [LLSTRING(CBA_Category_main), LLSTRING(CBA_Category_contestedWest)],
     [1, 600, 20, 0],
@@ -393,7 +393,7 @@
 
 [
     QGVAR(contestedCheckIntervalEast),
-    "SLIDER",
+    "TIME",
     [(LLSTRING(CBA_contestedCheckInterval)) + " East", LLSTRING(CBA_tooltip_contestedCheckInterval)],
     [LLSTRING(CBA_Category_main), LLSTRING(CBA_Category_contestedEast)],
     [1, 600, 20, 0],
@@ -411,7 +411,7 @@
 
 [
     QGVAR(contestedCheckIntervalResistance),
-    "SLIDER",
+    "TIME",
     [(LLSTRING(CBA_contestedCheckInterval)) + " Resistance", LLSTRING(CBA_tooltip_contestedCheckInterval)],
     [LLSTRING(CBA_Category_main), LLSTRING(CBA_Category_contestedResistance)],
     [1, 600, 20, 0],
@@ -429,7 +429,7 @@
 
 [
     QGVAR(contestedCheckIntervalCivilian),
-    "SLIDER",
+    "TIME",
     [(LLSTRING(CBA_contestedCheckInterval)) + " Civilian", LLSTRING(CBA_tooltip_contestedCheckInterval)],
     [LLSTRING(CBA_Category_main), LLSTRING(CBA_Category_contestedCivilian)],
     [1, 600, 20, 0],
@@ -447,7 +447,7 @@
 
 [
     QGVAR(progresbarTimeSetup),
-    "SLIDER",
+    "TIME",
     [LLSTRING(CBA_setup_progresbar), LLSTRING(CBA_tooltip_setup_ProgressBar)],
     [LLSTRING(CBA_Category_main), LLSTRING(CBA_Category_progres)],
     [0, 60, 5, 0],
@@ -461,7 +461,7 @@
 
 [
     QGVAR(progresbarTimePack),
-    "SLIDER",
+    "TIME",
     [LLSTRING(CBA_pack_progresbar), LLSTRING(CBA_tooltip_pack_progresbar)],
     [LLSTRING(CBA_Category_main), LLSTRING(CBA_Category_progres)],
     [0, 60, 5, 0],

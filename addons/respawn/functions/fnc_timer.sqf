@@ -21,7 +21,7 @@ if (GVAR(forcedRespawn)) exitWith { INFO("No timer, Only forced waves"); };
 
 private _hashWaitTime = GVAR(nextWaveTimesHash);
 private _hashWaveLenght = GVAR(waveLenghtTimesHash);
-private _time = round ((_hashWaitTime get _side) + (_hashWaveLenght get _side) * 60);
+private _time = round ((_hashWaitTime get _side) + (_hashWaveLenght get _side));
 
 _hashWaitTime set [_side, _time];
 publicVariable QGVAR(nextWaveTimesHash);
