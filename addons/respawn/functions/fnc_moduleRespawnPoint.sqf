@@ -30,7 +30,8 @@ if (getMarkerColor _markername isEqualTo "") then {
 	_marker setMarkerType "Empty";
 
 } else {
-	hint format [(LSTRING(Module_RespanPos_MultipleMarkers)), _markername];
+	private _errorText = LSTRING(Module_RespanPos_MultipleMarkers);
+	hint format [_errorText, _markername];
 };
 
 private ["_side", "_color"];
