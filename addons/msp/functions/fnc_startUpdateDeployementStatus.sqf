@@ -20,7 +20,7 @@ private ["_text", "_time", "_conditio"];
 
 if (_setup) then {
     [_target] call FUNC(checkContestZoneArea);
-    _text = localize "STR_tunres_MSP_fnc_startUpdateDeployementStatus_setting";
+    _text = LLSTRING(fnc_startUpdateDeployementStatus_setting);
     _conditio = {
                     private _msp = (_args select 0);
                     driver _msp isEqualTo player &&
@@ -30,7 +30,7 @@ if (_setup) then {
                 };
     _time = GVAR(progresbarTimeSetup);
 } else {
-    _text = localize "STR_tunres_MSP_fnc_startUpdateDeployementStatus_packing";
+    _text = LLSTRING(fnc_startUpdateDeployementStatus_packing);
     _conditio = {
                     private _msp = (_args select 0);
                     alive _msp &&
@@ -44,4 +44,4 @@ private _code = {
                     openMap false;
                 };
 
-[_time, [_target, _setup, player], _code, {[QEGVAR(main,doNotification), [localize "STR_tunres_MSP_DeployementAborted"]] call CBA_fnc_localEvent;}, _text, _conditio, ["notOnMap","isnotinside"]] call ace_common_fnc_progressBar;
+[_time, [_target, _setup, player], _code, {[QEGVAR(main,doNotification), [LLSTRING(DeployementAborted)]] call CBA_fnc_localEvent;}, _text, _conditio, ["notOnMap","isnotinside"]] call ace_common_fnc_progressBar;

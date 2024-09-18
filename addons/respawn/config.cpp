@@ -18,7 +18,7 @@ class CfgFactionClasses
     class NO_CATEGORY;
     class tunres_Respawn : NO_CATEGORY
     {
-        displayName = "$STR_tunres_Respawn_Module_category";
+        displayName = CSTRING(Module_category);
     };
 };
 

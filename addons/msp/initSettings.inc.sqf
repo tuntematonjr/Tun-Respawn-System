@@ -1,8 +1,8 @@
 [
     QGVAR(enable),
     "CHECKBOX",
-    [localize "STR_tunres_MSP_CBA_Enable", localize "STR_tunres_MSP_CBA_tooltip_Enable"],
-    localize "STR_tunres_MSP_CBA_Category_main",
+    [LLSTRING(CBA_Enable), LLSTRING(CBA_tooltip_Enable)],
+    LLSTRING(CBA_Category_main),
     false,
     1,
     {},
@@ -12,8 +12,8 @@
 [
     QGVAR(allowCheckTicketsMSP),
     "CHECKBOX",
-    [localize "STR_tunres_MSP_CBA_allowCheckTicketsMSP", localize "STR_tunres_Respawn_CBA_tooltip_CheckTickets"],
-    localize "STR_tunres_MSP_CBA_Category_main",
+    [LLSTRING(CBA_allowCheckTicketsMSP), localize "STR_tunres_respawn_CBA_tooltip_CheckTickets"],
+    LLSTRING(CBA_Category_main),
     true,
     1,
     {},
@@ -23,8 +23,8 @@
 [
     QGVAR(reportEnemiesEnabledWest),
     "CHECKBOX",
-    [(localize "STR_tunres_MSP_CBA_reportEnemiesEnabled") + " West", localize "STR_tunres_MSP_CBA_tooltip_reportEnemiesEnabled"],
-    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedWest"],
+    [(LLSTRING(CBA_reportEnemiesEnabled)) + " West", LLSTRING(CBA_tooltip_reportEnemiesEnabled)],
+    [LLSTRING(CBA_Category_main), LLSTRING(CBA_Category_contestedWest)],
     true,
     1,
     {
@@ -39,8 +39,8 @@
 [
     QGVAR(reportEnemiesEnabledEast),
     "CHECKBOX",
-    [(localize "STR_tunres_MSP_CBA_reportEnemiesEnabled") + " East", localize "STR_tunres_MSP_CBA_tooltip_reportEnemiesEnabled"],
-    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedEast"],
+    [(LLSTRING(CBA_reportEnemiesEnabled)) + " East", LLSTRING(CBA_tooltip_reportEnemiesEnabled)],
+    [LLSTRING(CBA_Category_main), LLSTRING(CBA_Category_contestedEast)],
     true,
     1,
     {
@@ -55,8 +55,8 @@
 [
     QGVAR(reportEnemiesEnabledResistance),
     "CHECKBOX",
-    [(localize "STR_tunres_MSP_CBA_reportEnemiesEnabled") + " Resistance", localize "STR_tunres_MSP_CBA_tooltip_reportEnemiesEnabled"],
-    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedResistance"],
+    [(LLSTRING(CBA_reportEnemiesEnabled)) + " Resistance", LLSTRING(CBA_tooltip_reportEnemiesEnabled)],
+    [LLSTRING(CBA_Category_main), LLSTRING(CBA_Category_contestedResistance)],
     true,
     1,
     {
@@ -71,8 +71,8 @@
 [
     QGVAR(reportEnemiesEnabledCivilian),
     "CHECKBOX",
-    [(localize "STR_tunres_MSP_CBA_reportEnemiesEnabled" + " Civilian"), localize "STR_tunres_MSP_CBA_tooltip_reportEnemiesEnabled"],
-    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedCivilian"],
+    [(LLSTRING(CBA_reportEnemiesEnabled) + " Civilian"), LLSTRING(CBA_tooltip_reportEnemiesEnabled)],
+    [LLSTRING(CBA_Category_main), LLSTRING(CBA_Category_contestedCivilian)],
     true,
     1,
     {
@@ -87,8 +87,8 @@
 [
     QGVAR(reportEnemiesIntervalWest),
     "SLIDER",
-    [(localize "STR_tunres_MSP_CBA_reportEnemiesIntervala") + " West", localize "STR_tunres_MSP_CBA_tooltip_reportEnemiesInterval"],
-    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedWest"],
+    [(LLSTRING(CBA_reportEnemiesIntervala)) + " West", LLSTRING(CBA_tooltip_reportEnemiesInterval)],
+    [LLSTRING(CBA_Category_main), LLSTRING(CBA_Category_contestedWest)],
     [1, 600, 60, 0],
     1,
     {
@@ -105,8 +105,8 @@
 [
     QGVAR(reportEnemiesIntervalEast),
     "SLIDER",
-    [(localize "STR_tunres_MSP_CBA_reportEnemiesIntervala") + " East", localize "STR_tunres_MSP_CBA_tooltip_reportEnemiesInterval"],
-    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedEast"],
+    [(LLSTRING(CBA_reportEnemiesIntervala)) + " East", LLSTRING(CBA_tooltip_reportEnemiesInterval)],
+    [LLSTRING(CBA_Category_main), LLSTRING(CBA_Category_contestedEast)],
     [1, 600, 60, 0],
     1,
     {
@@ -123,8 +123,8 @@
 [
     QGVAR(reportEnemiesIntervalResistance),
     "SLIDER",
-    [(localize "STR_tunres_MSP_CBA_reportEnemiesIntervala") + " Resistance", localize "STR_tunres_MSP_CBA_tooltip_reportEnemiesInterval"],
-    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedResistance"],
+    [(LLSTRING(CBA_reportEnemiesIntervala)) + " Resistance", LLSTRING(CBA_tooltip_reportEnemiesInterval)],
+    [LLSTRING(CBA_Category_main), LLSTRING(CBA_Category_contestedResistance)],
     [1, 600, 60, 0],
     1,
     {
@@ -141,13 +141,14 @@
 [
     QGVAR(reportEnemiesIntervalCivilian),
     "SLIDER",
-    [(localize "STR_tunres_MSP_CBA_reportEnemiesIntervala") + " Civilian", localize "STR_tunres_MSP_CBA_tooltip_reportEnemiesInterval"],
-    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedCivilian"],
+    [(LLSTRING(CBA_reportEnemiesIntervala)) + " Civilian", LLSTRING(CBA_tooltip_reportEnemiesInterval)],
+    [LLSTRING(CBA_Category_main), LLSTRING(CBA_Category_contestedCivilian)],
     [1, 600, 60, 0],
     1,
     {
         params ["_value"];
         _value = round _value;
+        ok = _value;
         GVAR(reportEnemiesIntervalCivilian) = _value;
         private _array = GVAR(contestValuesHash) get civilian;
         _array set [0, _value];
@@ -159,8 +160,8 @@
 [
     QGVAR(reportEnemiesRangeWest),
     "SLIDER",
-    [(localize "STR_tunres_MSP_CBA_reportEnemiesRange") + " West", localize "STR_tunres_MSP_CBA_tooltip_reportEnemiesRange"],
-    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedWest"],
+    [(LLSTRING(CBA_reportEnemiesRange)) + " West", LLSTRING(CBA_tooltip_reportEnemiesRange)],
+    [LLSTRING(CBA_Category_main), LLSTRING(CBA_Category_contestedWest)],
     [0, 5000, 500, 0],
     1,
     {
@@ -177,8 +178,8 @@
 [
     QGVAR(reportEnemiesRangeEast),
     "SLIDER",
-    [(localize "STR_tunres_MSP_CBA_reportEnemiesRange") + " East", localize "STR_tunres_MSP_CBA_tooltip_reportEnemiesRange"],
-    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedEast"],
+    [(LLSTRING(CBA_reportEnemiesRange)) + " East", LLSTRING(CBA_tooltip_reportEnemiesRange)],
+    [LLSTRING(CBA_Category_main), LLSTRING(CBA_Category_contestedEast)],
     [0, 5000, 500, 0],
     1,
     {
@@ -195,8 +196,8 @@
 [
     QGVAR(reportEnemiesRangeResistance),
     "SLIDER",
-    [(localize "STR_tunres_MSP_CBA_reportEnemiesRange") + " Resistance", localize "STR_tunres_MSP_CBA_tooltip_reportEnemiesRange"],
-    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedResistance"],
+    [(LLSTRING(CBA_reportEnemiesRange)) + " Resistance", LLSTRING(CBA_tooltip_reportEnemiesRange)],
+    [LLSTRING(CBA_Category_main), LLSTRING(CBA_Category_contestedResistance)],
     [0, 5000, 500, 0],
     1,
     {
@@ -213,8 +214,8 @@
 [
     QGVAR(reportEnemiesRangeCivilian),
     "SLIDER",
-    [(localize "STR_tunres_MSP_CBA_reportEnemiesRange") + " Civilian", localize "STR_tunres_MSP_CBA_tooltip_reportEnemiesRange"],
-    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedCivilian"],
+    [(LLSTRING(CBA_reportEnemiesRange)) + " Civilian", LLSTRING(CBA_tooltip_reportEnemiesRange)],
+    [LLSTRING(CBA_Category_main), LLSTRING(CBA_Category_contestedCivilian)],
     [0, 5000, 500, 0],
     1,
     {
@@ -231,8 +232,8 @@
 [
     QGVAR(contestedRadiusMaxWest),
     "SLIDER",
-    [(localize "STR_tunres_MSP_CBA_contestedRadiusMax") + " West", localize "STR_tunres_MSP_CBA_tooltip_contested_max"],
-    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedWest"],
+    [(LLSTRING(CBA_contestedRadiusMax)) + " West", LLSTRING(CBA_tooltip_contested_max)],
+    [LLSTRING(CBA_Category_main), LLSTRING(CBA_Category_contestedWest)],
     [0, 3000, 500, 0],
     1,
     {
@@ -249,8 +250,8 @@
 [
     QGVAR(contestedRadiusMaxEast),
     "SLIDER",
-    [(localize "STR_tunres_MSP_CBA_contestedRadiusMax") + " East", localize "STR_tunres_MSP_CBA_tooltip_contested_max"],
-    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedEast"],
+    [(LLSTRING(CBA_contestedRadiusMax)) + " East", LLSTRING(CBA_tooltip_contested_max)],
+    [LLSTRING(CBA_Category_main), LLSTRING(CBA_Category_contestedEast)],
     [0, 3000, 500, 0],
     1,
     {
@@ -267,8 +268,8 @@
 [
     QGVAR(contestedRadiusMaxResistance),
     "SLIDER",
-    [(localize "STR_tunres_MSP_CBA_contestedRadiusMax") + " Resistance", localize "STR_tunres_MSP_CBA_tooltip_contested_max"],
-    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedResistance"],
+    [(LLSTRING(CBA_contestedRadiusMax)) + " Resistance", LLSTRING(CBA_tooltip_contested_max)],
+    [LLSTRING(CBA_Category_main), LLSTRING(CBA_Category_contestedResistance)],
     [0, 3000, 500, 0],
     1,
     {
@@ -285,8 +286,8 @@
 [
     QGVAR(contestedRadiusMaxCivilian),
     "SLIDER",
-    [(localize "STR_tunres_MSP_CBA_contestedRadiusMax") + " Civilian", localize "STR_tunres_MSP_CBA_tooltip_contested_max"],
-    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedCivilian"],
+    [(LLSTRING(CBA_contestedRadiusMax)) + " Civilian", LLSTRING(CBA_tooltip_contested_max)],
+    [LLSTRING(CBA_Category_main), LLSTRING(CBA_Category_contestedCivilian)],
     [0, 3000, 500, 0],
     1,
     {
@@ -303,8 +304,8 @@
 [
     QGVAR(contestedRadiusMinWest),
     "SLIDER",
-    [(localize "STR_tunres_MSP_CBA_contestedRadiusMin") + " West", localize "STR_tunres_MSP_CBA_tooltip_contested_min"],
-    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedWest"],
+    [(LLSTRING(CBA_contestedRadiusMin)) + " West", LLSTRING(CBA_tooltip_contested_min)],
+    [LLSTRING(CBA_Category_main), LLSTRING(CBA_Category_contestedWest)],
     [0, 3000, 200, 0],
     1,
     {
@@ -321,8 +322,8 @@
 [
     QGVAR(contestedRadiusMinEast),
     "SLIDER",
-    [(localize "STR_tunres_MSP_CBA_contestedRadiusMin") + " East", localize "STR_tunres_MSP_CBA_tooltip_contested_min"],
-    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedEast"],
+    [(LLSTRING(CBA_contestedRadiusMin)) + " East", LLSTRING(CBA_tooltip_contested_min)],
+    [LLSTRING(CBA_Category_main), LLSTRING(CBA_Category_contestedEast)],
     [0, 3000, 200, 0],
     1,
     {
@@ -339,8 +340,8 @@
 [
     QGVAR(contestedRadiusMinResistance),
     "SLIDER",
-    [(localize "STR_tunres_MSP_CBA_contestedRadiusMin") + " Resistance", localize "STR_tunres_MSP_CBA_tooltip_contested_min"],
-    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedResistance"],
+    [(LLSTRING(CBA_contestedRadiusMin)) + " Resistance", LLSTRING(CBA_tooltip_contested_min)],
+    [LLSTRING(CBA_Category_main), LLSTRING(CBA_Category_contestedResistance)],
     [0, 3000, 200, 0],
     1,
     {
@@ -357,8 +358,8 @@
 [
     QGVAR(contestedRadiusMinCivilian),
     "SLIDER",
-    [(localize "STR_tunres_MSP_CBA_contestedRadiusMin") + " Civilian", localize "STR_tunres_MSP_CBA_tooltip_contested_min"],
-    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedCivilian"],
+    [(LLSTRING(CBA_contestedRadiusMin)) + " Civilian", LLSTRING(CBA_tooltip_contested_min)],
+    [LLSTRING(CBA_Category_main), LLSTRING(CBA_Category_contestedCivilian)],
     [0, 3000, 200, 0],
     1,
     {
@@ -375,8 +376,8 @@
 [
     QGVAR(contestedCheckIntervalWest),
     "SLIDER",
-    [(localize "STR_tunres_MSP_CBA_contestedCheckInterval") + " West", localize "STR_tunres_MSP_CBA_tooltip_contestedCheckInterval"],
-    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedWest"],
+    [(LLSTRING(CBA_contestedCheckInterval)) + " West", LLSTRING(CBA_tooltip_contestedCheckInterval)],
+    [LLSTRING(CBA_Category_main), LLSTRING(CBA_Category_contestedWest)],
     [1, 600, 20, 0],
     1,
     {
@@ -393,8 +394,8 @@
 [
     QGVAR(contestedCheckIntervalEast),
     "SLIDER",
-    [(localize "STR_tunres_MSP_CBA_contestedCheckInterval") + " East", localize "STR_tunres_MSP_CBA_tooltip_contestedCheckInterval"],
-    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedEast"],
+    [(LLSTRING(CBA_contestedCheckInterval)) + " East", LLSTRING(CBA_tooltip_contestedCheckInterval)],
+    [LLSTRING(CBA_Category_main), LLSTRING(CBA_Category_contestedEast)],
     [1, 600, 20, 0],
     1,
     {
@@ -411,8 +412,8 @@
 [
     QGVAR(contestedCheckIntervalResistance),
     "SLIDER",
-    [(localize "STR_tunres_MSP_CBA_contestedCheckInterval") + " Resistance", localize "STR_tunres_MSP_CBA_tooltip_contestedCheckInterval"],
-    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedResistance"],
+    [(LLSTRING(CBA_contestedCheckInterval)) + " Resistance", LLSTRING(CBA_tooltip_contestedCheckInterval)],
+    [LLSTRING(CBA_Category_main), LLSTRING(CBA_Category_contestedResistance)],
     [1, 600, 20, 0],
     1,
     {
@@ -429,8 +430,8 @@
 [
     QGVAR(contestedCheckIntervalCivilian),
     "SLIDER",
-    [(localize "STR_tunres_MSP_CBA_contestedCheckInterval") + " Civilian", localize "STR_tunres_MSP_CBA_tooltip_contestedCheckInterval"],
-    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_contestedCivilian"],
+    [(LLSTRING(CBA_contestedCheckInterval)) + " Civilian", LLSTRING(CBA_tooltip_contestedCheckInterval)],
+    [LLSTRING(CBA_Category_main), LLSTRING(CBA_Category_contestedCivilian)],
     [1, 600, 20, 0],
     1,
     {
@@ -447,8 +448,8 @@
 [
     QGVAR(progresbarTimeSetup),
     "SLIDER",
-    [localize "STR_tunres_MSP_CBA_setup_progresbar", localize "STR_tunres_MSP_CBA_tooltip_setup_ProgressBar"],
-    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_progres"],
+    [LLSTRING(CBA_setup_progresbar), LLSTRING(CBA_tooltip_setup_ProgressBar)],
+    [LLSTRING(CBA_Category_main), LLSTRING(CBA_Category_progres)],
     [0, 60, 5, 0],
     1,
     {
@@ -461,8 +462,8 @@
 [
     QGVAR(progresbarTimePack),
     "SLIDER",
-    [localize "STR_tunres_MSP_CBA_pack_progresbar", localize "STR_tunres_MSP_CBA_tooltip_pack_progresbar"],
-    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_Category_progres"],
+    [LLSTRING(CBA_pack_progresbar), LLSTRING(CBA_tooltip_pack_progresbar)],
+    [LLSTRING(CBA_Category_main), LLSTRING(CBA_Category_progres)],
     [0, 60, 5, 0],
     1,
     {
@@ -475,8 +476,8 @@
 [
     QGVAR(clasnamesEast),
     "EDITBOX",
-    [localize "STR_tunres_MSP_CBA_classname_east", localize "STR_tunres_MSP_CBA_tooltip_classname"],
-    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_classname"],
+    [LLSTRING(CBA_classname_east), LLSTRING(CBA_tooltip_classname)],
+    [LLSTRING(CBA_Category_main), LLSTRING(CBA_classname)],
     "O_Truck_03_transport_F",
     1,
     {
@@ -489,8 +490,8 @@
 [
     QGVAR(clasnamesWest),
     "EDITBOX",
-    [localize "STR_tunres_MSP_CBA_classname_west", localize "STR_tunres_MSP_CBA_tooltip_classname"],
-    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_classname"],
+    [LLSTRING(CBA_classname_west), LLSTRING(CBA_tooltip_classname)],
+    [LLSTRING(CBA_Category_main), LLSTRING(CBA_classname)],
     "B_Truck_01_transport_F",
     1,
     {
@@ -503,8 +504,8 @@
 [
     QGVAR(clasnamesResistance),
     "EDITBOX",
-    [localize "STR_tunres_MSP_CBA_classname_resistance", localize "STR_tunres_MSP_CBA_tooltip_classname"],
-    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_classname"],
+    [LLSTRING(CBA_classname_resistance), LLSTRING(CBA_tooltip_classname)],
+    [LLSTRING(CBA_Category_main), LLSTRING(CBA_classname)],
     "I_Truck_02_transport_F",
     1,
     {
@@ -517,8 +518,8 @@
 [
     QGVAR(clasnamesCivilian),
     "EDITBOX",
-    [localize "STR_tunres_MSP_CBA_classname_civilian", localize "STR_tunres_MSP_CBA_tooltip_classname"],
-    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_classname"],
+    [LLSTRING(CBA_classname_civilian), LLSTRING(CBA_tooltip_classname)],
+    [LLSTRING(CBA_Category_main), LLSTRING(CBA_classname)],
     "C_Truck_02_transport_F",
     1,
     {
@@ -531,8 +532,8 @@
 [
     QGVAR(setupNotification),
     "LIST",
-    [localize "STR_tunres_MSP_CBA_whoGetsSetUpNotification", localize "STR_tunres_MSP_CBA_whoGetsSetUpNotification_Tooltip"],
-    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_notificationCategory"],
+    [LLSTRING(CBA_whoGetsSetUpNotification), LLSTRING(CBA_whoGetsSetUpNotification_Tooltip)],
+    [LLSTRING(CBA_Category_main), LLSTRING(CBA_notificationCategory)],
     [[0, 1], ["Group Leaders", "Side"], 0],
     1,
     {},
@@ -542,8 +543,8 @@
 [
     QGVAR(contestedNotification),
     "LIST",
-    [localize "STR_tunres_MSP_CBA_whoGetsContestedNotification", localize "STR_tunres_MSP_CBA_whoGetsContestedNotification_Tooltip"],
-    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_notificationCategory"],
+    [LLSTRING(CBA_whoGetsContestedNotification), LLSTRING(CBA_whoGetsContestedNotification_Tooltip)],
+    [LLSTRING(CBA_Category_main), LLSTRING(CBA_notificationCategory)],
     [[0, 1], ["Group Leaders", "Side"], 0],
     1,
     {},
@@ -553,8 +554,8 @@
 [
     QGVAR(reportEnemiesNotification),
     "LIST",
-    [localize "STR_tunres_MSP_CBA_whoGetsReportEnemiesNotification", localize "STR_tunres_MSP_CBA_whoGetsReportEnemies_Tooltip"],
-    [localize "STR_tunres_MSP_CBA_Category_main", localize "STR_tunres_MSP_CBA_notificationCategory"],
+    [LLSTRING(CBA_whoGetsReportEnemiesNotification), LLSTRING(CBA_whoGetsReportEnemies_Tooltip)],
+    [LLSTRING(CBA_Category_main), LLSTRING(CBA_notificationCategory)],
     [[0, 1], ["Group Leaders", "Side"], 0],
     1,
     {},

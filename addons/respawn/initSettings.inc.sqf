@@ -1,8 +1,8 @@
 [
     QGVAR(enable), // Unique setting name. Matches resulting variable name <STRING>
     "CHECKBOX", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
-    [localize "STR_tunres_Respawn_CBA_Enable", localize "STR_tunres_Respawn_CBA_tooltip_Enable"], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
-    localize "STR_tunres_Respawn_CBA_Category_main", // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    [LSTRING(CBA_Enable), LSTRING(CBA_tooltip_Enable)], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    LSTRING(CBA_Category_main), // Category for the settings menu + optional sub-category <STRING, ARRAY>
     false, // Extra properties of the setting depending of _settingType.
     1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
     {}, // Script to execute when setting is changed. (optional) <CODE>
@@ -12,8 +12,8 @@
 [
     QGVAR(killJIP),
     "CHECKBOX",
-    ["Kill JIP", localize "STR_tunres_Respawn_CBA_tooltip_killjip"],
-    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_generic"],
+    ["Kill JIP", LSTRING(CBA_tooltip_killjip)],
+    [LSTRING(CBA_Category_main), LSTRING(CBA_Category_generic)],
     true,
     1,
     {},
@@ -22,9 +22,9 @@
 
 [
     QGVAR(killJipTime),
-    "SLIDER",
-    ["Kill JIP Time", localize "STR_tunres_Respawn_CBA_tooltip_killJipTime"],
-    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_generic"],
+    "TIME",
+    ["Kill JIP Time", LSTRING(CBA_tooltip_killJipTime)],
+    [LSTRING(CBA_Category_main), LSTRING(CBA_Category_generic)],
     [1, 300, 20, 0],
     1,
     {
@@ -38,9 +38,9 @@
 [
     QGVAR(respawnType),
     "LIST",
-    ["Respawn Type", localize "STR_tunres_Respawn_CBA_tooltip_respawntypes"],
-    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_generic"],
-    [[0, 1, 2], [localize "STR_tunres_Respawn_Type_Default", localize "STR_tunres_Respawn_Type_Sidetickets", localize "STR_tunres_Respawn_Type_Playertickets"], 0],
+    ["Respawn Type", LSTRING(CBA_tooltip_respawntypes)],
+    [LSTRING(CBA_Category_main), LSTRING(CBA_Category_generic)],
+    [[0, 1, 2], [LSTRING(Type_Default), LSTRING(Type_Sidetickets), LSTRING(Type_Playertickets)], 0],
     1,
     {},
     true
@@ -49,8 +49,8 @@
 [
     QGVAR(gearscriptType),
     "LIST",
-    ["Gearscript type", localize "STR_tunres_Respawn_CBA_tooltip_gearscript"],
-    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_generic"],
+    ["Gearscript type", LSTRING(CBA_tooltip_gearscript)],
+    [LSTRING(CBA_Category_main), LSTRING(CBA_Category_generic)],
     [[0, 1, 2, 3], ["SQF Gearscript", "Potato Tool", "Save gear", "None"], 2],
     1,
     {},
@@ -60,8 +60,8 @@
 [
     QGVAR(forcedRespawn),
     "CHECKBOX",
-    ["Only Forced Waves", localize "STR_tunres_Respawn_CBA_tooltip_forceRespawn"],
-    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_generic"],
+    ["Only Forced Waves", LSTRING(CBA_tooltip_forceRespawn)],
+    [LSTRING(CBA_Category_main), LSTRING(CBA_Category_generic)],
     false,
     1,
     {},
@@ -70,9 +70,9 @@
 
 [
     QGVAR(delayedRespawn),
-    "SLIDER",
-    ["Delayed respawn", localize "STR_tunres_Respawn_CBA_tooltip_delayedRespawn"],
-    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_generic"],
+    "TIME",
+    ["Delayed respawn", LSTRING(CBA_tooltip_delayedRespawn)],
+    [LSTRING(CBA_Category_main), LSTRING(CBA_Category_generic)],
     [0, 100, 0, 0],
     1,
     {
@@ -86,8 +86,8 @@
 [
     QGVAR(waitingAreaRange),
     "SLIDER",
-    ["Waiting Area Range", localize "STR_tunres_Respawn_CBA_tooltip_waitingAreaRange"],
-    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_generic"],
+    ["Waiting Area Range", LSTRING(CBA_tooltip_waitingAreaRange)],
+    [LSTRING(CBA_Category_main), LSTRING(CBA_Category_generic)],
     [30, 300, 100, 0],
     1,
     {
@@ -101,10 +101,10 @@
 //Wave times
 [
     QGVAR(initialWaveTimeWest),
-    "SLIDER",
-    ["West", localize "STR_tunres_Respawn_CBA_tooltip_time"],
-    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_time"],
-    [1, 60, 15, 0],
+    "TIME",
+    ["West", LSTRING(CBA_tooltip_time)],
+    [LSTRING(CBA_Category_main), LSTRING(CBA_Category_time)],
+    [10, 60*60, 15*60, 0],
     1,
     {
         params ["_value"];
@@ -117,10 +117,10 @@
 
 [
     QGVAR(initialWaveTimeEast),
-    "SLIDER",
-    ["East", localize "STR_tunres_Respawn_CBA_tooltip_time"],
-    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_time"],
-    [1, 60, 15, 0],
+    "TIME",
+    ["East", LSTRING(CBA_tooltip_time)],
+    [LSTRING(CBA_Category_main), LSTRING(CBA_Category_time)],
+    [10, 60*60, 15*60, 0],
     1,
     {
         params ["_value"];
@@ -133,10 +133,10 @@
 
 [
     QGVAR(initialWaveTimeResistance),
-    "SLIDER",
-    ["Resistance", localize "STR_tunres_Respawn_CBA_tooltip_time"],
-    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_time"],
-    [1, 60, 15, 0],
+    "TIME",
+    ["Resistance", LSTRING(CBA_tooltip_time)],
+    [LSTRING(CBA_Category_main), LSTRING(CBA_Category_time)],
+    [10, 60*60, 15*60, 0],
     1,
     {
         params ["_value"];
@@ -149,10 +149,10 @@
 
 [
     QGVAR(initialWaveTimeCivilian),
-    "SLIDER",
-    ["Civilian", localize "STR_tunres_Respawn_CBA_tooltip_time"],
-    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_time"],
-    [1, 60, 15, 0],
+    "TIME",
+    ["Civilian", LSTRING(CBA_tooltip_time)],
+    [LSTRING(CBA_Category_main), LSTRING(CBA_Category_time)],
+    [10, 60*60, 15*60, 0],
     1,
     {
         params ["_value"];
@@ -167,8 +167,8 @@
 [
     QGVAR(spectateCameramode1st),
     "CHECKBOX",
-    ["1st", localize "STR_tunres_Respawn_CBA_tooltip_specta_modes"],
-    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_spectate_cameramode"],
+    ["1st", LSTRING(CBA_tooltip_specta_modes)],
+    [LSTRING(CBA_Category_main), LSTRING(CBA_Category_spectate_cameramode)],
     true,
     1,
     {
@@ -183,8 +183,8 @@
 [
     QGVAR(spectateCameramode3th),
     "CHECKBOX",
-    ["3th", localize "STR_tunres_Respawn_CBA_tooltip_specta_modes"],
-    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_spectate_cameramode"],
+    ["3th", LSTRING(CBA_tooltip_specta_modes)],
+    [LSTRING(CBA_Category_main), LSTRING(CBA_Category_spectate_cameramode)],
     true,
     1,
     {
@@ -199,8 +199,8 @@
 [
     QGVAR(spectateCameramodeFree),
     "CHECKBOX",
-    ["Free", localize "STR_tunres_Respawn_CBA_tooltip_specta_modes"],
-    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_spectate_cameramode"],
+    ["Free", LSTRING(CBA_tooltip_specta_modes)],
+    [LSTRING(CBA_Category_main), LSTRING(CBA_Category_spectate_cameramode)],
     true,
     1,
     {
@@ -216,8 +216,8 @@
 [
     QGVAR(allowWestSpectateEast),
     "CHECKBOX",
-    ["East", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesTooltip"],
-    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesWest"],
+    ["East", LSTRING(CBA_Category_spectate_sidesTooltip)],
+    [LSTRING(CBA_Category_main), LSTRING(CBA_Category_spectate_sidesWest)],
     true,
     1,
     {
@@ -234,8 +234,8 @@
 [
     QGVAR(allowWestSpectateResistance),
     "CHECKBOX",
-    ["Resistance", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesTooltip"],
-    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesWest"],
+    ["Resistance", LSTRING(CBA_Category_spectate_sidesTooltip)],
+    [LSTRING(CBA_Category_main), LSTRING(CBA_Category_spectate_sidesWest)],
     true,
     1,
     {
@@ -252,8 +252,8 @@
 [
     QGVAR(allowWestSpectateCivilian),
     "CHECKBOX",
-    ["Civilian", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesTooltip"],
-    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesWest"],
+    ["Civilian", LSTRING(CBA_Category_spectate_sidesTooltip)],
+    [LSTRING(CBA_Category_main), LSTRING(CBA_Category_spectate_sidesWest)],
     true,
     1,
     {
@@ -271,8 +271,8 @@
 [
     QGVAR(allowEastSpectateWest),
     "CHECKBOX",
-    ["West", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesTooltip"],
-    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesEast"],
+    ["West", LSTRING(CBA_Category_spectate_sidesTooltip)],
+    [LSTRING(CBA_Category_main), LSTRING(CBA_Category_spectate_sidesEast)],
     true,
     1,
     {
@@ -289,8 +289,8 @@
 [
     QGVAR(allowEastSpectateResistance),
     "CHECKBOX",
-    ["Resistance", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesTooltip"],
-    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesEast"],
+    ["Resistance", LSTRING(CBA_Category_spectate_sidesTooltip)],
+    [LSTRING(CBA_Category_main), LSTRING(CBA_Category_spectate_sidesEast)],
     true,
     1,
     {
@@ -307,8 +307,8 @@
 [
     QGVAR(allowEastSpectateCivilian),
     "CHECKBOX",
-    ["Civilian", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesTooltip"],
-    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesEast"],
+    ["Civilian", LSTRING(CBA_Category_spectate_sidesTooltip)],
+    [LSTRING(CBA_Category_main), LSTRING(CBA_Category_spectate_sidesEast)],
     true,
     1,
     {
@@ -326,8 +326,8 @@
 [
     QGVAR(allowResistanceSpectateWest),
     "CHECKBOX",
-    ["West", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesTooltip"],
-    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesResistance"],
+    ["West", LSTRING(CBA_Category_spectate_sidesTooltip)],
+    [LSTRING(CBA_Category_main), LSTRING(CBA_Category_spectate_sidesResistance)],
     true,
     1,
     {
@@ -344,8 +344,8 @@
 [
     QGVAR(allowResistanceSpectateEast),
     "CHECKBOX",
-    ["East", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesTooltip"],
-    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesResistance"],
+    ["East", LSTRING(CBA_Category_spectate_sidesTooltip)],
+    [LSTRING(CBA_Category_main), LSTRING(CBA_Category_spectate_sidesResistance)],
     true,
     1,
     {
@@ -363,8 +363,8 @@
 [
     QGVAR(allowResistanceSpectateCivilian),
     "CHECKBOX",
-    ["Civilian", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesTooltip"],
-    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesResistance"],
+    ["Civilian", LSTRING(CBA_Category_spectate_sidesTooltip)],
+    [LSTRING(CBA_Category_main), LSTRING(CBA_Category_spectate_sidesResistance)],
     true,
     1,
     {
@@ -382,8 +382,8 @@
 [
     QGVAR(allowCivilianSpectateWest),
     "CHECKBOX",
-    ["West", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesTooltip"],
-    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesCivilian"],
+    ["West", LSTRING(CBA_Category_spectate_sidesTooltip)],
+    [LSTRING(CBA_Category_main), LSTRING(CBA_Category_spectate_sidesCivilian)],
     true,
     1,
     {
@@ -400,8 +400,8 @@
 [
     QGVAR(allowCivilianSpectateEast),
     "CHECKBOX",
-    ["East", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesTooltip"],
-    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesCivilian"],
+    ["East", LSTRING(CBA_Category_spectate_sidesTooltip)],
+    [LSTRING(CBA_Category_main), LSTRING(CBA_Category_spectate_sidesCivilian)],
     true,
     1,
     {
@@ -419,8 +419,8 @@
 [
     QGVAR(allowCivilianSpectateResistance),
     "CHECKBOX",
-    ["Resistance", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesTooltip"],
-    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_spectate_sidesCivilian"],
+    ["Resistance", LSTRING(CBA_Category_spectate_sidesTooltip)],
+    [LSTRING(CBA_Category_main), LSTRING(CBA_Category_spectate_sidesCivilian)],
     true,
     1,
     {
@@ -438,8 +438,8 @@
 [
     QGVAR(initialTicketsWest),
     "SLIDER",
-    ["West", localize "STR_tunres_Respawn_CBA_tooltip_ticket"],
-    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_ticketcount"],
+    ["West", LSTRING(CBA_tooltip_ticket)],
+    [LSTRING(CBA_Category_main), LSTRING(CBA_Category_ticketcount)],
     [0, 1000, 0, 0],
     1,
     {
@@ -454,8 +454,8 @@
 [
     QGVAR(initialTicketsEast),
     "SLIDER",
-    ["East", localize "STR_tunres_Respawn_CBA_tooltip_ticket"],
-    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_ticketcount"],
+    ["East", LSTRING(CBA_tooltip_ticket)],
+    [LSTRING(CBA_Category_main), LSTRING(CBA_Category_ticketcount)],
     [0, 1000, 0, 0],
     1,
     {
@@ -470,8 +470,8 @@
 [
     QGVAR(initialTicketsResistance),
     "SLIDER",
-    ["Resistance", localize "STR_tunres_Respawn_CBA_tooltip_ticket"],
-    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_ticketcount"],
+    ["Resistance", LSTRING(CBA_tooltip_ticket)],
+    [LSTRING(CBA_Category_main), LSTRING(CBA_Category_ticketcount)],
     [0, 1000, 0, 0],
     1,
     {
@@ -486,8 +486,8 @@
 [
     QGVAR(initialTicketsCivilian),
     "SLIDER",
-    ["Civilian", localize "STR_tunres_Respawn_CBA_tooltip_ticket"],
-    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_ticketcount"],
+    ["Civilian", LSTRING(CBA_tooltip_ticket)],
+    [LSTRING(CBA_Category_main), LSTRING(CBA_Category_ticketcount)],
     [0, 1000, 0, 0],
     1,
     {
@@ -502,8 +502,8 @@
 [
     QGVAR(allowCheckTicketsBase),
     "CHECKBOX",
-    ["Main base", localize "STR_tunres_Respawn_CBA_tooltip_CheckTickets"],
-    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_checkTickets"],
+    ["Main base", LSTRING(CBA_tooltip_CheckTickets)],
+    [LSTRING(CBA_Category_main), LSTRING(CBA_Category_checkTickets)],
     true,
     1,
     {},
@@ -514,8 +514,8 @@
 [
     QGVAR(briefingEnable),
     "CHECKBOX",
-    [localize "STR_tunres_Respawn_CBA_Briefing_Enable", localize "STR_tunres_Respawn_CBA_Briefing_Enable_tooltip"],
-    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_Briefing"],
+    [LSTRING(CBA_Briefing_Enable), LSTRING(CBA_Briefing_Enable_tooltip)],
+    [LSTRING(CBA_Category_main), LSTRING(CBA_Category_Briefing)],
     true,
     1,
     {},
@@ -525,8 +525,8 @@
 [
     QGVAR(briefingEnableShowRespawnType),
     "CHECKBOX",
-    [localize "STR_tunres_Respawn_CBA_Briefing_Enable_ShowRespawType", localize "STR_tunres_Respawn_CBA_Briefing_Enable_ShowRespawType_tooltip"],
-    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_Briefing"],
+    [LSTRING(CBA_Briefing_Enable_ShowRespawType), LSTRING(CBA_Briefing_Enable_ShowRespawType_tooltip)],
+    [LSTRING(CBA_Category_main), LSTRING(CBA_Category_Briefing)],
     true,
     1,
     {},
@@ -536,8 +536,8 @@
 [
     QGVAR(briefingEnableShowTickets),
     "CHECKBOX",
-    [localize "STR_tunres_Respawn_CBA_Briefing_Enable_ShowTickets", localize "STR_tunres_Respawn_CBA_Briefing_Enable_ShowTickets_tooltip"],
-    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_Briefing"],
+    [LSTRING(CBA_Briefing_Enable_ShowTickets), LSTRING(CBA_Briefing_Enable_ShowTickets_tooltip)],
+    [LSTRING(CBA_Category_main), LSTRING(CBA_Category_Briefing)],
     true,
     1,
     {},
@@ -547,8 +547,8 @@
 [
     QGVAR(briefingEnableShowTime),
     "CHECKBOX",
-    [localize "STR_tunres_Respawn_CBA_Briefing_Enable_ShowTime", localize "STR_tunres_Respawn_CBA_Briefing_Enable_ShowTime_tooltip"],
-    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_Briefing"],
+    [LSTRING(CBA_Briefing_Enable_ShowTime), LSTRING(CBA_Briefing_Enable_ShowTime_tooltip)],
+    [LSTRING(CBA_Category_main), LSTRING(CBA_Category_Briefing)],
     true,
     1,
     {},
@@ -558,8 +558,8 @@
 [
     QGVAR(briefingEnableShowOtherSidesDataWest),
     "CHECKBOX",
-    [localize "STR_tunres_Respawn_CBA_Briefing_Enable_ShowOtherSidesData_West", localize "STR_tunres_Respawn_CBA_Briefing_Enable_ShowOtherSidesData_tooltip"],
-    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_Briefing"],
+    [LSTRING(CBA_Briefing_Enable_ShowOtherSidesData_West), LSTRING(CBA_Briefing_Enable_ShowOtherSidesData_tooltip)],
+    [LSTRING(CBA_Category_main), LSTRING(CBA_Category_Briefing)],
     true,
     1,
     {},
@@ -569,8 +569,8 @@
 [
     QGVAR(briefingEnableShowOtherSidesDataEast),
     "CHECKBOX",
-    [localize "STR_tunres_Respawn_CBA_Briefing_Enable_ShowOtherSidesData_East", localize "STR_tunres_Respawn_CBA_Briefing_Enable_ShowOtherSidesData_tooltip"],
-    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_Briefing"],
+    [LSTRING(CBA_Briefing_Enable_ShowOtherSidesData_East), LSTRING(CBA_Briefing_Enable_ShowOtherSidesData_tooltip)],
+    [LSTRING(CBA_Category_main), LSTRING(CBA_Category_Briefing)],
     true,
     1,
     {},
@@ -580,8 +580,8 @@
 [
     QGVAR(briefingEnableShowOtherSidesDataResistance),
     "CHECKBOX",
-    [localize "STR_tunres_Respawn_CBA_Briefing_Enable_ShowOtherSidesData_Resistance", localize "STR_tunres_Respawn_CBA_Briefing_Enable_ShowOtherSidesData_tooltip"],
-    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_Briefing"],
+    [LSTRING(CBA_Briefing_Enable_ShowOtherSidesData_Resistance), LSTRING(CBA_Briefing_Enable_ShowOtherSidesData_tooltip)],
+    [LSTRING(CBA_Category_main), LSTRING(CBA_Category_Briefing)],
     true,
     1,
     {},
@@ -591,8 +591,8 @@
 [
     QGVAR(briefingEnableShowOtherSidesDataCivilian),
     "CHECKBOX",
-    [localize "STR_tunres_Respawn_CBA_Briefing_Enable_ShowOtherSidesData_Civilian", localize "STR_tunres_Respawn_CBA_Briefing_Enable_ShowOtherSidesData_tooltip"],
-    [localize "STR_tunres_Respawn_CBA_Category_main", localize "STR_tunres_Respawn_CBA_Category_Briefing"],
+    [LSTRING(CBA_Briefing_Enable_ShowOtherSidesData_Civilian), LSTRING(CBA_Briefing_Enable_ShowOtherSidesData_tooltip)],
+    [LSTRING(CBA_Category_main), LSTRING(CBA_Category_Briefing)],
     false,
     1,
     {},

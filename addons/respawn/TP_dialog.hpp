@@ -36,7 +36,7 @@ class GVAR(TP_Dialog)
 			y = "safeZoneY + safeZoneH * 0.66495";
 			w = "safeZoneW * 0.0515752";
 			h = "safeZoneH * 0.0439865";
-			text = "$STR_tunres_Respawn_tp_dialog_button";
+			text = CSTRING(tp_dialog_button);
 			action = QUOTE([] spawn FUNC(teleportButton););
 			SizeEx = QUOTE(GUI_TEXT_SIZE_SMALL);
 			colorBackground[] = GUI_BCG_COLOR;
@@ -52,7 +52,7 @@ class GVAR(TP_Dialog)
 			w = "safeZoneW * 0.144411";
 			h = "safeZoneH * 0.0659797";
 			style = ST_CENTER;
-			text = "$STR_tunres_Respawn_tp_dialog_header";
+			text = CSTRING(tp_dialog_header);
 			sizeEx = QUOTE(GUI_TEXT_SIZE_LARGE);
 			colorText[] = GUI_TITLETEXT_COLOR;
 			colorBackground[] = GUI_BCG_COLOR;

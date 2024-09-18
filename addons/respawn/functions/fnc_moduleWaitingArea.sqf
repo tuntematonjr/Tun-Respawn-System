@@ -22,7 +22,7 @@ private _markername = _logic getVariable ["respawn_side","none"];
 private _flagTexture = _logic getVariable ["flag_texture",""];
 
 if (_markername isEqualTo "none") exitWith {  // Exit if no side
-	private _errorText = localize "STR_tunres_Respawn_Module_WaitingArea_novalue";
+	private _errorText = LSTRING(Module_WaitingArea_novalue);
     ERROR_MSG(_errorText); 
 	false 
 };
@@ -31,7 +31,7 @@ if (getMarkerColor _markername isEqualTo "") then {
 	_marker = [_markername, getPosASL _logic, "icon", [1, 1], "PERSIST", "TYPE:", "Empty"] call CBA_fnc_createMarker;
 	_marker setMarkerAlpha 0;
 } else {
-	private _errorText = format [(localize "STR_tunres_Respawn_Module_WaitingArea_MultipleMarkers"), _markername];
+	private _errorText = format [(LSTRING(Module_WaitingArea_MultipleMarkers)), _markername];
     ERROR_MSG(_errorText);
 };
 

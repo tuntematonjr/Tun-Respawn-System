@@ -24,7 +24,7 @@ class CfgVehicles
     {
         scope = 2; // Editor visibility; 2 will show it in the menu, 1 will hide it.
         scopeCurator = 1;
-        displayName = "$STR_tunres_Respawn_Module_DisplayName_WaitingArea"; // Name displayed in the menu
+        displayName = CSTRING(Module_DisplayName_WaitingArea); // Name displayed in the menu
         icon = "\a3\modules_f_curator\data\portraitcountdown_ca.paa"; // Map icon. Delete this entry to use the default icon
         category = "tunres_Respawn";
 
@@ -48,7 +48,7 @@ class CfgVehicles
             {
                 property = QGVAR(module_side);
                 displayName = "Side"; // Argument label
-                tooltip = "$STR_tunres_Respawn_Module_tooltip_WaitingArea"; // Tooltip description
+                tooltip = CSTRING(Module_tooltip_WaitingArea); // Tooltip description
                 typeName = "STRING"; // Value type, can be "NUMBER", "STRING" or "BOOL"
                 defaultValue = "0"; // Default attribute value. WARNING: This is an expression, and its returned value will be used (50 in this case)
                 class Values
@@ -64,7 +64,7 @@ class CfgVehicles
             {
                 property = QGVAR(flag_texture);
 				displayName = "Flag texture";
-				tooltip = "$STR_tunres_Respawn_Module_tooltip_flagTexture";
+				tooltip = CSTRING(Module_tooltip_flagTexture);
                 typeName = "STRING";
 				// Default text filled in the input box
 				// Because it is an expression, to return a String one must have a string within a string
@@ -74,14 +74,14 @@ class CfgVehicles
         };
         class ModuleDescription: ModuleDescription
         {
-            description = "$STR_tunres_Respawn_Module_Description_Waitingarea"; // Short description, will be formatted as structured text
+            description = CSTRING(Module_Description_Waitingarea); // Short description, will be formatted as structured text
             sync[] = {}; // Array of synced entities (can contain base classes)
         };
     };
 
     class GVAR(moduleRespawnPoint): GVAR(moduleWaitingArea)
     {
-        displayName = "$STR_tunres_Respawn_Module_DisplayName_SpawnPoint"; // Name displayed in the menu
+        displayName = CSTRING(Module_DisplayName_SpawnPoint); // Name displayed in the menu
         icon = "\a3\modules_f\data\portraitrespawn_ca.paa";
         // Name of function triggered once conditions are met
         function = QFUNC(moduleRespawnPoint);
@@ -92,7 +92,7 @@ class CfgVehicles
             {
                 property = QGVAR(module_side);
                 displayName = "Side"; // Argument label
-                tooltip = "$STR_tunres_Respawn_Module_tooltip_SpawnPoint"; // Tooltip description
+                tooltip = CSTRING(Module_tooltip_SpawnPoint); // Tooltip description
                 typeName = "STRING"; // Value type, can be "NUMBER", "STRING" or "BOOL"
                 defaultValue = "0"; // Default attribute value. WARNING: This is an expression, and its returned value will be used (50 in this case)
                 class Values
@@ -108,7 +108,7 @@ class CfgVehicles
             {
                 property = QGVAR(flag_texture);
 				displayName = "Flag texture";
-				tooltip = "$STR_tunres_Respawn_Module_tooltip_flagTexture";
+				tooltip = CSTRING(Module_tooltip_flagTexture);
                 typeName = "STRING";
 				// Default text filled in the input box
 				// Because it is an expression, to return a String one must have a string within a string
@@ -118,14 +118,14 @@ class CfgVehicles
         };
         class ModuleDescription: ModuleDescription
         {
-            description = "$STR_tunres_Respawn_Module_Description_Spawn_Point"; // Short description, will be formatted as structured text
+            description = CSTRING(Module_Description_Spawn_Point); // Short description, will be formatted as structured text
             sync[] = {}; // Array of synced entities (can contain base classes)
         };
     };
 
     class GVAR(moduleTeleportPoint): GVAR(moduleWaitingArea)
     {
-        displayName = "$STR_tunres_Respawn_Module_DisplayName_teleportPoint"; // Name displayed in the menu
+        displayName = CSTRING(Module_DisplayName_teleportPoint); // Name displayed in the menu
         // 0 for server only execution, 1 for global execution, 2 for persistent global execution
         isGlobal = 2;
         // 1 for module waiting until all synced triggers are activated
@@ -141,7 +141,7 @@ class CfgVehicles
             {
                 property = QGVAR(teleportPointOBJ);
 				displayName = "Teleport point object";
-				tooltip = "$STR_tunres_Respawn_Module_tooltip_teleportPointOBJ";
+				tooltip = CSTRING(Module_tooltip_teleportPointOBJ);
                 typeName = "STRING";
 				// Default text filled in the input box
 				// Because it is an expression, to return a String one must have a string within a string
@@ -152,7 +152,7 @@ class CfgVehicles
             {
                 property = QGVAR(teleportConditio);
 				displayName = "Teleport conditio";
-				tooltip = "$STR_tunres_Respawn_Module_tooltip_teleportConditio";
+				tooltip = CSTRING(Module_tooltip_teleportConditio);
                 typeName = "STRING";
 				// Default text filled in the input box
 				// Because it is an expression, to return a String one must have a string within a string
@@ -163,7 +163,7 @@ class CfgVehicles
             {
                 property = QGVAR(teleportName);
 				displayName = "Teleport name";
-				tooltip = "$STR_tunres_Respawn_Module_tooltip_teleportName";
+				tooltip = CSTRING(Module_tooltip_teleportName);
                 typeName = "STRING";
 				// Default text filled in the input box
 				// Because it is an expression, to return a String one must have a string within a string
@@ -175,7 +175,7 @@ class CfgVehicles
                 property = QGVAR(teleportCreateMarker);
 				displayName = "Create Marker";
                 typeName = "BOOL";
-				tooltip = "$STR_tunres_Respawn_Module_tooltip_teleportCreateMarker";
+				tooltip = CSTRING(Module_tooltip_teleportCreateMarker);
 				defaultValue = "true";
             };
 
@@ -183,7 +183,7 @@ class CfgVehicles
             {
                 property = QGVAR(teleportMarkerIcone);
 				displayName = "Marker Icon";
-				tooltip = "$STR_tunres_Respawn_Module_tooltip_teleportMarkerIcone";
+				tooltip = CSTRING(Module_tooltip_teleportMarkerIcone);
                 typeName = "STRING";
 				// Default text filled in the input box
 				// Because it is an expression, to return a String one must have a string within a string
@@ -195,7 +195,7 @@ class CfgVehicles
                 property = QGVAR(teleportMenuOpenConditio);
 				displayName = "Menu open conditio";
                 typeName = "STRING";
-				tooltip = "$STR_tunres_Respawn_Module_tooltip_teleportMenuOpenConditio";
+				tooltip = CSTRING(Module_tooltip_teleportMenuOpenConditio);
 				defaultValue = """true""";
             };
             
@@ -204,7 +204,7 @@ class CfgVehicles
                 property = QGVAR(teleportUseAceAction);
 				displayName = "Use Ace Actions";
                 typeName = "BOOL";
-				tooltip = "$STR_tunres_Respawn_Module_tooltip_teleportUseAceAction";
+				tooltip = CSTRING(Module_tooltip_teleportUseAceAction);
 				defaultValue = "true";
             };
 
@@ -213,7 +213,7 @@ class CfgVehicles
                 property = QGVAR(teleportCheckTickets);
 				displayName = "Allow Check Tickets";
                 typeName = "BOOL";
-				//tooltip = $STR_tunres_Respawn_Module_tooltip_teleportCreateMarker;
+				//tooltip = $STR_tunres_respawn_Module_tooltip_teleportCreateMarker;
 				defaultValue = "false";
             };
 
@@ -222,7 +222,7 @@ class CfgVehicles
                 property = QGVAR(teleportEnableWest);
 				displayName = "Enable West";
                 typeName = "BOOL";
-				tooltip = "$STR_tunres_Respawn_Module_tooltip_teleportEnableSides";
+				tooltip = CSTRING(Module_tooltip_teleportEnableSides);
 				defaultValue = "false";
             };
 
@@ -248,7 +248,7 @@ class CfgVehicles
         };
         class ModuleDescription: ModuleDescription
         {
-            description = "$STR_tunres_Respawn_Module_Description_Spawn_Point"; // Short description, will be formatted as structured text
+            description = CSTRING(Module_Description_teleportPoint); // Short description, will be formatted as structured text
             position = 1; // Position is taken into effect
             direction = 0; // Direction is taken into effect
             optional = 1; // Synced entity is optional

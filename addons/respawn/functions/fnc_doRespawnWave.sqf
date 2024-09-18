@@ -87,9 +87,9 @@ if (count _waitingRespawn > 0) then {
 
 if (AAR_IS_ENABLED) then {
 	private _text =  if (GVAR(respawnType) isEqualTo 1) then {
-		format[(localize "STR_tunres_Respawn_AAR_RespawnWaveTickets"), str _side, _waitingRespawnCount, _totalRespawnCount, [_side] call FUNC(getTicketCount)]
+		format[LELSTRING(main,AAR_RespawnWaveTickets), str _side, _waitingRespawnCount, _totalRespawnCount, [_side] call FUNC(getTicketCount)]
 	} else {
-		format[(localize "STR_tunres_Respawn_AAR_RespawnWave"), str _side, _waitingRespawnCount, _totalRespawnCount]
+		format[LELSTRING(main,AAR_RespawnWave), str _side, _waitingRespawnCount, _totalRespawnCount]
 	};
 	AAR_EVENT(_text,_msp,nil,nil);
 };

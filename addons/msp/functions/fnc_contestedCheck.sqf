@@ -65,7 +65,7 @@ if ( _mspDeployementStatus && { !(isNull _msp) } ) then {
 	if (_oldContestedStatus isNotEqualTo _isContested) then {
 
 		if (AAR_IS_ENABLED) then {
-			private _text = (localize(["STR_tunres_MSP_AAR_MSP_notContested","STR_tunres_MSP_AAR_MSP_isContested"] select _isContested));
+			private _text = (localize([ELSTRING(main,AAR_MSP_notContested),ELSTRING(main,AAR_MSP_isContested)] select _isContested));
 			_text = format[_text, _side];
 
 			AAR_EVENT(_text,_msp,nil,nil);
@@ -81,9 +81,9 @@ if ( _mspDeployementStatus && { !(isNull _msp) } ) then {
 			[QEGVAR(respawn,updateRespawnPointEH), [_side, !_isContested]] call CBA_fnc_serverEvent;
 
 			private _text = if (_isContested) then {
-				localize "STR_tunres_MSP_FNC_Contested_hint"
+				LLSTRING(FNC_Contested_hint)
 			} else {
-				localize "STR_tunres_MSP_FNC_secured_hint"
+				LLSTRING(FNC_secured_hint)
 			};
 			[QEGVAR(main,doNotification), [_text], _whoToNotify] call CBA_fnc_targetEvent;
 		};

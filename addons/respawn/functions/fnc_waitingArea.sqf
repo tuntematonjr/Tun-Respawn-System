@@ -53,7 +53,7 @@ GVAR(waitingAreaPFH) = [{
 	if (_playerSkipsWave) then {
 		private _hashWaveLenght = GVAR(waveLenghtTimesHash);
 		private _waveLenght = _hashWaveLenght get _playerSide;
-		_remainingWaitTime = _remainingWaitTime + (_waveLenght*60);
+		_remainingWaitTime = _remainingWaitTime + _waveLenght;
 	};
 
 	if ((GVAR(mark) < 1 && _remainingWaitTime <= 20) || (GVAR(mark) < 2 && _remainingWaitTime <= 10) )then {
@@ -66,25 +66,25 @@ GVAR(waitingAreaPFH) = [{
 	};
 
 	private _allowRespawn = GVAR(allowRespawnHash) get _playerSide;
-	private _text = format ["<t color='#0800ff' size = '0.8'>%1</t>", localize "STR_tunres_Respawn_FNC_only_forced_waves"];
+	private _text = format ["<t color='#0800ff' size = '0.8'>%1</t>", LSTRING(FNC_only_forced_waves)];
 	if (_remainingWaitTime >= 0 && { _allowRespawn }) then {
-		_text = format ["<t color='#0800ff' size = '0.8'>%2<br />%1</t>", ([_remainingWaitTime] call CBA_fnc_formatElapsedTime), localize "STR_tunres_Respawn_FNC_remaining_time"];
+		_text = format ["<t color='#0800ff' size = '0.8'>%2<br />%1</t>", ([_remainingWaitTime] call CBA_fnc_formatElapsedTime), LSTRING(FNC_remaining_time)];
 	} else {
 		if (player getVariable [QGVAR(isWaitingRespawn), true] && { !(GVAR(forcedRespawn)) } && { !_allowRespawn }) then {
-			_text = format ["<t color='#0800ff' size = '0.8'>%1</t>", localize "STR_tunres_Respawn_FNC_RespawnDisabled"];
+			_text = format ["<t color='#0800ff' size = '0.8'>%1</t>", LSTRING(FNC_RespawnDisabled)];
 		} else {
 			_text = format ["Something is vevy vevy wrong. time: %1 - allowRespawn: %2 - forced respawn: %3 ", _remainingWaitTime, _allowRespawn, GVAR(forcedRespawn)];
 		};
 	};
 
 	if (_playerSkipsWave) then {
-		_text = format["%1<br/><t color='#0800ff' size = '0.5'>%2</t>", _text, localize "STR_tunres_Respawn_FNC_playerSkipsWave"];
+		_text = format["%1<br/><t color='#0800ff' size = '0.5'>%2</t>", _text, LSTRING(FNC_playerSkipsWave)];
 	};
 
 	if (_respawnType in [1,2]) then {
 		private _tickets = [false] call FUNC(getTicketCountClient);
 		DEC(_respawnType); // so it works on select 
-		private _ticketsTypeText = localize (["STR_tunres_Respawan_RemainingTicketsSide", "STR_tunres_Respawan_RemainingTicketsPlayer"] select _respawnType);
+		private _ticketsTypeText = localize ([LSTRING(RemainingTicketsSide), LSTRING(RemainingTicketsPlayer)] select _respawnType);
 		_text = format["%1<br/><t color='#0800ff' size = '0.5'>%2 %3</t>", _text, _ticketsTypeText, _tickets];
 	};
 
@@ -93,6 +93,6 @@ GVAR(waitingAreaPFH) = [{
 	//make sure that player is still in area
 	if !(player inArea [_respawnWaitingarea, _waitingRange, _waitingRange, 0, false]) then {
 		player setPosASL ([_respawnWaitingarea, (_waitingRange / 2)] call CBA_fnc_randPos);
-		[QEGVAR(main,doNotification), [localize "STR_tunres_Respawn_youAreNotAllowedToLeave"]] call CBA_fnc_localEvent;
+		[QEGVAR(main,doNotification), [LSTRING(youAreNotAllowedToLeave)]] call CBA_fnc_localEvent;
 	};
 }, 1, [_respawnWaitingarea, _playerSide, _waitingRange,_respawnType]] call CBA_fnc_addPerFrameHandler;

@@ -47,7 +47,7 @@ if (_setup) then {
 
 private _whoToNotify = [_side, GVAR(setupNotification)] call FUNC(whoToNotify);
 if (_whoToNotify isNotEqualTo [] ) then {
-	private _text = localize (["STR_tunres_MSP_FNC_pack_notification", "STR_tunres_MSP_FNC_setup_notification"] select _setup);
+	private _text = localize ([LSTRING(FNC_pack_notification), LSTRING(FNC_setup_notification)] select _setup);
 	[QEGVAR(main,doNotification), [_text], _whoToNotify] call CBA_fnc_targetEvent;
 };
 
@@ -62,7 +62,7 @@ GVAR(activeVehicleHash) set [_side, [objNull, _msp] select _setup];
 publicVariable QGVAR(activeVehicleHash);
 
 if (AAR_IS_ENABLED) then {
-	private _text = localize(["STR_tunres_MSP_AAR_MSP_Packed","STR_tunres_MSP_AAR_MSP_Deployed"] select _setup);
+	private _text = localize([ELSTRING(main,AAR_MSP_Packed),ELSTRING(main,AAR_MSP_Deployed)] select _setup);
 	_text = format[_text, _side];
 
 	AAR_EVENT(_text,_msp,_player,nil);
