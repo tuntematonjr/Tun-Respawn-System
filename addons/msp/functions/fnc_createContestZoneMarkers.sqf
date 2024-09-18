@@ -27,19 +27,6 @@ private _posMax = _pos getPos [_contestedRadiusMax, 100];
 private _posMin = _pos getPos [_contestedRadiusMin, 90];
 private _posReport = _pos getPos [_reportEnemiesRange, 80];
 
-
-// * 0: Marker name <STRING>
-// * 1: Position <ARRAY>
-// * 2: Marker text <STRING>
-// * 3: Icon/brush <STRING> https://community.bistudio.com/wiki/setMarkerBrushLocal  https://community.bistudio.com/wiki/setMarkerTypeLocal
-// * 4: Color <STRING>
-// * 5: Alpha <Number> 
-// * 6: Priority <Number> 
-// * 7: Shape <STRING> (Default: "ICON") "ICON", "RECTANGLE", "ELLIPSE", "POLYLINE" 
-// * 8: Size [a-axis, b-axis] <ARRAY> 
-// * 9: Direction <Number> 
-
-
 [QGVAR(contestMarkerMapMax), _pos, nil, "Solid", "ColorOrange", 0.75, -2, "ELLIPSE", [_contestedRadiusMax, _contestedRadiusMax]] call EFUNC(respawn,createLocalMarker);
 
 [QGVAR(contestMarkerMapMaxText), _posMax, format["Max Contest range (%1m)",_contestedRadiusMax], "hd_warning", "ColorOrange", 1, 110] call EFUNC(respawn,createLocalMarker);
