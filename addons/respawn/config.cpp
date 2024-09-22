@@ -7,7 +7,7 @@ class CfgPatches {
         units[] = {QGVAR(moduleWaitingArea), QGVAR(moduleRespawnPoint), QGVAR(moduleTeleportPoint)};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"tunres_main","A3_Modules_F","3DEN","ace_interaction","ace_interact_menu"};
+        requiredAddons[] = {MAIN_ADDON_STR,"A3_Modules_F","3DEN","ace_interaction","ace_interact_menu"};
         authors[] = {"Tuntematon"}; // sub array of authors, considered for the specific addon, can be removed or left empty {}
         VERSION_CONFIG;
     };

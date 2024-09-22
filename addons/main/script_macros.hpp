@@ -8,6 +8,8 @@
     #define PREP(fncName) [QPATHTOF(functions\DOUBLES(fnc,fncName).sqf), QFUNC(fncName)] call CBA_fnc_compileFunction
 #endif
 
+#define MAIN_ADDON_STR         QUOTE(MAIN_ADDON)
+
 //
 #define MARKER_NAME_CONFIG(var1) QUOTE(DOUBLES(ADDON,var1))
 
