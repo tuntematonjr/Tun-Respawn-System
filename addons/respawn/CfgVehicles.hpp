@@ -44,7 +44,7 @@ class CfgVehicles
         // Module attributes, uses https://community.bistudio.com/wiki/Eden_Editor:_Configuring_Attributes#Entity_Specific
         class Attributes: AttributesBase
         {
-            class respawn_side: Combo
+            class GVAR(respawnSide): Combo
             {
                 property = QGVAR(module_side);
                 displayName = "Side"; // Argument label
@@ -60,9 +60,9 @@ class CfgVehicles
                     class civilian {name = "civilian"; value = "respawn_civilian";};
                 };
             };
-            class flag_texture: Edit
+            class GVAR(flagTexture): Edit
             {
-                property = QGVAR(flag_texture);
+                property = QGVAR(moduleFlagTexture);
 				displayName = "Flag texture";
 				tooltip = CSTRING(Module_tooltip_flagTexture);
                 typeName = "STRING";
@@ -88,7 +88,7 @@ class CfgVehicles
 
         class Attributes: AttributesBase
         {
-            class respawn_side: Combo
+            class GVAR(respawnSide): Combo
             {
                 property = QGVAR(module_side);
                 displayName = "Side"; // Argument label
@@ -104,9 +104,9 @@ class CfgVehicles
                     class civilian {name = "civilian"; value = MARKER_NAME_CONFIG(civilian);};
                 };
             };
-            class flag_texture: Edit
+            class GVAR(flagTexture): Edit
             {
-                property = QGVAR(flag_texture);
+                property = QGVAR(moduleFlagTexture);
 				displayName = "Flag texture";
 				tooltip = CSTRING(Module_tooltip_flagTexture);
                 typeName = "STRING";

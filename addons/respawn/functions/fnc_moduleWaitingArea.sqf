@@ -18,8 +18,8 @@ if (!isServer) exitWith { };
 
 private _logic = param [0,objNull,[objNull]];
 
-private _markername = _logic getVariable ["respawn_side","none"];
-private _flagTexture = _logic getVariable ["flag_texture",""];
+private _markername = _logic getVariable [QGVAR(respawnSide),"none"];
+private _flagTexture = _logic getVariable [QGVAR(flagTexture),""];
 
 if (_markername isEqualTo "none") exitWith {  // Exit if no side
 	private _errorText = LSTRING(Module_WaitingArea_novalue);

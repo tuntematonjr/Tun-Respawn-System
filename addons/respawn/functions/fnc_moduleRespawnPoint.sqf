@@ -18,8 +18,8 @@ if (!isServer) exitWith { };
 
 private _logic = param [0,objNull,[objNull]];
 
-private _markername = _logic getVariable ["respawn_side","none"];
-private _flagTexture = _logic getVariable ["flag_texture",""];
+private _markername = _logic getVariable [QGVAR(respawnSide),"none"];
+private _flagTexture = _logic getVariable [QGVAR(flagTexture),""];
 
 private _pos = getPosASL _logic;
 if (_markername isEqualTo "none") exitWith { hint LSTRING(Module_RespanPos_novalue); false }; // Exit if no side
