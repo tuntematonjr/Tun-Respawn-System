@@ -42,7 +42,7 @@ switch (GVAR(respawnType)) do {
 };
 
 if (_doHint && !isNull _player) then {
-	private _text = format["%1 %2",LSTRING(RemainingTicketsText), str _ticketCount];
+	private _text = format["%1 %2",LLSTRING(RemainingTicketsText), str _ticketCount];
 	[QEGVAR(main,doNotification), [_text], _player] call CBA_fnc_targetEvent;
 };
 

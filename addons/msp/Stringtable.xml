@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project name="Tun Respawn">
-    <Package name="Respawn">
+<Project name="TunRes MSP">
+    <Package name="MSP">
         <Key ID="STR_tunres_msp_CBA_Category_contestedWest">
             <English>Contested settings for the West</English>
             <Original>Spectator allowed sides for West</Original>

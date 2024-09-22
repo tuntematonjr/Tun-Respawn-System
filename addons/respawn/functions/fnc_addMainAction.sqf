@@ -21,7 +21,7 @@ private _parentAction = [_object] call FUNC(getParentAction);
 if (count _parentAction isEqualTo 0) then {
 	private _offSet = [_object] call FUNC(getOffSet);
 	_parentAction = ["tunres_respawn_BaseAceAction"];
-	private _actionBase = ["tunres_respawn_BaseAceAction", LSTRING(AceAction_Main), "", {true}, {true}, nil, nil, _offSet, 8] call ace_interact_menu_fnc_createAction;
+	private _actionBase = ["tunres_respawn_BaseAceAction", LLSTRING(AceAction_Main), "", {true}, {true}, nil, nil, _offSet, 8] call ace_interact_menu_fnc_createAction;
 	[_object, 0, [], _actionBase] call ace_interact_menu_fnc_addActionToObject;
 };
 

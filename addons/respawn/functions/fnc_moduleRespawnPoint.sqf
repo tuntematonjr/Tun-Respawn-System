@@ -22,7 +22,7 @@ private _markername = _logic getVariable [QGVAR(respawnSide),"none"];
 private _flagTexture = _logic getVariable [QGVAR(flagTexture),""];
 
 private _pos = getPosASL _logic;
-if (_markername isEqualTo "none") exitWith { hint LSTRING(Module_RespanPos_novalue); false }; // Exit if no side
+if (_markername isEqualTo "none") exitWith { hint LLSTRING(Module_RespanPos_novalue); false }; // Exit if no side
 private _marker = "";
 
 if (getMarkerColor _markername isEqualTo "") then {
@@ -30,7 +30,7 @@ if (getMarkerColor _markername isEqualTo "") then {
 	_marker setMarkerType "Empty";
 
 } else {
-	private _errorText = LSTRING(Module_RespanPos_MultipleMarkers);
+	private _errorText = LLSTRING(Module_RespanPos_MultipleMarkers);
 	hint format [_errorText, _markername];
 };
 
@@ -79,8 +79,8 @@ publicVariable QGVAR(enabledSidesHash);
 GVAR(respawnPointsHash) set [_side, [_markername, _pos]];
 publicVariable QGVAR(respawnPointsHash);
 
-[QGVAR(RespawnPosLocal), _pos, LSTRING(RespawnPoint), "respawn_inf", _color, 1, 100] remoteExecCall [QFUNC(createLocalMarker), _side, true];
-[QGVAR(MainBaseLocal), _pos, LSTRING(MainBase), "mil_start", _color, 0, 100] remoteExecCall [QFUNC(createLocalMarker), _side, true];
+[QGVAR(RespawnPosLocal), _pos, LLSTRING(RespawnPoint), "respawn_inf", _color, 1, 100] remoteExecCall [QFUNC(createLocalMarker), _side, true];
+[QGVAR(MainBaseLocal), _pos, LLSTRING(MainBase), "mil_start", _color, 0, 100] remoteExecCall [QFUNC(createLocalMarker), _side, true];
 
 [_flag] remoteExecCall [QFUNC(addActionsPlayer), _side, true];
 

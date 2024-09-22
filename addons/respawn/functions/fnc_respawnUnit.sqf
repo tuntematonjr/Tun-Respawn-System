@@ -22,7 +22,7 @@ private _respawnPosition = getMarkerPos ((_respawnPointsHash get _side) select 0
 _unit setVariable [QGVAR(isWaitingRespawn), false, true];
 player setVariable [QGVAR(skipNextWave), nil];
 
-private _text = LSTRING(FNC_moveRespawnText);
+private _text = LLSTRING(FNC_moveRespawnText);
 
 [_unit, _respawnPosition, _text, 20, true] call FUNC(teleportUnit);
 

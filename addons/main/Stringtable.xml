@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project name="Tun Respawn">
+<Project name="TunRes Main">
     <Package name="Main">
         <Key ID="STR_tunres_main_AAR_MSP_Deployed">
             <English>__%1__ deployed MSP by __inst__.</English>

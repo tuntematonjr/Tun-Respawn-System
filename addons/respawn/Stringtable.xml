@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project name="Tun Respawn">
+<Project name="TunRes Respawn">
     <Package name="Respawn">
         <Key ID="STR_tunres_respawn_CBA_tooltip_time">
             <English>Respawn wave interval</English>

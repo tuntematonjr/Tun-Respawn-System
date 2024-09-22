@@ -29,7 +29,7 @@ private _ticketCount = switch (GVAR(respawnType)) do {
 };
 
 if (_doHint && !isNull player) then {
-	private _text = format["%1 %2",LSTRING(RemainingTicketsText), str _ticketCount];
+	private _text = format["%1 %2",LLSTRING(RemainingTicketsText), str _ticketCount];
 	[QEGVAR(main,doNotification), [_text]] call CBA_fnc_localEvent;
 };
 

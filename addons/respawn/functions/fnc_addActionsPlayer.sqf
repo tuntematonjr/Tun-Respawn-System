@@ -22,9 +22,9 @@ if (GVAR(allowCheckTicketsBase)) then {
 };
 
 //private _timer_condition = { alive _target && {_target getVariable QGVAR(side) isEqualTo playerSide}};
-private _chekTime = ["Check Respawn Time", LSTRING(AceAction_CheckNextWaveTime), "\a3\modules_f_curator\data\portraitskiptime_ca.paa", FUNC(remainingWaitTimeNotification), {true}] call ace_interact_menu_fnc_createAction;
+private _chekTime = ["Check Respawn Time", LLSTRING(AceAction_CheckNextWaveTime), "\a3\modules_f_curator\data\portraitskiptime_ca.paa", FUNC(remainingWaitTimeNotification), {true}] call ace_interact_menu_fnc_createAction;
 [_object, 0, _actionPath, _chekTime] call ace_interact_menu_fnc_addActionToObject;
 
 // Add tp action
 private _conditio =  "count (missionNamespace getVariable ['tunres_respawn_teleportPoints', []]) > 1" ;
-[_object, "true", LSTRING(MainBaseText), false, nil, [playerSide], true, _conditio, false, _actionPath] call FUNC(addCustomTeleporter);
+[_object, "true", LLSTRING(MainBaseText), false, nil, [playerSide], true, _conditio, false, _actionPath] call FUNC(addCustomTeleporter);
