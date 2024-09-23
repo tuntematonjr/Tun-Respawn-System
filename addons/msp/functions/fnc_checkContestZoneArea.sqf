@@ -16,7 +16,7 @@
 
 if (playerSide isEqualTo sideLogic || !hasInterface) exitWith { }; 
 
-params[["_target", player]];
+params [["_target", player]];
 
 openMap true;
 private _pos = getPosASL _target;

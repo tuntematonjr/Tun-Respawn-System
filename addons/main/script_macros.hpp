@@ -36,3 +36,10 @@
 #define MODE_FPS    1
 #define MODE_FOLLOW 2
 #define ALL_MODES   [MODE_FREE,MODE_FPS,MODE_FOLLOW]
+
+
+//Times
+#define MAX_WAVE_TIME           10800
+#define DEFAULT_WAVE_TIME       900
+#define MAX_KILLJIP_TIME        10800
+#define DEFAULT_KILLJIP_TIME    1200

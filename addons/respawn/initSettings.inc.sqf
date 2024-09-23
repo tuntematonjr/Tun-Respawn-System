@@ -25,7 +25,7 @@
     "TIME",
     ["Kill JIP Time", LSTRING(CBA_tooltip_killJipTime)],
     [LSTRING(CBA_Category_main), LSTRING(CBA_Category_generic)],
-    [1, 300, 20, 0],
+    [0, MAX_KILLJIP_TIME, DEFAULT_KILLJIP_TIME, 0],
     1,
     {
         params ["_value"];
@@ -70,7 +70,7 @@
 
 [
     QGVAR(delayedRespawn),
-    "TIME",
+    "SLIDER",
     ["Delayed respawn", LSTRING(CBA_tooltip_delayedRespawn)],
     [LSTRING(CBA_Category_main), LSTRING(CBA_Category_generic)],
     [0, 100, 0, 0],
@@ -104,7 +104,7 @@
     "TIME",
     ["West", LSTRING(CBA_tooltip_time)],
     [LSTRING(CBA_Category_main), LSTRING(CBA_Category_time)],
-    [10, 60*60, 15*60, 0],
+    [10, MAX_WAVE_TIME, DEFAULT_WAVE_TIME, 0],
     1,
     {
         params ["_value"];
@@ -120,7 +120,7 @@
     "TIME",
     ["East", LSTRING(CBA_tooltip_time)],
     [LSTRING(CBA_Category_main), LSTRING(CBA_Category_time)],
-    [10, 60*60, 15*60, 0],
+    [10, MAX_WAVE_TIME, DEFAULT_WAVE_TIME, 0],
     1,
     {
         params ["_value"];
@@ -136,7 +136,7 @@
     "TIME",
     ["Resistance", LSTRING(CBA_tooltip_time)],
     [LSTRING(CBA_Category_main), LSTRING(CBA_Category_time)],
-    [10, 60*60, 15*60, 0],
+    [10, MAX_WAVE_TIME, DEFAULT_WAVE_TIME, 0],
     1,
     {
         params ["_value"];
@@ -152,7 +152,7 @@
     "TIME",
     ["Civilian", LSTRING(CBA_tooltip_time)],
     [LSTRING(CBA_Category_main), LSTRING(CBA_Category_time)],
-    [10, 60*60, 15*60, 0],
+    [10, MAX_WAVE_TIME, DEFAULT_WAVE_TIME, 0],
     1,
     {
         params ["_value"];
