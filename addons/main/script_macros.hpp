@@ -20,7 +20,8 @@
 //AAR update macro
 #define AAR_UPDATE(OBJ,VARNAME,VALUE)           [QEGVAR(main,AAR_UpdateEH), [OBJ,VARNAME,VALUE]] call CBA_fnc_serverEvent
 //AAR event
-#define AAR_EVENT(TEXT,INSTIGATOR,TARGET,POI)   LOG("AAR eventti macro"); [QEGVAR(main,AAR_EventEH), [TEXT,INSTIGATOR,TARGET,POI]] call CBA_fnc_serverEvent
+//params ["_text", ["_instigator", objNull], ["_target", objNull], ["_poi", [0, 0, 0]]];
+#define AAR_EVENT(TEXT,INSTIGATOR,TARGET,POI)   LOG("AAR eventti macro"); ok = [TEXT,INSTIGATOR,TARGET,POI]; [QEGVAR(main,AAR_EventEH), [TEXT,INSTIGATOR,TARGET,POI]] call CBA_fnc_serverEvent
 
 
 #define ALL_SIDES       [west,east,resistance,civilian]

@@ -64,8 +64,10 @@ publicVariable QGVAR(activeVehicleHash);
 if (AAR_IS_ENABLED) then {
 	private _text = localize([ELSTRING(main,AAR_MSP_Packed),ELSTRING(main,AAR_MSP_Deployed)] select _setup);
 	_text = format[_text, _side];
-
+	LOG("Do deployement event");
 	AAR_EVENT(_text,_msp,_player,nil);
+} else {
+	LOG("fucked up");
 };
 
 //Change deployement status
