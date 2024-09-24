@@ -48,7 +48,6 @@
         <Key ID="STR_tunres_msp_Briefing_CheckTicketsMsp">
             <English>You can check remaining tickets from MSP using ACE actions.</English>
             <Original>You can check remaining tickets from MSP using ACE actions.</Original>
-        </Key>ip the next respawn wave.</Original>
         </Key>
         <Key ID="STR_tunres_msp_AceAction_CheckIfMspContested">
             <English>Check if MSP is contested</English>
