@@ -24,6 +24,8 @@ params [["_unit", objNull, [objNull]],
 		["_godModeLenght", 30, [0]]
 ];
 
+if (_unit isEqualTo objNull) exitWith {LOG("unit was objnull when teleporting")};
+
 if (_godMode) then {
 	player allowDamage false;
 	LOG("Enable god mode");
