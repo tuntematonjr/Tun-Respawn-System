@@ -11,7 +11,7 @@
  * [] call tunres_MSP_fnc_contestedCheck
  */
 #include "script_component.hpp"
-params[["_side", nil,[west]]];
+params [["_side", nil,[west]]];
 
 if (!isServer) exitWith {};
 private _oldAllowRespawnStatus = GVAR(allowRespawnHash) get _side;

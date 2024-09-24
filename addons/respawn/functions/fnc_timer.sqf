@@ -29,11 +29,11 @@ publicVariable QGVAR(nextWaveTimesHash);
 if !( GVAR(timerRunningHash) getOrDefault [_side, false]) then {
 	GVAR(timerRunningHash) set [_side, true];
 	publicVariable QGVAR(timerRunningHash);
-	[{ _this params["_side"];
+	[{ _this params ["_side"];
 		GVAR(allowRespawnHash) get _side && 
 		{ cba_missiontime >= GVAR(nextWaveTimesHash) get _side } 
 	}, {
-		_this params["_side"];
+		_this params ["_side"];
 		if (EGVAR(msp,enable)) then {
 			[_side] call EFUNC(msp,contestedCheck);
 		};

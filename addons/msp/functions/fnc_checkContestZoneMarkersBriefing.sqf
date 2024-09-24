@@ -19,7 +19,7 @@
  * Public: [Yes/No]
  */
 #include "script_component.hpp"
-params[["_enable", true]];
+params [["_enable", true]];
 
 if (_enable) then {
 	if (cba_missiontime > 1) exitWith {

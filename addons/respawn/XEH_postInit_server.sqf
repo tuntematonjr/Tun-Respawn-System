@@ -80,17 +80,17 @@ if ( AAR_IS_ENABLED ) then {
 };
 
 [QGVAR(updateRespawnPointEH), {
-	params["_side","_setup","_pos"];
+	params ["_side","_setup","_pos"];
 	[_side, _setup, _pos] call FUNC(updateRespawnPoint);
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(updateWaitingRespawnListEH), {
-	params["_player","_addPlayer","_side"];
+	params ["_player","_addPlayer","_side"];
 	[_player, _addPlayer, _side] call FUNC(updateWaitingRespawnList);
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(respawnUnitEH), {
-	params["_side","_unit"];
+	params ["_side","_unit"];
 	[_side, _unit] call FUNC(respawnUnit);
 }] call CBA_fnc_addEventHandler;
 

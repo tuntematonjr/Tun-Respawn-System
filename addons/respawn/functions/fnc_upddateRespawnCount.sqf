@@ -14,7 +14,7 @@
  */
 #include "script_component.hpp"
 
-params[["_howManyRespawned", 0, [0]]];
+params [["_howManyRespawned", 0, [0]]];
 
 private _totalRespawnCountHash = GVAR(totalRespawnCountHash);
 private _totalRespawnCount = _totalRespawnCountHash get _side;
