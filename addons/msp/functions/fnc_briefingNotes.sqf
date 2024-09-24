@@ -41,7 +41,7 @@ if (isClass (configFile >> "CfgVehicles" >> _vehicle)) then {
 	_text = format ["%1<br/>- %2",_text, LLSTRING(Briefing_MspDisabled)];
 };
 
-_text = format ["%1<br/><br/><font color='#4F4F4F' size='11'>Powered By TuntematonEngine v%2.%3.%4</font>", _text, MAJOR, MINOR, PATCH];
+_text = format ["%1<br/><br/><font color='#4F4F4F' size='11'>Powered By TuntematonEngine v%2.%3.%4.%5</font>", _text, MAJOR, MINOR, PATCH, BUILD];
 
 if !(player diarySubjectExists QEGVAR(main,briefing)) then {
 	player createDiarySubject [QEGVAR(main,briefing),localize "STR_tunres_respawn_Briefing_RespawnMainCategory"];
