@@ -13,6 +13,5 @@ if (AAR_IS_ENABLED) then {
 	[QGVAR(AAR_UpdateEH), {
 		params ["_obj","_varName","_value"];
 		[_obj, _varName, _value] call afi_aar2_fnc_addcustomdata;
-		LOG("AAR custom data lisätty");
 	}] call CBA_fnc_addEventHandler;
 };
