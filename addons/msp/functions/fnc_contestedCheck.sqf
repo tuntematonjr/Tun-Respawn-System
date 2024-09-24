@@ -64,11 +64,11 @@ if ( _mspDeployementStatus && { !(isNull _msp) } ) then {
 
 	if (_oldContestedStatus isNotEqualTo _isContested) then {
 
-		if (AAR_IS_ENABLED) then {
-			private _text = (localize([ELSTRING(main,AAR_MSP_notContested),ELSTRING(main,AAR_MSP_isContested)] select _isContested));
-			_text = format[_text, _side];
+		if (EGVAR(main,AAR_Enabled)) then {
+			private _aarText = (localize([ELSTRING(main,AAR_MSP_notContested),ELSTRING(main,AAR_MSP_isContested)] select _isContested));
+			_aarText = format[_aarText, _side];
 
-			AAR_EVENT(_text,_msp,nil,nil);
+			AAR_EVENT(_aarText,_msp,nil,nil);
 			AAR_UPDATE(_msp,"Is contested",_isContested);
 		};
 

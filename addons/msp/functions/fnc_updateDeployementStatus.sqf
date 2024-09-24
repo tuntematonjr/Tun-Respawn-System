@@ -61,13 +61,10 @@ publicVariable QGVAR(deployementStatusHash);
 GVAR(activeVehicleHash) set [_side, [objNull, _msp] select _setup];
 publicVariable QGVAR(activeVehicleHash);
 
-if (AAR_IS_ENABLED) then {
-	private _text = localize([ELSTRING(main,AAR_MSP_Packed),ELSTRING(main,AAR_MSP_Deployed)] select _setup);
-	_text = format[_text, _side];
-	LOG("Do deployement event");
-	AAR_EVENT(_text,_msp,_player,nil);
-} else {
-	LOG("fucked up");
+if (EGVAR(main,AAR_Enabled)) then {
+	private _aarText = localize([ELSTRING(main,AAR_MSP_Packed),ELSTRING(main,AAR_MSP_Deployed)] select _setup);
+	_aarText = format[_aarText, _side];
+	AAR_EVENT(_aarText,_msp,_player,nil);
 };
 
 //Change deployement status

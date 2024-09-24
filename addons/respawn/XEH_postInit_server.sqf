@@ -34,7 +34,7 @@ addMissionEventHandler ["HandleDisconnect", {
 }];
 
 //AAR times  
-if ( AAR_IS_ENABLED ) then {
+if ( EGVAR(main,AAR_Enabled) ) then {
 	[{cba_missiontime > 10}, {
 		if (missionNamespace getVariable ["afi_aar2", false]) then {
 

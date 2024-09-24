@@ -85,7 +85,7 @@ if (count _waitingRespawn > 0) then {
  
 	[QGVAR(EH_respawnWave), [_side, _waitingRespawn]] call CBA_fnc_serverEvent;
 
-	if (AAR_IS_ENABLED) then {
+	if (EGVAR(main,AAR_Enabled)) then {
 		private _text =  if (GVAR(respawnType) isEqualTo 1) then {
 			format[LELSTRING(main,AAR_RespawnWaveTickets), str _side, _waitingRespawnCount, _totalRespawnCount, [_side] call FUNC(getTicketCount)]
 		} else {
