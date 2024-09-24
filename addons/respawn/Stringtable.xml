@@ -85,6 +85,10 @@
             <English>Remaining tickets for your side:</English>
             <Original>Remaining tickets for your side:</Original>
         </Key>
+        <Key ID="STR_tunres_respawn_RemainingTicketsPlayer">
+            <English>Your remaining tickets:</English>
+            <Original>Your remaining tickets:</Original>
+        </Key>
         <Key ID="STR_tunres_respawn_FNC_moveRespawnText">
             <English>You are respawning! Please standby.</English>
             <Original>You are respawning! Please standby.</Original>
