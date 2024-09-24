@@ -7,7 +7,7 @@
     1,
     {},
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(allowCheckTicketsMSP),
@@ -18,7 +18,7 @@
     1,
     {},
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(reportEnemiesEnabledWest),
@@ -34,7 +34,7 @@
         GVAR(contestValuesHash) set [west, _array];
     },
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(reportEnemiesEnabledEast),
@@ -50,7 +50,7 @@
         GVAR(contestValuesHash) set [east, _array];
     },
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(reportEnemiesEnabledResistance),
@@ -66,7 +66,7 @@
         GVAR(contestValuesHash) set [resistance, _array];
     },
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(reportEnemiesEnabledCivilian),
@@ -82,7 +82,7 @@
         GVAR(contestValuesHash) set [civilian, _array];
     },
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(reportEnemiesIntervalWest),
@@ -100,7 +100,7 @@
         GVAR(contestValuesHash) set [west, _array];
     },
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(reportEnemiesIntervalEast),
@@ -118,7 +118,7 @@
         GVAR(contestValuesHash) set [east, _array];
     },
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(reportEnemiesIntervalResistance),
@@ -136,7 +136,7 @@
         GVAR(contestValuesHash) set [resistance, _array];
     },
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(reportEnemiesIntervalCivilian),
@@ -155,7 +155,7 @@
         GVAR(contestValuesHash) set [civilian, _array];
     },
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(reportEnemiesRangeWest),
@@ -173,7 +173,7 @@
         GVAR(contestValuesHash) set [west, _array];
     },
     false
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(reportEnemiesRangeEast),
@@ -191,7 +191,7 @@
         GVAR(contestValuesHash) set [east, _array];
     },
     false
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(reportEnemiesRangeResistance),
@@ -209,7 +209,7 @@
         GVAR(contestValuesHash) set [resistance, _array];
     },
     false
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(reportEnemiesRangeCivilian),
@@ -227,7 +227,7 @@
         GVAR(contestValuesHash) set [civilian, _array];
     },
     false
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(contestedRadiusMaxWest),
@@ -245,7 +245,7 @@
         GVAR(contestValuesHash) set [west, _array];
     },
     false
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(contestedRadiusMaxEast),
@@ -263,7 +263,7 @@
         GVAR(contestValuesHash) set [east, _array];
     },
     false
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(contestedRadiusMaxResistance),
@@ -281,7 +281,7 @@
         GVAR(contestValuesHash) set [resistance, _array];
     },
     false
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(contestedRadiusMaxCivilian),
@@ -299,7 +299,7 @@
         GVAR(contestValuesHash) set [civilian, _array];
     },
     false
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(contestedRadiusMinWest),
@@ -317,7 +317,7 @@
         GVAR(contestValuesHash) set [west, _array];
     },
     false
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(contestedRadiusMinEast),
@@ -335,7 +335,7 @@
         GVAR(contestValuesHash) set [east, _array];
     },
     false
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(contestedRadiusMinResistance),
@@ -353,7 +353,7 @@
         GVAR(contestValuesHash) set [resistance, _array];
     },
     false
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(contestedRadiusMinCivilian),
@@ -371,7 +371,7 @@
         GVAR(contestValuesHash) set [civilian, _array];
     },
     false
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(contestedCheckIntervalWest),
@@ -389,7 +389,7 @@
         GVAR(contestValuesHash) set [west, _array];
     },
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(contestedCheckIntervalEast),
@@ -407,7 +407,7 @@
         GVAR(contestValuesHash) set [west, _array];
     },
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(contestedCheckIntervalResistance),
@@ -425,7 +425,7 @@
         GVAR(contestValuesHash) set [resistance, _array];
     },
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(contestedCheckIntervalCivilian),
@@ -443,7 +443,7 @@
         GVAR(contestValuesHash) set [civilian, _array];
     },
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(progresbarTimeSetup),
@@ -457,7 +457,7 @@
         GVAR(progresbarTimeSetup) = round _value;
     },
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(progresbarTimePack),
@@ -471,7 +471,7 @@
         GVAR(progresbarTimePack) = round _value;
     },
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(clasnamesEast),
@@ -485,7 +485,7 @@
         GVAR(classnamesHash) set [east , _value];
     },
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(clasnamesWest),
@@ -499,7 +499,7 @@
         GVAR(classnamesHash) set [west , _value];
     },
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(clasnamesResistance),
@@ -513,7 +513,7 @@
         GVAR(classnamesHash) set [resistance , _value];
     },
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(clasnamesCivilian),
@@ -527,7 +527,7 @@
         GVAR(classnamesHash) set [civilian , _value];
     },
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(setupNotification),
@@ -538,7 +538,7 @@
     1,
     {},
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(contestedNotification),
@@ -549,7 +549,7 @@
     1,
     {},
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(reportEnemiesNotification),
@@ -560,4 +560,4 @@
     1,
     {},
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;

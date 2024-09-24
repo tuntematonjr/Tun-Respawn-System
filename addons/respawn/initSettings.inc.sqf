@@ -7,7 +7,7 @@
     1, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <ARRAY>
     {}, // Script to execute when setting is changed. (optional) <CODE>
     true //Setting will be marked as needing mission restart after being changed. (optional, default false) <BOOL>
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(killJIP),
@@ -18,7 +18,7 @@
     1,
     {},
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(killJipTime),
@@ -33,7 +33,7 @@
         GVAR(killJipTime) = _value;
     },
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(respawnType),
@@ -44,7 +44,7 @@
     1,
     {},
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(gearscriptType),
@@ -55,7 +55,7 @@
     1,
     {},
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(forcedRespawn),
@@ -66,7 +66,7 @@
     1,
     {},
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(delayedRespawn),
@@ -81,7 +81,7 @@
         GVAR(delayedRespawn) = _value;
     },
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(waitingAreaRange),
@@ -96,7 +96,7 @@
         GVAR(waitingAreaRange) = _value;
     },
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 //Wave times
 [
@@ -113,7 +113,7 @@
         GVAR(waveLenghtTimesHash) set [west, _value];
     },
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(initialWaveTimeEast),
@@ -129,7 +129,7 @@
         GVAR(waveLenghtTimesHash) set [east, _value];
     },
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(initialWaveTimeResistance),
@@ -145,7 +145,7 @@
         GVAR(waveLenghtTimesHash) set [resistance, _value];
     },
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(initialWaveTimeCivilian),
@@ -161,7 +161,7 @@
         GVAR(waveLenghtTimesHash) set [civilian, _value];
     },
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 //Spectator camera modes
 [
@@ -178,7 +178,7 @@
         };
     },
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(spectateCameramode3th),
@@ -194,7 +194,7 @@
         };
     },
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(spectateCameramodeFree),
@@ -210,7 +210,7 @@
         };
     },
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 //allow spectate west
 [
@@ -229,7 +229,7 @@
         };
     },
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(allowWestSpectateResistance),
@@ -247,7 +247,7 @@
         };
     },
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(allowWestSpectateCivilian),
@@ -265,7 +265,7 @@
         };
     },
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 //allow spectate east
 [
@@ -284,7 +284,7 @@
         };
     },
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(allowEastSpectateResistance),
@@ -302,7 +302,7 @@
         };
     },
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(allowEastSpectateCivilian),
@@ -320,7 +320,7 @@
         };
     },
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 //allow spectate resistance
 [
@@ -339,7 +339,7 @@
         };
     },
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(allowResistanceSpectateEast),
@@ -357,7 +357,7 @@
         };
     },
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 
 [
@@ -376,7 +376,7 @@
         };
     },
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 //allow spectate civilians
 [
@@ -395,7 +395,7 @@
         };
     },
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(allowCivilianSpectateEast),
@@ -413,7 +413,7 @@
         };
     },
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 
 [
@@ -432,7 +432,7 @@
         };
     },
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 //Ticket count
 [
@@ -449,7 +449,7 @@
         GVAR(ticketsHash) set [west, _value];
     },
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(initialTicketsEast),
@@ -465,7 +465,7 @@
         GVAR(ticketsHash) set [east, _value];
     },
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(initialTicketsResistance),
@@ -481,7 +481,7 @@
         GVAR(ticketsHash) set [resistance, _value];
     },
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(initialTicketsCivilian),
@@ -497,7 +497,7 @@
         GVAR(ticketsHash) set [civilian, _value];
     },
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(allowCheckTicketsBase),
@@ -508,7 +508,7 @@
     1,
     {},
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 //Briefing notes
 [
@@ -520,7 +520,7 @@
     1,
     {},
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(briefingEnableShowRespawnType),
@@ -531,7 +531,7 @@
     1,
     {},
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(briefingEnableShowTickets),
@@ -542,7 +542,7 @@
     1,
     {},
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(briefingEnableShowTime),
@@ -553,7 +553,7 @@
     1,
     {},
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(briefingEnableShowOtherSidesDataWest),
@@ -564,7 +564,7 @@
     1,
     {},
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(briefingEnableShowOtherSidesDataEast),
@@ -575,7 +575,7 @@
     1,
     {},
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(briefingEnableShowOtherSidesDataResistance),
@@ -586,7 +586,7 @@
     1,
     {},
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(briefingEnableShowOtherSidesDataCivilian),
@@ -597,4 +597,4 @@
     1,
     {},
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
