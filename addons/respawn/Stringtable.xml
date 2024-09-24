@@ -142,20 +142,20 @@
             <Original>You can check remaining tickets from the main base (flagpole) using ACE actions.</Original>
         </Key>
         <Key ID="STR_tunres_respawn_Briefing_WaveTime_west">
-            <English>For &lt;font color="#0000FF"&gt;West&lt;/font&gt; is %2min</English>
-            <Original>For &lt;font color="#0000FF"&gt;West&lt;/font&gt; is %2min</Original>
+            <English>For &lt;font color="#0000FF"&gt;West&lt;/font&gt; is %2 min</English>
+            <Original>For &lt;font color="#0000FF"&gt;West&lt;/font&gt; is %2 min</Original>
         </Key>
         <Key ID="STR_tunres_respawn_Briefing_WaveTime_east">
-            <English>For &lt;font color="#E60000"&gt;East&lt;/font&gt; is %2min</English>
-            <Original>For &lt;font color="#E60000"&gt;East&lt;/font&gt; is %2min</Original>
+            <English>For &lt;font color="#E60000"&gt;East&lt;/font&gt; is %2 min</English>
+            <Original>For &lt;font color="#E60000"&gt;East&lt;/font&gt; is %2 min</Original>
         </Key>
         <Key ID="STR_tunres_respawn_Briefing_WaveTime_resistance">
-            <English>For &lt;font color="#00CC00"&gt;Resistance&lt;/font&gt; is %2min</English>
-            <Original>For &lt;font color="#00CC00"&gt;Resistance&lt;/font&gt; is %2min</Original>
+            <English>For &lt;font color="#00CC00"&gt;Resistance&lt;/font&gt; is %2 min</English>
+            <Original>For &lt;font color="#00CC00"&gt;Resistance&lt;/font&gt; is %2 min</Original>
         </Key>
         <Key ID="STR_tunres_respawn_Briefing_WaveTime_civilian">
-            <English>For &lt;font color="#B040A7"&gt;Civilian&lt;/font&gt; is %2min</English>
-            <Original>For &lt;font color="#B040A7"&gt;Civilian&lt;/font&gt; is %2min</Original>
+            <English>For &lt;font color="#B040A7"&gt;Civilian&lt;/font&gt; is %2 min</English>
+            <Original>For &lt;font color="#B040A7"&gt;Civilian&lt;/font&gt; is %2 min</Original>
         </Key>
         <Key ID="STR_tunres_respawn_Briefing_Category_Tickets">
             <English>Tickets</English>

@@ -37,21 +37,30 @@ if (GVAR(briefingEnableShowRespawnType)) then {
 
 if (GVAR(briefingEnableShowTime)) then {
 	private _waveLenghtTimeHash = GVAR(waveLenghtTimesHash);
+	
 	_text = format ["%1<br/><br/><font face='PuristaBold' size='15'>Wave interval</font>",_text];
 	if (playerSide isEqualTo west || GVAR(briefingEnableShowOtherSidesDataWest)) then {
-		_text = format ["%1<br/>- "+LLSTRING(Briefing_WaveTime_west),_text, _waveLenghtTimeHash get west];
+		private _waveTime = _waveLenghtTimeHash get west;
+		_waveTime = [_waveTime, "M:SS"] call CBA_fnc_formatElapsedTime;
+		_text = format ["%1<br/>- "+LLSTRING(Briefing_WaveTime_west),_text,_waveTime];
 	};
 
 	if (playerSide isEqualTo east || GVAR(briefingEnableShowOtherSidesDataEast)) then {
-		_text = format ["%1<br/>- "+LLSTRING(Briefing_WaveTime_east),_text,_waveLenghtTimeHash get east];
+		private _waveTime = _waveLenghtTimeHash get east;
+		_waveTime = [_waveTime, "M:SS"] call CBA_fnc_formatElapsedTime;
+		_text = format ["%1<br/>- "+LLSTRING(Briefing_WaveTime_east),_text,_waveTime];
 	};
 
 	if (playerSide isEqualTo resistance || GVAR(briefingEnableShowOtherSidesDataResistance)) then {
-		_text = format ["%1<br/>- "+LLSTRING(Briefing_WaveTime_resistance),_text, _waveLenghtTimeHash get resistance];
+		private _waveTime = _waveLenghtTimeHash get resistance;
+		_waveTime = [_waveTime, "M:SS"] call CBA_fnc_formatElapsedTime;
+		_text = format ["%1<br/>- "+LLSTRING(Briefing_WaveTime_resistance),_text,_waveTime];
 	};
 
 	if (playerSide isEqualTo civilian || GVAR(briefingEnableShowOtherSidesDataCivilian)) then {
-		_text = format ["%1<br/>- "+LLSTRING(Briefing_WaveTime_civilian),_text, _waveLenghtTimeHash get civilian];
+		private _waveTime = _waveLenghtTimeHash get civilian;
+		_waveTime = [_waveTime, "M:SS"] call CBA_fnc_formatElapsedTime;
+		_text = format ["%1<br/>- "+LLSTRING(Briefing_WaveTime_civilian),_text,_waveTime];
 	};
 
 	private _delayedRespawn = GVAR(delayedRespawn);
