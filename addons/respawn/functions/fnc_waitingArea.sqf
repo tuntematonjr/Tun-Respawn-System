@@ -88,7 +88,7 @@ GVAR(waitingAreaPFH) = [{
 		_text = format["%1<br/><t color='#0800ff' size = '0.5'>%2 %3</t>", _text, _ticketsTypeText, _tickets];
 	};
 
-	[_text,0,0,1,0] spawn BIS_fnc_dynamicText;
+	[_text,0,0,4,0] spawn BIS_fnc_dynamicText;
 
 	//make sure that player is still in area
 	if !(player inArea [_respawnWaitingarea, _waitingRange, _waitingRange, 0, false]) then {
