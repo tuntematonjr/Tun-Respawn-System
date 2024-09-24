@@ -13,6 +13,7 @@
  * [] call tunres_Respawn_fnc_forceRespawnPlayer
  */
 #include "script_component.hpp"
+if (!hasInterface) exitWith { };
 
 if !(player getVariable [QGVAR(isWaitingRespawn),false]) exitWith {
 	ERROR("Tried to force respawn unit, whichs is not at respawn");
