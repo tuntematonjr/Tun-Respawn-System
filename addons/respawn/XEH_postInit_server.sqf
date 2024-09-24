@@ -93,5 +93,3 @@ if ( AAR_IS_ENABLED ) then {
 	params [["_side", nil, [west]], ["_unit", objNull, [objNull]]];
 	[_side, _unit] call FUNC(respawnUnit);
 }] call CBA_fnc_addEventHandler;
-
-[QGVAR(respawnUnitEH), [_unit, false, _side]] call CBA_fnc_serverEvent;
