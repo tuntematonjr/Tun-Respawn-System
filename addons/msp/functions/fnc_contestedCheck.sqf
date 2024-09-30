@@ -75,10 +75,10 @@ if ( _mspDeployementStatus && { !(isNull _msp) } ) then {
 		GVAR(contestedStatusHash) set [_side, _isContested];
 		publicVariable QGVAR(contestedStatusHash);
 		_msp setVariable [QGVAR(isContested), _isContested, true];
+		[QEGVAR(respawn,updateRespawnPointEH), [_side, !_isContested, _pos]] call CBA_fnc_serverEvent;
 
 		private _whoToNotify = [_side, GVAR(contestedNotification)] call FUNC(whoToNotify);
 		if (_whoToNotify isNotEqualTo [] ) then {
-			[QEGVAR(respawn,updateRespawnPointEH), [_side, !_isContested]] call CBA_fnc_serverEvent;
 
 			private _text = if (_isContested) then {
 				LLSTRING(FNC_Contested_hint)
