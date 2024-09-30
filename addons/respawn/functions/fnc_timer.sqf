@@ -13,7 +13,7 @@
  * [west] call tunres_Respawn_fnc_timer
  */
 #include "script_component.hpp"
-params [["_side", nil, [west]]];
+params [["_side", nil, [west]], ["_resetTimer", false, [true]]];
 
 if (!isServer) exitWith { };
 
@@ -21,7 +21,9 @@ if (GVAR(forcedRespawn)) exitWith { INFO("No timer, Only forced waves"); };
 
 private _hashWaitTime = GVAR(nextWaveTimesHash);
 private _hashWaveLenght = GVAR(waveLenghtTimesHash);
-private _time = round ((_hashWaitTime get _side) + (_hashWaveLenght get _side));
+private _waveLenght = _hashWaveLenght get _side;
+private _time = [(_hashWaitTime get _side), cba_missiontime] select _resetTime;
+_time = round (_time + _waveLenght);
 
 _hashWaitTime set [_side, _time];
 publicVariable QGVAR(nextWaveTimesHash);

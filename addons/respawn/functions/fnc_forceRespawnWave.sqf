@@ -26,5 +26,5 @@ AAR_EVENT(_text,nil,nil,nil);
 [_side, true] call FUNC(doRespawnWave);
 
 if (_reset && { !(GVAR(forcedRespawn)) }) then {
-	[_side] call FUNC(timer);
+	[_side,true] call FUNC(timer);
 };
