@@ -20,9 +20,8 @@ if (!isServer) exitWith { };
 if (GVAR(forcedRespawn)) exitWith { INFO("No timer, Only forced waves"); };
 
 private _hashWaitTime = GVAR(nextWaveTimesHash);
-private _hashWaveLenght = GVAR(waveLenghtTimesHash);
-private _waveLenght = _hashWaveLenght get _side;
-private _time = [(_hashWaitTime get _side), cba_missiontime] select _resetTime;
+private _waveLenght = GVAR(waveLenghtTimesHash) get _side;
+private _time = [(_hashWaitTime get _side), cba_missiontime] select _resetTimer;
 _time = round (_time + _waveLenght);
 
 _hashWaitTime set [_side, _time];
