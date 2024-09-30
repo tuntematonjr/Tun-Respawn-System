@@ -81,7 +81,7 @@ if ( EGVAR(main,AAR_Enabled) ) then {
 
 [QGVAR(updateRespawnPointEH), {
 	params [["_side", nil, [west]], ["_update", false, [true]], ["_newPos", [0,0,0], [[]]]];
-	[_side, _setup, _pos] call FUNC(updateRespawnPoint);
+	[_side, _update, _newPos] call FUNC(updateRespawnPoint);
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(updateWaitingRespawnListEH), {
