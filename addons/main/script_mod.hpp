@@ -13,3 +13,6 @@
 #else
     #define COMPONENT_NAME QUOTE(tunres - COMPONENT)
 #endif
+
+//This forces debug on everything.
+#define DEBUG_ENABLED_MAIN
