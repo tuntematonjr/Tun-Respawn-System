@@ -3,7 +3,7 @@
  * [Description]
  *
  * Arguments:
- * 0: Side/player to add tickets <SIDE/OBJ>
+ * 0: Side/player to set tickets <SIDE/OBJ>
  * 1: New ticket count <NUMBER>
  *
  * Return Value:
