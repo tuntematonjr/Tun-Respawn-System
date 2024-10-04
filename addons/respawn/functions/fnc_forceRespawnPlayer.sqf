@@ -19,7 +19,7 @@ if !(player getVariable [QGVAR(isWaitingRespawn),false]) exitWith {
 	ERROR("Tried to force respawn unit, whichs is not at respawn");
 };
 
-AAR_EVENT(LLSTRING(playerForceRespawned),player,nil,nil);
+AAR_EVENT("__inst__ has been force respawned.",player,nil,nil);
 
 player setVariable [QGVAR(skipNextWave), false, true];
 

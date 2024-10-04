@@ -193,14 +193,6 @@
             <English>Get over here!</English>
             <Original>Get over here!</Original>
         </Key>
-        <Key ID="STR_tunres_respawn_playerForceRespawned">
-            <English>__inst__ has been force respawned.</English>
-            <Original>__inst__ has been force respawned.</Original>
-        </Key>
-        <Key ID="STR_tunres_respawn_sideForceRespawned">
-            <English>__%1__ has been force respawned.</English>
-            <Original>__%1__ has been force respawned.</Original>
-        </Key>
         <Key ID="STR_tunres_respawn_FNC_remaining_time">
             <English>Remaining time until respawn</English>
             <Original>Remaining time until respawn</Original>

@@ -19,13 +19,13 @@ if (isDedicated || !(_playerSide in ALL_SIDES) ) exitWith { };
 
 LOG("Start waiting area");
 
-//tell server to add this player to list
 if (!isNil QGVAR(uselesBody)) then {
 	LOG("Delete old body");
 	deleteVehicle GVAR(uselesBody);
 	GVAR(uselesBody) = nil;
 };
 
+//tell server to add this player to list
 [QGVAR(updateWaitingRespawnListEH), [player, true, _playerSide]] call CBA_fnc_serverEvent;
 
 private _respawnWaitingarea = (GVAR(waitingAreaHash) get _playerSide) select 1;

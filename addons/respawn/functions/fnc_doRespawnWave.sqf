@@ -87,9 +87,9 @@ if (count _waitingRespawn > 0) then {
 
 	if (EGVAR(main,AAR_Enabled)) then {
 		private _text =  if (GVAR(respawnType) isEqualTo 1) then {
-			format[LELSTRING(main,AAR_RespawnWaveTickets), str _side, _waitingRespawnCount, _totalRespawnCount, [_side] call FUNC(getTicketCount)]
+			format["Respawn wave for __%1__. %2 units have respawned. Total respawns so far: %3. Remaining tickets: %4.", str _side, _waitingRespawnCount, _totalRespawnCount, [_side] call FUNC(getTicketCount)]
 		} else {
-			format[LELSTRING(main,AAR_RespawnWave), str _side, _waitingRespawnCount, _totalRespawnCount]
+			format["Respawn wave for __%1__. %2 units respawned. Total respawn count is %3.", str _side, _waitingRespawnCount, _totalRespawnCount]
 		};
 		AAR_EVENT(_text,_msp,nil,nil);
 	};

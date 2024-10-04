@@ -19,7 +19,7 @@ if (!isServer) exitWith { };
 
 params [["_side", nil, [east]], ["_reset", false, [false]]];
 
-private _text = format[(localize "STR_tunres_respawn_sideForceRespawned"),str _side];
+private _text = format["__%1__ has been force respawned.",str _side];
 
 AAR_EVENT(_text,nil,nil,nil);
 

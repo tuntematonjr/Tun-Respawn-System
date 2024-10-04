@@ -269,5 +269,13 @@
             <English>Mobile Spawn Point (MSP) has been enabled for this mission, but your side does not have MSP.</English>
             <Original>Mobile Spawn Point (MSP) has been enabled for this mission, but your side does not have MSP.</Original>
         </Key>
+        <Key ID="STR_tunres_msp_setup_notification">
+            <English>MSP has been deployed!\nRespawn position has been updated.</English>
+            <Original>MSP has been deployed!\nRespawn position has been updated.</Original>
+        </Key>
+        <Key ID="STR_tunres_msp_pack_notification">
+            <English>MSP has been packed!\nRespawn position has been updated.</English>
+            <Original>MSP has been packed!\nRespawn position has been updated.</Original>
+        </Key>
     </Package>
 </Project>
