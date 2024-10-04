@@ -91,7 +91,8 @@ if (count _waitingRespawn > 0) then {
 		} else {
 			format["Respawn wave for __%1__. %2 units respawned. Total respawn count is %3.", str _side, _waitingRespawnCount, _totalRespawnCount]
 		};
-		AAR_EVENT(_text,_msp,nil,nil);
+		private _markerPos = getMarkerPos ((GVAR(respawnPointsHash) get _side) select 0);
+		AAR_EVENT(_text,nil,nil,_markerPos);
 	};
 
 } else {

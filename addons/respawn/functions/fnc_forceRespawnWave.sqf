@@ -20,8 +20,9 @@ if (!isServer) exitWith { };
 params [["_side", nil, [east]], ["_reset", false, [false]]];
 
 private _text = format["__%1__ has been force respawned.",str _side];
+private _markerPos = getMarkerPos ((GVAR(respawnPointsHash) get _side) select 0);
 
-AAR_EVENT(_text,nil,nil,nil);
+AAR_EVENT(_text,nil,nil,_markerPos);
 
 [_side, true] call FUNC(doRespawnWave);
 
