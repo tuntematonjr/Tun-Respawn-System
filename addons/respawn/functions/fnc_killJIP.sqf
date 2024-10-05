@@ -16,7 +16,7 @@
 if (!hasInterface) exitWith { };
 
 [{!isNull player}, {
-	if (cba_missiontime > (GVAR(killJipTime) * 60) && GVAR(killJIP)) then {
+	if (cba_missiontime > GVAR(killJipTime) && GVAR(killJIP)) then {
 		[{
 			[player, "Respawn", {
 				params ["_newObject","_oldObject"];
