@@ -15,7 +15,7 @@
  */
 #include "script_component.hpp"
 
-if (!isServer) then {};
+if (!isServer) exitWith {};
 
 params [["_msp", objNull, [objNull]], ["_setup", nil, [false]], "_player"];
 
@@ -42,7 +42,6 @@ if (_setup) then {
 
 	//Unlock vehicle
 	[_msp, 0] remoteExecCall ["lock", _msp];
-
 };
 
 private _whoToNotify = [_side, GVAR(setupNotification)] call FUNC(whoToNotify);

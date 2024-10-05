@@ -40,7 +40,7 @@ if (_setup) then {
 };
 
 private _code = {
-                    _args call FUNC(updateDeployementStatus);
+                    _args remoteExecCall [QFUNC(updateDeployementStatus), 2];
                     openMap false;
                 };
 
