@@ -36,9 +36,7 @@ if (_setup) then {
 
 } else {
 	//Delete props
-	{
-	    deleteVehicle _x;
-	} forEach (_msp getVariable QGVAR(objects));
+	deleteVehicle  (_msp getVariable QGVAR(objects));
 
 	//Unlock vehicle
 	[_msp, 0] remoteExecCall ["lock", _msp];

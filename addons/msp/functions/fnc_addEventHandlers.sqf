@@ -58,9 +58,7 @@
             AAR_UPDATE(_unit,"Enemies near","RIP");
 
             if ( local _unit && { _unit getVariable [QGVAR(isMSP), false] } ) then {
-                {
-                    deleteVehicle _x;
-                } forEach (_unit getVariable QGVAR(objects));
+                deleteVehicle (_unit getVariable QGVAR(objects));
 
                 GVAR(deployementStatusHash) set [_side, false];
                 publicVariable QGVAR(deployementStatusHash);
