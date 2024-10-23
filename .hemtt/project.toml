@@ -1,0 +1,34 @@
+name = "Tun Respawn"
+prefix = "tunres"
+author = "Tuntematon"
+mainprefix = "x"
+
+[files]
+include = [
+    "mod.cpp",
+    "data/**",
+]
+
+[version]
+git_hash = 0 
+
+[binarize]
+enabled = true 
+
+[lint.sqf]
+enabled = true
+
+[hemtt.launch.default]
+workshop = [
+    "450814997", # CBA
+    "463939057", # ACE
+    "894678801", # TFAR
+]
+parameters = [
+    "-filePatching",
+    "-noPause",
+    "C:\\Users\\mikal\\Documents\\Arma 3 - Other Profiles\\Tuntematon\\missions\\TUN_Respawn_System.Stratis\\mission.sqm", # Launch into existing Editor Mission - \\ needed
+]
+
+[hemtt.release]
+folder = "Tun_Respawn_System"
