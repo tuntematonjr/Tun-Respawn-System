@@ -19,6 +19,7 @@ PREP(getRemainingTime);
 PREP(getSideTicketCount);
 PREP(getTicketCount);
 PREP(getTicketCountClient);
+PREP(godMode);
 PREP(killJIP);
 PREP(moduleRespawnPoint);
 PREP(moduleTeleport);

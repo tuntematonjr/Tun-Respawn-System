@@ -34,7 +34,7 @@ private _text = format["%1 %2", LLSTRING(Teleporting), _teleportName];
 if (_teleportConditio) then {
 	closeDialog 2;
 	GVAR(tpMenuOpenedFrom) = objNull;
-	[player, _destination, _text, 10, true, 15] call FUNC(teleportUnit);
+	[player, _destination, _text, 30, true, 20] call FUNC(teleportUnit);
 } else {
 	[QEGVAR(main,doNotification), [LLSTRING(Teleport_Disabled)]] call CBA_fnc_localEvent;
 };
