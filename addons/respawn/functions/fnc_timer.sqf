@@ -32,7 +32,7 @@ if !( GVAR(timerRunningHash) getOrDefault [_side, false]) then {
 	publicVariable QGVAR(timerRunningHash);
 	[{ _this params ["_side"];
 		GVAR(allowRespawnHash) get _side && 
-		{ cba_missiontime >= GVAR(nextWaveTimesHash) get _side } 
+		{ 0 >= [_side] call FUNC(getRemainingTime) } 
 	}, {
 		_this params ["_side"];
 		if (EGVAR(msp,enable)) then {
