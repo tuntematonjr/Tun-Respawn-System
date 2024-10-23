@@ -24,6 +24,7 @@ PREP(moduleWaitingArea);
 PREP(onPlayerKilled);
 PREP(openTeleportMenu);
 PREP(radioSettings_tfar);
+PREP(getRemainingTime);
 PREP(remainingWaitTimeNotification);
 PREP(removegear);
 PREP(respawnUnit);

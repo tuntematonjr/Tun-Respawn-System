@@ -17,11 +17,10 @@ params ["_unit", "_side"];
 
 private _skip = false;
 if (GVAR(delayedRespawn) > 0) then {
-	private _hashWaitTime = GVAR(nextWaveTimesHash);
 	private _hashWaveLenght = GVAR(waveLenghtTimesHash);
-	private _time = _hashWaitTime get _side;
+	private _time = [_side] call FUNC(getRemainingTime);
 	private _waveLenghtTime = _hashWaveLenght get _side;
-	_skip = ((_time - cba_missiontime) < (_waveLenghtTime * (GVAR(delayedRespawn) / 100)));
+	_skip = (_time < (_waveLenghtTime * (GVAR(delayedRespawn) / 100)));
 };
 
 _unit setVariable [QGVAR(skipNextWave), _skip, true];

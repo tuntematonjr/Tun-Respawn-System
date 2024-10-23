@@ -46,9 +46,7 @@ GVAR(waitingAreaPFH) = [{
 	if (isNil "_playerSkipsWave") exitWith {};
 
 	//Show remaining time
-	private _hashWaitTime = GVAR(nextWaveTimesHash);
-	private _waitTime = _hashWaitTime get _playerSide;
-	private _remainingWaitTime = round (_waitTime - cba_missiontime);
+	private _remainingWaitTime = [_playerSide] call FUNC(getRemainingTime);
 
 	if (_playerSkipsWave) then {
 		private _hashWaveLenght = GVAR(waveLenghtTimesHash);

@@ -69,7 +69,7 @@ if ( EGVAR(main,AAR_Enabled) ) then {
 				{
 					private _side = _x;
 					if (_enabledSideHash getOrDefault [_side, false]) then {
-						private _time = round((_hashTime get _side) - cba_missiontime);
+						private _time = [_side] call FUNC(getRemainingTime);
 						private _sideSTR = str _side;
 						AAR_UPDATE(_sideSTR,"Next respawn wave",_time);
 					};

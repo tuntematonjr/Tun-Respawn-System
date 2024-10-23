@@ -6,7 +6,7 @@
  * 0: Do hint <BOOL> (optional)
  *
  * Return Value:
- * ticket count
+ * ticket count. -1 is returned when something went wrong
  * Example:
  * [false] call tunres_Respawn_fnc_getTicketCountClient
  */
@@ -24,7 +24,7 @@ private _ticketCount = switch (GVAR(respawnType)) do {
 		missionNamespace getVariable [QGVAR(playerTickets), GVAR(ticketsHash) get _side]
 	};
 	default { 
-		breakWith "Not using tickest";
+		breakWith -1;
 	};
 };
 
