@@ -11,7 +11,6 @@
  * [west] call tunres_Respawn_fnc_getSideTicketCount
  */
 #include "script_component.hpp"
-if (!isServer) exitWith { };
 params [["_side", nil, [west]]];
 
 private _hash = GVAR(ticketsHash);
