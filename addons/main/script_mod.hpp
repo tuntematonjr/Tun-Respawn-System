@@ -15,4 +15,4 @@
 #endif
 
 //This forces debug on everything.
-#define DEBUG_ENABLED_MAIN
+// #define DEBUG_ENABLED_MAIN
