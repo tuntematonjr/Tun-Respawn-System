@@ -24,7 +24,7 @@ player setVariable [QGVAR(skipNextWave), nil];
 
 private _text = LLSTRING(FNC_moveRespawnText);
 
-[_unit, _respawnPosition, _text, 20, true] call FUNC(teleportUnit);
+[_unit, _respawnPosition, _text, 30, true] call FUNC(teleportUnit);
 
 [_unit] remoteExecCall [QFUNC(addGear), _unit];
 

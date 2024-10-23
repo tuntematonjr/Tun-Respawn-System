@@ -33,9 +33,10 @@ if (_godMode) then {
 };
 
 [_text, 10] remoteExecCall [QFUNC(blackscreen), _unit]; // make player screen black and prevent them moving right away so server can keep up.
+private _backupPos = _destination getPos [5,90];
+private _pos = [_destination, 2, _range, 2, 0, 30, 0, [], [_backupPos,_backupPos]] call BIS_fnc_findSafePos;
+_unit setPos _pos;
 
-_unit setPosASL ([_destination, _range] call CBA_fnc_randPos);
-
-[QGVAR(EH_unitTeleported), [_unit, _destination]] call CBA_fnc_serverEvent;
+[QGVAR(EH_unitTeleported), [_unit, _pos]] call CBA_fnc_serverEvent;
 
 true
