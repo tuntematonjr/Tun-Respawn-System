@@ -23,6 +23,5 @@ AAR_EVENT("__inst__ has been force respawned.",player,nil,nil);
 
 player setVariable [QGVAR(skipNextWave), false, true];
 
-[1] call FUNC(upddateRespawnCount);
-
+[QGVAR(updateRespawnCountEH), [playerSide, 1]] call CBA_fnc_serverEvent;
 [QGVAR(respawnUnitEH), [playerSide, player]] call CBA_fnc_serverEvent;

@@ -78,7 +78,8 @@ if (count _waitingRespawn > 0) then {
 	}, 0.2, [_side, _waitingRespawnHash, _waitingRespawnDelayedHash]] call CBA_fnc_addPerFrameHandler;
 
 	private _waitingRespawnCount = count _waitingRespawn;
-	_totalRespawnCount = [_waitingRespawnCount] call FUNC(upddateRespawnCount);
+	_totalRespawnCount = _totalRespawnCount + _waitingRespawnCount;
+	[QGVAR(updateRespawnCountEH), [_side, _waitingRespawnCount]] call CBA_fnc_serverEvent;
 
 	private _debugText = format ["Side %1 all respawn units moved. Respawned: %2. Total count is: %3", _side, _waitingRespawnCount, _totalRespawnCount]; 
 	INFO(_debugText);

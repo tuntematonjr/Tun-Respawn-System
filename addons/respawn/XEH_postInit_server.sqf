@@ -93,3 +93,8 @@ if ( EGVAR(main,AAR_Enabled) ) then {
 	params [["_side", nil, [west]], ["_unit", objNull, [objNull]]];
 	[_side, _unit] call FUNC(respawnUnit);
 }] call CBA_fnc_addEventHandler;
+
+[QGVAR(updateRespawnCountEH), {
+	params [["_side", nil, [west]], ["_count", 0, [0]]];
+	[_side, _count] call FUNC(upddateRespawnCount);
+}] call CBA_fnc_addEventHandler;

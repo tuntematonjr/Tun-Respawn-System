@@ -13,12 +13,12 @@
  * [] call tunres_Respawn_fnc_upddateRespawnCount
  */
 #include "script_component.hpp"
-
-params [["_howManyRespawned", 0, [0]]];
+if (!isServer) exitWith { };
+params [["_side", nil, [west]], ["_count", 0, [0]]];
 
 private _totalRespawnCountHash = GVAR(totalRespawnCountHash);
 private _totalRespawnCount = _totalRespawnCountHash get _side;
-_totalRespawnCount = _totalRespawnCount + _howManyRespawned;
+_totalRespawnCount = _totalRespawnCount + _count;
 _totalRespawnCountHash set [_side, _totalRespawnCount];
 
 _totalRespawnCount
