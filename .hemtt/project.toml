@@ -32,3 +32,34 @@ parameters = [
 
 [hemtt.release]
 folder = "Tun_Respawn_System"
+
+[hemtt.launch.server]
+workshop = [
+    "450814997", # CBA
+    "463939057", # ACE
+    "894678801", # TFAR
+]
+parameters = [
+    "-server",
+    "-port=2302",
+    "-filePatching",
+    "-cfg=C:\\Users\\mikal\\Documents\\GitHub\\AFI-Tweaks\\server\\server_basic.cfg",
+    "-config=C:\\Users\\mikal\\Documents\\GitHub\\AFI-Tweaks\\server\\server_config.cfg",
+]
+
+[hemtt.launch.player]
+workshop = [
+    "450814997", # CBA
+    "463939057", # ACE
+    "894678801", # TFAR
+]
+parameters = [
+    "-debug",
+    "-filePatching",
+    "-world=empty",
+    "-noPause",
+    "-noPauseAudio",
+    "-connect=localHost",
+    "-port=2302",
+    "-window",
+]
