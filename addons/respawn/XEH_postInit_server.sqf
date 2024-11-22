@@ -98,3 +98,13 @@ if ( EGVAR(main,AAR_Enabled) ) then {
 	params [["_side", nil, [west]], ["_count", 0, [0]]];
 	[_side, _count] call FUNC(upddateRespawnCount);
 }] call CBA_fnc_addEventHandler;
+
+[QGVAR(forceRespawnWaveEH), {
+	params [["_side", nil, [west]], ["_resetTimer", false, [false]]];
+	[_side, _resetTimer] call FUNC(forceRespawnWave);
+}] call CBA_fnc_addEventHandler;
+
+[QGVAR(setTickectCountEH), {
+	params [["_side", nil, [west]], ["_count", 0, [0]]];
+	[_side, _count] call FUNC(setTicketCount);
+}] call CBA_fnc_addEventHandler;

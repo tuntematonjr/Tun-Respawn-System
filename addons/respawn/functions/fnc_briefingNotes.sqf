@@ -112,3 +112,5 @@ if !(player diarySubjectExists QEGVAR(main,briefing)) then {
 };
 
 player createDiaryRecord [QEGVAR(main,briefing),[LLSTRING(Briefing_RespawnInfoTab), _text]];
+
+player createDiaryRecord [QEGVAR(main,briefing),[LLSTRING(Briefing_AdminInfoTab), LLSTRING(Briefing_AdminText)]];

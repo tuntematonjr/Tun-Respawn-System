@@ -35,4 +35,80 @@ GVAR(flagPolesHash) = createHashMapFromArray [[west,[objNull,objNull]],[east,[ob
 
 #include "initSettings.inc.sqf"
 
+
+["force_respawn", {
+	private _param = toLower(_this select 0);
+	private _text = "Respawned side: ";
+	private _side = sideLogic;
+	
+	switch (_param) do {
+		case "west": { 
+			_side = west;
+			_text = _text + "west";
+		};
+		case "east": { 
+			_side = east;
+			_text = _text + "east";
+		};
+		case "resistance": { 
+			_side = resistance;
+			_text = _text + "resistance";
+		};
+		case "civilian": { 
+			_side = civilian;
+			_text = _text + "civilian";
+		};
+		default { 
+			_text = "Side was not valid, must be: west, east, resistance or civilian";
+		};
+	};
+
+	if (_side isNotEqualTo sideLogic) then {
+		[QGVAR(forceRespawnWaveEH), [_side]] call CBA_fnc_serverEvent;
+	};
+
+	player sideChat _text;
+}, "admin"] call CBA_fnc_registerChatCommand;
+
+["set_tickets", {
+	if (GVAR(respawnType) isNotEqualTo 1) exitWith { player sideChat "Not using side tickets"; };
+	private _params = (_this select 0) splitString ",";
+	_params params["_param","_count"];
+	_count = parseNumber _count;
+
+	if !(IS_NUMBER(_count)) exitWith {
+		player sideChat "#set_tickets needs params side,count seperated by coma. example: #set_tickets west,72";
+	};
+	
+	private _side = sideLogic;
+	private _text = "Set new tickect count for ";
+
+	switch (_param) do {
+		case "west": { 
+			_side = west;
+			_text = _text + "west";
+		};
+		case "east": { 
+			_side = east;
+			_text = _text + "east";
+		};
+		case "resistance": { 
+			_side = resistance;
+			_text = _text + "resistance";
+		};
+		case "civilian": { 
+			_side = civilian;
+			_text = _text + "civilian";
+		};
+		default { 
+			_text = "Side was not valid, must be: west, east, resistance or civilian";
+		};
+	};
+
+	if (_side isNotEqualTo sideLogic) then {
+		[QGVAR(setTickectCountEH), [_side,_count]] call CBA_fnc_serverEvent;
+	};
+	player sideChat _text;
+}, "admin"] call CBA_fnc_registerChatCommand;
+
 ADDON = true;

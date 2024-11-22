@@ -429,5 +429,13 @@
             <Original>Get over here!</Original>
             <English>Get over here!</English>
         </Key>
+        <Key ID="STR_tunres_respawn_Briefing_AdminText">
+            <English>Admin can use the following chat commands:&lt;br/&gt;&lt;br/&gt;- #force_respawn: Requires a side variable (west,east,resistance,civilian).&lt;br/&gt;Example: #force_respawn resistance — This will force a respawn wave for the resistance side.&lt;br/&gt;&lt;br/&gt;- #set_tickets: Requires a side (west,east,resistance,civilian) and a count (number) separated by a comma.&lt;br/&gt;Example: #set_tickets east,66 — This sets the ticket count for the specified side. Works only for side tickets.</English>
+            <Original>Admin can use the following chat commands:&lt;br/&gt;&lt;br/&gt;- #force_respawn: Requires a side variable (west,east,resistance,civilian).&lt;br/&gt;Example: #force_respawn resistance — This will force a respawn wave for the resistance side.&lt;br/&gt;&lt;br/&gt;- #set_tickets: Requires a side (west,east,resistance,civilian) and a count (number) separated by a comma.&lt;br/&gt;Example: #set_tickets east,66 — This sets the ticket count for the specified side. Works only for side tickets.</Original>
+        </Key>
+        <Key ID="STR_tunres_respawn_Briefing_AdminInfoTab">
+            <English>Admin chat commands</English>
+            <Original>Admin chat commands</Original>
+        </Key>
     </Package>
 </Project>
