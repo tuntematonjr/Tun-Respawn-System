@@ -83,7 +83,7 @@ GVAR(flagPolesHash) = createHashMapFromArray [[west,[objNull,objNull]],[east,[ob
 	private _side = sideLogic;
 	private _text = "Set new tickect count for ";
 
-	switch ([_param] call CBA_fnc_trim) do { BIS_fnc_trimString
+	switch ([_param] call CBA_fnc_trim) do {
 		case "west": { 
 			_side = west;
 			_text = _text + "west";
