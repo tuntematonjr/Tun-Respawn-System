@@ -41,7 +41,7 @@ GVAR(flagPolesHash) = createHashMapFromArray [[west,[objNull,objNull]],[east,[ob
 	private _text = "Respawned side: ";
 	private _side = sideLogic;
 	
-	switch (_param) do {
+	switch  ([_param] call CBA_fnc_trim) do {
 		case "west": { 
 			_side = west;
 			_text = _text + "west";
@@ -74,7 +74,7 @@ GVAR(flagPolesHash) = createHashMapFromArray [[west,[objNull,objNull]],[east,[ob
 	if (GVAR(respawnType) isNotEqualTo 1) exitWith { player sideChat "Not using side tickets"; };
 	private _params = (_this select 0) splitString ",";
 	_params params["_param","_count"];
-	_count = parseNumber _count;
+	_count = parseNumber ([_count] call CBA_fnc_trim); 
 
 	if !(IS_NUMBER(_count)) exitWith {
 		player sideChat "#set_tickets needs params side,count seperated by coma. example: #set_tickets west,72";
@@ -83,7 +83,7 @@ GVAR(flagPolesHash) = createHashMapFromArray [[west,[objNull,objNull]],[east,[ob
 	private _side = sideLogic;
 	private _text = "Set new tickect count for ";
 
-	switch (_param) do {
+	switch ([_param] call CBA_fnc_trim) do { BIS_fnc_trimString
 		case "west": { 
 			_side = west;
 			_text = _text + "west";
