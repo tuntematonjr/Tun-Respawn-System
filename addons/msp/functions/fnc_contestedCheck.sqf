@@ -14,8 +14,8 @@
 params [["_side", nil,[west]]];
 
 if (!isServer) exitWith {};
-private _oldAllowRespawnStatus = GVAR(allowRespawnHash) get _side;
-GVAR(allowRespawnHash) set [_side, false];
+private _oldAllowRespawnStatus = EGVAR(respawn,allowRespawnHash) get _side;
+EGVAR(respawn,allowRespawnHash) set [_side, false];
 
 private _values = GVAR(contestValuesHash) get _side;
 private _contestedRadiusMax = _values param [2];
@@ -102,4 +102,5 @@ if ( _mspDeployementStatus && { !(isNull _msp) } ) then {
 	};
 };
 
-GVAR(allowRespawnHash) set [_side, _oldAllowRespawnStatus];
+EGVAR(respawn,allowRespawnHash) set [_side, _oldAllowRespawnStatus];
+publicVariable QEGVAR(respawn,allowRespawnHash);
