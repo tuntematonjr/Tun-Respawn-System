@@ -69,12 +69,15 @@ if (count _waitingRespawn > 0) then {
 			
 			_waitingRespawnHash set [_side, _waitingRespawnDelayed];
 			_waitingRespawnDelayedHash set [_side, []];
+
+			[QGVAR(updateWaitRespawnCountEH), [_side,true]] call CBA_fnc_serverEvent;
+			[QGVAR(updateWaitRespawnCountEH), [_side,false]] call CBA_fnc_serverEvent;
 		};
 
 		private _unit = _unitList select 0;
 		private _text = format["respawn unit: %1",_unit];
 		LOG(_text);
-		[QGVAR(respawnUnitEH), [_side, _unit]] call CBA_fnc_serverEvent;
+		[QGVAR(respawnUnitEH), [_side, _unit, true]] call CBA_fnc_serverEvent;
 	}, 0.2, [_side, _waitingRespawnHash, _waitingRespawnDelayedHash]] call CBA_fnc_addPerFrameHandler;
 
 	private _waitingRespawnCount = count _waitingRespawn;

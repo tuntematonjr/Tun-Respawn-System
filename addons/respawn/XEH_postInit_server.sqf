@@ -85,13 +85,13 @@ if ( EGVAR(main,AAR_Enabled) ) then {
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(updateWaitingRespawnListEH), {
-	params [["_player", nil, [objNull]], ["_addPlayer", nil, [false]], ["_side", nil, [west]]];
-	[_player, _addPlayer, _side] call FUNC(updateWaitingRespawnList);
+	params [["_player", nil, [objNull]], ["_addPlayer", nil, [false]], ["_side", nil, [west]], ["_skipWaitingCountUpdate", false, [false]]];
+	[_player, _addPlayer, _side, _skipWaitingCountUpdate] call FUNC(updateWaitingRespawnList);
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(respawnUnitEH), {
-	params [["_side", nil, [west]], ["_unit", objNull, [objNull]]];
-	[_side, _unit] call FUNC(respawnUnit);
+	params [["_side", nil, [west]], ["_unit", objNull, [objNull]], ["_skipWaitingCountUpdate", false, [false]]];
+	[_side, _unit,_skipWaitingCountUpdate] call FUNC(respawnUnit);
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(updateRespawnCountEH), {
@@ -107,4 +107,9 @@ if ( EGVAR(main,AAR_Enabled) ) then {
 [QGVAR(setTickectCountEH), {
 	params [["_side", nil, [west]], ["_count", 0, [0]]];
 	[_side, _count] call FUNC(setTicketCount);
+}] call CBA_fnc_addEventHandler;
+
+[QGVAR(updateWaitRespawnCountEH), {
+	params [["_side", nil, [west]], ["_updateDelayed", false, [false]]];
+	[_side, _updateDelayed] call FUNC(updateWaitingRespawnCount);
 }] call CBA_fnc_addEventHandler;

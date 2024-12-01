@@ -13,11 +13,11 @@
  * [_side, _unit] call tunres_Respawn_fnc_respawnUnit
  */
 #include "script_component.hpp"
-params [["_side", nil, [west]], ["_unit", objNull, [objNull]]];
+params [["_side", nil, [west]], ["_unit", objNull, [objNull]], ["_skipWaitingCountUpdate", false, [false]]];
 private _respawnPointsHash = GVAR(respawnPointsHash);
 private _respawnPosition = getMarkerPos ((_respawnPointsHash get _side) select 0);
 
-[QGVAR(updateWaitingRespawnListEH), [_unit, false, _side]] call CBA_fnc_serverEvent;
+[QGVAR(updateWaitingRespawnListEH), [_unit, false, _side, _skipWaitingCountUpdate]] call CBA_fnc_serverEvent;
 
 _unit setVariable [QGVAR(isWaitingRespawn), false, true];
 _unit setVariable [QGVAR(skipNextWave), nil, true];

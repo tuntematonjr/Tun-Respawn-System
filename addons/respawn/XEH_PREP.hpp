@@ -42,5 +42,6 @@ PREP(updateClientsTicketCount);
 PREP(updateRespawnCount);
 PREP(updateRespawnMarkers);
 PREP(updateRespawnPoint);
+PREP(updateWaitingRespawnCount);
 PREP(updateWaitingRespawnList);
 PREP(waitingArea);
