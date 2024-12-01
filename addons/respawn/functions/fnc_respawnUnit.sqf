@@ -20,7 +20,7 @@ private _respawnPosition = getMarkerPos ((_respawnPointsHash get _side) select 0
 [QGVAR(updateWaitingRespawnListEH), [_unit, false, _side]] call CBA_fnc_serverEvent;
 
 _unit setVariable [QGVAR(isWaitingRespawn), false, true];
-player setVariable [QGVAR(skipNextWave), nil];
+_unit setVariable [QGVAR(skipNextWave), nil, true];
 
 private _text = LLSTRING(FNC_moveRespawnText);
 
