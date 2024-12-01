@@ -10,7 +10,7 @@
  * How many has respawned <NUMBER>
  *
  * Example:
- * [] call tunres_Respawn_fnc_upddateRespawnCount
+ * [] call tunres_Respawn_fnc_updateRespawnCount
  */
 #include "script_component.hpp"
 if (!isServer) exitWith { };

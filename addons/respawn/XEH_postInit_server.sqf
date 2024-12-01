@@ -96,7 +96,7 @@ if ( EGVAR(main,AAR_Enabled) ) then {
 
 [QGVAR(updateRespawnCountEH), {
 	params [["_side", nil, [west]], ["_count", 0, [0]]];
-	[_side, _count] call FUNC(upddateRespawnCount);
+	[_side, _count] call FUNC(updateRespawnCount);
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(forceRespawnWaveEH), {
