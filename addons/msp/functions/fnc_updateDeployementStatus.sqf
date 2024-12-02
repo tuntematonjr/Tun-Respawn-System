@@ -27,11 +27,11 @@ if (_setup) then {
 
 	//force player out from MSP and LOCK it
 	{
-	    [_x, ["getOut", _msp]] remoteExecCall ["action", _x];
+		[_x, ["getOut", _msp]] remoteExecCall ["action", _x];
 	} forEach crew _msp;
 
 	[{count crew _this isEqualTo 0}, {
-	    [_this, 2] remoteExecCall ["lock", _this];
+		[_this, 2] remoteExecCall ["lock", _this];
 	}, _msp] call CBA_fnc_waitUntilAndExecute;
 
 } else {

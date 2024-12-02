@@ -23,7 +23,7 @@ params [["_enable", true]];
 
 if (_enable) then {
 	if (cba_missiontime > 1) exitWith {
-        [QEGVAR(main,doNotification), [LLSTRING(checkContestCantUse)]] call CBA_fnc_localEvent;
+		[QEGVAR(main,doNotification), [LLSTRING(checkContestCantUse)]] call CBA_fnc_localEvent;
 	};
 
 	if (!isNil QGVAR(checkContestZoneMarkersBriefingEH)) exitWith {

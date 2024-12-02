@@ -9,9 +9,9 @@
 #define REQUIRED_VERSION 2.18
 
 #ifdef COMPONENT_BEAUTIFIED
-    #define COMPONENT_NAME QUOTE(tunres - COMPONENT_BEAUTIFIED)
+	#define COMPONENT_NAME QUOTE(tunres - COMPONENT_BEAUTIFIED)
 #else
-    #define COMPONENT_NAME QUOTE(tunres - COMPONENT)
+	#define COMPONENT_NAME QUOTE(tunres - COMPONENT)
 #endif
 
 //This forces debug on everything.

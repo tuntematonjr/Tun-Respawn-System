@@ -26,7 +26,7 @@ private _pos = getPosASL _target;
 GVAR(contestMarkerMapEH) = addMissionEventHandler ["Map", {
 	params ["_mapIsOpened", "_mapIsForced"];
 	if !(_mapIsOpened) then {
-    	removeMissionEventHandler ["Map", GVAR(contestMarkerMapEH)];
+		removeMissionEventHandler ["Map", GVAR(contestMarkerMapEH)];
 		[] call FUNC(deleteContestZoneMarkers);
 		QEGVAR(Respawn,RespawnPosLocal) setMarkerAlphaLocal 1;
 	};

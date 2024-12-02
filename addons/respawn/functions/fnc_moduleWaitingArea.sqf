@@ -23,7 +23,7 @@ private _flagTexture = _logic getVariable [QGVAR(flagTexture),""];
 
 if (_markername isEqualTo "none") exitWith {  // Exit if no side
 	private _errorText = LLSTRING(Module_WaitingArea_novalue);
-    ERROR_MSG(_errorText); 
+	ERROR_MSG(_errorText); 
 	false 
 };
 
@@ -33,7 +33,7 @@ if (getMarkerColor _markername isEqualTo "") then {
 } else {
 	private _errorText = LLSTRING(Module_WaitingArea_MultipleMarkers);
 	_errorText = format [_errorText, _markername];
-    ERROR_MSG(_errorText);
+	ERROR_MSG(_errorText);
 };
 
 private _pos = getPosASL _logic;

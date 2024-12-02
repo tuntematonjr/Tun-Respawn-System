@@ -1,281 +1,281 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="TunRes MSP">
-    <Package name="MSP">
-        <Key ID="STR_tunres_msp_AceAction_CheckIfMspContested">
-            <Original>Check if MSP is contested</Original>
-            <English>Check if MSP is contested</English>
-        </Key>
-        <Key ID="STR_tunres_msp_AceAction_CheckMspContestedArea">
-            <Original>Check contest area</Original>
-            <English>Check contest area</English>
-        </Key>
-        <Key ID="STR_tunres_msp_AceAction_DeployMSP">
-            <Original>Deploy MSP</Original>
-            <English>Deploy MSP</English>
-        </Key>
-        <Key ID="STR_tunres_msp_AceAction_PackMSP">
-            <Original>Pack MSP</Original>
-            <English>Pack MSP</English>
-        </Key>
-        <Key ID="STR_tunres_msp_AceAction_RespawnActions">
-            <Original>Respawn Actions</Original>
-            <English>Respawn Actions</English>
-        </Key>
-        <Key ID="STR_tunres_msp_Briefing_AreaContestCheckCategory">
-            <Original>MSP check contest area</Original>
-            <English>MSP check contest area</English>
-        </Key>
-        <Key ID="STR_tunres_msp_Briefing_AreaContestCheckText">
-            <Original>After enabling, you can click on the map during the briefing, and it will create contest area markers.</Original>
-            <English>After enabling, you can click on the map during the briefing, and it will create contest area markers.</English>
-        </Key>
-        <Key ID="STR_tunres_msp_Briefing_Category">
-            <Original>MSP info</Original>
-            <English>MSP info</English>
-        </Key>
-        <Key ID="STR_tunres_msp_Briefing_CheckTicketsMsp">
-            <Original>You can check remaining tickets from MSP using ACE actions.</Original>
-            <English>You can check remaining tickets from MSP using ACE actions.</English>
-        </Key>
-        <Key ID="STR_tunres_msp_Briefing_ContestedCheck">
-            <Original>MSP contested status is updated every %2s.&lt;br/&gt;It will be contested if there are more enemies inside a %3m radius or even if one enemy is %4m away from it.</Original>
-            <English>MSP contested status is updated every %2s.&lt;br/&gt;It will be contested if there are more enemies inside a %3m radius or even if one enemy is %4m away from it.</English>
-        </Key>
-        <Key ID="STR_tunres_msp_Briefing_DisableAreaContestCheck">
-            <Original>Disable contest area check.</Original>
-            <English>Disable contest area check.</English>
-        </Key>
-        <Key ID="STR_tunres_msp_Briefing_EnableAreaContestCheck">
-            <Original>Enable contest area check.</Original>
-            <English>Enable contest area check.</English>
-        </Key>
-        <Key ID="STR_tunres_msp_Briefing_Header">
-            <Original>MSP settings</Original>
-            <English>MSP settings</English>
-        </Key>
-        <Key ID="STR_tunres_msp_Briefing_MspDisabled">
-            <Original>Mobile Spawn Point (MSP) has been enabled for this mission, but your side does not have MSP.</Original>
-            <English>Mobile Spawn Point (MSP) has been enabled for this mission, but your side does not have MSP.</English>
-        </Key>
-        <Key ID="STR_tunres_msp_Briefing_MspEnabled">
-            <Original>Mobile Spawn Point (MSP) has been enabled for your side in this mission.</Original>
-            <English>Mobile Spawn Point (MSP) has been enabled for your side in this mission.</English>
-        </Key>
-        <Key ID="STR_tunres_msp_Briefing_MspVehicle">
-            <Original>MSP vehicle is: %2.</Original>
-            <English>MSP vehicle is: %2.</English>
-        </Key>
-        <Key ID="STR_tunres_msp_Briefing_reportEnemiesDisabled">
-            <Original>The MSP's enemy reporting feature is disabled for this mission.</Original>
-            <English>The MSP's enemy reporting feature is disabled for this mission.</English>
-        </Key>
-        <Key ID="STR_tunres_msp_Briefing_reportEnemiesEnabled">
-            <Original>Once the MSP is deployed, it will report the presence of enemies within a %3 meter radius every %2 seconds.</Original>
-            <English>Once the MSP is deployed, it will report the presence of enemies within a %3 meter radius every %2 seconds.</English>
-        </Key>
-        <Key ID="STR_tunres_msp_CBA_Category_contestedCivilian">
-            <Original>Contested settings for the Civilian</Original>
-            <English>Contested settings for the Civilian</English>
-        </Key>
-        <Key ID="STR_tunres_msp_CBA_Category_contestedEast">
-            <Original>Contested settings for the East</Original>
-            <English>Contested settings for the East</English>
-        </Key>
-        <Key ID="STR_tunres_msp_CBA_Category_contestedResistance">
-            <Original>Contested settings for the Resistance</Original>
-            <English>Contested settings for the Resistance</English>
-        </Key>
-        <Key ID="STR_tunres_msp_CBA_Category_contestedWest">
-            <Original>Spectator allowed sides for West</Original>
-            <English>Contested settings for the West</English>
-        </Key>
-        <Key ID="STR_tunres_msp_CBA_Category_main">
-            <Original>TUN - Mobile Spawn Point</Original>
-            <English>TUN - Mobile Spawn Point</English>
-        </Key>
-        <Key ID="STR_tunres_msp_CBA_Category_progres">
-            <Original>Progress Bar</Original>
-            <English>Progress Bar</English>
-        </Key>
-        <Key ID="STR_tunres_msp_CBA_Enable">
-            <Original>Enable MSP</Original>
-            <English>Enable MSP</English>
-        </Key>
-        <Key ID="STR_tunres_msp_CBA_allowCheckTicketsMSP">
-            <Original>Check tickets from MSP</Original>
-            <English>Check tickets from MSP</English>
-        </Key>
-        <Key ID="STR_tunres_msp_CBA_classname">
-            <Original>MSP Classname</Original>
-            <English>MSP Classname</English>
-        </Key>
-        <Key ID="STR_tunres_msp_CBA_classname_civilian">
-            <Original>Civilian MSP Classname</Original>
-            <English>Civilian MSP Classname</English>
-        </Key>
-        <Key ID="STR_tunres_msp_CBA_classname_east">
-            <Original>East MSP Classname</Original>
-            <English>East MSP Classname</English>
-        </Key>
-        <Key ID="STR_tunres_msp_CBA_classname_resistance">
-            <Original>Resistance MSP Classname</Original>
-            <English>Resistance MSP Classname</English>
-        </Key>
-        <Key ID="STR_tunres_msp_CBA_classname_west">
-            <Original>West MSP Classname</Original>
-            <English>West MSP Classname</English>
-        </Key>
-        <Key ID="STR_tunres_msp_CBA_contestedCheckInterval">
-            <Original>Contested Check Interval</Original>
-            <English>Contested Check Interval</English>
-        </Key>
-        <Key ID="STR_tunres_msp_CBA_contestedRadiusMax">
-            <Original>Maximum Contested Radius</Original>
-            <English>Maximum Contested Radius</English>
-        </Key>
-        <Key ID="STR_tunres_msp_CBA_contestedRadiusMin">
-            <Original>Minimum Contested Radius</Original>
-            <English>Minimum Contested Radius</English>
-        </Key>
-        <Key ID="STR_tunres_msp_CBA_notificationCategory">
-            <Original>Notifications</Original>
-            <English>Notifications</English>
-        </Key>
-        <Key ID="STR_tunres_msp_CBA_pack_progresbar">
-            <Original>Pack time</Original>
-            <English>Pack time</English>
-        </Key>
-        <Key ID="STR_tunres_msp_CBA_reportEnemiesEnabled">
-            <Original>Report Enemies</Original>
-            <English>Report Enemies</English>
-        </Key>
-        <Key ID="STR_tunres_msp_CBA_reportEnemiesIntervala">
-            <Original>Report Enemies Interval</Original>
-            <English>Report Enemies Interval</English>
-        </Key>
-        <Key ID="STR_tunres_msp_CBA_reportEnemiesRange">
-            <Original>Report Enemies Range</Original>
-            <English>Report Enemies Range</English>
-        </Key>
-        <Key ID="STR_tunres_msp_CBA_setup_progresbar">
-            <Original>Deploy time</Original>
-            <English>Deploy time</English>
-        </Key>
-        <Key ID="STR_tunres_msp_CBA_tooltip_Enable">
-            <Original>Enable MSP system</Original>
-            <English>Enable MSP system</English>
-        </Key>
-        <Key ID="STR_tunres_msp_CBA_tooltip_classname">
-            <Original>Put the vehicle classname which will be used as MSP. All vehicles of that type can be used as MSP. Use the non-string version of the classname like: B_MRAP_01_F. Only one type of vehicle is supported currently.</Original>
-            <English>Put the vehicle classname which will be used as MSP. All vehicles of that type can be used as MSP. Use the non-string version of the classname like: B_MRAP_01_F. Only one type of vehicle is supported currently.</English>
-        </Key>
-        <Key ID="STR_tunres_msp_CBA_tooltip_contestedCheckInterval">
-            <Original>Interval for when the server updates the contested status for MSP, for this side</Original>
-            <English>Interval for when the server updates the contested status for MSP, for this side</English>
-        </Key>
-        <Key ID="STR_tunres_msp_CBA_tooltip_contested_max">
-            <Original>Radius where there need to be more enemies than allies to disable MSP (meters), for this side</Original>
-            <English>Radius where there need to be more enemies than allies to disable MSP (meters), for this side</English>
-        </Key>
-        <Key ID="STR_tunres_msp_CBA_tooltip_contested_min">
-            <Original>When there are enemies inside this radius, MSP is always disabled, even if there are more friendlies within the maximum range (in meters), for this side.</Original>
-            <English>When there are enemies inside this radius, MSP is always disabled, even if there are more friendlies within the maximum range (in meters), for this side.</English>
-        </Key>
-        <Key ID="STR_tunres_msp_CBA_tooltip_pack_progresbar">
-            <Original>Time it takes to pack MSP (seconds)</Original>
-            <English>Time it takes to pack MSP (seconds)</English>
-        </Key>
-        <Key ID="STR_tunres_msp_CBA_tooltip_reportEnemiesEnabled">
-            <Original>Enable Reporting Enemies near MSP, for this side</Original>
-            <English>Enable Reporting Enemies near MSP, for this side</English>
-        </Key>
-        <Key ID="STR_tunres_msp_CBA_tooltip_reportEnemiesInterval">
-            <Original>Interval when the server checks if there are enemies near MSP, for this side</Original>
-            <English>Interval when the server checks if there are enemies near MSP, for this side</English>
-        </Key>
-        <Key ID="STR_tunres_msp_CBA_tooltip_reportEnemiesRange">
-            <Original>Range from MSP where enemies are reported (meters), for this side</Original>
-            <English>Range from MSP where enemies are reported (meters), for this side</English>
-        </Key>
-        <Key ID="STR_tunres_msp_CBA_tooltip_setup_ProgressBar">
-            <Original>Time it takes to deploy MSP (seconds)</Original>
-            <English>Time it takes to deploy MSP (seconds)</English>
-        </Key>
-        <Key ID="STR_tunres_msp_CBA_whoGetsContestedNotification">
-            <Original>Who receives notifications when MSP is contested?</Original>
-            <English>Who receives notifications when MSP is contested?</English>
-        </Key>
-        <Key ID="STR_tunres_msp_CBA_whoGetsContestedNotification_Tooltip">
-            <Original>When MSP is contested, who will receive notifications from it. Default: Group Leader</Original>
-            <English>When MSP is contested, who will receive notifications from it. Default: Group Leader</English>
-        </Key>
-        <Key ID="STR_tunres_msp_CBA_whoGetsReportEnemiesNotification">
-            <Original>Who should be notified when enemies are near MSP?</Original>
-            <English>Who should be notified when enemies are near MSP?</English>
-        </Key>
-        <Key ID="STR_tunres_msp_CBA_whoGetsReportEnemies_Tooltip">
-            <Original>When enemies are near MSP, who will receive notifications from it. Default: Group Leader</Original>
-            <English>When enemies are near MSP, who will receive notifications from it. Default: Group Leader</English>
-        </Key>
-        <Key ID="STR_tunres_msp_CBA_whoGetsSetUpNotification">
-            <Original>Who receives MSP deploy/pack notifications?</Original>
-            <English>Who receives MSP deploy/pack notifications?</English>
-        </Key>
-        <Key ID="STR_tunres_msp_CBA_whoGetsSetUpNotification_Tooltip">
-            <Original>When MSP is deployed or packed up, who will receive notifications from it. Default: Group Leader</Original>
-            <English>When MSP is deployed or packed up, who will receive notifications from it. Default: Group Leader</English>
-        </Key>
-        <Key ID="STR_tunres_msp_DeployementAborted">
-            <Original>MSP deployement aborted!</Original>
-            <English>MSP deployement aborted!</English>
-        </Key>
-        <Key ID="STR_tunres_msp_FNC_Contested_hint">
-            <Original>MSP has been contested!\nRespawn position has been updated.</Original>
-            <English>MSP has been contested!\nRespawn position has been updated.</English>
-        </Key>
-        <Key ID="STR_tunres_msp_FNC_enemies_near">
-            <Original>Enemies spotted near MSP!</Original>
-            <English>Enemies spotted near MSP!</English>
-        </Key>
-        <Key ID="STR_tunres_msp_FNC_secured_hint">
-            <Original>MSP has been secured!\nRespawn position has been updated.</Original>
-            <English>MSP has been secured!\nRespawn position has been updated.</English>
-        </Key>
-        <Key ID="STR_tunres_msp_IsContested">
-            <Original>MSP is contested</Original>
-            <English>MSP is contested</English>
-        </Key>
-        <Key ID="STR_tunres_msp_NotContested">
-            <Original>MSP is not contested</Original>
-            <English>MSP is not contested</English>
-        </Key>
-        <Key ID="STR_tunres_msp_TpText">
-            <Original>Mobile spawn point</Original>
-            <English>Mobile spawn point</English>
-        </Key>
-        <Key ID="STR_tunres_msp_checkContestCantUse">
-            <Original>Can't be used during mission!</Original>
-            <English>Can't be used during mission!</English>
-        </Key>
-        <Key ID="STR_tunres_msp_destroyed">
-            <Original>MSP has been destroyed!</Original>
-            <English>MSP has been destroyed!</English>
-        </Key>
-        <Key ID="STR_tunres_msp_fnc_startUpdateDeployementStatus_packing">
-            <Original>Packing MSP</Original>
-            <English>Packing MSP</English>
-        </Key>
-        <Key ID="STR_tunres_msp_fnc_startUpdateDeployementStatus_setting">
-            <Original>Setting up MSP</Original>
-            <English>Setting up MSP</English>
-        </Key>
-        <Key ID="STR_tunres_msp_pack_notification">
-            <Original>MSP has been packed!\nRespawn position has been updated.</Original>
-            <English>MSP has been packed!\nRespawn position has been updated.</English>
-        </Key>
-        <Key ID="STR_tunres_msp_setup_notification">
-            <Original>MSP has been deployed!\nRespawn position has been updated.</Original>
-            <English>MSP has been deployed!\nRespawn position has been updated.</English>
-        </Key>
-    </Package>
+	<Package name="MSP">
+		<Key ID="STR_tunres_msp_AceAction_CheckIfMspContested">
+			<Original>Check if MSP is contested</Original>
+			<English>Check if MSP is contested</English>
+		</Key>
+		<Key ID="STR_tunres_msp_AceAction_CheckMspContestedArea">
+			<Original>Check contest area</Original>
+			<English>Check contest area</English>
+		</Key>
+		<Key ID="STR_tunres_msp_AceAction_DeployMSP">
+			<Original>Deploy MSP</Original>
+			<English>Deploy MSP</English>
+		</Key>
+		<Key ID="STR_tunres_msp_AceAction_PackMSP">
+			<Original>Pack MSP</Original>
+			<English>Pack MSP</English>
+		</Key>
+		<Key ID="STR_tunres_msp_AceAction_RespawnActions">
+			<Original>Respawn Actions</Original>
+			<English>Respawn Actions</English>
+		</Key>
+		<Key ID="STR_tunres_msp_Briefing_AreaContestCheckCategory">
+			<Original>MSP check contest area</Original>
+			<English>MSP check contest area</English>
+		</Key>
+		<Key ID="STR_tunres_msp_Briefing_AreaContestCheckText">
+			<Original>After enabling, you can click on the map during the briefing, and it will create contest area markers.</Original>
+			<English>After enabling, you can click on the map during the briefing, and it will create contest area markers.</English>
+		</Key>
+		<Key ID="STR_tunres_msp_Briefing_Category">
+			<Original>MSP info</Original>
+			<English>MSP info</English>
+		</Key>
+		<Key ID="STR_tunres_msp_Briefing_CheckTicketsMsp">
+			<Original>You can check remaining tickets from MSP using ACE actions.</Original>
+			<English>You can check remaining tickets from MSP using ACE actions.</English>
+		</Key>
+		<Key ID="STR_tunres_msp_Briefing_ContestedCheck">
+			<Original>MSP contested status is updated every %2s.&lt;br/&gt;It will be contested if there are more enemies inside a %3m radius or even if one enemy is %4m away from it.</Original>
+			<English>MSP contested status is updated every %2s.&lt;br/&gt;It will be contested if there are more enemies inside a %3m radius or even if one enemy is %4m away from it.</English>
+		</Key>
+		<Key ID="STR_tunres_msp_Briefing_DisableAreaContestCheck">
+			<Original>Disable contest area check.</Original>
+			<English>Disable contest area check.</English>
+		</Key>
+		<Key ID="STR_tunres_msp_Briefing_EnableAreaContestCheck">
+			<Original>Enable contest area check.</Original>
+			<English>Enable contest area check.</English>
+		</Key>
+		<Key ID="STR_tunres_msp_Briefing_Header">
+			<Original>MSP settings</Original>
+			<English>MSP settings</English>
+		</Key>
+		<Key ID="STR_tunres_msp_Briefing_MspDisabled">
+			<Original>Mobile Spawn Point (MSP) has been enabled for this mission, but your side does not have MSP.</Original>
+			<English>Mobile Spawn Point (MSP) has been enabled for this mission, but your side does not have MSP.</English>
+		</Key>
+		<Key ID="STR_tunres_msp_Briefing_MspEnabled">
+			<Original>Mobile Spawn Point (MSP) has been enabled for your side in this mission.</Original>
+			<English>Mobile Spawn Point (MSP) has been enabled for your side in this mission.</English>
+		</Key>
+		<Key ID="STR_tunres_msp_Briefing_MspVehicle">
+			<Original>MSP vehicle is: %2.</Original>
+			<English>MSP vehicle is: %2.</English>
+		</Key>
+		<Key ID="STR_tunres_msp_Briefing_reportEnemiesDisabled">
+			<Original>The MSP's enemy reporting feature is disabled for this mission.</Original>
+			<English>The MSP's enemy reporting feature is disabled for this mission.</English>
+		</Key>
+		<Key ID="STR_tunres_msp_Briefing_reportEnemiesEnabled">
+			<Original>Once the MSP is deployed, it will report the presence of enemies within a %3 meter radius every %2 seconds.</Original>
+			<English>Once the MSP is deployed, it will report the presence of enemies within a %3 meter radius every %2 seconds.</English>
+		</Key>
+		<Key ID="STR_tunres_msp_CBA_Category_contestedCivilian">
+			<Original>Contested settings for the Civilian</Original>
+			<English>Contested settings for the Civilian</English>
+		</Key>
+		<Key ID="STR_tunres_msp_CBA_Category_contestedEast">
+			<Original>Contested settings for the East</Original>
+			<English>Contested settings for the East</English>
+		</Key>
+		<Key ID="STR_tunres_msp_CBA_Category_contestedResistance">
+			<Original>Contested settings for the Resistance</Original>
+			<English>Contested settings for the Resistance</English>
+		</Key>
+		<Key ID="STR_tunres_msp_CBA_Category_contestedWest">
+			<Original>Spectator allowed sides for West</Original>
+			<English>Contested settings for the West</English>
+		</Key>
+		<Key ID="STR_tunres_msp_CBA_Category_main">
+			<Original>TUN - Mobile Spawn Point</Original>
+			<English>TUN - Mobile Spawn Point</English>
+		</Key>
+		<Key ID="STR_tunres_msp_CBA_Category_progres">
+			<Original>Progress Bar</Original>
+			<English>Progress Bar</English>
+		</Key>
+		<Key ID="STR_tunres_msp_CBA_Enable">
+			<Original>Enable MSP</Original>
+			<English>Enable MSP</English>
+		</Key>
+		<Key ID="STR_tunres_msp_CBA_allowCheckTicketsMSP">
+			<Original>Check tickets from MSP</Original>
+			<English>Check tickets from MSP</English>
+		</Key>
+		<Key ID="STR_tunres_msp_CBA_classname">
+			<Original>MSP Classname</Original>
+			<English>MSP Classname</English>
+		</Key>
+		<Key ID="STR_tunres_msp_CBA_classname_civilian">
+			<Original>Civilian MSP Classname</Original>
+			<English>Civilian MSP Classname</English>
+		</Key>
+		<Key ID="STR_tunres_msp_CBA_classname_east">
+			<Original>East MSP Classname</Original>
+			<English>East MSP Classname</English>
+		</Key>
+		<Key ID="STR_tunres_msp_CBA_classname_resistance">
+			<Original>Resistance MSP Classname</Original>
+			<English>Resistance MSP Classname</English>
+		</Key>
+		<Key ID="STR_tunres_msp_CBA_classname_west">
+			<Original>West MSP Classname</Original>
+			<English>West MSP Classname</English>
+		</Key>
+		<Key ID="STR_tunres_msp_CBA_contestedCheckInterval">
+			<Original>Contested Check Interval</Original>
+			<English>Contested Check Interval</English>
+		</Key>
+		<Key ID="STR_tunres_msp_CBA_contestedRadiusMax">
+			<Original>Maximum Contested Radius</Original>
+			<English>Maximum Contested Radius</English>
+		</Key>
+		<Key ID="STR_tunres_msp_CBA_contestedRadiusMin">
+			<Original>Minimum Contested Radius</Original>
+			<English>Minimum Contested Radius</English>
+		</Key>
+		<Key ID="STR_tunres_msp_CBA_notificationCategory">
+			<Original>Notifications</Original>
+			<English>Notifications</English>
+		</Key>
+		<Key ID="STR_tunres_msp_CBA_pack_progresbar">
+			<Original>Pack time</Original>
+			<English>Pack time</English>
+		</Key>
+		<Key ID="STR_tunres_msp_CBA_reportEnemiesEnabled">
+			<Original>Report Enemies</Original>
+			<English>Report Enemies</English>
+		</Key>
+		<Key ID="STR_tunres_msp_CBA_reportEnemiesIntervala">
+			<Original>Report Enemies Interval</Original>
+			<English>Report Enemies Interval</English>
+		</Key>
+		<Key ID="STR_tunres_msp_CBA_reportEnemiesRange">
+			<Original>Report Enemies Range</Original>
+			<English>Report Enemies Range</English>
+		</Key>
+		<Key ID="STR_tunres_msp_CBA_setup_progresbar">
+			<Original>Deploy time</Original>
+			<English>Deploy time</English>
+		</Key>
+		<Key ID="STR_tunres_msp_CBA_tooltip_Enable">
+			<Original>Enable MSP system</Original>
+			<English>Enable MSP system</English>
+		</Key>
+		<Key ID="STR_tunres_msp_CBA_tooltip_classname">
+			<Original>Put the vehicle classname which will be used as MSP. All vehicles of that type can be used as MSP. Use the non-string version of the classname like: B_MRAP_01_F. Only one type of vehicle is supported currently.</Original>
+			<English>Put the vehicle classname which will be used as MSP. All vehicles of that type can be used as MSP. Use the non-string version of the classname like: B_MRAP_01_F. Only one type of vehicle is supported currently.</English>
+		</Key>
+		<Key ID="STR_tunres_msp_CBA_tooltip_contestedCheckInterval">
+			<Original>Interval for when the server updates the contested status for MSP, for this side</Original>
+			<English>Interval for when the server updates the contested status for MSP, for this side</English>
+		</Key>
+		<Key ID="STR_tunres_msp_CBA_tooltip_contested_max">
+			<Original>Radius where there need to be more enemies than allies to disable MSP (meters), for this side</Original>
+			<English>Radius where there need to be more enemies than allies to disable MSP (meters), for this side</English>
+		</Key>
+		<Key ID="STR_tunres_msp_CBA_tooltip_contested_min">
+			<Original>When there are enemies inside this radius, MSP is always disabled, even if there are more friendlies within the maximum range (in meters), for this side.</Original>
+			<English>When there are enemies inside this radius, MSP is always disabled, even if there are more friendlies within the maximum range (in meters), for this side.</English>
+		</Key>
+		<Key ID="STR_tunres_msp_CBA_tooltip_pack_progresbar">
+			<Original>Time it takes to pack MSP (seconds)</Original>
+			<English>Time it takes to pack MSP (seconds)</English>
+		</Key>
+		<Key ID="STR_tunres_msp_CBA_tooltip_reportEnemiesEnabled">
+			<Original>Enable Reporting Enemies near MSP, for this side</Original>
+			<English>Enable Reporting Enemies near MSP, for this side</English>
+		</Key>
+		<Key ID="STR_tunres_msp_CBA_tooltip_reportEnemiesInterval">
+			<Original>Interval when the server checks if there are enemies near MSP, for this side</Original>
+			<English>Interval when the server checks if there are enemies near MSP, for this side</English>
+		</Key>
+		<Key ID="STR_tunres_msp_CBA_tooltip_reportEnemiesRange">
+			<Original>Range from MSP where enemies are reported (meters), for this side</Original>
+			<English>Range from MSP where enemies are reported (meters), for this side</English>
+		</Key>
+		<Key ID="STR_tunres_msp_CBA_tooltip_setup_ProgressBar">
+			<Original>Time it takes to deploy MSP (seconds)</Original>
+			<English>Time it takes to deploy MSP (seconds)</English>
+		</Key>
+		<Key ID="STR_tunres_msp_CBA_whoGetsContestedNotification">
+			<Original>Who receives notifications when MSP is contested?</Original>
+			<English>Who receives notifications when MSP is contested?</English>
+		</Key>
+		<Key ID="STR_tunres_msp_CBA_whoGetsContestedNotification_Tooltip">
+			<Original>When MSP is contested, who will receive notifications from it. Default: Group Leader</Original>
+			<English>When MSP is contested, who will receive notifications from it. Default: Group Leader</English>
+		</Key>
+		<Key ID="STR_tunres_msp_CBA_whoGetsReportEnemiesNotification">
+			<Original>Who should be notified when enemies are near MSP?</Original>
+			<English>Who should be notified when enemies are near MSP?</English>
+		</Key>
+		<Key ID="STR_tunres_msp_CBA_whoGetsReportEnemies_Tooltip">
+			<Original>When enemies are near MSP, who will receive notifications from it. Default: Group Leader</Original>
+			<English>When enemies are near MSP, who will receive notifications from it. Default: Group Leader</English>
+		</Key>
+		<Key ID="STR_tunres_msp_CBA_whoGetsSetUpNotification">
+			<Original>Who receives MSP deploy/pack notifications?</Original>
+			<English>Who receives MSP deploy/pack notifications?</English>
+		</Key>
+		<Key ID="STR_tunres_msp_CBA_whoGetsSetUpNotification_Tooltip">
+			<Original>When MSP is deployed or packed up, who will receive notifications from it. Default: Group Leader</Original>
+			<English>When MSP is deployed or packed up, who will receive notifications from it. Default: Group Leader</English>
+		</Key>
+		<Key ID="STR_tunres_msp_DeployementAborted">
+			<Original>MSP deployement aborted!</Original>
+			<English>MSP deployement aborted!</English>
+		</Key>
+		<Key ID="STR_tunres_msp_FNC_Contested_hint">
+			<Original>MSP has been contested!\nRespawn position has been updated.</Original>
+			<English>MSP has been contested!\nRespawn position has been updated.</English>
+		</Key>
+		<Key ID="STR_tunres_msp_FNC_enemies_near">
+			<Original>Enemies spotted near MSP!</Original>
+			<English>Enemies spotted near MSP!</English>
+		</Key>
+		<Key ID="STR_tunres_msp_FNC_secured_hint">
+			<Original>MSP has been secured!\nRespawn position has been updated.</Original>
+			<English>MSP has been secured!\nRespawn position has been updated.</English>
+		</Key>
+		<Key ID="STR_tunres_msp_IsContested">
+			<Original>MSP is contested</Original>
+			<English>MSP is contested</English>
+		</Key>
+		<Key ID="STR_tunres_msp_NotContested">
+			<Original>MSP is not contested</Original>
+			<English>MSP is not contested</English>
+		</Key>
+		<Key ID="STR_tunres_msp_TpText">
+			<Original>Mobile spawn point</Original>
+			<English>Mobile spawn point</English>
+		</Key>
+		<Key ID="STR_tunres_msp_checkContestCantUse">
+			<Original>Can't be used during mission!</Original>
+			<English>Can't be used during mission!</English>
+		</Key>
+		<Key ID="STR_tunres_msp_destroyed">
+			<Original>MSP has been destroyed!</Original>
+			<English>MSP has been destroyed!</English>
+		</Key>
+		<Key ID="STR_tunres_msp_fnc_startUpdateDeployementStatus_packing">
+			<Original>Packing MSP</Original>
+			<English>Packing MSP</English>
+		</Key>
+		<Key ID="STR_tunres_msp_fnc_startUpdateDeployementStatus_setting">
+			<Original>Setting up MSP</Original>
+			<English>Setting up MSP</English>
+		</Key>
+		<Key ID="STR_tunres_msp_pack_notification">
+			<Original>MSP has been packed!\nRespawn position has been updated.</Original>
+			<English>MSP has been packed!\nRespawn position has been updated.</English>
+		</Key>
+		<Key ID="STR_tunres_msp_setup_notification">
+			<Original>MSP has been deployed!\nRespawn position has been updated.</Original>
+			<English>MSP has been deployed!\nRespawn position has been updated.</English>
+		</Key>
+	</Package>
 </Project>
