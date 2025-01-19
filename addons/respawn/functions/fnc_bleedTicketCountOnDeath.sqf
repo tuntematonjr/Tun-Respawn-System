@@ -37,7 +37,7 @@ if ( _player getVariable [QGVAR(isWaitingRespawn), false]) exitWith {
 
 private _remainingTickets = [_side, _player, false] call FUNC(getTicketCount);
 
-if !( _remainingTickets > 0 ) exitWith {
+if ( _remainingTickets <= 0 ) exitWith {
 	[{
 		[QGVAR(startSpectatorEH), "", _this] call CBA_fnc_targetEvent;
 	}, _player, 5] call CBA_fnc_waitAndExecute;
