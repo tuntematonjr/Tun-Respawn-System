@@ -14,7 +14,7 @@
 #include "script_component.hpp"
 params [["_unit", objNull, [objNull]], ["_godModeLenght", 30, [0]]];
 
-if (_unit isEqualTo objNull && {!local _unit}) exitWith {LOG("unit was objnull when adding god mode")};
+if (_unit isEqualTo objNull && {!local _unit}) exitWith {INFO("unit was objnull when adding god mode")};
 
 if (isDamageAllowed _unit) then {
 	_unit allowDamage false;

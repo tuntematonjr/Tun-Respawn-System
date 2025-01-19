@@ -17,7 +17,7 @@
 params [["_player", nil, [objNull]], ["_addPlayer", nil, [false]], ["_side", nil, [west]], ["_skipWaitingCountUpdate", false, [false]]];
 
 if (isNull _player || !(_player in allPlayers) || !alive _player ) exitWith {
-	LOG("Tried to add unit what is not there");
+	INFO("Tried to add unit what is not there");
 };
 
 {
