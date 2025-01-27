@@ -24,7 +24,7 @@ class CfgFactionClasses
 
 // configs go here
 #include "CfgEventHandlers.hpp"
-#include "\a3\ui_f\hpp\definecommoncolors.inc"
+#include "\a3\ui_f\hpp\defineCommonColors.inc"
 #include "RscCommon.hpp"
 #include "TP_dialog.hpp"
 #include "CfgVehicles.hpp"
