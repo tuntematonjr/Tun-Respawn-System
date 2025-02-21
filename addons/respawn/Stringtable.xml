@@ -1,441 +1,441 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="TunRes Respawn">
-	<Package name="Respawn">
-		<Key ID="STR_tunres_respawn_AceAction_CheckNextWaveTime">
-			<Original>Check respawn time until the next wave</Original>
-			<English>Check respawn time until the next wave</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_AceAction_Main">
-			<Original>Main</Original>
-			<English>Main</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Briefing_Category_Tickets">
-			<Original>Tickets</Original>
-			<English>Tickets</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Briefing_CheckTicketsMainbase">
-			<Original>You can check remaining tickets from the main base (flagpole) using ACE actions.</Original>
-			<English>You can check remaining tickets from the main base (flagpole) using ACE actions.</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Briefing_DelayedRespawn">
-			<Original>This mission has delayed respawn on. If there is less than %2min (%3%5 from %4min) remaining until the next wave, you will skip it.</Original>
-			<English>This mission has delayed respawn on. If there is less than %2min (%3%5 from %4min) remaining until the next wave, you will skip it.</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Briefing_DelayedRespawnOff">
-			<Original>This mission has delayed respawn off.</Original>
-			<English>This mission has delayed respawn off.</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Briefing_Header">
-			<Original>Respawn settings</Original>
-			<English>Respawn settings</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Briefing_RespawnInfoTab">
-			<Original>Respawn settings</Original>
-			<English>Respawn settings</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Briefing_RespawnMainCategory">
-			<Original>Tun - Respawn settings</Original>
-			<English>Tun - Respawn settings</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Briefing_TicketCount_civilian">
-			<Original>Ticket count: %2 (&lt;font color="#B040A7"&gt;Civilian&lt;/font&gt;)</Original>
-			<English>Ticket count: %2 (&lt;font color="#B040A7"&gt;Civilian&lt;/font&gt;)</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Briefing_TicketCount_east">
-			<Original>Ticket count: %2 (&lt;font color="#E60000"&gt;East&lt;/font&gt;)</Original>
-			<English>Ticket count: %2 (&lt;font color="#E60000"&gt;East&lt;/font&gt;)</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Briefing_TicketCount_resistance">
-			<Original>Ticket count: %2 (&lt;font color="#00CC00"&gt;Resistance&lt;/font&gt;)</Original>
-			<English>Ticket count: %2 (&lt;font color="#00CC00"&gt;Resistance&lt;/font&gt;)</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Briefing_TicketCount_west">
-			<Original>Ticket count: %2 (&lt;font color="#0000FF"&gt;West&lt;/font&gt;)</Original>
-			<English>Ticket count: %2 (&lt;font color="#0000FF"&gt;West&lt;/font&gt;)</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Briefing_WaveTime_civilian">
-			<Original>For &lt;font color="#B040A7"&gt;Civilian&lt;/font&gt; is %2 min</Original>
-			<English>For &lt;font color="#B040A7"&gt;Civilian&lt;/font&gt; is %2 min</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Briefing_WaveTime_east">
-			<Original>For &lt;font color="#E60000"&gt;East&lt;/font&gt; is %2 min</Original>
-			<English>For &lt;font color="#E60000"&gt;East&lt;/font&gt; is %2 min</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Briefing_WaveTime_resistance">
-			<Original>For &lt;font color="#00CC00"&gt;Resistance&lt;/font&gt; is %2 min</Original>
-			<English>For &lt;font color="#00CC00"&gt;Resistance&lt;/font&gt; is %2 min</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Briefing_WaveTime_west">
-			<Original>For &lt;font color="#0000FF"&gt;West&lt;/font&gt; is %2 min</Original>
-			<English>For &lt;font color="#0000FF"&gt;West&lt;/font&gt; is %2 min</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Briefing_default">
-			<Original>The mission has unlimited tickets for each side.</Original>
-			<English>The mission has unlimited tickets for each side.</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Briefing_killJipDisabled">
-			<Original>JIP players are not killed and moved to respawn when they join the game.</Original>
-			<English>JIP players are not killed and moved to respawn when they join the game.</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Briefing_killJipEnabled">
-			<Original>JIP players will be killed and moved to respawn after %2min from mission start. If a player disconnects earlier, it won't use a ticket.</Original>
-			<English>JIP players will be killed and moved to respawn after %2min from mission start. If a player disconnects earlier, it won't use a ticket.</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Briefing_onlyForcedWaves">
-			<Original>The mission only uses forced respawn waves, so there is no respawn timer.</Original>
-			<English>The mission only uses forced respawn waves, so there is no respawn timer.</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Briefing_playertickets">
-			<Original>The mission has limited tickets for each player.</Original>
-			<English>The mission has limited tickets for each player.</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Briefing_sidetickets">
-			<Original>The mission has limited tickets for each side.</Original>
-			<English>The mission has limited tickets for each side.</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Briefing_teleportNetwork">
-			<Original>If there is an MSP or custom teleport points in this mission, you can access the teleport menu from the Main Base and uncontested MSP using the ACE action menu.&lt;br/&gt;Custom teleport points might have different conditions and use either the vanilla action menu or ACE action menu, depending on how the mission maker has it set up.</Original>
-			<English>If there is an MSP or custom teleport points in this mission, you can access the teleport menu from the Main Base and uncontested MSP using the ACE action menu.&lt;br/&gt;Custom teleport points might have different conditions and use either the vanilla action menu or ACE action menu, depending on how the mission maker has it set up.</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_CBA_Briefing_Enable">
-			<Original>Enable briefing notes</Original>
-			<English>Enable briefing notes</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_CBA_Briefing_Enable_ShowOtherSidesData_Civilian">
-			<Original>Show civilian data to all</Original>
-			<English>Show civilian data to all</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_CBA_Briefing_Enable_ShowOtherSidesData_East">
-			<Original>Show east data to all</Original>
-			<English>Show east data to all</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_CBA_Briefing_Enable_ShowOtherSidesData_Resistance">
-			<Original>Show resistance data to all</Original>
-			<English>Show resistance data to all</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_CBA_Briefing_Enable_ShowOtherSidesData_West">
-			<Original>Show west data to all</Original>
-			<English>Show west data to all</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_CBA_Briefing_Enable_ShowOtherSidesData_tooltip">
-			<Original>Show this side for all. Own side is always shown, if 'show tickets' is enabled. Also, if that is disabled, none of the sides' tickets are shown.</Original>
-			<English>Show this side for all. Own side is always shown, if 'show tickets' is enabled. Also, if that is disabled, none of the sides' tickets are shown.</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_CBA_Briefing_Enable_ShowRespawType">
-			<Original>Show respawn type</Original>
-			<English>Show respawn type</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_CBA_Briefing_Enable_ShowRespawType_tooltip">
-			<Original>When enabled, the respawn type will be shown in the briefing notes.</Original>
-			<English>When enabled, the respawn type will be shown in the briefing notes.</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_CBA_Briefing_Enable_ShowTickets">
-			<Original>Show tickets</Original>
-			<English>Show tickets</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_CBA_Briefing_Enable_ShowTickets_tooltip">
-			<Original>When enabled, the starting ticket count will be shown in the briefing notes.</Original>
-			<English>When enabled, the starting ticket count will be shown in the briefing notes.</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_CBA_Briefing_Enable_ShowTime">
-			<Original>Show respawn wave time</Original>
-			<English>Show respawn wave time</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_CBA_Briefing_Enable_ShowTime_tooltip">
-			<Original>When enabled, the wave interval time will be shown in the briefing notes.</Original>
-			<English>When enabled, the wave interval time will be shown in the briefing notes.</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_CBA_Briefing_Enable_tooltip">
-			<Original>Create a briefing tab displaying all these settings.</Original>
-			<English>Create a briefing tab displaying all these settings.</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_CBA_Category_Briefing">
-			<Original>Briefing notes</Original>
-			<English>Briefing notes</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_CBA_Category_checkTickets">
-			<Original>Check tickets</Original>
-			<English>Check tickets</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_CBA_Category_generic">
-			<Original>Main Settings</Original>
-			<English>Main Settings</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_CBA_Category_main">
-			<Original>TUN - Respawn System</Original>
-			<English>TUN - Respawn System</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_CBA_Category_spectate_cameramode">
-			<Original>Spectator camera modes</Original>
-			<English>Spectator camera modes</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_CBA_Category_spectate_sidesCivilian">
-			<Original>Spectator allowed sides for Civilian</Original>
-			<English>Spectator allowed sides for Civilian</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_CBA_Category_spectate_sidesEast">
-			<Original>Spectator allowed sides for East</Original>
-			<English>Spectator allowed sides for East</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_CBA_Category_spectate_sidesResistance">
-			<Original>Spectator allowed sides for Resistance</Original>
-			<English>Spectator allowed sides for Resistance</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_CBA_Category_spectate_sidesTooltip">
-			<Original>Allow this side to be spectated</Original>
-			<English>Allow this side to be spectated</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_CBA_Category_spectate_sidesWest">
-			<Original>Spectator allowed sides for West</Original>
-			<English>Spectator allowed sides for West</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_CBA_Category_ticketcount">
-			<Original>Tickets</Original>
-			<English>Tickets</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_CBA_Category_time">
-			<Original>Wave times</Original>
-			<English>Wave times</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_CBA_Enable">
-			<Original>Enable Respawn System</Original>
-			<English>Enable Respawn System</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_CBA_tooltip_CheckTickets">
-			<Original>Enable checking remaining tickets from this location.</Original>
-			<English>Enable checking remaining tickets from this location.</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_CBA_tooltip_Enable">
-			<Original>Activate Respawn System for the mission.</Original>
-			<English>Activate Respawn System for the mission.</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_CBA_tooltip_delayedRespawn">
-			<Original>If the remaining respawn time is less than the specified percentage here, the player will skip the next wave. For example, if the wave interval is 20 minutes and this is set to 50%, and a player dies when there are less than 10 minutes remaining until the next respawn, the player will skip the next wave and needs to wait for the following one. Set to 0 to disable this feature.</Original>
-			<English>If the remaining respawn time is less than the specified percentage here, the player will skip the next wave. For example, if the wave interval is 20 minutes and this is set to 50%, and a player dies when there are less than 10 minutes remaining until the next respawn, the player will skip the next wave and needs to wait for the following one. Set to 0 to disable this feature.</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_CBA_tooltip_forceRespawn">
-			<Original>Only forced respawn waves. No timer involved.</Original>
-			<English>Only forced respawn waves. No timer involved.</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_CBA_tooltip_gearscript">
-			<Original>"SQF Gearscript": Requires two variables to be set: "tunres_Respawn_Role," which serves as a parameter, and "tunres_Respawn_GearPath," which denotes the file path.		"Potato Tool": Simply invokes its own function.		"Save gear": Loads the same loadout saved at mission start, or it can be updated during the mission using the "tunres_Respawn_fnc_savegear" function.		None: No gear scripts are executed. Players will spawn without any gear. Utilize the event handler "tunres_respawn_EH_unitRespawned" to provide gear.</Original>
-			<English>"SQF Gearscript": Requires two variables to be set: "tunres_Respawn_Role," which serves as a parameter, and "tunres_Respawn_GearPath," which denotes the file path.		"Potato Tool": Simply invokes its own function.		"Save gear": Loads the same loadout saved at mission start, or it can be updated during the mission using the "tunres_Respawn_fnc_savegear" function.		None: No gear scripts are executed. Players will spawn without any gear. Utilize the event handler "tunres_respawn_EH_unitRespawned" to provide gear.</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_CBA_tooltip_killJipTime">
-			<Original>Time after JIP are killed and moved to respawn (minutes)</Original>
-			<English>Time after JIP are killed and moved to respawn (minutes)</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_CBA_tooltip_killjip">
-			<Original>Enable kill JIP system</Original>
-			<English>Enable kill JIP system</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_CBA_tooltip_respawntypes">
-			<Original>"Endless waves": Endless waves. "Side tickets": Side shares a ticket pool. Player tickets": Each player has their own ticket pool.</Original>
-			<English>"Endless waves": Endless waves. "Side tickets": Side shares a ticket pool. Player tickets": Each player has their own ticket pool.</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_CBA_tooltip_specta_modes">
-			<Original>Enable this camera mode for spectators</Original>
-			<English>Enable this camera mode for spectators</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_CBA_tooltip_ticket">
-			<Original>Ticket count for either the entire side or each player on that side</Original>
-			<English>Ticket count for either the entire side or each player on that side</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_CBA_tooltip_time">
-			<Original>Respawn wave interval</Original>
-			<English>Respawn wave interval</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_CBA_tooltip_waitingAreaRange">
-			<Original>Range for Waiting Area. Default is 100m.</Original>
-			<English>Range for Waiting Area. Default is 100m.</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_CheckTickets">
-			<Original>Check remaining tickets</Original>
-			<English>Check remaining tickets</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_FNC_RespawnDisabled">
-			<Original>Respawn is currently disabled.</Original>
-			<English>Respawn is currently disabled.</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_FNC_moveRespawnText">
-			<Original>You are respawning! Please standby.</Original>
-			<English>You are respawning! Please standby.</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_FNC_only_forced_waves">
-			<Original>Mission is using only forced waves.</Original>
-			<English>Mission is using only forced waves.</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_FNC_playerSkipsWave">
-			<Original>You are going to skip the next respawn wave.</Original>
-			<English>You are going to skip the next respawn wave.</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_FNC_remaining_time">
-			<Original>Remaining time until respawn</Original>
-			<English>Remaining time until respawn</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_MainBase">
-			<Original>Main base</Original>
-			<English>Main base</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_MainBaseText">
-			<Original>Main Base</Original>
-			<English>Main Base</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Module_Description_Spawn_Point">
-			<Original>Place this module where you want the respawn point to be for this side.</Original>
-			<English>Place this module where you want the respawn point to be for this side.</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Module_Description_Waitingarea">
-			<Original>Place this module where you want the respawn waiting area to be for this side.</Original>
-			<English>Place this module where you want the respawn waiting area to be for this side.</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Module_Description_teleportPoint">
-			<Original>Teleport network point.</Original>
-			<English>Teleport network point.</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Module_DisplayName_SpawnPoint">
-			<Original>Spawn Point</Original>
-			<English>Spawn Point</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Module_DisplayName_WaitingArea">
-			<Original>Waiting Area</Original>
-			<English>Waiting Area</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Module_DisplayName_teleportPoint">
-			<Original>Teleport point</Original>
-			<English>Teleport point</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Module_RespanPos_MultipleMarkers">
-			<Original>There is already a '%1' marker. You either have multiple respawn point modules with the same settings or a marker named that. Either way, please remove it.</Original>
-			<English>There is already a '%1' marker. You either have multiple respawn point modules with the same settings or a marker named that. Either way, please remove it.</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Module_RespanPos_novalue">
-			<Original>The Respawn Position module does not have a side set.</Original>
-			<English>The Respawn Position module does not have a side set.</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Module_WaitingArea_MultipleMarkers">
-			<Original>There is already a '%1' marker. You either have multiple Waiting Area modules with the same settings or a marker named that. Please remove it.</Original>
-			<English>There is already a '%1' marker. You either have multiple Waiting Area modules with the same settings or a marker named that. Please remove it.</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Module_WaitingArea_novalue">
-			<Original>The Waiting Area module does not have a side set</Original>
-			<English>The Waiting Area module does not have a side set</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Module_category">
-			<Original>Tun Respawn</Original>
-			<English>Tun Respawn</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Module_tooltip_SpawnPoint">
-			<Original>Choose the side for this spawn point</Original>
-			<English>Choose the side for this spawn point</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Module_tooltip_WaitingArea">
-			<Original>Choose the side for this waiting area</Original>
-			<English>Choose the side for this waiting area</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Module_tooltip_flagTexture">
-			<Original>To use a custom texture, provide the path to it in a non-string format. If left empty or if an invalid path is given, the default side color will be used.</Original>
-			<English>To use a custom texture, provide the path to it in a non-string format. If left empty or if an invalid path is given, the default side color will be used.</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Module_tooltip_teleportConditio">
-			<Original>Condition to enable/disable TP location. (Code) Default: True</Original>
-			<English>Condition to enable/disable TP location. (Code) Default: True</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Module_tooltip_teleportCreateMarker">
-			<Original>Create a marker for this teleporter for the enabled sides.</Original>
-			<English>Create a marker for this teleporter for the enabled sides.</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Module_tooltip_teleportEnableSides">
-			<Original>Is this side allowed to use this teleporter?</Original>
-			<English>Is this side allowed to use this teleporter?</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Module_tooltip_teleportMarkerIcone">
-			<Original>Marker icon must be in a non-string format. Default: hd_start</Original>
-			<English>Marker icon must be in a non-string format. Default: hd_start</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Module_tooltip_teleportMenuOpenConditio">
-			<Original>Condition to enable/disable opening teleport menu. Must return true or false. Default: true</Original>
-			<English>Condition to enable/disable opening teleport menu. Must return true or false. Default: true</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Module_tooltip_teleportName">
-			<Original>Name for teleport location</Original>
-			<English>Name for teleport location</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Module_tooltip_teleportPointOBJ">
-			<Original>Classname for the object where the action to teleport is. Non-string format: Land_Sleeping_bag_blue_folded_F</Original>
-			<English>Classname for the object where the action to teleport is. Non-string format: Land_Sleeping_bag_blue_folded_F</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Module_tooltip_teleportUseAceAction">
-			<Original>When enabled, it will use ACE interaction. Otherwise, it will use addAction.</Original>
-			<English>When enabled, it will use ACE interaction. Otherwise, it will use addAction.</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_RemainingTicketsPlayer">
-			<Original>Your remaining tickets:</Original>
-			<English>Your remaining tickets:</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_RemainingTicketsSide">
-			<Original>Remaining tickets for your side:</Original>
-			<English>Remaining tickets for your side:</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_RemainingTicketsText">
-			<Original>Remaining ticket count is:</Original>
-			<English>Remaining ticket count is:</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_RespawnPoint">
-			<Original>Respawn point</Original>
-			<English>Respawn point</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_TeleportMenu">
-			<Original>Open teleportmenu</Original>
-			<English>Open teleportmenu</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_TeleportMenuVanilla">
-			<Original>&lt;t color='#FF0000'&gt;Open teleport menu&lt;/t&gt;</Original>
-			<English>&lt;t color='#FF0000'&gt;Open teleport menu&lt;/t&gt;</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Teleport_Disabled">
-			<Original>This teleport point is disabled</Original>
-			<English>This teleport point is disabled</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Teleporting">
-			<Original>You are being teleported to:</Original>
-			<English>You are being teleported to:</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Type_Default">
-			<Original>Endless waves</Original>
-			<English>Endless waves</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Type_Playertickets">
-			<Original>Player tickets</Original>
-			<English>Player tickets</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Type_Sidetickets">
-			<Original>Side tickets</Original>
-			<English>Side tickets</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_remainingTimeNotification">
-			<Original>Remaining time until respawn: %1</Original>
-			<English>Remaining time until respawn: %1</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_tp_dialog_button">
-			<Original>Teleport</Original>
-			<English>Teleport</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_tp_dialog_header">
-			<Original>Teleport network</Original>
-			<English>Teleport network</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_youAreNotAllowedToLeave">
-			<Original>Get over here!</Original>
-			<English>Get over here!</English>
-		</Key>
-		<Key ID="STR_tunres_respawn_Briefing_AdminText">
-			<English>Admin can use the following chat commands:&lt;br/&gt;&lt;br/&gt;- #force_respawn: Requires a side variable (west,east,resistance,civilian).&lt;br/&gt;Example: #force_respawn resistance — This will force a respawn wave for the resistance side.&lt;br/&gt;&lt;br/&gt;- #set_tickets: Requires a side (west,east,resistance,civilian) and a count (number) separated by a comma.&lt;br/&gt;Example: #set_tickets east,66 — This sets the ticket count for the specified side. Works only for side tickets.</English>
-			<Original>Admin can use the following chat commands:&lt;br/&gt;&lt;br/&gt;- #force_respawn: Requires a side variable (west,east,resistance,civilian).&lt;br/&gt;Example: #force_respawn resistance — This will force a respawn wave for the resistance side.&lt;br/&gt;&lt;br/&gt;- #set_tickets: Requires a side (west,east,resistance,civilian) and a count (number) separated by a comma.&lt;br/&gt;Example: #set_tickets east,66 — This sets the ticket count for the specified side. Works only for side tickets.</Original>
-		</Key>
-		<Key ID="STR_tunres_respawn_Briefing_AdminInfoTab">
-			<English>Admin chat commands</English>
-			<Original>Admin chat commands</Original>
-		</Key>
-	</Package>
+    <Package name="Respawn">
+        <Key ID="STR_tunres_respawn_AceAction_CheckNextWaveTime">
+            <Original>Check respawn time until the next wave</Original>
+            <English>Check respawn time until the next wave</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_AceAction_Main">
+            <Original>Main</Original>
+            <English>Main</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Briefing_AdminInfoTab">
+            <Original>Admin chat commands</Original>
+            <English>Admin chat commands</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Briefing_AdminText">
+            <Original>Admin can use the following chat commands:&lt;br/&gt;&lt;br/&gt;- #force_respawn: Requires a side variable (west,east,resistance,civilian).&lt;br/&gt;Example: #force_respawn resistance — This will force a respawn wave for the resistance side.&lt;br/&gt;&lt;br/&gt;- #set_tickets: Requires a side (west,east,resistance,civilian) and a count (number) separated by a comma.&lt;br/&gt;Example: #set_tickets east,66 — This sets the ticket count for the specified side. Works only for side tickets.</Original>
+            <English>Admin can use the following chat commands:&lt;br/&gt;&lt;br/&gt;- #force_respawn: Requires a side variable (west,east,resistance,civilian).&lt;br/&gt;Example: #force_respawn resistance — This will force a respawn wave for the resistance side.&lt;br/&gt;&lt;br/&gt;- #set_tickets: Requires a side (west,east,resistance,civilian) and a count (number) separated by a comma.&lt;br/&gt;Example: #set_tickets east,66 — This sets the ticket count for the specified side. Works only for side tickets.</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Briefing_Category_Tickets">
+            <Original>Tickets</Original>
+            <English>Tickets</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Briefing_CheckTicketsMainbase">
+            <Original>You can check remaining tickets from the main base (flagpole) using ACE actions.</Original>
+            <English>You can check remaining tickets from the main base (flagpole) using ACE actions.</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Briefing_DelayedRespawn">
+            <Original>This mission has delayed respawn on. If there is less than %2min (%3%5 from %4min) remaining until the next wave, you will skip it.</Original>
+            <English>This mission has delayed respawn on. If there is less than %2min (%3%5 from %4min) remaining until the next wave, you will skip it.</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Briefing_DelayedRespawnOff">
+            <Original>This mission has delayed respawn off.</Original>
+            <English>This mission has delayed respawn off.</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Briefing_Header">
+            <Original>Respawn settings</Original>
+            <English>Respawn settings</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Briefing_RespawnInfoTab">
+            <Original>Respawn settings</Original>
+            <English>Respawn settings</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Briefing_RespawnMainCategory">
+            <Original>Tun - Respawn settings</Original>
+            <English>Tun - Respawn settings</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Briefing_TicketCount_civilian">
+            <Original>Ticket count: %2 (&lt;font color="#B040A7"&gt;Civilian&lt;/font&gt;)</Original>
+            <English>Ticket count: %2 (&lt;font color="#B040A7"&gt;Civilian&lt;/font&gt;)</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Briefing_TicketCount_east">
+            <Original>Ticket count: %2 (&lt;font color="#E60000"&gt;East&lt;/font&gt;)</Original>
+            <English>Ticket count: %2 (&lt;font color="#E60000"&gt;East&lt;/font&gt;)</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Briefing_TicketCount_resistance">
+            <Original>Ticket count: %2 (&lt;font color="#00CC00"&gt;Resistance&lt;/font&gt;)</Original>
+            <English>Ticket count: %2 (&lt;font color="#00CC00"&gt;Resistance&lt;/font&gt;)</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Briefing_TicketCount_west">
+            <Original>Ticket count: %2 (&lt;font color="#0000FF"&gt;West&lt;/font&gt;)</Original>
+            <English>Ticket count: %2 (&lt;font color="#0000FF"&gt;West&lt;/font&gt;)</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Briefing_WaveTime_civilian">
+            <Original>For &lt;font color="#B040A7"&gt;Civilian&lt;/font&gt; is %2 min</Original>
+            <English>For &lt;font color="#B040A7"&gt;Civilian&lt;/font&gt; is %2 min</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Briefing_WaveTime_east">
+            <Original>For &lt;font color="#E60000"&gt;East&lt;/font&gt; is %2 min</Original>
+            <English>For &lt;font color="#E60000"&gt;East&lt;/font&gt; is %2 min</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Briefing_WaveTime_resistance">
+            <Original>For &lt;font color="#00CC00"&gt;Resistance&lt;/font&gt; is %2 min</Original>
+            <English>For &lt;font color="#00CC00"&gt;Resistance&lt;/font&gt; is %2 min</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Briefing_WaveTime_west">
+            <Original>For &lt;font color="#0000FF"&gt;West&lt;/font&gt; is %2 min</Original>
+            <English>For &lt;font color="#0000FF"&gt;West&lt;/font&gt; is %2 min</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Briefing_default">
+            <Original>The mission has unlimited tickets for each side.</Original>
+            <English>The mission has unlimited tickets for each side.</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Briefing_killJipDisabled">
+            <Original>JIP players are not killed and moved to respawn when they join the game.</Original>
+            <English>JIP players are not killed and moved to respawn when they join the game.</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Briefing_killJipEnabled">
+            <Original>JIP players will be killed and moved to respawn after %2min from mission start. If a player disconnects earlier, it won't use a ticket.</Original>
+            <English>JIP players will be killed and moved to respawn after %2min from mission start. If a player disconnects earlier, it won't use a ticket.</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Briefing_onlyForcedWaves">
+            <Original>The mission only uses forced respawn waves, so there is no respawn timer.</Original>
+            <English>The mission only uses forced respawn waves, so there is no respawn timer.</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Briefing_playertickets">
+            <Original>The mission has limited tickets for each player.</Original>
+            <English>The mission has limited tickets for each player.</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Briefing_sidetickets">
+            <Original>The mission has limited tickets for each side.</Original>
+            <English>The mission has limited tickets for each side.</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Briefing_teleportNetwork">
+            <Original>If there is an MSP or custom teleport points in this mission, you can access the teleport menu from the Main Base and uncontested MSP using the ACE action menu.&lt;br/&gt;Custom teleport points might have different conditions and use either the vanilla action menu or ACE action menu, depending on how the mission maker has it set up.</Original>
+            <English>If there is an MSP or custom teleport points in this mission, you can access the teleport menu from the Main Base and uncontested MSP using the ACE action menu.&lt;br/&gt;Custom teleport points might have different conditions and use either the vanilla action menu or ACE action menu, depending on how the mission maker has it set up.</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_CBA_Briefing_Enable">
+            <Original>Enable briefing notes</Original>
+            <English>Enable briefing notes</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_CBA_Briefing_Enable_ShowOtherSidesData_Civilian">
+            <Original>Show civilian data to all</Original>
+            <English>Show civilian data to all</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_CBA_Briefing_Enable_ShowOtherSidesData_East">
+            <Original>Show east data to all</Original>
+            <English>Show east data to all</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_CBA_Briefing_Enable_ShowOtherSidesData_Resistance">
+            <Original>Show resistance data to all</Original>
+            <English>Show resistance data to all</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_CBA_Briefing_Enable_ShowOtherSidesData_West">
+            <Original>Show west data to all</Original>
+            <English>Show west data to all</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_CBA_Briefing_Enable_ShowOtherSidesData_tooltip">
+            <Original>Show this side for all. Own side is always shown, if 'show tickets' is enabled. Also, if that is disabled, none of the sides' tickets are shown.</Original>
+            <English>Show this side for all. Own side is always shown, if 'show tickets' is enabled. Also, if that is disabled, none of the sides' tickets are shown.</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_CBA_Briefing_Enable_ShowRespawType">
+            <Original>Show respawn type</Original>
+            <English>Show respawn type</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_CBA_Briefing_Enable_ShowRespawType_tooltip">
+            <Original>When enabled, the respawn type will be shown in the briefing notes.</Original>
+            <English>When enabled, the respawn type will be shown in the briefing notes.</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_CBA_Briefing_Enable_ShowTickets">
+            <Original>Show tickets</Original>
+            <English>Show tickets</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_CBA_Briefing_Enable_ShowTickets_tooltip">
+            <Original>When enabled, the starting ticket count will be shown in the briefing notes.</Original>
+            <English>When enabled, the starting ticket count will be shown in the briefing notes.</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_CBA_Briefing_Enable_ShowTime">
+            <Original>Show respawn wave time</Original>
+            <English>Show respawn wave time</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_CBA_Briefing_Enable_ShowTime_tooltip">
+            <Original>When enabled, the wave interval time will be shown in the briefing notes.</Original>
+            <English>When enabled, the wave interval time will be shown in the briefing notes.</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_CBA_Briefing_Enable_tooltip">
+            <Original>Create a briefing tab displaying all these settings.</Original>
+            <English>Create a briefing tab displaying all these settings.</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_CBA_Category_Briefing">
+            <Original>Briefing notes</Original>
+            <English>Briefing notes</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_CBA_Category_checkTickets">
+            <Original>Check tickets</Original>
+            <English>Check tickets</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_CBA_Category_generic">
+            <Original>Main Settings</Original>
+            <English>Main Settings</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_CBA_Category_main">
+            <Original>TUN - Respawn System</Original>
+            <English>TUN - Respawn System</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_CBA_Category_spectate_cameramode">
+            <Original>Spectator camera modes</Original>
+            <English>Spectator camera modes</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_CBA_Category_spectate_sidesCivilian">
+            <Original>Spectator allowed sides for Civilian</Original>
+            <English>Spectator allowed sides for Civilian</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_CBA_Category_spectate_sidesEast">
+            <Original>Spectator allowed sides for East</Original>
+            <English>Spectator allowed sides for East</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_CBA_Category_spectate_sidesResistance">
+            <Original>Spectator allowed sides for Resistance</Original>
+            <English>Spectator allowed sides for Resistance</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_CBA_Category_spectate_sidesTooltip">
+            <Original>Allow this side to be spectated</Original>
+            <English>Allow this side to be spectated</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_CBA_Category_spectate_sidesWest">
+            <Original>Spectator allowed sides for West</Original>
+            <English>Spectator allowed sides for West</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_CBA_Category_ticketcount">
+            <Original>Tickets</Original>
+            <English>Tickets</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_CBA_Category_time">
+            <Original>Wave times</Original>
+            <English>Wave times</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_CBA_Enable">
+            <Original>Enable Respawn System</Original>
+            <English>Enable Respawn System</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_CBA_tooltip_CheckTickets">
+            <Original>Enable checking remaining tickets from this location.</Original>
+            <English>Enable checking remaining tickets from this location.</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_CBA_tooltip_Enable">
+            <Original>Activate Respawn System for the mission.</Original>
+            <English>Activate Respawn System for the mission.</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_CBA_tooltip_delayedRespawn">
+            <Original>If the remaining respawn time is less than the specified percentage here, the player will skip the next wave. For example, if the wave interval is 20 minutes and this is set to 50%, and a player dies when there are less than 10 minutes remaining until the next respawn, the player will skip the next wave and needs to wait for the following one. Set to 0 to disable this feature.</Original>
+            <English>If the remaining respawn time is less than the specified percentage here, the player will skip the next wave. For example, if the wave interval is 20 minutes and this is set to 50%, and a player dies when there are less than 10 minutes remaining until the next respawn, the player will skip the next wave and needs to wait for the following one. Set to 0 to disable this feature.</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_CBA_tooltip_forceRespawn">
+            <Original>Only forced respawn waves. No timer involved.</Original>
+            <English>Only forced respawn waves. No timer involved.</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_CBA_tooltip_gearscript">
+            <Original>"SQF Gearscript": Requires two variables to be set: "tunres_Respawn_Role," which serves as a parameter, and "tunres_Respawn_GearPath," which denotes the file path.		"Potato Tool": Simply invokes its own function.		"Save gear": Loads the same loadout saved at mission start, or it can be updated during the mission using the "tunres_Respawn_fnc_savegear" function.		None: No gear scripts are executed. Players will spawn without any gear. Utilize the event handler "tunres_respawn_EH_unitRespawned" to provide gear.</Original>
+            <English>"SQF Gearscript": Requires two variables to be set: "tunres_Respawn_Role," which serves as a parameter, and "tunres_Respawn_GearPath," which denotes the file path.		"Potato Tool": Simply invokes its own function.		"Save gear": Loads the same loadout saved at mission start, or it can be updated during the mission using the "tunres_Respawn_fnc_savegear" function.		None: No gear scripts are executed. Players will spawn without any gear. Utilize the event handler "tunres_respawn_EH_unitRespawned" to provide gear.</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_CBA_tooltip_killJipTime">
+            <Original>Time after JIP are killed and moved to respawn (minutes)</Original>
+            <English>Time after JIP are killed and moved to respawn (minutes)</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_CBA_tooltip_killjip">
+            <Original>Enable kill JIP system</Original>
+            <English>Enable kill JIP system</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_CBA_tooltip_respawntypes">
+            <Original>"Endless waves": Endless waves. "Side tickets": Side shares a ticket pool. Player tickets": Each player has their own ticket pool.</Original>
+            <English>"Endless waves": Endless waves. "Side tickets": Side shares a ticket pool. Player tickets": Each player has their own ticket pool.</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_CBA_tooltip_specta_modes">
+            <Original>Enable this camera mode for spectators</Original>
+            <English>Enable this camera mode for spectators</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_CBA_tooltip_ticket">
+            <Original>Ticket count for either the entire side or each player on that side</Original>
+            <English>Ticket count for either the entire side or each player on that side</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_CBA_tooltip_time">
+            <Original>Respawn wave interval</Original>
+            <English>Respawn wave interval</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_CBA_tooltip_waitingAreaRange">
+            <Original>Range for Waiting Area. Default is 100m.</Original>
+            <English>Range for Waiting Area. Default is 100m.</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_CheckTickets">
+            <Original>Check remaining tickets</Original>
+            <English>Check remaining tickets</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_FNC_RespawnDisabled">
+            <Original>Respawn is currently disabled.</Original>
+            <English>Respawn is currently disabled.</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_FNC_moveRespawnText">
+            <Original>You are respawning! Please standby.</Original>
+            <English>You are respawning! Please standby.</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_FNC_only_forced_waves">
+            <Original>Mission is using only forced waves.</Original>
+            <English>Mission is using only forced waves.</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_FNC_playerSkipsWave">
+            <Original>You are going to skip the next respawn wave.</Original>
+            <English>You are going to skip the next respawn wave.</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_FNC_remaining_time">
+            <Original>Remaining time until respawn</Original>
+            <English>Remaining time until respawn</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_MainBase">
+            <Original>Main base</Original>
+            <English>Main base</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_MainBaseText">
+            <Original>Main Base</Original>
+            <English>Main Base</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Module_Description_Spawn_Point">
+            <Original>Place this module where you want the respawn point to be for this side.</Original>
+            <English>Place this module where you want the respawn point to be for this side.</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Module_Description_Waitingarea">
+            <Original>Place this module where you want the respawn waiting area to be for this side.</Original>
+            <English>Place this module where you want the respawn waiting area to be for this side.</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Module_Description_teleportPoint">
+            <Original>Teleport network point.</Original>
+            <English>Teleport network point.</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Module_DisplayName_SpawnPoint">
+            <Original>Spawn Point</Original>
+            <English>Spawn Point</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Module_DisplayName_WaitingArea">
+            <Original>Waiting Area</Original>
+            <English>Waiting Area</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Module_DisplayName_teleportPoint">
+            <Original>Teleport point</Original>
+            <English>Teleport point</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Module_RespanPos_MultipleMarkers">
+            <Original>There is already a '%1' marker. You either have multiple respawn point modules with the same settings or a marker named that. Either way, please remove it.</Original>
+            <English>There is already a '%1' marker. You either have multiple respawn point modules with the same settings or a marker named that. Either way, please remove it.</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Module_RespanPos_novalue">
+            <Original>The Respawn Position module does not have a side set.</Original>
+            <English>The Respawn Position module does not have a side set.</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Module_WaitingArea_MultipleMarkers">
+            <Original>There is already a '%1' marker. You either have multiple Waiting Area modules with the same settings or a marker named that. Please remove it.</Original>
+            <English>There is already a '%1' marker. You either have multiple Waiting Area modules with the same settings or a marker named that. Please remove it.</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Module_WaitingArea_novalue">
+            <Original>The Waiting Area module does not have a side set</Original>
+            <English>The Waiting Area module does not have a side set</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Module_category">
+            <Original>Tun Respawn</Original>
+            <English>Tun Respawn</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Module_tooltip_SpawnPoint">
+            <Original>Choose the side for this spawn point</Original>
+            <English>Choose the side for this spawn point</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Module_tooltip_WaitingArea">
+            <Original>Choose the side for this waiting area</Original>
+            <English>Choose the side for this waiting area</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Module_tooltip_flagTexture">
+            <Original>To use a custom texture, provide the path to it in a non-string format. If left empty or if an invalid path is given, the default side color will be used.</Original>
+            <English>To use a custom texture, provide the path to it in a non-string format. If left empty or if an invalid path is given, the default side color will be used.</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Module_tooltip_teleportConditio">
+            <Original>Condition to enable/disable TP location. (Code) Default: True</Original>
+            <English>Condition to enable/disable TP location. (Code) Default: True</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Module_tooltip_teleportCreateMarker">
+            <Original>Create a marker for this teleporter for the enabled sides.</Original>
+            <English>Create a marker for this teleporter for the enabled sides.</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Module_tooltip_teleportEnableSides">
+            <Original>Is this side allowed to use this teleporter?</Original>
+            <English>Is this side allowed to use this teleporter?</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Module_tooltip_teleportMarkerIcone">
+            <Original>Marker icon must be in a non-string format. Default: hd_start</Original>
+            <English>Marker icon must be in a non-string format. Default: hd_start</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Module_tooltip_teleportMenuOpenConditio">
+            <Original>Condition to enable/disable opening teleport menu. Must return true or false. Default: true</Original>
+            <English>Condition to enable/disable opening teleport menu. Must return true or false. Default: true</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Module_tooltip_teleportName">
+            <Original>Name for teleport location</Original>
+            <English>Name for teleport location</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Module_tooltip_teleportPointOBJ">
+            <Original>Classname for the object where the action to teleport is. Non-string format: Land_Sleeping_bag_blue_folded_F</Original>
+            <English>Classname for the object where the action to teleport is. Non-string format: Land_Sleeping_bag_blue_folded_F</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Module_tooltip_teleportUseAceAction">
+            <Original>When enabled, it will use ACE interaction. Otherwise, it will use addAction.</Original>
+            <English>When enabled, it will use ACE interaction. Otherwise, it will use addAction.</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_RemainingTicketsPlayer">
+            <Original>Your remaining tickets:</Original>
+            <English>Your remaining tickets:</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_RemainingTicketsSide">
+            <Original>Remaining tickets for your side:</Original>
+            <English>Remaining tickets for your side:</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_RemainingTicketsText">
+            <Original>Remaining ticket count is:</Original>
+            <English>Remaining ticket count is:</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_RespawnPoint">
+            <Original>Respawn point</Original>
+            <English>Respawn point</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_TeleportMenu">
+            <Original>Open teleportmenu</Original>
+            <English>Open teleportmenu</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_TeleportMenuVanilla">
+            <Original>&lt;t color='#FF0000'&gt;Open teleport menu&lt;/t&gt;</Original>
+            <English>&lt;t color='#FF0000'&gt;Open teleport menu&lt;/t&gt;</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Teleport_Disabled">
+            <Original>This teleport point is disabled</Original>
+            <English>This teleport point is disabled</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Teleporting">
+            <Original>You are being teleported to:</Original>
+            <English>You are being teleported to:</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Type_Default">
+            <Original>Endless waves</Original>
+            <English>Endless waves</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Type_Playertickets">
+            <Original>Player tickets</Original>
+            <English>Player tickets</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_Type_Sidetickets">
+            <Original>Side tickets</Original>
+            <English>Side tickets</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_remainingTimeNotification">
+            <Original>Remaining time until respawn: %1</Original>
+            <English>Remaining time until respawn: %1</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_tp_dialog_button">
+            <Original>Teleport</Original>
+            <English>Teleport</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_tp_dialog_header">
+            <Original>Teleport network</Original>
+            <English>Teleport network</English>
+        </Key>
+        <Key ID="STR_tunres_respawn_youAreNotAllowedToLeave">
+            <Original>Get over here!</Original>
+            <English>Get over here!</English>
+        </Key>
+    </Package>
 </Project>
