@@ -19,7 +19,8 @@ if (!isServer) exitWith {};
 
 params [["_msp", objNull, [objNull]], ["_setup", nil, [false]], "_player"];
 
-private _side = _msp getVariable QGVAR(side);
+private _side = _msp getVariable [QGVAR(side),sideLogic];
+if !(_side in ALL_SIDES) exitWith {ERROR("MSP had not supported side")};
 AAR_UPDATE(_msp,"Is active MSP",_setup);
 
 if (_setup) then {
