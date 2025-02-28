@@ -23,7 +23,7 @@ private _side = _msp getVariable QGVAR(side);
 AAR_UPDATE(_msp,"Is active MSP",_setup);
 
 if (_setup) then {
-	[_msp] remoteExecCall [QFUNC(createMspProps), 2];
+	[_msp] call FUNC(createMspProps);
 
 	//force player out from MSP and LOCK it
 	{
