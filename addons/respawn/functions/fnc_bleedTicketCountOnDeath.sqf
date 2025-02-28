@@ -31,13 +31,13 @@ if (GVAR(disconnectedPlayersHash) getOrDefault [_playerUID, false]) exitWith {
 
 //Player was already in respawn area.
 if ( _player getVariable [QGVAR(isWaitingRespawn), false]) exitWith {
-	LOG("Player already waiting respawn");
+	INFO("Player already waiting respawn");
 	[1] remoteExecCall ["setPlayerRespawnTime", _player];
 };
 
 private _remainingTickets = [_side, _player, false] call FUNC(getTicketCount);
 
-if !( _remainingTickets > 0 ) exitWith {
+if ( _remainingTickets <= 0 ) exitWith {
 	[{
 		[QGVAR(startSpectatorEH), "", _this] call CBA_fnc_targetEvent;
 	}, _player, 5] call CBA_fnc_waitAndExecute;

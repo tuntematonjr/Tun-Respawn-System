@@ -90,7 +90,7 @@ if ( _mspDeployementStatus && { !(isNull _msp) } ) then {
 	};
 	[QGVAR(EH_mspStatusUpdate), [_side, _isContested, _oldContestedStatus, _enemiesInArea, _enemiesInAreaMin, _friendliesInArea]] call CBA_fnc_globalEvent;
 	private _debugText = format ["Contested summary. Side: %1, NewStatus: %2, OldStatus: %3, enemyCount: %4, enemyCountMin: %5, FriendlyCount: %6",_side, _isContested, _oldContestedStatus, _enemiesInArea, _enemiesInAreaMin, _friendliesInArea];
-	LOG(_debugText);
+	INFO(_debugText);
 } else {
 	if (_mspDeployementStatus) then {
 		GVAR(deployementStatusHash) set [_side, false];
