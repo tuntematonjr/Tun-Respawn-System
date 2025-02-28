@@ -41,6 +41,6 @@ switch (GVAR(respawnType)) do {
 	};
 
 	default {
-		LOG("Tried to change ticket count, while not using tickets");
+		INFO("Tried to change ticket count, while not using tickets");
 	};
 };

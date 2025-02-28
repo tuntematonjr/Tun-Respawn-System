@@ -15,7 +15,7 @@
 #include "script_component.hpp"
 
 if (!hasInterface) exitWith { };
-LOG("Start spectator");
+INFO("Start spectator");
 
 private _allowedSides = +GVAR(allowedSpectateSidesHash) get playerSide;
 _allowedSides pushBackUnique playerSide;
