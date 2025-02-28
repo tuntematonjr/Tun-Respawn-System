@@ -21,6 +21,8 @@
 #include "script_component.hpp"
 params [["_enable", true]];
 
+if (playerSide isEqualTo sideLogic || !hasInterface) exitWith { }; 
+
 if (_enable) then {
 	if (cba_missiontime > 1) exitWith {
 		[QEGVAR(main,doNotification), [LLSTRING(checkContestCantUse)]] call CBA_fnc_localEvent;
