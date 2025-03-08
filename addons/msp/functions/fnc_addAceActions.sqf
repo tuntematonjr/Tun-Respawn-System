@@ -39,7 +39,7 @@ if (isClass (configFile >> "CfgVehicles" >> _vehicle)) then {
 	private _aliveAndSameSideAndIsMSPConditio = {alive _target && {_target getVariable QGVAR(side) isEqualTo playerSide} && _target getVariable [QGVAR(isMSP), false]};
 
 	//check time
-	private _chekTime = ["Check Respawn Time", localize "STR_tunres_respawn_AceAction_CheckNextWaveTime", "\a3\modules_f_curator\data\portraitskiptime_ca.paa", EFUNC(respawn,remainingWaitTimeNotification), _aliveAndSameSideConditio] call ace_interact_menu_fnc_createAction;
+	private _chekTime = ["Check Respawn Time", LELSTRING(respawn,AceAction_CheckNextWaveTime), "\a3\modules_f_curator\data\portraitskiptime_ca.paa", EFUNC(respawn,remainingWaitTimeNotification), _aliveAndSameSideConditio] call ace_interact_menu_fnc_createAction; 
 
 	//Check contest area
 	private _checkArea = ["Check contest area", LLSTRING(AceAction_CheckMspContestedArea), "a3\ui_f\data\igui\cfg\simpletasks\types\map_ca.paa", {[_target] call FUNC(checkContestZoneArea);}, _aliveAndSameSideConditio] call ace_interact_menu_fnc_createAction;

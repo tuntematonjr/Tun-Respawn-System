@@ -99,7 +99,8 @@ if (GVAR(briefingEnableShowTickets) && { GVAR(respawnType) isNotEqualTo 0}) then
 };
 
 if (GVAR(killJIP)) then {
-	_text = format [("%1<br/><br/>- "+LLSTRING(Briefing_killJipEnabled)),_text, GVAR(killJipTime)];
+	private _killJipTime = [GVAR(killJipTime), "M:SS"] call CBA_fnc_formatElapsedTime;
+	_text = format [("%1<br/><br/>- "+LLSTRING(Briefing_killJipEnabled)),_text, _killJipTime];
 } else {
 	_text = format ["%1<br/><br/>- %2",_text, LLSTRING(Briefing_killJipDisabled)];
 };

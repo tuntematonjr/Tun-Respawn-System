@@ -24,7 +24,7 @@ if !(_side in ALL_SIDES) exitWith {ERROR("MSP had not supported side")};
 AAR_UPDATE(_msp,"Is active MSP",_setup);
 
 if (_setup) then {
-	[_msp] remoteExecCall [QFUNC(createMspProps), 2];
+	[_msp] call FUNC(createMspProps);
 
 	//force player out from MSP and LOCK it
 	{
@@ -41,6 +41,12 @@ if (_setup) then {
 
 	//Unlock vehicle
 	[_msp, 0] remoteExecCall ["lock", _msp];
+
+	//Change deployement status
+	GVAR(contestedStatusHash) set [_side, false];
+	publicVariable QGVAR(contestedStatusHash);
+
+	GVAR(contestedCheckHash) set [_side, [0,0,0]];
 };
 
 private _whoToNotify = [_side, GVAR(setupNotification)] call FUNC(whoToNotify);
@@ -63,12 +69,6 @@ if (EGVAR(main,AAR_Enabled)) then {
 	private _aarText = ["__%1__ packed MSP by __inst__.","__%1__ deployed MSP by __inst__."] select _setup;
 	_aarText = format[_aarText, _side];
 	AAR_EVENT(_aarText,_player,nil,nil);
-};
-
-//Change deployement status
-if !(_setup) then {
-	GVAR(contestedStatusHash) set [_side, false];
-	publicVariable QGVAR(contestedStatusHash);
 };
 
 [QGVAR(startContestedChecksEH), [_side, _setup]] call CBA_fnc_serverEvent;
