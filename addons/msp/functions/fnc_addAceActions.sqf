@@ -46,7 +46,8 @@ if (isClass (configFile >> "CfgVehicles" >> _vehicle)) then {
 
 	//Check if contested
 	private _checkContest= ["Check if MSP contested", LLSTRING(AceAction_CheckIfMspContested), "", {
-		private _text = localize ([LSTRING(NotContested),LSTRING(IsContested)] select (_target getVariable [QGVAR(isContested), false]));
+		private _isContested =  GVAR(contestedStatusHash) get (_target getVariable QGVAR(side));
+		private _text = localize ([LSTRING(NotContested),LSTRING(IsContested)] select _isContested);
 		[QEGVAR(main,doNotification), [_text]] call CBA_fnc_localEvent;
 	}, _aliveAndSameSideAndIsMSPConditio] call ace_interact_menu_fnc_createAction;
 
@@ -60,8 +61,12 @@ if (isClass (configFile >> "CfgVehicles" >> _vehicle)) then {
 	//TP. I hate this system already.
 	[_vehicle, "InitPost", {
 		params ["_entity"];
-		private _menu_condition = toString {alive _target  && {_target getVariable [QGVAR(isMSP), false]} && {!(_target getVariable [QGVAR(isContested), false])}};
-		private _tp_conditionText = toString {private _msp = GVAR(activeVehicleHash) get playerSide; private _status = _msp getVariable [QGVAR(isContested), false]; (_target isNotEqualTo _msp && _obj getVariable [QGVAR(isMSP), false] && !_status)};
+		private _menu_condition = toString {alive _target  && {_target getVariable [QGVAR(isMSP), false]} && {!(GVAR(contestedStatusHash) get (_target getVariable QGVAR(side)))}};
+		private _tp_conditionText = toString {
+			private _msp = GVAR(activeVehicleHash) get playerSide;
+			private _status = GVAR(contestedStatusHash) get (_target getVariable QGVAR(side));
+			(_target isNotEqualTo _msp && _obj getVariable [QGVAR(isMSP), false] && !_status)//actual check
+			};
 
 		[_entity, _tp_conditionText, LLSTRING(TpText), false, nil, [playerSide], true, _menu_condition, false, ["ACE_MainActions",QEGVAR(main,respawnAction)]] call EFUNC(respawn,addCustomTeleporter);
 	}, false, [], true] call CBA_fnc_addClassEventHandler;
