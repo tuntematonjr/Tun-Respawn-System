@@ -45,6 +45,7 @@ if (_setup) then {
 	//Change deployement status
 	GVAR(contestedStatusHash) set [_side, false];
 	publicVariable QGVAR(contestedStatusHash);
+	_msp setVariable [QGVAR(isContested), false, true];
 
 	GVAR(contestedCheckHash) set [_side, [0,0,0]];
 };
