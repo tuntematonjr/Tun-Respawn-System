@@ -24,7 +24,7 @@
 
 	params [["_obj", objNull, [objNull]],
 	["_conditio", "false", [""]],
-	["_name", "", [""]],
+	["_name", nil, [""]],
 	["_createMarker",true, [true]],
 	["_markerIcon", "hd_start", [""]],
 	["_enabledSides", [], [[]]],
