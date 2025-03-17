@@ -20,8 +20,9 @@ if (_side isEqualTo sideLogic) exitWith { }; // Exit if a virtual entity (IE zeu
 
 private _localRespawnPosMarker = QGVAR(RespawnPosLocal);
 private _localMainBaseMarker = QGVAR(MainBaseLocal);
-
-_localRespawnPosMarker setMarkerPosLocal (getMarkerPos MARKER_NAME(_side));
+private _markerNames = createHashMapFromArray [[west,"tunres_respawn_west"],[east,"tunres_respawn_east"],[resistance,"tunres_respawn_resistance"],[civilian,"tunres_respawn_civilian"]];
+private _markerPos = getMarkerPos (_markerNames get _side);
+_localRespawnPosMarker setMarkerPosLocal _markerPos;
 
 //show main base if respawn pos is somewhere else
 if ((getMarkerPos _localRespawnPosMarker) distance2D (getMarkerPos _localMainBaseMarker) > 2) then {
