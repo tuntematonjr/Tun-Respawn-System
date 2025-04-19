@@ -148,7 +148,6 @@
 	{
 		params ["_value"];
 		_value = round _value;
-		ok = _value;
 		GVAR(reportEnemiesIntervalCivilian) = _value;
 		private _array = GVAR(contestValuesHash) get civilian;
 		_array set [0, _value];
