@@ -28,17 +28,3 @@ class CfgFactionClasses
 #include "RscCommon.hpp"
 #include "TP_dialog.hpp"
 #include "CfgVehicles.hpp"
-
-// class CfgRespawnTemplates {
-//	 class ADDON {
-//		 displayName = "Tun wave respawn";
-//		 //onPlayerKilled = QFUNC(respawnTemplate);
-//		 //onPlayerRespawn = QFUNC(respawnTemplate);
-//		 respawnTypes[] = {3};
-//		 respawnDelay = 99999;
-//		 respawnOnStart = 0;
-//		 respawnTemplates[] = {  };
-//		 disabledAI = 1;
-//		 respawn = 3;
-//	 };
-// };
