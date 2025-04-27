@@ -26,8 +26,8 @@
             <English>You can check remaining tickets from the main base (flagpole) using ACE actions.</English>
         </Key>
         <Key ID="STR_tunres_respawn_Briefing_DelayedRespawn">
-            <Original>This mission has delayed respawn on. If there is less than %2min (%3%5 from %4min) remaining until the next wave, you will skip it.</Original>
-            <English>This mission has delayed respawn on. If there is less than %2min (%3%5 from %4min) remaining until the next wave, you will skip it.</English>
+            <Original>This mission has delayed respawn on. If there is less than % (M:SS) (%3%5 from % (M:SS)) remaining until the next wave, you will skip it.</Original>
+            <English>This mission has delayed respawn on. If there is less than % (M:SS) (%3%5 from % (M:SS)) remaining until the next wave, you will skip it.</English>
         </Key>
         <Key ID="STR_tunres_respawn_Briefing_DelayedRespawnOff">
             <Original>This mission has delayed respawn off.</Original>
@@ -62,20 +62,20 @@
             <English>Ticket count: %2 (&lt;font color="#0000FF"&gt;West&lt;/font&gt;)</English>
         </Key>
         <Key ID="STR_tunres_respawn_Briefing_WaveTime_civilian">
-            <Original>For &lt;font color="#B040A7"&gt;Civilian&lt;/font&gt; is %2 min</Original>
-            <English>For &lt;font color="#B040A7"&gt;Civilian&lt;/font&gt; is %2 min</English>
+            <Original>For &lt;font color="#B040A7"&gt;Civilian&lt;/font&gt; is %2 (M:SS)</Original>
+            <English>For &lt;font color="#B040A7"&gt;Civilian&lt;/font&gt; is %2 (M:SS)</English>
         </Key>
         <Key ID="STR_tunres_respawn_Briefing_WaveTime_east">
-            <Original>For &lt;font color="#E60000"&gt;East&lt;/font&gt; is %2 min</Original>
-            <English>For &lt;font color="#E60000"&gt;East&lt;/font&gt; is %2 min</English>
+            <Original>For &lt;font color="#E60000"&gt;East&lt;/font&gt; is %2 (M:SS)</Original>
+            <English>For &lt;font color="#E60000"&gt;East&lt;/font&gt; is %2 (M:SS)</English>
         </Key>
         <Key ID="STR_tunres_respawn_Briefing_WaveTime_resistance">
-            <Original>For &lt;font color="#00CC00"&gt;Resistance&lt;/font&gt; is %2 min</Original>
-            <English>For &lt;font color="#00CC00"&gt;Resistance&lt;/font&gt; is %2 min</English>
+            <Original>For &lt;font color="#00CC00"&gt;Resistance&lt;/font&gt; is %2 (M:SS)</Original>
+            <English>For &lt;font color="#00CC00"&gt;Resistance&lt;/font&gt; is %2 (M:SS)</English>
         </Key>
         <Key ID="STR_tunres_respawn_Briefing_WaveTime_west">
-            <Original>For &lt;font color="#0000FF"&gt;West&lt;/font&gt; is %2 min</Original>
-            <English>For &lt;font color="#0000FF"&gt;West&lt;/font&gt; is %2 min</English>
+            <Original>For &lt;font color="#0000FF"&gt;West&lt;/font&gt; is %2 (M:SS)</Original>
+            <English>For &lt;font color="#0000FF"&gt;West&lt;/font&gt; is %2 (M:SS)</English>
         </Key>
         <Key ID="STR_tunres_respawn_Briefing_default">
             <Original>The mission has unlimited tickets for each side.</Original>
@@ -86,8 +86,8 @@
             <English>JIP players are not moved to respawn when they join the game.</English>
         </Key>
         <Key ID="STR_tunres_respawn_Briefing_moveJIPEnabled">
-            <Original>JIP players will be moved to respawn after %2(M:SS) from mission start.</Original>
-            <English>JIP players will be moved to respawn after %2(M:SS) from mission start.</English>
+            <Original>JIP players will be moved to respawn after %2 (M:SS) from mission start.</Original>
+            <English>JIP players will be moved to respawn after %2 (M:SS) from mission start.</English>
         </Key>
         <Key ID="STR_tunres_respawn_Briefing_onlyForcedWaves">
             <Original>The mission only uses forced respawn waves, so there is no respawn timer.</Original>
@@ -230,8 +230,8 @@
             <English>"SQF Gearscript": Requires two variables to be set: "tunres_Respawn_Role," which serves as a parameter, and "tunres_Respawn_GearPath," which denotes the file path.		"Potato Tool": Simply invokes its own function.		"Save gear": Loads the same loadout saved at mission start, or it can be updated during the mission using the "tunres_Respawn_fnc_savegear" function.		None: No gear scripts are executed. Players will spawn without any gear. Utilize the event handler "tunres_respawn_EH_unitRespawned" to provide gear.</English>
         </Key>
         <Key ID="STR_tunres_respawn_CBA_tooltip_moveJIPTime">
-            <Original>Time after JIP are moved to respawn (minutes)</Original>
-            <English>Time after JIP are moved to respawn (minutes)</English>
+            <Original>Time after JIP are moved to respawn</Original>
+            <English>Time after JIP are moved to respawn</English>
         </Key>
         <Key ID="STR_tunres_respawn_CBA_tooltip_moveJIP">
             <Original>Enable move JIP system</Original>
