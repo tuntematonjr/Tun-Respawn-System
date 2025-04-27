@@ -23,7 +23,8 @@ params [["_unit", objNull, [objNull]],
 		["_text", "", [""]],
 		["_range", 10, [0]],
 		["_godMode", false, [false]],
-		["_godModeLenght", 30, [0]]
+		["_godModeLenght", 30, [0]],
+		["_duration", 10, [0]]
 ];
 
 if (_unit isEqualTo objNull) exitWith {LOG("unit was objnull when teleporting")};
@@ -32,7 +33,7 @@ if (_godMode) then {
 	[_unit, _godModeLenght] remoteExecCall [QFUNC(godMode), _unit];
 };
 
-[_text, 10] remoteExecCall [QFUNC(blackscreen), _unit]; // make player screen black and prevent them moving right away so server can keep up.
+[_text, _duration] remoteExecCall [QFUNC(blackscreen), _unit]; // make player screen black and prevent them moving right away so server can keep up.
 private _backupPos = _destination getPos [5,90];
 private _pos = [_destination, 2, _range, 2, 0, 30, 0, [], [_backupPos,_backupPos]] call BIS_fnc_findSafePos;
 _unit setPos _pos;
