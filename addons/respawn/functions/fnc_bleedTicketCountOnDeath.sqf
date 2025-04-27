@@ -21,15 +21,8 @@ private _respawnType = GVAR(respawnType);
 if (_respawnType isEqualTo 0) exitWith {
 	ERROR("Tried to bleed tickets, when not using them");
 };
-private _playerUID = getPlayerUID _player;
 
-//if player disconnected and came back. So no ticket wasted.
-if (GVAR(disconnectedPlayersHash) getOrDefault [_playerUID, false]) exitWith {
-	GVAR(disconnectedPlayersHash) set [_uid, false];
-	[5] remoteExecCall ["setPlayerRespawnTime", _player];
-};
-
-//Player was already in respawn area.
+//Player was already in respawn area
 if ( _player getVariable [QGVAR(isWaitingRespawn), false]) exitWith {
 	INFO("Player already waiting respawn");
 	[1] remoteExecCall ["setPlayerRespawnTime", _player];

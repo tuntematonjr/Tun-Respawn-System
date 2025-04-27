@@ -12,18 +12,6 @@ if (GVAR(respawnType) isEqualTo 2) then {
 	AAR_UPDATE("civ","Player tickets",(round GVAR(initialTicketsCivilian)));
 };
 
-if (GVAR(respawnType) isNotEqualTo 0) then {
-	// if player disconnect add its uid to list so when he come back. No ticket is used. Only used if Kill jip is enabled
-	addMissionEventHandler ["PlayerDisconnected", {
-		if (GVAR(respawnType) isEqualTo 0) exitWith { };
-		params ["_id", "_uid", "_name", "_jip", "_owner"];
-
-		if (cba_missiontime > (GVAR(killJipTime) * 60) && GVAR(killJIP)) then {
-			GVAR(disconnectedPlayersHash) set [_uid, true];
-		};
-	}];
-};
-
 //clean bodies during briefing && safestart
 addMissionEventHandler ["HandleDisconnect", {
 	params ["_unit", "_id", "_uid", "_name"];
