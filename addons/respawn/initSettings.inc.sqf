@@ -446,7 +446,7 @@
 		params ["_value"];
 		_value = round _value;
 		GVAR(initialTicketsWest) = _value;
-		GVAR(ticketsHash) set [west, _value];
+		GVAR(ticketsHash) set [west, _value, true];
 	},
 	true
 ] call CBA_fnc_addSetting;
@@ -462,7 +462,7 @@
 		params ["_value"];
 		_value = round _value;
 		GVAR(initialTicketsEast) = _value;
-		GVAR(ticketsHash) set [east, _value];
+		GVAR(ticketsHash) set [east, _value, true];
 	},
 	true
 ] call CBA_fnc_addSetting;
@@ -478,7 +478,7 @@
 		params ["_value"];
 		_value = round _value;
 		GVAR(initialTicketsResistance) = _value;
-		GVAR(ticketsHash) set [resistance, _value];
+		GVAR(ticketsHash) set [resistance, _value, true];
 	},
 	true
 ] call CBA_fnc_addSetting;
@@ -494,7 +494,7 @@
 		params ["_value"];
 		_value = round _value;
 		GVAR(initialTicketsCivilian) = _value;
-		GVAR(ticketsHash) set [civilian, _value];
+		GVAR(ticketsHash) set [civilian, _value, true];
 	},
 	true
 ] call CBA_fnc_addSetting;
