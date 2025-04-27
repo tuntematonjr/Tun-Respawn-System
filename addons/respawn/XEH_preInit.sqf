@@ -6,38 +6,30 @@ PREP_RECOMPILE_START;
 PREP_RECOMPILE_END;
 
 //cba_missiontime time when next wave happens.
-GVAR(nextWaveTimesHash) = createHashMapFromArray ZEROS_FOR_SIDES;
+ISNILS(GVAR(nextWaveTimesHash),createHashMapFromArray ZEROS_FOR_SIDES);
 
 //Respawn wave lenght times
-GVAR(waveLenghtTimesHash) = createHashMap;
+ISNILS(GVAR(waveLenghtTimesHash),createHashMap);
 
 //Tickets
-GVAR(ticketsHash) = createHashMap;
+ISNILS(GVAR(ticketsHash),createHashMap);
 
 //Waiting area stuff
-GVAR(waitingAreaHash) = createHashMap;
+ISNILS(GVAR(waitingAreaHash),createHashMap);
 
 //Which side has respawn system started
-GVAR(enabledSidesHash) = createHashMapFromArray FALSES_FOR_SIDES;
+ISNILS(GVAR(enabledSidesHash),createHashMapFromArray FALSES_FOR_SIDES);
 
 //Allow respawn for each side
-GVAR(allowRespawnHash) = createHashMapFromArray TRUES_FOR_SIDES;
-
-GVAR(timerRunningHash) = createHashMapFromArray FALSES_FOR_SIDES;
+ISNILS(GVAR(allowRespawnHash),createHashMapFromArray TRUES_FOR_SIDES);
+ISNILS(GVAR(timerRunningHash),createHashMapFromArray FALSES_FOR_SIDES);
 ISNILS(GVAR(teleportPoints),[]);
 
 //allowed sides to spectate 
 GVAR(allowedSpectateSidesHash) = createHashMapFromArray EMPTY_ARRAY_FOR_SIDES;
 GVAR(allowedSpectateCameraModes) = [];
 
-//flag poles [mainbase,waitingrea]
-GVAR(flagPolesHash) = createHashMapFromArray [[west,[objNull,objNull]],[east,[objNull,objNull]],[resistance,[objNull,objNull]],[civilian,[objNull,objNull]]];
-
-//waiting respawn counts
-GVAR(waitingRespawnCountHash) = createHashMapFromArray [[west,[0,0]],[east,[0,0]],[resistance,[0,0]],[civilian,[0,0]]];
-
 #include "initSettings.inc.sqf"
-
 
 ["force_respawn", {
 	private _param = toLower(_this select 0);
