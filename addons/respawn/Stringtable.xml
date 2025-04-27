@@ -81,13 +81,13 @@
             <Original>The mission has unlimited tickets for each side.</Original>
             <English>The mission has unlimited tickets for each side.</English>
         </Key>
-        <Key ID="STR_tunres_respawn_Briefing_killJipDisabled">
-            <Original>JIP players are not killed and moved to respawn when they join the game.</Original>
-            <English>JIP players are not killed and moved to respawn when they join the game.</English>
+        <Key ID="STR_tunres_respawn_Briefing_moveJIPDisabled">
+            <Original>JIP players are not moved to respawn when they join the game.</Original>
+            <English>JIP players are not moved to respawn when they join the game.</English>
         </Key>
-        <Key ID="STR_tunres_respawn_Briefing_killJipEnabled">
-            <Original>JIP players will be killed and moved to respawn after %2min from mission start. If a player disconnects earlier, it won't use a ticket.</Original>
-            <English>JIP players will be killed and moved to respawn after %2min from mission start. If a player disconnects earlier, it won't use a ticket.</English>
+        <Key ID="STR_tunres_respawn_Briefing_moveJIPEnabled">
+            <Original>JIP players will be moved to respawn after %2(M:SS) from mission start.</Original>
+            <English>JIP players will be moved to respawn after %2(M:SS) from mission start.</English>
         </Key>
         <Key ID="STR_tunres_respawn_Briefing_onlyForcedWaves">
             <Original>The mission only uses forced respawn waves, so there is no respawn timer.</Original>
@@ -229,13 +229,13 @@
             <Original>"SQF Gearscript": Requires two variables to be set: "tunres_Respawn_Role," which serves as a parameter, and "tunres_Respawn_GearPath," which denotes the file path.		"Potato Tool": Simply invokes its own function.		"Save gear": Loads the same loadout saved at mission start, or it can be updated during the mission using the "tunres_Respawn_fnc_savegear" function.		None: No gear scripts are executed. Players will spawn without any gear. Utilize the event handler "tunres_respawn_EH_unitRespawned" to provide gear.</Original>
             <English>"SQF Gearscript": Requires two variables to be set: "tunres_Respawn_Role," which serves as a parameter, and "tunres_Respawn_GearPath," which denotes the file path.		"Potato Tool": Simply invokes its own function.		"Save gear": Loads the same loadout saved at mission start, or it can be updated during the mission using the "tunres_Respawn_fnc_savegear" function.		None: No gear scripts are executed. Players will spawn without any gear. Utilize the event handler "tunres_respawn_EH_unitRespawned" to provide gear.</English>
         </Key>
-        <Key ID="STR_tunres_respawn_CBA_tooltip_killJipTime">
-            <Original>Time after JIP are killed and moved to respawn (minutes)</Original>
-            <English>Time after JIP are killed and moved to respawn (minutes)</English>
+        <Key ID="STR_tunres_respawn_CBA_tooltip_moveJIPTime">
+            <Original>Time after JIP are moved to respawn (minutes)</Original>
+            <English>Time after JIP are moved to respawn (minutes)</English>
         </Key>
-        <Key ID="STR_tunres_respawn_CBA_tooltip_killjip">
-            <Original>Enable kill JIP system</Original>
-            <English>Enable kill JIP system</English>
+        <Key ID="STR_tunres_respawn_CBA_tooltip_moveJIP">
+            <Original>Enable move JIP system</Original>
+            <English>Enable move JIP system</English>
         </Key>
         <Key ID="STR_tunres_respawn_CBA_tooltip_respawntypes">
             <Original>"Endless waves": Endless waves. "Side tickets": Side shares a ticket pool. Player tickets": Each player has their own ticket pool.</Original>

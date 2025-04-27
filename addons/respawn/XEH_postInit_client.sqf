@@ -58,6 +58,7 @@ ADDON
 	}];
 
 	[] call FUNC(killJIP);
+	[] call FUNC(moveJIP);
 	[] call FUNC(updateRespawnMarkers);
 	[] call FUNC(radioSettings_tfar);
 }] call CBA_fnc_waitUntilAndExecute;

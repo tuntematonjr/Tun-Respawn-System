@@ -27,7 +27,7 @@ if (GVAR(respawnType) isNotEqualTo 0) then {
 //clean bodies during briefing && safestart
 addMissionEventHandler ["HandleDisconnect", {
 	params ["_unit", "_id", "_uid", "_name"];
-	if (cba_missiontime < (GVAR(killJipTime) * 60) || _unit getVariable [QGVAR(isWaitingRespawn),false]) then {
+	if (cba_missiontime < (GVAR(moveJIPTime) * 60) || _unit getVariable [QGVAR(isWaitingRespawn),false]) then {
 		deleteVehicle _unit;
 	};
 	false;

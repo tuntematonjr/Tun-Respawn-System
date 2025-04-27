@@ -10,9 +10,9 @@
 ] call CBA_fnc_addSetting;
 
 [
-	QGVAR(killJIP),
+	QGVAR(moveJIP),
 	"CHECKBOX",
-	["Kill JIP", LSTRING(CBA_tooltip_killjip)],
+	["Move JIP", LSTRING(CBA_tooltip_moveJIP)],
 	[LSTRING(CBA_Category_main), LSTRING(CBA_Category_generic)],
 	true,
 	1,
@@ -21,16 +21,16 @@
 ] call CBA_fnc_addSetting;
 
 [
-	QGVAR(killJipTime),
+	QGVAR(moveJIPTime),
 	"TIME",
-	["Kill JIP Time", LSTRING(CBA_tooltip_killJipTime)],
+	["Move JIP Time", LSTRING(CBA_tooltip_moveJIPTime)],
 	[LSTRING(CBA_Category_main), LSTRING(CBA_Category_generic)],
-	[0, MAX_KILLJIP_TIME, DEFAULT_KILLJIP_TIME, 0],
+	[0, MAX_MOVEJIP_TIME, DEFAULT_MOVEJIP_TIME, 0],
 	1,
 	{
 		params ["_value"];
 		_value = round _value;
-		GVAR(killJipTime) = _value;
+		GVAR(moveJIPTime) = _value;
 	},
 	true
 ] call CBA_fnc_addSetting;
