@@ -98,11 +98,11 @@ if (GVAR(briefingEnableShowTickets) && { GVAR(respawnType) isNotEqualTo 0}) then
 	};
 };
 
-if (GVAR(killJIP)) then {
-	private _killJipTime = [GVAR(killJipTime), "M:SS"] call CBA_fnc_formatElapsedTime;
-	_text = format [("%1<br/><br/>- "+LLSTRING(Briefing_killJipEnabled)),_text, _killJipTime];
+if (GVAR(moveJIP)) then {
+	private _moveJIPTime = [GVAR(moveJIPTime), "M:SS"] call CBA_fnc_formatElapsedTime;
+	_text = format [("%1<br/><br/>- "+LLSTRING(Briefing_moveJIPEnabled)),_text, _moveJIPTime];
 } else {
-	_text = format ["%1<br/><br/>- %2",_text, LLSTRING(Briefing_killJipDisabled)];
+	_text = format ["%1<br/><br/>- %2",_text, LLSTRING(Briefing_moveJIPDisabled)];
 };
 
 _text = _text + "<br/><br/>" + LLSTRING(Briefing_teleportNetwork);

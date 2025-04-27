@@ -14,32 +14,27 @@
  * [side, player] call tunres_Respawn_fnc_bleedTicketCountOnDeath
  */
 #include "script_component.hpp"
-params [["_side", nil, [west]], ["_player", objNull, [objNull]]];
-if (!isServer) exitWith { };
+params [["_player", objNull, [objNull]]];
+if (!isServer) exitWith {};
 
+private _side = side group _player;
 private _respawnType = GVAR(respawnType);
 if (_respawnType isEqualTo 0) exitWith {
 	ERROR("Tried to bleed tickets, when not using them");
 };
-private _playerUID = getPlayerUID _player;
 
-//if player disconnected and came back. So no ticket wasted.
-if (GVAR(disconnectedPlayersHash) getOrDefault [_playerUID, false]) exitWith {
-	GVAR(disconnectedPlayersHash) set [_uid, false];
-	[5] remoteExecCall ["setPlayerRespawnTime", _player];
-};
-
-//Player was already in respawn area.
+//Player was already in respawn area
 if ( _player getVariable [QGVAR(isWaitingRespawn), false]) exitWith {
 	INFO("Player already waiting respawn");
-	[1] remoteExecCall ["setPlayerRespawnTime", _player];
+	[QGVAR(setPlayerRespawnTimeEH), 1, _player] call CBA_fnc_targetEvent;
+	LOG("Player was already in respawn area.");
 };
 
 private _remainingTickets = [_side, _player, false] call FUNC(getTicketCount);
-
 if ( _remainingTickets <= 0 ) exitWith {
 	[{
-		[QGVAR(startSpectatorEH), "", _this] call CBA_fnc_targetEvent;
+		LOG("Spektaan");
+		[QGVAR(startSpectatorEH), nil, _this] call CBA_fnc_targetEvent;
 	}, _player, 5] call CBA_fnc_waitAndExecute;
 };
 
@@ -54,4 +49,4 @@ if (_respawnType isEqualTo 1) then {
 	[_player, _remainingTickets] call FUNC(setTicketCount);
 };
 
-[5] remoteExecCall ["setPlayerRespawnTime", _player];
+[QGVAR(setPlayerRespawnTimeEH), 5, _player] call CBA_fnc_targetEvent;

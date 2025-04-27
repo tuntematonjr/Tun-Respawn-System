@@ -13,8 +13,9 @@
  * [] call tunres_Respawn_fnc_waitingArea
  */
 #include "script_component.hpp"
+params[["_player", objNull, [objNull]]];
 
-private _playerSide = playerSide;
+private _playerSide = side group _player;
 if (isDedicated || !(_playerSide in ALL_SIDES) ) exitWith { };
 
 LOG("Start waiting area");
@@ -26,7 +27,7 @@ if (!isNil QGVAR(uselesBody)) then {
 };
 
 //tell server to add this player to list
-[QGVAR(updateWaitingRespawnListEH), [player, true, _playerSide]] call CBA_fnc_serverEvent;
+[QGVAR(updateWaitingRespawnListEH), [_player, true, _playerSide]] call CBA_fnc_serverEvent;
 
 private _respawnWaitingarea = (GVAR(waitingAreaHash) get _playerSide) select 1;
 private _waitingRange = GVAR(waitingAreaRange);

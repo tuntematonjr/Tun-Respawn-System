@@ -13,15 +13,18 @@
  * [] call tunres_Respawn_fnc_removegear
  */
 #include "script_component.hpp"
-
+params[["_player", player, [objNull]]];
 if (isDedicated) exitWith { };
+if (isNull _player) then {
+    _player = [] call ace_common_fnc_player;
+};
 
-removeAllWeapons player;
-removeAllAssignedItems player;
-removeHeadgear player;
-removeGoggles player;
-removeVest player;
-removeBackpack player;
-player linkItem "itemMap";
-player linkItem "itemWatch";
-player linkItem "ItemCompass";
+removeAllWeapons _player;
+removeAllAssignedItems _player;
+removeHeadgear _player;
+removeGoggles _player;
+removeVest _player;
+removeBackpack _player;
+_player linkItem "itemMap";
+_player linkItem "itemWatch";
+_player linkItem "ItemCompass";
