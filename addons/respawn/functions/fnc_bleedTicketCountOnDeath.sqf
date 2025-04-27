@@ -26,14 +26,15 @@ if (_respawnType isEqualTo 0) exitWith {
 //Player was already in respawn area
 if ( _player getVariable [QGVAR(isWaitingRespawn), false]) exitWith {
 	INFO("Player already waiting respawn");
-	[1] remoteExecCall ["setPlayerRespawnTime", _player];
+	[QGVAR(setPlayerRespawnTimeEH), 1, _player] call CBA_fnc_targetEvent;
+	LOG("Player was already in respawn area.");
 };
 
 private _remainingTickets = [_side, _player, false] call FUNC(getTicketCount);
-
 if ( _remainingTickets <= 0 ) exitWith {
 	[{
-		[QGVAR(startSpectatorEH), "", _this] call CBA_fnc_targetEvent;
+		LOG("Spektaan");
+		[QGVAR(startSpectatorEH), nil, _this] call CBA_fnc_targetEvent;
 	}, _player, 5] call CBA_fnc_waitAndExecute;
 };
 
@@ -48,4 +49,4 @@ if (_respawnType isEqualTo 1) then {
 	[_player, _remainingTickets] call FUNC(setTicketCount);
 };
 
-[5] remoteExecCall ["setPlayerRespawnTime", _player];
+[QGVAR(setPlayerRespawnTimeEH), 5, _player] call CBA_fnc_targetEvent;

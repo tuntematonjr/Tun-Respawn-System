@@ -63,7 +63,6 @@
 		[] call FUNC(updateRespawnMarkers);
 	}];
 
-	[] call FUNC(killJIP);
 	[] call FUNC(moveJIP);
 	[] call FUNC(updateRespawnMarkers);
 	[] call FUNC(radioSettings_tfar);
@@ -71,4 +70,10 @@
 
 [QGVAR(startSpectatorEH), {
 	[] call FUNC(startSpectator);
+}] call CBA_fnc_addEventHandler;
+
+[QGVAR(setPlayerRespawnTimeEH), {
+	params [["_time", 1, [1]]];
+	TRACE_1("set respa time",_time);
+	setPlayerRespawnTime _time;
 }] call CBA_fnc_addEventHandler;
