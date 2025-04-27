@@ -14,9 +14,10 @@
  * [side, player] call tunres_Respawn_fnc_bleedTicketCountOnDeath
  */
 #include "script_component.hpp"
-params [["_side", nil, [west]], ["_player", objNull, [objNull]]];
-if (!isServer) exitWith { };
+params [["_player", objNull, [objNull]]];
+if (!isServer) exitWith {};
 
+private _side = side group _player;
 private _respawnType = GVAR(respawnType);
 if (_respawnType isEqualTo 0) exitWith {
 	ERROR("Tried to bleed tickets, when not using them");

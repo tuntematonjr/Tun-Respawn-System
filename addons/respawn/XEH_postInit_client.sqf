@@ -1,7 +1,9 @@
 #include "script_component.hpp"
 
-[{!isNull player  &&
-ADDON
+[{
+	TRACE_2("post init player",[] call ace_common_fnc_player,!isNull ([] call ace_common_fnc_player));
+	!isNull ([] call ace_common_fnc_player) &&
+	ADDON
 }, {
 	if (!GVAR(enable)) exitWith { }; // Exit if not enabled
 	
@@ -33,23 +35,27 @@ ADDON
 	private _action = ["TpMenu", LLSTRING(TeleportMenu),"\a3\3den\data\cfg3den\history\changeattributes_ca.paa",{ [GVAR(selfTPmenuOpenObj)] call FUNC(openTeleportMenu) }, _conditio] call ace_interact_menu_fnc_createAction;
 	[(typeOf player), 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToClass;
 
+	private _player = [] call ace_common_fnc_player;
 	//Add respawn eh
-	[player, "Respawn", {
+	[_player, "Respawn", {
 		params ["_newObject","_oldObject"];
-		[] call FUNC(removegear);
-		player setVariable [QGVAR(isWaitingRespawn), true, true];
-		[] call FUNC(waitingArea);
+		LOG("Respawn EH");
+		[_newObject] call FUNC(removegear);
+		_newObject setVariable [QGVAR(isWaitingRespawn), true, true];
+		[_newObject] call FUNC(waitingArea);
 	}] call CBA_fnc_addBISEventHandler;
 
 	// Add killed EH
-	[player, "killed", {
+	[_player, "killed", {
 		params ["_unit", "_killer", "_instigator", "_useEffects"];
-		if (player getVariable [QGVAR(isWaitingRespawn), false]) then {	
+		if (_unit getVariable [QGVAR(isWaitingRespawn), false]) then {	
 			[GVAR(waitingAreaPFH)] call CBA_fnc_removePerFrameHandler;
 			GVAR(waitingAreaPFH) = nil;
 			GVAR(uselesBody) = _unit;
 		};
-		[] call FUNC(onPlayerKilled);
+		LOG("Killed EH");
+		TRACE_1("EH Killed",_unit);
+		[_unit] call FUNC(onPlayerKilled);
 	}] call CBA_fnc_addBISEventHandler;
 
 	addMissionEventHandler ["Map", {
