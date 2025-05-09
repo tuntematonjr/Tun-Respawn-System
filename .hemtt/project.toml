@@ -31,7 +31,7 @@ parameters = [
 ]
 
 [hemtt.release]
-folder = "Tun_Respawn_System"
+folder = "tun_respawn_system"
 
 [hemtt.launch.server]
 workshop = [
