@@ -43,8 +43,6 @@ parameters = [
 	"-server",
 	"-port=2302",
 	"-filePatching",
-	"-cfg=C:\\Users\\mikal\\Documents\\GitHub\\Tun-Respawn-System\\server\\server_basic.cfg",
-	"-config=C:\\Users\\mikal\\Documents\\GitHub\\Tun-Respawn-System\\server\\server_config.cfg",
 ]
 
 [hemtt.launch.player]
