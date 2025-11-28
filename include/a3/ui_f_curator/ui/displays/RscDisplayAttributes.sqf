@@ -75,7 +75,7 @@ switch _mode do {
 
 		_target = missionNamespace getVariable ["BIS_fnc_initCuratorAttributes_target",objNull];
 		_name = switch (typeName _target) do {
-			case ("OBJECT"): {getText (configFile >> "cfgvehicles" >> typeOf _target >> "displayname")};
+			case ("OBJECT"): {getText (configOf  _target >> "displayname")};
 			case ("GROUP"): {groupId _target};
 			case ("ARRAY"): {format ["%1: %3 #%2",groupId (_target select 0),_target select 1,localize "str_a3_cfgmarkers_waypoint_0"]};
 			case ("STRING"): {markerText _target};
