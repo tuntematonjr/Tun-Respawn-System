@@ -49,6 +49,7 @@ if (count _waitingRespawn > 0) then {
 
 	//move
 	[{
+		params ["_args", "_handle"];
 		_args params ["_side", "_waitingRespawnHash", "_waitingRespawnDelayedHash"];
 
 		private _unitList = _waitingRespawnHash get _side;

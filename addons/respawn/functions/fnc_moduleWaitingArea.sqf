@@ -28,7 +28,7 @@ if (_markername isEqualTo "none") exitWith {  // Exit if no side
 };
 
 if (getMarkerColor _markername isEqualTo "") then {
-	_marker = [_markername, getPosASL _logic, "icon", [1, 1], "PERSIST", "TYPE:", "Empty"] call CBA_fnc_createMarker;
+	private _marker = [_markername, getPosASL _logic, "icon", [1, 1], "PERSIST", "TYPE:", "Empty"] call CBA_fnc_createMarker;
 	_marker setMarkerAlpha 0;
 } else {
 	private _errorText = LLSTRING(Module_WaitingArea_MultipleMarkers);

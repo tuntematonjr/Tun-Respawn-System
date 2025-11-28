@@ -34,9 +34,10 @@ _camera camCommit 0;
 	QGVAR(tpCutLayer) cutText [_text, "BLACK FADED", _duration, true, true];
 
 	[{
+		_this params ["_camera"];
 		player cameraEffect ["terminate","back"];
 		camDestroy _camera;
 		QGVAR(tpCutLayer) cutText ["", "BLACK IN", 5];
-	}, [], _duration] call CBA_fnc_waitAndExecute;
+	}, [_camera], _duration] call CBA_fnc_waitAndExecute;
 
 }, [_text, _duration, _camera]] call CBA_fnc_waitUntilAndExecute;

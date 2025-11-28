@@ -29,11 +29,11 @@ if (isClass (configFile >> "CfgVehicles" >> _vehicle)) then {
 								{ speed player isEqualTo 0 } &&
 								{!((GVAR(deployementStatusHash) getOrDefault [playerSide, false]))}
 								};
-	_createMSP = ["Set up MSP", LLSTRING(AceAction_DeployMSP), "\a3\3den\data\cfgwaypoints\unload_ca.paa", {[_target, true] call FUNC(startUpdateDeployementStatus);}, _create_condition, {}, [], [0, 0, 0], 2, [false, true, false, false, false]] call ace_interact_menu_fnc_createAction;
+	private _createMSP = ["Set up MSP", LLSTRING(AceAction_DeployMSP), "\a3\3den\data\cfgwaypoints\unload_ca.paa", {[_target, true] call FUNC(startUpdateDeployementStatus);}, _create_condition, {}, [], [0, 0, 0], 2, [false, true, false, false, false]] call ace_interact_menu_fnc_createAction;
 
 	//remove msp action
 	private _remove_condition = { alive _target && {_target getVariable QGVAR(side) isEqualTo playerSide} && {_target getVariable [QGVAR(isMSP), false]} };
-	_removeMSP = ["Pack MSP", LLSTRING(AceAction_PackMSP), "\a3\3den\data\cfgwaypoints\load_ca.paa", {[_target, false] call FUNC(startUpdateDeployementStatus);}, _remove_condition, {}, [], [0, 0, 0], 2, [false, true, false, false, false]] call ace_interact_menu_fnc_createAction;
+	private _removeMSP = ["Pack MSP", LLSTRING(AceAction_PackMSP), "\a3\3den\data\cfgwaypoints\load_ca.paa", {[_target, false] call FUNC(startUpdateDeployementStatus);}, _remove_condition, {}, [], [0, 0, 0], 2, [false, true, false, false, false]] call ace_interact_menu_fnc_createAction;
 
 	private _aliveAndSameSideConditio = {alive _target && {_target getVariable QGVAR(side) isEqualTo playerSide}};
 	private _aliveAndSameSideAndIsMSPConditio = {alive _target && {_target getVariable QGVAR(side) isEqualTo playerSide} && _target getVariable [QGVAR(isMSP), false]};

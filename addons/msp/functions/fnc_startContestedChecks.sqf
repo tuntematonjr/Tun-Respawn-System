@@ -29,6 +29,7 @@ if (_start) then {
 	private _reportEnemiesEnabled = _values select 5;
 
 	private _handleContest = [{
+		params ["_args", "_handle"];
 		_args params ["_side"];
 		if !(GVAR(disableContestedCheck)) then {
 			private _mspDeployementStatus = GVAR(deployementStatusHash) get _side;
@@ -44,10 +45,10 @@ if (_start) then {
 	private _handleReport = nil;
 	if (_reportEnemiesEnabled) then {
 		_handleReport = [{
+			params ["_args", "_handle"];
 			_args params ["_side"];
 			//So that this does not run, when contest update is offline
 			if !(GVAR(disableContestedCheck)) then {
-				private _side = _args;
 				private _hash = GVAR(contestedCheckHash);
 				private _contestedStatus = GVAR(contestedStatusHash) get _side;
 				private _mspStatus = GVAR(deployementStatusHash) get _side;

@@ -32,7 +32,6 @@ if (_enable) then {
 		
 	};
 	LOG("Enable briefing contest area check during briefing");
-	onMapSingleClick {_shift};
 	GVAR(checkContestZoneMarkersBriefingEH) = addMissionEventHandler ["MapSingleClick", {
 		params ["_units", "_pos", "_alt", "_shift"];
 

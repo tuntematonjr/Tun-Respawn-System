@@ -35,6 +35,7 @@ private _respawnType = GVAR(respawnType);
 GVAR(mark) = 0;
 
 GVAR(waitingAreaPFH) = [{
+	params ["_args", "_handle"];
 	_args params ["_respawnWaitingarea", "_playerSide", "_waitingRange", "_respawnType"];
 	if !( player getVariable QGVAR(isWaitingRespawn) ) exitWith {
 		GVAR(waitingAreaPFH) = nil;

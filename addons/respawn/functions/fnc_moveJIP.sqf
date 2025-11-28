@@ -29,7 +29,7 @@ if (cba_missiontime > GVAR(moveJIPTime) && GVAR(moveJIP)) then {
 
 	if (_allowRespawn) then {
 		private _player = [] call ace_common_fnc_player;
-		private _respawnWaitingarea = (GVAR(waitingAreaHash) get _playerSide) select 2;
+		private _respawnWaitingarea = (GVAR(waitingAreaHash) get playerSide) select 2;
 		[_player, _respawnWaitingarea, "Move to respawn",10,false,0,5] call FUNC(teleportUnit); //TODO: stringtable
 
 		[_player] call FUNC(removegear);

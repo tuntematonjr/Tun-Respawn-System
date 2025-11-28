@@ -22,26 +22,29 @@ if (_setup) then {
 	[_target] call FUNC(checkContestZoneArea);
 	_text = LLSTRING(fnc_startUpdateDeployementStatus_setting);
 	_conditio = {
-					private _msp = (_args select 0);
-					driver _msp isEqualTo player &&
-					alive _msp &&
-					insideBuilding player isEqualTo 0 &&
-					!(GVAR(deployementStatusHash) get playerSide)
-				};
+		_this params ["_args"];
+		_args params ["_msp"];
+		driver _msp isEqualTo player &&
+		alive _msp &&
+		insideBuilding player isEqualTo 0 &&
+		!(GVAR(deployementStatusHash) get playerSide)
+	};
 	_time = GVAR(progresbarTimeSetup);
 } else {
 	_text = LLSTRING(fnc_startUpdateDeployementStatus_packing);
 	_conditio = {
-					private _msp = (_args select 0);
-					alive _msp &&
-					(GVAR(deployementStatusHash) get playerSide)
-				};
+		_this params ["_args"];
+		_args params ["_msp"];
+		alive _msp &&
+		(GVAR(deployementStatusHash) get playerSide)
+	};
 	_time = GVAR(progresbarTimePack);
 };
 
 private _code = {
-					_args remoteExecCall [QFUNC(updateDeployementStatus), 2];
-					openMap false;
-				};
+	_this params ["_args"];
+	_args remoteExecCall [QFUNC(updateDeployementStatus), 2];
+	openMap false;
+};
 
 [_time, [_target, _setup, player], _code, {[QEGVAR(main,doNotification), [LLSTRING(DeployementAborted)]] call CBA_fnc_localEvent;}, _text, _conditio, ["notOnMap","isnotinside"]] call ace_common_fnc_progressBar;
